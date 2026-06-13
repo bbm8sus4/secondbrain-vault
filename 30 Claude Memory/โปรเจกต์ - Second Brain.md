@@ -13,7 +13,7 @@ Set up 2026-06-11. Vault at `~/SecondBrain/` (local, NOT iCloud — iCloud conta
 
 **Structure:** PARA (`00 Inbox`–`04 Archive`) + `10 Daily` + `20 Rules` + `30 Claude Memory` (read-only mirror).
 
-**Memory mirror:** `~/bin/sync-memory-to-vault.sh` → `sync-memory-to-vault.py` copies `~/.claude-warp/projects/-Users-aexgee/memory/` → `30 Claude Memory/` every 30 min via launchd `com.aexgee.memory-vault-sync` (RunAtLoad + StartInterval 1800). One-way: edit memories at source, never in vault. **Vault filenames are THAI** — the .py holds the English→Thai mapping (user wants Thai node names in graph view); new memory files need a mapping entry added or they appear with English names. Vault-native notes are Thai-named too: `หน้าหลัก.md` (Home), `20 Rules/กติกาการทำงาน.md`, `03 Resources/แผนที่ - *.md` (4 MOC hubs linking all memory files).
+**Memory mirror:** `~/bin/sync-memory-to-vault.sh` → `sync-memory-to-vault.py` copies `~/.claude-warp/projects/-Users-aexgee/memory/` → `30 Claude Memory/` every 30 min via launchd `com.aexgee.memory-vault-sync` (RunAtLoad + StartInterval 1800). One-way: edit memories at source, never in vault. **Vault filenames are THAI, resolved self-healing** (rewritten 2026-06-13): name = `.display-names.json` (sidecar in the memory dir, DATA not code — curate Thai names here) → else the MEMORY.md index title → else English stem + log warning. So a NEW memory is never broken — no more hand-editing the .py dict. The sync also rewrites inline `[[english_slug]]` in memory bodies → `[[Thai|slug]]` so the graph connects. Vault-native notes are Thai-named too: `หน้าหลัก.md` (Home), `20 Rules/กติกาการทำงาน.md` + `20 Rules/คู่มือ vault.md` (operating manual), `03 Resources/แผนที่ - *.md` (4 MOC hubs).
 
 **MCP:** `mcp-obsidian` (npx, vault-path flavor, read/search) registered in:
 - Claude Code user scope (`claude mcp add --scope user obsidian`)
@@ -29,4 +29,6 @@ Set up 2026-06-11. Vault at `~/SecondBrain/` (local, NOT iCloud — iCloud conta
 
 **Why:** User wants SynapTech-style "Memory Architecture" — one central brain readable by Claude Code + Claude Desktop + Codex + mobile (Obsidian iOS via Sync).
 
-**How to apply:** When user mentions second brain / vault / Obsidian, work in `~/SecondBrain/`. Follow Operating Rules. Don't edit `30 Claude Memory/` directly.
+**Hardening (2026-06-13):** Vault is now its OWN git repo (`~/SecondBrain/.git`, was untracked under home repo = no real backup). `sync-memory-to-vault.sh` auto-commits every run → rollback via git. `.smart-env/` (50MB embedding cache) gitignored. rsync of meeting-notes now guarded (won't `--delete` if source empty). All sync scripts log to `~/Library/Logs/secondbrain-sync.log` + launchd plists have StandardOut/ErrorPath. New watchdog `~/bin/vault-health.py` (launchd `com.aexgee.vault-health`, daily 9am) → writes `00 Inbox/_vault-health.md`: dead-links, orphans, empty files, source↔mirror drift, sync age, recap freshness. friday_recap.sh `/tmp` issue was already self-fixed (uses `Friday/_source/`).
+
+**How to apply:** When user mentions second brain / vault / Obsidian, work in `~/SecondBrain/`. Read `20 Rules/คู่มือ vault.md` first. Don't edit `30 Claude Memory/` or `40 Meeting Notes/` (mirrors). Curate Thai names in `.display-names.json`, never in the .py. Run `python3 ~/bin/vault-health.py` to check vault health.
