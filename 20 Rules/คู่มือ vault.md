@@ -58,8 +58,11 @@
 ## 6. Backup & กู้คืน
 
 - vault เป็น **git repo ของตัวเอง** (`~/SecondBrain/.git`) แยกจาก home repo
+- **Backup นอกเครื่อง:** private GitHub `bbm8sus4/secondbrain-vault` — `sync.sh` auto-push ทุกรอบ (เน็ตหลุดไม่เป็นไร รอบหน้า push สะสมให้)
 - ทุก sync auto-commit → `git -C ~/SecondBrain log` เห็นประวัติทุก 30 นาที
 - กู้ไฟล์ที่เผลอลบ/พัง: `git -C ~/SecondBrain checkout <commit> -- "path"`
+- **กู้ทั้งเครื่องใหม่:** `git clone https://github.com/bbm8sus4/secondbrain-vault.git ~/SecondBrain`
+- ⚠️ repo นี้ **ต้อง private เสมอ** (มีสัญญา/การเงิน/security audit) — ห้ามเปลี่ยนเป็น public
 - ดูสุขภาพตอนนี้: `python3 ~/bin/vault-health.py` แล้วเปิด `00 Inbox/_vault-health.md`
 
 ## 7. เพิ่มความรู้ใหม่ควรไปไหน
