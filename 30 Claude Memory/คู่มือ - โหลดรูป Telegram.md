@@ -20,4 +20,4 @@ Trigger: `/telegram-download-pic-block` then provide Telegram Web URL + folder n
 - Chrome temp files (`.com.google.Chrome.*`) = stalled downloads, just `cp` them
 - ~9 seconds per photo when scripted
 
-Related: [[feedback_chrome_mcp_transport]]
+Related: [[กติกา - Chrome MCP transport|feedback_chrome_mcp_transport]]

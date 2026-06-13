@@ -19,7 +19,7 @@ Set up 2026-06-11. Vault at `~/SecondBrain/` (local, NOT iCloud — iCloud conta
 - Claude Code user scope (`claude mcp add --scope user obsidian`)
 - Claude Desktop `claude_desktop_config.json`
 
-**Rules for agents:** `20 Rules/Operating Rules.md` in vault — no duplicate notes, Title Case filenames, new notes to `00 Inbox/`, log completed work to daily/project notes. [[feedback-deploy-link]] [[feedback-broadcast-pacing]] rules are duplicated there.
+**Rules for agents:** `20 Rules/Operating Rules.md` in vault — no duplicate notes, Title Case filenames, new notes to `00 Inbox/`, log completed work to daily/project notes. [[กติกา - Deploy ใช้ stable URL|feedback-deploy-link]] [[กติกา - ส่งข้อความหมู่ต้องช้า|feedback-broadcast-pacing]] rules are duplicated there.
 
 **Capture pipelines (added 2026-06-11):**
 - Telegram quick-capture: `~/bin/telegram-vault-capture.py` via launchd `com.aexgee.vault-capture` (60s poll) → appends to `00 Inbox/Telegram YYYY-MM-DD.md`, photos to `00 Inbox/แนบ/`. Config `~/.vault-capture.env` — ALLOWED_USERS prefilled from ccgram; **TELEGRAM_BOT_TOKEN pending: user must create a NEW bot via @BotFather** (can't reuse Humdum token — getUpdates conflict with ccgram). Script exits silently until token filled.

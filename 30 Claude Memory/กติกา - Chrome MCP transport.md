@@ -52,4 +52,4 @@ curl -s -X POST http://127.0.0.1:12306/mcp \
 
 **Installing the extension in a new profile:** manifest has NO `key` → extension ID = hash of the unpacked folder PATH. So load-unpacked the SAME folder in each profile to reuse one ID, OR load from a new folder and add that folder's computed ID to `~/Library/Application Support/Google/Chrome/NativeMessagingHosts/com.chromemcp.nativehost.json` `allowed_origins`. Working source: `~/mcp-chrome/app/chrome-extension/.output/chrome-mv3` (ID `nckehcmgbblnmibclnnongjamneibjjj`); visible Desktop copy `~/Desktop/ChromeMCP-Extension` (ID `eofkmabjglagcipljdminponlcfmldjk`, already registered). `.output` is hidden → in Load-unpacked dialog use Cmd+Shift+G + paste path. After editing the host manifest, fully quit Chrome (Cmd+Q) and reopen. Compute an unpacked ID: `sha256(path)` first 32 hex nibbles mapped 0→a…f→p.
 
-Related: [[reference_chrome_mcp_gdocs]]
+Related: [[คู่มือ - Chrome MCP กับ Google Docs|reference_chrome_mcp_gdocs]]

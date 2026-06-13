@@ -35,7 +35,7 @@ notebooklm list                        # list user's notebooks
 - **Unofficial** — ใช้ undocumented Google API พังเมื่อไหร่ก็ได้
 - เหมาะกับ prototype / research / งานส่วนตัว ไม่เหมาะ production
 - มี rate limit หนักไปโดน throttle
-- ใช้กับ [[feedback-no-local-ai]] ได้ — เป็น cloud (Google) ไม่ใช่ local
+- ใช้กับ [[กติกา - ไม่ใช้ AI ในเครื่อง|feedback-no-local-ai]] ได้ — เป็น cloud (Google) ไม่ใช่ local
 
 ## Useful commands
 

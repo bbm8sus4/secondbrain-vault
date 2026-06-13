@@ -25,4 +25,4 @@ metadata:
 
 **Persistence caveat:** Chrome may overwrite `variations_country` back to `"th"` on the next seed fetch if real IP is Thai. If the button disappears, rerun the patch (PDF at `~/gemini-in-chrome-rootcause.pdf` has the Quick Script — STEP 2–4 in one bash block). Backup at `~/Library/Application Support/Google/Chrome/Local State.backup-glic-<timestamp>`.
 
-**What did NOT work alone:** chrome://flags, VPN (extension or app, even with confirmed US IP 67.213.208.x), Chrome restart, language=English (US), policy clear, signed-in account. UI gate is Variations/Finch country (client-side) — bypass via Local State edit, not via IP/flag alone. Related: [[user_security_interest]] — pure client-side config edit, low ban risk per references.
+**What did NOT work alone:** chrome://flags, VPN (extension or app, even with confirmed US IP 67.213.208.x), Chrome restart, language=English (US), policy clear, signed-in account. UI gate is Variations/Finch country (client-side) — bypass via Local State edit, not via IP/flag alone. Related: [[โปรไฟล์ - สาย Security|user_security_interest]] — pure client-side config edit, low ban risk per references.

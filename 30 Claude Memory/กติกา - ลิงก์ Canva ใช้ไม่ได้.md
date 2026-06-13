@@ -11,4 +11,4 @@ Canva MCP short links (`https://www.canva.com/d/...`) from `create-design-from-c
 
 **Why:** Known limitation of the Canva MCP connector — the generated share URLs are not properly permissioned for direct browser access. User has hit this multiple times.
 
-**How to apply:** After creating or saving a design via Canva MCP, do NOT present the `/d/...` links as clickable. Instead, tell the user to find the design on canva.com homepage under "Recent designs" by its title. Mention the design title clearly so they can locate it. Related: [[feedback-chrome-mcp-transport]].
+**How to apply:** After creating or saving a design via Canva MCP, do NOT present the `/d/...` links as clickable. Instead, tell the user to find the design on canva.com homepage under "Recent designs" by its title. Mention the design title clearly so they can locate it. Related: [[กติกา - Chrome MCP transport|feedback-chrome-mcp-transport]].

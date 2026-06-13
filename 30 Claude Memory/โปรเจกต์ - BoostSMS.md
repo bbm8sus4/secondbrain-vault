@@ -13,12 +13,12 @@ metadata:
 - URLs: boost-sms.com (sale) · app.boost-sms.com (user) · backoffice.boost-sms.com (admin)
 - 9 แพ็กเกจ ฿0–฿1,200,000 (Free Trial → Enterprise+)
 - Sales commission: เงินเดือนฐาน + คอม 8% + โบนัสเป้า (3K/8K/15K)
-- ตำแหน่งใน Master Dashboard: tab "Boost SMS" ใต้ `/easyslip` เท่านั้น (ไม่อยู่ใน `/` หรือ `/thunder`) — ดู [[reference_master_dashboard_chrome_mcp]]
+- ตำแหน่งใน Master Dashboard: tab "Boost SMS" ใต้ `/easyslip` เท่านั้น (ไม่อยู่ใน `/` หรือ `/thunder`) — ดู [[คู่มือ - ดึงข้อมูล Master Dashboard|reference_master_dashboard_chrome_mcp]]
 
 **Why:** ผู้ใช้เป็น COO ของ Thunder Solution / EasySlip — BoostSMS เป็นหนึ่งใน 3 products ของ EasySlip brand (คู่กับ EasyBot, EasySlip API)
 
 **How to apply:**
-- เนื้อหาเต็ม specs / pricing / sales / marketing / dashboard / sessions อยู่ที่ `~/SecondBrain/BoostSMS/` — อ่านที่นั่นก่อนตอบ ([[feedback_boostsms_obsidian]] — กฎการเก็บข้อมูล)
+- เนื้อหาเต็ม specs / pricing / sales / marketing / dashboard / sessions อยู่ที่ `~/SecondBrain/BoostSMS/` — อ่านที่นั่นก่อนตอบ ([[กติกา - BoostSMS ลง Obsidian|feedback_boostsms_obsidian]] — กฎการเก็บข้อมูล)
 - BoostSMS ≠ EasySlip ≠ EasyBOT — ระบุให้ชัดเวลาคุยเรื่องผลิตภัณฑ์
 - ai-debate sales comp issues ที่ยังเปิด: recurring 6mo cutoff anti-SaaS, dead zone 30K–100K, payment-lag Enterprise
 

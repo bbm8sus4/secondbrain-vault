@@ -31,4 +31,4 @@ metadata:
 
 **Update later:** `brew upgrade --cask cmux`
 
-**Related:** [[project-ai-orchestrator]] — Cmux complements `/ai-loop`: ai-loop is a job-spec-driven batch runner across providers, Cmux is the live interactive surface for human-in-the-loop multi-agent work.
+**Related:** [[โปรเจกต์ - AI Orchestrator|project-ai-orchestrator]] — Cmux complements `/ai-loop`: ai-loop is a job-spec-driven batch runner across providers, Cmux is the live interactive surface for human-in-the-loop multi-agent work.

@@ -30,4 +30,4 @@ maw v26.5.21 installed 2026-06-12 (user accepted security risk, wants full power
 - hey to worktree agent: target window agent name, e.g. `maw hey maw-playground-codex-qa "..."`.
 - Codex side blocked by revoked refresh token (`codex login` needed — recurring issue); maw delivery itself verified into codex UI. Codex first-boot dialogs (update prompt, hooks trust) need one-time tmux send-keys answers.
 
-Related: [[cmux]] (GUI alternative, stable), [[ccgram-telegram]].
+Related: [[คู่มือ - Cmux|cmux]] (GUI alternative, stable), [[โปรเจกต์ - ccgram Telegram|ccgram-telegram]].

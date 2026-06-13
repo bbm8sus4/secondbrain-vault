@@ -9,7 +9,7 @@ metadata:
 
 คู่มือ "วิธีสมัคร ChatGPT ก่อนเข้าอบรม" (ภาษาไทย, มีภาพ) สำหรับแจกผู้เข้าอบรมที่ไม่ถนัด AI สร้างเสร็จ + deploy แล้ว 2026-06-05.
 
-**Live (stable link to share):** https://chatgpt-setup.pages.dev — Cloudflare Pages project `chatgpt-setup` (CF account bobbysomporn@gmail.com, wrangler already logged in). QR at `~/chatgpt-onboarding-guide/chatgpt-setup-QR.png`. ใช้ลิงก์ถาวร ไม่แชร์ลิงก์ hash รายครั้ง (ตาม [[feedback_deploy_link]]).
+**Live (stable link to share):** https://chatgpt-setup.pages.dev — Cloudflare Pages project `chatgpt-setup` (CF account bobbysomporn@gmail.com, wrangler already logged in). QR at `~/chatgpt-onboarding-guide/chatgpt-setup-QR.png`. ใช้ลิงก์ถาวร ไม่แชร์ลิงก์ hash รายครั้ง (ตาม [[กติกา - Deploy ใช้ stable URL|feedback_deploy_link]]).
 
 **Build (DON'T edit the HTML directly — it's generated):**
 - Source of truth: `~/chatgpt-onboarding-guide/build_visual_guide.py` → `python3 build_visual_guide.py` writes `ChatGPT-Onboarding-Guide-TH-Visual.html` (single self-contained file, ~2.6MB, base64 images + embedded Thai webfont). Also `cp` to `~/Desktop/` for the user.
@@ -25,4 +25,4 @@ metadata:
 - ChatGPT/OpenAI logomark (inline SVG, light gray #c7c7cc) in hero, subtle.
 - Thai proofread via Typhoon (Ollama) + Gemini — kept casual/concise for beginners; rejected their "make it more formal/wordy" suggestions.
 
-Built with the [[reference_ai_debate_harness]] (aidebate) used repeatedly for review/typography/missing-pieces. Audience constraint = non-technical office workers; keep language simple, short, no jargon.
+Built with the [[คู่มือ - AI Debate|reference_ai_debate_harness]] (aidebate) used repeatedly for review/typography/missing-pieces. Audience constraint = non-technical office workers; keep language simple, short, no jargon.

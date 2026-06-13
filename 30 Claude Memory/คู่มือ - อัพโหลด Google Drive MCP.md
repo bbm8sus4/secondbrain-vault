@@ -17,4 +17,4 @@ Uploading to Google Drive via `mcp__claude_ai_Google_Drive__create_file`.
 
 **search_files query:** uses `title contains '...'`, NOT `name`. Fields: title, fullText, mimeType, modifiedTime, parentId, owner, sharedWithMe.
 
-Used 2026-05-29 to publish EasyBOT finance DB. See [[project_easybot_finance]].
+Used 2026-05-29 to publish EasyBOT finance DB. See [[โปรเจกต์ - EasyBOT Finance|project_easybot_finance]].

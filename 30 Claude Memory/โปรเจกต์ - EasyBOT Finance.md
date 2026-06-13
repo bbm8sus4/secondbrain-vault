@@ -35,4 +35,4 @@ originSessionId: 509744bf-2efa-45b2-a1e2-901ec3359d4a
 
 **How to apply:** When user says any of the aliases above, go straight to the path. Don't search, don't clone. If user scopes a chat to a specific menu (e.g. "ทำ Overview เท่านั้น"), respect that boundary strictly.
 
-**Knowledge base (Obsidian):** ทุกข้อมูล EasyBOT (ไม่ใช่แค่ Finance Webapp) → `~/SecondBrain/EasyBOT/` — มี knowledge base (หน้าหลัก + 01-Overview, 02-Finance-Webapp, 03-Organization, 04-Marketing-Content, 05-Partnerships-Legal, 06-Research-Strategy, 07-Design-Assets, 08-Past-Chats), `_source/` symlink → `~/Desktop/Business/EasyBOT/`, `_chats/YYYY-MM.md` (SessionEnd hook auto-append). ดู [[feedback-easybot-obsidian]]
+**Knowledge base (Obsidian):** ทุกข้อมูล EasyBOT (ไม่ใช่แค่ Finance Webapp) → `~/SecondBrain/EasyBOT/` — มี knowledge base (หน้าหลัก + 01-Overview, 02-Finance-Webapp, 03-Organization, 04-Marketing-Content, 05-Partnerships-Legal, 06-Research-Strategy, 07-Design-Assets, 08-Past-Chats), `_source/` symlink → `~/Desktop/Business/EasyBOT/`, `_chats/YYYY-MM.md` (SessionEnd hook auto-append). ดู [[กติกา - EasyBOT ลง Obsidian|feedback-easybot-obsidian]]

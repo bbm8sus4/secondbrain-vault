@@ -34,4 +34,4 @@ metadata:
 
 **How to apply**: เวลา user ถามถึงสรุปงาน/เหตุการณ์เดือน xxx ของทีม Thunder/EasySlip/EasyBOT/EasyCRM/BoostSMS/SHIFT — เช็คใน `~/SecondBrain/Friday/Monthly Recaps/` ก่อน ถ้ามีอ่านได้เลย ถ้าไม่มี ต้อง pull จาก D1 + สังเคราะห์ใหม่.
 
-Related: [[project_ocr_bot]], [[project_easycrm]], [[project_easybot_finance]], [[project_boostsms]], [[project_thunder_solution]], [[project_second_brain]]
+Related: [[โปรเจกต์ - OCR Bot|project_ocr_bot]], [[โปรเจกต์ - EasyCRM|project_easycrm]], [[โปรเจกต์ - EasyBOT Finance|project_easybot_finance]], [[โปรเจกต์ - BoostSMS|project_boostsms]], [[โปรเจกต์ - Thunder Solution|project_thunder_solution]], [[โปรเจกต์ - Second Brain|project_second_brain]]

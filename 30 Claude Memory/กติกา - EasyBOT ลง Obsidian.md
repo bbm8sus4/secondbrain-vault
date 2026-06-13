@@ -17,6 +17,6 @@ metadata:
 - ต้นทางไฟล์ (docx/pdf/xlsx/code) → อยู่ที่ `~/Desktop/Business/EasyBOT/` และ symlink เข้า vault ที่ `~/SecondBrain/EasyBOT/_source/`
 - โครงไฟล์ปัจจุบัน: หน้าหลัก, 01-Overview, 02-Finance-Webapp, 03-Organization, 04-Marketing-Content, 05-Partnerships-Legal, 06-Research-Strategy, 07-Design-Assets, 08-Past-Chats
 - แชท EasyBOT (past + future) → `_chats/YYYY-MM.md` — SessionEnd hook ที่ `~/.claude/hooks/summarize-session.sh` auto-append เข้าให้ตามเดือนเมื่อ detect คำว่า EasyBOT/easybot.finance/finance-webapp/easybot-finance-cockpit
-- Memory เก็บแค่ pointer (ดู [[project_easybot_finance]]) — เนื้อหาจริงอยู่ใน Obsidian
+- Memory เก็บแค่ pointer (ดู [[โปรเจกต์ - EasyBOT Finance|project_easybot_finance]]) — เนื้อหาจริงอยู่ใน Obsidian
 - ระวัง: vault sync mirror memory → Obsidian แต่ EasyBOT folder = native Obsidian (แก้ที่นี่ตรงๆ ได้เลย ไม่ต้องผ่าน memory)
 - **ห้ามสับสน:** "EasyBot Affiliate" ใน LINE OA broadcast เก่า = จริงๆ คือ EasySlip — อย่าเหมารวมเข้า EasyBOT

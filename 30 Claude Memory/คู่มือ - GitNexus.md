@@ -13,6 +13,6 @@ Repo: `~/GitNexus/` (cloned from github.com/abhigyanpatwari/GitNexus).
 
 First indexed repo: `my-ai-bot` (Friday AI) — 1,886 nodes.
 
-Complements [[reference_graphify]] — GitNexus has MCP integration (16 tools), web UI, multi-repo registry; graphify is lighter-weight CLI-only.
+Complements [[คู่มือ - Graphify|reference_graphify]] — GitNexus has MCP integration (16 tools), web UI, multi-repo registry; graphify is lighter-weight CLI-only.
 
 **How to apply:** Use GitNexus skills (`/gitnexus-*`) for impact analysis before refactoring, debugging traces, and PR reviews on indexed repos. Run `gitnexus analyze` in a repo before deep work.

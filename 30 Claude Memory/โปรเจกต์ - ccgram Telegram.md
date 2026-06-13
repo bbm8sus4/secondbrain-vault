@@ -23,7 +23,7 @@ User wants Telegram as a "terminal wrapper" to drive AI agents + shell from phon
 
 **STATUS 2026-06-10: FULLY CONFIGURED + LIVE.** Bot = **Humdum** @Humdum_dum_bot (privacy mode OFF — required). ALLOWED_USERS=6235317813 (Bob Sanchez @Bobsanchezz). CCGRAM_GROUP_ID=-1003766054316 (supergroup "humdum", Topics on, bot=admin). Token in `~/.ccgram/.env`. doctor all green. Got user-id + group-id automatically via Telegram API getUpdates (no @userinfobot needed once token exists).
 
-**Phone usage:** in the group → `/sessions` (start session, pick provider) → type commands → `/live` (live terminal PNG) / `/screenshot` / `/toolbar` (🇾 YOLO = bypass). Plan file: `~/.claude-warp/plans/ai-telegram-serene-duckling.md`. Relates to [[reference_cmux]], [[project_thunder_solution]].
+**Phone usage:** in the group → `/sessions` (start session, pick provider) → type commands → `/live` (live terminal PNG) / `/screenshot` / `/toolbar` (🇾 YOLO = bypass). Plan file: `~/.claude-warp/plans/ai-telegram-serene-duckling.md`. Relates to [[คู่มือ - Cmux|reference_cmux]], [[โปรเจกต์ - Thunder Solution|project_thunder_solution]].
 
 **UX TUNING 2026-06-11** (33-finding workflow review). Re-runnable patch scripts in `~/.ccgram/` (re-run after every `uv tool upgrade ccgram`, order: thai-ui-patch.py → ccgram-tune.py; restart `launchctl kickstart -k gui/$(id -u)/com.user.ccgram`):
 - `thai-ui-patch.py` — Thai UI strings (121+ replacements: pickers, dashboard, status bubble, toasts, /start). `.bak-en` backups.

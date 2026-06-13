@@ -25,7 +25,7 @@
 
 - 4 Tiers commission: 15-30% + bonus
 - Action plan + content kit + planner ครบ
-- LINE OA broadcast skill `/lineoa-chat-mcp` เคยใช้ส่งจริง (250/1245 ก่อนหยุด) ดู [[reference_lineoa_chat_mcp]]
+- LINE OA broadcast skill `/lineoa-chat-mcp` เคยใช้ส่งจริง (250/1245 ก่อนหยุด) ดู [[คู่มือ - LINE OA Broadcast]]
 
 ## คู่แข่งที่ scrape แล้ว
 

@@ -7,7 +7,7 @@ metadata:
   originSessionId: d3a23350-d19b-4945-be43-ce0af6d1f290
 ---
 
-EasyCRM = product สาย Loyalty/CRM ของบริษัท **อีซี่สลิป จำกัด** (ขอนแก่น) — เจ้าของเดียวกับ EasySlip [[project_thunder_solution]]
+EasyCRM = product สาย Loyalty/CRM ของบริษัท **อีซี่สลิป จำกัด** (ขอนแก่น) — เจ้าของเดียวกับ EasySlip [[โปรเจกต์ - Thunder Solution|project_thunder_solution]]
 
 ## สรุปสั้น
 
@@ -33,6 +33,6 @@ Sales Executive · Admin Support · Graphic Designer · Customer Service — ร
 COO ดูแล product นี้ตรงๆ — ต้องเข้าใจ pricing/feature matrix/onboarding flow เพื่อตอบคำถามทีม/ลูกค้า/วางแผน
 
 ## How to apply
-- มีคำถามเรื่อง EasyCRM → ค้น Obsidian `~/SecondBrain/EasyCRM/` ก่อนเสมอ (ดู [[feedback_easycrm_obsidian]])
+- มีคำถามเรื่อง EasyCRM → ค้น Obsidian `~/SecondBrain/EasyCRM/` ก่อนเสมอ (ดู [[กติกา - EasyCRM ลง Obsidian|feedback_easycrm_obsidian]])
 - อย่าสับสนกับ EasySlip (ระบบตรวจสลิป) — EasyCRM ใช้ EasySlip เป็น engine ตรวจสลิป
 - โน้ตทั้งหมดอยู่ที่ `~/SecondBrain/EasyCRM/หน้าหลัก.md` เป็น index

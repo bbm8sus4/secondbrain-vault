@@ -7,7 +7,7 @@ metadata:
   originSessionId: 4c412e2e-06f8-4f1b-826f-72e3e4cae1d3
 ---
 
-ขับ Google Sheets ผ่าน Chrome MCP (port 12306, curl fallback ตาม [[feedback_chrome_mcp_transport]]) ได้ แต่มีกับดักเยอะ — สรุปสิ่งที่**เวิร์ก/ไม่เวิร์ก** (เรียนรู้ 2026-06-08):
+ขับ Google Sheets ผ่าน Chrome MCP (port 12306, curl fallback ตาม [[กติกา - Chrome MCP transport|feedback_chrome_mcp_transport]]) ได้ แต่มีกับดักเยอะ — สรุปสิ่งที่**เวิร์ก/ไม่เวิร์ก** (เรียนรู้ 2026-06-08):
 
 **สร้างชีตใหม่:** `chrome_navigate` → `https://sheets.new` (สร้างในบัญชีที่ login ใน Chrome นั้น = ของผู้ใช้เอง private ตั้งแต่ต้น). ได้ tabId กลับมา. URL จริงดูได้จาก `chrome_javascript` return `location.href` (harness อาจ redact base64 id ใน output แต่เห็นใน screenshot ได้).
 
@@ -28,4 +28,4 @@ metadata:
 
 **อ่านค่า cell:** Sheets เป็น canvas อ่าน cell ผ่าน DOM ไม่ได้ตรงๆ — เลือก cell แล้วอ่าน formula bar `#t-formula-bar-input`. Name box = `#t-name-box`.
 
-เกี่ยวข้อง: [[reference_chrome_mcp_gdocs]] · [[project_expense_dashboard]] · [[feedback_chrome_mcp_transport]]
+เกี่ยวข้อง: [[คู่มือ - Chrome MCP กับ Google Docs|reference_chrome_mcp_gdocs]] · [[โปรเจกต์ - Dashboard รายจ่าย|project_expense_dashboard]] · [[กติกา - Chrome MCP transport|feedback_chrome_mcp_transport]]

@@ -68,7 +68,7 @@ mkdir -p ~/<proj>-deploy && cp report.html ~/<proj>-deploy/index.html && cp slid
 cd ~/<proj>-deploy && npx wrangler pages deploy . --project-name=<proj> --branch=main --commit-dirty=true
 ```
 
-**⚠️ กับดักใหญ่:** ต้องใส่ `--branch=main` ไม่งั้นขึ้นเป็น **preview** ไม่ใช่ production — URL stable (`<proj>.pages.dev`) จะไม่อัปเดต · แชร์ URL stable เดียว ไม่แชร์ per-commit hash (ดู [[คู่มือ - Deploy link]])
+**⚠️ กับดักใหญ่:** ต้องใส่ `--branch=main` ไม่งั้นขึ้นเป็น **preview** ไม่ใช่ production — URL stable (`<proj>.pages.dev`) จะไม่อัปเดต · แชร์ URL stable เดียว ไม่แชร์ per-commit hash (ดู [[กติกา - Deploy ใช้ stable URL]])
 
 ## เช็คงานเร็ว (headless screenshot ไม่ง้อ Chrome MCP)
 

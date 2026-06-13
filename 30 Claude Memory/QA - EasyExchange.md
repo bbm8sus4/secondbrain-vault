@@ -15,4 +15,4 @@ Critical: **(1)** Turnstile CAPTCHA submits a hardcoded test token `XXXX.DUMMY.T
 
 Real tRPC endpoints found: `auth.session`, `exchange.getRate`, `notification.list` (GET 200); `auth.login/logout/refresh`, `exchange.create/cancel`, `notification.markRead` (mutations).
 
-Deliverable: bilingual TH/EN (toggle in-file), Apple-typography report at `/tmp/ezx-report/EasyExchange-QA-Report.html` (self-contained, screenshots embedded). Built via `/tmp/ezx-report/build.py`; copy refined by a 4-lens critique workflow (TH voice / EN voice / accuracy / tone). Related: [[feedback_vibe_hacker_mode]], [[user_security_interest]].
+Deliverable: bilingual TH/EN (toggle in-file), Apple-typography report at `/tmp/ezx-report/EasyExchange-QA-Report.html` (self-contained, screenshots embedded). Built via `/tmp/ezx-report/build.py`; copy refined by a 4-lens critique workflow (TH voice / EN voice / accuracy / tone). Related: [[กติกา - โหมดแฮกเกอร์|feedback_vibe_hacker_mode]], [[โปรไฟล์ - สาย Security|user_security_interest]].

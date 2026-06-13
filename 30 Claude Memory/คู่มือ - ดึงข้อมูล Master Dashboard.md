@@ -7,7 +7,7 @@ metadata:
   originSessionId: dd2aa127-e1a7-4dc3-bb0f-dd764571bcc8
 ---
 
-Extracting data from **master-dashboard-eight-nu.vercel.app** (Thunder Group CEO Dashboard) via Chrome MCP. Related: [[project_thunder_solution]], [[feedback_chrome_mcp_transport]].
+Extracting data from **master-dashboard-eight-nu.vercel.app** (Thunder Group CEO Dashboard) via Chrome MCP. Related: [[โปรเจกต์ - Thunder Solution|project_thunder_solution]], [[กติกา - Chrome MCP transport|feedback_chrome_mcp_transport]].
 
 **Access:** Login session persists in the user's Chrome (no need to type password). Next.js App Router, Base UI components, live data ("อัปเดต just now" → numbers drift by hundreds between reads).
 

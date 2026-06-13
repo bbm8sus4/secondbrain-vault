@@ -56,7 +56,7 @@ Overview · Compare · Goals · Portfolio · Subscriptions · AI Insight · Back
 
 ## ข้อควรระวัง deploy
 
-- ใช้ stable URL `easybot.finance` หรือ `easybot-finance.pages.dev` เท่านั้น — **ห้ามแชร์ per-commit hash URL** ดู [[feedback_deploy_link]]
+- ใช้ stable URL `easybot.finance` หรือ `easybot-finance.pages.dev` เท่านั้น — **ห้ามแชร์ per-commit hash URL** ดู [[กติกา - Deploy ใช้ stable URL]]
 - Lighthouse perf gate = 80 (เคยติด 55) — ต้องผ่านก่อน deploy
 - Playwright 55/55 ต้องเขียว
 

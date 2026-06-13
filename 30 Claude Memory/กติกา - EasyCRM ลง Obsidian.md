@@ -17,6 +17,6 @@ metadata:
 - ต้นทาง (PDF/HTML/source) → เก็บไว้ที่ `_assets/`
 - โครงไฟล์ปัจจุบัน: 01-Overview, 02-Packages-Pricing, 03-Features-Comparison, 04-LINE-OA-Setup, 05-Workflow-Onboarding, 06-Team-Roles-SOP, 07-Admin-Portal, 08-Message-Templates, 09-Team-Channels-Links
 - แชท EasyCRM (future) → `_chats/YYYY-MM.md` — SessionEnd hook ที่ `~/.claude/hooks/summarize-session.sh` auto-append เข้าให้ตามเดือนเมื่อ detect คำว่า EasyCRM/easycrm-two.vercel.app/easy-crm.co/@easycrm (กฎเดียวกับ EasyBOT)
-- Memory เก็บแค่ pointer (ดู [[project_easycrm]]) — เนื้อหาจริงอยู่ใน Obsidian
+- Memory เก็บแค่ pointer (ดู [[โปรเจกต์ - EasyCRM|project_easycrm]]) — เนื้อหาจริงอยู่ใน Obsidian
 - ระวัง: vault sync mirror memory → Obsidian แต่ EasyCRM folder = native Obsidian (แก้ที่นี่ตรงๆ ได้เลย ไม่ต้องผ่าน memory)
 - **อย่าสับสน:** EasyCRM ≠ EasySlip (API ตรวจสลิป) ≠ EasyBOT — ทั้ง 3 คนละ product
