@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>BoostSMS — PAS Presentation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#FFFFFF;--surface:#e6e7e4;--surface2:#f2f2f0;
+  --text:#1d1d1f;--text2:#6e6e73;--text3:#86868b;
+  --blue:#3871fe;--red:#e42637;--yellow:#feca3f;--gray:#e6e7e4;--white:#FFFFFF;
+  --radius:20px;--radius-sm:14px;
+}
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{font-family:"Inter","Noto Sans Thai",-apple-system,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:rgba(56,113,254,.15)}
+
+/* SLIDES */
+.slide{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 40px;position:relative;scroll-snap-align:start}
+.slide-inner{max-width:1080px;width:100%;text-align:center}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06);height:52px;display:flex;align-items:center;justify-content:center}
+nav .nav-inner{max-width:1080px;width:100%;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:8px}
+.nav-brand img{height:28px;width:auto}
+.nav-brand .dot{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.nav-pills{display:flex;gap:6px;align-items:center}
+.lang-toggle{display:flex;border:1px solid rgba(0,0,0,.1);border-radius:980px;overflow:hidden;margin-left:12px}
+.lang-btn{padding:4px 12px;border:none;background:transparent;color:var(--text2);cursor:pointer;font-size:.72rem;font-weight:600;font-family:inherit;transition:all .2s;letter-spacing:.03em}
+.lang-btn.active{background:var(--blue);color:#fff}
+.nav-pill{padding:5px 14px;border-radius:980px;border:none;background:transparent;color:var(--text2);cursor:pointer;font-size:.78rem;font-weight:500;font-family:inherit;transition:all .2s}
+.nav-pill:hover,.nav-pill.active{background:var(--blue);color:#fff}
+
+/* TYPOGRAPHY */
+.eyebrow{display:inline-block;font-size:.85rem;font-weight:600;color:var(--blue);margin-bottom:16px;letter-spacing:.02em;text-transform:uppercase}
+.hero-title{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;letter-spacing:-.05em;line-height:1.05;margin-bottom:20px}
+.hero-title .gradient{background:linear-gradient(135deg,#3871fe 0%,#e42637 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitle{font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--text2);font-weight:400;max-width:640px;margin:0 auto;line-height:1.55}
+
+.section-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin-bottom:16px}
+.section-desc{font-size:clamp(1rem,2vw,1.2rem);color:var(--text2);max-width:580px;margin:0 auto;line-height:1.6}
+
+/* PROBLEM SLIDES */
+.problem-bg{background:var(--text);color:#fff}
+.problem-bg .eyebrow{color:var(--yellow)}
+.problem-bg .subtitle,.problem-bg .section-desc{color:rgba(255,255,255,.6)}
+.problem-bg ::selection{background:rgba(254,202,63,.3)}
+
+.stat-row{display:flex;justify-content:center;gap:48px;margin-top:48px;flex-wrap:wrap}
+.stat-block{text-align:center}
+.stat-num{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;letter-spacing:-.04em;line-height:1}
+.stat-label{font-size:.85rem;color:var(--text2);margin-top:6px;font-weight:500}
+.problem-bg .stat-label{color:rgba(255,255,255,.45)}
+.stat-num.red{color:var(--red)}
+.stat-num.yellow{color:var(--yellow)}
+.stat-num.blue{color:var(--blue)}
+.stat-num.white{color:#fff}
+
+/* AGITATE */
+.agitate-bg{background:linear-gradient(180deg,#1d1d1f 0%,#000 100%);color:#fff}
+.agitate-bg .eyebrow{color:var(--red)}
+.agitate-bg .section-desc{color:rgba(255,255,255,.5)}
+
+.pain-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:40px;text-align:left}
+.pain-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:28px 24px}
+.pain-card .pain-icon{font-size:1.6rem;margin-bottom:12px;width:48px;height:48px;border-radius:12px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}
+.pain-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;letter-spacing:-.02em}
+.pain-card p{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.55}
+
+/* SOLVE */
+.solve-bg{background:var(--surface)}
+
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:48px;text-align:left}
+.feature-card{background:var(--bg);border-radius:var(--radius);padding:32px 28px;transition:box-shadow .3s,transform .3s}
+.feature-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px)}
+.feature-icon{width:48px;height:48px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px}
+.feature-icon svg,.pain-icon svg{width:24px;height:24px}
+.pain-icon svg{width:28px;height:28px}
+.feature-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;letter-spacing:-.02em}
+.feature-card p{font-size:.88rem;color:var(--text2);line-height:1.55}
+
+.icon-blue{background:rgba(56,113,254,.1);color:var(--blue)}
+.icon-yellow{background:rgba(254,202,63,.15);color:#c89b1e}
+.icon-red{background:rgba(228,38,55,.1);color:var(--red)}
+.icon-gray{background:rgba(230,231,228,.4);color:var(--text2)}
+
+/* STEPS */
+.steps{display:flex;gap:32px;margin-top:48px;flex-wrap:wrap;justify-content:center}
+.step{flex:1;min-width:240px;max-width:320px;text-align:center}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;margin:0 auto 16px}
+.step h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.step p{font-size:.88rem;color:var(--text2);line-height:1.5}
+
+/* PROOF */
+.proof-strip{display:flex;gap:24px;margin-top:48px;flex-wrap:wrap;justify-content:center}
+.proof-card{background:var(--bg);border-radius:var(--radius);padding:28px 32px;text-align:center;min-width:200px;flex:1;max-width:260px;border:1px solid rgba(0,0,0,.06)}
+.proof-num{font-size:2.4rem;font-weight:900;letter-spacing:-.03em;margin-bottom:4px}
+.proof-label{font-size:.82rem;color:var(--text2);font-weight:500}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:48px}
+.price-card{background:var(--bg);border:1px solid rgba(0,0,0,.06);border-radius:var(--radius);padding:28px 24px;text-align:center;transition:all .3s}
+.price-card:hover{border-color:var(--blue);box-shadow:0 8px 32px rgba(56,113,254,.12)}
+.price-card.featured{border:2px solid var(--blue);position:relative}
+.price-card.featured::before{content:attr(data-badge);position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:.7rem;font-weight:600;padding:3px 14px;border-radius:980px}
+.price-name{font-size:.82rem;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.price-amount{font-size:2rem;font-weight:800;letter-spacing:-.03em}
+.price-amount span{font-size:.9rem;font-weight:500;color:var(--text2)}
+.price-credits{font-size:.85rem;color:var(--text2);margin:8px 0 16px}
+.price-per{font-size:.78rem;color:var(--blue);font-weight:600}
+
+/* CTA */
+.cta-slide{background:linear-gradient(135deg,#3871fe 0%,#e42637 100%);color:#fff}
+.cta-slide .section-title{color:#fff}
+.cta-slide .section-desc{color:rgba(255,255,255,.8)}
+.cta-btn{display:inline-block;padding:16px 36px;border-radius:980px;background:#fff;color:var(--text);font-size:1rem;font-weight:600;text-decoration:none;font-family:inherit;border:none;cursor:pointer;transition:all .25s;margin-top:32px}
+.cta-btn:hover{transform:scale(1.04);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.cta-sub{margin-top:16px;font-size:.85rem;color:rgba(255,255,255,.7)}
+
+/* FOOTER */
+footer{text-align:center;padding:32px 24px;color:var(--text3);font-size:.78rem;border-top:1px solid rgba(0,0,0,.06)}
+
+/* ENTRANCE */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* PROGRESS BAR */
+.progress{position:fixed;top:52px;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--red));z-index:300;transition:width .1s linear;width:0}
+
+/* SLIDE IMAGES */
+.slide-img{width:100%;max-width:520px;border-radius:var(--radius);margin-top:40px;object-fit:cover;height:280px;box-shadow:0 16px 48px rgba(0,0,0,.1)}
+.slide-img-row{display:flex;align-items:center;gap:48px;margin-top:48px;text-align:left}
+.slide-img-row .slide-img{flex:0 0 45%;height:320px;margin-top:0}
+.slide-img-row .slide-content{flex:1}
+.problem-bg .slide-img,.agitate-bg .slide-img{opacity:.7;box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.slide-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.slide-bg img{width:100%;height:100%;object-fit:cover;opacity:.15}
+.slide-bg+.slide-inner{position:relative;z-index:1}
+
+/* RESPONSIVE */
+@media(max-width:734px){
+  .slide{padding:60px 20px}
+  .stat-row{gap:24px}
+  .pain-cards{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr}
+  .steps{flex-direction:column;align-items:center}
+  .pricing-grid{grid-template-columns:1fr;max-width:320px;margin-left:auto;margin-right:auto}
+  .nav-pills .nav-pill{display:none}
+  .nav-pills .lang-toggle{margin-left:0}
+  .slide-img-row{flex-direction:column}
+  .slide-img-row .slide-img{flex:none;width:100%;height:200px}
+  .slide-img{height:200px;max-width:100%}
+  .use-cases{grid-template-columns:1fr 1fr}
+}
+
+/* USE CASES */
+.use-cases{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.use-case{background:var(--bg);border-radius:var(--radius);padding:28px 20px;text-align:center;border:1px solid rgba(0,0,0,.06);transition:all .3s}
+.use-case:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 12px 40px rgba(56,113,254,.1)}
+.use-case-icon{width:56px;height:56px;border-radius:16px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center}
+.use-case-icon svg{width:28px;height:28px}
+.use-case h3{font-size:.95rem;font-weight:700;margin-bottom:6px;letter-spacing:-.01em}
+.use-case p{font-size:.8rem;color:var(--text2);line-height:1.5}
+
+/* SMS COMPARISON */
+.compare-row{display:flex;gap:20px;margin-top:40px;justify-content:center;flex-wrap:wrap}
+.compare-card{background:var(--bg);border-radius:var(--radius);padding:24px 28px;text-align:center;min-width:180px;flex:1;max-width:220px;border:1px solid rgba(0,0,0,.06)}
+.compare-card .compare-val{font-size:2rem;font-weight:900;letter-spacing:-.03em}
+.compare-card .compare-label{font-size:.78rem;color:var(--text2);margin-top:4px;font-weight:500}
+.compare-card.highlight{border:2px solid var(--blue);background:rgba(56,113,254,.03)}
+.compare-card.highlight .compare-val{color:var(--blue)}
+
+/* DARK MODE */
+@media(prefers-color-scheme:dark){
+  :root{--bg:#1d1d1f;--surface:#2d2d2f;--surface2:#3a3a3c;--text:#f5f5f7;--text2:#a1a1a6;--text3:#86868b}
+  body{background:var(--bg);color:var(--text)}
+  nav{background:rgba(29,29,31,.85);border-bottom-color:rgba(255,255,255,.06)}
+  .nav-pill{color:var(--text2)}
+  .lang-toggle{border-color:rgba(255,255,255,.12)}
+  .lang-btn{color:var(--text2)}
+  .feature-card,.price-card,.proof-card,.use-case,.compare-card{background:var(--surface);border-color:rgba(255,255,255,.06)}
+  .feature-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.3)}
+  .price-card:hover{box-shadow:0 8px 32px rgba(56,113,254,.2)}
+  .solve-bg{background:var(--surface)}
+  footer{border-top-color:rgba(255,255,255,.06);color:var(--text3)}
+  ::selection{background:rgba(56,113,254,.3)}
+  .compare-card.highlight{background:rgba(56,113,254,.08)}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand"><img src="https://boost-sms.com/assets/logo-boostsms.png" alt="BoostSMS"></div>
+    <div class="nav-pills">
+      <button class="nav-pill active" onclick="scrollToSlide(0)" data-i18n="nav1">ปัญหา</button>
+      <button class="nav-pill" onclick="scrollToSlide(4)" data-i18n="nav2">ทางออก</button>
+      <button class="nav-pill" onclick="scrollToSlide(7)" data-i18n="nav3">ราคา</button>
+      <button class="nav-pill" onclick="scrollToSlide(8)" data-i18n="nav4">เริ่มต้น</button>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('th')">TH</button>
+        <button class="lang-btn" onclick="setLang('mix')">MIX</button>
+        <button class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- SLIDE 0: TITLE -->
+<section class="slide" id="s0">
+  <div class="slide-inner reveal">
+    <div class="eyebrow">Send. Track. Boost.</div>
+    <h1 class="hero-title" data-i18n="hero_title">เปลี่ยนฐานเบอร์<br>ลูกค้าเก่า<br>ให้กลับมาเป็น<span class="gradient">ยอดขาย.</span></h1>
+    <p class="subtitle" data-i18n="hero_sub">ส่ง SMS รวดเร็วทันใจ ปลายทางรับได้จริง<br>SMS Gateway สำหรับธุรกิจไทย ส่งถึงทุกเครือข่ายภายใน 3 วินาที</p>
+    <img class="slide-img" src="https://images.unsplash.com/photo-1592890288564-76628a30a657?w=1200&q=80" alt="SMS Marketing" loading="lazy">
+  </div>
+</section>
+
+<!-- SLIDE 1: PROBLEM 1 -->
+<section class="slide problem-bg" id="s1">
+  <div class="slide-inner reveal">
+    <div class="eyebrow">Problem</div>
+    <h2 class="section-title" data-i18n="p1_title">ค่าโฆษณา<br>แพงขึ้นทุกปี.</h2>
+    <p class="section-desc" data-i18n="p1_desc">Facebook Ads, Google Ads, LINE Ads ราคาแพงขึ้น แต่ Reach น้อยลง<br>ธุรกิจจ่ายหนัก ลูกค้าไม่เพิ่ม ส่ง SMS แล้ววัดผลไม่ได้ใช่ไหม?</p>
+    <div class="stat-row">
+      <div class="stat-block"><div class="stat-num red">+30–50%</div><div class="stat-label" data-i18n="p1_s1">ค่าโฆษณาเพิ่มขึ้นทุกปี</div></div>
+      <div class="stat-block"><div class="stat-num yellow">↓ 60%</div><div class="stat-label" data-i18n="p1_s2">Organic Reach ลดลง</div></div>
+      <div class="stat-block"><div class="stat-num white">5–15%</div><div class="stat-label" data-i18n="p1_s3">Reach เฉลี่ยใน LINE OA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 2: PROBLEM 2 -->
+<section class="slide problem-bg" id="s2">
+  <div class="slide-inner reveal">
+    <div class="eyebrow">Problem</div>
+    <h2 class="section-title" data-i18n="p2_title">ลูกค้าเก่าหาย<br>ไม่มีช่องทางติดตาม.</h2>
+    <p class="section-desc" data-i18n="p2_desc">เบอร์ลูกค้าอยู่ใน Excel, POS หรือ CRM แต่ไม่เคยถูกใช้<br>ทีมงานต้องโทรแจ้งทีละคน เสียเวลาไปหลายชั่วโมง</p>
+    <div class="stat-row">
+      <div class="stat-block"><div class="stat-num yellow">80%</div><div class="stat-label" data-i18n="p2_s1">ลูกค้าเก่าไม่กลับมาซื้อซ้ำ</div></div>
+      <div class="stat-block"><div class="stat-num red">฿50K–500K</div><div class="stat-label" data-i18n="p2_s2">มูลค่าที่สูญเสียไปทุกเดือน</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: AGITATE -->
+<section class="slide agitate-bg" id="s3">
+  <div class="slide-bg"><img src="https://images.unsplash.com/photo-1726649339367-c2577a28881b?w=1400&q=80" alt="" loading="lazy"></div>
+  <div class="slide-inner reveal">
+    <div class="eyebrow" data-i18n="ag_eye">รอช้า เสียรายได้</div>
+    <h2 class="section-title" data-i18n="ag_title">ทุกเดือนที่ไม่ส่ง SMS<br>= เงินที่ทิ้งไป.</h2>
+    <p class="section-desc" data-i18n="ag_desc">ลูกค้าเก่าที่เคยซื้อ กำลังถูกคู่แข่งแย่งไปทีละคน<br>ฐานเบอร์ที่คุณมี คือโอกาสทองที่ยังไม่ได้ถูกใช้</p>
+    <div class="pain-cards">
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#feca3f" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-4 4-4-4"/><line x1="12" y1="12" x2="12" y2="16"/></svg></div><h3 data-i18n="ag_c1t">จ่ายค่าโฆษณาซ้ำ</h3><p data-i18n="ag_c1d">หาลูกค้าใหม่ ทั้งที่ลูกค้าเก่ารอโปรโมชันจากคุณ</p></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e42637" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg></div><h3 data-i18n="ag_c2t">โทรทีละคน ไม่ Scale</h3><p data-i18n="ag_c2d">ทีมโทรแจ้งได้แค่วันละ 30–50 คน SMS ส่งได้หมื่นคนในพริบตา</p></div>
+      <div class="pain-card"><div class="pain-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e6e7e4" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 data-i18n="ag_c3t">ลูกค้าลืมคุณแล้ว</h3><p data-i18n="ag_c3d">ไม่มีช่องทางติดตาม = ลูกค้าเก่าหายไปเงียบๆ คู่แข่งได้ไปแทน</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: SOLVE INTRO -->
+<section class="slide" id="s4">
+  <div class="slide-inner reveal">
+    <div class="eyebrow">Solution</div>
+    <h2 class="hero-title" style="font-size:clamp(2.4rem,6vw,4.5rem)" data-i18n="sol_title">BoostSMS<br><span class="gradient">คือทางออก.</span></h2>
+    <p class="subtitle" data-i18n="sol_desc">ส่ง SMS จำนวนมหาศาลได้ในพริบตา ส่งถึงทุกเบอร์ ทุกค่าย ภายใน 3 วินาที<br>ใช้งานง่ายบนเว็บ ไม่ต้องเขียนโค้ด มีไฟล์ Excel ก็เริ่มได้ทันที</p>
+    <img class="slide-img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80" alt="Team using BoostSMS" loading="lazy">
+  </div>
+</section>
+
+<!-- SLIDE 5: HOW IT WORKS -->
+<section class="slide solve-bg" id="s5">
+  <div class="slide-inner reveal">
+    <div class="eyebrow" data-i18n="hw_eye">ง่ายแค่ 3 ขั้นตอน</div>
+    <h2 class="section-title" data-i18n="hw_title">อัปโหลด. พิมพ์. ส่ง.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3 data-i18n="hw_s1t">อัปโหลดรายชื่อ</h3>
+        <p data-i18n="hw_s1d">นำเข้าข้อมูลจาก Excel หรือ CSV จาก POS, CRM จัดกลุ่มและแท็กได้ตามต้องการ</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3 data-i18n="hw_s2t">เขียนข้อความ</h3>
+        <p data-i18n="hw_s2d">พิมพ์ข้อความโปรโมชัน ใส่ Tracking Link ดูตัวอย่างก่อนส่งจริง</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3 data-i18n="hw_s3t">ส่ง & วัดผล</h3>
+        <p data-i18n="hw_s3d">ส่งได้ทันทีหรือตั้งเวลา ดูข้อมูลใน Dashboard แบบ Real-time ใครเปิด ใครคลิก</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6: FEATURES -->
+<section class="slide" id="s6">
+  <div class="slide-inner reveal">
+    <div class="eyebrow">Features</div>
+    <h2 class="section-title" data-i18n="ft_title">ทุกฟีเจอร์ที่ธุรกิจต้องการ.</h2>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Web SMS</h3><p data-i18n="ft_1">ส่ง SMS ปริมาณมากผ่านเว็บ รองรับภาษาไทยและอังกฤษ อัปโหลด Excel/CSV ส่งได้สูงสุด 10,000 เบอร์ต่อครั้ง</p></div>
+      <div class="feature-card"><div class="feature-icon icon-yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div><h3>SMS Tracking</h3><p data-i18n="ft_2">ย่อ URL อัตโนมัติ + เก็บข้อมูลทุกคลิก คัดกรองลูกค้าที่มีแนวโน้มสูง ให้ทีมขายโทรติดตามได้ทันที</p></div>
+      <div class="feature-card"><div class="feature-icon icon-red"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><h3>SMS OTP</h3><p data-i18n="ft_3">รหัส 6 หลักอัตโนมัติ ส่งตรง Direct Route ผ่าน Spam Filter ถึงปลายทางภายใน 3-5 วินาที</p></div>
+      <div class="feature-card"><div class="feature-icon icon-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h3>SMS API</h3><p data-i18n="ft_4">เชื่อมต่อกับระบบเดิมของธุรกิจ รองรับ PHP, Python, Java, Node.js ไม่ต้องพัฒนา SMS Module เอง</p></div>
+      <div class="feature-card"><div class="feature-icon icon-yellow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>Smart Dashboard</h3><p data-i18n="ft_5">วิเคราะห์ข้อมูลแบบ Real-time สรุปจากทุก Sender Name แสดง ROI และ CTR ชัดเจน</p></div>
+      <div class="feature-card"><div class="feature-icon icon-gray"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h3>Campaign Report</h3><p data-i18n="ft_6">เปรียบเทียบประสิทธิภาพแต่ละแคมเปญ วิเคราะห์ CTR และ CPC รู้ทันทีว่าแคมเปญไหนได้ผล แคมเปญไหนต้องปรับ</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7: PROOF -->
+<section class="slide solve-bg" id="s7" style="position:relative">
+  <div class="slide-bg"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1400&q=80" alt="" loading="lazy" style="opacity:.08"></div>
+  <div class="slide-inner reveal">
+    <div class="eyebrow" data-i18n="pf_eye">ตัวเลขจริง</div>
+    <h2 class="section-title" data-i18n="pf_title">ผ่านการทดสอบ<br>ระดับ Enterprise.</h2>
+    <div class="proof-strip">
+      <div class="proof-card"><div class="proof-num" style="color:var(--blue)">99.8%</div><div class="proof-label">Delivery Rate</div></div>
+      <div class="proof-card"><div class="proof-num" style="color:var(--red)" data-i18n="pf_n2">3 วิ</div><div class="proof-label" data-i18n="pf_l2">ส่งถึงทุกค่าย</div></div>
+      <div class="proof-card"><div class="proof-num" style="color:var(--yellow)">145ms</div><div class="proof-label">System Latency</div></div>
+      <div class="proof-card"><div class="proof-num" style="color:var(--blue)">99.9%</div><div class="proof-label">Uptime</div></div>
+    </div>
+    <p class="section-desc" style="margin-top:32px;font-size:.88rem" data-i18n="pf_desc">ผ่าน UAT ครบทุก Function · รองรับ True, DTAC, AIS · ได้รับมาตรฐาน NBTC (กสทช.)</p>
+    <div style="margin-top:48px">
+      <p class="eyebrow" data-i18n="pf_cmp_eye" style="margin-bottom:16px">SMS vs ช่องทางอื่น</p>
+      <div class="compare-row">
+        <div class="compare-card highlight"><div class="compare-val">98%</div><div class="compare-label">SMS Open Rate</div></div>
+        <div class="compare-card"><div class="compare-val">20%</div><div class="compare-label">Email Open Rate</div></div>
+        <div class="compare-card"><div class="compare-val">5–15%</div><div class="compare-label">LINE OA Reach</div></div>
+        <div class="compare-card"><div class="compare-val">2–5%</div><div class="compare-label">Facebook Reach</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7.5: USE CASES -->
+<section class="slide" id="s7b">
+  <div class="slide-inner reveal">
+    <div class="eyebrow" data-i18n="uc_eye">Use Cases</div>
+    <h2 class="section-title" data-i18n="uc_title">ใช้ได้ทุกอุตสาหกรรม.</h2>
+    <p class="section-desc" data-i18n="uc_desc">ไม่ว่าธุรกิจของคุณจะอยู่ในสายไหน SMS ช่วยเพิ่มยอดขายและรักษาฐานลูกค้าได้ทันที</p>
+    <div class="use-cases">
+      <div class="use-case">
+        <div class="use-case-icon" style="background:rgba(56,113,254,.1)"><svg viewBox="0 0 24 24" fill="none" stroke="#3871fe" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3 data-i18n="uc_1t">คลินิก / ความงาม</h3>
+        <p data-i18n="uc_1d">แจ้งนัดหมาย โปรโมชันทรีตเมนต์ ลดอัตราลูกค้าไม่มาตามนัด</p>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon" style="background:rgba(254,202,63,.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#c89b1e" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></div>
+        <h3 data-i18n="uc_2t">ร้านค้า / E-commerce</h3>
+        <p data-i18n="uc_2d">แจ้งโปรโมชัน Flash Sale ส่งโค้ดส่วนลด กระตุ้นยอดซื้อซ้ำ</p>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon" style="background:rgba(228,38,55,.08)"><svg viewBox="0 0 24 24" fill="none" stroke="#e42637" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 data-i18n="uc_3t">การเงิน / ลีสซิ่ง</h3>
+        <p data-i18n="uc_3d">แจ้งเตือนชำระ OTP ยืนยันตัวตน ลดหนี้เสียด้วยการแจ้งเตือนทันเวลา</p>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon" style="background:rgba(230,231,228,.3)"><svg viewBox="0 0 24 24" fill="none" stroke="#6e6e73" stroke-width="2" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/><circle cx="12" cy="15" r="1"/></svg></div>
+        <h3 data-i18n="uc_4t">บริการ / อีเวนต์</h3>
+        <p data-i18n="uc_4d">ส่งบัตรเข้างาน แจ้งเปลี่ยนแปลงกำหนดการ ติดตามหลังงานจบ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 8: PRICING -->
+<section class="slide" id="s8">
+  <div class="slide-inner reveal">
+    <div class="eyebrow">Pricing</div>
+    <h2 class="section-title" data-i18n="pr_title">เริ่มต้นแค่ ฿350.</h2>
+    <p class="section-desc" data-i18n="pr_desc">เลือกแพ็กเกจที่เหมาะกับธุรกิจคุณ ไม่มีค่ารายเดือน จ่ายเฉพาะตามที่ใช้</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Free Trial</div>
+        <div class="price-amount">฿0</div>
+        <div class="price-credits" data-i18n="pr_c1">100 เครดิต · 7 วัน</div>
+        <div class="price-per" data-i18n="pr_p1">ทดลองส่งฟรี</div>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Boost Spark</div>
+        <div class="price-amount">฿350</div>
+        <div class="price-credits" data-i18n="pr_c2">800 เครดิต · 24 เดือน</div>
+        <div class="price-per">~฿0.44 / SMS</div>
+      </div>
+      <div class="price-card featured" data-badge="แนะนำ">
+        <div class="price-name">Boost Pro</div>
+        <div class="price-amount">฿10,000</div>
+        <div class="price-credits" data-i18n="pr_c3">30,000 เครดิต · 10 Senders</div>
+        <div class="price-per">~฿0.33 / SMS</div>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Enterprise+</div>
+        <div class="price-amount">฿1.2<span>M</span></div>
+        <div class="price-credits" data-i18n="pr_c4">6,000,000 เครดิต · Unlimited</div>
+        <div class="price-per">~฿0.20 / SMS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 9: CTA -->
+<section class="slide cta-slide" id="s9" style="position:relative">
+  <div class="slide-bg"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80" alt="" loading="lazy" style="opacity:.12"></div>
+  <div class="slide-inner reveal">
+    <h2 class="section-title" data-i18n="cta_title">พร้อมเปลี่ยนฐานเบอร์<br>ให้เป็นยอดขาย?</h2>
+    <p class="section-desc" data-i18n="cta_desc">ทดลองใช้งานฟรี 100 เครดิต · ไม่ต้องผูกบัตร · เริ่มส่งได้ทันที</p>
+    <a class="cta-btn" href="https://boost-sms.com/" target="_blank" data-i18n="cta_btn">เริ่มใช้งานฟรี</a>
+    <div class="cta-sub" data-i18n="cta_s1">boost-sms.com · ฝ่ายขาย 094-389-1495 · ฝ่ายบริการ 02-124-3423</div>
+    <div class="cta-sub">LINE: @boostsms · Email: support@boost-sms.com</div>
+  </div>
+</section>
+
+<footer>
+  <p data-i18n="footer">BoostSMS — บริษัท อีซี่สลิป จำกัด · Thunder Solution · Send. Track. Boost. · Copyright 2026</p>
+</footer>
+
+<script>
+const slides=document.querySelectorAll('.slide');
+const pills=document.querySelectorAll('.nav-pill');
+const progress=document.getElementById('progress');
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelector('.reveal')?.classList.add('visible');
+    }
+  });
+},{threshold:0.15});
+slides.forEach(s=>observer.observe(s));
+
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  progress.style.width=pct+'%';
+},{passive:true});
+
+function scrollToSlide(i){
+  slides[i]?.scrollIntoView({behavior:'smooth'});
+  pills.forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+const i18n={
+  en:{
+    nav1:'Problem',nav2:'Solution',nav3:'Pricing',nav4:'Get Started',
+    hero_title:'Turn Your Old<br>Customer Database<br>Into <span class="gradient">Revenue.</span>',
+    hero_sub:'Boost every SMS with confidence — delivered to destination<br>SMS Gateway for Thai businesses. Every number, every carrier, within 3 seconds',
+    p1_title:'Ad Costs Keep<br>Rising Every Year.',
+    p1_desc:'Facebook Ads, Google Ads, LINE Ads — prices keep rising while Reach declines<br>Businesses pay more, get fewer customers. Can\'t even measure SMS results?',
+    p1_s1:'Ad cost increase / year',p1_s2:'Organic Reach decline',p1_s3:'Average LINE OA Reach',
+    p2_title:'Old Customers Gone.<br>No Channel to Follow Up.',
+    p2_desc:'Customer numbers sit in Excel, POS, or CRM but never get used. Teams call one by one, wasting hours every day',
+    p2_s1:'of old customers never return',p2_s2:'value lost per month',
+    ag_eye:'The Longer You Wait, The More You Lose',
+    ag_title:'Every Month Without SMS<br>= Money Left on the Table.',
+    ag_desc:'Old customers are being won back by competitors one by one. The phone numbers you already have are assets generating zero revenue',
+    ag_c1t:'Redundant Ad Spend',ag_c1d:'Running ads for new customers while old ones are waiting to hear from you',
+    ag_c2t:'Calling One by One Doesn\'t Scale',ag_c2d:'Teams can call 30–50 people/day. SMS reaches 10,000 in a single click',
+    ag_c3t:'Customers Already Forgot You',ag_c3d:'No follow-up channel = old customers silently slip away to competitors',
+    sol_title:'BoostSMS<br><span class="gradient">Is the Answer.</span>',
+    sol_desc:'SMS Gateway handling massive volumes. Every number, every carrier, within 3 seconds<br>Works from any browser. No coding needed. Got an Excel file? Start right away',
+    hw_eye:'Just 3 Simple Steps',hw_title:'Upload. Type. Send.',
+    hw_s1t:'Upload Contacts',hw_s1d:'Import CSV/Excel from POS, CRM or existing files. Group and tag as needed',
+    hw_s2t:'Compose Message',hw_s2d:'Write your promo message, attach a Tracking Link, preview before sending',
+    hw_s3t:'Send & Measure',hw_s3d:'Send now or schedule. View real-time Dashboard — who received, who clicked',
+    ft_title:'Everything Your Business Needs.',
+    ft_1:'Send bulk SMS via web. Supports Thai + English. Upload Excel/CSV. Up to 10,000 numbers per send',
+    ft_2:'Auto-shorten URLs + track every click. Identify Hot Leads for your sales team to close immediately',
+    ft_3:'Auto-generated 6-digit OTP. Direct Route delivery bypasses Spam Filters. Arrives in 3-5 seconds',
+    ft_4:'Connect to your existing backend. Supports PHP, Python, Java, Node.js. No need to build your own SMS module',
+    ft_5:'Real-time analytics across all Sender Names. Clear ROI and CTR reporting',
+    ft_6:'Compare campaigns in detail. Analyze CTR and CPC. Know which campaigns hit and which miss',
+    pf_eye:'Real Numbers',pf_title:'Enterprise-Grade<br>Tested & Proven.',
+    pf_n2:'3 sec',pf_l2:'All carriers reached',
+    pf_desc:'All UAT functions passed · Supports True, DTAC, AIS · NBTC Certified',
+    pf_cmp_eye:'SMS vs Other Channels',
+    uc_eye:'Use Cases',uc_title:'Works Across Every Industry.',uc_desc:'No matter your business, SMS drives sales and retains customers instantly',
+    uc_1t:'Clinic / Beauty',uc_1d:'Appointment reminders, treatment promotions, reduce no-show rates',
+    uc_2t:'Retail / E-commerce',uc_2d:'Flash Sale alerts, discount codes, drive repeat purchases',
+    uc_3t:'Finance / Leasing',uc_3d:'Payment reminders, OTP verification, reduce bad debt with timely alerts',
+    uc_4t:'Services / Events',uc_4d:'Send e-tickets, schedule change notifications, post-event follow-up',
+    pr_title:'Starting at Just ฿350.',pr_desc:'Choose the plan that fits your business. No monthly fees. Pay only for credits used',
+    pr_c1:'100 credits · 7 days',pr_p1:'Free trial',
+    pr_c2:'800 credits · 24 months',pr_c3:'30,000 credits · 10 Senders',pr_c4:'6,000,000 credits · Unlimited',
+    cta_title:'Ready to Turn Your Database<br>Into Revenue?',
+    cta_desc:'Free 100 credits · No credit card required · Start sending instantly',
+    cta_btn:'Start Free Trial',
+    cta_s1:'boost-sms.com · Sales 094-389-1495 · Support 02-124-3423',
+    footer:'BoostSMS — EasySlip Co., Ltd. · Thunder Solution · Send. Track. Boost. · Copyright 2026'
+  },
+  mix:{
+    nav1:'Problem',nav2:'Solution',nav3:'Pricing',nav4:'Get Started',
+    hero_title:'Turn Your Database<br>Into<br><span class="gradient">Revenue.</span>',
+    hero_sub:'ส่ง SMS รวดเร็วทันใจ ปลายทางรับได้จริง<br>SMS Gateway สำหรับธุรกิจไทย ส่งถึงทุกเครือข่ายภายใน 3 วินาที',
+    p1_title:'Ad Costs Keep<br>Rising Every Year.',
+    p1_desc:'Facebook Ads, Google Ads, LINE Ads ราคาแพงขึ้น แต่ Reach น้อยลง<br>ธุรกิจจ่ายหนัก ลูกค้าไม่เพิ่ม ส่ง SMS แล้ววัดผลไม่ได้ใช่ไหม?',
+    p1_s1:'ค่าโฆษณาเพิ่มขึ้นทุกปี',p1_s2:'Organic Reach ลดลง',p1_s3:'Reach เฉลี่ยใน LINE OA',
+    p2_title:'Old Customers Gone.<br>No Channel to Follow Up.',
+    p2_desc:'เบอร์ลูกค้าอยู่ใน Excel, POS หรือ CRM แต่ไม่เคยถูกใช้<br>ทีมงานต้องโทรแจ้งทีละคน เสียเวลาไปหลายชั่วโมง',
+    p2_s1:'ลูกค้าเก่าไม่กลับมาซื้อซ้ำ',p2_s2:'มูลค่าที่สูญเสียไปทุกเดือน',
+    ag_eye:'The Longer You Wait, The More You Lose',
+    ag_title:'Every Month Without SMS<br>= Money Left on the Table.',
+    ag_desc:'ลูกค้าเก่าที่เคยซื้อ กำลังถูกคู่แข่งแย่งไปทีละคน<br>ฐานเบอร์ที่คุณมี คือโอกาสทองที่ยังไม่ได้ถูกใช้',
+    ag_c1t:'Redundant Ad Spend',ag_c1d:'หาลูกค้าใหม่ ทั้งที่ลูกค้าเก่ารอโปรโมชันจากคุณ',
+    ag_c2t:'Can\'t Scale by Calling',ag_c2d:'ทีมโทรแจ้งได้แค่วันละ 30–50 คน SMS ส่งได้หมื่นคนในพริบตา',
+    ag_c3t:'Customers Already Forgot You',ag_c3d:'ไม่มีช่องทางติดตาม = ลูกค้าเก่าหายไปเงียบๆ คู่แข่งได้ไปแทน',
+    sol_title:'BoostSMS<br><span class="gradient">Is the Answer.</span>',
+    sol_desc:'ส่ง SMS จำนวนมหาศาลได้ในพริบตา ส่งถึงทุกเบอร์ ทุกค่าย ภายใน 3 วินาที<br>ใช้งานง่ายบนเว็บ ไม่ต้องเขียนโค้ด มีไฟล์ Excel ก็เริ่มได้ทันที',
+    hw_eye:'Just 3 Simple Steps',hw_title:'Upload. Type. Send.',
+    hw_s1t:'Upload Contacts',hw_s1d:'นำเข้าข้อมูลจาก Excel หรือ CSV จาก POS, CRM จัดกลุ่มและแท็กได้ตามต้องการ',
+    hw_s2t:'Compose Message',hw_s2d:'พิมพ์ข้อความโปรโมชัน ใส่ Tracking Link ดูตัวอย่างก่อนส่งจริง',
+    hw_s3t:'Send & Measure',hw_s3d:'ส่งได้ทันทีหรือตั้งเวลา ดูข้อมูลใน Dashboard แบบ Real-time ใครเปิด ใครคลิก',
+    ft_title:'Everything Your Business Needs.',
+    ft_1:'ส่ง SMS ปริมาณมากผ่านเว็บ รองรับภาษาไทยและอังกฤษ อัปโหลด Excel/CSV ส่งได้สูงสุด 10,000 เบอร์ต่อครั้ง',
+    ft_2:'ย่อ URL อัตโนมัติ + เก็บข้อมูลทุกคลิก คัดกรองลูกค้าที่มีแนวโน้มสูง ให้ทีมขายโทรติดตามได้ทันที',
+    ft_3:'รหัส 6 หลักอัตโนมัติ ส่งตรง Direct Route ผ่าน Spam Filter ถึงปลายทางภายใน 3-5 วินาที',
+    ft_4:'เชื่อมต่อกับระบบเดิมของธุรกิจ รองรับ PHP, Python, Java, Node.js ไม่ต้องพัฒนา SMS Module เอง',
+    ft_5:'วิเคราะห์ข้อมูลแบบ Real-time สรุปจากทุก Sender Name แสดง ROI และ CTR ชัดเจน',
+    ft_6:'เปรียบเทียบประสิทธิภาพแต่ละแคมเปญ วิเคราะห์ CTR และ CPC รู้ทันทีว่าแคมเปญไหนได้ผล แคมเปญไหนต้องปรับ',
+    pf_eye:'Real Numbers',pf_title:'Enterprise-Grade<br>Tested & Proven.',
+    pf_n2:'3 วิ',pf_l2:'ส่งถึงทุกค่าย',
+    pf_desc:'ผ่าน UAT ครบทุก Function · รองรับ True, DTAC, AIS · ได้รับมาตรฐาน NBTC (กสทช.)',
+    pf_cmp_eye:'SMS vs Other Channels',
+    uc_eye:'Use Cases',uc_title:'Works Across Every Industry.',uc_desc:'ไม่ว่าธุรกิจของคุณจะอยู่ในสายไหน SMS ช่วยเพิ่มยอดขายและรักษาฐานลูกค้าได้ทันที',
+    uc_1t:'Clinic / Beauty',uc_1d:'แจ้งนัดหมาย โปรโมชันทรีตเมนต์ ลดอัตราลูกค้าไม่มาตามนัด',
+    uc_2t:'Retail / E-commerce',uc_2d:'แจ้งโปรโมชัน Flash Sale ส่งโค้ดส่วนลด กระตุ้นยอดซื้อซ้ำ',
+    uc_3t:'Finance / Leasing',uc_3d:'แจ้งเตือนชำระ OTP ยืนยันตัวตน ลดหนี้เสียด้วยการแจ้งเตือนทันเวลา',
+    uc_4t:'Services / Events',uc_4d:'ส่งบัตรเข้างาน แจ้งเปลี่ยนแปลงกำหนดการ ติดตามหลังงานจบ',
+    pr_title:'Starting at Just ฿350.',pr_desc:'เลือกแพ็กเกจที่เหมาะกับธุรกิจคุณ ไม่มีค่ารายเดือน จ่ายเฉพาะตามที่ใช้',
+    pr_c1:'100 เครดิต · 7 วัน',pr_p1:'ทดลองส่งฟรี',
+    pr_c2:'800 เครดิต · 24 เดือน',pr_c3:'30,000 เครดิต · 10 Senders',pr_c4:'6,000,000 เครดิต · Unlimited',
+    cta_title:'Ready to Turn Your Database<br>Into Revenue?',
+    cta_desc:'ทดลองใช้งานฟรี 100 เครดิต · ไม่ต้องผูกบัตร · เริ่มส่งได้ทันที',
+    cta_btn:'เริ่มใช้งานฟรี',
+    cta_s1:'boost-sms.com · ฝ่ายขาย 094-389-1495 · ฝ่ายบริการ 02-124-3423',
+    footer:'BoostSMS — บริษัท อีซี่สลิป จำกัด · Thunder Solution · Send. Track. Boost. · Copyright 2026'
+  },
+  th:{
+    nav1:'ปัญหา',nav2:'ทางออก',nav3:'ราคา',nav4:'เริ่มต้น',
+    hero_title:'เปลี่ยนฐานเบอร์<br>ลูกค้าเก่า<br>ให้กลับมาเป็น<span class="gradient">ยอดขาย.</span>',
+    hero_sub:'ส่ง SMS รวดเร็วทันใจ ปลายทางรับได้จริง<br>SMS Gateway สำหรับธุรกิจไทย ส่งถึงทุกเครือข่ายภายใน 3 วินาที',
+    p1_title:'ค่าโฆษณา<br>แพงขึ้นทุกปี.',
+    p1_desc:'Facebook Ads, Google Ads, LINE Ads ราคาแพงขึ้น แต่ Reach น้อยลง<br>ธุรกิจจ่ายหนัก ลูกค้าไม่เพิ่ม ส่ง SMS แล้ววัดผลไม่ได้ใช่ไหม?',
+    p1_s1:'ค่าโฆษณาเพิ่มขึ้นทุกปี',p1_s2:'Organic Reach ลดลง',p1_s3:'Reach เฉลี่ยใน LINE OA',
+    p2_title:'ลูกค้าเก่าหาย<br>ไม่มีช่องทางติดตาม.',
+    p2_desc:'เบอร์ลูกค้าอยู่ใน Excel, POS หรือ CRM แต่ไม่เคยถูกใช้<br>ทีมงานต้องโทรแจ้งทีละคน เสียเวลาไปหลายชั่วโมง',
+    p2_s1:'ลูกค้าเก่าไม่กลับมาซื้อซ้ำ',p2_s2:'มูลค่าที่สูญเสียไปทุกเดือน',
+    ag_eye:'รอช้า เสียรายได้',
+    ag_title:'ทุกเดือนที่ไม่ส่ง SMS<br>= เงินที่ทิ้งไป.',
+    ag_desc:'ลูกค้าเก่าที่เคยซื้อ กำลังถูกคู่แข่งแย่งไปทีละคน<br>ฐานเบอร์ที่คุณมี คือโอกาสทองที่ยังไม่ได้ถูกใช้',
+    ag_c1t:'จ่ายค่าโฆษณาซ้ำ',ag_c1d:'หาลูกค้าใหม่ ทั้งที่ลูกค้าเก่ารอโปรโมชันจากคุณ',
+    ag_c2t:'โทรทีละคน ไม่ Scale',ag_c2d:'ทีมโทรแจ้งได้แค่วันละ 30–50 คน SMS ส่งได้หมื่นคนในพริบตา',
+    ag_c3t:'ลูกค้าลืมคุณแล้ว',ag_c3d:'ไม่มีช่องทางติดตาม = ลูกค้าเก่าหายไปเงียบๆ คู่แข่งได้ไปแทน',
+    sol_title:'BoostSMS<br><span class="gradient">คือทางออก.</span>',
+    sol_desc:'ส่ง SMS จำนวนมหาศาลได้ในพริบตา ส่งถึงทุกเบอร์ ทุกค่าย ภายใน 3 วินาที<br>ใช้งานง่ายบนเว็บ ไม่ต้องเขียนโค้ด มีไฟล์ Excel ก็เริ่มได้ทันที',
+    hw_eye:'ง่ายแค่ 3 ขั้นตอน',hw_title:'อัปโหลด. พิมพ์. ส่ง.',
+    hw_s1t:'อัปโหลดรายชื่อ',hw_s1d:'นำเข้าข้อมูลจาก Excel หรือ CSV จาก POS, CRM จัดกลุ่มและแท็กได้ตามต้องการ',
+    hw_s2t:'เขียนข้อความ',hw_s2d:'พิมพ์ข้อความโปรโมชัน ใส่ Tracking Link ดูตัวอย่างก่อนส่งจริง',
+    hw_s3t:'ส่ง & วัดผล',hw_s3d:'ส่งได้ทันทีหรือตั้งเวลา ดูข้อมูลใน Dashboard แบบ Real-time ใครเปิด ใครคลิก',
+    ft_title:'ทุกฟีเจอร์ที่ธุรกิจต้องการ.',
+    ft_1:'ส่ง SMS ปริมาณมากผ่านเว็บ รองรับภาษาไทยและอังกฤษ อัปโหลด Excel/CSV ส่งได้สูงสุด 10,000 เบอร์ต่อครั้ง',
+    ft_2:'ย่อ URL อัตโนมัติ + เก็บข้อมูลทุกคลิก คัดกรองลูกค้าที่มีแนวโน้มสูง ให้ทีมขายโทรติดตามได้ทันที',
+    ft_3:'รหัส 6 หลักอัตโนมัติ ส่งตรง Direct Route ผ่าน Spam Filter ถึงปลายทางภายใน 3-5 วินาที',
+    ft_4:'เชื่อมต่อกับระบบเดิมของธุรกิจ รองรับ PHP, Python, Java, Node.js ไม่ต้องพัฒนา SMS Module เอง',
+    ft_5:'วิเคราะห์ข้อมูลแบบ Real-time สรุปจากทุก Sender Name แสดง ROI และ CTR ชัดเจน',
+    ft_6:'เปรียบเทียบประสิทธิภาพแต่ละแคมเปญ วิเคราะห์ CTR และ CPC รู้ทันทีว่าแคมเปญไหนได้ผล แคมเปญไหนต้องปรับ',
+    pf_eye:'ตัวเลขจริง',pf_title:'ผ่านการทดสอบ<br>ระดับ Enterprise.',
+    pf_n2:'3 วิ',pf_l2:'ส่งถึงทุกค่าย',
+    pf_desc:'ผ่าน UAT ครบทุก Function · รองรับ True, DTAC, AIS · ได้รับมาตรฐาน NBTC (กสทช.)',
+    pf_cmp_eye:'SMS vs ช่องทางอื่น',
+    uc_eye:'ตัวอย่างการใช้งาน',uc_title:'ใช้ได้ทุกอุตสาหกรรม.',uc_desc:'ไม่ว่าธุรกิจของคุณจะอยู่ในสายไหน SMS ช่วยเพิ่มยอดขายและรักษาฐานลูกค้าได้ทันที',
+    uc_1t:'คลินิก / ความงาม',uc_1d:'แจ้งนัดหมาย โปรโมชันทรีตเมนต์ ลดอัตราลูกค้าไม่มาตามนัด',
+    uc_2t:'ร้านค้า / E-commerce',uc_2d:'แจ้งโปรโมชัน Flash Sale ส่งโค้ดส่วนลด กระตุ้นยอดซื้อซ้ำ',
+    uc_3t:'การเงิน / ลีสซิ่ง',uc_3d:'แจ้งเตือนชำระ OTP ยืนยันตัวตน ลดหนี้เสียด้วยการแจ้งเตือนทันเวลา',
+    uc_4t:'บริการ / อีเวนต์',uc_4d:'ส่งบัตรเข้างาน แจ้งเปลี่ยนแปลงกำหนดการ ติดตามหลังงานจบ',
+    pr_title:'เริ่มต้นแค่ ฿350.',pr_desc:'เลือกแพ็กเกจที่เหมาะกับธุรกิจคุณ ไม่มีค่ารายเดือน จ่ายเฉพาะตามที่ใช้',
+    pr_c1:'100 เครดิต · 7 วัน',pr_p1:'ทดลองส่งฟรี',
+    pr_c2:'800 เครดิต · 24 เดือน',pr_c3:'30,000 เครดิต · 10 Senders',pr_c4:'6,000,000 เครดิต · Unlimited',
+    cta_title:'พร้อมเปลี่ยนฐานเบอร์<br>ให้เป็นยอดขาย?',
+    cta_desc:'ทดลองใช้งานฟรี 100 เครดิต · ไม่ต้องผูกบัตร · เริ่มส่งได้ทันที',
+    cta_btn:'เริ่มใช้งานฟรี',
+    cta_s1:'boost-sms.com · ฝ่ายขาย 094-389-1495 · ฝ่ายบริการ 02-124-3423',
+    footer:'BoostSMS — บริษัท อีซี่สลิป จำกัด · Thunder Solution · Send. Track. Boost. · Copyright 2026'
+  }
+};
+
+let curLang='th';
+function setLang(lang){
+  curLang=lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.classList.toggle('active',b.textContent===lang.toUpperCase());
+  });
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.dataset.i18n;
+    if(i18n[lang]&&i18n[lang][key]) el.innerHTML=i18n[lang][key];
+  });
+  const badge=document.querySelector('.price-card.featured');
+  if(badge) badge.setAttribute('data-badge',lang==='en'?'Recommended':lang==='mix'?'Recommended':'แนะนำ');
+  document.documentElement.lang=lang==='en'?'en':'th';
+}
+</script>
+</body>
+</html>

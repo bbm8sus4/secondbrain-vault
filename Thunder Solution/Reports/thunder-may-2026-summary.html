@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thunder Group — May 2026 Executive Report</title>
+
+<!-- Google Fonts: Noto Sans Thai -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Typography — Noto Sans Thai throughout */
+  --font-display: 'Noto Sans Thai', sans-serif;
+  --font-body: 'Noto Sans Thai', sans-serif;
+  --font-data: 'Noto Sans Thai', sans-serif;
+
+  /* Spacing scale (8px base) */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 20px;
+  --s6: 24px; --s7: 32px; --s8: 40px; --s9: 48px; --s10: 64px;
+
+  /* Radius */
+  --r-sm: 8px; --r-md: 12px; --r-lg: 16px; --r-xl: 24px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+  --shadow-elevated: 0 4px 16px rgba(0,0,0,0.12), 0 12px 40px rgba(0,0,0,0.08);
+
+  /* Brand */
+  --thunder: #f59e0b;
+  --thunder-soft: #fef3c7;
+  --easyslip: #6366f1;
+  --easyslip-soft: #e0e7ff;
+  --sms: #ec4899;
+  --sms-soft: #fce7f3;
+  --green: #10b981;
+  --green-soft: #d1fae5;
+  --red: #ef4444;
+  --red-soft: #fee2e2;
+  --yellow: #f59e0b;
+  --yellow-soft: #fef3c7;
+  --blue: #3b82f6;
+}
+
+/* ---- DARK THEME (default) ---- */
+[data-theme="dark"] {
+  --bg-base: #0c0f1a;
+  --bg-surface: #141825;
+  --bg-card: #1a1f33;
+  --bg-card-hover: #222842;
+  --bg-subtle: #0f1320;
+  --border: rgba(255,255,255,0.06);
+  --border-strong: rgba(255,255,255,0.12);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #38bdf8;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.2);
+  --shadow-elevated: 0 8px 32px rgba(0,0,0,0.4);
+  --thunder-soft: rgba(245,158,11,0.12);
+  --easyslip-soft: rgba(99,102,241,0.12);
+  --sms-soft: rgba(236,72,153,0.12);
+  --green-soft: rgba(16,185,129,0.12);
+  --red-soft: rgba(239,68,68,0.12);
+  --yellow-soft: rgba(245,158,11,0.12);
+  --glow-thunder: 0 0 20px rgba(245,158,11,0.15);
+  --glow-easyslip: 0 0 20px rgba(99,102,241,0.15);
+}
+
+/* ---- LIGHT THEME ---- */
+[data-theme="light"] {
+  --bg-base: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-subtle: #f1f5f9;
+  --border: rgba(0,0,0,0.06);
+  --border-strong: rgba(0,0,0,0.12);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent: #2563eb;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-elevated: 0 4px 16px rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.04);
+  --glow-thunder: 0 0 20px rgba(245,158,11,0.08);
+  --glow-easyslip: 0 0 20px rgba(99,102,241,0.08);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--s8) var(--s6);
+}
+
+/* ============================================================
+   THEME TOGGLE
+   ============================================================ */
+.theme-toggle {
+  position: fixed;
+  top: var(--s5);
+  right: var(--s5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: var(--s2) var(--s4);
+  cursor: pointer;
+  box-shadow: var(--shadow-elevated);
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+.theme-toggle:hover { transform: scale(1.05); }
+.theme-toggle i { width: 16px; height: 16px; }
+
+/* ============================================================
+   HEADER — STORYTELLING OPENING
+   ============================================================ */
+.report-header {
+  text-align: center;
+  padding: var(--s10) 0 var(--s8);
+  position: relative;
+}
+.report-header::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--thunder), var(--easyslip));
+  margin: var(--s6) auto 0;
+  border-radius: 2px;
+}
+.report-header .overline {
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--s3);
+}
+.report-header h1 {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--s2);
+}
+.report-header .period {
+  font-family: var(--font-data);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   NARRATIVE BLOCK — story telling
+   ============================================================ */
+.narrative {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s7);
+  margin-bottom: var(--s8);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+.narrative::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(180deg, var(--thunder), var(--easyslip), var(--sms));
+  border-radius: 2px 0 0 2px;
+}
+.narrative h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: var(--s4);
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  color: var(--accent);
+}
+.narrative p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--s3);
+  line-height: 1.8;
+}
+.narrative strong { color: var(--text-primary); font-weight: 600; }
+
+/* ============================================================
+   HERO KPI ROW
+   ============================================================ */
+.kpi-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: var(--s5);
+  margin-bottom: var(--s8);
+}
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s6);
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.kpi-card:hover { box-shadow: var(--shadow-elevated); transform: translateY(-2px); }
+.kpi-card.thunder { border-top: 3px solid var(--thunder); }
+.kpi-card.easyslip { border-top: 3px solid var(--easyslip); }
+.kpi-card.total { border-top: 3px solid var(--accent); }
+.kpi-card .icon-box {
+  width: 40px; height: 40px;
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--s3);
+}
+.kpi-card .icon-box i { width: 20px; height: 20px; }
+.kpi-card .label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: var(--s1);
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+.kpi-card .value {
+  font-family: var(--font-data);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: var(--s2);
+}
+.kpi-card .change {
+  font-family: var(--font-data);
+  font-size: 0.8rem;
+  display: flex;
+  gap: var(--s3);
+  align-items: center;
+}
+.up { color: var(--green); }
+.down { color: var(--red); }
+.warn { color: var(--yellow); }
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+.section {
+  margin-bottom: var(--s9);
+}
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  margin-bottom: var(--s5);
+  padding-bottom: var(--s3);
+  border-bottom: 1px solid var(--border);
+}
+.section-head .icon-circle {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.section-head .icon-circle i { width: 18px; height: 18px; color: #fff; }
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.section-head .tag {
+  font-family: var(--font-data);
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-left: auto;
+}
+
+/* ============================================================
+   CARDS & GRID
+   ============================================================ */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5); }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--s5); }
+.grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: var(--s4); }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s5);
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s ease;
+}
+.card:hover { border-color: var(--border-strong); }
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: var(--s4);
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card h3 i { width: 16px; height: 16px; }
+
+.metric { margin-bottom: var(--s4); }
+.metric:last-child { margin-bottom: 0; }
+.metric .label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.metric .val {
+  font-family: var(--font-data);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.metric .sub {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* Stat rows */
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-row .k {
+  color: var(--text-secondary);
+  display: flex; align-items: center; gap: var(--s2);
+}
+.stat-row .k i { width: 14px; height: 14px; color: var(--text-muted); }
+.stat-row .v {
+  font-family: var(--font-data);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-green { background: var(--green-soft); color: var(--green); }
+.badge-red { background: var(--red-soft); color: var(--red); }
+.badge-yellow { background: var(--yellow-soft); color: var(--yellow); }
+.badge-blue { background: rgba(59,130,246,0.12); color: var(--blue); }
+
+/* Progress bar */
+.progress {
+  background: var(--bg-subtle);
+  border-radius: 999px;
+  height: 8px;
+  margin-top: var(--s2);
+  overflow: hidden;
+}
+.progress .fill { height: 100%; border-radius: 999px; transition: width 0.6s ease; }
+
+/* ============================================================
+   MASTER TABLE
+   ============================================================ */
+.table-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.table-wrap th {
+  text-align: left;
+  padding: var(--s3) var(--s4);
+  background: var(--bg-subtle);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-strong);
+}
+.table-wrap td {
+  padding: var(--s3) var(--s4);
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.table-wrap tr:last-child td { border-bottom: none; }
+.table-wrap tr:hover td { background: var(--bg-card-hover); }
+.table-wrap .num {
+  text-align: right;
+  font-family: var(--font-data);
+  font-variant-numeric: tabular-nums;
+}
+.table-wrap .total-row td {
+  background: var(--bg-subtle);
+  font-weight: 700;
+  border-top: 2px solid var(--border-strong);
+}
+.product-name {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+.product-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+
+/* ============================================================
+   USE CASE DIAGRAM
+   ============================================================ */
+.diagram-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s6);
+  box-shadow: var(--shadow-card);
+  margin-bottom: var(--s8);
+  text-align: center;
+}
+.diagram-wrap h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: var(--s5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  color: var(--text-secondary);
+}
+.diagram-wrap h2 i { width: 20px; height: 20px; }
+.diagram-wrap svg { max-width: 100%; height: auto; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  text-align: center;
+  padding: var(--s7) 0;
+  margin-top: var(--s8);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-family: var(--font-data);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .kpi-hero, .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .kpi-card .value { font-size: 1.5rem; }
+  .report-header h1 { font-size: 1.6rem; }
+  .container { padding: var(--s5) var(--s4); }
+}
+
+/* Print */
+@media print {
+  .theme-toggle { display: none; }
+  body { background: #fff; color: #000; }
+  .card, .kpi-card, .narrative, .table-wrap, .diagram-wrap {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+  <i data-lucide="sun"></i>
+  <span id="theme-label">Light</span>
+</button>
+
+<div class="container">
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="report-header">
+  <div class="overline">Executive Monthly Report</div>
+  <h1>Thunder Group</h1>
+  <div class="period">พฤษภาคม 2569 (1-22 MTD) เทียบ เมษายน 2569 (เต็มเดือน)</div>
+</header>
+
+<!-- ============================================================
+     NARRATIVE: THE STORY
+     ============================================================ -->
+<div class="narrative">
+  <h2><i data-lucide="book-open"></i> Executive Summary</h2>
+  <p>
+    เดือนพฤษภาคม (22 วัน MTD) ทำรายได้รวม <strong>฿8.07M</strong> เทียบกับเมษายนที่ปิดเดือนด้วย <strong>฿10.06M</strong> (30 วัน)
+    ถ้าคิดเป็นเฉลี่ยต่อวัน พ.ค. ทำได้ <strong>฿366K/วัน</strong> vs เม.ย. <strong>฿335K/วัน</strong> — pace ดีขึ้น <strong>+9.2%</strong>
+    ตัวขับเคลื่อนคือ <strong>Thunder API</strong> โตระเบิด ฿630K vs ฿514K (+22.5%) ทะลุเป้า 232%
+  </p>
+  <p>
+    แต่ <strong>Thunder Bot</strong> ลดลงจาก ฿4.09M (เม.ย.) เหลือ ฿2.85M (พ.ค. MTD) — ยังห่างเป้า ฿4.23M อยู่มาก
+    <strong>EasySlip API</strong> ก็ลดจาก ฿5.25M เหลือ ฿4.45M แต่ MRR ยังแข็งที่ ฿2.58M
+    Slip margin ปรับดีขึ้นจาก 80.1% (เม.ย.) เป็น <strong>81.7%</strong> (พ.ค.) จากต้นทุนต่อสลิปที่ลดลง
+  </p>
+  <p>
+    <strong>Action items:</strong>
+    เร่ง Thunder Bot ให้ทำได้อย่างน้อย ฿160K/วัน ใน 9 วันที่เหลือ (ขาดอีก ฿1.4M),
+    push EasySlip API ให้ถึงเป้า ฿5.65M (ขาดอีก ฿1.2M),
+    Boost SMS ยังต้องเพิ่ม ฿17K
+  </p>
+</div>
+
+<!-- ============================================================
+     USE CASE DIAGRAM
+     ============================================================ -->
+<div class="diagram-wrap">
+  <h2><i data-lucide="git-branch"></i> Product Ecosystem</h2>
+  <svg viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" style="font-family:'Space Grotesk','Noto Sans Thai',sans-serif;">
+    <defs>
+      <linearGradient id="gThunder" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+      <linearGradient id="gEasyslip" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#4f46e5"/></linearGradient>
+      <linearGradient id="gSms" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ec4899"/><stop offset="100%" stop-color="#db2777"/></linearGradient>
+      <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.15"/></filter>
+    </defs>
+
+    <!-- CENTER: Thunder Group -->
+    <rect x="330" y="10" width="240" height="60" rx="30" fill="url(#gThunder)" filter="url(#shadow)" opacity="0.9"/>
+    <text x="450" y="46" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">Thunder Group</text>
+    <text x="450" y="90" text-anchor="middle" fill="currentColor" font-size="11" opacity="0.5">฿8.03M / month</text>
+
+    <!-- LINES from center -->
+    <line x1="370" y1="70" x2="200" y2="150" stroke="var(--thunder)" stroke-width="2" stroke-dasharray="6 3" opacity="0.4"/>
+    <line x1="530" y1="70" x2="700" y2="150" stroke="var(--easyslip)" stroke-width="2" stroke-dasharray="6 3" opacity="0.4"/>
+
+    <!-- LEFT: Thunder Solution -->
+    <rect x="60" y="140" width="280" height="50" rx="12" fill="url(#gThunder)" filter="url(#shadow)"/>
+    <text x="200" y="170" text-anchor="middle" fill="#fff" font-weight="600" font-size="14">Thunder Solution — ฿3.48M</text>
+
+    <!-- Thunder children lines -->
+    <line x1="150" y1="190" x2="120" y2="240" stroke="var(--thunder)" stroke-width="1.5" opacity="0.3"/>
+    <line x1="250" y1="190" x2="280" y2="240" stroke="var(--thunder)" stroke-width="1.5" opacity="0.3"/>
+
+    <!-- Thunder Bot -->
+    <rect x="30" y="240" width="180" height="80" rx="10" fill="var(--bg-card,#1a1f33)" stroke="var(--thunder)" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="120" y="267" text-anchor="middle" fill="var(--thunder)" font-weight="600" font-size="12">Thunder Bot</text>
+    <text x="120" y="287" text-anchor="middle" fill="currentColor" font-size="18" font-weight="700">฿2.85M</text>
+    <text x="120" y="307" text-anchor="middle" fill="var(--red)" font-size="10">-6.9% MoM</text>
+
+    <!-- Flex (child of Thunder Bot) -->
+    <line x1="120" y1="320" x2="120" y2="350" stroke="var(--thunder)" stroke-width="1.5" opacity="0.3"/>
+    <rect x="50" y="350" width="140" height="55" rx="10" fill="var(--bg-card,#1a1f33)" stroke="var(--thunder)" stroke-width="1" opacity="0.7" filter="url(#shadow)"/>
+    <text x="120" y="373" text-anchor="middle" fill="var(--thunder)" font-weight="600" font-size="11">Flex</text>
+    <text x="120" y="393" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">฿15.7K</text>
+
+    <!-- Thunder API -->
+    <rect x="200" y="240" width="180" height="80" rx="10" fill="var(--bg-card,#1a1f33)" stroke="var(--thunder)" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="290" y="267" text-anchor="middle" fill="var(--thunder)" font-weight="600" font-size="12">Thunder API</text>
+    <text x="290" y="287" text-anchor="middle" fill="currentColor" font-size="18" font-weight="700">฿630K</text>
+    <text x="290" y="307" text-anchor="middle" fill="var(--green)" font-size="10">+291% MoM</text>
+
+    <!-- RIGHT: EasySlip -->
+    <rect x="560" y="140" width="280" height="50" rx="12" fill="url(#gEasyslip)" filter="url(#shadow)"/>
+    <text x="700" y="170" text-anchor="middle" fill="#fff" font-weight="600" font-size="14">EasySlip — ฿4.54M</text>
+
+    <!-- EasySlip children lines -->
+    <line x1="620" y1="190" x2="580" y2="240" stroke="var(--easyslip)" stroke-width="1.5" opacity="0.3"/>
+    <line x1="700" y1="190" x2="700" y2="240" stroke="var(--easyslip)" stroke-width="1.5" opacity="0.3"/>
+    <line x1="780" y1="190" x2="820" y2="240" stroke="var(--easyslip)" stroke-width="1.5" opacity="0.3"/>
+
+    <!-- Easy Bot -->
+    <rect x="500" y="240" width="160" height="80" rx="10" fill="var(--bg-card,#1a1f33)" stroke="var(--easyslip)" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="580" y="267" text-anchor="middle" fill="var(--easyslip)" font-weight="600" font-size="12">Easy Bot</text>
+    <text x="580" y="287" text-anchor="middle" fill="currentColor" font-size="18" font-weight="700">฿121K</text>
+    <text x="580" y="307" text-anchor="middle" fill="var(--green)" font-size="10">+11.1% MoM</text>
+
+    <!-- EasySlip API -->
+    <rect x="620" y="240" width="160" height="80" rx="10" fill="var(--bg-card,#1a1f33)" stroke="var(--easyslip)" stroke-width="1.5" filter="url(#shadow)" transform="translate(60,0)"/>
+    <text x="760" y="267" text-anchor="middle" fill="var(--easyslip)" font-weight="600" font-size="12">EasySlip API</text>
+    <text x="760" y="287" text-anchor="middle" fill="currentColor" font-size="18" font-weight="700">฿4.41M</text>
+    <text x="760" y="307" text-anchor="middle" fill="var(--green)" font-size="10">+46.7% MoM</text>
+
+    <!-- Boost SMS -->
+    <rect x="630" y="340" width="140" height="55" rx="10" fill="var(--bg-card,#1a1f33)" stroke="var(--sms)" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="700" y="363" text-anchor="middle" fill="var(--sms)" font-weight="600" font-size="11">Boost SMS</text>
+    <text x="700" y="383" text-anchor="middle" fill="currentColor" font-size="13" font-weight="600">฿12.9K</text>
+    <line x1="700" y1="320" x2="700" y2="340" stroke="var(--sms)" stroke-width="1" opacity="0.3"/>
+
+    <!-- Customer & Slip counts at bottom -->
+    <text x="450" y="415" text-anchor="middle" fill="var(--text-muted,#64748b)" font-size="11">67,791 customers  ·  47.9M slips verified  ·  MRR ฿2.87M  ·  Slip margin 81.7%</text>
+  </svg>
+</div>
+
+<!-- ============================================================
+     KPI HERO
+     ============================================================ -->
+<div class="kpi-hero">
+  <div class="kpi-card total">
+    <div class="icon-box" style="background:rgba(56,189,248,0.12);">
+      <i data-lucide="landmark" style="color:var(--accent);"></i>
+    </div>
+    <div class="label">รายได้รวมทั้งกลุ่ม</div>
+    <div class="value">฿8,025,879</div>
+    <div class="change">
+      <span class="badge badge-green"><i data-lucide="trending-up" style="width:12px;height:12px;"></i> +18.1% MoM</span>
+      <span class="badge badge-green"><i data-lucide="trending-up" style="width:12px;height:12px;"></i> +65.1% YoY</span>
+    </div>
+  </div>
+  <div class="kpi-card thunder">
+    <div class="icon-box" style="background:var(--thunder-soft);">
+      <i data-lucide="zap" style="color:var(--thunder);"></i>
+    </div>
+    <div class="label">Thunder Solution</div>
+    <div class="value" style="color:var(--thunder);">฿3,481,840</div>
+    <div class="change"><span class="badge badge-green">+8.0% MoM</span> <span style="color:var(--text-muted);font-size:0.78rem;">43.4%</span></div>
+  </div>
+  <div class="kpi-card easyslip">
+    <div class="icon-box" style="background:var(--easyslip-soft);">
+      <i data-lucide="scan-line" style="color:var(--easyslip);"></i>
+    </div>
+    <div class="label">EasySlip</div>
+    <div class="value" style="color:var(--easyslip);">฿4,544,061</div>
+    <div class="change"><span class="badge badge-green">+14.4% MoM</span> <span style="color:var(--text-muted);font-size:0.78rem;">56.6%</span></div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PRODUCT BREAKDOWN TABLE
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--accent);"><i data-lucide="bar-chart-3"></i></div>
+    <h2>ภาพรวมรายสินค้า</h2>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>สินค้า</th>
+          <th class="num">เม.ย. (30 วัน)</th>
+          <th class="num">พ.ค. (22 วัน MTD)</th>
+          <th class="num">เป้า/เดือน</th>
+          <th class="num">% เป้า (พ.ค.)</th>
+          <th class="num">เฉลี่ย/วัน เม.ย.</th>
+          <th class="num">เฉลี่ย/วัน พ.ค.</th>
+          <th class="num">Pace</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="product-name"><span class="product-dot" style="background:var(--thunder);"></span> <strong>Thunder Bot</strong></div></td>
+          <td class="num">4,093,987</td>
+          <td class="num"><strong>2,836,436</strong></td>
+          <td class="num">4,230,044</td>
+          <td class="num"><span class="badge badge-red">67.1%</span></td>
+          <td class="num">136,466</td>
+          <td class="num">128,929</td>
+          <td class="num"><span class="down">-5.5%</span></td>
+        </tr>
+        <tr>
+          <td><div class="product-name"><span class="product-dot" style="background:var(--thunder);"></span> <strong>Thunder API</strong></div></td>
+          <td class="num">513,880</td>
+          <td class="num"><strong>629,708</strong></td>
+          <td class="num">271,073</td>
+          <td class="num"><span class="badge badge-green">232.3%</span></td>
+          <td class="num">17,129</td>
+          <td class="num">28,623</td>
+          <td class="num"><span class="up">+67.1%</span></td>
+        </tr>
+        <tr>
+          <td><div class="product-name"><span class="product-dot" style="background:var(--thunder);opacity:0.5;"></span> Flex</div></td>
+          <td class="num">17,172</td>
+          <td class="num">15,696</td>
+          <td class="num">26,300</td>
+          <td class="num"><span class="badge badge-red">59.7%</span></td>
+          <td class="num">572</td>
+          <td class="num">713</td>
+          <td class="num"><span class="up">+24.6%</span></td>
+        </tr>
+        <tr>
+          <td><div class="product-name"><span class="product-dot" style="background:var(--easyslip);"></span> <strong>EasySlip API</strong></div></td>
+          <td class="num">5,248,614</td>
+          <td class="num"><strong>4,449,923</strong></td>
+          <td class="num">5,650,000</td>
+          <td class="num"><span class="badge badge-yellow">78.8%</span></td>
+          <td class="num">174,954</td>
+          <td class="num">202,269</td>
+          <td class="num"><span class="up">+15.6%</span></td>
+        </tr>
+        <tr>
+          <td><div class="product-name"><span class="product-dot" style="background:var(--easyslip);"></span> Easy Bot</div></td>
+          <td class="num">169,038</td>
+          <td class="num">121,230</td>
+          <td class="num">151,477</td>
+          <td class="num"><span class="badge badge-yellow">80.0%</span></td>
+          <td class="num">5,635</td>
+          <td class="num">5,510</td>
+          <td class="num"><span class="down">-2.2%</span></td>
+        </tr>
+        <tr>
+          <td><div class="product-name"><span class="product-dot" style="background:var(--sms);"></span> Boost SMS</div></td>
+          <td class="num">12,908</td>
+          <td class="num">12,908</td>
+          <td class="num">29,955</td>
+          <td class="num"><span class="badge badge-red">43.1%</span></td>
+          <td class="num">430</td>
+          <td class="num">587</td>
+          <td class="num"><span class="up">+36.4%</span></td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>รวมทั้งหมด</strong></td>
+          <td class="num"><strong>10,055,599</strong></td>
+          <td class="num"><strong>8,065,901</strong></td>
+          <td class="num"></td>
+          <td class="num"></td>
+          <td class="num"><strong>335,187</strong></td>
+          <td class="num"><strong>366,632</strong></td>
+          <td class="num"><span class="up"><strong>+9.4%</strong></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="narrative" style="margin-top:var(--s5);">
+    <h2><i data-lucide="lightbulb"></i> อ่านตาราง</h2>
+    <p>ยอดรวม พ.ค. ดูน้อยกว่า เม.ย. เพราะยังเหลืออีก 9 วัน แต่ <strong>เฉลี่ย/วัน สูงกว่า +9.4%</strong> ถ้ารักษา pace นี้ได้ พ.ค. จะปิดที่ประมาณ <strong>฿11.4M</strong> ซึ่งสูงกว่า เม.ย.
+    Thunder API และ EasySlip API มี daily pace ดีขึ้นมาก (+67% และ +16%) ขณะที่ Thunder Bot pace ลดลง -5.5% เป็นจุดที่ต้องจับตา</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     MoM COMPARISON CARDS
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--blue);"><i data-lucide="git-compare"></i></div>
+    <h2>เปรียบเทียบ เม.ย. vs พ.ค.</h2>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <h3><i data-lucide="landmark"></i> ภาพรวมรายได้</h3>
+      <div class="stat-row"><span class="k">เม.ย. (30d)</span><span class="v">฿10,055,000</span></div>
+      <div class="stat-row"><span class="k">พ.ค. (22d MTD)</span><span class="v">฿8,065,901</span></div>
+      <div class="stat-row"><span class="k">เฉลี่ย/วัน เม.ย.</span><span class="v">฿335,167</span></div>
+      <div class="stat-row"><span class="k">เฉลี่ย/วัน พ.ค.</span><span class="v up">฿366,632</span></div>
+      <div class="stat-row"><span class="k">Pace change</span><span class="v"><span class="badge badge-green">+9.4%</span></span></div>
+      <div class="stat-row"><span class="k">คาดปิดเดือน พ.ค.</span><span class="v" style="color:var(--accent);">~฿11.4M</span></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="users"></i> ลูกค้า</h3>
+      <div class="stat-row"><span class="k">รวม เม.ย.</span><span class="v">66,554</span></div>
+      <div class="stat-row"><span class="k">รวม พ.ค.</span><span class="v">67,793</span></div>
+      <div class="stat-row"><span class="k">เพิ่มขึ้น</span><span class="v up">+1,239</span></div>
+      <div class="stat-row"><span class="k">ใหม่ เม.ย.</span><span class="v">1,699</span></div>
+      <div class="stat-row"><span class="k">ใหม่ พ.ค. (MTD)</span><span class="v">1,279</span></div>
+      <div class="stat-row"><span class="k">MRR เม.ย.</span><span class="v">฿2,802,545</span></div>
+      <div class="stat-row"><span class="k">MRR พ.ค.</span><span class="v">฿2,871,232</span></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="receipt"></i> สลิป &amp; กำไร</h3>
+      <div class="stat-row"><span class="k">สลิป เม.ย.</span><span class="v">65.4M</span></div>
+      <div class="stat-row"><span class="k">สลิป พ.ค. (MTD)</span><span class="v">47.9M</span></div>
+      <div class="stat-row"><span class="k">Slip margin เม.ย.</span><span class="v">80.1%</span></div>
+      <div class="stat-row"><span class="k">Slip margin พ.ค.</span><span class="v up">81.7%</span></div>
+      <div class="stat-row"><span class="k">รายได้/สลิป เม.ย.</span><span class="v">15.36 สต.</span></div>
+      <div class="stat-row"><span class="k">รายได้/สลิป พ.ค.</span><span class="v up">16.73 สต.</span></div>
+      <div class="stat-row"><span class="k">กำไรขั้นต้น เม.ย.</span><span class="v down">-฿2.26M</span></div>
+      <div class="stat-row"><span class="k">กำไรขั้นต้น พ.ค.</span><span class="v down">-฿1.45M</span></div>
+    </div>
+  </div>
+  <!-- Per-company comparison -->
+  <div class="grid-2" style="margin-top:var(--s5);">
+    <div class="card" style="border-top:3px solid var(--thunder);">
+      <h3 style="color:var(--thunder);"><i data-lucide="zap"></i> Thunder Solution</h3>
+      <div class="stat-row"><span class="k">เม.ย.</span><span class="v">฿4,625,039</span></div>
+      <div class="stat-row"><span class="k">พ.ค. MTD</span><span class="v">฿3,481,840</span></div>
+      <div class="stat-row"><span class="k">เฉลี่ย/วัน เม.ย.</span><span class="v">฿154,168</span></div>
+      <div class="stat-row"><span class="k">เฉลี่ย/วัน พ.ค.</span><span class="v up">฿158,265</span></div>
+      <div class="stat-row"><span class="k">Peak เม.ย.</span><span class="v">฿388,691 (27 เม.ย.)</span></div>
+      <div class="stat-row"><span class="k">Peak พ.ค.</span><span class="v">฿366,564 (15 พ.ค.)</span></div>
+      <div class="stat-row"><span class="k">กำไร เม.ย.</span><span class="v down">-฿456K (-9.9%)</span></div>
+      <div class="stat-row"><span class="k">กำไร พ.ค.</span><span class="v down">-฿332K (-9.5%)</span></div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--easyslip);">
+      <h3 style="color:var(--easyslip);"><i data-lucide="scan-line"></i> EasySlip</h3>
+      <div class="stat-row"><span class="k">เม.ย.</span><span class="v">฿5,429,961</span></div>
+      <div class="stat-row"><span class="k">พ.ค. MTD</span><span class="v">฿4,544,061</span></div>
+      <div class="stat-row"><span class="k">เฉลี่ย/วัน เม.ย.</span><span class="v">฿180,999</span></div>
+      <div class="stat-row"><span class="k">เฉลี่ย/วัน พ.ค.</span><span class="v up">฿206,548</span></div>
+      <div class="stat-row"><span class="k">Peak เม.ย.</span><span class="v">฿882,358 (8 เม.ย.)</span></div>
+      <div class="stat-row"><span class="k">Peak พ.ค.</span><span class="v">฿622,542 (20 พ.ค.)</span></div>
+      <div class="stat-row"><span class="k">กำไร เม.ย.</span><span class="v down">-฿1.80M (-33.2%)</span></div>
+      <div class="stat-row"><span class="k">กำไร พ.ค.</span><span class="v down">-฿1.12M (-24.5%)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     THUNDER รวม
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--thunder);"><i data-lucide="zap"></i></div>
+    <h2>Thunder Solution รวม</h2>
+    <span class="tag badge badge-green">+8.0% MoM</span>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <h3><i data-lucide="banknote"></i> รายได้</h3>
+      <div class="metric">
+        <div class="val" style="color:var(--thunder);">฿3,481,840</div>
+        <div class="sub"><span class="up">+8.0%</span> เทียบเดือนก่อน</div>
+      </div>
+      <div class="stat-row"><span class="k"><i data-lucide="calendar-days"></i> เฉลี่ย/วัน</span><span class="v">฿158,265</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="trophy"></i> Peak Day</span><span class="v">฿366,564</span></div>
+      <div class="stat-row"><span class="k"></span><span class="v" style="font-weight:400;color:var(--text-muted);font-size:0.8rem;">15 พ.ค.</span></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="users"></i> ลูกค้า</h3>
+      <div class="stat-row"><span class="k"><i data-lucide="users"></i> รวม</span><span class="v">55,967</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-check"></i> Active</span><span class="v">8,453 (15.1%)</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-plus"></i> ใหม่</span><span class="v">906</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="repeat"></i> MRR (API)</span><span class="v">฿296,075</span></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="calculator"></i> กำไร &amp; ต้นทุน</h3>
+      <div class="stat-row"><span class="k">กำไรขั้นต้น</span><span class="v down">-฿332,326</span></div>
+      <div class="stat-row"><span class="k">Margin</span><span class="v down">-9.5%</span></div>
+      <div class="stat-row"><span class="k">รายจ่าย</span><span class="v">฿3,814,166</span></div>
+      <div class="stat-row"><span class="k">สลิปตรวจ</span><span class="v">19.3M</span></div>
+      <div class="stat-row"><span class="k">กำไร/สลิป</span><span class="v up">14.98 สต. (83.2%)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     THUNDER BOT
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--thunder);"><i data-lucide="bot"></i></div>
+    <h2>Thunder BOT</h2>
+    <span class="tag badge badge-red">-6.9% MoM</span>
+  </div>
+  <div class="narrative" style="margin-bottom:var(--s5);">
+    <h2><i data-lucide="alert-triangle"></i> Insight</h2>
+    <p>รายได้ ฿2.85M ทำได้เพียง <strong>67.1% ของเป้า ฿4.23M</strong> — ฐานลูกค้าใหญ่สุดในกลุ่มแต่ Active rate ต่ำเพียง 15.2%
+    ลูกค้าหมดอายุและใกล้หมดอายุรวมกันเกือบ 10,000 ราย เป็นโอกาส win-back ที่สำคัญ</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3><i data-lucide="banknote"></i> รายได้</h3>
+      <div class="metric">
+        <div class="val">฿2,852,132</div>
+        <div class="sub"><span class="down">-6.9%</span> เทียบเดือนก่อน</div>
+      </div>
+      <div class="stat-row"><span class="k"><i data-lucide="calendar-days"></i> เฉลี่ย/วัน</span><span class="v">฿129,642</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="trophy"></i> Peak Day</span><span class="v">฿341,865</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="target"></i> เป้าเดือน</span><span class="v">฿4,230,044</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="percent"></i> ทำได้</span><span class="v"><span class="badge badge-red">67.1%</span></span></div>
+      <div class="progress"><div class="fill" style="width:67.1%;background:var(--thunder);"></div></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="users"></i> ลูกค้า</h3>
+      <div class="stat-row"><span class="k"><i data-lucide="users"></i> ทั้งหมด</span><span class="v">53,716</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-check"></i> Active</span><span class="v">8,188 (15.2%)</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-x"></i> Inactive</span><span class="v">45,528</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="wallet"></i> รายได้/คน</span><span class="v">฿348</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-plus"></i> ลูกค้าใหม่</span><span class="v">671 <span class="down">(-17.1%)</span></span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     THUNDER API
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--thunder);"><i data-lucide="plug"></i></div>
+    <h2>Thunder API</h2>
+    <span class="tag badge badge-green">+291% MoM</span>
+  </div>
+  <div class="narrative" style="margin-bottom:var(--s5);">
+    <h2><i data-lucide="rocket"></i> Insight</h2>
+    <p>ดาวเด่นของเดือน — <strong>ทะลุเป้า 232%</strong> ด้วยรายได้ ฿630K จากเป้า ฿271K
+    ลูกค้าใหม่โตขึ้น <strong>+74.1%</strong> แต่ Active rate ยังต่ำ (11.8%) มี upside ถ้า activate ได้มากขึ้น
+    YTD ฿1.97M vs ปีก่อน ฿297K — โต <strong>+564% YoY</strong></p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3><i data-lucide="credit-card"></i> เติมเงิน</h3>
+      <div class="metric">
+        <div class="val" style="color:var(--green);">฿629,708</div>
+        <div class="sub"><span class="up">+291.3%</span> เทียบเดือนก่อน</div>
+      </div>
+      <div class="stat-row"><span class="k"><i data-lucide="target"></i> เป้าเดือน</span><span class="v">฿271,073</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="percent"></i> ทำได้</span><span class="v"><span class="badge badge-green">232.3%</span></span></div>
+      <div class="progress"><div class="fill" style="width:100%;background:var(--green);"></div></div>
+      <div class="stat-row"><span class="k"><i data-lucide="repeat"></i> MRR</span><span class="v">฿296,075</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="calendar"></i> YTD</span><span class="v">฿1,972,982</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="history"></i> ปีก่อน YTD</span><span class="v">฿297,106</span></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="users"></i> ลูกค้า API</h3>
+      <div class="stat-row"><span class="k"><i data-lucide="database"></i> ทั้งหมด</span><span class="v">2,251</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-check"></i> Active</span><span class="v">265 (11.8%)</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-x"></i> Inactive</span><span class="v">1,986</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="shield-alert"></i> Banned</span><span class="v">3</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="wallet"></i> รายได้/คน</span><span class="v">฿2,376</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-plus"></i> ใหม่</span><span class="v">235 <span class="up">(+74.1%)</span></span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="code"></i> v2 ratio</span><span class="v">0.7%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     EASYSLIP รวม
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--easyslip);"><i data-lucide="scan-line"></i></div>
+    <h2>EasySlip รวม</h2>
+    <span class="tag badge badge-green">+14.4% MoM</span>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <h3><i data-lucide="banknote"></i> รายได้</h3>
+      <div class="metric">
+        <div class="val" style="color:var(--easyslip);">฿4,544,061</div>
+        <div class="sub"><span class="up">+14.4%</span> MoM | <span class="up">+65.0%</span> YoY</div>
+      </div>
+      <div class="stat-row"><span class="k"><i data-lucide="calendar-days"></i> เฉลี่ย/วัน</span><span class="v">฿206,548</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="trophy"></i> Peak Day</span><span class="v">฿622,542</span></div>
+      <div class="stat-row"><span class="k"></span><span class="v" style="font-weight:400;color:var(--text-muted);font-size:0.8rem;">20 พ.ค.</span></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="users"></i> ลูกค้า</h3>
+      <div class="stat-row"><span class="k"><i data-lucide="users"></i> รวม</span><span class="v">11,824</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-check"></i> Active</span><span class="v">2,401 (20.3%)</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-plus"></i> ใหม่</span><span class="v">371</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="repeat"></i> MRR (API)</span><span class="v">฿2,575,165</span></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="calculator"></i> กำไร &amp; ต้นทุน</h3>
+      <div class="stat-row"><span class="k">กำไรขั้นต้น</span><span class="v down">-฿1,115,072</span></div>
+      <div class="stat-row"><span class="k">Margin</span><span class="v down">-24.5%</span></div>
+      <div class="stat-row"><span class="k">รายจ่าย</span><span class="v">฿5,659,133</span></div>
+      <div class="stat-row"><span class="k">สลิปตรวจ</span><span class="v">28.6M</span></div>
+      <div class="stat-row"><span class="k">กำไร/สลิป</span><span class="v up">12.77 สต. (80.6%)</span></div>
+    </div>
+  </div>
+  <!-- Annual Target -->
+  <div class="card" style="margin-top:var(--s5);">
+    <h3><i data-lucide="flag"></i> เป้ารายได้ปี 2026</h3>
+    <div class="grid-3" style="margin-bottom:var(--s3);">
+      <div class="metric">
+        <div class="label">ทำได้ YTD</div>
+        <div class="val">฿25.59M</div>
+      </div>
+      <div class="metric">
+        <div class="label">เป้าทั้งปี</div>
+        <div class="val">฿72.72M</div>
+      </div>
+      <div class="metric">
+        <div class="label">สถานะ</div>
+        <div class="val"><span class="badge badge-yellow">35.2% ใกล้พลาด</span></div>
+      </div>
+    </div>
+    <div class="progress" style="height:10px;"><div class="fill" style="width:35.2%;background:linear-gradient(90deg,var(--easyslip),var(--blue));"></div></div>
+    <div class="grid-3" style="margin-top:var(--s4);font-size:0.85rem;">
+      <div><span style="color:var(--text-muted);">คาดทั้งปี</span><br><strong>฿65.78M</strong> <span class="down" style="font-size:0.78rem;">ขาด ฿6.95M</span></div>
+      <div><span style="color:var(--text-muted);">ต้องทำ/วัน (223 วัน)</span><br><strong>฿211,367</strong></div>
+      <div><span style="color:var(--text-muted);">ทำได้จริง/วัน</span><br><strong>฿180,208</strong> <span class="badge badge-yellow">ต้องเร่ง 1.2x</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     EASYSLIP BOT
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--easyslip);"><i data-lucide="message-square"></i></div>
+    <h2>EasySlip BOT</h2>
+    <span class="tag badge badge-yellow">80% ของเป้า</span>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3><i data-lucide="banknote"></i> รายได้</h3>
+      <div class="metric">
+        <div class="val">฿121,230</div>
+        <div class="sub"><span class="up">+11.1%</span> (detail) | เป้า ฿151,477</div>
+      </div>
+      <div class="stat-row"><span class="k"><i data-lucide="calendar-days"></i> เฉลี่ย/วัน</span><span class="v">฿5,510</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="trophy"></i> Peak Day</span><span class="v">฿19,685 (1 พ.ค.)</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="pie-chart"></i> Service Rev</span><span class="v">52.1%</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="credit-card"></i> Topup รับเข้า</span><span class="v">47.9%</span></div>
+      <div class="progress"><div class="fill" style="width:80%;background:var(--easyslip);"></div></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="users"></i> ลูกค้า</h3>
+      <div class="stat-row"><span class="k"><i data-lucide="users"></i> ทั้งหมด</span><span class="v">1,963</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-check"></i> Active</span><span class="v">517 (26.3%)</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="wallet"></i> รายได้/คน</span><span class="v">฿234</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-plus"></i> ใหม่</span><span class="v">15</span></div>
+      <h3 style="margin-top:var(--s4);"><i data-lucide="package"></i> แพ็กเกจ</h3>
+      <div class="stat-row"><span class="k">TEST</span><span class="v">726</span></div>
+      <div class="stat-row"><span class="k">VIP</span><span class="v">622</span></div>
+      <div class="stat-row"><span class="k">Webhook</span><span class="v">745</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="alert-circle"></i> หมดอายุ</span><span class="v down">4,288</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="clock"></i> ใกล้หมดอายุ</span><span class="v warn">5,734</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="refresh-cw"></i> ต่ออายุ</span><span class="v">฿101,702</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="arrow-up-circle"></i> อัปเกรด</span><span class="v">฿11,942</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     EASYSLIP API
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--easyslip);"><i data-lucide="code"></i></div>
+    <h2>EasySlip API</h2>
+    <span class="tag badge badge-yellow">78.1% ของเป้า</span>
+  </div>
+  <div class="narrative" style="margin-bottom:var(--s5);">
+    <h2><i data-lucide="gem"></i> Insight</h2>
+    <p>ตัวทำเงินหลักของทั้งกลุ่ม — <strong>55% ของรายได้รวม</strong> ด้วยรายได้เติมเงิน ฿4.41M
+    MRR แข็งแกร่งที่ <strong>฿2.58M</strong> | รายได้ต่อลูกค้า Active สูงที่สุดที่ <strong>฿2,341/คน</strong>
+    YTD ฿24.8M vs ปีก่อน ฿13.8M — โต <strong>+80% YoY</strong> | All-time topup รวม ฿71.8M</p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3><i data-lucide="credit-card"></i> เติมเงิน</h3>
+      <div class="metric">
+        <div class="val" style="color:var(--easyslip);">฿4,409,923</div>
+        <div class="sub"><span class="up">+46.7%</span> เทียบเดือนก่อน</div>
+      </div>
+      <div class="stat-row"><span class="k"><i data-lucide="target"></i> เป้าเดือน</span><span class="v">฿5,650,000</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="percent"></i> ทำได้</span><span class="v"><span class="badge badge-yellow">78.1%</span></span></div>
+      <div class="progress"><div class="fill" style="width:78.1%;background:var(--easyslip);"></div></div>
+      <div class="stat-row"><span class="k"><i data-lucide="repeat"></i> MRR</span><span class="v">฿2,575,165</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="calendar"></i> สัปดาห์นี้</span><span class="v">฿1,044,807</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="calendar"></i> YTD</span><span class="v">฿24,797,152</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="history"></i> ปีก่อน YTD</span><span class="v">฿13,772,895</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="database"></i> All-time</span><span class="v">฿71,789,288</span></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="users"></i> ลูกค้า API</h3>
+      <div class="stat-row"><span class="k"><i data-lucide="database"></i> ทั้งหมด</span><span class="v">9,861</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-check"></i> Active</span><span class="v">1,884 (19.1%)</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-x"></i> Inactive</span><span class="v">7,977</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="shield-alert"></i> Banned</span><span class="v">277</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="wallet"></i> รายได้/คน</span><span class="v">฿2,341</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="user-plus"></i> ใหม่</span><span class="v">356</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="code"></i> v2 ratio</span><span class="v">0.0%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     BOOST SMS
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--sms);"><i data-lucide="message-circle"></i></div>
+    <h2>Boost SMS</h2>
+    <span class="tag badge badge-red">43.1% ของเป้า</span>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3><i data-lucide="banknote"></i> รายได้</h3>
+      <div class="metric">
+        <div class="val" style="color:var(--sms);">฿12,908</div>
+        <div class="sub">Run-rate สิ้นเดือน: ฿18,191</div>
+      </div>
+      <div class="stat-row"><span class="k"><i data-lucide="calendar-days"></i> เฉลี่ย/วัน</span><span class="v">฿587</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="target"></i> เป้าเดือน</span><span class="v">฿29,955</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="percent"></i> ทำได้</span><span class="v"><span class="badge badge-red">43.1%</span></span></div>
+      <div class="progress"><div class="fill" style="width:43.1%;background:var(--sms);"></div></div>
+      <div class="stat-row"><span class="k"><i data-lucide="alert-triangle"></i> ต้องเพิ่มอีก</span><span class="v down">฿17,047</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="trophy"></i> Peak Day</span><span class="v">22 พ.ค. ฿12,908</span></div>
+    </div>
+    <div class="card">
+      <h3><i data-lucide="send"></i> Operations</h3>
+      <div class="stat-row"><span class="k"><i data-lucide="check-circle"></i> Confirmed Orders</span><span class="v">0</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="send"></i> SMS Sent</span><span class="v">0</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="inbox"></i> Delivered</span><span class="v">0</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="x-circle"></i> Failed</span><span class="v">0</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="coins"></i> Credits Used</span><span class="v">0</span></div>
+      <div class="stat-row"><span class="k"><i data-lucide="activity"></i> Delivery Rate</span><span class="v" style="color:var(--text-muted);">ยังไม่มี log</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SLIP ECONOMICS
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--accent);"><i data-lucide="receipt"></i></div>
+    <h2>เศรษฐศาสตร์ต่อสลิป</h2>
+  </div>
+  <div class="grid-3">
+    <div class="card" style="border-top:3px solid var(--thunder);">
+      <h3 style="color:var(--thunder);"><i data-lucide="zap"></i> Thunder</h3>
+      <div class="stat-row"><span class="k">สลิปตรวจ</span><span class="v">19,321,577</span></div>
+      <div class="stat-row"><span class="k">รายได้/สลิป</span><span class="v">18.02 สต.</span></div>
+      <div class="stat-row"><span class="k">ต้นทุน/สลิป</span><span class="v">3.04 สต.</span></div>
+      <div class="stat-row"><span class="k">กำไร/สลิป</span><span class="v up">14.98 สต.</span></div>
+      <div class="stat-row"><span class="k">Margin</span><span class="v up">83.2%</span></div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--easyslip);">
+      <h3 style="color:var(--easyslip);"><i data-lucide="scan-line"></i> EasySlip</h3>
+      <div class="stat-row"><span class="k">สลิปตรวจ</span><span class="v">28,584,185</span></div>
+      <div class="stat-row"><span class="k">รายได้/สลิป</span><span class="v">15.85 สต.</span></div>
+      <div class="stat-row"><span class="k">ต้นทุน/สลิป</span><span class="v">3.08 สต.</span></div>
+      <div class="stat-row"><span class="k">กำไร/สลิป</span><span class="v up">12.77 สต.</span></div>
+      <div class="stat-row"><span class="k">Margin</span><span class="v up">80.6%</span></div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent);">
+      <h3><i data-lucide="sigma"></i> รวมทั้งหมด</h3>
+      <div class="stat-row"><span class="k">สลิปตรวจ</span><span class="v">47,905,762</span></div>
+      <div class="stat-row"><span class="k">รายได้/สลิป</span><span class="v">16.73 สต.</span></div>
+      <div class="stat-row"><span class="k">ต้นทุน/สลิป</span><span class="v">3.06 สต.</span></div>
+      <div class="stat-row"><span class="k">กำไร/สลิป</span><span class="v up">13.67 สต.</span></div>
+      <div class="stat-row"><span class="k">Margin</span><span class="v up">81.7%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     CUSTOMER ACQUISITION
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--green);"><i data-lucide="user-plus"></i></div>
+    <h2>การได้มาซึ่งลูกค้า</h2>
+    <span class="tag badge badge-green">+14.2%</span>
+  </div>
+  <div class="card">
+    <div class="metric" style="margin-bottom:var(--s4);">
+      <div class="label">ลูกค้าใหม่ทั้งหมด</div>
+      <div class="val">1,277 คน</div>
+      <div class="sub">เติมเงินครั้งแรก: 74 คน | ฿165,435 | อัตราเริ่มจ่าย 20.8%</div>
+    </div>
+    <div class="grid-4">
+      <div style="text-align:center;padding:var(--s3);background:var(--thunder-soft);border-radius:var(--r-sm);">
+        <div style="font-family:var(--font-data);font-size:1.3rem;font-weight:700;">671</div>
+        <div style="font-size:0.78rem;color:var(--text-muted);">Thunder Bot</div>
+        <div style="font-size:0.75rem;"><span class="down">-17.1%</span></div>
+      </div>
+      <div style="text-align:center;padding:var(--s3);background:var(--thunder-soft);border-radius:var(--r-sm);">
+        <div style="font-family:var(--font-data);font-size:1.3rem;font-weight:700;">235</div>
+        <div style="font-size:0.78rem;color:var(--text-muted);">Thunder API</div>
+        <div style="font-size:0.75rem;"><span class="up">+74.1%</span></div>
+      </div>
+      <div style="text-align:center;padding:var(--s3);background:var(--easyslip-soft);border-radius:var(--r-sm);">
+        <div style="font-family:var(--font-data);font-size:1.3rem;font-weight:700;">15</div>
+        <div style="font-size:0.78rem;color:var(--text-muted);">Easy Bot</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);">-</div>
+      </div>
+      <div style="text-align:center;padding:var(--s3);background:var(--easyslip-soft);border-radius:var(--r-sm);">
+        <div style="font-family:var(--font-data);font-size:1.3rem;font-weight:700;">356</div>
+        <div style="font-size:0.78rem;color:var(--text-muted);">EasySlip API</div>
+        <div style="font-size:0.75rem;color:var(--text-muted);">-</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     ANNUAL TARGET
+     ============================================================ -->
+<div class="section">
+  <div class="section-head">
+    <div class="icon-circle" style="background:var(--blue);"><i data-lucide="flag"></i></div>
+    <h2>เป้ารายได้ปี 2026 — Thunder Group</h2>
+  </div>
+  <div class="card">
+    <div class="grid-3" style="margin-bottom:var(--s4);">
+      <div class="metric">
+        <div class="label">ทำได้ YTD</div>
+        <div class="val">฿47.65M</div>
+      </div>
+      <div class="metric">
+        <div class="label">เป้าทั้งปี</div>
+        <div class="val">฿129.55M</div>
+      </div>
+      <div class="metric">
+        <div class="label">สถานะ</div>
+        <div class="val"><span class="badge badge-yellow" style="font-size:0.9rem;">36.8% ใกล้พลาด</span></div>
+      </div>
+    </div>
+    <div class="progress" style="height:12px;"><div class="fill" style="width:36.8%;background:linear-gradient(90deg,var(--thunder),var(--easyslip));"></div></div>
+    <div class="grid-3" style="margin-top:var(--s4);">
+      <div>
+        <div class="stat-row"><span class="k">คาดทั้งปี</span><span class="v">฿122.47M</span></div>
+        <div class="stat-row"><span class="k">ส่วนต่าง</span><span class="v down">-฿7.08M</span></div>
+      </div>
+      <div>
+        <div class="stat-row"><span class="k">ทำจริง/วัน</span><span class="v">฿335,542</span></div>
+        <div class="stat-row"><span class="k">ต้องทำ/วัน</span><span class="v">฿367,283</span></div>
+      </div>
+      <div>
+        <div class="stat-row"><span class="k">ต้องเร่งเพิ่ม</span><span class="v"><span class="badge badge-yellow">1.1x</span></span></div>
+        <div class="stat-row"><span class="k">เหลืออีก</span><span class="v">223 วัน</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div style="margin-bottom:var(--s2);">
+    <i data-lucide="database" style="width:14px;height:14px;vertical-align:middle;opacity:0.5;"></i>
+    Master Dashboard | Thunder Group
+  </div>
+  ข้อมูล พ.ค. 2569 (1-22 MTD) เทียบ เม.ย. 2569 (เต็มเดือน) | สร้างโดย Claude Code | 22 พ.ค. 2569
+</footer>
+
+</div>
+
+<!-- ============================================================
+   SCRIPTS
+   ============================================================ -->
+<script>
+  // Initialize Lucide icons
+  lucide.createIcons();
+
+  // Theme toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    document.getElementById('theme-label').textContent = next === 'dark' ? 'Light' : 'Dark';
+    localStorage.setItem('theme', next);
+  }
+
+  // Restore saved theme
+  (function() {
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      document.getElementById('theme-label').textContent = saved === 'dark' ? 'Light' : 'Dark';
+    }
+  })();
+</script>
+
+</body>
+</html>

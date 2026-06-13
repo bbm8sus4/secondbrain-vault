@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boost SMS — Week 1 Marketing Plan (Revised)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700;800&display=swap');
+  :root { --blue:#3871FE; --dark:#1A1A2E; --red:#E42637; --yellow:#FECA3F; --green:#00C9A7; --orange:#F39C12; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Noto Sans Thai',sans-serif; background:#F4F5F7; color:#333; line-height:1.7; }
+  .wrap { max-width:900px; margin:0 auto; padding:30px 20px 60px; }
+
+  .hero { background:linear-gradient(135deg,var(--dark),var(--blue)); color:#fff; border-radius:20px; padding:44px 36px; text-align:center; }
+  .hero h1 { font-size:1.9em; font-weight:800; }
+  .hero .sub { opacity:.75; margin-top:4px; font-size:.95em; }
+  .hero .tagline { margin-top:14px; font-size:1.1em; font-weight:300; opacity:.9; }
+  .badge-row { display:flex; justify-content:center; gap:8px; margin-top:18px; flex-wrap:wrap; }
+  .badge { background:rgba(255,255,255,.14); padding:5px 14px; border-radius:18px; font-size:.82em; }
+
+  .sec { background:#fff; border-radius:14px; padding:24px 28px; margin-top:16px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+  .sec h2 { font-size:.95em; font-weight:700; color:var(--dark); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+  .sec h2 .num { background:var(--blue); color:#fff; width:26px; height:26px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center; font-size:.75em; font-weight:800; flex-shrink:0; }
+
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  .grid4 { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:10px; }
+  @media(max-width:600px){ .grid2,.grid3,.grid4 { grid-template-columns:1fr; } }
+
+  .card { background:#F8F9FA; border-radius:10px; padding:14px; }
+  .card .label { font-size:.68em; text-transform:uppercase; letter-spacing:.5px; color:#999; font-weight:700; }
+  .card .val { margin-top:2px; font-size:.88em; }
+
+  .kpi-card { background:var(--dark); color:#fff; border-radius:10px; padding:16px; text-align:center; }
+  .kpi-card .kn { font-size:1.6em; font-weight:800; }
+  .kpi-card .kl { font-size:.7em; opacity:.65; margin-top:2px; }
+  .kpi-card.blue .kn { color:var(--blue); }
+  .kpi-card.yellow .kn { color:var(--yellow); }
+  .kpi-card.green .kn { color:var(--green); }
+  .kpi-card.red .kn { color:var(--red); }
+  .kpi-card.orange .kn { color:var(--orange); }
+
+  table { width:100%; border-collapse:collapse; font-size:.85em; margin-top:10px; }
+  th { background:var(--dark); color:#fff; padding:10px 12px; text-align:left; font-size:.78em; text-transform:uppercase; letter-spacing:.3px; }
+  td { padding:9px 12px; border-bottom:1px solid #F0F0F0; }
+  tr:hover td { background:#FAFBFC; }
+  .tag { display:inline-block; padding:2px 8px; border-radius:5px; font-size:.75em; font-weight:600; }
+  .tag-red { background:rgba(228,38,55,.1); color:var(--red); }
+  .tag-yellow { background:rgba(243,156,18,.1); color:var(--orange); }
+  .tag-green { background:rgba(0,201,167,.1); color:#0a8a6f; }
+
+  .fix-badge { display:inline-block; padding:2px 8px; border-radius:5px; font-size:.7em; font-weight:700; margin-left:6px; vertical-align:middle; }
+  .fix-badge.new { background:#E8F5E9; color:#2E7D32; }
+  .fix-badge.changed { background:#FFF3E0; color:#E65100; }
+
+  .note { background:#F0F4FF; border:1px solid #D0DBFF; border-radius:8px; padding:12px 16px; font-size:.85em; margin-top:12px; }
+  .note.warn { background:#FFF8E1; border-color:#FFE082; }
+  .note.legal { background:#FCE4EC; border-color:#F8BBD0; }
+
+  .north-star { background:linear-gradient(135deg,#1A1A2E,#2C2C54); color:#fff; border-radius:12px; padding:24px; text-align:center; margin-top:12px; }
+  .north-star .ns-num { font-size:2.4em; font-weight:800; color:var(--yellow); }
+  .north-star .ns-label { font-size:.85em; opacity:.8; margin-top:4px; }
+
+  .funnel { display:flex; align-items:center; gap:0; margin-top:14px; flex-wrap:wrap; }
+  .funnel-step { flex:1; min-width:100px; text-align:center; padding:14px 8px; position:relative; }
+  .funnel-step .fn { font-size:1.4em; font-weight:800; color:var(--blue); }
+  .funnel-step .fl { font-size:.72em; color:#999; }
+  .funnel-step .fr { font-size:.68em; color:var(--green); font-weight:700; margin-top:2px; }
+  .funnel-arrow { color:#CCC; font-size:1.2em; flex-shrink:0; }
+  @media(max-width:600px){ .funnel { flex-direction:column; } .funnel-arrow { transform:rotate(90deg); } }
+
+  .checklist { list-style:none; margin-top:10px; }
+  .checklist li { padding:8px 12px; background:#F8F9FA; border-radius:6px; margin-bottom:4px; font-size:.85em; display:flex; align-items:center; gap:8px; }
+  .checklist li .chk { width:18px; height:18px; border:2px solid var(--green); border-radius:4px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:.7em; color:var(--green); }
+
+  .gate { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:10px; }
+  @media(max-width:600px){ .gate { grid-template-columns:1fr; } }
+  .gate-card { border-radius:10px; padding:16px; text-align:center; }
+  .gate-card.go { background:#E8F5E9; border:2px solid #A5D6A7; }
+  .gate-card.pivot { background:#FFF8E1; border:2px solid #FFE082; }
+  .gate-card.stop { background:#FFEBEE; border:2px solid #EF9A9A; }
+  .gate-card .gt { font-size:1.3em; font-weight:800; }
+  .gate-card .gc { font-size:.78em; color:#666; margin-top:4px; }
+  .gate-card .ga { font-size:.82em; font-weight:600; margin-top:8px; }
+
+  .timeline { display:flex; gap:0; margin-top:14px; overflow-x:auto; }
+  .tl-day { flex:1; min-width:90px; text-align:center; padding:10px 6px; border-right:1px solid #F0F0F0; }
+  .tl-day:last-child { border-right:none; }
+  .tl-day .td-n { font-size:.7em; color:#999; font-weight:700; }
+  .tl-day .td-d { font-size:.78em; font-weight:700; color:var(--dark); }
+  .tl-day .td-p { font-size:.65em; padding:2px 6px; border-radius:4px; margin-top:4px; display:inline-block; }
+
+  .footer { text-align:center; padding:30px; color:#BBB; font-size:.78em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero">
+  <h1>Boost SMS — Week 1 Marketing Plan</h1>
+  <div class="sub">Revised Overview · แก้ไข 11 จุด</div>
+  <div class="tagline">Send. Track. Boost. — บูสต์ความไวทุก SMS มั่นใจถึงปลายทาง</div>
+  <div class="badge-row">
+    <span class="badge">Facebook Page</span>
+    <span class="badge">LINE OA</span>
+    <span class="badge">Website</span>
+    <span class="badge">YouTube</span>
+    <span class="badge">Email</span>
+  </div>
+</div>
+
+<!-- ═══════ 01 CAMPAIGN SETUP ═══════ -->
+<div class="sec">
+  <h2><span class="num">01</span> Campaign Setup</h2>
+  <div class="grid2">
+    <div class="card"><div class="label">Focus</div><div class="val">Lead Generation + Trial Signup</div></div>
+    <div class="card"><div class="label">Duration</div><div class="val">7 days (Week 1 — Standalone)</div></div>
+    <div class="card">
+      <div class="label">Start / End Date <span class="fix-badge new">เพิ่มใหม่</span></div>
+      <div class="val"><strong>เริ่ม: ____/____ → จบ: ____/____</strong><br>Final Review: วันที่ 8 (วันถัดจากจบ)</div>
+    </div>
+    <div class="card"><div class="label">Budget</div><div class="val"><strong>25,000 บาท</strong></div></div>
+  </div>
+  <div class="note">
+    <strong>Baseline:</strong> New Launch — ยังไม่มี historical data ทุก KPI เริ่มจาก 0 <span class="fix-badge new">เพิ่มใหม่</span>
+  </div>
+</div>
+
+<!-- ═══════ 02 NORTH STAR ═══════ -->
+<div class="sec">
+  <h2><span class="num">02</span> North Star Metric <span class="fix-badge changed">แก้ไข</span></h2>
+  <div class="north-star">
+    <div class="ns-num">60+ Trial Signup</div>
+    <div class="ns-label">จาก <strong>ทุก Channel</strong> ที่ track ผ่าน UTM week1_* (Facebook + LINE OA + Email + Website + YouTube)</div>
+  </div>
+  <div class="note">
+    <strong>เดิม:</strong> นับแค่ Organic + Paid Facebook → <strong>แก้เป็น:</strong> นับทุก channel ที่ใส่ UTM week1_* เพราะ LINE OA, Email, YouTube ก็เป็น owned channel ที่ drive trial ได้เหมือนกัน
+  </div>
+</div>
+
+<!-- ═══════ 03 FUNNEL ═══════ -->
+<div class="sec">
+  <h2><span class="num">03</span> Funnel & KPI (แก้ตัวเลขให้ realistic) <span class="fix-badge changed">แก้ไข</span></h2>
+
+  <div class="funnel">
+    <div class="funnel-step"><div class="fn">35,000</div><div class="fl">Reach</div></div>
+    <div class="funnel-arrow">→</div>
+    <div class="funnel-step"><div class="fn">1,750</div><div class="fl">Engagement (5%)</div><div class="fr">5% of Reach</div></div>
+    <div class="funnel-arrow">→</div>
+    <div class="funnel-step"><div class="fn">200</div><div class="fl">Inbox / Click</div><div class="fr">11.4% of Engaged</div></div>
+    <div class="funnel-arrow">→</div>
+    <div class="funnel-step"><div class="fn">60</div><div class="fl">Trial Signup</div><div class="fr">30% of Inbox</div></div>
+    <div class="funnel-arrow">→</div>
+    <div class="funnel-step"><div class="fn">9+</div><div class="fl">Paid (30d)</div><div class="fr">15% of Trial</div></div>
+  </div>
+
+  <div class="note warn" style="margin-top:14px;">
+    <strong>สิ่งที่แก้:</strong><br>
+    • Inbox <s>80</s> → <strong>200</strong> (เพราะ Inbox → Trial 75% ไม่ realistic สำหรับ new product → แก้เป็น 30% ซึ่งเป็น SaaS benchmark)<br>
+    • Trial 60 คงเดิม (เป็น North Star ไม่เปลี่ยน)<br>
+    • เพิ่ม Funnel visualization ให้เห็น conversion rate ทุกขั้น
+  </div>
+
+  <table>
+    <tr><th>KPI</th><th>Target (เดิม)</th><th>Target (แก้)</th><th>Measure Tool</th><th>Owner</th></tr>
+    <tr><td>Page Reach</td><td>35,000+</td><td>35,000+ ✓</td><td>Meta Business Suite</td><td>Performance Mkt</td></tr>
+    <tr><td>Engagement Rate</td><td>≥ 5%</td><td>≥ 5% ✓</td><td>Meta Insight</td><td>Content Team</td></tr>
+    <tr>
+      <td>Inbox / Click <span class="fix-badge changed">แก้</span></td>
+      <td><s>80+</s></td>
+      <td><strong>200+</strong></td>
+      <td>Inbox Tag + CRM + GA4 Click</td>
+      <td>Sales + Admin</td>
+    </tr>
+    <tr><td>Trial Signup (UTM week1_*)</td><td>60+</td><td>60+ ✓</td><td>GA4 + UTM</td><td>Marketing Ops</td></tr>
+    <tr><td>Trial → Paid Conversion (30d)</td><td>≥ 15%</td><td>≥ 15% ✓</td><td>Internal CRM</td><td>Sales</td></tr>
+    <tr>
+      <td>CPL <span class="fix-badge changed">แก้</span></td>
+      <td><s>≤ 80 บาท</s></td>
+      <td><strong>≤ 45 บาท</strong> (Paid only)</td>
+      <td>Meta Ads Manager</td>
+      <td>Performance Mkt</td>
+    </tr>
+    <tr>
+      <td>CAC (blended) <span class="fix-badge new">เพิ่ม</span></td>
+      <td>—</td>
+      <td><strong>≤ 417 บาท</strong> (25K ÷ 60)</td>
+      <td>Total Spend ÷ Trial</td>
+      <td>Marketing Ops</td>
+    </tr>
+  </table>
+
+  <div class="note">
+    <strong>CPL ที่แก้:</strong> Ad Spend 9,000 ÷ Inbox 200 = CPL 45 บาท (Paid leads only)<br>
+    <strong>CAC (เพิ่มใหม่):</strong> Total Budget 25,000 ÷ Trial 60 = 417 บาท/trial — ใช้เทียบกับ LTV ของลูกค้า
+  </div>
+</div>
+
+<!-- ═══════ 04 REVENUE PROJECTION ═══════ -->
+<div class="sec">
+  <h2><span class="num">04</span> Revenue Projection <span class="fix-badge new">เพิ่มใหม่</span></h2>
+  <div class="grid3">
+    <div class="kpi-card yellow">
+      <div class="kn">9+</div>
+      <div class="kl">Paid Customers (30d)<br>60 Trial × 15%</div>
+    </div>
+    <div class="kpi-card green">
+      <div class="kn">฿____/เดือน</div>
+      <div class="kl">Projected MRR<br>9 ราย × ARPU (ใส่ราคาแพ็กเกจ)</div>
+    </div>
+    <div class="kpi-card orange">
+      <div class="kn">____x</div>
+      <div class="kl">ROAS (30d)<br>MRR ÷ Ad Spend 9,000</div>
+    </div>
+  </div>
+  <div class="note warn">
+    <strong>Action:</strong> ใส่ราคาแพ็กเกจ Spark / Scale เพื่อคำนวณ MRR และ ROAS ให้ครบ<br>
+    ตัวอย่าง: ถ้า ARPU = 2,000 บาท/เดือน → MRR = 18,000 → ROAS = 2.0x (เดือนแรก) → Payback Period ≈ 1.4 เดือน
+  </div>
+</div>
+
+<!-- ═══════ 05 BUDGET ═══════ -->
+<div class="sec">
+  <h2><span class="num">05</span> Budget Breakdown</h2>
+  <table>
+    <tr><th>#</th><th>Item</th><th>Description</th><th>Budget</th><th>%</th></tr>
+    <tr><td>1</td><td>Paid Boost — Facebook</td><td>Boost Day 1, 4, 5 (Awareness + Lead Gen + Promo)</td><td>9,000</td><td>36%</td></tr>
+    <tr><td>2</td><td>Creative Production</td><td>Graphic Design 7 ชิ้น + Video 60s × 1</td><td>8,000</td><td>32%</td></tr>
+    <tr><td>3</td><td>KOL / Micro-influencer</td><td>1 KOL วงการ Marketer (10K-50K followers) Share Day 5</td><td>5,000</td><td>20%</td></tr>
+    <tr><td>4</td><td>Email + LP Tools</td><td>Email Provider + UTM Tracker + LP A/B Test</td><td>1,500</td><td>6%</td></tr>
+    <tr><td>5</td><td>Contingency</td><td>เผื่อ Boost เพิ่ม / Promo Retarget</td><td>1,500</td><td>6%</td></tr>
+    <tr style="background:#F0F4FF;font-weight:700;"><td></td><td>TOTAL</td><td></td><td>25,000</td><td>100%</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ 06 TIMELINE ═══════ -->
+<div class="sec">
+  <h2><span class="num">06</span> 7-Day Timeline</h2>
+  <div class="timeline">
+    <div class="tl-day"><div class="td-n">Day 1</div><div class="td-d">จ. 10:00</div><div class="td-p" style="background:rgba(56,113,254,.12);color:#2a5bd4;">Hook</div></div>
+    <div class="tl-day"><div class="td-n">Day 2</div><div class="td-d">อ. 12:00</div><div class="td-p" style="background:rgba(228,38,55,.12);color:#c0392b;">Pain</div></div>
+    <div class="tl-day"><div class="td-n">Day 3</div><div class="td-d">พ. 19:00</div><div class="td-p" style="background:rgba(124,58,237,.12);color:#6929c4;">Educate</div></div>
+    <div class="tl-day"><div class="td-n">Day 4</div><div class="td-d">พฤ. 10:00</div><div class="td-p" style="background:rgba(243,156,18,.12);color:#c77d0a;">Use Case</div></div>
+    <div class="tl-day" style="background:#FFFDE7;"><div class="td-n">Day 5 ⭐</div><div class="td-d">ศ. 16:00</div><div class="td-p" style="background:rgba(254,202,63,.3);color:#9a7d0a;">Promo</div></div>
+    <div class="tl-day"><div class="td-n">Day 6</div><div class="td-d">ส. 11:00</div><div class="td-p" style="background:rgba(0,201,167,.12);color:#0a8a6f;">Dev</div></div>
+    <div class="tl-day"><div class="td-n">Day 7</div><div class="td-d">อา. 20:00</div><div class="td-p" style="background:rgba(41,128,185,.12);color:#2471a3;">Recap</div></div>
+  </div>
+  <div class="note" style="margin-top:10px;">
+    Paid Boost: <strong>Day 1</strong> (฿3,000 Cold) · <strong>Day 4</strong> (฿2,500 Tech) · <strong>Day 5</strong> (฿3,500 Retarget) = ฿9,000 total
+  </div>
+</div>
+
+<!-- ═══════ 07 REVIEW CADENCE ═══════ -->
+<div class="sec">
+  <h2><span class="num">07</span> Review Cadence <span class="fix-badge new">เพิ่มใหม่</span></h2>
+  <table>
+    <tr><th>เมื่อไหร่</th><th>ทำอะไร</th><th>ใครดู</th><th>ตัดสินใจอะไร</th></tr>
+    <tr><td><strong>ทุกวัน 09:00</strong></td><td>เช็ก Reach, ER, Inbox ของโพสต์เมื่อวาน</td><td>Content + Performance Mkt</td><td>ปรับ copy / เพิ่ม boost ถ้า ER < 3%</td></tr>
+    <tr><td><strong>Day 4 (Mid-week)</strong></td><td>Review Funnel: Reach → Inbox → Trial ถึงครึ่งทางไหม</td><td>ทุกคน (standup 30 นาที)</td><td>เพิ่มงบ Day 5 หรือเปลี่ยน creative</td></tr>
+    <tr><td><strong>Day 8 (Final)</strong></td><td>สรุปทุก KPI + Decision Gate</td><td>ทุกคน + Management</td><td>Go / Pivot / Stop (ดูหัวข้อ 08)</td></tr>
+    <tr><td><strong>Day 38 (30d post)</strong></td><td>วัด Trial → Paid Conversion</td><td>Sales + Marketing Ops</td><td>คำนวณ ROAS จริง + ปรับ strategy ระยะยาว</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ 08 DECISION GATE ═══════ -->
+<div class="sec">
+  <h2><span class="num">08</span> Decision Gate — จบ Week 1 แล้วทำอะไรต่อ <span class="fix-badge new">เพิ่มใหม่</span></h2>
+  <div class="gate">
+    <div class="gate-card go">
+      <div class="gt">✅ GO</div>
+      <div class="gc">Trial ≥ 60 · CPL ≤ 45</div>
+      <div class="ga">Scale Week 2 งบ ×2<br>เพิ่ม channel (Google Ads)</div>
+    </div>
+    <div class="gate-card pivot">
+      <div class="gt">⚠️ PIVOT</div>
+      <div class="gc">Trial 30–59 · CPL 45–80</div>
+      <div class="ga">ปรับ creative + เพิ่ม retarget<br>ลด Cold เพิ่ม Warm audience</div>
+    </div>
+    <div class="gate-card stop">
+      <div class="gt">🛑 STOP</div>
+      <div class="gc">Trial < 30 · CPL > 80</div>
+      <div class="ga">หยุด Paid ทั้งหมด<br>ประเมิน product-market fit ใหม่</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ 09 LEAD NURTURE ═══════ -->
+<div class="sec">
+  <h2><span class="num">09</span> Lead Nurture Plan <span class="fix-badge new">เพิ่มใหม่</span></h2>
+  <table>
+    <tr><th>สถานะ Lead</th><th>จำนวน (est.)</th><th>Action</th><th>Timeline</th><th>Owner</th></tr>
+    <tr>
+      <td>Inbox แล้วยังไม่สมัคร Trial</td>
+      <td>~140 (200 - 60)</td>
+      <td>Follow-up LINE OA message + ส่ง link สมัคร trial อีกครั้ง</td>
+      <td>ภายใน 24 ชม.</td>
+      <td>Sales + Admin</td>
+    </tr>
+    <tr>
+      <td>สมัคร Trial แล้วยังไม่ใช้งาน</td>
+      <td>~20-30</td>
+      <td>Email onboarding drip 3 ฉบับ (Day 1, 3, 7 หลังสมัคร)</td>
+      <td>Auto drip</td>
+      <td>Marketing Ops</td>
+    </tr>
+    <tr>
+      <td>ใช้ Trial แล้วยังไม่จ่าย (30d)</td>
+      <td>~51 (60 - 9)</td>
+      <td>Sales call/chat 1-on-1 + เสนอ extended trial หรือ discount</td>
+      <td>Day 25-30</td>
+      <td>Sales</td>
+    </tr>
+    <tr>
+      <td>Engaged แต่ไม่ inbox (passive)</td>
+      <td>~1,550</td>
+      <td>Retarget ด้วย Week 2 content (ถ้า Decision = GO)</td>
+      <td>Week 2+</td>
+      <td>Performance Mkt</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══════ 10 PRODUCT READINESS ═══════ -->
+<div class="sec">
+  <h2><span class="num">10</span> Product Readiness Checklist <span class="fix-badge new">เพิ่มใหม่</span></h2>
+  <div class="grid2">
+    <div>
+      <h3 style="font-size:.82em; color:var(--dark); margin-bottom:8px;">ก่อน Launch (ต้องเสร็จก่อน Day 1)</h3>
+      <ul class="checklist">
+        <li><span class="chk">☐</span> Landing Page tested — load time < 2 วินาที</li>
+        <li><span class="chk">☐</span> Signup flow ทำงานครบ (สมัคร → ยืนยัน email → เข้า dashboard)</li>
+        <li><span class="chk">☐</span> Sender Name approved จาก Telco</li>
+        <li><span class="chk">☐</span> UTM tracking ทุก link ทดสอบใน GA4 แล้ว</li>
+        <li><span class="chk">☐</span> Quick Reply Template พร้อม 5 แบบ (ราคา/demo/trial/API/ติดต่อ)</li>
+        <li><span class="chk">☐</span> CRM tagging ตั้งค่า — tag ตาม CTA Code (BOOST/DEMO/FLOW/TECH/LAUNCH20/API)</li>
+        <li><span class="chk">☐</span> Backup Landing Page บน CDN (failover)</li>
+        <li><span class="chk">☐</span> Promo Code LAUNCH20 ตั้งค่าในระบบแล้ว</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:.82em; color:var(--dark); margin-bottom:8px;">ทีม & Capacity</h3>
+      <ul class="checklist">
+        <li><span class="chk">☐</span> Inbox response SLA: ตอบภายใน 1 ชม. (เวลาทำการ)</li>
+        <li><span class="chk">☐</span> Admin คนละ 2 ชม. shift — ครอบคลุม 09:00-21:00</li>
+        <li><span class="chk">☐</span> Onboarding 1-on-1 รับได้ ____ slot/วัน</li>
+        <li><span class="chk">☐</span> Creative 7 ชิ้นส่งครบก่อน Day 1</li>
+        <li><span class="chk">☐</span> KOL confirm แล้ว — share Day 5</li>
+        <li><span class="chk">☐</span> Email drip sequence ตั้งค่าใน provider แล้ว</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ 11 RISK ═══════ -->
+<div class="sec">
+  <h2><span class="num">11</span> Risk Matrix</h2>
+  <table>
+    <tr><th>#</th><th>Risk</th><th>โอกาส</th><th>Impact</th><th>Mitigation</th></tr>
+    <tr><td>1</td><td>ER ต่ำกว่าเป้า (< 5%)</td><td><span class="tag tag-yellow">กลาง</span></td><td><span class="tag tag-yellow">กลาง</span></td><td>เตรียม Hook สำรอง 2 แบบ + Boost Post ดีสุดเร็วขึ้น 1 วัน</td></tr>
+    <tr><td>2</td><td>CPL สูงเกินเป้า (> 45 บาท)</td><td><span class="tag tag-yellow">กลาง</span></td><td><span class="tag tag-red">สูง</span></td><td>ลด Cold Audience เพิ่ม Retarget + ปรับ CTA Copy</td></tr>
+    <tr><td>3</td><td>Trial Signup ต่ำกว่า 60</td><td><span class="tag tag-green">ต่ำ</span></td><td><span class="tag tag-red">สูง</span></td><td>เพิ่มเครดิตทดลองจาก 100 → 150 SMS ใน Day 6-7</td></tr>
+    <tr><td>4</td><td>ลูกค้าร้องเรียน Spam</td><td><span class="tag tag-green">ต่ำ</span></td><td><span class="tag tag-red">สูง</span></td><td>ย้ำ opt-in + Disclaimer PDPA ทุก Caption</td></tr>
+    <tr><td>5</td><td>Sender Name approval ช้า</td><td><span class="tag tag-yellow">กลาง</span></td><td><span class="tag tag-yellow">กลาง</span></td><td>ติดตาม Telco ทุก 24 ชม. + แจ้งลูกค้าล่วงหน้า</td></tr>
+    <tr><td>6</td><td>Creative ไม่ตรง CI</td><td><span class="tag tag-green">ต่ำ</span></td><td><span class="tag tag-red">สูง</span></td><td>Brand Guard Review ก่อน Publish</td></tr>
+    <tr><td>7</td><td>Inbox Reply ช้า > 1 ชม.</td><td><span class="tag tag-yellow">กลาง</span></td><td><span class="tag tag-red">สูง</span></td><td>Admin shift 2 ชม. + Quick Reply Template 5 แบบ</td></tr>
+    <tr><td>8</td><td>Landing Page Crash / Slow</td><td><span class="tag tag-green">ต่ำ</span></td><td><span class="tag tag-red">สูง</span></td><td>Pre-test load < 2s + Backup LP บน CDN</td></tr>
+  </table>
+</div>
+
+<!-- ═══════ 12 PDPA ═══════ -->
+<div class="sec">
+  <h2><span class="num">12</span> PDPA / Legal Compliance <span class="fix-badge new">เพิ่มใหม่</span></h2>
+  <div class="note legal">
+    <strong>ข้อกำหนด PDPA สำหรับ SMS Marketing:</strong>
+    <ul style="margin-top:8px; padding-left:20px; font-size:.9em;">
+      <li>ทุก SMS ต้องมี <strong>opt-out keyword</strong> (เช่น "พิมพ์ STOP เพื่อยกเลิก")</li>
+      <li>ทุก Caption ที่เกี่ยวกับ trial/signup ต้องมี <strong>Privacy Policy link</strong></li>
+      <li>เก็บหลักฐาน <strong>consent / opt-in</strong> ของทุก lead ที่เข้ามา</li>
+      <li>Demo ที่ใช้ข้อมูลลูกค้าจริงต้อง <strong>anonymize</strong> ก่อนแสดง</li>
+      <li>Landing Page ต้องมี <strong>checkbox consent</strong> ก่อน submit form</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════ CHANGELOG ═══════ -->
+<div class="sec" style="background:#FAFAFA;">
+  <h2 style="color:#999;">Changelog — สิ่งที่แก้ไขจากต้นฉบับ</h2>
+  <table style="font-size:.82em;">
+    <tr><th>#</th><th>ประเภท</th><th>รายการ</th><th>เดิม</th><th>แก้เป็น</th></tr>
+    <tr><td>1</td><td><span class="tag tag-red">แก้</span></td><td>Inbox Target</td><td>80</td><td><strong>200</strong> (Inbox→Trial 30% realistic)</td></tr>
+    <tr><td>2</td><td><span class="tag tag-red">แก้</span></td><td>CPL</td><td>≤ 80 บาท (ไม่ระบุ scope)</td><td><strong>≤ 45 บาท (Paid only)</strong> + เพิ่ม CAC 417 บาท</td></tr>
+    <tr><td>3</td><td><span class="tag tag-red">แก้</span></td><td>North Star</td><td>นับแค่ Facebook</td><td><strong>นับทุก Channel</strong> ที่มี UTM week1_*</td></tr>
+    <tr><td>4</td><td><span class="tag tag-red">แก้</span></td><td>Baseline</td><td>ไม่มี</td><td><strong>Baseline: 0 (New Launch)</strong></td></tr>
+    <tr><td>5</td><td><span class="tag tag-green">เพิ่ม</span></td><td>Start/End Date</td><td>—</td><td>ช่องให้กรอกวันที่จริง</td></tr>
+    <tr><td>6</td><td><span class="tag tag-green">เพิ่ม</span></td><td>Revenue Projection</td><td>—</td><td>Paid Customers / MRR / ROAS</td></tr>
+    <tr><td>7</td><td><span class="tag tag-green">เพิ่ม</span></td><td>Decision Gate</td><td>—</td><td>GO / PIVOT / STOP criteria</td></tr>
+    <tr><td>8</td><td><span class="tag tag-green">เพิ่ม</span></td><td>Review Cadence</td><td>—</td><td>Daily 09:00 / Mid-week Day 4 / Final Day 8 / 30d</td></tr>
+    <tr><td>9</td><td><span class="tag tag-green">เพิ่ม</span></td><td>Lead Nurture Plan</td><td>—</td><td>4 สถานะ lead + action + timeline</td></tr>
+    <tr><td>10</td><td><span class="tag tag-green">เพิ่ม</span></td><td>Product Readiness</td><td>—</td><td>Checklist 14 ข้อ (pre-launch + team)</td></tr>
+    <tr><td>11</td><td><span class="tag tag-green">เพิ่ม</span></td><td>PDPA / Legal</td><td>—</td><td>5 ข้อกำหนดตาม PDPA</td></tr>
+  </table>
+</div>
+
+</div>
+
+<div class="footer">Boost SMS — Week 1 Marketing Plan (Revised) · Generated by Claude Code</div>
+
+</body>
+</html>

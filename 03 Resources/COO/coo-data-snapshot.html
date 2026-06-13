@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Snapshot · 8 พ.ค. 2569 · 02:11 น.</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --text: #0d1426;
+    --soft: #4a5470;
+    --muted: #7a8499;
+    --line: #e2e7f0;
+    --green: #0f9967;
+    --red: #c92e3c;
+    --amber: #c47a00;
+    --blue: #1e6cd6;
+    --violet: #6d52d9;
+  }
+  body {
+    background: #f7f8fb;
+    color: var(--text);
+    font-family: 'IBM Plex Sans Thai','Inter',sans-serif;
+    line-height: 1.55;
+    padding: 32px 20px 60px;
+  }
+  .num { font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+
+  header {
+    border-bottom: 2px solid var(--text);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+  }
+  header .eyebrow {
+    color: var(--blue); font-weight: 700; font-size: 12px;
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  header h1 { font-size: 26px; letter-spacing: -.3px; }
+  header .meta { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  header .pill {
+    display: inline-block;
+    background: #ecf7f2; color: var(--green);
+    font-size: 12px; font-weight: 700;
+    padding: 3px 10px; border-radius: 999px;
+    margin-left: 8px;
+  }
+  header .pill.red { background: #fbeaec; color: var(--red); }
+
+  section {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+  }
+  section h2 {
+    font-size: 14px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  table {
+    width: 100%; border-collapse: collapse; font-size: 13.5px;
+  }
+  th, td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+  }
+  th {
+    color: var(--muted); font-weight: 600;
+    text-transform: uppercase; font-size: 11px; letter-spacing: .8px;
+  }
+  td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; }
+  td .v { font-weight: 600; }
+  td .delta { font-size: 11.5px; padding: 1px 6px; border-radius: 999px; margin-left: 4px; }
+  td .delta.g { background: #ecf7f2; color: var(--green); }
+  td .delta.r { background: #fbeaec; color: var(--red); }
+  td .delta.a { background: #fbf5e7; color: var(--amber); }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+
+  .footer-note {
+    background: #fbf5e7; border-left: 3px solid var(--amber);
+    padding: 12px 16px; border-radius: 0 8px 8px 0;
+    font-size: 13px; color: var(--text);
+    margin-top: 12px;
+  }
+  .footer-note b { color: var(--amber); }
+
+  .meta-block {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  @media print {
+    body { background: white; padding: 8mm; }
+    section { page-break-inside: avoid; box-shadow: none; }
+    @page { margin: 12mm; size: A4; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Data Snapshot · Master Dashboard</div>
+    <h1>ตัวเลขหลัก ณ เวลา 02:11 น. · 8 พ.ค. 2569
+      <span class="pill">YoY +28.5%</span>
+      <span class="pill red">Margin −47.5%</span>
+    </h1>
+    <div class="meta">Capture จาก master-dashboard-eight-nu.vercel.app/overview · ตัวเลขอาจขยับ ±0.5% เมื่อเทียบกับ live dashboard</div>
+  </header>
+
+  <section>
+    <h2>📊 Group · ภาพรวม</h2>
+    <table>
+      <tr><th>Metric</th><th class="num">Value</th><th>Note</th></tr>
+      <tr><td>รายได้ MTD (8 วัน)</td><td class="num"><span class="v">฿3,034,884</span> <span class="delta g">+3.3% MoM</span> <span class="delta g">+28.5% YoY</span></td><td>29.1% ของเป้าเดือน · ผ่าน 25.8%</td></tr>
+      <tr><td>รายได้ YTD</td><td class="num"><span class="v">฿42,655,378</span></td><td>34.1% ของเป้าปี ฿125M · ผ่าน 127/365 วัน</td></tr>
+      <tr><td>Run-rate ปลายปี</td><td class="num"><span class="v">฿122,592,229</span></td><td>vs เป้า ฿125M = 98.1% (gap 1.0x)</td></tr>
+      <tr><td>เป้าปี 2026</td><td class="num"><span class="v">฿125,000,000</span></td><td>~฿10.4M/เดือน เฉลี่ย</td></tr>
+      <tr><td>ส่วนต่าง (gap)</td><td class="num"><span class="v" style="color:var(--red)">−฿2,406,180</span></td><td>ต้องเพิ่ม ~3% ต่อวัน</td></tr>
+      <tr><td>เฉลี่ย/วันตอนนี้</td><td class="num"><span class="v">฿335,873</span></td><td>vs ที่ต้องการ ฿345,984</td></tr>
+      <tr><td>กำไรขั้นต้น MTD</td><td class="num"><span class="v" style="color:var(--red)">−฿1,441,586</span></td><td>Margin −47.5% (pre-paid cycle)</td></tr>
+      <tr><td>รายจ่าย MTD</td><td class="num"><span class="v">฿4,476,509</span></td><td>fixed cost ปกติ</td></tr>
+      <tr><td>MRR รวม</td><td class="num"><span class="v">฿2,792,957</span></td><td>API ฿297K + ES ฿2.50M</td></tr>
+    </table>
+  </section>
+
+  <div class="grid2">
+    <section>
+      <h2>🏢 Thunder Solution</h2>
+      <table>
+        <tr><th>Metric</th><th class="num">Value</th></tr>
+        <tr><td>รายได้ MTD</td><td class="num"><span class="v">฿1,173,712</span> <span class="delta a">−14.8%</span></td></tr>
+        <tr><td>เฉลี่ย/วัน</td><td class="num"><span class="v">฿146,711</span></td></tr>
+        <tr><td>Peak Day</td><td class="num"><span class="v">฿363,214</span> · 1 พ.ค.</td></tr>
+        <tr><td>Margin</td><td class="num"><span class="v" style="color:var(--red)">−48.5%</span></td></tr>
+        <tr><td>สัดส่วน Group</td><td class="num"><span class="v">38.7%</span></td></tr>
+        <tr><td colspan="2" style="padding-top:12px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:1px;">Per-product MoM (run-rate)</td></tr>
+        <tr><td>Thunder Bot</td><td class="num"><span class="v">฿964,263</span> <span class="delta a">−11.7%</span></td></tr>
+        <tr><td>Flex</td><td class="num"><span class="v">฿7,857</span> <span class="delta g">+71.6%</span></td></tr>
+        <tr><td>Thunder API</td><td class="num"><span class="v">฿201,607</span> <span class="delta g">+180.7%</span></td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>🏢 EasySlip</h2>
+      <table>
+        <tr><th>Metric</th><th class="num">Value</th></tr>
+        <tr><td>รายได้ MTD</td><td class="num"><span class="v">฿1,861,171</span> <span class="delta g">+28.8%</span> <span class="delta g">+28.5% YoY</span></td></tr>
+        <tr><td>เฉลี่ย/วัน</td><td class="num"><span class="v">฿232,649</span></td></tr>
+        <tr><td>Peak Day</td><td class="num"><span class="v">฿546,488</span> · 1 พ.ค.</td></tr>
+        <tr><td>Margin</td><td class="num"><span class="v" style="color:var(--red)">−46.9%</span></td></tr>
+        <tr><td>สัดส่วน Group</td><td class="num"><span class="v">61.3%</span></td></tr>
+        <tr><td>YTD</td><td class="num"><span class="v">฿22.9M</span> / ฿70M (32.7%)</td></tr>
+        <tr><td>Run-rate ปลายปี</td><td class="num"><span class="v">฿65.83M</span> · gap 1.1x</td></tr>
+        <tr><td>EasyBot</td><td class="num"><span class="v">฿48,343</span> <span class="delta g">+7.2%</span></td></tr>
+        <tr><td>EasySlip API</td><td class="num"><span class="v">฿1,812,852</span> <span class="delta a">−12.3%</span></td></tr>
+      </table>
+    </section>
+  </div>
+
+  <section>
+    <h2>👥 ฐานลูกค้าทั้ง 4 Platform</h2>
+    <table>
+      <tr><th>Platform</th><th class="num">Total</th><th class="num">Active</th><th class="num">Active %</th><th class="num">Inactive</th><th class="num">Banned</th></tr>
+      <tr><td><b>Thunder Bot</b></td><td class="num">53,309</td><td class="num">8,123</td><td class="num">15.2%</td><td class="num">45,186</td><td class="num">—</td></tr>
+      <tr><td><b>Thunder API</b></td><td class="num">2,106</td><td class="num">244</td><td class="num">11.6%</td><td class="num">1,862</td><td class="num">2</td></tr>
+      <tr><td><b>Easy Bot</b></td><td class="num">1,952</td><td class="num">512</td><td class="num">26.2%</td><td class="num">1,440</td><td class="num">—</td></tr>
+      <tr><td><b>EasySlip API</b></td><td class="num">9,627</td><td class="num">1,839</td><td class="num">19.1%</td><td class="num">7,788</td><td class="num">276</td></tr>
+      <tr style="background:#f7f8fb;font-weight:600;"><td><b>รวม</b></td><td class="num">66,994</td><td class="num">10,718</td><td class="num">16.0%</td><td class="num">~56,276</td><td class="num">278</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>💰 ARPU per Active User · เห็นพระเอกชัด</h2>
+    <table>
+      <tr><th>Product</th><th class="num">ARPU</th><th class="num">Revenue MTD</th><th class="num">% ของรายได้รวม</th></tr>
+      <tr><td>Thunder Bot</td><td class="num">฿120</td><td class="num">฿972,120</td><td class="num">32.0%</td></tr>
+      <tr><td>Thunder API</td><td class="num">฿826</td><td class="num">฿201,607</td><td class="num">6.6%</td></tr>
+      <tr><td>Easy Bot</td><td class="num">฿94</td><td class="num">฿48,343</td><td class="num">1.6%</td></tr>
+      <tr style="background:#ecf7f2;font-weight:600;"><td><b>EasySlip API</b> ⭐</td><td class="num">฿986</td><td class="num">฿1,812,852</td><td class="num">59.7%</td></tr>
+    </table>
+    <div class="footer-note" style="background:#ecf7f2;border-left-color:var(--green);"><b>💡 Insight:</b> EasySlip API ARPU สูงสุด · ทำเงิน 60% ของกลุ่ม · ดันที่นี่ได้กำไรเร็วที่สุด</div>
+  </section>
+
+  <section>
+    <h2>📈 Acquisition · ลูกค้าใหม่ MTD (8 วัน)</h2>
+    <table>
+      <tr><th>Source</th><th class="num">ใหม่</th><th class="num">% เทียบช่วงก่อน</th></tr>
+      <tr><td>Thunder Bot</td><td class="num">264</td><td class="num"><span class="delta r">−46.6%</span></td></tr>
+      <tr><td>Thunder API</td><td class="num">89</td><td class="num"><span class="delta a">−3.3%</span></td></tr>
+      <tr><td>Easy Bot</td><td class="num">4</td><td class="num">—</td></tr>
+      <tr><td>EasySlip API</td><td class="num">121</td><td class="num">—</td></tr>
+      <tr style="background:#f7f8fb;font-weight:600;"><td><b>รวม</b></td><td class="num">478</td><td class="num"><span class="delta r">−31.9%</span></td></tr>
+      <tr><td>First-pay (ES API + Thunder API)</td><td class="num">29 คน · ฿94,546</td><td class="num">conv. 24.0%</td></tr>
+      <tr><td>First-pay เดือนนี้ (รวม)</td><td class="num">44 คน · ฿143,446</td><td class="num"><span class="delta g">+22.2%</span></td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>📊 Volume / Unit Economics (8 วัน)</h2>
+    <table>
+      <tr><th>Source</th><th class="num">Slips</th><th class="num">Rev/สลิป</th><th class="num">Cost/สลิป</th><th class="num">Profit/สลิป</th><th class="num">Margin</th></tr>
+      <tr><td>Thunder</td><td class="num">6,045,654</td><td class="num">19.41 สต.</td><td class="num">3.53 สต.</td><td class="num">15.89 สต.</td><td class="num">81.8%</td></tr>
+      <tr><td>EasySlip</td><td class="num">9,829,402</td><td class="num">18.93 สต.</td><td class="num">3.26 สต.</td><td class="num">15.68 สต.</td><td class="num">82.8%</td></tr>
+      <tr style="background:#f7f8fb;font-weight:600;"><td><b>รวม</b></td><td class="num">15,875,056</td><td class="num">19.12 สต.</td><td class="num">3.36 สต.</td><td class="num">15.76 สต.</td><td class="num">82.4%</td></tr>
+    </table>
+    <div class="footer-note" style="background:#ecf7f2;border-left-color:var(--green);"><b>💡 Insight:</b> หน่วยเศรษฐศาสตร์ของเราเก่งระดับโลก · ปัญหาเดียวคือ <b>ดัน volume ให้คุ้ม fixed cost</b></div>
+  </section>
+
+  <section>
+    <h2>📞 จาก Backoffice Developer (Thunder API)</h2>
+    <table>
+      <tr><th>Metric</th><th class="num">Value</th><th>Note</th></tr>
+      <tr><td>สมาชิกทั้งหมด</td><td class="num">2,105</td><td>+12.41% YoY (1,114 ใหม่ปีนี้)</td></tr>
+      <tr><td>สมาชิก inactive</td><td class="num">1,861</td><td>88% ของฐาน · opportunity ใหญ่</td></tr>
+      <tr><td>VIP active apps</td><td class="num">147</td><td>จากทั้งหมด 313 VIP apps</td></tr>
+      <tr><td>เครดิตในกระเป๋า</td><td class="num">฿87,065</td><td>liability ที่ลูกค้าค้าง</td></tr>
+      <tr><td>ยอดเติมเงินวันนี้</td><td class="num">฿159</td><td>−97.84% (ต้นเดือน)</td></tr>
+      <tr><td>ยอดเติมเงินสัปดาห์</td><td class="num">฿96,728</td><td>−54.83%</td></tr>
+      <tr><td>ยอดเติมเงินเดือน</td><td class="num">฿201,607</td><td>−60.77% MoM (run-rate +180.7%)</td></tr>
+      <tr style="background:#ecf7f2;"><td><b>ยอดเติมเงิน YTD</b></td><td class="num"><b>฿1,544,953</b></td><td><span class="delta g">+102.30% YoY</span> · เกือบเท่าตัว</td></tr>
+      <tr><td>ลูกค้าใหม่ที่จ่ายเงิน YTD</td><td class="num">130 คน · ฿178,843</td><td>+14% จำนวน · +60% ยอดเงิน</td></tr>
+      <tr><td>API v1 calls วันนี้</td><td class="num">7,461</td><td>หลัก</td></tr>
+      <tr><td>API v2 calls วันนี้</td><td class="num">37</td><td>0.5% adoption · ต้องเร่ง migrate</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>🚨 Open Alerts</h2>
+    <table>
+      <tr><th>Alert</th><th>Status</th></tr>
+      <tr><td>Token slipver ใกล้หมดอายุ</td><td><span class="delta r">เหลือไม่ถึง 1 วัน</span></td></tr>
+      <tr><td>Token easyslip ใกล้หมดอายุ</td><td><span class="delta r">เหลือไม่ถึง 1 วัน</span></td></tr>
+      <tr><td>Profit margin รวมต่ำกว่า 20%</td><td><span class="delta a">เดือนนี้ −47.5% (pre-paid cycle)</span></td></tr>
+    </table>
+  </section>
+
+  <div class="footer-note">⚠️ <b>เอกสารใช้ภายใน:</b> ตัวเลขทั้งหมดเป็น snapshot ณ 02:11 น. · ก่อนพูดในที่ประชุม ตรวจ live dashboard อีกรอบที่ <code>master-dashboard-eight-nu.vercel.app</code></div>
+
+  <div class="meta-block">
+    Capture: 8 พ.ค. 2569 · 02:11 น. · จาก Master Dashboard + Backoffice Developer<br>
+    Thunder Group · COO Briefing · v3
+  </div>
+
+</div>
+</body>
+</html>

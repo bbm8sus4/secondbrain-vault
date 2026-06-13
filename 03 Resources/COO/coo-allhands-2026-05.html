@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COO Monthly All-Hands · พ.ค. 2569 · Thunder Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="coo-assets/chart.umd.min.js"></script>
+<script>
+  // Fallback: if local Chart.js fails, try CDN
+  if (typeof Chart === 'undefined') {
+    document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"><\/script>');
+  }
+</script>
+<style>
+  :root {
+    --bg:        #f7f8fb;
+    --bg-soft:   #eef1f7;
+    --card:      #ffffff;
+    --card-2:    #f5f7fb;
+    --line:      #e2e7f0;
+    --text:      #0d1426;
+    --text-soft: #3a4664;
+    --muted:     #6b7691;
+    --green:     #0f9967;
+    --green-bg:  rgba(15,153,103,.10);
+    --amber:     #c47a00;
+    --amber-bg:  rgba(196,122,0,.10);
+    --red:       #c92e3c;
+    --red-bg:    rgba(201,46,60,.10);
+    --blue:      #1e6cd6;
+    --blue-bg:   rgba(30,108,214,.10);
+    --violet:    #6d52d9;
+    --violet-bg: rgba(109,82,217,.10);
+  }
+  html.dark {
+    --bg:        #0b1220;
+    --bg-soft:   #111a2e;
+    --card:      #15203a;
+    --card-2:    #1b2746;
+    --line:      #243355;
+    --text:      #e7ecf5;
+    --text-soft: #aab4cc;
+    --muted:     #7280a1;
+    --green:     #21c389;
+    --green-bg:  rgba(33,195,137,.12);
+    --amber:     #ffb648;
+    --amber-bg:  rgba(255,182,72,.12);
+    --red:       #ff6b6b;
+    --red-bg:    rgba(255,107,107,.12);
+    --blue:      #60a5fa;
+    --blue-bg:   rgba(96,165,250,.12);
+    --violet:    #a78bfa;
+    --violet-bg: rgba(167,139,250,.12);
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans Thai','Sarabun','Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-feature-settings: "ss01" on, "tnum" on;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+    transition: background .25s ease, color .25s ease;
+  }
+  .num, .mono { font-family: 'Inter','SF Mono',Menlo,monospace; font-variant-numeric: tabular-nums; }
+
+  /* Top bar */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 14px 28px;
+    display: flex; align-items: center; gap: 18px;
+  }
+  .brand { font-weight: 700; letter-spacing: .2px; font-size: 15px; }
+  .brand .dot { color: var(--blue); }
+  .nav { display:flex; gap: 4px; flex-wrap: wrap; margin-left: auto; max-width: 720px; }
+  .nav a {
+    color: var(--text-soft); text-decoration: none;
+    font-size: 12.5px; padding: 5px 9px; border-radius: 6px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .nav a:hover { color: var(--text); background: var(--card); border-color: var(--line); }
+  .nav a.lead-link { background: var(--blue-bg); color: var(--blue); font-weight: 600; }
+  .nav-sep { color: var(--muted); align-self: center; font-size: 13px; padding: 0 2px; user-select: none; }
+  @media (max-width: 1000px) {
+    .nav {
+      max-width: 100%;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+    .nav::-webkit-scrollbar { height: 4px; }
+    .nav::-webkit-scrollbar-thumb { background: var(--line); border-radius: 2px; }
+  }
+  .top-actions { display:flex; gap: 8px; }
+  .btn {
+    background: var(--card); color: var(--text);
+    border: 1px solid var(--line);
+    padding: 7px 12px; border-radius: 8px;
+    font-size: 13px; cursor: pointer;
+    font-family: inherit;
+  }
+  .btn:hover { background: var(--card-2); }
+
+  /* Layout */
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 36px 28px 96px; }
+  section.slide {
+    margin-top: 28px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 36px 40px;
+    position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  section.slide:first-of-type { margin-top: 0; }
+
+  .slide-head {
+    display: flex; align-items: baseline; gap: 14px;
+    border-bottom: 1px dashed var(--line);
+    padding-bottom: 14px; margin-bottom: 22px;
+  }
+  .slide-no {
+    font-family: 'Inter',sans-serif; font-weight: 700;
+    font-size: 13px; color: var(--muted);
+    letter-spacing: 1.5px;
+  }
+  .slide-time {
+    margin-left: auto; font-size: 12px; color: var(--muted);
+    font-family: 'Inter',sans-serif;
+  }
+  h1, h2, h3 { margin: 0; font-weight: 700; }
+  h1 { font-size: 38px; line-height: 1.15; letter-spacing: -.5px; }
+  h2 { font-size: 26px; line-height: 1.25; letter-spacing: -.3px; }
+  h3 { font-size: 18px; line-height: 1.35; }
+  p  { margin: 10px 0; color: var(--text-soft); }
+  .lead { font-size: 18px; color: var(--text); }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 22%, var(--card)) 0%, var(--card) 60%);
+    border: 1px solid var(--line);
+  }
+  .hero h1 { font-size: 44px; }
+  .hero .meta {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    color: var(--text-soft); font-size: 14px;
+    margin-top: 10px;
+  }
+  .hero .meta b { color: var(--text); font-weight: 600; }
+
+  /* KPI grid */
+  .kpis { display: grid; gap: 14px; grid-template-columns: repeat(4, 1fr); margin-top: 18px; }
+  @media (max-width: 900px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+  .kpi {
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 18px;
+  }
+  .kpi .label { font-size: 12.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; }
+  .kpi .value { font-family: 'Inter',sans-serif; font-weight: 700; font-size: 28px; margin-top: 6px; letter-spacing: -.3px; }
+  .kpi .sub   { font-size: 12.5px; color: var(--text-soft); margin-top: 4px; }
+  .kpi.up   .value { color: var(--green); }
+  .kpi.down .value { color: var(--red); }
+  .kpi.warn .value { color: var(--amber); }
+  .kpi.flat .value { color: var(--text); }
+
+  /* Pills */
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 12px; font-weight: 600;
+    background: var(--card-2); border: 1px solid var(--line);
+    color: var(--text-soft);
+  }
+  .pill.green  { background: var(--green-bg);  color: var(--green);  border-color: color-mix(in srgb, var(--green) 30%, transparent); }
+  .pill.red    { background: var(--red-bg);    color: var(--red);    border-color: color-mix(in srgb, var(--red) 30%, transparent); }
+  .pill.amber  { background: var(--amber-bg);  color: var(--amber);  border-color: color-mix(in srgb, var(--amber) 30%, transparent); }
+  .pill.blue   { background: var(--blue-bg);   color: var(--blue);   border-color: color-mix(in srgb, var(--blue) 30%, transparent); }
+  .pill.violet { background: var(--violet-bg); color: var(--violet); border-color: color-mix(in srgb, var(--violet) 30%, transparent); }
+
+  /* Bullets */
+  ul.clean { padding: 0; margin: 12px 0; list-style: none; }
+  ul.clean li {
+    padding: 10px 0 10px 24px;
+    position: relative;
+    color: var(--text-soft);
+    border-bottom: 1px dashed var(--line);
+  }
+  ul.clean li:last-child { border-bottom: none; }
+  ul.clean li::before {
+    content: ""; position: absolute; left: 4px; top: 18px;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--blue);
+  }
+  ul.clean li b { color: var(--text); font-weight: 600; }
+  ul.clean.green li::before { background: var(--green); }
+  ul.clean.red li::before { background: var(--red); }
+  ul.clean.amber li::before { background: var(--amber); }
+
+  /* Two columns */
+  .cols-2 { display: grid; gap: 18px; grid-template-columns: 1fr 1fr; }
+  .cols-3 { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) { .cols-2, .cols-3 { grid-template-columns: 1fr; } }
+
+  /* Card variants */
+  .card-soft {
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .card-soft h3 { font-size: 15px; color: var(--text); margin-bottom: 8px; letter-spacing: -.1px; }
+  .card-soft p { margin: 4px 0; font-size: 14px; }
+  .priority {
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--blue);
+    border-radius: 12px;
+    padding: 16px 18px;
+  }
+  .priority h3 { font-size: 17px; }
+  .priority.green  { border-left-color: var(--green); }
+  .priority.amber  { border-left-color: var(--amber); }
+  .priority.violet { border-left-color: var(--violet); }
+  .priority small { font-size: 12px; color: var(--muted); display: block; margin-top: 8px; }
+
+  /* Tables */
+  table.product {
+    width: 100%; border-collapse: collapse; font-size: 14px;
+    margin-top: 8px;
+  }
+  table.product th, table.product td {
+    padding: 11px 12px; text-align: left;
+    border-bottom: 1px solid var(--line);
+  }
+  table.product th {
+    color: var(--muted); font-weight: 600;
+    text-transform: uppercase; font-size: 11.5px; letter-spacing: .8px;
+  }
+  table.product td.num { text-align: right; font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; }
+  table.product tbody tr:hover { background: var(--card-2); }
+
+  /* Chart container */
+  .chart-wrap {
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px;
+    margin-top: 16px;
+  }
+  .chart-wrap canvas { max-height: 320px; }
+
+  /* Speaker notes */
+  .notes {
+    margin-top: 18px;
+    background: var(--card-2);
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: var(--text-soft);
+    font-size: 13.5px;
+    display: none;
+  }
+  .notes.show { display: block; }
+  .notes b { color: var(--text); }
+  .notes-label {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  /* Quote */
+  blockquote {
+    margin: 16px 0; padding: 14px 18px;
+    background: var(--blue-bg);
+    border-left: 3px solid var(--blue);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 15.5px; font-weight: 500; line-height: 1.55;
+  }
+
+  /* Stats banner */
+  .banner {
+    margin-top: 16px;
+    background: var(--green-bg);
+    border: 1px solid color-mix(in srgb, var(--green) 30%, transparent);
+    color: var(--green);
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .banner.amber { background: var(--amber-bg); border-color: color-mix(in srgb, var(--amber) 30%, transparent); color: var(--amber); }
+  .banner.red   { background: var(--red-bg);   border-color: color-mix(in srgb, var(--red) 30%, transparent);   color: var(--red); }
+  .banner.blue  { background: var(--blue-bg);  border-color: color-mix(in srgb, var(--blue) 30%, transparent);  color: var(--blue); }
+
+  /* Footer / appendix */
+  .appendix {
+    margin-top: 28px;
+    padding: 22px 28px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--card);
+  }
+  .appendix h3 { color: var(--text); margin-bottom: 10px; }
+  .appendix dl { display: grid; grid-template-columns: 220px 1fr; gap: 8px 14px; }
+  .appendix dt { color: var(--muted); font-size: 13px; }
+  .appendix dd { color: var(--text-soft); font-size: 13px; margin: 0; }
+
+  /* Print */
+  @media print {
+    html { background: white; }
+    body { background: white; color: black; font-size: 11pt; }
+    .topbar, .top-actions, .nav, .toc, .hint { display: none !important; }
+    .wrap { padding: 0 !important; max-width: 100% !important; }
+    section.slide {
+      page-break-after: always;
+      page-break-inside: avoid;
+      box-shadow: none;
+      border: 1px solid #ddd;
+      background: white;
+      color: black;
+      padding: 22px 26px;
+      margin-top: 0 !important;
+      border-radius: 8px;
+    }
+    .notes { display: block !important; background: #f7f7f7 !important; border: 1px dashed #aaa !important; color: #333 !important; }
+    .notes b { color: black !important; }
+    .kpi, .priority, .card-soft, .chart-wrap, .appendix, .q-item { background: white; border-color: #ccc; }
+    .pill { border: 1px solid #999; background: white; color: black; }
+    .banner { background: #f7f7f7 !important; border: 1px solid #aaa !important; color: black !important; }
+    blockquote { background: #f7f7f7 !important; color: black !important; border-left: 3px solid #888 !important; }
+    .kpi.up .value, .kpi.down .value, .kpi.warn .value, .bigstat.green, .bigstat.red, .bigstat.amber, .bigstat.blue {
+      color: black !important;
+    }
+    a { color: black; text-decoration: none; }
+    h1, h2, h3 { color: black; page-break-after: avoid; }
+    table.product { font-size: 10pt; }
+    .slide-no { color: #888 !important; }
+    .priority { border-left-width: 3px !important; }
+    canvas { max-height: 200px !important; }
+  }
+
+  /* Presenter mode (P key) */
+  body.presenter section.slide {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    margin-top: 0;
+    border-radius: 0;
+  }
+  body.presenter { scroll-snap-type: y mandatory; }
+  body.presenter .topbar { opacity: 0.3; }
+  body.presenter .topbar:hover { opacity: 1; }
+
+  /* Scroll to top */
+  .scroll-top {
+    position: fixed;
+    bottom: 24px; left: 24px;
+    width: 44px; height: 44px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: none;
+    align-items: center; justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px -8px rgba(13,20,38,.2);
+    z-index: 90;
+    transition: transform .15s, box-shadow .15s;
+    color: var(--text);
+    font-size: 18px;
+  }
+  .scroll-top:hover { transform: translateY(-2px); box-shadow: 0 8px 22px -8px rgba(13,20,38,.3); }
+  .scroll-top.show { display: flex; }
+
+  /* Entry animation */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  section.slide.in-view {
+    animation: slideUp .5s ease-out;
+  }
+
+  /* Section progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0; height: 3px;
+    width: 0%;
+    background: var(--blue);
+    z-index: 100;
+    transition: width .3s ease;
+  }
+
+  /* Timer overlay (shown when timer is running) */
+  .timer-overlay {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 20px;
+    box-shadow: 0 12px 32px -10px rgba(13,20,38,.25);
+    z-index: 90;
+    display: none;
+    min-width: 220px;
+    font-family: 'Inter',sans-serif;
+  }
+  .timer-overlay.active { display: block; }
+  .timer-overlay .t-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+  .timer-overlay .t-time { font-size: 36px; font-weight: 800; letter-spacing: -1px; line-height: 1; margin: 4px 0; }
+  .timer-overlay .t-time.ok { color: var(--green); }
+  .timer-overlay .t-time.warn { color: var(--amber); }
+  .timer-overlay .t-time.over { color: var(--red); }
+  .timer-overlay .t-sub { font-size: 12px; color: var(--text-soft); }
+  .timer-overlay .t-section { font-size: 11.5px; color: var(--blue); margin-top: 4px; font-weight: 600; }
+  .timer-overlay .t-buttons { display: flex; gap: 6px; margin-top: 10px; }
+  .timer-overlay .t-btn {
+    flex: 1; background: var(--card-2); border: 1px solid var(--line);
+    color: var(--text); padding: 4px 8px; border-radius: 6px;
+    font-size: 11px; cursor: pointer; font-family: inherit;
+  }
+  .timer-overlay .t-btn:hover { background: var(--blue-bg); color: var(--blue); }
+
+  /* Print mode toggle (no print, just show notes by default) */
+  body.show-notes .notes { display: block; }
+
+  /* Footer hint */
+  .hint {
+    text-align: center; color: var(--muted); font-size: 12.5px;
+    margin-top: 18px;
+  }
+  /* Inline meta row */
+  .row {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin: 10px 0;
+  }
+  /* Big stat */
+  .bigstat {
+    font-family: 'Inter',sans-serif;
+    font-weight: 800; letter-spacing: -1px;
+    font-size: 64px; line-height: 1.05;
+    margin: 8px 0 4px;
+  }
+  .bigstat.green { color: var(--green); }
+  .bigstat.red { color: var(--red); }
+  .bigstat.amber { color: var(--amber); }
+  .bigstat.blue { color: var(--blue); }
+
+  /* Quote / opening */
+  .opener-script {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .opener-script p { color: var(--text); margin: 12px 0; }
+
+  /* Recognition */
+  .recog-list { display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 760px) { .recog-list { grid-template-columns: 1fr; } }
+  .recog {
+    background: var(--card-2); border: 1px solid var(--line);
+    border-radius: 12px; padding: 14px 16px;
+    border-left: 4px solid var(--violet);
+  }
+  .recog b { color: var(--text); }
+
+  /* Playbook */
+  .playbook { display: grid; gap: 8px; margin-top: 10px; }
+  .play-item {
+    display: grid; grid-template-columns: 240px 1fr;
+    gap: 14px; align-items: start;
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+  }
+  @media (max-width: 760px) { .play-item { grid-template-columns: 1fr; gap: 4px; } }
+  .play-trigger { color: var(--text); font-weight: 500; }
+  .play-action { color: var(--text-soft); line-height: 1.55; }
+
+  /* Risks */
+  .risks { display: grid; gap: 12px; margin-top: 14px; }
+  .risk-item {
+    background: var(--card-2); border: 1px solid var(--line);
+    border-left: 4px solid var(--blue);
+    border-radius: 12px; padding: 14px 18px;
+  }
+  .risk-item.red { border-left-color: var(--red); }
+  .risk-item.amber { border-left-color: var(--amber); }
+  .risk-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 6px;
+  }
+  .risk-no {
+    font-family: 'Inter',sans-serif; font-weight: 800;
+    font-size: 13px; color: var(--muted);
+    letter-spacing: .5px;
+    background: var(--card); border: 1px solid var(--line);
+    padding: 2px 8px; border-radius: 6px;
+  }
+  .risk-item h3 { font-size: 15px; flex: 1; }
+  .risk-item p { font-size: 13.5px; line-height: 1.55; margin: 4px 0; }
+  .risk-item p b { color: var(--text); }
+
+  /* Email template */
+  .email-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-top: 14px;
+    color: #1d2841;
+    font-family: 'IBM Plex Sans Thai',sans-serif;
+  }
+  html.dark .email-card { background: var(--card-2); color: var(--text); }
+  .email-meta {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 10px; margin-bottom: 14px;
+    font-size: 13px; color: var(--text-soft);
+  }
+  .email-meta div { margin: 2px 0; }
+  .email-meta b { color: var(--text); }
+  .email-body { font-size: 14px; line-height: 1.7; }
+  .email-body p, .email-body ol { margin: 10px 0; }
+  .email-body ol { padding-left: 22px; }
+  .email-body ol li { margin: 4px 0; }
+  .email-actions { display: flex; gap: 8px; margin-top: 14px; }
+
+  /* Customer funnel */
+  .funnel { display: grid; gap: 6px; margin-top: 10px; }
+  .f-row { display: grid; grid-template-columns: 1fr 80px; align-items: center; gap: 12px; }
+  .f-bar {
+    background: var(--c, var(--blue));
+    color: white; font-weight: 600; font-size: 13.5px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    width: var(--w, 100%);
+    margin: 0 auto;
+    transition: width .4s ease;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .f-meta { font-family: 'Inter',sans-serif; font-weight: 600; font-size: 13px; color: var(--text-soft); text-align: left; }
+
+  /* Q&A prep */
+  .qa { display: grid; gap: 14px; margin-top: 14px; }
+  .q-item {
+    display: grid; grid-template-columns: 56px 1fr;
+    gap: 14px;
+    background: var(--card-2);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .q-num {
+    background: var(--blue-bg); color: var(--blue);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-family: 'Inter',sans-serif;
+    font-size: 18px; letter-spacing: .5px;
+  }
+  .q-body { display: grid; gap: 6px; }
+  .q-q { color: var(--text); font-size: 15px; line-height: 1.5; }
+  .q-a { color: var(--text-soft); font-size: 14.5px; line-height: 1.65; padding-top: 4px; border-top: 1px dashed var(--line); }
+  .q-a b { color: var(--text); }
+
+  kbd { font-family: 'Inter',sans-serif; font-size: 11px; padding: 2px 6px; border: 1px solid var(--line); border-radius: 4px; background: var(--card-2); }
+
+  /* Sticky toc on side */
+  .toc {
+    position: fixed; left: 18px; top: 78px;
+    width: 200px; padding: 12px;
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px;
+    font-size: 12.5px;
+    display: none;
+  }
+  @media (min-width: 1450px) { .toc { display: block; } }
+  .toc a { display: block; padding: 6px 8px; color: var(--text-soft); text-decoration: none; border-radius: 6px; }
+  .toc a:hover { background: var(--card-2); color: var(--text); }
+  .toc .toc-title { color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-size: 10.5px; padding: 0 8px 6px; }
+
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<div class="timer-overlay" id="timerOverlay">
+  <div class="t-label">Presentation Timer</div>
+  <div class="t-time ok" id="timerDisplay">00:00</div>
+  <div class="t-sub" id="timerStatus">/ 10:00 minutes target</div>
+  <div class="t-section" id="timerSection">Slide 1 — Opening</div>
+  <div class="t-buttons">
+    <button class="t-btn" onclick="timerToggle()">▶ Start</button>
+    <button class="t-btn" onclick="timerReset()">↺ Reset</button>
+    <button class="t-btn" onclick="timerHide()">✕ Hide</button>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">Thunder Group <span class="dot">·</span> COO Monthly Briefing</div>
+    <nav class="nav">
+      <a href="#tldr" class="lead-link">⚡ TL;DR</a>
+      <span class="nav-sep">•</span>
+      <a href="#s1">เปิด</a>
+      <a href="#s2">มาถึงไหน</a>
+      <a href="#s3">ฮีโร่</a>
+      <a href="#s4">ความจริง</a>
+      <a href="#s5">ของเราดี</a>
+      <a href="#s6">Focus</a>
+      <a href="#s7">ขอบคุณ</a>
+      <a href="#s8">ปิด</a>
+      <span class="nav-sep">|</span>
+      <a href="#qa-prep">Q&amp;A</a>
+      <a href="#backup-5min">5-min</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#risk-register">Risks</a>
+      <a href="#email-template">Email</a>
+      <a href="#watch">Track</a>
+    </nav>
+    <div class="top-actions">
+      <button class="btn" onclick="document.body.classList.toggle('show-notes')">📝 Notes</button>
+      <button class="btn" onclick="document.documentElement.classList.toggle('dark')">🌗 Theme</button>
+      <button class="btn" onclick="timerShow()">⏱ Timer</button>
+      <button class="btn" onclick="window.print()">🖨 PDF</button>
+    </div>
+  </div>
+</div>
+
+<aside class="toc">
+  <div class="toc-title">10-min flow</div>
+  <a href="#s1">1 · เปิด <span style="color:var(--muted)">0:00</span></a>
+  <a href="#s2">2 · มาถึงไหน <span style="color:var(--muted)">0:30</span></a>
+  <a href="#s3">3 · ฮีโร่เดือนนี้ <span style="color:var(--muted)">2:00</span></a>
+  <a href="#s4">4 · ความจริง <span style="color:var(--muted)">3:30</span></a>
+  <a href="#s5">5 · ของเราดี <span style="color:var(--muted)">5:00</span></a>
+  <a href="#s6">6 · Focus 30 วัน <span style="color:var(--muted)">6:30</span></a>
+  <a href="#s7">7 · ขอบคุณ <span style="color:var(--muted)">8:30</span></a>
+  <a href="#s8">8 · ปิด <span style="color:var(--muted)">9:30</span></a>
+</aside>
+
+<main class="wrap">
+
+  <!-- ==== TL;DR / CHEAT SHEET ==== -->
+  <section class="slide tldr" id="tldr" style="background:linear-gradient(135deg,var(--blue-bg) 0%,var(--card) 60%);border:1px solid color-mix(in srgb,var(--blue) 25%,var(--line));">
+    <div class="slide-head">
+      <div class="slide-no">CHEAT SHEET · ถ้าเหลือเวลาแค่ 30 วินาที พูดอันนี้</div>
+      <div class="slide-time">TL;DR</div>
+    </div>
+    <h2 style="font-size:22px;">3 ประโยคจำกลับบ้าน</h2>
+    <ol style="font-size:17px;line-height:1.7;color:var(--text);padding-left:22px;margin:14px 0;">
+      <li>ปีนี้เรา <b>โต +28% เทียบปีก่อน</b> และอยู่ใน track ที่จะปิดปีตามเป้า — เครื่องเราเดินไหลลื่น</li>
+      <li>เดือนนี้ <b>ฮีโร่คือ Thunder API +180%, EasySlip +28%, Flex +71%</b> — แต่ฐานลูกค้าใช้งานจริงแค่ 16% (โอกาส)</li>
+      <li>30 วันข้างหน้า: <b>ปลุกฐานหลับ · ดัน EasySlip API · เปลี่ยนคนสมัครเป็นคนจ่าย</b></li>
+    </ol>
+    <div class="kpis">
+      <div class="kpi up"><div class="label">YoY</div><div class="value">+28.5%</div><div class="sub">เทียบปีที่แล้ว</div></div>
+      <div class="kpi flat"><div class="label">เป้าปี ทำได้</div><div class="value">34.1%</div><div class="sub">ผ่านปี 34.8% — ตรงเป้า</div></div>
+      <div class="kpi up"><div class="label">Margin/สลิป</div><div class="value">82.4%</div><div class="sub">หน่วยเศรษฐศาสตร์เก่ง</div></div>
+      <div class="kpi warn"><div class="label">Active rate</div><div class="value">16.0%</div><div class="sub">โอกาสปลุก 56K คน</div></div>
+    </div>
+  </section>
+
+  <!-- ==== SLIDE 1: HERO ==== -->
+  <section class="slide hero" id="s1">
+    <div class="slide-head">
+      <div class="slide-no">SLIDE 01 · OPENING</div>
+      <div class="slide-time">0:00 — 0:30 · 30 วินาที</div>
+    </div>
+    <h1>ประชุมประจำเดือน · พฤษภาคม 2569</h1>
+    <p class="lead" style="margin-top:14px;">ภาพรวม Thunder Group · 8 วันแรกของเดือน · 1 ใน 3 ของปี</p>
+    <div class="meta">
+      <span><b>วันที่:</b> ศุกร์ที่ 8 พฤษภาคม 2569</span>
+      <span><b>ผู้พูด:</b> COO Thunder Solution</span>
+      <span><b>ระยะเวลา:</b> 10 นาที</span>
+      <span><b>ผู้ฟัง:</b> ทีม Thunder Group</span>
+    </div>
+
+    <div class="opener-script" style="margin-top:24px;">
+      <p>สวัสดีครับทุกคน — ขอบคุณที่มาเจอกัน</p>
+      <p>ก่อนเริ่ม ผมขอบอกตัวเลขหนึ่งให้ทุกคนฟัง — ใน <b>8 วันที่ผ่านมาของเดือนนี้</b> ทีมเราตรวจสลิปไปแล้ว <b>เกือบ 16 ล้านครั้ง</b> — เฉลี่ย <b>~2 ล้านครั้งต่อวัน</b> — และทุกครั้งระบบเราต้องไม่พลาด</p>
+      <p>นั่นคือ <b>scale</b> ที่พวกเรากำลังอยู่</p>
+      <p>วันนี้ผมขอใช้เวลา <b>10 นาที</b> ให้ทุกคนเห็นภาพเดียวกันว่า Thunder Group เรากำลังเดินไปทางไหน — <b>ของดี, ของจริง, และ 3 priority เดือนหน้า</b></p>
+    </div>
+
+    <div class="notes">
+      <span class="notes-label">SPEAKER NOTES</span>
+      <p>เปิดด้วยพลังบวก ใจเย็น ๆ ไม่รีบ. หาตาประสานกับคนในห้อง 2-3 คน ก่อนเริ่ม.</p>
+      <p>หลีกเลี่ยงคำว่า "ปัญหา" ในช่วงเปิด — ใช้คำว่า "ความจริง" หรือ "เรื่องที่ต้องเร่งปรับ" แทน</p>
+    </div>
+  </section>
+
+  <!-- ==== SLIDE 2: WHERE ARE WE ==== -->
+  <section class="slide" id="s2">
+    <div class="slide-head">
+      <div class="slide-no">SLIDE 02 · WHERE WE ARE</div>
+      <div class="slide-time">0:30 — 2:00 · 1.5 นาที</div>
+    </div>
+    <h2>เรามาถึงไหนแล้ว?</h2>
+    <p class="lead">ผ่าน 1 ใน 3 ของปี — เราอยู่ใกล้เป้ามาก แค่ต้องเร่งอีกนิดเดียว</p>
+
+    <div class="kpis">
+      <div class="kpi up">
+        <div class="label">YoY Growth (Group)</div>
+        <div class="value">+28.5%</div>
+        <div class="sub">เทียบช่วงเดียวกันปีที่แล้ว</div>
+      </div>
+      <div class="kpi flat">
+        <div class="label">เป้าปี 2026 ทำได้</div>
+        <div class="value">34.1%</div>
+        <div class="sub">ผ่านมาแล้ว 127 วัน (~34.8%)</div>
+      </div>
+      <div class="kpi flat">
+        <div class="label">เดือนนี้ทำได้</div>
+        <div class="value">29.1%</div>
+        <div class="sub">เทียบเป้าเดือน · ผ่านไปแค่ 25.8%</div>
+      </div>
+      <div class="kpi up">
+        <div class="label">API Deposits YoY</div>
+        <div class="value">+102.3%</div>
+        <div class="sub">ยอดเติมเงิน Thunder API ปีนี้</div>
+      </div>
+    </div>
+
+    <div class="banner blue">📈 จังหวะเดือนนี้ <b>ตามแผน</b> — ทำได้ <b>29.1% ของเป้า</b> ขณะที่เวลาผ่านไปแค่ <b>25.8% ของเดือน</b></div>
+
+    <div class="cols-2" style="margin-top:18px;">
+      <div class="card-soft">
+        <h3>Year-to-Date · ตำแหน่งของเรา</h3>
+        <div style="height:180px;position:relative;"><canvas id="chartGauge"></canvas>
+          <div style="position:absolute;bottom:18px;left:0;right:0;text-align:center;">
+            <div style="font-family:Inter,sans-serif;font-weight:800;font-size:28px;color:var(--text);">98.1%</div>
+            <div style="font-size:11.5px;color:var(--muted);">run-rate vs เป้าปลายปี</div>
+          </div>
+        </div>
+        <p style="font-size:13px;color:var(--text-soft);margin-top:6px;text-align:center;">ทำได้ <b style="color:var(--text)">34.1%</b> ของเป้าปี · ผ่าน <b>34.8%</b> ของเวลา · gap แค่ <b>1.0x</b></p>
+      </div>
+      <div class="card-soft">
+        <h3>เปรียบเทียบ MoM (ตามจังหวะ)</h3>
+        <p>รวม: <span class="pill green">+3.3% MoM</span> <span class="pill green">+28.5% YoY</span></p>
+        <p>EasySlip: <span class="pill green">+28.8% MoM</span> <span class="pill green">+28.5% YoY</span></p>
+        <p>Thunder: <span class="pill amber">−14.8% MoM</span> (Bot ดึงลง — แต่ API ฟื้น)</p>
+        <p style="font-size:12px;color:var(--muted);margin-top:6px;">MoM = พยากรณ์เต็มเดือนตามจังหวะปัจจุบัน เทียบเดือนก่อน</p>
+      </div>
+    </div>
+
+    <div class="notes">
+      <span class="notes-label">SPEAKER NOTES</span>
+      <p><b>คีย์เมสเสจ:</b> "เราไม่ได้ดี — แต่เราไม่ได้แย่. เราอยู่ใกล้เป้ามาก ๆ"</p>
+      <p>เน้นว่า: ผ่านไป 25.8% ของเดือน → ทำได้ 29.1% ของเป้าเดือน = on-pace, slightly ahead.</p>
+      <p>YoY +28% เป็นข่าวดี — ปีต่อปีเราโตจริง</p>
+      <p>ระวัง: อย่าพูดตัวเลขรายได้รวมเป็นบาท ให้ใช้ % เท่านั้น</p>
+    </div>
+  </section>
+
+  <!-- ==== SLIDE 3: HEROES ==== -->
+  <section class="slide" id="s3">
+    <div class="slide-head">
+      <div class="slide-no">SLIDE 03 · HEROES OF THE MONTH</div>
+      <div class="slide-time">2:00 — 3:30 · 1.5 นาที</div>
+    </div>
+    <h2>ฮีโร่เดือนนี้</h2>
+    <p class="lead">ของที่เราทำได้ดี — ต้องชื่นชมและทำต่อ</p>
+
+    <div class="kpis">
+      <div class="kpi up">
+        <div class="label">Thunder API · MoM</div>
+        <div class="value">+180.7%</div>
+        <div class="sub">ตามจังหวะ vs เดือนก่อน</div>
+      </div>
+      <div class="kpi up">
+        <div class="label">Flex · MoM</div>
+        <div class="value">+71.6%</div>
+        <div class="sub">สินค้ากลุ่มใหม่ที่กำลังโต</div>
+      </div>
+      <div class="kpi up">
+        <div class="label">EasySlip · MoM</div>
+        <div class="value">+28.8%</div>
+        <div class="sub">ทั้งบริษัทบวก — เก่งสุดในกลุ่ม</div>
+      </div>
+      <div class="kpi up">
+        <div class="label">Easy Bot · MoM</div>
+        <div class="value">+7.2%</div>
+        <div class="sub">เริ่มเห็นการฟื้นตัว</div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <h3 style="margin-bottom:8px;font-size:14px;color:var(--text-soft);">รายสินค้า: MoM (ตามจังหวะปัจจุบัน)</h3>
+      <canvas id="chartProducts"></canvas>
+    </div>
+
+    <div class="cols-2" style="margin-top:18px;">
+      <div class="card-soft">
+        <h3>เศรษฐศาสตร์ต่อ 1 สลิป</h3>
+        <p><span class="pill green">Margin 82.4%</span> ต่อ 1 สลิปที่เราตรวจ</p>
+        <p>รายได้/สลิป <b>~19 สตางค์</b> · ต้นทุน/สลิป <b>~3 สตางค์</b> · กำไร/สลิป <b>~16 สตางค์</b></p>
+        <p style="color:var(--text);font-weight:500;">โครงสร้างต้นทุนของเรา <b>เก่งมากระดับโลก</b> — ของเราคุ้มแน่นอน</p>
+      </div>
+      <div class="card-soft">
+        <h3>Volume เก่ง</h3>
+        <p>8 วันแรกของเดือน — ตรวจสลิปไป <b style="color:var(--text)">~15.86 ล้านสลิป</b></p>
+        <p>เฉลี่ย <b>~1.98 ล้านสลิป/วัน</b></p>
+        <p>Peak day: <b>1 พ.ค.</b> — ทำสถิติร่วมกัน Thunder + EasySlip</p>
+      </div>
+    </div>
+
+    <blockquote>“เรามีของดี — เครื่องของเราเดินไหลลื่น, margin ต่อหน่วยเก่ง, ลูกค้าใช้ของเราจริง ๆ มหาศาล”</blockquote>
+
+    <div class="notes">
+      <span class="notes-label">SPEAKER NOTES</span>
+      <p><b>โทน:</b> ภูมิใจแต่ไม่หลงตัว. พูดด้วยรอยยิ้ม. ใช้คำว่า "พวกเรา" ไม่ใช่ "ทีม X"</p>
+      <p>เลขเด่นให้เน้น: <b>+180% Thunder API, +71% Flex, +28% EasySlip YoY</b></p>
+      <p>เลขสลิป 16 ล้าน/8วัน เปรียบเทียบให้เห็นภาพ: "เกือบ 2 ล้านครั้ง/วัน — ทุกครั้งระบบเราต้องไม่พลาด"</p>
+    </div>
+  </section>
+
+  <!-- ==== SLIDE 4: REAL TALK ==== -->
+  <section class="slide" id="s4">
+    <div class="slide-head">
+      <div class="slide-no">SLIDE 04 · REAL TALK</div>
+      <div class="slide-time">3:30 — 5:00 · 1.5 นาที</div>
+    </div>
+    <h2>ความจริงที่เราต้องคุยกัน</h2>
+    <p class="lead">เรื่องที่ต้องเร่งปรับ — พูดตรง ๆ เพื่อให้ทุกคนเข้าใจตรงกัน</p>
+
+    <div class="kpis">
+      <div class="kpi down">
+        <div class="label">Profit Margin (เดือนนี้)</div>
+        <div class="value">−47.5%</div>
+        <div class="sub">ค่าใช้จ่ายคงที่สูงกว่ารายได้ที่ rec'd ในต้นเดือน</div>
+      </div>
+      <div class="kpi warn">
+        <div class="label">Active Rate</div>
+        <div class="value">16.0%</div>
+        <div class="sub">10,718 จาก ~67,000 ผู้ใช้</div>
+      </div>
+      <div class="kpi down">
+        <div class="label">ลูกค้าใหม่ (เทียบช่วงก่อน)</div>
+        <div class="value">−31.9%</div>
+        <div class="sub">478 คนใน 8 วัน</div>
+      </div>
+      <div class="kpi warn">
+        <div class="label">Bot · MoM</div>
+        <div class="value">−11.7%</div>
+        <div class="sub">ฐานใหญ่สุด แต่รายได้ลดลง</div>
+      </div>
+    </div>
+
+    <div class="cols-2" style="margin-top:14px;">
+      <div class="card-soft">
+        <h3>ฐานลูกค้าทั้งกลุ่ม · 4 platform</h3>
+        <div style="height:230px;"><canvas id="chartCustomers"></canvas></div>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:8px;">รวม ~67K ผู้ใช้ · Active 16% (10,718)</p>
+      </div>
+      <div class="card-soft">
+        <h3>สัดส่วนรายได้รายสินค้า (MTD)</h3>
+        <div style="height:230px;"><canvas id="chartRevMix"></canvas></div>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:8px;">EasySlip API ทำเงิน ~60% ของกลุ่ม</p>
+      </div>
+    </div>
+
+    <div class="cols-2" style="margin-top:14px;">
+      <div class="card-soft">
+        <h3>1. Margin ต้นเดือนติดลบ — ทำไม?</h3>
+        <p>เพราะธุรกิจเราเป็นแบบ <b>เติมเงินล่วงหน้า</b> — ลูกค้าจะมาเติมหนาแน่นกลางถึงปลายเดือน</p>
+        <p>ขณะที่ค่าใช้จ่ายคงที่ (เงินเดือน, infra, ค่าเช่า) <b>ออกตั้งแต่ต้นเดือน</b></p>
+        <p style="color:var(--text);">→ ปลายเดือน margin จะกลับเป็นบวก <b>ถ้าเราทำตามจังหวะ</b></p>
+      </div>
+      <div class="card-soft">
+        <h3>2. ฐานลูกค้าใหญ่ แต่ Active น้อย</h3>
+        <p>ผู้ใช้ทั้งหมด <b>~67,000 คน</b> — แต่ active แค่ <b>16%</b></p>
+        <p><b>56,000+ คน</b> หลับอยู่ — โอกาสมหาศาลถ้าปลุกได้</p>
+        <p style="color:var(--text);">→ Priority หลักของเดือนหน้า (พูดต่อในข้อ Focus)</p>
+      </div>
+    </div>
+
+    <div class="cols-2" style="margin-top:14px;">
+      <div class="card-soft">
+        <h3>3. Bot ลด — ARPU ห่างกับ API มาก</h3>
+        <p>Bot: ฿120/active user · API: ฿986/active user — <b>ห่างกัน 8x</b></p>
+        <p>Bot เป็นฐานใหญ่ (53K) แต่ contribute รายได้น้อย → ต้อง path ให้ลูกค้า upgrade</p>
+      </div>
+      <div class="card-soft">
+        <h3>4. Acquisition ลด</h3>
+        <p>ลูกค้าใหม่ −32% เทียบช่วงก่อน — ต้องเช็คว่า channel ไหนหาย</p>
+        <p>First top-up conversion: <b>~24%</b> ของผู้สมัคร EasySlip+API → พอใช้ แต่ปรับได้</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;font-size:16px;color:var(--text);">Customer Funnel · จากฐานทั้งหมด → คนจ่าย</h3>
+    <div class="funnel">
+      <div class="f-row" style="--w:100%;--c:var(--blue);">
+        <div class="f-bar"><span>67,000 · ฐานลูกค้าทั้งหมด</span></div>
+        <div class="f-meta">100%</div>
+      </div>
+      <div class="f-row" style="--w:75%;--c:var(--violet);">
+        <div class="f-bar"><span>~10,718 · Active (ใช้งานจริง)</span></div>
+        <div class="f-meta">16.0%</div>
+      </div>
+      <div class="f-row" style="--w:35%;--c:var(--amber);">
+        <div class="f-bar"><span>~3,500 · Active บนสินค้าหลัก</span></div>
+        <div class="f-meta">~5%</div>
+      </div>
+      <div class="f-row" style="--w:18%;--c:var(--green);">
+        <div class="f-bar"><span>478 · ลูกค้าใหม่ (8 วัน)</span></div>
+        <div class="f-meta">acquisition</div>
+      </div>
+      <div class="f-row" style="--w:6%;--c:var(--green);">
+        <div class="f-bar"><span>29–44 · เติมเงินครั้งแรก</span></div>
+        <div class="f-meta">~24% conv.</div>
+      </div>
+    </div>
+    <p style="font-size:12.5px;color:var(--muted);margin-top:8px;">ภาพชัด: เรามีฐานใหญ่ — แต่ลูกค้าจ่ายจริงไม่ถึง 0.1% ของฐานในช่วง 8 วัน. โอกาสในการ <b>กระตุ้นแต่ละชั้น</b> มีอยู่จริง</p>
+
+    <blockquote>“ตัวเลขลบไม่ใช่ความล้มเหลว — มันคือ <b>signal</b> บอกเราว่าควรโฟกัสที่ไหน”</blockquote>
+
+    <div class="notes">
+      <span class="notes-label">SPEAKER NOTES</span>
+      <p><b>โทน:</b> สงบ, จริงใจ, ไม่ panic. นั่งลงสลับยืนเพื่อเปลี่ยนพลังห้อง.</p>
+      <p>อธิบาย margin ติดลบให้ชัด — มันเป็น cycle ปกติของ pre-paid billing, ไม่ใช่บริษัทเจ๊ง</p>
+      <p>หลีกเลี่ยงการระบุชื่อทีม/คนในเรื่องลบ — พูดเป็นระบบ</p>
+      <p>เลข -32% acquisition: บอกเฉย ๆ ว่าเรากำลังตรวจ — ห้ามด่วนสรุปสาเหตุ</p>
+    </div>
+  </section>
+
+  <!-- ==== SLIDE 5: WHY OPTIMISTIC ==== -->
+  <section class="slide" id="s5">
+    <div class="slide-head">
+      <div class="slide-no">SLIDE 05 · WHY WE STAY OPTIMISTIC</div>
+      <div class="slide-time">5:00 — 6:30 · 1.5 นาที</div>
+    </div>
+    <h2>ของเราดี — แค่ต้องดันให้ถึง</h2>
+    <p class="lead">เหตุผล 4 ข้อที่ผมยังเชื่อว่าเราเดินถูกทาง</p>
+
+    <ul class="clean green">
+      <li><b>1. หน่วยเศรษฐศาสตร์เก่งระดับโลก</b> — Margin ต่อ 1 สลิป <b>82.4%</b>. เครื่องเราเดิน, ของเราขายได้, ต้นทุนเราต่ำ. ปัญหาเดียวคือ <b>ดัน volume ให้คุ้ม fixed cost</b>.</li>
+      <li><b>2. ลูกค้าใหม่ปีนี้คุณภาพสูงขึ้น</b> — จำนวนใหม่ +14%, แต่ <b>ยอดเงิน +60%</b> เทียบปีก่อน. แปลว่า "คนน้อยลง แต่จ่ายมากขึ้น" — สัญญาณ enterprise/serious customer มาแทน hobby user.</li>
+      <li><b>3. EasySlip API คือพระเอก</b> — ARPU ฿986/คน, ทำรายได้ <b>~60% ของ Group</b>, MRR ~฿2.5M. ของชิ้นนี้ดันต่อได้อีกไกล.</li>
+      <li><b>4. Run-rate ปีอยู่ที่ ~98% ของเป้า</b> — แปลว่าถ้าเราทำเหมือนเดิม + เร่งอีกเล็กน้อย → จบปีตามเป้า.</li>
+    </ul>
+
+    <div class="banner">💡 สรุปเฟรมงาน: <b>"เครื่องเราดีอยู่แล้ว — งานของเดือนหน้าคือใช้เครื่องนี้ให้คุ้ม"</b></div>
+
+    <div class="card-soft" style="margin-top:18px;">
+      <h3>ARPU (รายได้ต่อ active user/เดือน) · เห็นชัดว่าใครคือพระเอก</h3>
+      <div style="height:240px;"><canvas id="chartARPU"></canvas></div>
+      <p style="font-size:12.5px;color:var(--muted);margin-top:6px;">EasySlip API ทำรายได้ <b>~8 เท่า</b> ของ Bot ต่อ active user · เห็นทาง upgrade ที่ชัด</p>
+    </div>
+
+    <div class="notes">
+      <span class="notes-label">SPEAKER NOTES</span>
+      <p><b>โทน:</b> มั่นใจ, จริง, ไม่ขายฝัน. พูดช้าๆ ให้คนซึม</p>
+      <p>เน้นการเปรียบเทียบ "คนน้อยลง แต่จ่ายมากขึ้น" — น่าจดจำและช่วย morale</p>
+      <p>ถ้ามีคนถามทำไม margin -47% — ตอบที่นี่ได้เลย</p>
+    </div>
+  </section>
+
+  <!-- ==== SLIDE 6: FOCUS NEXT 30 DAYS ==== -->
+  <section class="slide" id="s6">
+    <div class="slide-head">
+      <div class="slide-no">SLIDE 06 · FOCUS · NEXT 30 DAYS</div>
+      <div class="slide-time">6:30 — 8:30 · 2 นาที</div>
+    </div>
+    <h2>Focus 30 วันข้างหน้า</h2>
+    <p class="lead">3 priority ที่ผมอยากให้ทุกคนช่วยดันด้วยกัน</p>
+
+    <div class="cols-3" style="margin-top:16px;">
+      <div class="priority green">
+        <h3>① ปลุกฐานลูกค้าหลับ</h3>
+        <p style="color:var(--text-soft);font-size:13.5px;">Re-engage Inactive Users</p>
+        <p><b>เป้า:</b> ลด inactive จาก 84% → 80% (กลับมา ~2,800 active)</p>
+        <p><b>ใครช่วย:</b> CRM/Marketing, Bot/API, Customer Success</p>
+        <p><b>วิธี:</b> Campaign ติดต่อกลับ, offer พิเศษ, สำรวจ feature ที่ขาดหาย</p>
+        <p><b>วัดผล:</b> % active rate รายสัปดาห์, returning revenue</p>
+        <small>WHY: ฐานใหญ่อยู่แล้ว — lever ที่ใหญ่ที่สุด ใช้ resource น้อยที่สุด. แม้ปลุกแค่ 5% = หลายล้านบาท/เดือน</small>
+      </div>
+      <div class="priority amber">
+        <h3>② ดัน EasySlip API กลับเข้าเป้า</h3>
+        <p style="color:var(--text-soft);font-size:13.5px;">Push Our Star Product</p>
+        <p><b>เป้า:</b> เพิ่ม pace +10% เพื่อปิด gap ปี (1.1x → 1.0x)</p>
+        <p><b>ใครช่วย:</b> Sales (upsell), Dev (feature), Support (ลด churn)</p>
+        <p><b>วิธี:</b> ระบุ top 50 ลูกค้า → upsell, ออก feature ที่รอ, follow-up เชิงรุก</p>
+        <p><b>วัดผล:</b> รายได้ EasySlip API เทียบ pace ปี, churn rate</p>
+        <small>WHY: ทำเงิน 60% ของ Group, ARPU สูงสุด ฿986/คน. ดันที่นี่ส่งผลใหญ่ที่สุด</small>
+      </div>
+      <div class="priority violet">
+        <h3>③ เปลี่ยนผู้สมัคร → ผู้จ่าย</h3>
+        <p style="color:var(--text-soft);font-size:13.5px;">Convert Signups → Paying</p>
+        <p><b>เป้า:</b> เพิ่ม first-top-up conversion จาก ~6% → 10% (29 → ~50 คน/8วัน)</p>
+        <p><b>ใครช่วย:</b> Onboarding, Sales, Product</p>
+        <p><b>วิธี:</b> Welcome flow ใหม่, demo อัตโนมัติ, follow-up ภายใน 24 ชม.</p>
+        <p><b>วัดผล:</b> % conversion จาก signup → first-top-up</p>
+        <small>WHY: 478 ใหม่/8 วัน คือ traffic ที่จ่ายค่า acquisition ไปแล้ว — ต้องเก็บเกี่ยวให้คุ้ม</small>
+      </div>
+    </div>
+
+    <div class="card-soft" style="margin-top:18px;border-left:4px solid var(--blue);">
+      <h3>Bonus Theme: Operational Hygiene</h3>
+      <p>ไม่ใช่ priority หลัก แต่ห้ามลืม — Token rotation ตามรอบ (มีเตือน 2 ตัวค้างวันนี้), v2 API adoption (ตอนนี้ 37 vs v1 7,461), Monitoring &amp; alert routing</p>
+    </div>
+
+    <div class="banner blue">🎯 ถ้าทั้ง 3 priority สำเร็จ — ปิดปีตามเป้าแน่นอน + margin บวกทั้งบริษัทเริ่มกลับมา</div>
+
+    <div class="notes">
+      <span class="notes-label">SPEAKER NOTES</span>
+      <p><b>โทน:</b> ชัด, decisive, มั่นใจ — นี่คือคำสั่งระดับ COO</p>
+      <p>พูด priority ทีละข้อ ห้ามรีบ. ทำมือ pointer ไปที่ skill</p>
+      <p>เน้นว่าทุกคนมีบทบาท — ไม่ใช่แค่ทีมเดียว</p>
+      <p>ถ้าใครถาม "แล้ว Bot ล่ะ?" ตอบ: "Bot ยังคงสำคัญ — Priority ① ปลุกฐาน รวม Bot ด้วย และในไตรมาสหน้าเราจะมีแผน upgrade path"</p>
+    </div>
+  </section>
+
+  <!-- ==== SLIDE 7: RECOGNITION ==== -->
+  <section class="slide" id="s7">
+    <div class="slide-head">
+      <div class="slide-no">SLIDE 07 · RECOGNITION</div>
+      <div class="slide-time">8:30 — 9:30 · 1 นาที</div>
+    </div>
+    <h2>ขอบคุณครับ</h2>
+    <p class="lead">เครดิตของเดือนนี้ — ขอเอ่ยให้ครบทุกทีม</p>
+
+    <div class="recog-list">
+      <div class="recog">
+        <b>ทีม Thunder API</b><br>
+        <span style="color:var(--text-soft);font-size:13.5px;">+180.7% MoM (run-rate). เป็นคนดันให้ Thunder Solution กลับมาในเดือนนี้</span>
+      </div>
+      <div class="recog">
+        <b>ทีม EasySlip</b><br>
+        <span style="color:var(--text-soft);font-size:13.5px;">+28.5% YoY ตลอดทั้งปี. รักษาพระเอกของกลุ่มไว้เก่ง</span>
+      </div>
+      <div class="recog">
+        <b>ทีม Flex</b><br>
+        <span style="color:var(--text-soft);font-size:13.5px;">+71.6% MoM. สินค้าใหม่ที่กำลังโต — เครดิตของทีมที่ลุย product ใหม่</span>
+      </div>
+      <div class="recog">
+        <b>ทีม Tech &amp; Infra</b><br>
+        <span style="color:var(--text-soft);font-size:13.5px;">รักษา margin/สลิป 82% ทั้งที่ volume เกือบ 16 ล้านสลิป/8วัน — เครื่องไม่ล่ม</span>
+      </div>
+      <div class="recog">
+        <b>ทีม Support &amp; CS</b><br>
+        <span style="color:var(--text-soft);font-size:13.5px;">รับมือลูกค้าเฉลี่ย ~2 ล้านสลิป/วัน — งานหลังบ้านที่หลายคนไม่เห็น</span>
+      </div>
+      <div class="recog">
+        <b>ทีม Sales &amp; Marketing</b><br>
+        <span style="color:var(--text-soft);font-size:13.5px;">หา 478 ลูกค้าใหม่ใน 8 วัน + first-payer 44 คน — ฐานยังโต</span>
+      </div>
+      <div class="recog">
+        <b>ทุกคนที่อยู่หลังตัวเลขทุกตัว</b><br>
+        <span style="color:var(--text-soft);font-size:13.5px;">ตัวเลขทุก KPI วันนี้ = ฝีมือทุกคนรวมกัน</span>
+      </div>
+    </div>
+
+    <blockquote>“ตัวเลขดี ๆ ที่เห็นวันนี้ — ไม่มีตัวไหนเกิดได้ถ้าขาดใครคนใดคนหนึ่ง”</blockquote>
+
+    <div class="notes">
+      <span class="notes-label">SPEAKER NOTES</span>
+      <p><b>โทน:</b> อบอุ่น, ของจริง, อย่าเร็ว. เอ่ยทีละทีม ให้ทีมยกมือหรือยืนขึ้นเล็กน้อย</p>
+      <p>ถ้ามีคน/incident เฉพาะที่ต้องชม — แทรกตรงนี้ (ผม COO รู้ดีกว่าผม)</p>
+      <p>หลีกเลี่ยงการเอ่ยชื่อใครคนเดียว ถ้าทีมมีหลายคน — เพื่อความ fair</p>
+    </div>
+  </section>
+
+  <!-- ==== SLIDE 8: CLOSING ==== -->
+  <section class="slide" id="s8">
+    <div class="slide-head">
+      <div class="slide-no">SLIDE 08 · CLOSING</div>
+      <div class="slide-time">9:30 — 10:00 · 30 วินาที</div>
+    </div>
+    <h2>สรุป — และคำถาม</h2>
+
+    <div class="cols-2" style="margin-top:14px;">
+      <div class="card-soft">
+        <h3>3 ข้อให้จำกลับบ้าน</h3>
+        <ul class="clean">
+          <li><b>เรา on-track ปีนี้</b> — เครื่องดี, ของดี, ลูกค้าคุณภาพสูงขึ้น</li>
+          <li><b>3 priority เดือนหน้า</b> — ปลุกฐาน, ดัน EasySlip API, แปลงสมัคร→จ่าย</li>
+          <li><b>ทุกคนมีบทบาท</b> — ไม่ใช่แค่ทีมเดียว เราทำด้วยกัน</li>
+        </ul>
+      </div>
+      <div class="card-soft">
+        <h3>ช่องทางถามต่อ</h3>
+        <p>มีคำถาม คุยได้เลยตอนนี้</p>
+        <p>หรือมาคุยที่ห้องผม / Inbox / Slack ได้</p>
+        <p>Office hours สัปดาห์นี้: <b>เปิดให้ทุกคน</b></p>
+      </div>
+    </div>
+
+    <blockquote style="font-size:18px;">“เดือนนี้เราพิสูจน์ว่า <b>เครื่องเราเดินได้</b> — เดือนหน้าเราจะพิสูจน์ว่า <b>เครื่องเราเร่งได้</b>”</blockquote>
+
+    <p style="text-align:center;font-size:18px;font-weight:600;color:var(--text);margin-top:18px;">ขอบคุณทุกคนครับ 🙏</p>
+
+    <div class="notes">
+      <span class="notes-label">SPEAKER NOTES</span>
+      <p>ปิดสั้น ๆ. ยิ้ม. ค้าง 2 วิ ก่อน "มีคำถามไหมครับ?"</p>
+      <p>ถ้าเงียบ — เปิดด้วย "ผมเริ่มเอง" → เล่าตัวเลขที่เกิดขึ้นในที่ทำงานช่วง 7 วันล่าสุด</p>
+    </div>
+  </section>
+
+  <!-- ==== APPENDIX ==== -->
+  <section class="appendix" id="appendix">
+    <h3>Appendix · ตัวเลขดิบสำหรับอ้างอิง (ห้ามใส่ใน slide)</h3>
+    <p style="color:var(--muted);font-size:13px;margin-bottom:16px;">ตัวเลขสำหรับ COO เท่านั้น เพื่อตอบคำถามจากที่ประชุม. <b>ห้ามแชร์เป็นบาท</b> — ใช้ % เท่านั้นในการพูด</p>
+    <dl>
+      <dt>รายได้ MTD (8 วัน)</dt>            <dd>฿3,034,922 · 29.1% ของเป้าเดือน · ผ่าน 25.8% ของเดือน</dd>
+      <dt>รายได้ YTD</dt>                     <dd>฿42,655,921 / เป้าปี ฿125,000,000 (34.1%) · ผ่าน 127/365 วัน</dd>
+      <dt>Profit Margin MTD</dt>               <dd>−47.5% · กำไรขั้นต้น ≈ −฿1,441,586 · เพราะ pre-paid cycle</dd>
+      <dt>Run-rate ปลายปี</dt>                  <dd>฿122,593,789 vs เป้า ฿125M → gap −฿2,406,211 (98.1% · 1.0x)</dd>
+      <dt>EasySlip YTD</dt>                    <dd>~฿22.9M / ฿70M (32.7%) · ใกล้พลาด → ต้องเร่ง 1.1x · run-rate ฿65.83M</dd>
+      <dt>MRR รวม</dt>                         <dd>฿2,792,993 (Thunder API ฿297,063 + EasySlip API ฿2,495,930)</dd>
+      <dt>ฐานลูกค้ารวม</dt>                    <dd>66,992 ผู้ใช้ · Active 16.0% (10,718) · Inactive ~56,274 · Banned 278</dd>
+      <dt>ลูกค้าใหม่ MTD (8 วัน)</dt>           <dd>478 คน (−31.9%) · First-pay 29 คน · ฿94,546 · conversion 24.0%</dd>
+      <dt>First-pay (EasySlip+Thunder)</dt>    <dd>44 คน · ฿143,446 · เดือนนี้ +22.2% (EasySlip 29 / ฿94,546 + Thunder 15 / ฿48,900)</dd>
+      <dt>Volume สลิป MTD</dt>                  <dd>15,875,056 สลิป (Thunder 6,045,654 + EasySlip 9,829,402)</dd>
+      <dt>Unit Economics</dt>                  <dd>รายได้ 19.12 สต./สลิป · ต้นทุน 3.36 สต. · กำไร 15.76 สต. · margin 82.4%</dd>
+      <dt>Peak Day</dt>                        <dd>1 พ.ค. 2026 · ฿909,713 (Thunder ฿363,225 + EasySlip ฿546,488)</dd>
+      <dt>YoY API Deposits</dt>                 <dd>+102.30% · จาก backoffice developer</dd>
+      <dt>API v1 vs v2 (วันนี้)</dt>            <dd>v1: 7,461 calls · v2: 37 calls · adoption ช้า</dd>
+      <dt>Open alerts (เช็กก่อนพูด)</dt>          <dd>Token slipver/easyslip ใกล้หมดอายุ · Margin -47.5% < 20% threshold</dd>
+      <dt>Active by platform</dt>              <dd>Thunder Bot 15.2% · Thunder API 11.6% · EasyBot 26.2% · EasySlip API 19.1%</dd>
+      <dt>ARPU by product</dt>                 <dd>Thunder Bot ฿120 · Thunder API ฿826 · EasyBot ฿94 · EasySlip API ฿986</dd>
+    </dl>
+  </section>
+
+  <!-- ==== Q&A PREP ==== -->
+  <section class="slide" id="qa-prep">
+    <div class="slide-head">
+      <div class="slide-no">Q&A PREP · คำถามที่อาจโดนถาม</div>
+      <div class="slide-time">เตรียมคำตอบไว้ก่อน</div>
+    </div>
+    <h2>คำถามอาจโดนถาม + คำตอบที่เตรียมไว้</h2>
+    <p class="lead">7 คำถามที่ COO มักโดนถามในประชุมประจำเดือน — เตรียมคำตอบไว้ ตอบได้ทันที</p>
+
+    <div class="qa">
+      <div class="q-item">
+        <div class="q-num">Q1</div>
+        <div class="q-body">
+          <div class="q-q"><b>"ทำไม Profit Margin ติดลบ −47% — บริษัทขาดทุนหรือเปล่า?"</b></div>
+          <div class="q-a"><b>A:</b> "ไม่ใช่ขาดทุนถาวรครับ — เพราะธุรกิจเราเป็นแบบ <b>เติมเงินล่วงหน้า</b> ลูกค้าเทียบจ่ายหนักช่วงกลาง-ปลายเดือน. ค่าใช้จ่ายคงที่ของเราออกตั้งแต่ต้นเดือน. นี่เป็น cycle ปกติของธุรกิจแบบนี้. <b>ดูทั้งปี</b> เรากำไร — ดูเฉพาะ 8 วันแรกของเดือนเท่านั้นที่จะเห็นติดลบ. และที่สำคัญ: <b>กำไรต่อสลิป margin 82%</b> — โครงสร้างต้นทุนของเราเก่งระดับโลก."</div>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-num">Q2</div>
+        <div class="q-body">
+          <div class="q-q"><b>"ทำไม Bot รายได้ลด — ลูกค้าหายไปไหน?"</b></div>
+          <div class="q-a"><b>A:</b> "Bot ลดเพราะ ARPU ของ Bot ต่ำ (~฿120/active user) เทียบ EasySlip API (~฿986/คน) ห่างกัน 8 เท่า. ลูกค้า Bot จำนวนมากกำลัง <b>upgrade</b> ไปใช้ API ที่ตอบโจทย์มากกว่า. เราต้องช่วยให้ path การ upgrade ราบรื่น — นี่เป็นหนึ่งในสิ่งที่เราจะทำในเดือนหน้า."</div>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-num">Q3</div>
+        <div class="q-body">
+          <div class="q-q"><b>"ลูกค้าใหม่ลด −32% — เป็นเพราะ Marketing ไม่ดีเหรอ?"</b></div>
+          <div class="q-a"><b>A:</b> "ผมยังไม่ฟันธงครับ — เรากำลังตรวจดูว่าเป็นเพราะ <b>seasonality</b> (ต้นเดือน), <b>channel</b> (โฆษณาช่อง X ลด), หรือ <b>คุณภาพ traffic</b> เปลี่ยน. ที่น่าสนใจคือ <b>ลูกค้าใหม่ปีนี้จ่ายเงินมากขึ้น +60% YoY</b> — แปลว่าคนน้อยลงแต่คุณภาพสูงขึ้น. ทีม Marketing &amp; Growth จะรายงานผลตรวจสอบในสัปดาห์หน้า."</div>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-num">Q4</div>
+        <div class="q-body">
+          <div class="q-q"><b>"56,000 inactive — เราจะปลุกอย่างไร?"</b></div>
+          <div class="q-a"><b>A:</b> "หลายชั้นพร้อมกัน: <b>(1)</b> Email/LINE campaign ติดต่อกลับพร้อม offer พิเศษ <b>(2)</b> สำรวจว่า feature ไหนหายทำให้คนเลิกใช้ <b>(3)</b> ออกฟีเจอร์ใหม่ที่ trigger คนกลับมาเช็ก. ทีม CRM/Marketing/Product ทำงานร่วมกัน. ถ้าปลุก 5% ของ 56K = ~2,800 คน → เพิ่มรายได้หลายล้านบาท/เดือน. <b>Lever ที่ใหญ่สุด ใช้ resource น้อยที่สุด</b>."</div>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-num">Q5</div>
+        <div class="q-body">
+          <div class="q-q"><b>"Run-rate ปีต่ำกว่าเป้า ฿2.35M — เราทำไม่ทันแล้วเหรอ?"</b></div>
+          <div class="q-a"><b>A:</b> "<b>1.0x</b> ครับ — แปลว่าเราต้องเร่งแค่นิดเดียว. เฉลี่ย/วันตอนนี้ ~฿336K vs ที่ต้องการ ~฿346K — ขาดอีก <b>ประมาณ 3%</b>. ถ้า 3 priorities เดือนหน้าสำเร็จแม้แค่ครึ่งเดียว เราจะปิด gap นี้ได้สบาย. ผมไม่กังวล — แต่จะไม่ปล่อย."</div>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-num">Q6</div>
+        <div class="q-body">
+          <div class="q-q"><b>"คู่แข่งล่ะ? มีใครมาแข่งหนักไหม?"</b></div>
+          <div class="q-a"><b>A:</b> "ตลาด slip verification เริ่มมีหลายเจ้าเข้ามาเล่น แต่เราได้เปรียบ <b>3 อย่าง</b>: <b>(1)</b> Volume scale — เราตรวจ ~2 ล้านสลิป/วัน ทำให้ต้นทุนต่อหน่วยเรา 3 สต. <b>(2)</b> Margin/สลิป 82% — ราคาเราสู้ได้ทุกระดับ <b>(3)</b> เครือข่ายลูกค้า 67K + brand ทั้ง Thunder/EasySlip ที่ตลาดเข้าใจ. ที่เราต้องระวัง: <b>v2 API adoption</b> ต้องเร่ง เพื่อให้ feature gap ไม่กว้างเกิน."</div>
+        </div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-num">Q7</div>
+        <div class="q-body">
+          <div class="q-q"><b>"แล้วผม/ทีมผม จะช่วยอะไรได้บ้าง?"</b></div>
+          <div class="q-a"><b>A:</b> "ทุกคนมีบทบาทใน 3 priority นี้: <b>Tech/Product</b> → ออก feature ที่ดึง inactive กลับ + ลด churn EasySlip. <b>Sales/Marketing</b> → เจาะ top customers, แก้ acquisition channel, ทำ campaign ปลุก. <b>Support/CS</b> → improve onboarding, follow-up first-pay. <b>Ops/Finance</b> → monitor margin, alert ถ้าเห็นอะไรผิดปกติ. หาเข้าหาผมหรือ direct manager ได้เลยถ้าอยากคุยรายละเอียด."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== 5-MIN BACKUP SCRIPT ==== -->
+  <section class="slide" id="backup-5min">
+    <div class="slide-head">
+      <div class="slide-no">BACKUP · ถ้าเหลือเวลาแค่ 5 นาที</div>
+      <div class="slide-time">Compressed version</div>
+    </div>
+    <h2>Script สำรอง · 5 นาที</h2>
+    <p class="lead">ถ้ามีอะไรเลื่อน หรือเหลือเวลาแค่ครึ่งเดียว — พูดอันนี้แทน</p>
+
+    <div class="card-soft" style="margin-top:14px;border-left:4px solid var(--blue);">
+      <h3>0:00 — 0:30 · เปิด</h3>
+      <p>"สวัสดีครับทุกคน ขอใช้เวลา 5 นาที สรุปภาพ Thunder Group เดือนนี้ และทิศทาง 30 วันข้างหน้า"</p>
+    </div>
+
+    <div class="card-soft" style="margin-top:10px;border-left:4px solid var(--green);">
+      <h3>0:30 — 2:00 · ภาพรวม + ฮีโร่</h3>
+      <p>"ปีนี้เราโต <b>+28%</b> YoY และยืนอยู่ที่ <b>34% ของเป้าปี</b> ซึ่งตรงพอดีกับ pace. เดือนนี้มีพระเอก 3 ตัว: <b>Thunder API +180%, Flex +71%, EasySlip +28%</b>. หน่วยเศรษฐศาสตร์เราเก่งมาก — กำไรต่อ 1 สลิป margin 82%."</p>
+    </div>
+
+    <div class="card-soft" style="margin-top:10px;border-left:4px solid var(--amber);">
+      <h3>2:00 — 3:00 · ความจริง</h3>
+      <p>"แต่เราเห็น 2 เรื่องที่ต้องเร่งปรับ: <b>(1) Active rate แค่ 16%</b> — มีลูกค้าหลับ 56,000 คนรอเราปลุก. <b>(2) Bot รายได้ลด</b> เพราะ ARPU ห่างกับ API. Profit margin เดือนนี้ติดลบเพราะเป็น cycle ปกติของธุรกิจ pre-paid."</p>
+    </div>
+
+    <div class="card-soft" style="margin-top:10px;border-left:4px solid var(--violet);">
+      <h3>3:00 — 4:30 · Focus 30 วัน</h3>
+      <p>"เดือนหน้า 3 priority: <b>(1)</b> ปลุกฐานลูกค้าหลับ — เป้า active rate 20% <b>(2)</b> ดัน EasySlip API กลับเข้าเป้าปี <b>(3)</b> เปลี่ยนคนสมัครเป็นคนจ่ายเร็วขึ้น. ทุกทีมมีบทบาท."</p>
+    </div>
+
+    <div class="card-soft" style="margin-top:10px;border-left:4px solid var(--blue);">
+      <h3>4:30 — 5:00 · ปิด</h3>
+      <p>"ขอบคุณทุกคนสำหรับเดือนนี้ — ตัวเลขดี ๆ ทุกตัวเกิดจากทุกคน. มีคำถามคุยที่ห้องผมหรือ Slack ได้เลย."</p>
+    </div>
+  </section>
+
+  <!-- ==== TRANSITIONS ==== -->
+  <section class="slide" id="transitions">
+    <div class="slide-head">
+      <div class="slide-no">TRANSITION SCRIPTS · ประโยคเชื่อมระหว่าง Slide</div>
+      <div class="slide-time">ใช้พูดเวลาเปลี่ยน slide</div>
+    </div>
+    <h2>ประโยคเชื่อม · ทำให้ flow ลื่น</h2>
+    <ul class="clean">
+      <li><b>เปิด → มาถึงไหน:</b> "เริ่มจากภาพรวมก่อนเลยครับ — เราอยู่ตรงไหนของปีนี้แล้ว..."</li>
+      <li><b>มาถึงไหน → ฮีโร่:</b> "ในตัวเลขรวมที่ดูเป็นกลาง ๆ มีพระเอกซ่อนอยู่ที่ผมอยากให้ทุกคนเห็น..."</li>
+      <li><b>ฮีโร่ → ความจริง:</b> "ทีนี้พูดเฉพาะข่าวดีคงไม่ครบ ผมอยากคุยตรง ๆ เรื่องที่ต้องเร่งปรับด้วย..."</li>
+      <li><b>ความจริง → ของเราดี:</b> "ฟังดูแล้วอาจกังวล แต่ผมยังเชื่อว่าเราเดินถูกทาง — มี 4 เหตุผล..."</li>
+      <li><b>ของเราดี → Focus:</b> "ทีนี้คำถามคือ ทำยังไงให้เครื่องที่ดีอยู่แล้วเดินเร็วขึ้น — นี่คือ 3 priority ของเดือนหน้า..."</li>
+      <li><b>Focus → ขอบคุณ:</b> "ก่อนปิด ผมขอใช้เวลาขอบคุณทุกคนสักหน่อย..."</li>
+      <li><b>ขอบคุณ → ปิด:</b> "สรุปทั้งหมดสั้น ๆ และเปิดให้ถามครับ..."</li>
+    </ul>
+  </section>
+
+  <!-- ==== PRESENTER TOOLKIT ==== -->
+  <section class="slide" id="toolkit">
+    <div class="slide-head">
+      <div class="slide-no">PRESENTER TOOLKIT · 10 นาทีก่อนเข้าประชุม</div>
+      <div class="slide-time">เตรียมให้พร้อม</div>
+    </div>
+    <h2>Toolkit · ใช้ก่อนและระหว่างประชุม</h2>
+    <p class="lead">เช็คลิสต์ 10 นาทีก่อนเปิดประชุม + playbook ถ้าเจอเรื่องไม่คาดฝัน</p>
+
+    <div class="cols-2" style="margin-top:14px;">
+      <div class="card-soft">
+        <h3>✅ Checklist 10 นาทีก่อนเริ่ม</h3>
+        <ul class="clean">
+          <li>เปิด <b>One-Page Briefing</b> อ่านสรุปอีกรอบ — 1 นาที</li>
+          <li>เปิด <b>Q&amp;A Prep</b> อ่าน 7 คำถาม — 2 นาที</li>
+          <li>ดื่มน้ำ · เข้าห้องน้ำ · ตรวจเสียง</li>
+          <li>เช็คโปรเจคเตอร์/Zoom · เปิด <b>Full Deck</b> · กด <b>P</b> เข้า presenter mode</li>
+          <li>ตรวจเวลา — ตั้ง timer 10:00 (หรือกด <b>⏱ Timer</b> บน topbar)</li>
+          <li>หายใจลึก ๆ 3 ครั้ง · จำว่าตัวเลข <b>+28% YoY</b> คือ headline</li>
+          <li>เริ่ม! สวัสดี · ยิ้ม · มองรอบห้อง 2-3 คน ก่อนพูด</li>
+        </ul>
+      </div>
+
+      <div class="card-soft">
+        <h3>💪 Confidence affirmations</h3>
+        <ul class="clean">
+          <li>"ผมรู้ตัวเลขทุกตัว — และผมรู้ดีกว่านั้นคือ <b>ทำไม</b> มันเป็นแบบนั้น"</li>
+          <li>"ผมไม่ได้ขายฝัน — ผมพูดความจริง พร้อม plan ที่ชัด"</li>
+          <li>"ทีมเรามีคนเก่ง — ตัวเลขดี ๆ ทุกตัวคือฝีมือพวกเขา"</li>
+          <li>"ถ้าผมไม่รู้คำตอบ ผมจะบอกตรง ๆ ว่ายังไม่รู้ และจะกลับมาตอบ"</li>
+          <li>"10 นาทีนี้คือของผม — ผมพร้อม"</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:22px;font-size:16px;color:var(--text);">🛡 Difficult-moment Playbook</h3>
+    <div class="playbook">
+      <div class="play-item">
+        <div class="play-trigger">😨 ถ้า <b>blank ลืมตัวเลข</b></div>
+        <div class="play-action">→ ดู One-Page Briefing ที่อยู่ในมือ · พูด "ขอเช็คตัวเลขล่าสุดก่อนนะครับ" · อย่าเดา</div>
+      </div>
+      <div class="play-item">
+        <div class="play-trigger">🔥 ถ้ามีคน <b>โต้ตอบหรือ challenge แรง</b></div>
+        <div class="play-action">→ "ขอบคุณที่ถามตรง ๆ ครับ — ตัวเลข[X]จริง ๆ คือ... และผมเข้าใจมุมที่กังวลของคุณ" · ฟัง · ไม่ defensive</div>
+      </div>
+      <div class="play-item">
+        <div class="play-trigger">📵 ถ้าโปรเจคเตอร์/<b>tech ล่ม</b></div>
+        <div class="play-action">→ พูดต่อโดยไม่ใช้ slide · ใช้ One-Page Briefing เป็น guide · "ระบบมีปัญหานิดหน่อย เดี๋ยวให้ทีม [name] ช่วยแก้ ผมขอเล่าต่อก่อน"</div>
+      </div>
+      <div class="play-item">
+        <div class="play-trigger">⏱ ถ้า <b>เวลาเหลือน้อย</b></div>
+        <div class="play-action">→ กระโดดไป <b>5-min Backup Script</b> ที่อยู่ในเอกสาร · skip slide 5-7 · สรุป + Q&amp;A ทันที</div>
+      </div>
+      <div class="play-item">
+        <div class="play-trigger">🤐 ถ้า <b>เงียบใน Q&amp;A</b></div>
+        <div class="play-action">→ "ผมเริ่มเองก็ได้ครับ — สิ่งที่ผมคิดอยู่ตอนนี้คือ..." · เล่าเรื่องที่กำลังจะ launch หรือ initiative ที่ทีมกำลังทำ</div>
+      </div>
+      <div class="play-item">
+        <div class="play-trigger">😬 ถ้ามีคนถามเรื่อง <b>เงินเดือน/โบนัส</b></div>
+        <div class="play-action">→ "เรื่องนี้ขอ park ไว้ก่อน · มาคุยกันแบบ 1:1 หรือ HR meeting ดีกว่าครับ — วันนี้ focus operations"</div>
+      </div>
+    </div>
+
+    <div class="banner blue" style="margin-top:18px;">💡 หาตำแหน่งยืน: ห่างจากหน้าจอประมาณ 1.5 เมตร · ตัวเฉียง 30° เพื่อให้คนเห็นทั้งคุณและ slide · มองคน <b>ไม่มอง slide ตลอด</b></div>
+  </section>
+
+  <!-- ==== RISK REGISTER ==== -->
+  <section class="slide" id="risk-register">
+    <div class="slide-head">
+      <div class="slide-no">RISK REGISTER · COO INTERNAL</div>
+      <div class="slide-time">ห้ามแชร์ในที่ประชุม</div>
+    </div>
+    <h2>Top Risks · 30 วันข้างหน้า</h2>
+    <p class="lead">ความเสี่ยงที่ผมเฝ้าติดตามเอง · มี mitigation พร้อม · ไม่ใส่ใน slide สาธารณะ</p>
+
+    <div class="risks">
+      <div class="risk-item red">
+        <div class="risk-header">
+          <span class="risk-no">R1</span>
+          <h3>Margin -47% ลากยาวเกิน 30 วัน</h3>
+          <span class="pill red">CRITICAL</span>
+        </div>
+        <p><b>What:</b> ถ้าปลายเดือน margin ยังติดลบ → cash burn เร็วกว่าที่ projection ถือ. fixed cost ปัจจุบัน ~฿4.5M/เดือน vs revenue MTD ~฿3M (8 วัน)</p>
+        <p><b>Why now:</b> 8 วันแรกของเดือน อยู่ในช่วง pre-paid cycle, ปลายเดือนต้องเก็บเกินค่าใช้จ่ายให้ได้</p>
+        <p><b>Mitigation:</b> (1) เร่ง upsell EasySlip API ในกลุ่ม top 50 (2) ลูกค้าใหม่ที่จ่ายแล้ว ส่ง follow-up เติมเงินเพิ่ม (3) audit fixed cost — มีอะไรลดได้?</p>
+        <p><b>Trigger to escalate:</b> ถ้าวันที่ 25 พ.ค. margin ยังติดลบ &gt; 30% → call emergency review</p>
+      </div>
+
+      <div class="risk-item amber">
+        <div class="risk-header">
+          <span class="risk-no">R2</span>
+          <h3>EasySlip API churn จากคู่แข่งใหม่</h3>
+          <span class="pill amber">HIGH</span>
+        </div>
+        <p><b>What:</b> EasySlip API ทำเงิน 60% ของ Group · ARPU ฿986 · ถ้าลูกค้าใหญ่ย้ายไปคู่แข่ง → impact หนัก</p>
+        <p><b>Why now:</b> ตลาด slip verification เริ่มมีหลายเจ้า · feature parity กำลังลด</p>
+        <p><b>Mitigation:</b> (1) Identify top 10 lighest-revenue customer · ติดต่อสำรวจ satisfaction (2) ออก feature exclusive ที่คู่แข่งยังไม่มี (3) lock-in contract ระยะยาว 6-12 เดือน + ส่วนลด</p>
+        <p><b>Trigger to escalate:</b> ถ้ามีลูกค้า top-10 cancel 1 ราย → escalate ในสัปดาห์</p>
+      </div>
+
+      <div class="risk-item amber">
+        <div class="risk-header">
+          <span class="risk-no">R3</span>
+          <h3>v1 API deprecation ดึงไม่ขึ้น</h3>
+          <span class="pill amber">MEDIUM</span>
+        </div>
+        <p><b>What:</b> v1: 7,461 calls/วัน vs v2: 37 calls/วัน (~0.5%) · ถ้า v1 ค้างนาน → maintenance burden + feature gap ใหญ่ขึ้น</p>
+        <p><b>Why now:</b> ลูกค้าที่ใช้ v1 ยังเยอะ · migration พา effort</p>
+        <p><b>Mitigation:</b> (1) DevRel ทำ migration guide + sample code (2) Sunset timeline ชัด (Q4) (3) Incentive ลูกค้า migrate (credit เพิ่ม)</p>
+        <p><b>Trigger to escalate:</b> ถ้าผ่านไป 2 เดือนแล้ว v2 ยังต่ำกว่า 10% → re-strategize</p>
+      </div>
+
+      <div class="risk-item">
+        <div class="risk-header">
+          <span class="risk-no">R4</span>
+          <h3>Token expiry incidents ค้าง</h3>
+          <span class="pill blue">LOW</span>
+        </div>
+        <p><b>What:</b> 2 token alerts active · ถ้าหมดอายุไม่ทัน → service disruption ลูกค้า</p>
+        <p><b>Mitigation:</b> SRE rotate ภายใน 24 ชม. + setup auto-renewal คอนทรัก</p>
+      </div>
+    </div>
+
+    <div class="banner amber" style="margin-top:18px;">⚠️ <b>เก็บ risk register นี้ไว้ส่วนตัว</b> — ใช้สำหรับ Board/CEO sync, ห้ามแชร์ในประชุม All-Hands</div>
+  </section>
+
+  <!-- ==== EMAIL TEMPLATE ==== -->
+  <section class="slide" id="email-template">
+    <div class="slide-head">
+      <div class="slide-no">FOLLOW-UP EMAIL · ส่งหลังประชุม</div>
+      <div class="slide-time">ส่งภายใน 24 ชม.</div>
+    </div>
+    <h2>Email สรุปประชุม · ส่งให้ทีม</h2>
+    <p class="lead">Template พร้อมใช้ · copy ไป paste ใน Email/Slack/LINE OA</p>
+
+    <div class="email-card">
+      <div class="email-meta">
+        <div><b>To:</b> all@thunder-group.com / Slack #all-hands</div>
+        <div><b>Subject:</b> สรุป All-Hands พ.ค. 2569 + 3 priorities เดือนหน้า</div>
+        <div><b>From:</b> COO</div>
+      </div>
+      <div class="email-body" id="emailBody">
+<p>สวัสดีครับทุกคน,</p>
+
+<p>ขอบคุณที่เข้าร่วม All-Hands เมื่อเช้านี้ครับ — สำหรับใครที่พลาด ผมขอสรุปประเด็นหลักไว้ที่นี่</p>
+
+<p><b>📊 ภาพรวม:</b><br>
+ปีนี้เราโต <b>+28% YoY</b> และอยู่ใน track ปิดปีตามเป้า เดือนนี้ฮีโร่ 3 ตัว: Thunder API +180%, EasySlip +28%, Flex +71% (run-rate) Margin ต่อสลิปยัง 82%+ — economics เก่ง</p>
+
+<p><b>⚠️ ที่ต้องเร่งปรับ:</b><br>
+Active rate 16% (โอกาสปลุก 56K คน) · Bot ARPU ห่าง API 8x · Acquisition ลด 32% · Run-rate ปีต่ำกว่าเป้า 1.0x (ใกล้มาก)</p>
+
+<p><b>🎯 Focus 30 วันข้างหน้า · 3 priorities:</b></p>
+<ol>
+<li><b>ปลุกฐานลูกค้าหลับ</b> · CRM/Marketing/Product ร่วมกัน · เป้า active rate ≥ 20%</li>
+<li><b>ดัน EasySlip API</b> · Sales/Dev/Support · Top-50 upsell + feature ใหม่ + ลด churn</li>
+<li><b>เปลี่ยนคนสมัครเป็นคนจ่าย</b> · Onboarding/Sales · Welcome flow + follow-up 24h · เป้า conv. 10%</li>
+</ol>
+
+<p><b>📋 ทำต่อ:</b><br>
+แต่ละ priority มี owner ที่ระบุไว้ — ทีม leads จะ sync กับผมรายสัปดาห์ <br>
+ใครมีคำถาม/ข้อเสนอ คุยได้ที่ห้องผม / Slack DM / Office hours สัปดาห์นี้</p>
+
+<p>ขอบคุณทุกคนสำหรับเดือนนี้ — ตัวเลขดี ๆ ทุกตัวเกิดจากทุกคนรวมกัน</p>
+
+<p>เจอกันใหม่ All-Hands เดือนหน้า · จะมา check-in 3 priorities นี้ด้วยกัน 🚀</p>
+
+<p>—<br>
+COO, Thunder Solution</p>
+      </div>
+      <div class="email-actions">
+        <button class="btn" onclick="copyEmail()">📋 Copy Email Body</button>
+        <button class="btn" onclick="copyEmailMd()">📝 Copy as Markdown</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==== WATCH NEXT MONTH ==== -->
+  <section class="slide" id="watch">
+    <div class="slide-head">
+      <div class="slide-no">WHAT TO WATCH · KPIs สำหรับ check-in เดือนหน้า</div>
+      <div class="slide-time">เตรียมข้อมูลสำหรับการประชุมเดือนถัดไป</div>
+    </div>
+    <h2>30-day KPI Tracker</h2>
+    <p class="lead">ตัวเลขเหล่านี้ที่ผมจะมาเช็คในประชุมเดือนหน้า — เพื่อวัดว่า 3 priority สำเร็จไหม</p>
+
+    <table class="product">
+      <thead>
+        <tr>
+          <th>Priority</th>
+          <th>Metric</th>
+          <th>Baseline (today)</th>
+          <th>Target (in 30 days)</th>
+          <th>Owner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>① ปลุกฐานหลับ</td>
+          <td>Active rate (group)</td>
+          <td class="num">16.0%</td>
+          <td class="num"><b>≥ 20%</b></td>
+          <td>CRM/Marketing</td>
+        </tr>
+        <tr>
+          <td>① ปลุกฐานหลับ</td>
+          <td>Returning revenue (จากเก่า)</td>
+          <td class="num">—</td>
+          <td class="num"><b>+฿500K/เดือน</b></td>
+          <td>Customer Success</td>
+        </tr>
+        <tr>
+          <td>② ดัน EasySlip</td>
+          <td>EasySlip API run-rate ปี</td>
+          <td class="num">฿65.8M (1.1x gap)</td>
+          <td class="num"><b>≥ ฿70M (1.0x)</b></td>
+          <td>Sales / Dev</td>
+        </tr>
+        <tr>
+          <td>② ดัน EasySlip</td>
+          <td>Top-50 customer revenue</td>
+          <td class="num">—</td>
+          <td class="num"><b>+10%</b></td>
+          <td>Sales</td>
+        </tr>
+        <tr>
+          <td>③ เปลี่ยนสมัคร→จ่าย</td>
+          <td>First-top-up conversion</td>
+          <td class="num">~6%</td>
+          <td class="num"><b>≥ 10%</b></td>
+          <td>Onboarding/Sales</td>
+        </tr>
+        <tr>
+          <td>③ เปลี่ยนสมัคร→จ่าย</td>
+          <td>Time-to-first-payment</td>
+          <td class="num">—</td>
+          <td class="num"><b>&lt; 7 วัน</b></td>
+          <td>Product</td>
+        </tr>
+        <tr>
+          <td>Bonus · Hygiene</td>
+          <td>Token expiry incidents</td>
+          <td class="num">2 active alerts</td>
+          <td class="num"><b>0 incident</b></td>
+          <td>SRE/Ops</td>
+        </tr>
+        <tr>
+          <td>Bonus · Hygiene</td>
+          <td>v2 API adoption</td>
+          <td class="num">37 / 7,461</td>
+          <td class="num"><b>500+ calls/day</b></td>
+          <td>Dev/DevRel</td>
+        </tr>
+        <tr>
+          <td>Health</td>
+          <td>Profit Margin (full-month)</td>
+          <td class="num">−47.5% (MTD)</td>
+          <td class="num"><b>≥ +10% (EOM)</b></td>
+          <td>Finance/COO</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="banner blue">เก็บ tracker นี้ไว้เปิดในประชุมเดือนหน้า · ทำเป็น standing agenda item</div>
+  </section>
+
+  <p class="hint">⌨️ <kbd>↑</kbd>/<kbd>↓</kbd> เลื่อน slide · <kbd>N</kbd> สลับ notes · <kbd>P</kbd> presenter mode · <kbd>T</kbd> theme · <kbd>F</kbd> fullscreen</p>
+  <p class="hint" style="margin-top:6px;">เอกสาร v3 · จัดทำ 8 พ.ค. 2569 · ข้อมูลจาก Master Dashboard (capture เวลา ~01:50 · ตัวเลขอาจขยับ ±0.5%) · ใช้ภายในเท่านั้น</p>
+</main>
+
+<script>
+  // Persist theme preference
+  if (localStorage.getItem('coo-dark') === '1') {
+    document.documentElement.classList.add('dark');
+  }
+  // Hook the theme toggle to persist
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('button') && e.target.textContent.includes('Theme')) {
+      setTimeout(() => {
+        if (document.documentElement.classList.contains('dark')) {
+          localStorage.setItem('coo-dark', '1');
+        } else {
+          localStorage.removeItem('coo-dark');
+        }
+      }, 50);
+    }
+  });
+
+  // Chart: Products MoM (run-rate adjusted)
+  const ctx = document.getElementById('chartProducts');
+  const css = getComputedStyle(document.documentElement);
+  const txt = css.getPropertyValue('--text-soft').trim() || '#aab4cc';
+  const grid = css.getPropertyValue('--line').trim() || '#243355';
+  const green = css.getPropertyValue('--green').trim() || '#21c389';
+  const red = css.getPropertyValue('--red').trim() || '#ff6b6b';
+  const products = [
+    { label: 'Thunder API', value: 180.7 },
+    { label: 'Flex',        value: 71.6  },
+    { label: 'EasySlip',    value: 28.8  },
+    { label: 'Easy Bot',    value: 7.2   },
+    { label: 'Thunder Bot', value: -11.7 },
+    { label: 'EasySlip API',value: -12.4 },
+    { label: 'Thunder',     value: -14.8 },
+  ];
+  // Keyboard navigation
+  let currentSlide = 0;
+  const slides = Array.from(document.querySelectorAll('section.slide'));
+  function scrollToSlide(idx) {
+    idx = Math.max(0, Math.min(idx, slides.length - 1));
+    currentSlide = idx;
+    slides[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+      e.preventDefault(); scrollToSlide(currentSlide + 1);
+    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+      e.preventDefault(); scrollToSlide(currentSlide - 1);
+    } else if (e.key === 'Home') {
+      e.preventDefault(); scrollToSlide(0);
+    } else if (e.key === 'End') {
+      e.preventDefault(); scrollToSlide(slides.length - 1);
+    } else if (e.key === 'n' || e.key === 'N') {
+      document.body.classList.toggle('show-notes');
+    } else if (e.key === 'p' || e.key === 'P') {
+      document.body.classList.toggle('presenter');
+    } else if (e.key === 't' || e.key === 'T') {
+      document.documentElement.classList.toggle('dark');
+    } else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  });
+  // Section titles for timer
+  const slideTitles = slides.map((s,i) => {
+    const t = s.querySelector('.slide-time')?.textContent?.trim() || '';
+    const h = s.querySelector('h1,h2')?.textContent?.trim() || '';
+    return `Slide ${i+1} — ${h}${t ? ' · ' + t : ''}`;
+  });
+
+  // Update progress bar + currentSlide based on scroll
+  const progressBar = document.getElementById('progressBar');
+  const timerSection = document.getElementById('timerSection');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.4) {
+        currentSlide = slides.indexOf(entry.target);
+        if (timerSection) timerSection.textContent = slideTitles[currentSlide] || '';
+      }
+    });
+    // progress bar based on scroll
+    const scrollPct = Math.min(100, (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    if (progressBar) progressBar.style.width = scrollPct + '%';
+  }, { threshold: [0.4] });
+  slides.forEach(s => observer.observe(s));
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    const pct = Math.min(100, (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    if (progressBar) progressBar.style.width = pct + '%';
+    if (scrollTopBtn) {
+      if (window.scrollY > 600) scrollTopBtn.classList.add('show');
+      else scrollTopBtn.classList.remove('show');
+    }
+  });
+
+  // Timer
+  let timerStart = null, timerElapsed = 0, timerInterval = null;
+  const TARGET_SECONDS = 600;
+  function fmt(s) { return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(s%60).padStart(2,'0'); }
+  function timerTick() {
+    const elapsed = timerElapsed + Math.floor((Date.now() - timerStart) / 1000);
+    const display = document.getElementById('timerDisplay');
+    const status = document.getElementById('timerStatus');
+    if (!display) return;
+    display.textContent = fmt(elapsed);
+    display.classList.remove('ok','warn','over');
+    if (elapsed < TARGET_SECONDS - 60) display.classList.add('ok');
+    else if (elapsed < TARGET_SECONDS) display.classList.add('warn');
+    else display.classList.add('over');
+    if (elapsed < TARGET_SECONDS) {
+      status.textContent = `${fmt(TARGET_SECONDS - elapsed)} เหลืออยู่ / 10:00 target`;
+    } else {
+      status.textContent = `เกิน ${fmt(elapsed - TARGET_SECONDS)} นาที / 10:00 target`;
+    }
+  }
+  window.timerShow = () => document.getElementById('timerOverlay').classList.add('active');
+  window.timerHide = () => document.getElementById('timerOverlay').classList.remove('active');
+  window.timerToggle = () => {
+    if (timerInterval) {
+      timerElapsed += Math.floor((Date.now() - timerStart) / 1000);
+      clearInterval(timerInterval); timerInterval = null;
+      document.querySelector('.t-btn').textContent = '▶ Resume';
+    } else {
+      timerStart = Date.now();
+      timerInterval = setInterval(timerTick, 200);
+      document.querySelector('.t-btn').textContent = '⏸ Pause';
+    }
+  };
+  // Email copy functions
+  window.copyEmail = () => {
+    const body = document.getElementById('emailBody');
+    if (!body) return;
+    const text = body.innerText;
+    navigator.clipboard.writeText(text).then(() => alert('Copied email body to clipboard'));
+  };
+  window.copyEmailMd = () => {
+    const md = `**ภาพรวม:** ปีนี้เราโต +28% YoY และอยู่ใน track ปิดปีตามเป้า เดือนนี้ฮีโร่ 3 ตัว: Thunder API +180%, EasySlip +28%, Flex +71% Margin ต่อสลิปยัง 82%+
+
+**ที่ต้องเร่งปรับ:** Active rate 16% (โอกาสปลุก 56K คน) · Bot ARPU ห่าง API 8x · Acquisition ลด 32%
+
+**Focus 30 วันข้างหน้า · 3 priorities:**
+1. **ปลุกฐานลูกค้าหลับ** · CRM/Marketing/Product · เป้า active rate ≥ 20%
+2. **ดัน EasySlip API** · Sales/Dev/Support · Top-50 upsell
+3. **เปลี่ยนคนสมัครเป็นคนจ่าย** · Onboarding · เป้า conv. 10%`;
+    navigator.clipboard.writeText(md).then(() => alert('Copied markdown summary to clipboard'));
+  };
+
+  window.timerReset = () => {
+    if (timerInterval) clearInterval(timerInterval);
+    timerInterval = null; timerStart = null; timerElapsed = 0;
+    document.getElementById('timerDisplay').textContent = '00:00';
+    document.getElementById('timerStatus').textContent = '/ 10:00 minutes target';
+    document.querySelector('.t-btn').textContent = '▶ Start';
+  };
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: products.map(p=>p.label),
+      datasets: [{
+        label: 'MoM % (run-rate)',
+        data: products.map(p=>p.value),
+        backgroundColor: products.map(p => p.value >= 0 ? green : red),
+        borderRadius: 6,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: grid }, ticks: { color: txt, callback: v => v + '%' } },
+        y: { grid: { display: false }, ticks: { color: txt } }
+      }
+    }
+  });
+
+  // Gauge: year run-rate vs target
+  const gaugeCtx = document.getElementById('chartGauge');
+  if (gaugeCtx) {
+    new Chart(gaugeCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Achieved', 'Gap'],
+        datasets: [{
+          data: [98.1, 1.9],
+          backgroundColor: [green, css.getPropertyValue('--line').trim()],
+          borderWidth: 0,
+        }]
+      },
+      options: {
+        rotation: -90,
+        circumference: 180,
+        cutout: '78%',
+        plugins: { legend: { display: false }, tooltip: { enabled: false } }
+      }
+    });
+  }
+
+  // Donut: customer base composition
+  const blue = css.getPropertyValue('--blue').trim();
+  const violet = css.getPropertyValue('--violet').trim();
+  const amber = css.getPropertyValue('--amber').trim();
+  const customerCtx = document.getElementById('chartCustomers');
+  if (customerCtx) {
+    new Chart(customerCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Thunder Bot (53,309)', 'EasySlip API (9,625)', 'Thunder API (2,105)', 'Easy Bot (1,952)'],
+        datasets: [{
+          data: [53309, 9625, 2105, 1952],
+          backgroundColor: [blue, green, violet, amber],
+          borderWidth: 0,
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom', labels: { color: txt, font: { size: 11 }, boxWidth: 12 } }
+        },
+        cutout: '60%'
+      }
+    });
+  }
+
+  // Bar: ARPU per product
+  const arpuCtx = document.getElementById('chartARPU');
+  if (arpuCtx) {
+    new Chart(arpuCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Easy Bot', 'Thunder Bot', 'Thunder API', 'EasySlip API'],
+        datasets: [{
+          label: 'ARPU (฿/active user/เดือน)',
+          data: [94, 120, 826, 986],
+          backgroundColor: [amber, blue, violet, green],
+          borderRadius: 6,
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { color: grid }, ticks: { color: txt, callback: v => '฿' + v } },
+          y: { grid: { display: false }, ticks: { color: txt, font: { size: 12 } } }
+        },
+        indexAxis: 'y'
+      }
+    });
+  }
+
+  // Donut: revenue mix MTD
+  const revCtx = document.getElementById('chartRevMix');
+  if (revCtx) {
+    new Chart(revCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['EasySlip API (~60%)', 'Thunder Bot (~32%)', 'Thunder API (~7%)', 'Easy Bot (~2%)', 'Flex (~0.3%)'],
+        datasets: [{
+          data: [1812452, 964263, 201607, 48343, 7857],
+          backgroundColor: [green, blue, violet, amber, red],
+          borderWidth: 0,
+        }]
+      },
+      options: {
+        plugins: {
+          legend: { position: 'bottom', labels: { color: txt, font: { size: 11 }, boxWidth: 12 } }
+        },
+        cutout: '60%'
+      }
+    });
+  }
+</script>
+</body>
+</html>

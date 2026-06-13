@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ตัวแปรที่มีผลกับการใช้ AI — Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-soft: #F8FAFC;
+    --ink: #0F172A;
+    --ink-soft: #475569;
+    --ink-faint: #94A3B8;
+    --accent: #F26944;
+    --accent-soft: #FFF4F0;
+    --line: #EEF2F6;
+    --green: #16A34A;
+    --blue: #2563EB;
+    --gold: #B8860B;
+    --shadow: 0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.04);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans Thai', 'Inter', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .deck {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    padding: 56px 80px;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    animation: fadeIn 0.4s ease;
+  }
+  .slide.active { display: flex; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Header */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .layer-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 6px 12px;
+    border-radius: 4px;
+  }
+  .slide-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+  }
+  h1 {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 12px 0 8px;
+  }
+  h2 {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin-bottom: 8px;
+  }
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .subtitle {
+    font-size: 18px;
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+
+  /* Title slide */
+  .title-slide {
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .title-slide h1 {
+    font-size: 84px;
+    letter-spacing: -0.03em;
+  }
+  .title-slide .lead {
+    font-size: 24px;
+    color: var(--ink-soft);
+    margin: 24px 0 48px;
+    max-width: 720px;
+  }
+  .title-slide .meta {
+    display: flex;
+    gap: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+  }
+  .title-slide .meta span::before {
+    content: "▸ ";
+    color: var(--accent);
+  }
+
+  /* Variable grid */
+  .var-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .var-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .var-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 4px 8px rgba(15,23,42,0.04), 0 12px 32px rgba(242,105,68,0.10);
+  }
+  .var-card::after {
+    content: "↗";
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 14px;
+    color: var(--ink-faint);
+    opacity: 0;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .var-card:hover::after {
+    opacity: 1;
+    transform: translate(2px, -2px);
+    color: var(--accent);
+  }
+  .var-name {
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .var-name .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .var-desc {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .var-impact {
+    font-size: 13px;
+    color: var(--ink-faint);
+    font-style: italic;
+    padding-top: 8px;
+    border-top: 1px dashed var(--line);
+  }
+  .var-impact::before {
+    content: "→ ";
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  /* Formula slide */
+  .formula-box {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 48px;
+    text-align: center;
+    margin: 32px 0;
+    box-shadow: var(--shadow);
+  }
+  .formula {
+    font-family: 'JetBrains Mono', 'IBM Plex Sans Thai', monospace;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.8;
+  }
+  .formula .var { color: var(--accent); font-weight: 600; }
+  .formula .op { color: var(--ink-faint); margin: 0 4px; }
+
+  /* Top 5 list */
+  .top-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .top-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+  .top-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 50px;
+  }
+  .top-content h3 { margin-bottom: 4px; }
+  .top-content p { color: var(--ink-soft); font-size: 15px; }
+
+  /* Footer / nav */
+  .nav-bar {
+    position: fixed;
+    bottom: 24px;
+    right: 32px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: var(--bg-card);
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    z-index: 10;
+  }
+  .nav-btn {
+    background: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+  }
+  .nav-btn:hover { background: var(--bg-soft); color: var(--accent); }
+  .nav-counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin: 0 6px;
+  }
+
+  .progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    z-index: 100;
+  }
+
+  /* Bonus / human factor list */
+  .factor-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .factor {
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    box-shadow: var(--shadow);
+  }
+  .factor strong { display: block; margin-bottom: 4px; color: var(--ink); }
+  .factor span { font-size: 14px; color: var(--ink-soft); }
+
+  /* Pillars (overview) */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .pillar {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .pillar-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .pillar-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  /* Closing slide */
+  .closing {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .closing h1 { font-size: 96px; }
+  .closing .lead { font-size: 22px; color: var(--ink-soft); margin-top: 16px; }
+  .closing .credit {
+    margin-top: 48px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    padding: 40px 24px;
+    animation: overlayIn 0.2s ease;
+  }
+  .modal-overlay.active { display: flex; }
+  @keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .modal-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    max-width: 760px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 40px 44px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+    position: relative;
+    animation: cardIn 0.25s ease;
+  }
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    font-size: 18px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+  .modal-close:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  .modal-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .modal-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .modal-desc {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .modal-section { margin-bottom: 24px; }
+  .modal-section:last-child { margin-bottom: 0; }
+  .modal-section h4 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .modal-section h4::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .modal-section p, .modal-section li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .modal-section ul {
+    padding-left: 0;
+    list-style: none;
+  }
+  .modal-section li {
+    padding: 6px 0 6px 22px;
+    position: relative;
+  }
+  .modal-section li::before {
+    content: "▸";
+    position: absolute;
+    left: 4px;
+    color: var(--accent);
+  }
+
+  .example-block {
+    margin-top: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .example-label {
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .example-label.bad { background: #FEF2F2; color: #DC2626; }
+  .example-label.good { background: #F0FDF4; color: #16A34A; }
+  .example-content {
+    padding: 14px 16px;
+    font-family: 'JetBrains Mono', 'IBM Plex Sans Thai', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    background: var(--bg-soft);
+    white-space: pre-wrap;
+    color: var(--ink);
+  }
+  .example-content.bad { background: #FFFBFB; }
+  .example-content.good { background: #FAFEFB; }
+
+  .example-arrow {
+    text-align: center;
+    padding: 6px 0;
+    font-size: 18px;
+    color: var(--ink-faint);
+    background: var(--bg-card);
+    border-top: 1px dashed var(--line);
+    border-bottom: 1px dashed var(--line);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+  .example-arrow::before { content: "↓ "; color: var(--accent); margin-right: 4px; }
+
+  .example-output {
+    padding: 14px 16px;
+    font-family: 'IBM Plex Sans Thai', 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    color: var(--ink);
+  }
+  .example-output.bad {
+    background: #FFFDFD;
+    border-left: 3px solid #DC2626;
+  }
+  .example-output.good {
+    background: #FAFEFC;
+    border-left: 3px solid #16A34A;
+  }
+
+  .tip-box {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    color: var(--ink);
+    margin-top: 10px;
+  }
+  .tip-box strong { color: var(--accent); }
+
+  /* Print fallback */
+  @media print {
+    .slide { display: flex !important; page-break-after: always; height: 100vh; }
+    .nav-bar, .progress, .modal-overlay { display: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<div class="deck">
+
+  <!-- 1. Title -->
+  <section class="slide active title-slide">
+    <div class="slide-header" style="border:none;">
+      <span class="layer-tag">WORKSHOP · 2026</span>
+      <span class="slide-num">01 / 18</span>
+    </div>
+    <h1>ตัวแปรที่มีผล<br>กับการใช้ AI</h1>
+    <p class="lead">10 ชั้น + Cross-Platform — ตัวแปร 90+ ตัวที่กำหนดว่า AI จะให้ผลลัพธ์ดีหรือมั่ว — สำหรับคนที่อยากใช้ AI เป็น ไม่ใช่แค่พิมพ์แชท</p>
+    <div class="meta">
+      <span>โดย COO Workshop</span>
+      <span>Claude Code · Warp · MCP</span>
+      <span>กด → เพื่อเริ่ม</span>
+    </div>
+  </section>
+
+  <!-- 2. Overview -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">OVERVIEW</span>
+      <span class="slide-num">02 / 18</span>
+    </div>
+    <h2>สูตรคุณภาพของ AI Output</h2>
+    <p class="subtitle">ผลลัพธ์ที่ได้ไม่ได้ขึ้นกับโมเดลอย่างเดียว — แต่ขึ้นกับ 7 ตัวแปรหลักที่คูณกัน</p>
+
+    <div class="formula-box">
+      <div class="formula">
+        Output Quality <span class="op">=</span> ƒ(<br><br>
+        <span class="var">Prompt</span> <span class="op">×</span>
+        <span class="var">Model</span> <span class="op">×</span>
+        <span class="var">Context</span> <span class="op">×</span>
+        <span class="var">Tools</span><br>
+        <span class="op">×</span>
+        <span class="var">Memory</span> <span class="op">×</span>
+        <span class="var">Data</span> <span class="op">×</span>
+        <span class="var">Human</span><br><br>
+        )
+      </div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-num">10</div><div class="pillar-name">ชั้นตัวแปร</div></div>
+      <div class="pillar"><div class="pillar-num">90+</div><div class="pillar-name">ตัวแปรย่อย</div></div>
+      <div class="pillar"><div class="pillar-num">3</div><div class="pillar-name">Bonus: Cross-Platform<br>(Surfaces · Pipelines · Multi-AI)</div></div>
+      <div class="pillar"><div class="pillar-num">5</div><div class="pillar-name">ตัว ROI สูงสุด</div></div>
+      <div class="pillar"><div class="pillar-num">1</div><div class="pillar-name">คนใช้ที่สำคัญที่สุด</div></div>
+    </div>
+  </section>
+
+  <!-- 3. Layer 1 -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 1 · INPUT</span>
+      <span class="slide-num">03 / 18</span>
+    </div>
+    <h2>Prompt — การป้อนคำสั่ง</h2>
+    <p class="subtitle">ขั้นที่คุมง่ายที่สุด แต่คนมักลืมว่ามันเปลี่ยนผลลัพธ์ทันที</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Prompt Quality</div>
+        <div class="var-desc">โครงสร้างชัด, มี constraint, มีเป้าหมาย</div>
+        <div class="var-impact">คำสั่งคลุมเครือ = ผลลัพธ์มั่ว</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Prompt Language</div>
+        <div class="var-desc">ไทย vs อังกฤษ — โมเดลฝึกบนอังกฤษมากกว่า</div>
+        <div class="var-impact">อังกฤษมักได้คุณภาพสูงกว่า 10–20%</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Few-shot Examples</div>
+        <div class="var-desc">ใส่ตัวอย่าง 2–3 อันก่อนสั่งจริง</div>
+        <div class="var-impact">ลด hallucination มหาศาล</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Role / Persona</div>
+        <div class="var-desc">"คุณคือ Senior Engineer..." — กำหนดมุมมอง</div>
+        <div class="var-impact">เปลี่ยนระดับลึกของคำตอบ</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Chain of Thought</div>
+        <div class="var-desc">"คิดทีละขั้น" ก่อนตอบสุดท้าย</div>
+        <div class="var-impact">งานซับซ้อนแม่นขึ้น 30%+</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Negative Prompt</div>
+        <div class="var-desc">"อย่าใช้ emoji, อย่าสรุปท้าย"</div>
+        <div class="var-impact">กันพฤติกรรมที่ไม่ต้องการ</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Output Spec</div>
+        <div class="var-desc">"ตอบเป็น JSON / ตาราง / 3 bullets"</div>
+        <div class="var-impact">ใช้ต่อใน automation ได้</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Context Anchor</div>
+        <div class="var-desc">อ้างไฟล์/บรรทัด เช่น <code>src/index.js:42</code></div>
+        <div class="var-impact">ลดการเดา, ตรงจุด</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Layer 2 Model -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 2 · ENGINE</span>
+      <span class="slide-num">04 / 18</span>
+    </div>
+    <h2>Model — เครื่องยนต์ AI</h2>
+    <p class="subtitle">เลือกรุ่นให้ตรงงาน — Opus คิดลึก, Haiku เร็วถูก, Sonnet สมดุล</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Model Tier</div>
+        <div class="var-desc">Opus / Sonnet / Haiku / GPT-5 / Gemini Pro</div>
+        <div class="var-impact">คุณภาพ vs ราคา vs ความเร็ว</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Model Version</div>
+        <div class="var-desc">4.5 → 4.6 → 4.7 — ใหม่กว่ามักแม่นกว่า</div>
+        <div class="var-impact">Prompt เก่าอาจต้องปรับ</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Context Window</div>
+        <div class="var-desc">200k vs 1M tokens</div>
+        <div class="var-impact">1M = ใส่ codebase ทั้งโปรเจกต์ได้</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Extended Thinking</div>
+        <div class="var-desc">โหมดคิดก่อนตอบ (reasoning)</div>
+        <div class="var-impact">งานคณิต/logic ดีขึ้นชัด</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Multi-modal</div>
+        <div class="var-desc">text + image + audio + video</div>
+        <div class="var-impact">งานหลายสื่อในรอบเดียว</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Knowledge Cutoff</div>
+        <div class="var-desc">วันที่ข้อมูลล่าสุดของโมเดล</div>
+        <div class="var-impact">ข่าวใหม่กว่านั้นต้องค้นเว็บ</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Temperature (API)</div>
+        <div class="var-desc">0 = แน่นอน, 1 = สร้างสรรค์</div>
+        <div class="var-impact">โค้ด 0–0.3, ครีเอทีฟ 0.7–1</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Max Output Tokens</div>
+        <div class="var-desc">เพดานความยาวคำตอบ</div>
+        <div class="var-impact">งานยาวต้องเผื่อ ไม่งั้นถูกตัด</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Layer 3 Tools -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 3 · TOOLS</span>
+      <span class="slide-num">05 / 18</span>
+    </div>
+    <h2>Tools — เครื่องมือต่อขยาย</h2>
+    <p class="subtitle">เปลี่ยน AI จากแชทบอท เป็นผู้ช่วยที่ทำงานจริงในระบบของคุณ</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>MCP Servers</div>
+        <div class="var-desc">chrome-mcp, gdrive, desktop-commander, GitHub</div>
+        <div class="var-impact">ต่อ AI กับโลกจริง</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Subagents</div>
+        <div class="var-desc">Explore, Plan, general-purpose</div>
+        <div class="var-impact">แตกงานคู่ขนาน, ประหยัด context</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Skills (.md)</div>
+        <div class="var-desc">/graphify, /spaghetti-fix, /ai-loop</div>
+        <div class="var-impact">ความสามารถ on-demand</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Slash Commands</div>
+        <div class="var-desc">/loop, /schedule, /review, /deploy</div>
+        <div class="var-impact">ลัด workflow ที่ทำซ้ำ</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Hooks</div>
+        <div class="var-desc">SessionStart, PostToolUse, Stop</div>
+        <div class="var-impact">Automation แบบ event-driven</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Plan Mode</div>
+        <div class="var-desc">วางแผนก่อนแก้จริง</div>
+        <div class="var-impact">กันพังในงานใหญ่</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Worktree</div>
+        <div class="var-desc">git branch แยกคู่ขนาน</div>
+        <div class="var-impact">ทำหลายงานไม่ชนกัน</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Background Tasks</div>
+        <div class="var-desc">run_in_background</div>
+        <div class="var-impact">งานยาวไม่ block สนทนา</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Layer 4 Memory -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 4 · MEMORY</span>
+      <span class="slide-num">06 / 18</span>
+    </div>
+    <h2>Memory — ความจำ</h2>
+    <p class="subtitle">ตัวที่แยก "คนใช้ AI เป็น" ออกจาก "คนพิมพ์แชท" — AI จำคุณได้ข้ามวัน</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>CLAUDE.md (global)</div>
+        <div class="var-desc"><code>~/.claude/CLAUDE.md</code></div>
+        <div class="var-impact">กฎที่ใช้ทุกโปรเจกต์</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>CLAUDE.md (project)</div>
+        <div class="var-desc"><code>./CLAUDE.md</code> ใน repo</div>
+        <div class="var-impact">กฎเฉพาะโปรเจกต์</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>MEMORY.md (auto)</div>
+        <div class="var-desc">user / feedback / project / reference</div>
+        <div class="var-impact">จำข้ามรอบสนทนา</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Prompt Cache</div>
+        <div class="var-desc">Reuse context — TTL 5 นาที</div>
+        <div class="var-impact">ถูกลง 10x, เร็วขึ้น</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Compaction</div>
+        <div class="var-desc">สรุปบทสนทนาเก่าอัตโนมัติ</div>
+        <div class="var-impact">งานยาวไม่ตัน</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Session Resume</div>
+        <div class="var-desc">เปิดต่อจากเดิม</div>
+        <div class="var-impact">ไม่ต้อง brief ใหม่</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Layer 5 Data -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 5 · DATA</span>
+      <span class="slide-num">07 / 18</span>
+    </div>
+    <h2>Data — ข้อมูลนำเข้า</h2>
+    <p class="subtitle">Garbage In = Garbage Out — คุณภาพ input กำหนดเพดาน output</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>File Type</div>
+        <div class="var-desc">PDF, image, audio, video, code, CSV</div>
+        <div class="var-impact">แต่ละแบบมีวิธีอ่านต่างกัน</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Data Source</div>
+        <div class="var-desc">Local / Drive / Sheet / DB / Web / API</div>
+        <div class="var-impact">กำหนด pipeline</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Data Quality</div>
+        <div class="var-desc">สะอาด / มี schema / ดิบ</div>
+        <div class="var-impact">ขยะเข้า = ขยะออก</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Data Volume</div>
+        <div class="var-desc">10 แถว vs 1M แถว</div>
+        <div class="var-impact">ใหญ่ → ต้อง chunk / RAG</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Data Freshness</div>
+        <div class="var-desc">real-time / รายชั่วโมง / static</div>
+        <div class="var-impact">ตัดสินใจ cache + cron</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Reference Style</div>
+        <div class="var-desc">Annotated vs ดิบ</div>
+        <div class="var-impact">คุณภาพ ref = คุณภาพ output</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Layer 6 Environment -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 6 · ENVIRONMENT</span>
+      <span class="slide-num">08 / 18</span>
+    </div>
+    <h2>Environment — สภาพแวดล้อม</h2>
+    <p class="subtitle">เครื่องและเครื่องมือที่คุณใช้ — ส่งผลต่อความเร็วและ feature ที่เปิดได้</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>OS</div>
+        <div class="var-desc">macOS / Windows / Linux</div>
+        <div class="var-impact">Shortcut, hook, path ต่างกัน</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Terminal</div>
+        <div class="var-desc">Warp / iTerm / Terminal.app</div>
+        <div class="var-impact">UI features ต่าง (AI ใน Warp)</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>IDE Integration</div>
+        <div class="var-desc">VS Code / JetBrains / Web</div>
+        <div class="var-impact">Inline edit vs CLI</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Network</div>
+        <div class="var-desc">Speed, latency, VPN</div>
+        <div class="var-impact">MCP, web fetch, cloud sync</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Hardware</div>
+        <div class="var-desc">RAM, GPU</div>
+        <div class="var-impact">สำคัญถ้า local AI (คุณ = cloud only)</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Display</div>
+        <div class="var-desc">จำนวนจอ, ขนาด</div>
+        <div class="var-impact">ดู diff / preview ได้กว้าง</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Layer 7 Cost -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 7 · COST</span>
+      <span class="slide-num">09 / 18</span>
+    </div>
+    <h2>Cost & Performance — ต้นทุนกับความเร็ว</h2>
+    <p class="subtitle">รู้ขีดจำกัดของแพลน รู้กลยุทธ์ประหยัด</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Plan Tier</div>
+        <div class="var-desc">Max 5x, 20x, Pro, Plus, API</div>
+        <div class="var-impact">เพดานใช้งาน</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Rate Limit</div>
+        <div class="var-desc">Tokens/min, requests/day</div>
+        <div class="var-impact">งานรัวเร็วชนกำแพง</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Token Cost</div>
+        <div class="var-desc">$/1M input/output</div>
+        <div class="var-impact">งานใหญ่ต้อง budget</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Fast Mode</div>
+        <div class="var-desc">/fast บน Opus</div>
+        <div class="var-impact">Output เร็วขึ้น คุณภาพเท่าเดิม</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Cache Strategy</div>
+        <div class="var-desc">Prefix cache, breakpoint</div>
+        <div class="var-impact">ลดต้นทุนหลัก</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Parallel Tool Calls</div>
+        <div class="var-desc">เรียก tool พร้อมกันหลายตัว</div>
+        <div class="var-impact">งานรวมเสร็จเร็วขึ้นมาก</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Layer 8 Workflow -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 8 · WORKFLOW</span>
+      <span class="slide-num">10 / 18</span>
+    </div>
+    <h2>Workflow — กระบวนการทำงาน</h2>
+    <p class="subtitle">รอบของ iterate-review-fix คือกุญแจของผลลัพธ์คุณภาพสูง</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Iteration Loop</div>
+        <div class="var-desc">/loop, recheck, retry</div>
+        <div class="var-impact">ขัดเงาผลลัพธ์</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Human-in-the-loop</div>
+        <div class="var-desc">Approve gate ก่อน destructive action</div>
+        <div class="var-impact">กันงานพัง</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Verification</div>
+        <div class="var-desc">Test, lint, type-check</div>
+        <div class="var-impact">ตรวจก่อนปล่อย</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Rollback</div>
+        <div class="var-desc">Git, backup file</div>
+        <div class="var-impact">ย้อนได้เมื่อพลาด</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Branch Strategy</div>
+        <div class="var-desc">Feature / docs / fix branch</div>
+        <div class="var-impact">จัดการ change ปลอดภัย</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Scheduling</div>
+        <div class="var-desc">Cron, /schedule</div>
+        <div class="var-impact">งานวนตามเวลา</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Triggers</div>
+        <div class="var-desc">Webhook, file change, time</div>
+        <div class="var-impact">Event-driven automation</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Feedback Loop</div>
+        <div class="var-desc">Save corrections → MEMORY</div>
+        <div class="var-impact">AI ฉลาดขึ้นเรื่อยๆ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Layer 9 Output -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 9 · OUTPUT</span>
+      <span class="slide-num">11 / 18</span>
+    </div>
+    <h2>Output & Delivery — ปลายทาง</h2>
+    <p class="subtitle">รูปแบบ + ปลายทาง + การส่ง — กำหนดว่าผลลัพธ์เอาไปใช้ต่อได้แค่ไหน</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Format</div>
+        <div class="var-desc">.md / .html / .pdf / .xlsx / .mp4 / .png</div>
+        <div class="var-impact">กำหนดวิธีใช้ต่อ</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Destination</div>
+        <div class="var-desc">Folder / Drive / Cloud / LINE / Email</div>
+        <div class="var-impact">Pipeline ปลายทาง</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Audience</div>
+        <div class="var-desc">Technical / non-tech / boss / customer</div>
+        <div class="var-impact">Tone, ระดับลึก</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Validation</div>
+        <div class="var-desc">Schema check, visual diff</div>
+        <div class="var-impact">กัน output พัง</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Distribution</div>
+        <div class="var-desc">Manual / auto-broadcast</div>
+        <div class="var-impact">Scale งาน</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Naming Convention</div>
+        <div class="var-desc">Timestamp, version, slug</div>
+        <div class="var-impact">หาเจอภายหลัง</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. Layer 10 Safety -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">LAYER 10 · SAFETY</span>
+      <span class="slide-num">12 / 18</span>
+    </div>
+    <h2>Safety & Collaboration — ความปลอดภัย+ทีม</h2>
+    <p class="subtitle">ใช้ AI กับงานจริง ต้องคิดเรื่องสิทธิ์, ข้อมูลอ่อนไหว, และการแชร์ทีม</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Permissions</div>
+        <div class="var-desc">settings.json allowlist</div>
+        <div class="var-impact">กันคำสั่งอันตราย, ลด popup</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Sandbox</div>
+        <div class="var-desc">Isolated mode, worktree</div>
+        <div class="var-impact">กันงานทดลองพัง prod</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Sensitive Data</div>
+        <div class="var-desc">Secrets, .env, PII</div>
+        <div class="var-impact">อย่าให้ AI เห็น/อัปโหลด</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Audit Trail</div>
+        <div class="var-desc">Session log, git history</div>
+        <div class="var-impact">ตามรอยใครทำอะไร</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Team Sharing</div>
+        <div class="var-desc">Shared skills, MCP, MEMORY</div>
+        <div class="var-impact">ทีมใช้ standard เดียวกัน</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Trust Calibration</div>
+        <div class="var-desc">รู้ว่าโมเดลพลาดบ่อยที่ไหน</div>
+        <div class="var-impact">ตรวจซ้ำในจุดเสี่ยง</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. Cross-Platform Surfaces -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">BONUS · CROSS-PLATFORM</span>
+      <span class="slide-num">13 / 18</span>
+    </div>
+    <h2>Claude อยู่ทุกที่ — Surfaces</h2>
+    <p class="subtitle">Claude เดียวกัน แต่หลายช่องทาง — เลือก surface ให้ตรง use case แล้วงานเร็วขึ้น 5-10 เท่า</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Claude Code (CLI)</div>
+        <div class="var-desc">Terminal-based — Warp / iTerm + MCP + Hooks + Skills ครบ</div>
+        <div class="var-impact">Action-first: edit ไฟล์, run test, deploy ใน 1 prompt</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Claude Desktop App</div>
+        <div class="var-desc">Mac / Win native app — drag-drop file, MCP support</div>
+        <div class="var-impact">Chat-first: brainstorm, อ่าน PDF, multi-modal input</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Claude Web (claude.ai)</div>
+        <div class="var-desc">Browser-based — Artifacts (interactive), Projects, sharing</div>
+        <div class="var-impact">ทำงานข้ามเครื่อง, share conversation กับทีม</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Claude API</div>
+        <div class="var-desc">Programmatic — streaming, tool use, batch, files API</div>
+        <div class="var-impact">Build product, automate ที่ scale (1000+ calls/วัน)</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>IDE Extensions</div>
+        <div class="var-desc">VS Code / JetBrains / Cursor — inline edit + diff view</div>
+        <div class="var-impact">แก้ code ใน editor ที่ใช้อยู่ ไม่ต้องสลับ</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Claude Mobile</div>
+        <div class="var-desc">iOS / Android — voice input, camera, quick chat</div>
+        <div class="var-impact">งาน on-the-go, ถามไอเดียระหว่างเดินทาง</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14. Cross-Platform Pipelines -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">BONUS · PIPELINES</span>
+      <span class="slide-num">14 / 18</span>
+    </div>
+    <h2>One Input → Many Outputs</h2>
+    <p class="subtitle">งานเดียวออกหลายแพลตฟอร์ม Claude เป็นแกนกลางที่แปลง content ตาม channel</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Content Distribution</div>
+        <div class="var-desc">1 blog → LINE + Email + Twitter + IG + LinkedIn</div>
+        <div class="var-impact">Publish ครบ 5 ช่องทางใน 1 ชม. แทน 1 วัน</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Meeting → Action Items</div>
+        <div class="var-desc">Transcript → Notion notes + Slack alert + Email summary</div>
+        <div class="var-impact">ประชุม 1 ชม. → action items distribute อัตโนมัติ</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Code Pipeline</div>
+        <div class="var-desc">Code → Test + Docs + Deploy + Slack notify</div>
+        <div class="var-impact">DevOps loop ครบรอบ ไม่ต้องคลิก dashboard</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Asset Production</div>
+        <div class="var-desc">Concept → image + video + audio + caption</div>
+        <div class="var-impact">Creative pipeline จากไอเดียถึงโพสต์</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Customer Communication</div>
+        <div class="var-desc">1 ข่าว → CEO version + Engineer version + Customer version</div>
+        <div class="var-impact">ตรง audience แต่ละกลุ่ม สื่อสารไม่พัง</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Knowledge Sync</div>
+        <div class="var-desc">Drive ↔ Notion ↔ Slack ↔ Local — sync ทั้งสองทาง</div>
+        <div class="var-impact">Single source of truth, ไม่มี version drift</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. Multi-AI Orchestration -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">BONUS · ORCHESTRATION</span>
+      <span class="slide-num">15 / 18</span>
+    </div>
+    <h2>Claude เป็น Conductor — เรียก AI อื่น</h2>
+    <p class="subtitle">/ai-loop pattern: Claude วาง plan แตกงานให้ specialist AI แต่ละด้าน รวมผลกลับมา</p>
+
+    <div class="var-grid">
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Claude as Conductor</div>
+        <div class="var-desc">Plan + delegate + aggregate — Claude วาง strategy เรียก AI อื่นทำ</div>
+        <div class="var-impact">ใช้ AI ที่เก่งแต่ละด้านร่วมกัน — quality สูงสุด</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>GPT Image / Nano Banana</div>
+        <div class="var-desc">Image generation specialist — gpt-image, Imagen, Flux</div>
+        <div class="var-impact">งานภาพคุณภาพ photo-real, edit ภาพได้</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Gemini Deep Research</div>
+        <div class="var-desc">ค้น web ลึก, current data, แหล่งอ้างอิงครบ</div>
+        <div class="var-impact">งาน research, market intel, news ปัจจุบัน</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>neomake Video Models</div>
+        <div class="var-desc">Veo 3.1, Seedance, Sora 2, Kling — generate video</div>
+        <div class="var-impact">Video production จาก prompt, ไม่ต้อง shoot</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Codex (GPT-5)</div>
+        <div class="var-desc">Second-opinion code review — cross-check Claude's code</div>
+        <div class="var-impact">2 AI ดูพร้อมกัน จับ bug ได้มากขึ้น</div>
+      </div>
+      <div class="var-card">
+        <div class="var-name"><span class="dot"></span>Chrome MCP Web AIs</div>
+        <div class="var-desc">Ask GPT / Gemini / Claude ผ่านเบราว์เซอร์ (chat.openai.com etc.)</div>
+        <div class="var-impact">ใช้ subscription แทนจ่าย API ทุก call</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16. Human Factor -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">BONUS · HUMAN</span>
+      <span class="slide-num">16 / 18</span>
+    </div>
+    <h2>Human Factor — ตัวแปรที่สำคัญที่สุด</h2>
+    <p class="subtitle">AI ดีแค่ไหนก็แพ้ถ้าคนใช้ไม่รู้จะใช้ — และ AI ปานกลางก็ชนะถ้าคนใช้เก่ง</p>
+
+    <div class="factor-list">
+      <div class="factor">
+        <strong>User Skill Level</strong>
+        <span>มือใหม่ vs มือเก๋า — สั่งงานต่างระดับ ระวังต่างจุด</span>
+      </div>
+      <div class="factor">
+        <strong>Domain Expertise</strong>
+        <span>รู้เรื่อง = ตรวจ output ได้ ไม่รู้ = เชื่อ AI ผิดง่าย</span>
+      </div>
+      <div class="factor">
+        <strong>Iteration Tolerance</strong>
+        <span>อดทนแก้ 2-3 รอบ = ผลดีกว่าทำรอบเดียว</span>
+      </div>
+      <div class="factor">
+        <strong>Goal Clarity</strong>
+        <span>รู้ปลายทางชัด = prompt สั้นแต่ตรง</span>
+      </div>
+      <div class="factor">
+        <strong>Trust Calibration</strong>
+        <span>รู้ว่า AI พลาดอะไรบ่อย → ตรวจจุดนั้นเสมอ</span>
+      </div>
+      <div class="factor">
+        <strong>Language Fluency</strong>
+        <span>สลับไทย/อังกฤษได้ = ขยายเครื่องมือ</span>
+      </div>
+      <div class="factor">
+        <strong>Critical Thinking</strong>
+        <span>ไม่เชื่อทันที — verify ก่อนใช้</span>
+      </div>
+      <div class="factor">
+        <strong>Patience</strong>
+        <span>AI ไม่ใช่เวทมนตร์ ต้องลองหลายมุม</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17. Top 5 ROI -->
+  <section class="slide">
+    <div class="slide-header">
+      <span class="layer-tag">TAKEAWAY</span>
+      <span class="slide-num">17 / 18</span>
+    </div>
+    <h2>5 ตัวแปร ROI สูงสุด</h2>
+    <p class="subtitle">ถ้าจะลงทุนเรียนรู้ — เริ่มจาก 5 ตัวนี้ก่อน</p>
+
+    <div class="top-list">
+      <div class="top-item">
+        <div class="top-num">01</div>
+        <div class="top-content">
+          <h3>Prompt Structure</h3>
+          <p>เปลี่ยนผลลัพธ์ทันทีโดยไม่ต้องเปลี่ยนโมเดล — ทักษะที่ ROI สูงสุดในระยะสั้น</p>
+        </div>
+      </div>
+      <div class="top-item">
+        <div class="top-num">02</div>
+        <div class="top-content">
+          <h3>Memory + CLAUDE.md</h3>
+          <p>แยก "คนใช้ AI เป็น" ออกจาก "คนพิมพ์แชท" — AI จำคุณข้ามวันได้</p>
+        </div>
+      </div>
+      <div class="top-item">
+        <div class="top-num">03</div>
+        <div class="top-content">
+          <h3>MCP + Skills</h3>
+          <p>ขยายอำนาจ AI 10 เท่า — ทำงานจริงในระบบของคุณ ไม่ใช่แค่ตอบในแชท</p>
+        </div>
+      </div>
+      <div class="top-item">
+        <div class="top-num">04</div>
+        <div class="top-content">
+          <h3>Hooks + Permissions</h3>
+          <p>Automation จริงจัง — ไม่ต้องคลิกเองทุกครั้ง, AI ทำให้อัตโนมัติ</p>
+        </div>
+      </div>
+      <div class="top-item">
+        <div class="top-num">05</div>
+        <div class="top-content">
+          <h3>Workflow Loop</h3>
+          <p>Iteration คือกุญแจคุณภาพ — รอบที่ 2-3 มักดีกว่ารอบแรกเสมอ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18. Closing -->
+  <section class="slide closing">
+    <h1>ขอบคุณครับ</h1>
+    <p class="lead">AI ที่ดี = ตัวแปรที่ดี × คนใช้ที่เก่ง<br>เริ่มจากตัวแปรเดียวก่อน แล้วต่อยอด</p>
+    <div class="credit">COO WORKSHOP · 2026-05-14</div>
+  </section>
+
+</div>
+
+<div class="nav-bar">
+  <button class="nav-btn" onclick="go(-1)" title="ก่อนหน้า (←)">‹</button>
+  <span class="nav-counter" id="counter">1 / 18</span>
+  <button class="nav-btn" onclick="go(1)" title="ถัดไป (→)">›</button>
+</div>
+
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()" title="ปิด (ESC)">×</button>
+    <div class="modal-tag" id="modal-tag"></div>
+    <h2 class="modal-title" id="modal-title"></h2>
+    <p class="modal-desc" id="modal-desc"></p>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('counter');
+  const progress = document.getElementById('progress');
+  let i = 0;
+
+  function show(n) {
+    slides[i].classList.remove('active');
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides[i].classList.add('active');
+    counter.textContent = `${i + 1} / ${slides.length}`;
+    progress.style.width = `${((i + 1) / slides.length) * 100}%`;
+  }
+  function go(d) { show(i + d); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeModal(); return; }
+    if (document.getElementById('modal').classList.contains('active')) return;
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(-1); }
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+
+  // touch swipe
+  let touchX = 0;
+  document.addEventListener('touchstart', e => touchX = e.touches[0].clientX);
+  document.addEventListener('touchend', e => {
+    if (document.getElementById('modal').classList.contains('active')) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+  });
+
+  // ─────────────────────────────────────────────────────────
+  // DETAILED CONTENT FOR EACH VARIABLE (Modal pop-up)
+  // ─────────────────────────────────────────────────────────
+  const details = {
+    // ── Layer 1: Prompt ──
+    "Prompt Quality": {
+      layer: "LAYER 1 · INPUT", title: "Prompt Quality — คุณภาพคำสั่ง",
+      desc: "วิธีที่คุณสั่งงาน AI — โครงสร้าง, ความชัด, ความครบ — เป็นตัวแปรที่คุมง่ายที่สุดและเปลี่ยนผลลัพธ์เร็วที่สุด",
+      why: "AI ไม่รู้สิ่งที่อยู่ในหัวคุณ ถ้าคำสั่งคลุมเครือ AI จะ 'เดา' และเดามักผิด การเขียน prompt ที่มีโครงสร้างชัดเจน ลด hallucination ได้ 50%+",
+      examples: [
+        { type: "bad", label: "ไม่ดี", content: "ช่วยเขียนรายงานหน่อย",
+          output: "ได้ครับ! ก่อนเขียนรายงาน รบกวนแจ้งข้อมูลเพิ่มเติม:\n\n1. รายงานเกี่ยวกับเรื่องอะไรครับ?\n2. ส่งให้ใครอ่าน?\n3. ความยาวประมาณเท่าไหร่?\n4. รูปแบบ (Word / PDF / Slide)?\n5. มีข้อมูลให้อ้างอิงหรือไม่?\n6. กำหนดส่งเมื่อไหร่?\n\nแจ้งมาให้ผมเริ่มเขียนได้เลยครับ" },
+        { type: "good", label: "ดี", content: "เขียนรายงานสรุปยอดขาย Q1 2026\n• กลุ่มผู้อ่าน: CEO\n• ความยาว: 1 หน้า\n• Format: bullet + ตาราง\n• เน้น: top 3 growth + 1 ข้อห่วง\n• ภาษา: ไทย, tone ทางการ",
+          output: "สรุปยอดขาย Q1 2026 — สำหรับ CEO\n\n[ภาพรวม]\n• Revenue: ฿42.3M (+18% YoY)\n• Active customer: 3,247 (+22%)\n• Gross margin: 64% (+2pt)\n\n[Top 3 Growth Drivers]\n┌──────────────────┬────────┬─────────┐\n│ Driver           │ Revenue│ Growth  │\n├──────────────────┼────────┼─────────┤\n│ Enterprise tier  │ ฿18.0M │ +45%    │\n│ SEA expansion    │ ฿ 6.2M │ ใหม่    │\n│ Annual prepay    │ ฿ 8.5M │ +38%    │\n└──────────────────┴────────┴─────────┘\n\n[ข้อห่วง]\n• Churn rate Q1 = 4.8% (vs 3.2% Q4 2025)\n  Root cause: onboarding ใหม่ยังไม่ stabilize\n  Action: review Q2 สัปดาห์ที่ 2" }
+      ],
+      tips: ["ใส่ context ก่อนเสมอ: ใคร, ทำอะไร, ทำไม", "ระบุ format ของ output", "บอก audience", "ใส่ตัวอย่างถ้ามี"]
+    },
+    "Prompt Language": {
+      layer: "LAYER 1 · INPUT", title: "Prompt Language — ภาษาที่ใช้สั่ง",
+      desc: "ภาษาที่ใช้เขียน prompt มีผลกับคุณภาพคำตอบ เพราะโมเดลฝึกบนข้อมูลภาษาอังกฤษเยอะกว่ามาก",
+      why: "Training data ของ Claude/GPT/Gemini มีอังกฤษ ~60-80% ไทย <2% ส่งผลให้คำตอบภาษาอังกฤษมัก แม่นกว่า, ลึกกว่า, และ tool-use ดีกว่า",
+      examples: [
+        { type: "bad", label: "ไทยตรงๆ", content: "เขียน regex จับเบอร์โทรไทย",
+          output: "ลองใช้ regex นี้ครับ:\n\n/^0[0-9]{9}$/\n\nจับเบอร์ที่ขึ้นต้นด้วย 0 และมี 10 หลักทั้งหมด\n\n[ปัญหา: รองรับแค่ format ไม่มี dash/space, ไม่กรอง prefix 02/04/05]" },
+        { type: "good", label: "อังกฤษ + ไทย", content: "Write a regex to match Thai phone numbers (08x-xxx-xxxx, 09x, 06x). Explain ผลลัพธ์เป็นภาษาไทย",
+          output: "Pattern: /^0[689]\\d[-\\s]?\\d{3}[-\\s]?\\d{4}$/\n\nคำอธิบาย:\n  ^0[689]    → ขึ้นต้นด้วย 0 ตามด้วย 6/8/9 (mobile)\n  \\d         → digit ตัวที่ 3\n  [-\\s]?     → dash หรือ space (optional)\n  \\d{3}      → 3 digits\n  [-\\s]?     → dash หรือ space (optional)\n  \\d{4}$     → 4 digits ปิดท้าย\n\nTest cases:\n  ✓ 0812345678        (no separator)\n  ✓ 081-234-5678      (dash)\n  ✓ 081 234 5678      (space)\n  ✗ 0712345678        (07 ไม่ใช่ mobile)\n  ✗ 02-123-4567       (เบอร์บ้าน)\n\nถ้าต้องรองรับเบอร์บ้านด้วย ใช้:\n/^0\\d[-\\s]?\\d{3,4}[-\\s]?\\d{4}$/" }
+      ],
+      tips: ["เทคนิคเชิงเทคนิค (code, regex, algorithm) → ภาษาอังกฤษ", "Content/Marketing/Customer-facing → ไทย", "เคล็ดลับ: prompt อังกฤษ + 'ตอบเป็นไทย' ที่ท้าย ได้ของดีที่สุด 2 โลก"]
+    },
+    "Few-shot Examples": {
+      layer: "LAYER 1 · INPUT", title: "Few-shot Examples — ตัวอย่างประกอบคำสั่ง",
+      desc: "ใส่ตัวอย่าง input → output 2-5 อันก่อนสั่งจริง AI จะเรียนรู้ pattern แล้วทำตาม",
+      why: "การอธิบายด้วยคำพูด AI อาจตีความผิด แต่ตัวอย่าง concrete = AI เห็น pattern ชัดเจน ลด hallucination มหาศาล โดยเฉพาะงานที่ต้องการ format เฉพาะ",
+      examples: [
+        { type: "bad", label: "ไม่ใส่ตัวอย่าง", content: "ทำให้ประโยคสั้นกระชับ:\nตอนนี้ผมยังไม่ค่อยแน่ใจเท่าไหร่ครับ",
+          output: "ลองดูตัวเลือกเหล่านี้:\n\n1. ผมยังไม่แน่ใจครับ\n2. ผมไม่ค่อยแน่ใจ\n3. ตอนนี้ไม่แน่ใจครับ\n4. ขอเวลาตัดสินใจครับ\n5. ยังไม่แน่ใจครับ\n\n[ไม่รู้สไตล์ที่คุณต้องการ → เดาหลายแบบ]" },
+        { type: "good", label: "Few-shot 3 ตัวอย่าง", content: "แปลงประโยคให้สั้นกระชับ:\n\nInput: ฉันคิดว่าเราน่าจะลองพิจารณาการนำเสนอนี้ดู\nOutput: ลองพิจารณาดู\n\nInput: รบกวนช่วยส่งไฟล์ดังกล่าวมาที่อีเมลผมหน่อยได้ไหมครับ\nOutput: ส่งไฟล์เข้าอีเมลผมด้วยครับ\n\nInput: ตอนนี้ผมยังไม่ค่อยแน่ใจเท่าไหร่ครับ\nOutput: ___",
+          output: "ผมไม่แน่ใจครับ\n\n[จับ pattern ได้:\n  - ตัดคำเกริ่น (\"ตอนนี้\", \"ฉันคิดว่า\")\n  - ตัดคำขยาย (\"ค่อย\", \"เท่าไหร่\")\n  - คงเฉพาะใจความหลัก]" }
+      ],
+      tips: ["3-5 ตัวอย่างพอ ไม่ต้องเยอะ", "ตัวอย่างหลากหลายดีกว่าซ้ำ", "ใส่ edge case ด้วยถ้าสำคัญ"]
+    },
+    "Role / Persona": {
+      layer: "LAYER 1 · INPUT", title: "Role / Persona — บทบาทของ AI",
+      desc: "กำหนดให้ AI สวมบทเฉพาะ เช่น Senior Engineer, COO, Pediatrician — จะเปลี่ยนมุมมองและระดับลึกของคำตอบ",
+      why: "AI ปรับ tone, technical depth, prioritization ตามบทบาท พูดกับ Senior Dev จะได้คำตอบลึก, พูดกับ Tutor จะได้คำอธิบายง่าย",
+      examples: [
+        { type: "bad", label: "ไม่ระบุ role", content: "อธิบาย JWT",
+          output: "JWT (JSON Web Token) คือ token ที่ใช้สำหรับ authentication ระหว่าง client กับ server\n\nประกอบด้วย 3 ส่วน คั่นด้วยจุด:\n  1. Header — algorithm + token type\n  2. Payload — claims (user data)\n  3. Signature — verify integrity\n\nวิธีใช้:\n  - Login สำเร็จ → server ส่ง JWT กลับ\n  - Client เก็บไว้ส่งใน Authorization header\n  - Server verify signature ทุก request\n\nข้อดี: stateless, cross-domain, scalable\n\n[คำตอบทั่วไป, ไม่ลึก, ไม่บอกอันตราย]" },
+        { type: "good", label: "Senior Security Engineer", content: "คุณคือ Senior Security Engineer 10 ปี อธิบาย JWT ให้ Junior Dev ที่เพิ่งเรียน OAuth เสร็จ เน้นจุดเสี่ยง",
+          output: "OK Junior ขอข้ามคำอธิบายพื้นฐาน เน้น 4 จุดที่จะทำให้คุณโดน hack:\n\n1. Algorithm Confusion Attack (CVE คลาสสิก)\n   alg field ใน header แก้ได้! Attacker เปลี่ยน RS256 → HS256 แล้ว\n   ใช้ public key เป็น secret → forge token ได้สบาย\n   → Fix: pin algorithm ที่ server, อย่าเชื่อ header\n\n2. ไม่มี Revocation (ต่างจาก OAuth opaque token)\n   Token signed = revoke ไม่ได้จนหมดอายุ\n   ถูก leak = ใช้ได้จน expire\n   → Fix: expiry สั้น (15 min) + refresh token + blacklist\n\n3. localStorage = XSS = ขโมยทันที\n   อย่าเก็บ JWT ใน localStorage/sessionStorage\n   → Fix: httpOnly + Secure + SameSite cookie + CSP strict\n\n4. Payload ≠ Encrypted (แค่ base64)\n   ใครก็ decode อ่านได้ ห้ามใส่ password, PII, secret\n   → ถ้าจำเป็น ใช้ JWE (encrypted JWT)\n\nGotcha สุดท้าย: \"none\" algorithm — libraries เก่ายอมรับ token ที่บอก alg=none (ไม่ verify) เช็ค library version ด้วย" }
+      ],
+      tips: ["ใส่ทั้ง role + audience ของผู้รับ", "เพิ่ม 'ประสบการณ์ X ปี' ทำให้คำตอบลึกขึ้น", "ใส่ context industry เช่น 'ใน fintech ไทย'"]
+    },
+    "Chain of Thought": {
+      layer: "LAYER 1 · INPUT", title: "Chain of Thought — สั่งให้คิดทีละขั้น",
+      desc: "บอก AI ว่า 'คิดทีละขั้น' หรือ 'list approach ก่อนตอบ' ทำให้ความแม่นยำในงาน reasoning เพิ่มขึ้น 20-40%",
+      why: "AI generate ทีละ token ถ้าให้คิดดังๆ ก่อน จะใช้ early tokens เป็น 'workspace' คิดออก plan ที่ดีกว่า แล้วค่อยตอบ — แทนที่จะกระโดดสรุปทันที (มักผิด)",
+      examples: [
+        { type: "bad", label: "ถามตรงๆ", content: "ลูกค้ามี 3 ตัวเลือก A=1000/เดือน, B=10000/ปี, C=99000/10ปี ถูกที่สุดคือ?",
+          output: "C ครับ เพราะจ่ายแค่ 99,000 บาท ในขณะที่ A ต้องจ่าย 1,000 × 12 = 12,000 และ B 10,000 ต่อปี\n\n[ผิด! ไม่ได้ normalize ระยะเวลา\n  A: 12,000/ปี\n  B: 10,000/ปี\n  C: 9,900/ปี ← ถูกที่สุดจริง\nAI กระโดดสรุปจากตัวเลขดิบ]" },
+        { type: "good", label: "Chain of Thought", content: "ลูกค้ามี 3 ตัวเลือก A=1000/เดือน, B=10000/ปี, C=99000/10ปี\n\nคิดทีละขั้น:\n1. คำนวณ cost ต่อปีของแต่ละตัว\n2. เทียบ\n3. สรุป",
+          output: "ขั้นที่ 1 — คำนวณ cost ต่อปี\n  • A: 1,000 × 12 เดือน = 12,000 บาท/ปี\n  • B: 10,000 บาท/ปี (ตามที่ระบุ)\n  • C: 99,000 ÷ 10 ปี = 9,900 บาท/ปี\n\nขั้นที่ 2 — เรียงจากถูกไปแพง\n  1. C = 9,900/ปี ← ถูกที่สุด\n  2. B = 10,000/ปี\n  3. A = 12,000/ปี\n\nขั้นที่ 3 — สรุป\n  ✓ ถูกที่สุดคือตัวเลือก C (9,900/ปี)\n\nข้อสังเกตเพิ่มเติม:\n  • C ต้องจ่ายก้อนเดียว 99,000 ต้องดู cash flow\n  • B vs C ต่างกันแค่ 100/ปี ความเสี่ยงผูกมัด 10 ปี อาจไม่คุ้ม\n  • ถ้าลูกค้าไม่แน่ใจอนาคต → แนะ B" }
+      ],
+      tips: ["ใช้กับงานคณิต, logic, decision-making", "งานง่ายไม่ต้องใช้ — เปลืองเวลา", "Claude 4.x มี 'Extended Thinking' ทำให้เองได้"]
+    },
+    "Negative Prompt": {
+      layer: "LAYER 1 · INPUT", title: "Negative Prompt — บอกว่าอย่าทำอะไร",
+      desc: "ระบุพฤติกรรมที่ไม่ต้องการ เช่น 'อย่าใช้ emoji', 'อย่าสรุปท้าย', 'อย่าใส่ disclaimer'",
+      why: "AI มี default behavior หลายอย่าง (emoji, สรุปท้าย, disclaimer) ที่อาจไม่ตรงสไตล์คุณ การบอก 'อย่า' ตรงๆ ได้ผลกว่ารอแก้ภายหลัง",
+      examples: [
+        { type: "bad", label: "ไม่ใส่ negative", content: "เขียน email ขอนัดประชุม",
+          output: "Subject: ขอนัดประชุมหารือ\n\nสวัสดีครับ คุณ...\n\nผมหวังว่าอีเมลฉบับนี้จะถึงคุณในเวลาที่เหมาะสมนะครับ 😊\n\nผมอยากเรียนขอนัดประชุมกับคุณ เพื่อหารือเกี่ยวกับ **โครงการที่กำลังพัฒนาอยู่** ซึ่งผมเชื่อว่าจะเป็นประโยชน์ต่อทั้งสองฝ่ายเป็นอย่างมาก 🙏\n\nกำหนดการที่เสนอ:\n• วันจันทร์ที่ 19 พ.ค. เวลา 10:00 ✨\n• วันอังคารที่ 20 พ.ค. เวลา 14:00 📅\n\nรบกวนแจ้งความสะดวกของคุณกลับมาด้วยนะครับ 🙏\n\nหวังว่าจะได้ร่วมงานกันนะครับ 😊\n\nขอแสดงความนับถืออย่างสูง,\n[Your name]\n\n[ยาวเกิน, emoji เพียบ, formality สูงเกิน]" },
+        { type: "good", label: "ใส่ negative ครบ", content: "เขียน email ขอนัดประชุม\n\nห้าม:\n- emoji\n- ขึ้นต้นด้วย 'I hope this email finds you well'\n- เกิน 5 บรรทัด\n- สรุปท้ายแบบ 'Looking forward to...'\n- bold/italic",
+          output: "Subject: ขอนัดประชุม - หารือโครงการ Q2\n\nเรียน คุณ...\n\nขอนัดประชุม 30 นาที หารือ scope โครงการ Q2\n\nเวลาที่สะดวก: จ. 10:00 / อ. 14:00 / พ. 09:00\n\nรบกวนแจ้งกลับครับ\n\n[Your name]" }
+      ],
+      tips: ["ใส่ negative ใน CLAUDE.md ให้ AI จำ", "Negative ที่ effective: format, tone, ความยาว", "อย่าใช้กับเนื้อหา (จะเซ็นเซอร์เกิน)"]
+    },
+    "Output Spec": {
+      layer: "LAYER 1 · INPUT", title: "Output Spec — กำหนดรูปแบบผลลัพธ์",
+      desc: "ระบุชัดว่าอยากได้ JSON / ตาราง / Markdown / bullet — ทำให้เอาไปใช้ต่อใน automation ได้ทันที",
+      why: "ถ้าไม่ spec format AI จะเลือก format เอง (มักเป็น prose ยาว) ใช้ต่อยาก ถ้า spec ชัด → parse ง่าย, predictable, automation ได้",
+      examples: [
+        { type: "bad", label: "ไม่ระบุ format", content: "Extract ข้อมูลจาก invoice นี้",
+          output: "จากใบกำกับภาษีที่คุณส่งมา ผมแยกข้อมูลได้ดังนี้ครับ:\n\nผู้ขาย: บริษัท ABC จำกัด\nวันที่ออก: 14 พฤษภาคม 2026\nเลขที่: INV-2026-0042\n\nรายการสินค้า:\n  - Product X จำนวน 5 ชิ้น ราคาชิ้นละ 100 บาท รวม 500 บาท\n\nสรุป:\n  - รวมก่อน VAT: 500 บาท\n  - VAT 7%: 35 บาท\n  - รวมทั้งสิ้น: 535 บาท\n\n[Prose ที่อ่านง่ายแต่ parse ลำบาก ต้อง regex/manual แยก]" },
+        { type: "good", label: "JSON schema", content: "Extract ข้อมูลจาก invoice นี้ ตอบเป็น JSON เท่านั้น:\n\n{\n  \"vendor\": string,\n  \"date\": YYYY-MM-DD,\n  \"items\": [{\"name\": string, \"qty\": number, \"price\": number}],\n  \"total\": number,\n  \"vat\": number\n}\n\nถ้าหาไม่เจอใส่ null ห้ามเดา",
+          output: "{\n  \"vendor\": \"บริษัท ABC จำกัด\",\n  \"date\": \"2026-05-14\",\n  \"items\": [\n    {\n      \"name\": \"Product X\",\n      \"qty\": 5,\n      \"price\": 100\n    }\n  ],\n  \"total\": 535,\n  \"vat\": 35\n}\n\n[Parse ได้ทันที, เข้า DB ได้เลย, automate ได้]" }
+      ],
+      tips: ["JSON schema ดีกว่าบอกเป็นคำพูด", "ใส่ 'ห้ามเดา ถ้าไม่มีใส่ null' ลด hallucination", "Format consistent = automation ทำงานได้"]
+    },
+    "Context Anchor": {
+      layer: "LAYER 1 · INPUT", title: "Context Anchor — อ้างจุดที่ชัด",
+      desc: "อ้างไฟล์ บรรทัด หรือส่วนของโค้ดให้ AI ตรงๆ เช่น `src/index.js:42` แทนคำพูดคลุมเครือ",
+      why: "AI ไม่ต้องเดาว่าคุณหมายถึงอะไร ลด round-trip ในการถามกลับ ตรงไป edit ได้เลย",
+      examples: [
+        { type: "bad", label: "คลุมเครือ", content: "ฟังก์ชันที่จัดการ login มีปัญหา ช่วยดูที",
+          output: "รบกวนข้อมูลเพิ่มเติมครับ:\n\n1. ฟังก์ชัน login อยู่ในไฟล์ไหน? (auth.ts? login.ts? user.controller.ts?)\n2. ปัญหาที่พบคืออะไร?\n   - Error message?\n   - ตอบช้า?\n   - ตอบผิด?\n   - Crash?\n3. Reproduce ได้ยังไง?\n4. Log/stack trace แนบได้ไหม?\n5. เริ่มเกิดเมื่อไหร่? หลัง deploy ไหน?\n\nให้ข้อมูลแล้วผมจะไปดูครับ\n\n[เปลือง round-trip 1 ครั้ง]" },
+        { type: "good", label: "Anchor ชัด", content: "ใน src/auth.ts:124-156 ฟังก์ชัน handleLogin ส่ง 500 เวลา password ว่าง (ควรเป็น 400)\nไฟล์ทดสอบที่เกี่ยว: tests/auth.spec.ts:89",
+          output: "เห็นแล้วครับ ที่ auth.ts:142:\n\n  if (!password) {\n    return res.status(500).json({error: 'invalid'});\n  }\n\nควรเป็น 400 Bad Request (client ส่งข้อมูลไม่ครบ)\nไม่ใช่ 500 Internal Server Error (server พัง)\n\nFix:\n  if (!password) {\n    return res.status(400).json({\n      error: 'password_required',\n      message: 'Password is required'\n    });\n  }\n\nและ update test ที่ auth.spec.ts:89:\n  expect(res.status).toBe(400);  // เดิม 500\n\nทำให้เลยมั้ยครับ?\n\n[เริ่ม fix ทันที, ไม่ต้องถาม]" }
+      ],
+      tips: ["ใช้ format `file:line` Claude Code จะ render ลิงก์", "ระบุ commit hash ถ้าเทียบ version", "Screenshot + annotation > description"]
+    },
+
+    // ── Layer 2: Model ──
+    "Model Tier": {
+      layer: "LAYER 2 · ENGINE", title: "Model Tier — เลือกระดับโมเดล",
+      desc: "Opus = ฉลาดสุด ช้า แพง / Sonnet = สมดุล / Haiku = เร็ว ถูก งานเบา / GPT-5, Gemini Pro เป็น alternative",
+      why: "ใช้ Opus กับงานง่ายๆ = เปลือง / ใช้ Haiku กับงานยาก = ผิด เลือกให้ตรงงาน ประหยัดได้ 80%+",
+      examples: [
+        { type: "bad", label: "Haiku ทำงาน complex", content: "[Haiku] Refactor auth module ทั้งระบบ ให้รองรับ multi-tenancy โดยไม่ break test 200+ ตัว",
+          output: "ผมจะเริ่มจากการแก้ AuthService ให้รับ tenantId\n\n[แก้ไฟล์ 3 ไฟล์]\n\nเสร็จแล้วครับ!\n\n[แต่จริงๆ:\n  ✗ ยังไม่ครอบคลุม session handling\n  ✗ ลืม cross-tenant data leak protection\n  ✗ ไม่ได้แก้ middleware\n  ✗ Test 47 ตัว fail แต่ Haiku ไม่ verify]" },
+        { type: "good", label: "Opus งานเดียวกัน", content: "[Opus] Refactor auth module ทั้งระบบ ให้รองรับ multi-tenancy โดยไม่ break test 200+ ตัว",
+          output: "Multi-tenancy refactor — เป็น cross-cutting concern ผมต้องวางแผนก่อน\n\nWave 1 (foundation):\n  1. เพิ่ม tenant_id column ใน users, sessions, tokens\n  2. Migration script + rollback plan\n\nWave 2 (core):\n  3. AuthService รับ tenantId ทุก method\n  4. Middleware extract tenant จาก subdomain\n  5. JWT payload เพิ่ม tid claim\n\nWave 3 (security):\n  6. RLS policy ใน DB (Postgres) กัน cross-tenant leak\n  7. Cache key prefix ด้วย tenantId\n\nWave 4 (test):\n  8. Update 200+ tests — แบ่งเป็น batches ละ 30\n  9. Add new multi-tenant integration tests\n\nRisks ที่เจอ:\n  ⚠ Session migration อาจ logout users ครั้งเดียว\n  ⚠ Existing JWT tokens ไม่มี tid → grace period\n\nเริ่มจาก Wave 1 มั้ยครับ?\n\n[Plan ครบ, เห็น risk, ทำตามได้]" }
+      ],
+      tips: ["เริ่มที่ Sonnet ก่อน ถ้าไม่พอค่อย Opus", "Haiku 4.5 เก่งกว่า Sonnet 3 ใน task เบา", "Workflow จริง: Haiku คัด → Sonnet ทำ → Opus review"]
+    },
+    "Model Version": {
+      layer: "LAYER 2 · ENGINE", title: "Model Version — เวอร์ชันโมเดล",
+      desc: "Claude 4.5 → 4.6 → 4.7 — โมเดลใหม่มัก smart ขึ้น แต่ prompt เก่าอาจต้องปรับ",
+      why: "โมเดลใหม่อาจเปลี่ยน default behavior, instruction following, tool use format ของเดิมที่ work ใน 4.5 อาจ break ใน 4.7",
+      examples: [
+        { type: "good", label: "ตัวอย่าง regression", content: "Prompt: 'reply in JSON only'\n• 4.5: ส่ง JSON เปล่า ✓\n• 4.6: ใส่ ```json wrapper\n• 4.7: ส่ง JSON เปล่า แต่ structure ต่างเดิม\n\n→ ต้อง test prompt ใหม่ทุก major version" }
+      ],
+      tips: ["Pin version ใน production: claude-opus-4-7", "Test prompt ใหม่ใน staging ก่อน upgrade", "อ่าน release notes ดู breaking changes"]
+    },
+    "Context Window": {
+      layer: "LAYER 2 · ENGINE", title: "Context Window — หน้าต่างข้อมูล",
+      desc: "ขนาดข้อมูลที่ใส่ได้ในรอบเดียว — 200k tokens (~150k คำ) มาตรฐาน, 1M tokens สำหรับ Claude Opus 4.7",
+      why: "งานใหญ่ที่ต้องเห็นทั้ง codebase พร้อมกันต้อง 1M ถ้าใช้ 200k ต้อง chunk แล้ว context หาย ตัดสินใจผิดง่าย",
+      examples: [
+        { type: "good", label: "ต้องใช้ 1M", content: "• Refactor monorepo (3000+ ไฟล์)\n• Migration ภาษา/framework ทั้งระบบ\n• Audit codebase หา security issue\n• สรุปบทเรียน 500 หน้า" },
+        { type: "good", label: "200k พอ", content: "• แก้ bug เฉพาะที่\n• เพิ่ม feature ใน 5-10 ไฟล์\n• Code review PR\n• งานทั่วไป 80%" }
+      ],
+      tips: ["1M ทำให้ช้าลง+แพงขึ้น ใช้เมื่อจำเป็น", "Compaction ทำให้ context ใหญ่กว่าจริง", "Prompt cache สำคัญมากเมื่อใช้ context ใหญ่"]
+    },
+    "Extended Thinking": {
+      layer: "LAYER 2 · ENGINE", title: "Extended Thinking — โหมดคิดลึก",
+      desc: "โมเดลคิดในใจก่อนตอบ (visible thinking tokens) ใช้กับงาน reasoning ที่ต้องวางแผนซับซ้อน",
+      why: "เพิ่ม accuracy 20-40% ในงานคณิต, logic, planning แต่ช้าและเปลือง token — ใช้กับงานที่ค่าผิดสูง",
+      examples: [
+        { type: "good", label: "ใช้ thinking", content: "• Debug บั๊กที่มี root cause หลาย hop\n• Architecture decision (trade-off เยอะ)\n• งาน math/algorithm\n• Plan migration ที่ break เยอะ" },
+        { type: "good", label: "ไม่ต้องใช้", content: "• แปลภาษา\n• เขียน boilerplate\n• Format conversion\n• Q&A ตรงไปตรงมา" }
+      ],
+      tips: ["Set thinking budget ตามความยากงาน", "Thinking ไม่ส่งไปลูกค้า (internal only)", "ดู thinking ช่วย debug AI reasoning"]
+    },
+    "Multi-modal": {
+      layer: "LAYER 2 · ENGINE", title: "Multi-modal — รองรับหลายสื่อ",
+      desc: "AI รับ input หลายแบบ: text + image + audio + video — งานหลายสื่อทำในรอบเดียว",
+      why: "แต่ก่อนต้องแปลงทุกอย่างเป็น text (lossy) ตอนนี้ AI เห็น screenshot, อ่าน chart, ฟังเสียงได้ตรง — ข้อมูลครบกว่า",
+      examples: [
+        { type: "good", label: "Use case จริง", content: "• อัปโหลด screenshot error → AI fix code\n• ส่ง mockup → AI generate HTML\n• PDF invoice → extract เป็น JSON\n• Audio meeting → สรุป + action items\n• Video tutorial → คัดประเด็นสำคัญ" }
+      ],
+      tips: ["Image annotation > description ยาวๆ", "Quality ภาพมีผล (เบลอ = ตีความผิด)", "Audio/video เปลือง token ใส่เท่าที่จำเป็น"]
+    },
+    "Knowledge Cutoff": {
+      layer: "LAYER 2 · ENGINE", title: "Knowledge Cutoff — วันที่ข้อมูลล่าสุด",
+      desc: "วันที่ตัดข้อมูล training ของโมเดล — ข่าวสาร, library version, API ใหม่กว่านั้น โมเดลไม่รู้",
+      why: "AI 'จำได้' เฉพาะถึงวัน cutoff หลังจากนั้น = unknown ถ้าถามเรื่องใหม่ AI จะ hallucinate (สร้างข้อมูลปลอม)",
+      examples: [
+        { type: "bad", label: "ถามสิ่งที่อยู่หลัง cutoff", content: "ใช้ React 19 features ล่าสุด เขียน component แสดง revenue dashboard",
+          output: "ใช้ React 19 hooks ใหม่ครับ:\n\nimport { useFormStatus, useOptimistic, use } from 'react';\nimport { Suspense, ServerComponent } from 'react/server';\n\nfunction Dashboard() {\n  const data = use(fetchRevenue());\n  const [optimistic, setOptimistic] = useOptimistic(data);\n  ...\n}\n\n[ปัญหา:\n  ✗ ServerComponent ไม่ใช่ named export\n  ✗ Some API ที่อ้าง... ไม่มีจริง\n  ✗ AI hallucinate เพราะไม่รู้ jak React 19 final API\n→ Code รันไม่ได้]" },
+        { type: "good", label: "บอกให้ค้นก่อน", content: "ก่อนเขียน ค้นเว็บ React 19 release notes ปัจจุบัน ตรวจสอบ API ที่ stable แล้วใช้เขียน component แสดง revenue dashboard",
+          output: "[ค้น web → react.dev/blog/react-19...]\n\nReact 19 stable APIs:\n  ✓ Actions (form actions)\n  ✓ useOptimistic\n  ✓ useFormStatus\n  ✓ use() hook\n  ✓ ref as prop\n\nServer Components ไม่ใช่ public API ใน React หลัก\n(อยู่ใน Next.js / Remix)\n\nเขียน Dashboard:\n\n'use client';\nimport { useOptimistic, useTransition } from 'react';\n\nexport default function Dashboard({ initialData }) {\n  const [optimistic, addOptimistic] = useOptimistic(initialData);\n  const [pending, startTransition] = useTransition();\n  ...\n}\n\n[Verified จาก docs จริง, รันได้]" }
+      ],
+      tips: ["เรื่อง breaking news → ต้อง web search", "Library version → ตรวจ docs ก่อนเชื่อ", "ปัจจุบัน Claude มี cutoff ~Jan 2026"]
+    },
+    "Temperature (API)": {
+      layer: "LAYER 2 · ENGINE", title: "Temperature — ความสุ่มของคำตอบ",
+      desc: "0 = ตอบเหมือนเดิมทุกครั้ง (deterministic), 1 = สร้างสรรค์/สุ่ม (creative) — มีเฉพาะใน API",
+      why: "งานที่ต้อง consistent (code, extract data) ใช้ 0 / งานที่อยาก variety (เขียนเนื้อหา, brainstorm) ใช้ 0.7-1",
+      examples: [
+        { type: "good", label: "Temperature guide", content: "0.0 → SQL, code generation, data extract\n0.2 → ตอบ Q&A factual\n0.5 → general writing\n0.7 → creative writing, marketing copy\n1.0 → brainstorming, slogan, artistic" }
+      ],
+      tips: ["Claude Code default ไม่ได้ expose ให้ปรับ", "Production code: temperature=0 ปลอดภัยสุด", "ทดสอบหลาย temp เลือกที่เหมาะงาน"]
+    },
+    "Max Output Tokens": {
+      layer: "LAYER 2 · ENGINE", title: "Max Output Tokens — เพดาน output",
+      desc: "ความยาวสูงสุดของคำตอบ — ถ้าเกินจะถูกตัดกลางคัน ทำให้ JSON พัง, code ไม่ครบ",
+      why: "งานยาว (long report, big code) ต้องเผื่อ max output ให้พอ ไม่งั้น output จะถูก truncate ตอนเกือบเสร็จ",
+      examples: [
+        { type: "bad", label: "ตันกลาง", content: "max_tokens=1000\n→ AI เริ่มเขียน 800 บรรทัด แล้วถูกตัดกลาง ฟังก์ชันไม่ปิด {} → syntax error" },
+        { type: "good", label: "เผื่อพอ", content: "max_tokens=8000 (default Claude)\nหรือ 16000-64000 ถ้างานยาวมาก" }
+      ],
+      tips: ["Output ยาว → ใช้ streaming เห็นผลทันที", "งาน list ยาว → ขอเป็น chunks", "Claude มี max 8192 output (สูงกว่าใน Opus)"]
+    },
+
+    // ── Layer 3: Tools ──
+    "MCP Servers": {
+      layer: "LAYER 3 · TOOLS", title: "MCP Servers — ต่อ AI กับโลกจริง",
+      desc: "Model Context Protocol — มาตรฐานต่อ AI กับ tool ภายนอก เช่น Chrome, Google Drive, Database, GitHub",
+      why: "Default AI ทำได้แค่ใน sandbox ตัวเอง MCP ทำให้ AI เปิด browser, อ่าน Sheet, query DB, push to GitHub ได้จริง — ขยายอำนาจ 10 เท่า",
+      examples: [
+        { type: "good", label: "MCP ยอดนิยม", content: "• chrome-mcp → ควบคุม Chrome (navigate, click, screenshot)\n• gdrive → อ่าน Google Sheet/Doc\n• desktop-commander → จัดการไฟล์ + เปิด app\n• github → จัดการ PR, issue\n• linear/notion/slack → ทีมใช้ร่วมกัน" }
+      ],
+      tips: ["Install ผ่าน claude_desktop_config.json", "ใช้ MCP สำหรับ broadcast, scraping, automation", "ระวัง permission แต่ละ MCP ขอเข้าถึงอะไรบ้าง"]
+    },
+    "Subagents": {
+      layer: "LAYER 3 · TOOLS", title: "Subagents — ผู้ช่วยย่อย",
+      desc: "AI ตัวย่อยที่ทำงานเฉพาะทาง (Explore, Plan, general-purpose) — เรียกได้คู่ขนาน, ผลกลับมาที่ AI หลัก",
+      why: "งานใหญ่แตกออกได้ → ทำพร้อมกันเร็วขึ้น และ context หลักของ AI ไม่ระเบิด (subagent มี context ของตัวเอง)",
+      examples: [
+        { type: "good", label: "เมื่อใช้ subagent", content: "Main: 'หา bug ใน auth flow แล้ว fix'\n→ spawn 3 Explore agents:\n  1. หา auth-related files\n  2. หา test cases ของ auth\n  3. หา error logs ที่เกี่ยวข้อง\nรวมผล → main agent วิเคราะห์ + fix\n\nประหยัดเวลา 3x, context หลักไม่ตัน" }
+      ],
+      tips: ["Spawn parallel = เร็ว / serial = ลึก", "Explore = search, Plan = architect, general = ครอบจักรวาล", "Brief subagent ละเอียด (มันไม่เห็น context หลัก)"]
+    },
+    "Skills (.md)": {
+      layer: "LAYER 3 · TOOLS", title: "Skills — ความสามารถ on-demand",
+      desc: "ไฟล์ .md ที่บรรจุ workflow + instruction เฉพาะทาง — เรียกด้วย /command เมื่อต้องการ",
+      why: "ไม่ต้อง brief AI ทุกครั้งสำหรับงานที่ทำซ้ำ skill = recipe ที่ AI อ่านแล้วทำตามได้ทันที (เช่น code review, deploy, broadcast)",
+      examples: [
+        { type: "good", label: "Skill ที่ติดตั้งอยู่", content: "/graphify → สร้าง knowledge graph จาก repo\n/spaghetti-fix → untangle code โดยไม่พัง\n/CRUD-basic → audit 100+ checks\n/ai-loop → multi-AI pipeline\n/lineoa-chat-mcp → broadcast LINE OA\n/ghpush → commit + push safely" }
+      ],
+      tips: ["สร้าง skill เองได้ใน ~/.claude/skills/", "Skill ดี: input ชัด, step-by-step, มี safety check", "Share กับทีมผ่าน git repo"]
+    },
+    "Slash Commands": {
+      layer: "LAYER 3 · TOOLS", title: "Slash Commands — ลัด workflow",
+      desc: "คำสั่ง /xxx เรียก function เฉพาะใน Claude Code เช่น /loop, /schedule, /review, /deploy",
+      why: "Workflow ที่ทำบ่อย ใช้ slash command แทนพิมพ์ instruction ทุกครั้ง — เร็วขึ้น, มาตรฐานเดียวกันทั้งทีม",
+      examples: [
+        { type: "good", label: "ตัวอย่างใช้บ่อย", content: "/loop 5m /check-deploy → ตรวจ deploy ทุก 5 นาที\n/schedule monthly-report → cron job\n/review → review PR ปัจจุบัน\n/ultrareview → multi-agent cloud review\n/fast → toggle fast mode (Opus เร็วขึ้น)\n/clear → reset conversation" }
+      ],
+      tips: ["พิมพ์ / เห็น list ทั้งหมด", "Custom command ใน .claude/commands/", "/help เปิด docs"]
+    },
+    "Hooks": {
+      layer: "LAYER 3 · TOOLS", title: "Hooks — Automation event-driven",
+      desc: "Shell command ที่ run อัตโนมัติเมื่อเกิด event (SessionStart, PreToolUse, PostToolUse, Stop)",
+      why: "Memory เป็น 'fact ที่ AI จำ' / Hooks เป็น 'action ที่ระบบทำ' — automation จริงๆ ต้องเป็น hook ไม่ใช่ memory",
+      examples: [
+        { type: "good", label: "Hook ที่มีประโยชน์", content: "SessionStart → load TODOs จาก notion\nPreToolUse (Bash) → log command ที่กำลังจะรัน\nPostToolUse (Edit) → auto-format file\nStop → append session summary to log\nUserPromptSubmit → ตรวจ secret leak"  }
+      ],
+      tips: ["Config ใน settings.json", "Hook fail = block action ได้", "ใช้ hook ทำ audit trail"]
+    },
+    "Plan Mode": {
+      layer: "LAYER 3 · TOOLS", title: "Plan Mode — วางแผนก่อนแก้",
+      desc: "โหมดที่ AI วางแผน + รอ approval ก่อนเริ่มแก้ — ไม่แก้ไฟล์จนกว่าจะอนุมัติ",
+      why: "งานใหญ่ที่ pernicious ถ้าทำผิด (refactor, migration, delete data) — เห็น plan ก่อน แก้ทันถ้าผิดทาง ประหยัดเวลา + กันพัง",
+      examples: [
+        { type: "good", label: "เมื่อใช้ Plan Mode", content: "• Refactor 20+ files\n• Migration framework version\n• Delete unused code (อาจ break)\n• Schema migration\n• Setup CI/CD pipeline\n\nไม่ใช้กับ:\n• แก้ typo\n• เพิ่ม log\n• งานเดิมๆ ทำซ้ำ" }
+      ],
+      tips: ["Shift+Tab toggle เข้า/ออก plan mode", "ใช้ก่อนงานใหญ่เสมอ", "Plan = blueprint ทบทวนได้"]
+    },
+    "Worktree": {
+      layer: "LAYER 3 · TOOLS", title: "Worktree — git branch คู่ขนาน",
+      desc: "Git worktree ทำให้มี branch หลายอันใน folder แยกกัน — AI ทำงานคู่ขนานไม่ชนกัน",
+      why: "ทำหลายงานพร้อมกัน (เช่น feature + fix + docs) ใน branch เดียวกันจะวุ่น worktree แยก folder = แยกบริบทเด็ดขาด",
+      examples: [
+        { type: "good", label: "Workflow", content: "Main session: feature/new-dashboard ใน ~/project\nAgent isolated: hotfix/auth-bug ใน ~/project-wt-hotfix (auto-created)\n\nทั้งคู่ทำงานพร้อมกันได้\nMerge เสร็จ → cleanup worktree" }
+      ],
+      tips: ["Agent มี isolation: 'worktree' option", "Cleanup ผ่าน ExitWorktree tool", "ดีสำหรับ A/B test 2 approach"]
+    },
+    "Background Tasks": {
+      layer: "LAYER 3 · TOOLS", title: "Background Tasks — งานพื้นหลัง",
+      desc: "Run task ใน background ไม่ block conversation — เหมาะกับงานยาว (build, test, deploy)",
+      why: "งาน 5-30 นาที ถ้ารัน foreground = AI รออย่างเดียว ทำอย่างอื่นไม่ได้ background = AI ทำต่อได้ จะ notify เมื่อเสร็จ",
+      examples: [
+        { type: "good", label: "ใช้ background", content: "• npm run build (5 นาที)\n• Run full test suite\n• Deploy to staging\n• Long-running data migration\n• AI agent ที่งานยาว\n\nรัน foreground:\n• ls, cat, grep\n• งาน < 30 วินาที" }
+      ],
+      tips: ["run_in_background: true ใน Bash tool", "ดู output ผ่าน BashOutput", "Kill ผ่าน KillShell ถ้าไม่ต้องการแล้ว"]
+    },
+
+    // ── Layer 4: Memory ──
+    "CLAUDE.md (global)": {
+      layer: "LAYER 4 · MEMORY", title: "CLAUDE.md (global) — กฎใช้ทุกโปรเจกต์",
+      desc: "ไฟล์ใน ~/.claude/CLAUDE.md โหลดเป็น context ทุกครั้งที่เปิด Claude Code ทุก project",
+      why: "Preference ส่วนตัวที่อยากให้ AI รู้เสมอ (เช่น role, ภาษา, สไตล์การทำงาน) ไม่ต้องบอกซ้ำทุก session",
+      examples: [
+        { type: "good", label: "ตัวอย่าง content", content: "# About me\nI'm a COO at fintech company\nMacBook Pro M5 24GB RAM\n\n# Preferences\n- Reply in Thai (technical terms in English)\n- Always polite (ครับ)\n- Concise, exec-level recommendations\n- No emoji unless asked\n\n# Common tools\n- Cloudflare Pages for deploy\n- Wrangler CLI for Workers" }
+      ],
+      tips: ["เก็บแค่ที่ universal จริง (อย่างอื่นใส่ project)", "Update เมื่อ preference เปลี่ยน", "Skill triggers ใส่ที่นี่ได้"]
+    },
+    "CLAUDE.md (project)": {
+      layer: "LAYER 4 · MEMORY", title: "CLAUDE.md (project) — กฎเฉพาะ project",
+      desc: "ไฟล์ ./CLAUDE.md ใน root ของ repo โหลดเฉพาะเมื่อทำงานใน project นั้น",
+      why: "Project แต่ละอันมี convention, stack, gotcha ต่างกัน ใส่ใน project CLAUDE.md → AI รู้ context ทันทีไม่ต้องอธิบาย",
+      examples: [
+        { type: "good", label: "ตัวอย่าง", content: "# Stack\n- Cloudflare Worker + D1 + KV\n- Frontend: vanilla JS (no framework)\n\n# Conventions\n- All files in src/ are single-purpose modules\n- DB migrations in migrations/ — never edit applied ones\n- Don't add new dependencies without asking\n\n# Deploy\n- wrangler deploy (NOT git push)\n- Test on staging first: wrangler deploy --env staging" }
+      ],
+      tips: ["Commit ลง git → ทีมใช้ร่วม", "Override global CLAUDE.md เฉพาะที่ระบุ", "ใส่ 'how to test' + 'how to deploy'"]
+    },
+    "MEMORY.md (auto)": {
+      layer: "LAYER 4 · MEMORY", title: "MEMORY.md — auto-memory ข้ามรอบ",
+      desc: "ระบบบันทึก memory อัตโนมัติของ Claude Code แบ่งเป็น user / feedback / project / reference",
+      why: "User-level info ที่เรียนรู้จากการคุย เก็บเป็นไฟล์เล็กๆ แยกตามหัวข้อ — session ใหม่ AI จำคุณได้",
+      examples: [
+        { type: "good", label: "4 ประเภท memory", content: "user → role, preferences\nfeedback → 'อย่าทำ X เพราะ Y'\nproject → ongoing initiatives, deadlines\nreference → external systems (Linear, Grafana, etc.)\n\nIndex อยู่ใน MEMORY.md\nไฟล์ละ entry ใน same folder" }
+      ],
+      tips: ["บอก 'จำไว้นะ' AI save เอง", "บอก 'ลืมไปได้' AI ลบ", "ตรวจ MEMORY.md ดูว่า AI จำอะไรอยู่"]
+    },
+    "Prompt Cache": {
+      layer: "LAYER 4 · MEMORY", title: "Prompt Cache — Cache ตัว context",
+      desc: "Context ที่ส่งซ้ำๆ ภายใน 5 นาที จะถูก cache ไว้ที่ Anthropic — ครั้งถัดไปถูกลง ~10x และเร็วขึ้น",
+      why: "ทุก call API ส่ง system prompt + context ซ้ำกัน ถ้า cache ได้ ประหยัดมหาศาล โดยเฉพาะ long context (1M tokens)",
+      examples: [
+        { type: "good", label: "ตัวอย่างประหยัด", content: "Context 100k tokens\nWithout cache: $0.30/call\nWith cache (90% hit): $0.06/call\n\n→ 80% discount\n\nTTL: 5 นาที (reset ทุก call สำเร็จ)" }
+      ],
+      tips: ["ใส่ static content (CLAUDE.md, docs) ที่ต้น = cache ได้", "Dynamic content (user query) ที่ท้าย", "Long-running session = cache hit สูง"]
+    },
+    "Compaction": {
+      layer: "LAYER 4 · MEMORY", title: "Compaction — สรุปบทสนทนาเก่า",
+      desc: "เมื่อ context ใกล้เต็ม Claude Code จะสรุปข้อความเก่าอัตโนมัติ ทำให้ session ยาวต่อได้",
+      why: "Context limit (200k/1M) มีจริง ถ้างานยาวข้าม limit AI จะ 'ลืม' compaction รักษา essence ของบทสนทนาไว้ในรูปสรุป",
+      examples: [
+        { type: "good", label: "เห็นเมื่อไหร่", content: "ตอนเริ่มเหนื่อย AI จะแจ้ง:\n'Compacting prior messages to free up context...'\n\nจากนั้น:\n- ข้อความเก่า → สรุปย่อ\n- ข้อความใหม่ → เต็มๆ\n\nงานต่อได้ไม่ตัน" }
+      ],
+      tips: ["Compaction ไม่ perfect — มี nuance หาย", "ถ้าสำคัญมาก save เป็น memory ก่อน compact", "/clear ถ้าอยากเริ่มใหม่"]
+    },
+    "Session Resume": {
+      layer: "LAYER 4 · MEMORY", title: "Session Resume — เปิดต่อจากเดิม",
+      desc: "Claude Code เก็บ session log — เปิดต่อจากที่ค้างไว้ได้ ไม่ต้อง brief ใหม่",
+      why: "งานข้ามวัน/ข้ามสัปดาห์ ถ้าต้องอธิบายใหม่ทุกครั้ง = เปลือง resume = AI รู้ทุกอย่างที่คุยกันมา",
+      examples: [
+        { type: "good", label: "Workflow", content: "วันที่ 1: คุยเรื่อง refactor auth module\n  → AI วาง plan + เริ่มแก้ 3 ไฟล์\n\nวันที่ 2: เปิด Claude Code ใน folder เดิม\n  → 'continue from where we left off'\n  → AI รู้ plan + รู้ว่าทำถึงไหน\n  → ทำต่อทันที" }
+      ],
+      tips: ["claude --resume เลือก session ก่อนหน้า", "Session log อยู่ใน .claude/projects/", "Long-term context = MEMORY.md, short-term = session resume"]
+    },
+
+    // ── Layer 5: Data ──
+    "File Type": {
+      layer: "LAYER 5 · DATA", title: "File Type — ประเภทไฟล์ input",
+      desc: "AI อ่านไฟล์ต่างประเภทด้วย tool ต่างกัน — PDF, image, audio, video, code, CSV — แต่ละแบบมี trade-off",
+      why: "PDF scan อาจอ่านไม่ออก, image annotated ดีกว่า image ดิบ, audio เปลือง token — รู้ trade-off ใช้งานถูก",
+      examples: [
+        { type: "good", label: "Handling แต่ละแบบ", content: "PDF text → Read tool ดี\nPDF scan → ต้อง OCR ก่อน หรือใช้ vision\nImage → vision (รวมใน multi-modal)\nAudio → Whisper transcribe ก่อน หรือใช้ Gemini\nVideo → คัด keyframe + audio แยก\nCSV/Excel → Read แล้ว parse\nCode → Read โดยตรง" }
+      ],
+      tips: ["PDF > 10 หน้า → ระบุ pages range", "ภาพคุณภาพต่ำ → ตีความผิด", "Audio ยาว → ถอดเป็น text ก่อน + summarize"]
+    },
+    "Data Source": {
+      layer: "LAYER 5 · DATA", title: "Data Source — แหล่งข้อมูล",
+      desc: "Local file / Google Drive / Sheet / Database / Website / API — แต่ละ source มี access pattern + speed ต่างกัน",
+      why: "Local = เร็วสุด, ง่ายสุด / Cloud = แชร์ทีมได้ / DB = structured query / Web = real-time แต่ scrape ลำบาก",
+      examples: [
+        { type: "good", label: "เลือก source", content: "Local file → งานส่วนตัว, sensitive\nGoogle Drive (gdrive MCP) → ทีมแชร์\nGoogle Sheet → data structured + live update\nDB direct → analytics, query ใหญ่\nWebsite (chrome-mcp) → dynamic content\nAPI → real-time, structured" }
+      ],
+      tips: ["Sensitive data → local เท่านั้น", "Shared work → Drive + version control", "Heavy query → DB, ไม่ใช่ Sheet"]
+    },
+    "Data Quality": {
+      layer: "LAYER 5 · DATA", title: "Data Quality — คุณภาพข้อมูล",
+      desc: "ข้อมูลสะอาด (schema ชัด, ไม่มี typo, consistent) vs ข้อมูลดิบ (mix format, missing values, duplicate)",
+      why: "Garbage In = Garbage Out — AI ไม่ใช่ magic ข้อมูลดิบทำให้ AI เดา และเดามักผิด การ clean ก่อน ROI สูงกว่าเปลี่ยน model",
+      examples: [
+        { type: "bad", label: "ข้อมูลดิบสกปรก", content: "Prompt: นับลูกค้า unique ในไฟล์นี้\n\nData:\nนายA, 0812345678, นายA Co.\nNay-A | 081-234-5678 | นาย เอ จก.\nMr. A,  081 234 5678 ,A Company\nนาย เอ, 081-234-5678, บริษัท เอ\nA, 0812345678, A. Co., Ltd.",
+          output: "นับได้ 5 ลูกค้าครับ\n\nรายชื่อ:\n  1. นายA\n  2. Nay-A\n  3. Mr. A\n  4. นาย เอ\n  5. A\n\n[ผิด! ทั้ง 5 record เป็น 'นาย เอ' คนเดียวกัน\n(เบอร์เดียว, ชื่อบริษัทเดียว)\nAI ไม่รู้ว่าต้อง normalize ก่อน\nValue ของ output = 0 ต้องทำใหม่]" },
+        { type: "good", label: "ข้อมูลสะอาด", content: "Prompt: นับลูกค้า unique ในไฟล์นี้\n\nData:\nid,name,phone,company\n001,นายเอ,0812345678,นายเอจำกัด\n002,นายบี,0823456789,บีจำกัด\n003,นายซี,0834567890,ซีจำกัด",
+          output: "นับได้ 3 ลูกค้า unique:\n\n  1. นายเอ (ID: 001)\n  2. นายบี (ID: 002)\n  3. นายซี (ID: 003)\n\nMatched โดย ID + phone consistency\nไม่มี duplicate\n\n[ตรงเป้า, ใช้ได้ทันที]" }
+      ],
+      tips: ["Clean ก่อนป้อน > ปล่อยให้ AI clean", "Schema validation = ของแถม", "Sample 10 rows ตรวจก่อน feed ทั้งหมด"]
+    },
+    "Data Volume": {
+      layer: "LAYER 5 · DATA", title: "Data Volume — ปริมาณข้อมูล",
+      desc: "10 แถว vs 1M แถว — strategy ต่างกันมาก เล็กพอใส่ context, ใหญ่ต้อง chunk หรือ RAG",
+      why: "ใส่ทั้งหมดเข้า context = แพง + ช้า + อาจเกิน limit / Chunk = ต้อง strategy ดี ไม่งั้น context หาย",
+      examples: [
+        { type: "good", label: "Strategy ตาม size", content: "< 1k แถว → ใส่ context ทั้งหมด\n1k - 100k แถว → chunk + map-reduce\n> 100k แถว → RAG (embed + retrieve relevant)\nReal-time → tool use (query DB on demand)" }
+      ],
+      tips: ["1M context รองรับ ~700k word", "Pre-filter ดีกว่าให้ AI filter", "Stats summary > raw data เมื่อใหญ่"]
+    },
+    "Data Freshness": {
+      layer: "LAYER 5 · DATA", title: "Data Freshness — ความสด",
+      desc: "Real-time (live API) / รายชั่วโมง (cron sync) / รายวัน / static (one-time) — ส่งผลต่อ caching strategy",
+      why: "Real-time เปลี่ยนตลอด, cache ไม่ได้, ต้อง query ทุกครั้ง / Static cache ได้ยาว, ถูก ระดับ freshness กำหนด architecture",
+      examples: [
+        { type: "good", label: "Use case", content: "Stock price → real-time API\nDaily report → cron 06:00\nProduct catalog → cache 1 hour\nDocs/manual → static, refresh on change\nUser profile → cache 5 min" }
+      ],
+      tips: ["Match freshness กับ business need (ไม่ใช่ทุกอย่างต้อง real-time)", "Stale-while-revalidate pattern = ดี", "Webhook > polling เมื่อทำได้"]
+    },
+    "Reference Style": {
+      layer: "LAYER 5 · DATA", title: "Reference Style — รูปแบบ reference",
+      desc: "ภาพมี annotation (วงสีแดง + ลูกศร) vs ภาพดิบ / เอกสารมี structure vs prose / video มี timestamp note",
+      why: "AI ต้องเดาว่าคุณหมายถึงส่วนไหน — annotation = บอกชัด, ลด round-trip, ผลลัพธ์ตรงจุด",
+      examples: [
+        { type: "bad", label: "Screenshot ดิบ + คำพูดคลุมเครือ", content: "[ส่ง screenshot dashboard ทั้งหน้า]\n\nแก้ตรงนี้ให้หน่อย",
+          output: "ขอข้อมูลเพิ่มครับ ในภาพมี:\n  - Navigation bar ด้านบน\n  - 4 cards สถิติ (Revenue, Users, Orders, Growth)\n  - Chart ตรงกลาง\n  - Table ด้านล่าง\n  - Sidebar ซ้าย\n\n'ตรงนี้' หมายถึงอะไรครับ?\n  1. Card ไหน?\n  2. Chart?\n  3. Table column ไหน?\n  4. Sidebar item?\n  5. Color/spacing/text/data?\n\n[เปลือง round-trip, AI เดาไม่ได้]" },
+        { type: "good", label: "Screenshot + annotation", content: "[ส่ง screenshot ที่มี:\n  - วงแดงรอบ \"Revenue\" card\n  - ลูกศรชี้ตัวเลข\n  - text overlay: \"font size เล็กไป ขยายเป็น 32px\"]\n\nแก้ตามที่ annotate",
+          output: "เห็นแล้วครับ — Revenue card, ตัวเลข font ปัจจุบัน 18px เปลี่ยนเป็น 32px\n\nFile: src/components/StatCard.tsx:42\n\nก่อน:\n  <div className=\"text-lg font-bold\">\n    {value}\n  </div>\n\nหลัง:\n  <div className=\"text-3xl font-bold\">\n    {value}\n  </div>\n\nText-3xl = 30px (tailwind) ใกล้ 32px ที่สุด\nถ้าต้อง exact ใช้ style={{fontSize: '32px'}}\n\nแก้เลยมั้ยครับ?\n\n[เริ่มแก้ทันที, ไม่ต้องถาม]" }
+      ],
+      tips: ["ใช้ Skitch, CleanShot, Excalidraw annotate", "Screenshot + caption สั้นๆ", "ระบุ 'before/after' ถ้ามี"]
+    },
+
+    // ── Layer 6: Environment ──
+    "OS": {
+      layer: "LAYER 6 · ENVIRONMENT", title: "OS — ระบบปฏิบัติการ",
+      desc: "macOS / Windows / Linux — path format, shell, shortcut, tool availability ต่างกัน",
+      why: "Script ที่ work บน Mac อาจ break บน Windows (path separator), shell command (zsh vs cmd vs bash) ต่างกันสิ้นเชิง",
+      examples: [
+        { type: "good", label: "ตัวอย่างความต่าง", content: "Path:\nmacOS/Linux → /Users/aexgee/file.txt\nWindows → C:\\Users\\aexgee\\file.txt\n\nShell:\nmacOS → zsh (default)\nLinux → bash\nWindows → PowerShell หรือ WSL\n\nClipboard:\nmacOS → pbcopy\nLinux → xclip\nWindows → clip" }
+      ],
+      tips: ["บอก OS ใน CLAUDE.md", "WSL บน Windows = ใกล้เคียง Linux", "ใช้ tool cross-platform (Node, Python) เลี่ยง shell-specific"]
+    },
+    "Terminal": {
+      layer: "LAYER 6 · ENVIRONMENT", title: "Terminal — โปรแกรม terminal",
+      desc: "Warp / iTerm2 / Terminal.app / Alacritty — UI, hotkey, AI feature, command palette ต่างกัน",
+      why: "Warp มี AI built-in, autocomplete สมาร์ท / iTerm2 มี split pane ดี / Terminal.app เบสิคที่สุด เลือกตามจริต",
+      examples: [
+        { type: "good", label: "Compare", content: "Warp:\n+ AI command suggest\n+ Beautiful UI\n+ Block-based output\n- ต้องล็อกอิน account\n\niTerm2:\n+ Split pane, tab\n+ Customization สูง\n+ ฟรี, no account\n- UI ดั้งเดิม\n\nTerminal.app:\n+ มากับ Mac\n- ฟีเจอร์น้อย" }
+      ],
+      tips: ["Warp + Claude Code = ทรงพลังที่สุด", "iTerm + tmux = power user", "Custom shortcut ช่วยเร็วขึ้นมาก"]
+    },
+    "IDE Integration": {
+      layer: "LAYER 6 · ENVIRONMENT", title: "IDE Integration — ต่อกับ IDE",
+      desc: "VS Code / JetBrains / Web-based — Claude Code มี extension ใช้ inline edit, diff view, context-aware",
+      why: "CLI ทำได้ทุกอย่าง แต่ IDE ทำให้เห็น diff สวย, click ไป line ที่ AI พูดถึงได้, navigate code ง่าย",
+      examples: [
+        { type: "good", label: "VS Code + Claude Code", content: "• Inline diff preview\n• Click file:line ใน AI response = jump ทันที\n• Select code → ask AI about selection\n• Side-by-side compare before/after\n• Extension panel ดู session log" }
+      ],
+      tips: ["Install Claude Code extension", "Cursor IDE = fork ของ VS Code + AI native", "Web version (claude.ai/code) สำหรับใช้นอกเครื่อง"]
+    },
+    "Network": {
+      layer: "LAYER 6 · ENVIRONMENT", title: "Network — ความเร็วเน็ต",
+      desc: "Network speed, latency, VPN — ส่งผลต่อความเร็ว response และ MCP tools (browser, web fetch)",
+      why: "AI cloud → ทุก call ต้องผ่านอินเทอร์เน็ต latency สูง = ตอบช้า / VPN บางตัว block API endpoint",
+      examples: [
+        { type: "good", label: "ตัวอย่างปัญหา", content: "เน็ตช้า:\n• Stream response ช้า → ดูตอบมาทีละคำ\n• Upload image ช้า\n• MCP timeout\n\nVPN issue:\n• บาง provider block Anthropic API\n• ลองเปลี่ยน server / ปิด VPN" }
+      ],
+      tips: ["ตรวจ ping ไป api.anthropic.com", "เน็ตช้า → ลด context size", "Mobile hotspot สำรอง"]
+    },
+    "Hardware": {
+      layer: "LAYER 6 · ENVIRONMENT", title: "Hardware — สเปคเครื่อง",
+      desc: "RAM, CPU, GPU — สำคัญถ้าใช้ local AI, ถ้าใช้ cloud (Claude/GPT) สเปคไม่ค่อยมีผล",
+      why: "Cloud AI ทำงานบน server ของ provider — เครื่องคุณแค่ส่ง request / Local AI (Ollama) ต้อง GPU + RAM สูง",
+      examples: [
+        { type: "good", label: "Spec guide", content: "Cloud AI only:\n→ 8GB RAM พอ\n→ CPU พื้นฐาน\n\nLocal AI (Llama, Gemma):\n→ 16GB+ RAM (small model)\n→ 32-64GB (medium)\n→ GPU 8GB+ VRAM (fast)\n→ Mac M-series unified memory ได้เปรียบ" }
+      ],
+      tips: ["คุณใช้ cloud only → hardware ไม่จำกัด", "M5 Pro 24GB = sweet spot for cloud-first", "RAM เยอะ = เปิด tab Chrome เยอะตอน MCP"]
+    },
+    "Display": {
+      layer: "LAYER 6 · ENVIRONMENT", title: "Display — จอแสดงผล",
+      desc: "ขนาด, จำนวนจอ, ความละเอียด — ส่งผลต่อ workflow review code, diff, preview",
+      why: "จอเดียวเล็ก = sliding window ตลอด / 2 จอ = AI ซ้าย, preview ขวา = work flow ดีขึ้นมาก",
+      examples: [
+        { type: "good", label: "Setup ideal", content: "1 จอ 14\":\n→ Tab switch ตลอด, productivity ต่ำ\n\n2 จอ:\n→ จอหลัก: Claude Code + IDE\n→ จอรอง: Browser preview, Sheet, Notion\n\n3 จอ:\n→ + monitoring (log, metric)\n\nMacbook + iPad sidecar = cheap 2nd screen" }
+      ],
+      tips: ["External 4K = code อ่านสบาย", "Vertical monitor = ดู log ยาวๆ ดี", "ปิด notification ขณะ deep work"]
+    },
+
+    // ── Layer 7: Cost ──
+    "Plan Tier": {
+      layer: "LAYER 7 · COST", title: "Plan Tier — ระดับ subscription",
+      desc: "Claude Max 5x, 20x, Pro, Free / ChatGPT Plus, Pro / Gemini Pro / API pay-as-you-go — เพดานใช้งานต่างกัน",
+      why: "ใช้หนัก = Max ดีสุด (flat rate) / ใช้น้อย = Pro / Production = API (จ่ายตาม use)",
+      examples: [
+        { type: "good", label: "Compare", content: "Claude Max 5x ($100/m):\n→ ใช้ได้ ~5x ของ Pro\n→ Opus ใช้ได้เยอะ\n\nMax 20x ($200/m):\n→ Heavy user, ทั้งวัน ทุกวัน\n→ Multiple parallel agents\n\nPro ($20/m):\n→ ใช้ทั่วไป\n\nAPI:\n→ Pay per token\n→ Production embed" }
+      ],
+      tips: ["คุณใช้ Max 20x = top tier, ไม่ต้องกังวล limit", "Heavy task ใช้ Opus / งานเดิมๆ Haiku ก็พอ", "Team ใช้ → consider API for scale"]
+    },
+    "Rate Limit": {
+      layer: "LAYER 7 · COST", title: "Rate Limit — เพดานต่อหน่วยเวลา",
+      desc: "Tokens/min, requests/day — เกิน limit จะถูก throttle หรือ block ชั่วคราว",
+      why: "งาน batch หรือ parallel agent หลายตัว ชน limit ได้ ต้องวางแผน throughput",
+      examples: [
+        { type: "good", label: "Limit ทั่วไป", content: "Claude API (Tier 1):\n→ 50 RPM\n→ 50k tokens/min input\n→ 10k tokens/min output\n\nMax plan:\n→ Generous flat usage\n→ Soft limit ที่ heavy load\n\nเกิน limit:\n→ 429 Too Many Requests\n→ รอ 60s ลองใหม่" }
+      ],
+      tips: ["Batch API สำหรับ bulk job (ถูกกว่า 50%)", "Exponential backoff retry", "ใช้ Haiku สำหรับ rate-sensitive task"]
+    },
+    "Token Cost": {
+      layer: "LAYER 7 · COST", title: "Token Cost — ต้นทุนต่อ token",
+      desc: "$/1M input tokens และ $/1M output tokens — ต่างกันตาม model (Opus แพงสุด, Haiku ถูกสุด)",
+      why: "งาน production ที่รัน 1000+ call/วัน ราคาแตกต่างกันชัด เลือก model ตรงงาน = ประหยัด 80%+",
+      examples: [
+        { type: "good", label: "Compare cost (approx)", content: "Opus 4.7:\n→ Input $15/1M, Output $75/1M\n\nSonnet 4.6:\n→ Input $3/1M, Output $15/1M\n\nHaiku 4.5:\n→ Input $0.8/1M, Output $4/1M\n\nGap: Haiku ถูกกว่า Opus 20x" }
+      ],
+      tips: ["Cache hit ลดราคา 90%", "Output แพงกว่า input 5x → จำกัด output", "งาน volume สูง → Haiku + RAG"]
+    },
+    "Fast Mode": {
+      layer: "LAYER 7 · COST", title: "Fast Mode — Opus เร็วขึ้น",
+      desc: "/fast บน Opus 4.6+ — output เร็วขึ้นชัด คุณภาพเท่าเดิม ไม่ใช่การ downgrade model",
+      why: "Default Opus ช้ากว่า Sonnet เพราะ thinking process — fast mode ปรับ pipeline ให้ stream เร็วขึ้น โดยไม่ลด accuracy",
+      examples: [
+        { type: "good", label: "เปิด fast mode", content: "Toggle: /fast\nหรือ ใน UI: keyboard shortcut\n\nก่อน fast:\n→ คิด 5s แล้วค่อย stream\n\nหลัง fast:\n→ Stream ทันที, output speed สูงขึ้น 2x\n\n** ใช้ Opus ทั้งตัว, ไม่ downgrade **" }
+      ],
+      tips: ["เปิดทิ้งไว้ได้ตลอด ถ้าใช้ Opus", "งาน reasoning หนัก = ปิด fast ใช้ extended thinking", "Pair กับ Plan mode ดี"]
+    },
+    "Cache Strategy": {
+      layer: "LAYER 7 · COST", title: "Cache Strategy — กลยุทธ์ cache",
+      desc: "Prompt cache มี TTL 5 นาที — placement ของ static vs dynamic content กำหนด hit rate",
+      why: "Cache hit = จ่ายแค่ 10% ของราคาเต็ม กำกับ structure ดีๆ ประหยัดมหาศาลใน production",
+      examples: [
+        { type: "good", label: "Structure ที่ดี", content: "[CACHED] System prompt (5k tokens)\n[CACHED] CLAUDE.md (2k tokens)\n[CACHED] Tool definitions (3k tokens)\n[CACHED] Static docs (10k tokens)\n[FRESH] User query (200 tokens)\n\n→ ทุก call จ่ายแค่ 200 tokens เต็มราคา\n→ 20k ที่เหลือ = cache hit" }
+      ],
+      tips: ["Static content ต้องไม่เปลี่ยน byte-by-byte", "Cache breakpoint marker เพิ่มได้", "Test cache hit rate ใน production"]
+    },
+    "Parallel Tool Calls": {
+      layer: "LAYER 7 · COST", title: "Parallel Tool Calls — เรียกพร้อมกัน",
+      desc: "AI สามารถ call tool หลายตัวพร้อมกัน (parallel) — งานรวมเสร็จเร็วขึ้นมาก",
+      why: "Tool call ที่ไม่ depend กัน (เช่น อ่าน 3 ไฟล์, search 2 endpoint) ถ้า serial = ช้า 3x ถ้า parallel = เร็วเท่าตัวเดียว",
+      examples: [
+        { type: "bad", label: "Serial (ช้า)", content: "1. Read auth.ts → 2s\n2. Read user.ts → 2s\n3. Read db.ts → 2s\n4. Grep 'login' → 1s\n\nรวม: 7 วินาที" },
+        { type: "good", label: "Parallel (เร็ว)", content: "All 4 tools เรียกพร้อมกัน\n\nรวม: 2 วินาที (เท่าตัวที่ช้าสุด)" }
+      ],
+      tips: ["Independent tools → parallel always", "Dependent (output ของอันก่อนเป็น input ของอันหลัง) → serial", "Brief AI ให้คิด parallelization ใน CLAUDE.md"]
+    },
+
+    // ── Layer 8: Workflow ──
+    "Iteration Loop": {
+      layer: "LAYER 8 · WORKFLOW", title: "Iteration Loop — รอบของการปรับ",
+      desc: "ทำ → review → fix → ทำต่อ — รอบที่ 2-3 มักดีกว่ารอบแรก เสมอ",
+      why: "AI รอบแรกทำดีแล้ว แต่ไม่ perfect — feedback loop ที่สั้น+เร็ว = ขัดเงาผลลัพธ์ได้ดี",
+      examples: [
+        { type: "good", label: "Loop ที่ดี", content: "1. AI implement\n2. Run test / lint / type-check\n3. AI ดู error → fix\n4. Repeat จนกว่า green\n\nหรือใช้ /loop slash command\nหรือ self-review prompt:\n'review your code for bug ก่อน return'" }
+      ],
+      tips: ["Tight loop > one-shot perfect", "Auto-run test ใน hook = loop อัตโนมัติ", "อย่ายอม 'ใช้ได้' หาที่ดีขึ้นเสมอ"]
+    },
+    "Human-in-the-loop": {
+      layer: "LAYER 8 · WORKFLOW", title: "Human-in-the-loop — มนุษย์อนุมัติ",
+      desc: "Approval gate ก่อน destructive action — delete, deploy, broadcast, force-push",
+      why: "AI อาจตัดสินใจผิดในงานที่ irreversible — gate ทำให้คนเห็นก่อน บางครั้งช่วยกัน disaster",
+      examples: [
+        { type: "good", label: "ต้องมี gate", content: "• rm -rf, DROP TABLE\n• Deploy to production\n• Broadcast email/LINE ลูกค้า\n• git push --force\n• Pay API endpoint\n• Migration DB\n\nไม่ต้อง gate:\n• Read, search, analyze\n• Local test/lint\n• Generate draft" }
+      ],
+      tips: ["Plan mode = built-in gate", "Confirm prompt ก่อน destructive", "Log every gated action ลง audit"]
+    },
+    "Verification": {
+      layer: "LAYER 8 · WORKFLOW", title: "Verification — ตรวจสอบก่อนปล่อย",
+      desc: "Test, lint, type-check, visual diff — ขั้น auto verify ก่อน claim ว่า 'เสร็จ'",
+      why: "AI มักบอก 'done!' แม้ code อาจไม่ compile — verification คือ ground truth",
+      examples: [
+        { type: "good", label: "Verify checklist", content: "Code change:\n☐ Syntax: node -c, python -m py_compile\n☐ Type: tsc --noEmit, mypy\n☐ Lint: eslint, ruff\n☐ Test: jest, pytest\n☐ Manual: ทดสอบ feature จริง (UI)\n\nUI change:\n☐ Visual diff (before/after screenshot)\n☐ Browser console error?\n☐ Responsive (mobile/desktop)" }
+      ],
+      tips: ["Hook PostToolUse(Edit) → auto-format + lint", "AI ต้อง verify ก่อนบอก done", "Test = source of truth, ไม่ใช่ AI พูด"]
+    },
+    "Rollback": {
+      layer: "LAYER 8 · WORKFLOW", title: "Rollback — ย้อนกลับเมื่อพลาด",
+      desc: "Git revert, backup file, snapshot DB — เครื่องมือกู้คืนเมื่อ AI ทำพัง",
+      why: "AI ทำพังได้ — rollback ที่เร็วและชัวร์ = ความปลอดภัยของงาน",
+      examples: [
+        { type: "good", label: "Rollback toolkit", content: "Code:\n→ git stash, git revert HEAD\n→ ก่อนเริ่มทำ: git commit baseline\n\nFile:\n→ cp file file.bak ก่อน edit\n→ Time Machine, Cloud version history\n\nDB:\n→ Snapshot ก่อน migration\n→ Transaction + rollback\n\nConfig:\n→ Backup config.json → config.json.backup" }
+      ],
+      tips: ["Commit ก่อนทำงานใหญ่ทุกครั้ง", "ไฟล์สำคัญ → .bak ก่อน edit", "Production DB → never auto-migrate"]
+    },
+    "Branch Strategy": {
+      layer: "LAYER 8 · WORKFLOW", title: "Branch Strategy — กลยุทธ์ branch",
+      desc: "Feature branch / docs branch / fix branch — แยก change ตามจุดประสงค์, merge เมื่อพร้อม",
+      why: "ทำหลายงานบน main เดียว = ชนกัน, revert ลำบาก — branch แยก = atomic, รีวิวง่าย, rollback แม่นยำ",
+      examples: [
+        { type: "good", label: "Naming convention", content: "feature/dashboard-revenue\nfix/auth-token-expiry\ndocs/readme-quickstart\nrefactor/api-error-handling\nchore/dep-update\n\nmain ← merge เมื่อ:\n• Test pass\n• Review ผ่าน\n• เสร็จ feature เต็ม" }
+      ],
+      tips: ["Branch สั้นๆ ดีกว่ายาวๆ", "1 branch = 1 ความตั้งใจ", "Delete branch หลัง merge"]
+    },
+    "Scheduling": {
+      layer: "LAYER 8 · WORKFLOW", title: "Scheduling — งานตามเวลา",
+      desc: "Cron, /schedule, GitHub Actions, Cloudflare Cron — รัน AI ตามเวลาแบบไม่ต้องคน trigger",
+      why: "Routine task (report, alert, sync) ไม่ต้องคนเปิด — schedule ให้ทำเอง, ส่งสรุปให้คน",
+      examples: [
+        { type: "good", label: "ตัวอย่างใน infra คุณ", content: "Meeting Notes:\n→ Routine ทุกชั่วโมง สรุปจาก gdrive\n\nFriday AI:\n→ Cron ทุก 3 ชม. → proactive alert\n\nDeploy check:\n→ /loop 5m /check-deploy\n\nLINE broadcast:\n→ /schedule วันจันทร์ 09:00" }
+      ],
+      tips: ["Schedule = อย่าให้ recipient รำคาญ (timing สำคัญ)", "Cron format ผิดบ่อย → ทดสอบใน crontab.guru", "Log ทุก scheduled run"]
+    },
+    "Triggers": {
+      layer: "LAYER 8 · WORKFLOW", title: "Triggers — event ที่กระตุ้น",
+      desc: "Webhook, file change, time, user action — AI ตอบสนองเมื่อเกิดเหตุ ไม่ใช่รอ poll",
+      why: "Event-driven = real-time, ประหยัด resource / Polling = lag, เปลือง",
+      examples: [
+        { type: "good", label: "Trigger pattern", content: "Webhook:\n→ GitHub push → AI review PR\n→ Stripe payment → AI gen invoice\n\nFile change:\n→ Drop file ใน folder → AI process\n\nTime:\n→ 09:00 → daily standup summary\n\nUser action:\n→ Slack mention → AI ตอบ\n→ Email tag → AI route" }
+      ],
+      tips: ["Trigger > poll เสมอเมื่อทำได้", "Idempotency สำคัญ (trigger 2 ครั้ง = ผลเดียวกัน)", "Logs trigger event ลง audit"]
+    },
+    "Feedback Loop": {
+      layer: "LAYER 8 · WORKFLOW", title: "Feedback Loop — เรียนรู้จาก feedback",
+      desc: "บันทึก correction → save เข้า MEMORY → AI ครั้งหน้าไม่ทำพลาดเดิม",
+      why: "บอก correction ครั้งเดียวแล้ว AI จำไม่ได้ = เปลือง — บันทึกใน memory = AI พัฒนาเรื่อยๆ",
+      examples: [
+        { type: "good", label: "Pattern", content: "User: อย่าใช้ emoji\nAI: [save feedback memory: don't use emoji]\n\nครั้งต่อๆ ไป: AI อ่าน MEMORY → ไม่ใช้ emoji อัตโนมัติ\n\nUser: ดีเลย แบบนี้แหละ\nAI: [confirm: pattern is correct]" }
+      ],
+      tips: ["บอก 'จำไว้นะ' AI save", "Confirm บ่อยๆ ให้ AI รู้ว่าทางถูก", "Review MEMORY.md เป็นระยะ"]
+    },
+
+    // ── Layer 9: Output ──
+    "Format": {
+      layer: "LAYER 9 · OUTPUT", title: "Format — รูปแบบไฟล์ผลลัพธ์",
+      desc: ".md / .html / .pdf / .xlsx / .mp4 / .png / .mp3 — แต่ละ format มี use case ต่างกัน",
+      why: "Format ผิด = ใช้ต่อยาก, แชร์ลำบาก, อ่านบนมือถือไม่ได้ — เลือกตาม recipient + use case",
+      examples: [
+        { type: "good", label: "Format guide", content: "Markdown (.md):\n→ docs, README, notes\n→ version control friendly\n\nHTML:\n→ slide, dashboard, share via URL\n→ standalone (single file)\n\nPDF:\n→ ทางการ, ส่งลูกค้า, archive\n→ fixed layout\n\nExcel (.xlsx):\n→ data, calc, ทีม finance\n\nMP4/MP3:\n→ ฝึก, demo, podcast" }
+      ],
+      tips: ["HTML standalone ดีกว่า PDF (interactive)", ".md → convert PDF เมื่อต้องการ", "ฟอนต์ embed ใน PDF (กัน fallback)"]
+    },
+    "Destination": {
+      layer: "LAYER 9 · OUTPUT", title: "Destination — ปลายทาง",
+      desc: "Folder / Drive / Cloud / LINE / Email / Slack — ที่ output ไปอยู่หลังจาก generate",
+      why: "ปลายทางกำหนด workflow ปลายน้ำ — ใส่ผิดที่ = หายาก, แชร์ผิดคน",
+      examples: [
+        { type: "good", label: "Routing", content: "Personal note → ~/Documents/notes/\nShared with team → Google Drive folder\nClient deliverable → Email/PDF\nCustomer broadcast → LINE OA\nInternal alert → Slack channel\nLong-term archive → Cloud storage\nWeb publishing → Cloudflare Pages" }
+      ],
+      tips: ["Naming convention + dated folder", "Auto-route ผ่าน hook", "Sensitive output → local only, never cloud"]
+    },
+    "Audience": {
+      layer: "LAYER 9 · OUTPUT", title: "Audience — ผู้รับ",
+      desc: "Technical / non-tech / boss / customer / public — ต่างคน ต่อง tone, ลึก, format",
+      why: "Tech jargon กับ CEO = สื่อสารพัง / Simplified กับ engineer = ดูถูก / Match audience = professional",
+      examples: [
+        { type: "good", label: "Same content, different audience", content: "Topic: 'auth bug ที่ fix แล้ว'\n\nCEO version:\n'Login issue ที่กระทบลูกค้า ~200 คนเมื่อวาน fix แล้ว, no data loss, monitor 24 ชม.'\n\nEngineer version:\n'JWT expiry check race condition ใน refresh flow. Fixed ใน auth.ts:142 + added integration test. RCA: token timestamp ใช้ client clock'\n\nCustomer version:\n'ขออภัยที่เข้าระบบไม่ได้เมื่อวาน ตอนนี้ใช้งานได้ปกติแล้วครับ'" }
+      ],
+      tips: ["บอก audience ใน prompt", "Same data → multiple output (CEO + Engineer + Customer)", "Test กับคนกลุ่มเป้าหมายก่อนปล่อย"]
+    },
+    "Validation": {
+      layer: "LAYER 9 · OUTPUT", title: "Validation — ตรวจ output",
+      desc: "Schema check (JSON), visual diff (UI), spell check (text), link check (HTML) — กัน output พัง",
+      why: "AI generate output มี hallucination, broken link, schema mismatch — validation catch ก่อน user เห็น",
+      examples: [
+        { type: "good", label: "Validation per format", content: "JSON → ajv schema validate\nHTML → broken link check, W3C validator\nMarkdown → markdownlint\nCode → syntax check, type-check\nExcel → cell formula check\nImage → ดูจริง (vision verify)\nThai text → spell/grammar (LanguageTool)" }
+      ],
+      tips: ["Validation = mandatory ก่อนส่ง", "Hook PostToolUse → auto-validate", "Reject + retry ถ้า invalid"]
+    },
+    "Distribution": {
+      layer: "LAYER 9 · OUTPUT", title: "Distribution — การกระจาย",
+      desc: "Manual share (1-on-1) vs auto-broadcast (mass) — strategy ต่างมาก, pace ต่าง",
+      why: "Broadcast ผิด = spam, รำคาญ, unsubscribe / Pace ดี + relevant = engagement สูง",
+      examples: [
+        { type: "good", label: "Distribution rule", content: "Manual:\n→ Personalized, แชทตัวต่อตัว\n→ Quality > Quantity\n\nBroadcast:\n→ Throttle 3-5s ต่อ recipient\n→ Dedup (อย่าส่งซ้ำ)\n→ Unsubscribe link\n→ Send during business hours\n→ Snapshot to disk (กัน crash)\n\nคุณมี skill /lineoa-chat-mcp\nสำหรับ LINE OA broadcast" }
+      ],
+      tips: ["Broadcast slow + careful (ดูใน MEMORY.md)", "A/B test กลุ่มเล็กก่อน mass", "Log + audit ทุก broadcast"]
+    },
+    "Naming Convention": {
+      layer: "LAYER 9 · OUTPUT", title: "Naming Convention — ตั้งชื่อ",
+      desc: "Timestamp + version + slug — ตั้งชื่อให้หาเจอ ภายหลัง 6 เดือน",
+      why: "Untitled-1.html, final-v2-final.docx = หายาก, สับสน / Consistent naming = ค้นเจอใน 2 วินาที",
+      examples: [
+        { type: "bad", label: "ไม่ดี", content: "report.pdf\nreport-final.pdf\nreport-final-v2.pdf\nreport-final-v2-NEW.pdf\nreport-final-v2-NEW-แก้แล้ว.pdf\n→ ไหน final จริง?" },
+        { type: "good", label: "ดี", content: "2026-05-14_q1-revenue-report_v1.pdf\n2026-05-14_q1-revenue-report_v2.pdf\n2026-05-14_q1-revenue-report_final.pdf\n→ Sort by date, version ชัด" }
+      ],
+      tips: ["YYYY-MM-DD prefix = sort ถูก", "kebab-case > spaces", "Semantic version (v1, v2, final)"]
+    },
+
+    // ── Layer 10: Safety ──
+    "Permissions": {
+      layer: "LAYER 10 · SAFETY", title: "Permissions — สิทธิ์การใช้งาน",
+      desc: "settings.json allowlist — กำหนดว่า tool/command ไหนใช้ได้โดยไม่ต้องถาม, อันไหนต้อง approve",
+      why: "Default Claude Code ถามทุก destructive action — popup รำคาญ allowlist เฉพาะ safe command ลด friction, productivity ขึ้น 30%+",
+      examples: [
+        { type: "good", label: "Allowlist ที่ปลอดภัย", content: "{\n  \"permissions\": {\n    \"allow\": [\n      \"Bash(git status)\",\n      \"Bash(git diff)\",\n      \"Bash(git log:*)\",\n      \"Bash(ls)\",\n      \"Bash(npm test)\"\n    ]\n  }\n}\n\nไม่ allow:\n• rm, mv, force-push\n• curl ไป unknown URL\n• Bash(*) ทั้งหมด" }
+      ],
+      tips: ["/fewer-permission-prompts skill ช่วย gen allowlist", "Allow read-only + idempotent เป็นหลัก", "Review allowlist ทุก quarter"]
+    },
+    "Sandbox": {
+      layer: "LAYER 10 · SAFETY", title: "Sandbox — แยกพื้นที่ทดลอง",
+      desc: "Isolated mode, worktree, container — AI ทำงานใน sandbox ไม่กระทบ main",
+      why: "AI experimental code อาจ break setup — sandbox = ปลอดภัยทดลอง, ถ้าพัง throw ทิ้งได้",
+      examples: [
+        { type: "good", label: "Sandbox patterns", content: "Git worktree:\n→ Branch ใน folder แยก\n→ ทดลอง refactor ไม่กระทบ main\n\nDocker container:\n→ Isolated environment\n→ ลอง dependency แปลกๆ\n\nVM/VirtualBox:\n→ ทดลอง destructive command\n\nClaude Code agent isolation:\n→ Agent({isolation: 'worktree'})" }
+      ],
+      tips: ["Heavy experiment → sandbox always", "Disposable = ปลอดภัย", "Production = ไม่เคย sandbox (ใช้ stage)"]
+    },
+    "Sensitive Data": {
+      layer: "LAYER 10 · SAFETY", title: "Sensitive Data — ข้อมูลอ่อนไหว",
+      desc: "Secrets (.env, API key), PII (ลูกค้า), financial — อย่าให้ AI cloud เห็น/upload",
+      why: "AI cloud = ส่งข้อมูลออกนอกเครื่อง ไป provider — bake compliance, GDPR, PDPA ตั้งแต่ start",
+      examples: [
+        { type: "good", label: "Do/Don't", content: "DON'T:\n× Upload .env to ChatGPT\n× Paste customer data ใน prompt\n× Screenshot DB ที่มี PII\n× Commit secret ลง git\n\nDO:\n✓ .gitignore .env\n✓ Mask PII ก่อน prompt (xxx@xxx.com)\n✓ Vault for secrets (1Password, HashiCorp)\n✓ Local AI สำหรับ extra-sensitive (แต่คุณ cloud-only)" }
+      ],
+      tips: ["Hook scan secret ก่อน commit", "Mask data ก่อน feed AI", "Audit log access ข้อมูลอ่อนไหว"]
+    },
+    "Audit Trail": {
+      layer: "LAYER 10 · SAFETY", title: "Audit Trail — บันทึกการใช้งาน",
+      desc: "Session log, git history, command log — ตามรอยใครทำอะไร, เมื่อไหร่, ผลอย่างไร",
+      why: "ตอน incident เกิด ต้องรู้ว่า AI ทำอะไรไปบ้าง / ทำงานทีม ต้องตามได้ว่า change มาจากไหน",
+      examples: [
+        { type: "good", label: "Audit layers", content: "Claude Code:\n→ .claude/projects/.../sessions/\n→ ทุก message, tool call บันทึก\n\nGit:\n→ git log + signed commits\n→ blame ดู line history\n\nShell:\n→ HISTFILE (~/.zsh_history)\n→ Audit log ของ command\n\nMCP:\n→ Log แต่ละ tool call + result" }
+      ],
+      tips: ["Hook Stop → append session summary", "Sign commits (GPG/SSH) for auth", "Centralized log สำหรับทีม"]
+    },
+    "Team Sharing": {
+      layer: "LAYER 10 · SAFETY", title: "Team Sharing — แชร์กับทีม",
+      desc: "Shared skills, MCP config, CLAUDE.md, MEMORY — ทีมใช้ standard เดียวกัน",
+      why: "ถ้าทุกคนมี CLAUDE.md ของตัวเอง = inconsistent / Share = ทุกคน AI work เหมือนกัน, onboarding เร็ว",
+      examples: [
+        { type: "good", label: "Shareable assets", content: "Commit ลง repo:\n• ./CLAUDE.md (project rules)\n• .claude/commands/ (custom commands)\n• .claude/skills/ (team skills)\n• .claude/settings.json (permissions)\n\nไม่ commit (personal):\n• ~/.claude/CLAUDE.md\n• ~/.claude/MEMORY.md\n• .env, .credentials" }
+      ],
+      tips: ["Document onboarding step", "Skill marketplace ภายใน org", "Quarterly review shared config"]
+    },
+    "Trust Calibration": {
+      layer: "LAYER 10 · SAFETY", title: "Trust Calibration — ปรับความเชื่อ",
+      desc: "รู้ว่า AI พลาดอะไรบ่อย → ตรวจซ้ำในจุดเสี่ยง, เชื่อในจุดที่แข็ง",
+      why: "เชื่อทุกอย่าง = พลาด / ไม่เชื่อเลย = ใช้ AI ไม่คุ้ม / Calibrate = รู้จุดอ่อน-แข็งของ AI",
+      examples: [
+        { type: "good", label: "AI พลาดบ่อยที่...", content: "× Library version ใหม่กว่า cutoff\n× Math/calc ในใจ (ใช้ tool ดีกว่า)\n× Date arithmetic (timezone, leap)\n× Edge case ที่ไม่ obvious\n× Real-time data\n\nAI แข็งที่...\n✓ Code generation pattern\n✓ Refactoring\n✓ สรุป, แปล, rephrase\n✓ Brainstorm\n✓ Boilerplate" }
+      ],
+      tips: ["AI บอก confidence level ได้ — ถาม", "Double-check จุดเสี่ยง (math, date, version)", "Build mental model ของ AI strength/weakness"]
+    },
+
+    // ── BONUS: Cross-Platform Surfaces ──
+    "Claude Code (CLI)": {
+      layer: "BONUS · SURFACES", title: "Claude Code (CLI) — Terminal Power",
+      desc: "Claude ใน terminal (Warp/iTerm) — เห็นไฟล์ทั้งเครื่อง, ใช้ MCP + subagent + hook + skill ได้ครบ — surface ที่ทรงพลังที่สุดสำหรับ developer",
+      why: "Web/Desktop ทำ chat ได้ แต่ Claude Code มี 'อำนาจ' จริง: อ่าน/เขียนไฟล์, รัน command, git, deploy — ทำงานแบบ end-to-end ในรอบเดียว ไม่ต้อง copy-paste",
+      examples: [
+        { type: "bad", label: "Web UI workflow", content: "งาน: แก้ bug ใน auth.ts รัน test ดู ถ้า pass commit\n\nวิธีทำผ่าน claude.ai:\n1. เปิดเว็บ\n2. Copy code จาก editor → paste\n3. ขอ AI แก้\n4. Copy ผลลัพธ์กลับ → paste editor\n5. Save file\n6. เปิด terminal → run test\n7. ถ้า fail copy error → paste กลับ web\n8. Loop...\n9. git commit ใน terminal",
+          output: "[8-9 ขั้นตอน, ~15 นาที]\n\nปัญหา:\n• Context loss (AI ไม่เห็น project structure)\n• Copy-paste error เสี่ยง\n• ต้อง loop manually\n• AI ไม่รู้ test ผลยังไง\n• Switching tools เปลือง focus" },
+        { type: "good", label: "Claude Code workflow", content: "ใน terminal:\n'แก้ bug ใน src/auth.ts ที่ password ว่างส่ง 500 (ควร 400) รัน test ดู ถ้า pass commit'",
+          output: "[1 prompt → AI ทำเอง]\n\n1. Read auth.ts → identify issue at line 142\n2. Edit: 500 → 400, message ชัดขึ้น\n3. Update test ที่ auth.spec.ts:89\n4. Run: npm test auth\n5. ดู output → 47/47 pass ✓\n6. git add + commit -m 'fix(auth): return 400 for empty password'\n\nเสร็จใน 30 วินาที, 1 prompt" }
+      ],
+      tips: ["Dev จริงๆ ใช้ CLI ไม่ใช่ web", "Warp + Claude Code = ทรงพลังที่สุด", "MCP + Hooks เปิดอำนาจเต็มที่"]
+    },
+    "Claude Desktop App": {
+      layer: "BONUS · SURFACES", title: "Claude Desktop App — Chat-first",
+      desc: "Native app (Mac/Windows) — drag-drop ไฟล์ได้, รองรับ MCP, UI สวย เหมาะกับงาน chat + multi-modal",
+      why: "Desktop App เป็นที่กำเนิดของ MCP ecosystem — รองรับการ drag-drop PDF/image/video และ chat ที่ smooth กว่าเว็บ",
+      examples: [
+        { type: "good", label: "Use case ที่ดี", content: "• อ่าน PDF 50 หน้า → สรุปประเด็นหลัก\n• Drop screenshot → analyze UI\n• Brainstorm content แบบ chat ยาว\n• ทำงานหลายไฟล์ดิบ (ไม่ใช่ project)\n• งาน research ที่ค่อยๆ ขุด\n\nไม่เหมาะกับ:\n• Edit code โดยตรง (ใช้ CLI ดีกว่า)\n• Automation (ไม่มี scripting)",
+          output: "Drag PDF เข้า chat:\n'อ่านสัญญานี้ สรุปประเด็น risk ที่ผมต้องระวัง'\n\nAI:\n[Parse PDF 50 หน้า]\n\n5 ประเด็นเสี่ยง:\n1. Clause 3.2 — exit fee 30% สูงผิดปกติ\n2. Clause 5.1 — IP transfer ทั้งหมด (รวมงานก่อนเซ็น)\n3. Clause 7.4 — non-compete 5 ปี global\n4. Clause 9 — auto-renew ไม่มี notice\n5. Clause 12 — venue ที่ Singapore (กฎหมาย arbitration)\n\nแนะเจรจาแก้ทั้ง 5 ข้อก่อนเซ็น" }
+      ],
+      tips: ["Best for chat + file analysis", "MCP config ที่ ~/Library/Application Support/Claude/", "ใช้ Projects feature จัดงานเป็นกลุ่ม"]
+    },
+    "Claude Web (claude.ai)": {
+      layer: "BONUS · SURFACES", title: "Claude Web — Anywhere Access",
+      desc: "Browser-based — เปิดได้ทุกเครื่อง, มี Artifacts (interactive output), Projects, share conversation กับทีม",
+      why: "เมื่อไม่ได้อยู่หน้าเครื่อง dev (ใช้มือถือ, เครื่องเพื่อน, iPad) หรือต้อง share output กับทีมที่ไม่ใช้ Claude Desktop",
+      examples: [
+        { type: "good", label: "Use case", content: "• ทำ slide ใน Artifacts → ส่ง link ให้ทีมดู\n• Project แชร์กับเพื่อนร่วมงาน (shared context)\n• ใช้บน iPad ตอนประชุม\n• Continue conversation จากที่บ้าน\n• Demo Claude ให้ลูกค้าดูเร็วๆ",
+          output: "เปิด claude.ai บน iPad:\n'สร้าง interactive dashboard mockup ของ revenue Q1'\n\n[AI สร้าง Artifact = HTML+JS ทำงานจริงในเบราว์เซอร์]\n\nUser: share link → ส่งให้ CEO\nCEO เปิดได้ทันที, คลิก/zoom/interact ได้\nไม่ต้อง install อะไร\n\nต่างจาก static screenshot ที่ดูอย่างเดียว" }
+      ],
+      tips: ["Artifacts = killer feature ของ web", "Projects = persistent context ของชุดงาน", "Share link ใช้ได้ทั้ง read-only / collaborative"]
+    },
+    "Claude API": {
+      layer: "BONUS · SURFACES", title: "Claude API — Build & Scale",
+      desc: "เรียก Claude ผ่าน API จากโค้ดของคุณ — streaming, tool use, batch, files API, prompt cache",
+      why: "ถ้าจะ build product, automate ที่ scale, integrate Claude เข้า workflow ภายใน — API คือคำตอบ ไม่ใช่ chat UI",
+      examples: [
+        { type: "good", label: "Use case", content: "• Chatbot ใน product ของคุณ\n• Batch process ใบเสร็จ 10,000 ใบ/วัน\n• Pipeline สรุปคอมเมนต์ลูกค้า\n• AI feature ใน mobile app\n• Internal tool สำหรับทีม ops",
+          output: "Node.js code:\n\nconst msg = await anthropic.messages.create({\n  model: 'claude-opus-4-7',\n  max_tokens: 1024,\n  system: 'You are a Thai customer service AI...',\n  messages: [{role: 'user', content: userMsg}]\n});\n\nไป production ได้จริง:\n• Stream response → user เห็นทันที\n• Cache system prompt → ลดราคา 90%\n• Tool use → AI query DB ของคุณ\n• Batch API → bulk job ถูกกว่า 50%" }
+      ],
+      tips: ["Pin model version ใน production", "Always implement retry + exponential backoff", "Cache static prefix (system + tools)"]
+    },
+    "IDE Extensions": {
+      layer: "BONUS · SURFACES", title: "IDE Extensions — In-editor AI",
+      desc: "Claude ใน VS Code / JetBrains / Cursor — inline edit, diff view, code-aware suggestion, hover docs",
+      why: "ทำงาน code ใน editor อยู่แล้ว ไม่ต้องสลับไป terminal/web — context ของ AI เห็น code ที่ select, file ปัจจุบัน, workspace",
+      examples: [
+        { type: "good", label: "Workflow ใน VS Code", content: "1. Select code block\n2. Cmd+K → 'refactor นี้ให้ใช้ async/await'\n3. AI แสดง diff inline\n4. Approve / reject / modify\n5. Save\n\nหรือ:\n• Hover function name → AI อธิบาย\n• Right-click → 'explain this' / 'add tests' / 'fix bug'",
+          output: "Select 30 lines callback hell:\n\nfetchUser((err, user) => {\n  if (err) return cb(err);\n  fetchOrders(user.id, (err, orders) => {\n    ...\n  });\n});\n\n→ Cmd+K → 'refactor to async/await'\n\nAI inline diff:\nconst user = await fetchUser();\nconst orders = await fetchOrders(user.id);\nconst items = await Promise.all(\n  orders.map(o => fetchItems(o.id))\n);\n\nApprove → save" }
+      ],
+      tips: ["Cursor IDE = Claude/GPT built-in (fork ของ VS Code)", "Extension marketplace มี Claude Code, Continue, Cline", "ใช้ตอนแก้ specific block, CLI ใช้ตอนทำ multi-file"]
+    },
+    "Claude Mobile": {
+      layer: "BONUS · SURFACES", title: "Claude Mobile — On-the-go AI",
+      desc: "iOS / Android app — voice input, camera capture, quick chat — เหมาะกับงานสั้นๆ ระหว่างเดินทาง",
+      why: "ไอเดียมักมาตอนไม่ได้อยู่หน้าเครื่อง — มือถือคือ surface ที่จับได้ทันที, voice input ทำให้พิมพ์ไม่ทันก็ใช้ได้",
+      examples: [
+        { type: "good", label: "Mobile-friendly", content: "• พูดเข้าไมค์: 'จดไอเดียนี้: ตั้ง pricing แบบ tier 3 ระดับ'\n• ถ่ายรูป UI ที่เจอ → ถาม 'นี่ใช้ pattern อะไร'\n• สรุปบทความที่อ่านใน Safari\n• Brainstorm ขณะนั่งรถ\n• Quick translate\n\nไม่เหมาะกับ:\n• Code editing\n• Long-form writing\n• Complex tool use",
+          output: "On taxi ride home:\nVoice: 'สรุปประเด็น meeting วันนี้ ที่ผมบอกไว้ก่อนหน้านี้'\n\nAI:\n[ใช้ context ของ conversation ก่อน]\n\n3 ประเด็นหลัก:\n1. Q2 launch เลื่อนเป็น 1 มิ.ย.\n2. Hire 2 senior eng\n3. Revenue target ปรับขึ้น 15%\n\nForward to Slack #leadership ได้เลย" }
+      ],
+      tips: ["Voice + AI = combo เร็วสุด on-the-go", "ถ่าย whiteboard meeting → AI ทำ minutes", "Sync กับ web version (continue conversation)"]
+    },
+
+    // ── BONUS: Cross-Platform Pipelines ──
+    "Content Distribution": {
+      layer: "BONUS · PIPELINES", title: "Content Distribution — 1 → All Channels",
+      desc: "เขียน content ครั้งเดียว → Claude แปลงให้ตรง channel: Blog (full), LINE (สั้น), Email (formal), Twitter (140), IG (hook), LinkedIn (professional)",
+      why: "Manual repurpose เปลือง 5-10x ของเวลาเขียน original / Pipeline ทำให้ map tone + length + format ครบทุก channel ในรอบเดียว",
+      examples: [
+        { type: "bad", label: "Manual repurpose", content: "เขียน blog 1500 คำ → 2 ชม.\nแปลงเป็น LINE → 30 นาที\nแปลงเป็น email → 30 นาที  \nแปลงเป็น tweet → 20 นาที\nแปลงเป็น IG → 20 นาที\nแปลงเป็น LinkedIn → 30 นาที\n\nรวม: 4.5 ชม. ต่อ 1 content piece",
+          output: "[ขั้นตอนเยอะ, tone ไม่ consistent\nคนเขียนเหนื่อย, มักข้ามบาง channel\nResult: distribution ไม่ครบ → reach ต่ำ]" },
+        { type: "good", label: "Claude pipeline", content: "Prompt: 'แปลง blog นี้เป็น 5 versions สำหรับ LINE/Email/Twitter/IG/LinkedIn ตาม tone และ length ที่เหมาะแต่ละ channel'\n\n+ ใส่ guideline (LINE ≤300 ตัว, Twitter thread 5-10, ฯลฯ)",
+          output: "[5 versions ใน 1 นาที]\n\n💬 LINE (280 ตัว, casual):\n'รู้มั้ย AI ใช้เป็น ≠ พิมพ์แชท จริงๆ มันมีตัวแปร 70+ ตัวที่กำหนดคุณภาพ output\n\nเริ่มจาก 5 ตัว ROI สูงสุด:\n1. Prompt structure\n2. Memory\n3. MCP\n4. Hooks\n5. Iteration\n\nรายละเอียดคลิก: bit.ly/...'\n\n📧 Email (formal opener + 5 bullets + CTA)\n🐦 Twitter thread (10 tweets, hook → content → CTA)\n📸 IG caption (hook + bullets + question + #tag)\n💼 LinkedIn (300 คำ, professional, business angle)\n\nรวม: 1 ชม. ทำเสร็จทุก channel" }
+      ],
+      tips: ["Build skill /content-distribute ของตัวเอง", "Map: channel → tone + length + format", "Schedule publish ตาม timezone ของ audience"]
+    },
+    "Meeting → Action Items": {
+      layer: "BONUS · PIPELINES", title: "Meeting Pipeline — Transcript → Actions",
+      desc: "Recording/transcript ของประชุม → Claude สรุป + แยก action items + assign + distribute ไป Notion, Slack, Email",
+      why: "ประชุม 1 ชม. มักไม่มี minutes / minutes ที่มีก็ไม่ครบ / Pipeline อัตโนมัติ = ทุกประชุมมี output ใช้งานได้",
+      examples: [
+        { type: "good", label: "Pipeline", content: "Input: Otter/Granola transcript (1 ชม.)\n\nClaude tasks:\n1. สรุป 5 ประเด็นหลัก (bullet)\n2. แยก decision (อะไรตกลงกันแล้ว)\n3. แยก action items + assignee + deadline\n4. ระบุ unresolved questions\n5. Format ตามแต่ละ channel\n\nDistribute:\n• Notion → minutes page (full)\n• Slack → #team channel (summary + actions)\n• Email → คนที่มี action item (รายคน)",
+          output: "[ประชุม 1 ชม. → output ใน 5 นาที]\n\n📝 Notion:\n# Q2 Planning · 2026-05-14\n\n[5 ประเด็นหลัก, decisions, attendees, full notes]\n\n💬 Slack #team:\nQ2 Planning เมื่อกี้ สรุป:\n• เลื่อน launch เป็น 1 มิ.ย.\n• Hire 2 senior eng (Action: @kanit ก่อน 20 พ.ค.)\n• Target +15% revenue\nDetail: notion.so/...\n\n📧 Email ถึง @kanit:\nSubject: Action item — Hire 2 senior eng (deadline 20 พ.ค.)\n[Detail + ก่อนหน้านี้ที่คุยใน meeting]" }
+      ],
+      tips: ["Otter/Granola → real-time transcript", "Webhook trigger ทำให้ pipeline auto", "Recipient เห็นเฉพาะส่วนที่เกี่ยวข้องเท่านั้น"]
+    },
+    "Code Pipeline": {
+      layer: "BONUS · PIPELINES", title: "Code Pipeline — DevOps Loop",
+      desc: "Code change → test + lint + docs update + deploy + Slack notify — ครบรอบ ไม่ต้อง click dashboard",
+      why: "DevOps task เดิม manual เยอะ — pipeline AI ทำได้ end-to-end, ลด human error, ทำงานต่อเนื่อง",
+      examples: [
+        { type: "good", label: "Pipeline ที่ผม setup ได้", content: "Trigger: git push to main\n\nClaude Code (via routine):\n1. Pull latest\n2. Run npm test\n3. ถ้า fail → analyze + suggest fix → PR\n4. ถ้า pass:\n   - Update CHANGELOG.md\n   - Run npm run build\n   - wrangler deploy\n5. Generate release note\n6. Post to Slack #deploys\n7. Tag release ใน GitHub",
+          output: "[Push → 3 นาที]\n\nSlack #deploys:\n🚀 Deployed v1.4.2\n\nChangelog:\n• fix(auth): return 400 for empty password\n• feat(dashboard): add Q2 revenue card  \n• docs: update setup guide\n\nTest: 247/247 ✓\nBuild: 2.3MB (-0.1MB)\nDeploy: production (us-east-1)\nDuration: 2m 14s\n\nView: github.com/.../releases/v1.4.2\n\n[คนคลิกอ่าน 5 วินาที vs ทำ deploy เอง 30 นาที]" }
+      ],
+      tips: ["Routine + cron = scheduled pipeline", "Failure → AI สร้าง PR แก้ทันที", "Audit log ทุก deploy ลง centralized log"]
+    },
+    "Asset Production": {
+      layer: "BONUS · PIPELINES", title: "Asset Production — Concept → Multi-media",
+      desc: "Concept → Claude วาง brief → GPT/Nano Banana ทำภาพ → neomake ทำ video → ElevenLabs ทำเสียง → post",
+      why: "Creative content เคยใช้ทีม 5 คน 1 สัปดาห์ ตอนนี้ pipeline AI ทำได้ใน 1 วัน — มี human curator คน edit",
+      examples: [
+        { type: "good", label: "Pipeline /ai-loop", content: "Input: 'campaign Q2 — tag line ใหม่ + 5 ภาพ + 1 video + voiceover'\n\nClaude orchestrates:\n1. Claude → brainstorm 5 tag line\n2. → ส่งให้ GPT-image gen 5 mockup\n3. → ส่งให้ Nano Banana edit แก้สี/composition\n4. → ส่งให้ neomake Veo gen video 8 วินาที\n5. → ส่งให้ ElevenLabs gen voiceover ไทย\n6. → Final: combine + caption + hashtag\n7. → Upload Drive folder",
+          output: "[1 prompt → 6 hours run → ผลลัพธ์]\n\nDrive folder:\n📁 Q2-Campaign/\n  ├ 1-taglines.md (5 ตัวเลือก + rationale)\n  ├ 2-images/ (5 รูป 1080×1080)\n  ├ 3-images-edited/ (5 รูปหลัง refine)\n  ├ 4-videos/ (3 versions Veo + Sora + Kling)\n  ├ 5-voiceover/ (3 takes ไทย)\n  ├ 6-final/ (ready-to-post bundle)\n  └ 7-captions.md (Instagram/Facebook)\n\nคน review + เลือก final ใน 1 ชม.\nก่อนหน้า: ทีม 5 คน × 1 สัปดาห์" }
+      ],
+      tips: ["ใช้ /ai-loop skill ที่คุณมีอยู่", "Curator human review ก่อน publish", "Branding consistency = brief ต้องชัด"]
+    },
+    "Customer Communication": {
+      layer: "BONUS · PIPELINES", title: "Customer Communication — Multi-audience",
+      desc: "1 ข่าว/event → Claude generate versions ต่างกันสำหรับ CEO, Engineer, Customer, Investor — ตรง tone, ลึก, focus",
+      why: "Same news ส่งเหมือนกันทุก audience = สื่อสารพัง / Tailor per audience = clarity + trust สูงสุด",
+      examples: [
+        { type: "good", label: "Pipeline", content: "Event: 'พบ security vulnerability ที่อาจกระทบ user 200 คน, fix แล้ว, ไม่มี data loss'\n\nClaude generate 4 versions:",
+          output: "📨 CEO version (1 paragraph):\n'พบ security issue ที่กระทบ ~200 users, fix แล้ว, ไม่มี data ที่เสียหาย, monitoring 24 ชม. Eng + Security review post-mortem วันศุกร์'\n\n💻 Engineer version (technical):\n'CVE-class vuln ใน JWT validation (algorithm confusion) — affected 200 users มี active session ก่อน 14:00 — patched in commit a3f2e1, deployed 15:30 — added integration test, monitoring rule, runbook updated'\n\n👥 Customer version (formal, apologetic):\n'เรียนผู้ใช้งาน วันนี้เราพบและแก้ไขช่องโหว่ระบบที่อาจกระทบบัญชีท่าน ขณะนี้แก้ไขเรียบร้อยแล้ว ไม่พบความเสียหายต่อข้อมูลส่วนตัว เราแนะนำให้เปลี่ยนรหัสผ่านเพื่อความปลอดภัย ขออภัยในความไม่สะดวก'\n\n💼 Investor version (factual, risk-framed):\n'Security incident: scope limited (200 users), no data breach confirmed, financial impact <฿50k (mostly engineering hours), regulatory: no reportable event under PDPA threshold'" }
+      ],
+      tips: ["Build /multi-audience skill", "Test กับคนกลุ่มเป้าหมายก่อนปล่อย", "Audit log version ที่ส่งให้ใคร"]
+    },
+    "Knowledge Sync": {
+      layer: "BONUS · PIPELINES", title: "Knowledge Sync — Cross-platform Truth",
+      desc: "Drive ↔ Notion ↔ Slack ↔ Local — Claude sync content ระหว่างแพลตฟอร์ม, ตรวจ conflict, merge ฉลาด",
+      why: "Same doc อยู่หลายที่ → version drift = อันไหน latest? Claude sync + reconcile = single source of truth",
+      examples: [
+        { type: "good", label: "Pipeline", content: "Setup:\n- Master spec ที่ Notion\n- Mirror ที่ Drive (สำหรับลูกค้า)\n- Snippet ใน Slack #updates\n- Local cache สำหรับ offline\n\nCron 4 ชม.:\nClaude check ทั้ง 4 ที่:\n1. Notion มี edit ใหม่?\n2. Drive ถูกแก้นอกระบบ?\n3. Slack post ที่ใหม่กว่า?\n4. Local diverge?\n\n→ Reconcile + propagate change",
+          output: "Sync run 14:00:\n\nDetected:\n• Notion: section 3.2 updated by @kanit at 13:45\n• Drive: same section last sync 09:00 → outdated\n• Slack: snippet match Notion latest ✓\n• Local: in sync ✓\n\nAction:\n→ Drive: update section 3.2 from Notion\n→ Notify @kanit confirmation\n→ Audit log: 1 sync, 0 conflict\n\nNo human action needed.\n\n[ก่อนหน้า: ลูกค้าโทรมาบอก 'ทำไม spec ใน Drive ไม่ตรง Notion'\nหลัง: ปัญหานี้หายไป]" }
+      ],
+      tips: ["Conflict resolution rule ต้องชัด (Notion master?)", "Frequency vs cost trade-off (4h vs 1h)", "Webhook trigger ดีกว่า cron เมื่อทำได้"]
+    },
+
+    // ── BONUS: Multi-AI Orchestration ──
+    "Claude as Conductor": {
+      layer: "BONUS · ORCHESTRATION", title: "Claude as Conductor — Plan + Delegate",
+      desc: "Claude วาง strategy แตกงานให้ AI specialist (GPT, Gemini, neomake) รวมผลกลับมา — ใช้จุดเด่นแต่ละโมเดล",
+      why: "ไม่มี AI ตัวไหนเก่งทุกด้าน — Claude reasoning + planning ดี, GPT image ดี, Gemini research ดี — combine = quality สูงสุด",
+      examples: [
+        { type: "good", label: "Pattern", content: "Request: 'วิจัย competitor + ออกแบบ pitch deck + render video teaser'\n\nClaude plan:\n1. Delegate research → Gemini Deep Research\n   (Gemini เก่ง real-time web + cite source)\n2. Receive findings → Claude analyze + outline\n3. Delegate image → GPT-image\n   (สำหรับ hero visuals)\n4. Delegate video → neomake Veo\n   (สำหรับ 8-second teaser)\n5. Claude integrate ทั้งหมด → final deck\n6. Quality check → ส่งให้ Codex review consistency",
+          output: "[2 ชม. orchestrated work]\n\nDeliverable:\n📊 Competitive Analysis (10 หน้า, Gemini-sourced)\n📑 Pitch Deck (15 สไลด์, Claude-structured)\n🖼 5 Hero visuals (GPT-image)\n🎬 8-sec teaser video (Veo)\n✅ Final review pass (Codex)\n\nQuality:\n• Research depth = Gemini > Claude alone\n• Visual quality = GPT-image > Claude\n• Reasoning = Claude > others\n• Cross-check = Codex catch 2 typo\n\nTotal cost: $X (vs ทำเอง = หลายวัน)" }
+      ],
+      tips: ["ดู /ai-loop skill (~/ai-orchestrator/)", "Match AI กับจุดเด่นของแต่ละตัว", "Aggregate กลับมาที่ Claude เสมอ (avoid 'telephone' effect)"]
+    },
+    "GPT Image / Nano Banana": {
+      layer: "BONUS · ORCHESTRATION", title: "Image AI — Specialist for Visuals",
+      desc: "GPT Image (gpt-image-1), Nano Banana, Flux, Imagen — image generation + editing — เก่งกว่า Claude สำหรับงานภาพ",
+      why: "Claude ไม่ generate image (รับเข้าได้, ออกไม่ได้) — ต้อง delegate ไป image model — Claude เป็น director สั่ง prompt + iterate",
+      examples: [
+        { type: "good", label: "Pattern", content: "Claude → GPT-image:\n\nClaude คิด prompt:\n'Professional product photography of leather wallet, dark walnut wood background, soft side lighting, 50mm lens, shallow depth of field, premium aesthetic, brown leather with subtle stitching, top-down 30° angle'\n\nClaude iterate:\n• Round 1 → ภาพไม่ดี → adjust prompt\n• Round 2 → ดีขึ้น → request variation\n• Round 3 → final → save",
+          output: "Claude (director):\n'Image 1 มี glare บนหนัง ลด lighting intensity 30%, add subtle vignette'\n\nGPT-image:\n[Generate v2]\n\nClaude:\n'v2 ดีขึ้น แต่ shadow ใต้ wallet เบาไป เพิ่ม shadow depth 50%, keep everything else'\n\nGPT-image:\n[Generate v3] ← FINAL\n\nผลที่ได้:\n• Quality สูงเหมือนช่างถ่ายภาพ\n• Iterate ได้ละเอียดด้วยภาษา\n• ใช้ใน campaign จริง" }
+      ],
+      tips: ["Nano Banana = แก้/edit ภาพได้ (inpainting)", "ใช้ Claude เป็น director คน, AI image คือกล้อง", "Brand guideline → ใส่ใน prompt ทุกครั้ง"]
+    },
+    "Gemini Deep Research": {
+      layer: "BONUS · ORCHESTRATION", title: "Gemini — Deep Research",
+      desc: "Google Gemini Deep Research mode — ค้น web ลึก, รวบรวม source ครบ, citation ละเอียด — เก่งกว่า Claude สำหรับ real-time data",
+      why: "Claude มี knowledge cutoff + web search basic / Gemini Deep Research ดึง 100+ sources, สรุปอย่าง academic — งาน research ใช้ Gemini ดีกว่า",
+      examples: [
+        { type: "good", label: "Pattern", content: "Claude → Gemini (via Chrome MCP):\n\nClaude formulate question:\n'Thailand fintech regulations 2026 — what changed in BoT, SEC, OIC? List by date with source URLs'\n\nSend to Gemini Deep Research:\n→ Gemini run 30-60 นาที\n→ ค้น 100+ sources\n→ Generate report 20 หน้า + citations\n\nClaude receive → analyze + extract → integrate into work",
+          output: "Gemini Deep Research output:\n\n📚 Thailand Fintech Regulations 2026 — 20 pages\n\nKey changes:\n1. BoT — Real-time PromptPay limits (citation: bot.or.th/...)\n2. SEC — Digital asset disclosure rule (citation: sec.or.th/...)\n3. OIC — Insurance via app (citation: oic.or.th/...)\n\n[Detailed analysis + source links + date]\n\nClaude (summarizing for me):\n'3 ข้อที่ส่งผลกับ Thunder Solution:\n1. PromptPay limit ใหม่กระทบ B2B flow\n2. Digital asset rule = ต้องจดทะเบียนใหม่\n3. OIC rule = สามารถ embed insurance ใน app ได้'\n\n[Gemini ค้น, Claude เข้าใจ context ของผม → คำตอบที่ตรงเป้า]" }
+      ],
+      tips: ["Gemini เก่ง research, Claude เก่ง reasoning", "Combine: Gemini ค้น → Claude วิเคราะห์ context ผม", "Chrome MCP สั่ง Gemini ผ่านเบราว์เซอร์ได้"]
+    },
+    "neomake Video Models": {
+      layer: "BONUS · ORCHESTRATION", title: "neomake — Video Generation",
+      desc: "neomake.io รวม video models: Veo 3.1, Seedance 2.0, Sora 2, Kling — render 8 วินาที MP4 จาก prompt + reference image",
+      why: "Video production เดิมต้อง shoot + edit / Video AI = generate จาก prompt — ใช้ใน campaign, social media, mockup ได้จริง",
+      examples: [
+        { type: "good", label: "Pattern /neomake-cycle", content: "/neomake-cycle skill (คุณมีอยู่):\n\nInput:\n- Same prompt\n- Same reference images\n- ส่งไป 5 models พร้อมกัน:\n  • Veo 3.1 Quality\n  • Veo 3.1 Fast\n  • Seedance 2.0\n  • VIDEO 3.0 / Kling\n  • Sora 2\n\nReceive 5 outputs → compare table",
+          output: "[5 videos render parallel ~10 นาที]\n\nComparison table:\n\n| Model        | Quality | Speed | Style    | Download |\n├──────────────┼─────────┼───────┼──────────┼──────────┤\n| Veo Quality  | ★★★★★   | slow  | cinematic| link1    |\n| Veo Fast     | ★★★★    | fast  | smooth   | link2    |\n| Seedance     | ★★★★    | med   | dynamic  | link3    |\n| Kling        | ★★★     | fast  | stylized | link4    |\n| Sora 2       | ★★★★★   | slow  | photoreal| link5    |\n\nUser เลือก final = Veo Quality + Sora 2 hybrid\n\nUse case: ใช้ใน Q2 campaign, IG reel" }
+      ],
+      tips: ["Compare หลาย model ก่อนเลือก (style/cost trade-off)", "Reference image สำคัญมาก (กำหนด style)", "8 วินาที = standard ของ video AI ตอนนี้"]
+    },
+    "Codex (GPT-5)": {
+      layer: "BONUS · ORCHESTRATION", title: "Codex — Second-opinion Reviewer",
+      desc: "GPT-5 / Codex CLI — รัน code review แบบ second-opinion จาก AI อีกตัว — catch bug ที่ Claude มองข้าม",
+      why: "AI ตัวเดียวก็มี blind spot — 2 AI ดูพร้อมกัน = แม่นขึ้น เหมือนมี pair-programmer แต่เป็น AI",
+      examples: [
+        { type: "good", label: "Pattern /codex:rescue", content: "Workflow:\n1. Claude implement feature → commit ใน branch\n2. /codex:rescue → delegate review ไป Codex\n3. Codex อ่าน diff + flag issue\n4. Claude receive feedback → fix\n5. Codex review again → approve\n\nหรือ:\n• Claude แก้ bug ติดมาก → /codex:rescue → fresh perspective",
+          output: "Claude implement: refactor auth middleware\n\n/codex:rescue review:\n\n⚠ Codex flag 3 issues:\n1. Race condition in token refresh (line 67)\n   → Claude missed: 2 concurrent requests ที่ token expire พร้อมกัน\n2. Memory leak in session store (line 124)\n   → Claude อ่านไม่ครบ: cleanup function ไม่ unregister\n3. Test coverage gap: no test for revoked token\n\nClaude fix all 3:\n→ Codex re-review: ✓ approved\n\n[2 AI ดูพร้อมกัน → ดี กว่า Claude คนเดียว]" }
+      ],
+      tips: ["ใช้ Codex CLI plugin (codex:setup)", "Pair programming = 2 AI > 1 AI", "Final decision ยังคงคน, AI = recommend"]
+    },
+    "Chrome MCP Web AIs": {
+      layer: "BONUS · ORCHESTRATION", title: "Chrome MCP — Web AIs ผ่านเบราว์เซอร์",
+      desc: "Chrome MCP ทำให้ Claude สั่ง browser ไป chat.openai.com / gemini.google.com / claude.ai / neomake — ใช้ subscription แทนจ่าย API",
+      why: "API ของ AI ทุกตัวคิดเงินตาม token / Subscription (ChatGPT Plus, Gemini Pro, Claude Max) flat rate — แต่ใช้ผ่าน UI ลำบาก / Chrome MCP = automate UI = ใช้ sub เหมือน API",
+      examples: [
+        { type: "good", label: "Pattern", content: "Claude (orchestrator) สั่ง:\n1. Open chat.openai.com (มี Plus sub)\n   → ask: 'gen Python script ...'\n   → copy answer\n\n2. Open gemini.google.com (มี Pro sub)\n   → ask: 'research market data ...'\n   → copy answer\n\n3. Open neomake.io (มี sub)\n   → upload reference, render video\n   → wait, copy download URL\n\nผลรวมที่ Claude\n→ Claude analyze + integrate ทั้งหมด",
+          output: "Cost comparison:\n\n[ถ้าใช้ API ตรง]\nGPT-5 1M tokens = $X\nGemini 1M tokens = $Y\nVideo gen × 5 = $Z\nรวม: ~$200/month หนัก\n\n[ถ้าใช้ Chrome MCP + sub]\nChatGPT Plus = $20\nGemini Pro = $20\nneomake sub = $30\nรวม: $70/month, unlimited\n\n[คุณใช้ pattern นี้อยู่แล้วผ่าน /ai-loop]" }
+      ],
+      tips: ["Chrome MCP = ใช้ subscription ที่จ่ายอยู่ให้คุ้ม", "ระวัง terms of service (อย่าใช้ scraping)", "Resumable session log สำคัญ — เปิดได้ใหม่ถ้า crash"]
+    }
+  };
+
+  // ── Open modal ──
+  function openModal(name) {
+    const d = details[name];
+    if (!d) return;
+    document.getElementById('modal-tag').textContent = d.layer;
+    document.getElementById('modal-title').textContent = d.title;
+    document.getElementById('modal-desc').textContent = d.desc;
+
+    let html = '';
+    if (d.why) {
+      html += `<div class="modal-section"><h4>ทำไมสำคัญ</h4><p>${d.why}</p></div>`;
+    }
+    if (d.examples && d.examples.length) {
+      html += '<div class="modal-section"><h4>ตัวอย่าง · Prompt → ผลลัพธ์ AI</h4>';
+      d.examples.forEach(ex => {
+        html += `<div class="example-block">
+          <div class="example-label ${ex.type}">${ex.type === 'bad' ? '✗' : '✓'} ${ex.label}</div>
+          <div class="example-content ${ex.type}">${ex.content}</div>`;
+        if (ex.output) {
+          html += `<div class="example-arrow">ผลลัพธ์ที่ AI ตอบ</div>
+          <div class="example-output ${ex.type}">${ex.output}</div>`;
+        }
+        html += `</div>`;
+      });
+      html += '</div>';
+    }
+    if (d.tips && d.tips.length) {
+      html += '<div class="modal-section"><h4>เทคนิค + ข้อควรรู้</h4><ul>';
+      d.tips.forEach(t => { html += `<li>${t}</li>`; });
+      html += '</ul></div>';
+    }
+    document.getElementById('modal-body').innerHTML = html;
+    document.getElementById('modal').classList.add('active');
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('active');
+  }
+
+  // ── Attach click handlers to all var-cards ──
+  document.querySelectorAll('.var-card').forEach(card => {
+    const nameEl = card.querySelector('.var-name');
+    if (!nameEl) return;
+    const name = nameEl.textContent.trim();
+    if (details[name]) {
+      card.addEventListener('click', () => openModal(name));
+    } else {
+      card.style.cursor = 'default';
+      card.querySelector('.var-card::after');
+    }
+  });
+
+  show(0);
+</script>
+
+</body>
+</html>

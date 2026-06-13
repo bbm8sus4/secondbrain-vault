@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boost SMS — Graphic Brief Week 1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700;800&display=swap');
+  :root { --blue:#3871FE; --dark:#1A1A2E; --red:#E42637; --yellow:#FECA3F; --cream:#F8FAFF; --teal:#00C9A7; --purple:#7C3AED; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Noto Sans Thai',sans-serif; background:#F4F5F7; color:#333; line-height:1.6; }
+
+  .master { max-width:900px; margin:0 auto; padding:40px 20px 0; }
+  .hero { background:linear-gradient(135deg,var(--dark),var(--blue)); color:#fff; border-radius:20px; padding:48px 40px; text-align:center; }
+  .hero h1 { font-size:2em; font-weight:800; }
+  .hero p { opacity:.8; margin-top:6px; }
+  .tags { display:flex; justify-content:center; gap:10px; margin-top:20px; flex-wrap:wrap; }
+  .tags span { background:rgba(255,255,255,.15); padding:6px 16px; border-radius:20px; font-size:.85em; }
+
+  .sec { background:#fff; border-radius:16px; padding:28px; margin-top:16px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+  .sec h2 { font-size:1em; font-weight:700; color:var(--dark); margin-bottom:14px; }
+  .sec h2 span { color:var(--blue); }
+
+  .g { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:10px; }
+  @media(max-width:600px){ .g { grid-template-columns:1fr; } }
+  .gc { background:#F8F9FA; border-radius:10px; padding:14px; }
+  .gc .l { font-size:.68em; text-transform:uppercase; letter-spacing:.5px; color:#999; font-weight:700; }
+  .gc .v { margin-top:3px; font-size:.88em; }
+  .sw { display:inline-block; width:14px; height:14px; border-radius:3px; vertical-align:middle; margin-right:3px; border:1px solid rgba(0,0,0,.08); }
+
+  .specs { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+  @media(max-width:600px){ .specs { grid-template-columns:1fr; } }
+  .sp { background:var(--dark); color:#fff; border-radius:10px; padding:14px; text-align:center; }
+  .sp .sz { font-size:1.3em; font-weight:800; color:var(--yellow); }
+  .sp .ch { font-size:.75em; opacity:.7; }
+
+  .note-box { background:#F0F4FF; border:1px solid #D0DBFF; border-radius:8px; padding:12px 16px; margin-top:14px; font-size:.85em; }
+
+  .kpi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+  @media(max-width:600px){ .kpi-grid { grid-template-columns:repeat(2,1fr); } }
+  .kpi-card { background:var(--dark); color:#fff; border-radius:10px; padding:14px; text-align:center; }
+  .kpi-card .kn { font-size:1.5em; font-weight:800; color:var(--yellow); }
+  .kpi-card .kl { font-size:.72em; opacity:.7; margin-top:2px; }
+
+  /* Calendar */
+  .cal { max-width:900px; margin:0 auto; padding:0 20px 60px; }
+  .wk { margin-top:36px; margin-bottom:14px; padding:12px 20px; background:var(--dark); color:#fff; border-radius:10px; font-weight:700; }
+  .wk small { font-weight:400; opacity:.7; margin-left:8px; }
+
+  /* Card */
+  .c { background:#fff; border-radius:14px; margin-bottom:16px; box-shadow:0 1px 4px rgba(0,0,0,.06); overflow:hidden; }
+  .c.pin { border:2px solid var(--blue); }
+  .c-top { display:flex; align-items:center; gap:12px; padding:14px 20px; border-bottom:1px solid #F0F0F0; cursor:pointer; user-select:none; transition:background .15s; }
+  .c-top:hover { background:#FAFBFC; }
+  .c-top::after { content:'▸'; margin-left:auto; font-size:1.1em; color:#CCC; transition:transform .2s; flex-shrink:0; }
+  .c.open .c-top::after { transform:rotate(90deg); color:var(--blue); }
+  .c-body { display:none; }
+  .c.open .c-body { display:block; }
+  .c.open .c-top { border-bottom:1px solid #F0F0F0; }
+  .c:not(.open) .c-top { border-bottom:none; }
+  .dn { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:1em; flex-shrink:0; }
+  .c-top .i { flex:1; }
+  .c-top .d { font-size:.75em; color:#999; }
+  .c-top .t { font-size:.95em; font-weight:700; color:var(--dark); }
+  .pill { padding:3px 10px; border-radius:14px; font-size:.7em; font-weight:600; white-space:nowrap; }
+
+  .c-body { padding:16px 20px; }
+
+  /* Text on image */
+  .txt-on-img { background:#FFFDF5; border:1px solid #F5E6B8; border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+  .txt-on-img .hd { font-size:.7em; font-weight:700; color:#B8860B; text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+  .txt-line { display:flex; align-items:flex-start; gap:8px; margin-bottom:6px; }
+  .txt-line:last-child { margin-bottom:0; }
+  .txt-num { width:22px; height:22px; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:.7em; font-weight:800; color:#fff; flex-shrink:0; margin-top:1px; }
+  .txt-num.n1 { background:#E42637; }
+  .txt-num.n2 { background:#F39C12; }
+  .txt-num.n3 { background:#3871FE; }
+  .txt-num.n4 { background:#00C9A7; }
+  .txt-content { flex:1; }
+  .txt-content .role { font-size:.68em; color:#999; font-weight:600; text-transform:uppercase; }
+  .txt-content .copy { font-size:.9em; font-weight:600; color:var(--dark); }
+  .txt-content .pos { font-size:.72em; color:#999; font-style:italic; }
+
+  /* Layout wireframe */
+  .wireframe { background:#F8F9FA; border:1px solid #E8E8E8; border-radius:10px; padding:14px 16px; margin-bottom:12px; font-family:monospace; }
+  .wireframe .hd { font-family:'Noto Sans Thai',sans-serif; font-size:.7em; font-weight:700; color:#666; text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+  .wire-box { background:#fff; border:1px dashed #CCC; border-radius:6px; padding:10px; font-size:.75em; color:#888; line-height:1.8; white-space:pre-line; }
+
+  /* Visual + Color */
+  .vis-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; }
+  @media(max-width:600px){ .vis-row { grid-template-columns:1fr; } }
+  .vis-box { background:#F8F9FA; border-radius:8px; padding:12px 14px; }
+  .vis-box .hd { font-size:.68em; font-weight:700; color:#999; text-transform:uppercase; letter-spacing:.5px; margin-bottom:4px; }
+  .mood-kw { display:inline-block; background:var(--dark); color:#fff; padding:2px 10px; border-radius:6px; font-size:.8em; font-weight:600; margin-bottom:4px; }
+  .vis-desc { font-size:.82em; color:#666; }
+  .colors { display:flex; gap:5px; flex-wrap:wrap; }
+  .ct { display:inline-flex; align-items:center; gap:3px; padding:2px 8px; border-radius:5px; font-size:.75em; background:#fff; border:1px solid #EEE; }
+  .cd { width:10px; height:10px; border-radius:2px; border:1px solid rgba(0,0,0,.08); }
+
+  /* Caption */
+  .caption-sec { border-top:1px solid #F0F0F0; padding-top:12px; }
+  .cap-tabs { display:flex; gap:0; margin-bottom:8px; }
+  .cap-tab { padding:4px 14px; font-size:.72em; font-weight:700; border-radius:6px 6px 0 0; cursor:default; }
+  .cap-tab.fb { background:#1877F2; color:#fff; }
+  .cap-tab.line { background:#06C755; color:#fff; }
+  .cap-text { background:#F8F9FA; border-radius:0 8px 8px 8px; padding:12px 14px; font-size:.82em; line-height:1.6; color:#555; white-space:pre-line; margin-bottom:8px; }
+  .cap-text strong { color:var(--dark); }
+  .hashtags { font-size:.75em; color:#999; }
+
+  .pin-note { background:#FFF8E1; color:#7B6B00; padding:6px 12px; border-radius:6px; font-size:.8em; margin-top:10px; }
+
+  /* Pillar colors */
+  .p-hook { background:rgba(56,113,254,.12); color:#2a5bd4; }
+  .p-pain { background:rgba(228,38,55,.12); color:#c0392b; }
+  .p-edu { background:rgba(124,58,237,.12); color:#6929c4; }
+  .p-tech { background:rgba(243,156,18,.12); color:#c77d0a; }
+  .p-promo { background:rgba(254,202,63,.12); color:#9a7d0a; }
+  .p-dev { background:rgba(0,201,167,.12); color:#0a8a6f; }
+  .p-recap { background:rgba(41,128,185,.12); color:#2471a3; }
+
+  .bg-hook { background:var(--blue); }
+  .bg-pain { background:var(--red); }
+  .bg-edu { background:var(--purple); }
+  .bg-tech { background:#F39C12; }
+  .bg-promo { background:#D4AC0D; }
+  .bg-dev { background:var(--teal); }
+  .bg-recap { background:#2980B9; }
+
+  /* KPI target in each day */
+  .day-kpi { background:#F0F4FF; border:1px solid #D0DBFF; border-radius:8px; padding:10px 14px; margin-bottom:12px; font-size:.82em; }
+  .day-kpi .hd { font-size:.68em; font-weight:700; color:var(--blue); text-transform:uppercase; letter-spacing:.5px; margin-bottom:4px; }
+  .day-kpi-row { display:flex; gap:12px; flex-wrap:wrap; }
+  .day-kpi-item { background:#fff; padding:4px 10px; border-radius:6px; font-size:.85em; border:1px solid #E8E8E8; }
+  .day-kpi-item strong { color:var(--blue); }
+
+  .toggle-bar { display:flex; gap:8px; justify-content:flex-end; margin-bottom:14px; position:sticky; top:0; z-index:10; background:#F4F5F7; padding:10px 0; }
+  .toggle-btn { padding:6px 16px; border-radius:8px; border:1px solid #DDD; background:#fff; font-size:.82em; font-family:inherit; cursor:pointer; font-weight:600; color:var(--dark); transition:all .15s; }
+  .toggle-btn:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
+
+  .footer { text-align:center; padding:30px; color:#BBB; font-size:.78em; }
+  @media print { .c { break-inside:avoid; } body { background:#fff; } }
+</style>
+</head>
+<body>
+
+<!-- ═══════ MASTER BRIEF ═══════ -->
+<div class="master">
+<div class="hero">
+  <h1>Graphic Brief — Boost SMS Week 1</h1>
+  <p>Lead Generation + Trial Signup · 7 วัน · 7 ชิ้น · งบ 25,000 บาท</p>
+  <div class="tags"><span>Facebook Page</span><span>LINE OA</span><span>YouTube</span><span>Email</span><span>Website</span></div>
+</div>
+
+<div class="sec">
+  <h2><span>01</span> แบรนด์ & สี & Font</h2>
+  <div class="g">
+    <div class="gc"><div class="l">สี CI</div><div class="v"><sw class="sw" style="background:#3871FE"></sw> Blue #3871FE<br><sw class="sw" style="background:#1A1A2E"></sw> Dark #1A1A2E<br><sw class="sw" style="background:#E42637"></sw> Red #E42637<br><sw class="sw" style="background:#FECA3F"></sw> Yellow #FECA3F</div></div>
+    <div class="gc"><div class="l">Logo & Visual</div><div class="v"><strong>Logo BoostSMS</strong><br>Style: Soft plastic 3D render<br>Character: พนักงานหญิงเสื้อเชิ้ตขาว<br>วาง logo มุมล่างขวาเสมอ</div></div>
+    <div class="gc"><div class="l">Font</div><div class="v">หัวข้อ: <strong>Bold / ExtraBold</strong><br>เนื้อหา: <strong>Regular</strong><br>ตัวเลข: ExtraBold + Glow<br>Thai line-height ≥ 1.5x</div></div>
+    <div class="gc"><div class="l">ทุกชิ้นต้องมี</div><div class="v">✓ Logo BoostSMS (มุมล่างขวา)<br>✓ CTA Button สีน้ำเงิน<br>✓ 3D inflatable style<br>✓ Light theme / Gradient ฟ้าอ่อน</div></div>
+  </div>
+  <div class="specs">
+    <div class="sp"><div class="sz">1080×1080</div><div class="ch">Facebook Post (หลัก)</div></div>
+    <div class="sp"><div class="sz">1080×1350</div><div class="ch">Facebook Ad (4:5)</div></div>
+    <div class="sp"><div class="sz">1080×1920</div><div class="ch">FB/IG Story (9:16)</div></div>
+  </div>
+  <div class="note-box"><strong>ส่งงาน:</strong> .png + ต้นฉบับ · ทุกชิ้นส่งทั้ง 1:1 และ 4:5 · Poster ใช้ Soft plastic 3D render ทุกชิ้น · Officer woman คนเดียวกันตลอดแคมเปญ</div>
+</div>
+
+<div class="sec">
+  <h2><span>02</span> กลุ่มเป้าหมาย & Tone</h2>
+  <div class="g">
+    <div class="gc"><div class="l">Personas</div><div class="v">🧑‍💻 Dev/SaaS (25-35)<br>📊 Performance Marketer<br>📦 Fintech/SaaS PM<br>🛒 SME Owner (30-45)<br>🏢 HR/IT องค์กรใหญ่</div></div>
+    <div class="gc"><div class="l">Tone</div><div class="v">มืออาชีพ · น่าเชื่อถือ · Data-driven<br>เหมือนที่ปรึกษาที่เข้าใจธุรกิจ</div></div>
+    <div class="gc"><div class="l">ห้าม</div><div class="v">✕ ดูถูกคู่แข่งตรง ๆ<br>✕ เนื้อหา technical มากเกินไปบนรูป<br>✕ ข้อความยาวเกิน 5 บรรทัดบนรูป</div></div>
+    <div class="gc"><div class="l">แนวรูป</div><div class="v">3D Inflatable · Soft plastic render<br>ตัวเลขเด่น · Dashboard mockup<br>Light gradient background</div></div>
+  </div>
+</div>
+
+<div class="sec">
+  <h2><span>03</span> KPI เป้าหมาย Week 1</h2>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kn">35,000+</div><div class="kl">Page Reach</div></div>
+    <div class="kpi-card"><div class="kn">≥ 5%</div><div class="kl">Engagement Rate</div></div>
+    <div class="kpi-card"><div class="kn">80+</div><div class="kl">Inbox Conversations</div></div>
+    <div class="kpi-card"><div class="kn">60+</div><div class="kl">Trial Signup</div></div>
+    <div class="kpi-card"><div class="kn">≤ ฿80</div><div class="kl">Cost per Lead</div></div>
+    <div class="kpi-card"><div class="kn">≥ 15%</div><div class="kl">Trial → Paid (30d)</div></div>
+  </div>
+</div>
+
+<div class="sec">
+  <h2><span>04</span> วิธีอ่านบรีฟแต่ละชิ้น</h2>
+  <div class="g" style="grid-template-columns:1fr 1fr;">
+    <div class="gc" style="background:#FFFDF5;border:1px solid #F5E6B8;">
+      <div class="l">① ข้อความบนรูป</div>
+      <div class="v">ข้อความจริงที่ต้องใส่ลงในรูป<br>เรียงตามลำดับสายตา: <strong style="color:#E42637">1 ใหญ่สุด</strong> → <strong style="color:#F39C12">2 รอง</strong> → <strong style="color:#3871FE">3 เล็ก</strong> → <strong style="color:#00C9A7">4 CTA</strong><br>ระบุตำแหน่งวาง (บน/กลาง/ล่าง)</div>
+    </div>
+    <div class="gc" style="background:#F8F9FA;border:1px solid #E8E8E8;">
+      <div class="l">② Layout</div>
+      <div class="v">Wireframe ง่าย ๆ แสดงว่า<br>วางอะไรตรงไหนบนภาพ<br>ดูแล้วเริ่มทำได้เลย</div>
+    </div>
+    <div class="gc">
+      <div class="l">③ แนวภาพ + สี</div>
+      <div class="v">Keyword สไตล์ + สีที่ใช้<br>พร้อม swatch สีจริง</div>
+    </div>
+    <div class="gc">
+      <div class="l">④ Caption (โพสต์)</div>
+      <div class="v">Copy สำหรับ Facebook + LINE OA<br>พร้อมโพสต์ได้เลย ไม่ต้องเขียนเอง</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ═══════ POST CARDS ═══════ -->
+<div class="cal">
+
+<div class="toggle-bar">
+  <button class="toggle-btn" onclick="document.querySelectorAll('.c').forEach(c=>c.classList.add('open'))">เปิดทั้งหมด</button>
+  <button class="toggle-btn" onclick="document.querySelectorAll('.c').forEach(c=>c.classList.remove('open'))">ปิดทั้งหมด</button>
+</div>
+
+<div class="wk">Week 1 <small>Lead Generation + Trial Signup</small></div>
+
+<!-- ── DAY 1 ── -->
+<div class="c">
+  <div class="c-top" onclick="this.parentElement.classList.toggle('open')">
+    <div class="dn bg-hook">1</div>
+    <div class="i"><div class="d">จ. Day 1 · 10:00</div><div class="t">Send. Track. Boost. — Hero Launch</div></div>
+    <span class="pill p-hook">🚀 Hook + Awareness</span>
+  </div>
+  <div class="c-body">
+    <div class="day-kpi">
+      <div class="hd">🎯 KPI Target</div>
+      <div class="day-kpi-row">
+        <div class="day-kpi-item">Reach <strong>5,000</strong></div>
+        <div class="day-kpi-item">ER <strong>≥ 5%</strong></div>
+        <div class="day-kpi-item">Inbox <strong>15+</strong></div>
+      </div>
+    </div>
+
+    <div class="txt-on-img">
+      <div class="hd">📝 ข้อความบนรูป</div>
+      <div class="txt-line"><div class="txt-num n1">1</div><div class="txt-content"><div class="role">Tagline ใหญ่ · กลางบน</div><div class="copy">Send. Track. Boost.</div></div></div>
+      <div class="txt-line"><div class="txt-num n2">2</div><div class="txt-content"><div class="role">ตัวเลขเด่น · กลางจอ</div><div class="copy">98% Open Rate</div></div></div>
+      <div class="txt-line"><div class="txt-num n3">3</div><div class="txt-content"><div class="role">Comparison Cards · กลางภาพ ซ้าย-ขวา</div><div class="copy">SMS vs Email vs LINE OA — การ์ด 3 ใบ floating
++ Dashboard Mockup กราฟ Bar Chart
++ ไอคอน checkmark สีเหลือง</div></div></div>
+      <div class="txt-line"><div class="txt-num n4">4</div><div class="txt-content"><div class="role">CTA Button · ล่างสุด กลาง</div><div class="copy">ทดลองฟรี</div><div class="pos">ปุ่มสีน้ำเงิน + Logo BoostSMS มุมล่างขวา</div></div></div>
+    </div>
+
+    <div class="wireframe">
+      <div class="hd">📐 Layout</div>
+      <div class="wire-box">┌──────────────────────────────┐
+│  👩‍💼 Officer หญิง (ถือมือถือ 3D) │
+│                               │
+│   ① "Send. Track. Boost."     │
+│   ② 98% Open Rate (เรืองแสง)  │
+│                               │
+│ ┌────────┬────────┬────────┐ │
+│ │  SMS   │ Email  │LINE OA │ │
+│ │ 98% ✓  │ 20%    │ 40%    │ │
+│ └────────┴────────┴────────┘ │
+│                               │
+│  [Dashboard Mockup + Chart]   │
+│                               │
+│   ④ [ ทดลองฟรี ]   🟦 Logo   │
+└──────────────────────────────┘</div>
+    </div>
+
+    <div class="vis-row">
+      <div class="vis-box">
+        <div class="hd">🎨 แนวภาพ</div>
+        <span class="mood-kw">Soft Plastic 3D + Hero</span>
+        <div class="vis-desc">Officer woman เสื้อเชิ้ตขาว ถือสมาร์ทโฟน 3D เรืองแสง · Comparison Cards 3 ใบ floating · Dashboard mockup Bar Chart · Light theme gradient ฟ้าอ่อน</div>
+      </div>
+      <div class="vis-box">
+        <div class="hd">🎨 สี</div>
+        <div class="colors">
+          <span class="ct"><span class="cd" style="background:#3871FE"></span> Blue หลัก</span>
+          <span class="ct"><span class="cd" style="background:#FECA3F"></span> Yellow checkmark</span>
+          <span class="ct"><span class="cd" style="background:#F0F4FF;border-color:#ccc"></span> ฟ้าอ่อน BG</span>
+          <span class="ct"><span class="cd" style="background:#FFF;border-color:#ccc"></span> ขาว card</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="caption-sec">
+      <div class="cap-tabs"><span class="cap-tab fb">Facebook</span></div>
+      <div class="cap-text"><strong>📌 ส่งไปตั้งเยอะ แต่ไม่รู้เลยว่ามีคนเปิดอ่านกี่คน?</strong>
+
+ปัญหานี้จะหมดไป! เปิดตัว Boost SMS — Send.Track.Boost. โซลูชันที่จะเปลี่ยนการส่ง SMS แบบเดิมๆ ให้วัดผลได้แม่นยำ
+
+📈 98% Open Rate การันตีการเข้าถึงที่เหนือกว่า
+📍 SMS Tracking เช็กได้ทันทีว่าใครคลิก ลิงก์ไหนเวิร์ก
+🥇 Hot Lead Scoring ระบบช่วยวิเคราะห์และคัดกรองลูกค้าที่มีความสนใจจริง ช่วยให้ทีมขายปิดดีลง่ายขึ้น
+
+เลิกสุ่มส่งแบบไร้จุดหมาย แล้วมาส่ง SMS ที่แม่นยำและสร้างยอดขายได้จริงกันดีกว่าครับ สนใจทดลองใช้ทักแชทเลย!</div>
+      <div class="hashtags">#BoostSMS #SendTrackBoost #SMSGateway #SMSMarketing #ระบบส่งSMS</div>
+
+      <div class="cap-tabs" style="margin-top:10px;"><span class="cap-tab line">LINE OA</span></div>
+      <div class="cap-text">📌 ส่ง SMS แล้วเงียบหาย?
+
+เปิดตัว Boost SMS — Send.Track.Boost.
+📈 98% Open Rate
+📍 SMS Tracking ทุกคลิก
+🥇 Hot Lead Scoring
+
+ทักแชทเพื่อทดลองใช้ฟรี!</div>
+    </div>
+
+    <div class="pin-note">📢 ขยายช่อง: LINE OA Drip · Paid Boost Day 1 (งบ 3,000 บาท Cold + 1% Lookalike)</div>
+  </div>
+</div>
+
+<!-- ── DAY 2 ── -->
+<div class="c">
+  <div class="c-top" onclick="this.parentElement.classList.toggle('open')">
+    <div class="dn bg-pain">2</div>
+    <div class="i"><div class="d">อ. Day 2 · 12:00</div><div class="t">SMS Tracking — เผาเงินทิ้ง?</div></div>
+    <span class="pill p-pain">🔥 Pain Point + Solution</span>
+  </div>
+  <div class="c-body">
+    <div class="day-kpi">
+      <div class="hd">🎯 KPI Target</div>
+      <div class="day-kpi-row">
+        <div class="day-kpi-item">Video Views <strong>3,000+</strong></div>
+        <div class="day-kpi-item">Comments DEMO <strong>20+</strong></div>
+      </div>
+    </div>
+
+    <div class="txt-on-img">
+      <div class="hd">📝 ข้อความบนรูป</div>
+      <div class="txt-line"><div class="txt-num n1">1</div><div class="txt-content"><div class="role">หัวข้อใหญ่ · บนสุด กลาง</div><div class="copy">ส่ง SMS แล้ววัดผลไม่ได้ = เผาเงินทิ้ง</div></div></div>
+      <div class="txt-line"><div class="txt-num n2">2</div><div class="txt-content"><div class="role">หัวข้อรอง · ใต้หัวข้อ</div><div class="copy">SMS Tracking</div><div class="pos">3D ลอย + ลูกศรเรืองแสงสีฟ้า</div></div></div>
+      <div class="txt-line"><div class="txt-num n3">3</div><div class="txt-content"><div class="role">ตัวเลข + กราฟ · กลางภาพ</div><div class="copy">CTR 5% โผล่จากกราฟ
++ Dashboard screenshot
++ ไอคอน checkmark สีเหลือง</div></div></div>
+      <div class="txt-line"><div class="txt-num n4">4</div><div class="txt-content"><div class="role">CTA Button · ล่างสุด กลาง</div><div class="copy">นัด DEMO</div><div class="pos">ปุ่มสีน้ำเงินใหญ่กลางจอ + glow effect</div></div></div>
+    </div>
+
+    <div class="wireframe">
+      <div class="hd">📐 Layout</div>
+      <div class="wire-box">┌──────────────────────────────┐
+│  👩‍💼 Officer หญิงหน้ามึน        │
+│     ถือมือถือหน้าจอ "???"      │
+│                               │
+│  ① ส่ง SMS แล้ววัดผลไม่ได้     │
+│            = เผาเงินทิ้ง       │
+│                               │
+│    ② "SMS Tracking" 3D ลอย    │
+│    ← ลูกศรเรืองแสงสีฟ้า →     │
+│                               │
+│  ┌─────────────────────────┐ │
+│  │ ③ Dashboard + CTR 5%    │ │
+│  │    กราฟ + checkmark ✓   │ │
+│  └─────────────────────────┘ │
+│                               │
+│    ④ [ นัด DEMO ] glow 🟦    │
+└──────────────────────────────┘</div>
+    </div>
+
+    <div class="vis-row">
+      <div class="vis-box">
+        <div class="hd">🎨 แนวภาพ</div>
+        <span class="mood-kw">Pain → Solution Transition</span>
+        <div class="vis-desc">TikTok motion graphics freeze frame style · Officer หญิงหน้ามึนถือมือถือ "???" · SMS Tracking 3D ลอย · Dashboard CTR · ปุ่ม DEMO glow</div>
+      </div>
+      <div class="vis-box">
+        <div class="hd">🎨 สี</div>
+        <div class="colors">
+          <span class="ct"><span class="cd" style="background:#E42637"></span> แดง pain</span>
+          <span class="ct"><span class="cd" style="background:#3871FE"></span> Blue solution</span>
+          <span class="ct"><span class="cd" style="background:#FECA3F"></span> Yellow checkmark</span>
+          <span class="ct"><span class="cd" style="background:#F0F4FF;border-color:#ccc"></span> ฟ้าอ่อน BG</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="caption-sec">
+      <div class="cap-tabs"><span class="cap-tab fb">Facebook</span></div>
+      <div class="cap-text"><strong>🔥 ถ้าคุณยังส่ง SMS โดยที่ไม่รู้ว่าลูกค้าคลิกหรือไม่คลิก...</strong>
+
+บอกเลยว่าคุณกำลังเสียค่าการตลาดไปฟรีๆ โดยใช่เหตุ!
+
+มาเปลี่ยนงบประมาณที่เสียไปให้คุ้มค่าทุกบาทด้วย Boost SMS ระบบจัดการที่ตอบโจทย์นักการตลาดยุคใหม่
+
+📍 SMS Tracking: แทร็กละเอียดทุกคลิก รู้พฤติกรรมลูกค้าทันที
+🥇 Hot Lead Scoring: จัดอันดับลูกค้าที่สนใจมากที่สุด ให้คุณโฟกัสได้ถูกจุด
+
+อยากเห็นระบบการทำงานจริงไหม? ทักหาเราตอนนี้เพื่อขอ Demo ทดลองใช้งานฟรีได้เลย!</div>
+      <div class="hashtags">#BoostSMS #SMSTracking #HotLead #SMSMarketing #วัดผลได้</div>
+
+      <div class="cap-tabs" style="margin-top:10px;"><span class="cap-tab line">LINE OA</span></div>
+      <div class="cap-text">🔥 ส่ง SMS แล้ววัดผลไม่ได้ = เผาเงินทิ้ง
+
+Boost SMS ช่วยคุณ:
+📍 SMS Tracking ทุกคลิก
+🥇 Hot Lead Scoring
+
+ทักขอ Demo ฟรีได้เลยครับ!</div>
+    </div>
+
+    <div class="pin-note">📢 ขยายช่อง: YouTube Repurpose</div>
+  </div>
+</div>
+
+<!-- ── DAY 3 ── -->
+<div class="c">
+  <div class="c-top" onclick="this.parentElement.classList.toggle('open')">
+    <div class="dn bg-edu">3</div>
+    <div class="i"><div class="d">พ. Day 3 · 19:00</div><div class="t">5 Trigger Points ทองคำ</div></div>
+    <span class="pill p-edu">📖 Educate / Tips</span>
+  </div>
+  <div class="c-body">
+    <div class="day-kpi">
+      <div class="hd">🎯 KPI Target</div>
+      <div class="day-kpi-row">
+        <div class="day-kpi-item">Saves <strong>50+</strong></div>
+        <div class="day-kpi-item">Shares <strong>20+</strong></div>
+        <div class="day-kpi-item">Trial <strong>10+</strong></div>
+      </div>
+    </div>
+
+    <div class="txt-on-img">
+      <div class="hd">📝 ข้อความบนรูป</div>
+      <div class="txt-line"><div class="txt-num n1">1</div><div class="txt-content"><div class="role">Headline · บนสุด กลาง</div><div class="copy">5 Trigger Points</div><div class="pos">สีน้ำเงิน #3871FE ตัวใหญ่</div></div></div>
+      <div class="txt-line"><div class="txt-num n2">2</div><div class="txt-content"><div class="role">Sub · ใต้หัวข้อ</div><div class="copy">5 จังหวะที่ส่ง SMS แล้ว Convert จริง</div></div></div>
+      <div class="txt-line"><div class="txt-num n3">3</div><div class="txt-content"><div class="role">Stair Diagram 5 ขั้น · กลางภาพ</div><div class="copy">🛒 Cart Abandon
+🎂 วันเกิด (Birthday)
+📦 หลังซื้อ 7 วัน
+⏳ หลังซื้อ 30 วัน
+🚨 สต็อกหมด (Back in Stock)</div><div class="pos">แต่ละขั้นมีไอคอน 3D glossy · checkmark สีเหลือง หน้าทุกข้อ</div></div></div>
+      <div class="txt-line"><div class="txt-num n4">4</div><div class="txt-content"><div class="role">CTA · ล่างสุด</div><div class="copy">ให้ Boost SMS ช่วยดูแล — ทักแชท</div></div></div>
+    </div>
+
+    <div class="wireframe">
+      <div class="hd">📐 Layout</div>
+      <div class="wire-box">┌──────────────────────────────┐
+│   ① "5 Trigger Points" (Blue) │
+│   ② จังหวะที่ส่งแล้ว Convert   │
+│                               │
+│   ┌─────┐                     │
+│   │🛒 1 │ Cart Abandon        │
+│   ├─────┴──┐                  │
+│   │🎂 2    │ Birthday          │
+│   ├────────┴──┐               │
+│   │📦 3       │ หลังซื้อ 7d    │
+│   ├───────────┴──┐            │
+│   │⏳ 4          │ หลังซื้อ 30d │
+│   ├──────────────┴──┐         │
+│   │🚨 5             │ Restock  │
+│   └─────────────────┘         │
+│                               │
+│  👩‍💼 Officer ชี้ (ขวา)          │
+│   ④ CTA             🟦 Logo  │
+└──────────────────────────────┘</div>
+    </div>
+
+    <div class="vis-row">
+      <div class="vis-box">
+        <div class="hd">🎨 แนวภาพ</div>
+        <span class="mood-kw">Inflatable 3D Stair Diagram</span>
+        <div class="vis-desc">Infographic แนวตั้ง 1:1 · บันได 3D ลอยบนพื้นฟ้าอ่อน · แต่ละขั้นมีไอคอน 3D glossy · Officer หญิงยืนชี้ด้านขวา · พื้นที่หายใจรอบไอคอน 20%</div>
+      </div>
+      <div class="vis-box">
+        <div class="hd">🎨 สี</div>
+        <div class="colors">
+          <span class="ct"><span class="cd" style="background:#3871FE"></span> Blue headline</span>
+          <span class="ct"><span class="cd" style="background:#FECA3F"></span> Yellow checkmark</span>
+          <span class="ct"><span class="cd" style="background:#F0F4FF;border-color:#ccc"></span> ฟ้าอ่อน BG</span>
+          <span class="ct"><span class="cd" style="background:#FFF;border-color:#ccc"></span> ขาว card</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="caption-sec">
+      <div class="cap-tabs"><span class="cap-tab fb">Facebook</span></div>
+      <div class="cap-text"><strong>📌 การส่ง SMS ที่ดีไม่ใช่แค่ส่งบ่อย แต่คือการส่ง "ถูกที่ ถูกเวลา"</strong>
+
+นี่คือ 5 Trigger Points ทองคำที่พิสูจน์แล้วว่าช่วยกระตุ้นยอดขายและดึงลูกค้ากลับมาได้จริง!
+
+🛒 Cart Abandon: ทวงตะกร้าสินค้าที่ลูกค้ากดทิ้งไว้ (กระตุ้นให้กลับมาจ่ายเงิน)
+🎂 วันเกิด (Birthday): มอบโค้ดส่วนลดพิเศษ มัดใจลูกค้าในวันสำคัญ
+📦 หลังซื้อ 7 วัน: ติดตามผล ถามความพึงพอใจ หรือแนะนำสินค้าที่ใช้คู่กัน
+⏳ หลังซื้อ 30 วัน: เตือนซื้อซ้ำสำหรับสินค้าที่ใช้แล้วหมดไป
+🚨 สต็อกหมด (Back in Stock): แจ้งเตือนทันทีเมื่อสินค้าที่ลูกค้าเล็งไว้กลับมาเติม
+
+อยากตั้งค่าระบบส่งออโต้ตามใจสั่งแบบนี้? ให้ Boost SMS ช่วยดูแล ทักแชทสอบถามรายละเอียดเพิ่มเติมได้เลยครับ</div>
+      <div class="hashtags">#BoostSMS #SMSMarketing #CustomerJourney #SMSAutomation</div>
+
+      <div class="cap-tabs" style="margin-top:10px;"><span class="cap-tab line">LINE OA</span></div>
+      <div class="cap-text">📌 5 จังหวะทองคำที่ส่ง SMS แล้ว Convert จริง
+
+🛒 Cart Abandon
+🎂 Birthday Discount
+📦 Post-purchase 7d
+⏳ Re-purchase 30d
+🚨 Back in Stock
+
+ทักแชทให้ Boost SMS ช่วยตั้งค่าออโต้ให้ครับ</div>
+    </div>
+
+    <div class="pin-note">📢 ขยายช่อง: LINE OA</div>
+  </div>
+</div>
+
+<!-- ── DAY 4 ── -->
+<div class="c">
+  <div class="c-top" onclick="this.parentElement.classList.toggle('open')">
+    <div class="dn bg-tech">4</div>
+    <div class="i"><div class="d">พฤ. Day 4 · 10:00</div><div class="t">Fintech/SaaS — OTP + Marketing ในเจ้าเดียว</div></div>
+    <span class="pill p-tech">🏢 Use Case B2B Tech</span>
+  </div>
+  <div class="c-body">
+    <div class="day-kpi">
+      <div class="hd">🎯 KPI Target</div>
+      <div class="day-kpi-row">
+        <div class="day-kpi-item">Reach <strong>6,000</strong></div>
+        <div class="day-kpi-item">Inbox 'TECH' <strong>12+</strong></div>
+        <div class="day-kpi-item">B2B Trial <strong>6+</strong></div>
+      </div>
+    </div>
+
+    <div class="txt-on-img">
+      <div class="hd">📝 ข้อความบนรูป</div>
+      <div class="txt-line"><div class="txt-num n1">1</div><div class="txt-content"><div class="role">ตัวเลขใหญ่มาก · กลางภาพ</div><div class="copy">12x ROI</div><div class="pos">สีแดง #E42637 + glow effect ใหญ่ที่สุดในภาพ</div></div></div>
+      <div class="txt-line"><div class="txt-num n2">2</div><div class="txt-content"><div class="role">Dashboard 2 Metric · ด้านขวา</div><div class="copy">Signup +40% (สีน้ำเงิน)
+CTR 4.5% (สีแดง)</div></div></div>
+      <div class="txt-line"><div class="txt-num n3">3</div><div class="txt-content"><div class="role">ไอคอน 3D floating · รอบภาพ</div><div class="copy">กระเป๋าเงินดิจิทัล · การ์ดเครดิต · Lock icon
+Bell notification · Gear icon
+OTP 6 หลัก "482917" บนมือถือเรืองแสง</div></div></div>
+      <div class="txt-line"><div class="txt-num n4">4</div><div class="txt-content"><div class="role">Tagline + CTA · ล่างสุด</div><div class="copy">OTP + Marketing in one — ทักปรึกษาฟรี</div></div></div>
+    </div>
+
+    <div class="wireframe">
+      <div class="hd">📐 Layout</div>
+      <div class="wire-box">┌──────────────────────────────┐
+│  👩‍💼 Officer Hoodie น้ำเงิน     │
+│     ถือมือถือ OTP "482917"     │
+│                               │
+│        ① 12x ROI (RED)        │
+│          (ใหญ่สุด + glow)      │
+│                               │
+│  ┌─────────────────────────┐ │
+│  │ ② Dashboard 3D ลอย       │ │
+│  │  📊 Signup +40% (Blue)   │ │
+│  │  📊 CTR 4.5% (Red)      │ │
+│  └─────────────────────────┘ │
+│                               │
+│  💳 🔒 🔔 ⚙️ ← ③ Icons 3D   │
+│  Code particles ลอย BG        │
+│                               │
+│  ④ "OTP+Marketing in one" 🟦 │
+│  Disclaimer: เคสตัวอย่าง       │
+└──────────────────────────────┘</div>
+    </div>
+
+    <div class="vis-row">
+      <div class="vis-box">
+        <div class="hd">🎨 แนวภาพ</div>
+        <span class="mood-kw">Tech Startup + Dashboard</span>
+        <div class="vis-desc">Officer Hoodie สีน้ำเงิน (Tech vibe) · มือถือ OTP เรืองแสง · Dashboard 3D ลอย 2 กราฟ · 12x ROI ใหญ่กลาง + glow · Code particles ลอย BG</div>
+      </div>
+      <div class="vis-box">
+        <div class="hd">🎨 สี</div>
+        <div class="colors">
+          <span class="ct"><span class="cd" style="background:#3871FE"></span> Blue signup</span>
+          <span class="ct"><span class="cd" style="background:#E42637"></span> Red ROI/CTR</span>
+          <span class="ct"><span class="cd" style="background:#F0F4FF;border-color:#ccc"></span> Gradient ฟ้าอ่อน</span>
+          <span class="ct"><span class="cd" style="background:#1A1A2E"></span> Code particles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="caption-sec">
+      <div class="cap-tabs"><span class="cap-tab fb">Facebook</span></div>
+      <div class="cap-text"><strong>🏢 ทำธุรกิจสาย Tech/Fintech/SaaS แต่ต้องปวดหัวกับการดิวหลายเจ้า</strong>
+
+เจ้าหนึ่งส่ง OTP อีกเจ้าส่ง Marketing... ยุ่งยากแถมต้นทุนบานปลาย!
+
+ดูเคสความสำเร็จจากลูกค้าของเราที่เปลี่ยนมาใช้ Boost SMS เพียงเจ้าเดียว:
+
+⚡ OTP Direct Route (3-5 วินาที): ส่งไว เสถียร ลูกค้าไม่ต้องรอนาน อัตรา Signup พุ่งทะยานถึง +40%!
+📊 Smart Dashboard: รวมสถิติตั้งแต่ OTP ยัน SMS Marketing ไว้ในจอเดียว
+💰 ลดต้นทุน Integration ไปถึง 50%: ประหยัดทั้งเวลาผู้พัฒนาและค่าบริการ คว้า ROI สูงถึง 12 เท่า!
+
+อยากได้ระบบ SMS ที่เสถียรและคุ้มค่าแบบนี้เพื่อธุรกิจของคุณ? ทักปรึกษาทีมงานของเราได้ฟรีวันนี้!</div>
+      <div class="hashtags">#BoostSMS #Fintech #SaaS #SMSOTP #SMSMarketing #B2BTech</div>
+
+      <div class="cap-tabs" style="margin-top:10px;"><span class="cap-tab line">LINE OA</span></div>
+      <div class="cap-text">🏢 OTP + Marketing ในเจ้าเดียว
+
+⚡ OTP 3-5 วินาที → Signup +40%
+📊 Dashboard รวมทุก metric
+💰 ลดต้นทุน Integration 50% → ROI 12x
+
+ทักปรึกษาฟรีวันนี้!</div>
+    </div>
+
+    <div class="pin-note">📢 ขยายช่อง: LINE OA + Paid Boost (งบ 2,500 บาท Fintech/SaaS/E-com Decision Makers)</div>
+  </div>
+</div>
+
+<!-- ── DAY 5 ── -->
+<div class="c pin">
+  <div class="c-top" onclick="this.parentElement.classList.toggle('open')">
+    <div class="dn bg-promo">5</div>
+    <div class="i"><div class="d">ศ. Day 5 · 16:00</div><div class="t">LAUNCH SPECIAL — ลด 5% ทุกแพ็กเกจ</div></div>
+    <span class="pill p-promo">🔥 Promo / Conversion</span>
+  </div>
+  <div class="c-body">
+    <div class="day-kpi">
+      <div class="hd">🎯 KPI Target</div>
+      <div class="day-kpi-row">
+        <div class="day-kpi-item">Reach <strong>8,000</strong></div>
+        <div class="day-kpi-item">Click <strong>200+</strong></div>
+        <div class="day-kpi-item">Trial <strong>25+</strong></div>
+        <div class="day-kpi-item">Paid <strong>5+</strong></div>
+      </div>
+    </div>
+
+    <div class="txt-on-img">
+      <div class="hd">📝 ข้อความบนรูป</div>
+      <div class="txt-line"><div class="txt-num n1">1</div><div class="txt-content"><div class="role">ป้าย 3D inflated · กลางบน</div><div class="copy">LAUNCH SPECIAL</div><div class="pos">สีฟ้าเรืองแสง 3D inflated</div></div></div>
+      <div class="txt-line"><div class="txt-num n2">2</div><div class="txt-content"><div class="role">Balloon ตัวเลข · กลางจอ ใหญ่สุด</div><div class="copy">5%</div><div class="pos">สีแดง #E42637 balloon ลอย ใหญ่มาก</div></div></div>
+      <div class="txt-line"><div class="txt-num n3">3</div><div class="txt-content"><div class="role">โค้ด + Benefits · กลาง-ล่าง</div><div class="copy">โค้ด: LAUNCH20 (กล่อง 3D สีเหลือง)
+✅ ฟรี 100 SMS ทดลองส่งจริง
+✅ Onboarding 1-on-1 พาเซ็ตจนใช้เป็น</div></div></div>
+      <div class="txt-line"><div class="txt-num n4">4</div><div class="txt-content"><div class="role">Scarcity + CTA · ล่างสุด</div><div class="copy">จำกัด 100 สิทธิ์แรก — ทักเลย!</div></div></div>
+    </div>
+
+    <div class="wireframe">
+      <div class="hd">📐 Layout</div>
+      <div class="wire-box">┌──────────────────────────────┐
+│  🎈 Confetti + ลูกโป่ง 3D     │
+│                               │
+│  👩‍💼 Officer ยิ้ม ถือป้าย       │
+│    ① "LAUNCH SPECIAL" (3D)    │
+│                               │
+│       🎈 ② 5% (Balloon RED)   │
+│          (ใหญ่สุดในภาพ)        │
+│                               │
+│  ┌─────────────────────────┐ │
+│  │ ③ LAUNCH20 (กล่อง Yellow)│ │
+│  │ ✅ ฟรี 100 SMS           │ │
+│  │ ✅ Onboarding 1-on-1    │ │
+│  └─────────────────────────┘ │
+│  🎁 กล่องของขวัญลอย          │
+│                               │
+│  ④ จำกัด 100 สิทธิ์  🟦 Logo │
+│     boost-sms.com             │
+└──────────────────────────────┘</div>
+    </div>
+
+    <div class="vis-row">
+      <div class="vis-box">
+        <div class="hd">🎨 แนวภาพ</div>
+        <span class="mood-kw">Hyper Promotional 3D</span>
+        <div class="vis-desc">Confetti + ลูกโป่ง 3D สีน้ำเงิน-เหลือง · กล่องของขวัญลอย · Officer ยิ้มถือป้าย · LAUNCH20 กล่อง 3D เหลือง · Dynamic floating composition · เตรียม 4:5 + 9:16 Story version</div>
+      </div>
+      <div class="vis-box">
+        <div class="hd">🎨 สี</div>
+        <div class="colors">
+          <span class="ct"><span class="cd" style="background:#3871FE"></span> Blue ป้าย</span>
+          <span class="ct"><span class="cd" style="background:#E42637"></span> Red 5%</span>
+          <span class="ct"><span class="cd" style="background:#FECA3F"></span> Yellow โค้ด</span>
+          <span class="ct"><span class="cd" style="background:#F0F4FF;border-color:#ccc"></span> ฟ้าอ่อน BG</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="caption-sec">
+      <div class="cap-tabs"><span class="cap-tab fb">Facebook</span></div>
+      <div class="cap-text"><strong>🎉 ฉลองเปิดตัว Boost SMS อย่างเป็นทางการ!</strong>
+
+เราขอมอบข้อเสนอสุดพิเศษสำหรับผู้ประกอบการที่อยากยกระดับการตลาด SMS ก่อนใคร
+
+⚡ กรอกโค้ด: LAUNCH20 รับส่วนลดทันที 5% สำหรับแพ็กเกจ Spark และ Scale ทุกแพ็กเกจ!
+
+ความคุ้มค่ายังไม่หมดแค่นั้น! สิ่งที่คุณจะได้รับเพิ่มฟรี:
+📱 ฟรี! 100 SMS ไปทดลองส่งจริง
+🤝 บริการ Onboarding แบบ 1-on-1 พาเซ็ตระบบจนใช้เป็น ไม่ต้องกลัวงง
+
+จำกัดเพียง 100 สิทธิ์แรกเท่านั้น</div>
+      <div class="hashtags">#BoostSMS #LaunchSpecial #SMSPromo #ลดราคา #SaaS #SMEไทย</div>
+
+      <div class="cap-tabs" style="margin-top:10px;"><span class="cap-tab line">LINE OA</span></div>
+      <div class="cap-text">🎉 LAUNCH SPECIAL — Boost SMS
+
+⚡ โค้ด LAUNCH20 ลด 5% ทุกแพ็กเกจ
+📱 ฟรี 100 SMS ทดลองจริง
+🤝 Onboarding 1-on-1
+
+จำกัด 100 สิทธิ์แรก ทักเลย!</div>
+    </div>
+
+    <div class="pin-note">⭐ วันสำคัญสุดของ Week 1 · Paid Boost งบ 3,500 บาท (Retarget Day 1-4 Engagers + Website Visitors) + Email + KOL</div>
+  </div>
+</div>
+
+<!-- ── DAY 6 ── -->
+<div class="c">
+  <div class="c-top" onclick="this.parentElement.classList.toggle('open')">
+    <div class="dn bg-dev">6</div>
+    <div class="i"><div class="d">ส. Day 6 · 11:00</div><div class="t">SMS API พร้อมใช้ใน 5 นาที</div></div>
+    <span class="pill p-dev">👨‍💻 Developer / Technical</span>
+  </div>
+  <div class="c-body">
+    <div class="day-kpi">
+      <div class="hd">🎯 KPI Target</div>
+      <div class="day-kpi-row">
+        <div class="day-kpi-item">Reach (Dev) <strong>4,000</strong></div>
+        <div class="day-kpi-item">Inbox 'API' <strong>12+</strong></div>
+        <div class="day-kpi-item">API Trial <strong>8+</strong></div>
+      </div>
+    </div>
+
+    <div class="txt-on-img">
+      <div class="hd">📝 ข้อความบนรูป</div>
+      <div class="txt-line"><div class="txt-num n1">1</div><div class="txt-content"><div class="role">Headline · บนสุด กลาง</div><div class="copy">5 minutes setup</div><div class="pos">สีน้ำเงิน + ไอคอน checkmark สีเหลือง</div></div></div>
+      <div class="txt-line"><div class="txt-num n2">2</div><div class="txt-content"><div class="role">Language Logos · รอบ Officer</div><div class="copy">PHP · Python · Java · Node.js</div><div class="pos">3D glossy floating logos คมชัด</div></div></div>
+      <div class="txt-line"><div class="txt-num n3">3</div><div class="txt-content"><div class="role">Connection Diagram · กลางภาพ</div><div class="copy">API → Server → Phone (3D inflated)
++ Code editor blur BG
++ snippet code 1 บรรทัดสั้น</div></div></div>
+      <div class="txt-line"><div class="txt-num n4">4</div><div class="txt-content"><div class="role">CTA · ล่างสุด</div><div class="copy">รับ API Key ฟรี — ทักแชท</div></div></div>
+    </div>
+
+    <div class="wireframe">
+      <div class="hd">📐 Layout</div>
+      <div class="wire-box">┌──────────────────────────────┐
+│  Code editor blur BG (3D)     │
+│                               │
+│   ① "5 minutes setup" (Blue)  │
+│      ✓ checkmark Yellow       │
+│                               │
+│  👩‍💼 Officer Hoodie น้ำเงิน     │
+│     ถือ Laptop 3D             │
+│                               │
+│  🟢 PHP  🐍 Python            │
+│  ☕ Java  🟩 Node.js          │
+│  ② Logos 3D glossy floating   │
+│                               │
+│  ③ API ──→ Server ──→ 📱      │
+│    (Connection Line 3D)       │
+│  > pip install boost-sms      │
+│                               │
+│  ④ รับ API Key ฟรี   🟦 Logo │
+└──────────────────────────────┘</div>
+    </div>
+
+    <div class="vis-row">
+      <div class="vis-box">
+        <div class="hd">🎨 แนวภาพ</div>
+        <span class="mood-kw">Startup Cyber + API</span>
+        <div class="vis-desc">Code editor blur 3D ลอย · Officer Hoodie น้ำเงินถือ laptop · Logo ภาษาโปรแกรม 3D glossy · Connection Line API→Server→Phone · Modern agency poster · Snippet code 1 บรรทัด</div>
+      </div>
+      <div class="vis-box">
+        <div class="hd">🎨 สี</div>
+        <div class="colors">
+          <span class="ct"><span class="cd" style="background:#3871FE"></span> Blue headline</span>
+          <span class="ct"><span class="cd" style="background:#FECA3F"></span> Yellow check</span>
+          <span class="ct"><span class="cd" style="background:#1A1A2E"></span> Dark code BG</span>
+          <span class="ct"><span class="cd" style="background:#00C9A7"></span> Teal accent</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="caption-sec">
+      <div class="cap-tabs"><span class="cap-tab fb">Facebook</span></div>
+      <div class="cap-text"><strong>👨‍💻 เลิกปวดหัวกับ API เอกสารอ่านยาก หรือเชื่อมต่อยากเป็นวันๆ...</strong>
+
+เพราะ Boost SMS API ออกแบบมาเพื่อ Developer โดยเฉพาะ! การันตียิงระบบติดพร้อมใช้งานภายใน 5 นาที
+
+🛠️ รองรับครบทุกภาษายอดนิยม: PHP, Python, Java, Node.js
+📡 มั่นใจด้วย Direct Route ส่งตรงถึงมือถือผู้ใช้ เสถียร ปลอดภัย
+📋 เช็กประวัติง่ายผ่าน Transaction History และมี OTP Endpoint ให้พร้อมใช้
+
+พร้อมคู่มือ (Documentation) ที่เคลียร์ชัดจบในหน้าเดียว สนใจรับ API Key ไปทดลองใช้ฟรีได้เลย</div>
+      <div class="hashtags">#BoostSMS #SMSAPI #Developer #SaaS #Python #NodeJS</div>
+
+      <div class="cap-tabs" style="margin-top:10px;"><span class="cap-tab line">LINE OA</span></div>
+      <div class="cap-text">👨‍💻 SMS API พร้อมใช้ใน 5 นาที
+
+🛠️ PHP / Python / Java / Node.js
+📡 Direct Route เสถียร
+📋 OTP Endpoint พร้อมใช้
+
+ทักรับ API Key ฟรีเลยครับ</div>
+    </div>
+
+    <div class="pin-note">📢 ขยายช่อง: LINE OA · เจาะ Persona Dev/SaaS 'Tee'</div>
+  </div>
+</div>
+
+<!-- ── DAY 7 ── -->
+<div class="c">
+  <div class="c-top" onclick="this.parentElement.classList.toggle('open')">
+    <div class="dn bg-recap">7</div>
+    <div class="i"><div class="d">อา. Day 7 · 20:00</div><div class="t">Week 1 Recap + Feature Poll</div></div>
+    <span class="pill p-recap">🏆 Engage + Recap</span>
+  </div>
+  <div class="c-body">
+    <div class="day-kpi">
+      <div class="hd">🎯 KPI Target</div>
+      <div class="day-kpi-row">
+        <div class="day-kpi-item">Poll votes <strong>100+</strong></div>
+        <div class="day-kpi-item">Comments <strong>30+</strong></div>
+        <div class="day-kpi-item">Trial <strong>15+</strong></div>
+      </div>
+    </div>
+
+    <div class="txt-on-img">
+      <div class="hd">📝 ข้อความบนรูป</div>
+      <div class="txt-line"><div class="txt-num n1">1</div><div class="txt-content"><div class="role">Badge · มุมขวาบน</div><div class="copy">WEEK 1</div><div class="pos">สีแดง #E42637</div></div></div>
+      <div class="txt-line"><div class="txt-num n2">2</div><div class="txt-content"><div class="role">บอร์ดสรุป · กลางภาพ</div><div class="copy">6 ไอคอน 3D สรุปทั้งสัปดาห์:
+📱 SMS Tracking · 🎯 Hot Lead · 📈 Scale
+❤️ Trigger Points · 🏷️ LAUNCH20 · </> API</div><div class="pos">เส้น glow สีน้ำเงินเชื่อมไปที่ Logo Boost SMS กลาง</div></div></div>
+      <div class="txt-line"><div class="txt-num n3">3</div><div class="txt-content"><div class="role">Poll Buttons · ล่างกลาง</div><div class="copy">A: SMS Tracking
+B: Hot Lead Scoring
+C: API 5 นาที
+D: โปร LAUNCH20</div></div></div>
+      <div class="txt-line"><div class="txt-num n4">4</div><div class="txt-content"><div class="role">CTA · ล่างสุด</div><div class="copy">ทดลองฟรี — 100+50 SMS Bonus!</div></div></div>
+    </div>
+
+    <div class="wireframe">
+      <div class="hd">📐 Layout</div>
+      <div class="wire-box">┌──────────────────────────────┐
+│                    "WEEK 1" 🔴│
+│                               │
+│  👩‍💼 Officer 3D ถือบอร์ดสรุป   │
+│                               │
+│  ┌──────────────────────┐    │
+│  │ 📱    🎯    📈        │    │
+│  │ Track  Lead  Scale   │    │
+│  │                      │    │
+│  │ ❤️    🏷️    </>      │    │
+│  │ Trigger Promo  API   │    │
+│  │                      │    │
+│  │    🟦 Logo BoostSMS   │    │
+│  │  (เส้น glow เชื่อม)   │    │
+│  └──────────────────────┘    │
+│                               │
+│  ┌──┐ ┌──┐ ┌──┐ ┌──┐       │
+│  │ A│ │ B│ │ C│ │ D│ ③ Poll │
+│  └──┘ └──┘ └──┘ └──┘       │
+│                               │
+│  ④ ทดลองฟรี 100+50  🟦 Logo │
+└──────────────────────────────┘</div>
+    </div>
+
+    <div class="vis-row">
+      <div class="vis-box">
+        <div class="hd">🎨 แนวภาพ</div>
+        <span class="mood-kw">Recap Board + Poll 3D</span>
+        <div class="vis-desc">Officer การ์ตูน 3D inflated ถือบอร์ดสรุป · 6 ไอคอน 3D เชื่อมด้วยเส้น glow → Logo กลาง · Poll 4 ปุ่ม A B C D · Sparkles + confetti · ฟ้าอ่อนสว่าง BG</div>
+      </div>
+      <div class="vis-box">
+        <div class="hd">🎨 สี</div>
+        <div class="colors">
+          <span class="ct"><span class="cd" style="background:#3871FE"></span> Blue glow</span>
+          <span class="ct"><span class="cd" style="background:#E42637"></span> Red WEEK 1</span>
+          <span class="ct"><span class="cd" style="background:#FECA3F"></span> Yellow sparkle</span>
+          <span class="ct"><span class="cd" style="background:#F0F4FF;border-color:#ccc"></span> ฟ้าอ่อน BG</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="caption-sec">
+      <div class="cap-tabs"><span class="cap-tab fb">Facebook</span></div>
+      <div class="cap-text"><strong>🏆 ผ่านไปแล้ว 1 สัปดาห์! สำหรับใครที่ตามเทรนด์ไม่ทัน</strong>
+
+เรารวมสรุปไฮไลท์สำคัญของ Boost SMS ในรอบ 6 วันที่ผ่านมาไว้ให้แล้วในโพสต์นี้
+
+🗳️ [ชวนโหวต!] จากฟีเจอร์ทั้งหมดของเรา คุณชอบฟีเจอร์ไหนมากที่สุด?
+A: 📍 SMS Tracking
+B: 🥇 Hot Lead Scoring
+C: 👨‍💻 API 5 นาที
+D: 🏷️ โปร LAUNCH20
+
+คอมเมนต์บอกเราหน่อยนะ</div>
+      <div class="hashtags">#BoostSMS #SendTrackBoost #WeekRecap #SMSGateway #ทดลองฟรี</div>
+
+      <div class="cap-tabs" style="margin-top:10px;"><span class="cap-tab line">LINE OA</span></div>
+      <div class="cap-text">🏆 Week 1 Recap — Boost SMS
+
+สรุป 6 วัน:
+📍 SMS Tracking · 🥇 Hot Lead Scoring
+📖 5 Trigger Points · 🏢 OTP+Marketing
+🏷️ LAUNCH20 ลด 5% · 👨‍💻 API 5 นาที
+
+ยังไม่ได้ทดลอง? ทักเลยวันนี้!</div>
+    </div>
+
+    <div class="pin-note">📢 ขยายช่อง: Email Recap · ใช้กับ Facebook Poll Sticker</div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">Boost SMS — Graphic Brief Week 1 · Generated by Claude Code · สำหรับ Creative Team</div>
+
+<script>
+document.querySelectorAll('.c-top').forEach(el => {
+  el.addEventListener('click', () => el.parentElement.classList.toggle('open'));
+});
+</script>
+</body>
+</html>

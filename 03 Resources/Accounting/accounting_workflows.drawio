@@ -1,0 +1,993 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-05-04T08:38:02.542899+00:00" agent="Claude Code" version="22.0.0" type="device">
+  <diagram name="1_P2P" id="1_P2P">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2535" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="1. Procure-to-Pay (รับใบแจ้งหนี้ → จ่าย)" style="swimlane;html=1;startSize=30;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#333;swimlaneFillColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="2435" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Requestor / ผู้ขอซื้อ" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="0" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Manager" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="110" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="AP Officer" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="220" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="CFO" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#f8cecc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="330" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Cashier / Treasury" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#e1d5e7;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="440" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Vendor" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#f5f5f5;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="550" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" parent="3" vertex="1">
+          <mxGeometry x="15" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="สร้าง PR&#10;+ ใบเสนอราคา" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="อนุมัติ PR?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="365" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="ออก PO&#10;ส่ง Vendor" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="540" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="ส่งสินค้า&#10;+ Invoice + ใบกำกับ" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="8" vertex="1">
+          <mxGeometry x="715" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="ตรวจรับ + GR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="890" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="3-way match&#10;(PO ↔ GR ↔ Inv)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1065" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="คำนวณ WHT&#10;+ ตั้งหนี้" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1240" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Manager review" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="1415" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="อนุมัติจ่าย?&#10;(ตามวงเงิน)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="1590" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="จ่ายเงิน&#10;+ ออก 50ทวิ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="1765" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="บันทึก&#10;+ เก็บเอกสาร 5 ปี" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1940" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="5" vertex="1">
+          <mxGeometry x="2115" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="No / แก้ไข" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="16" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="17" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="No / แก้ไข" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="19" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="20" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2_O2C" id="2_O2C">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2360" pageHeight="690" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="2. Order-to-Cash (ออกใบแจ้ง → รับเงิน)" style="swimlane;html=1;startSize=30;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#333;swimlaneFillColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="2260" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Customer / ลูกค้า" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#f5f5f5;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="0" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Sales" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="110" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="AR Officer" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="220" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Cashier" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#e1d5e7;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="330" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Manager" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="440" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="ส่ง PO" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" parent="3" vertex="1">
+          <mxGeometry x="15" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="รับ PO&#10;+ ตรวจ credit limit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Credit OK?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="365" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="ออกใบแจ้งหนี้&#10;+ ใบกำกับภาษี (86/4)" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="540" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="ส่งเอกสาร&#10;(e-Tax / กระดาษ)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="715" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="ชำระเงิน" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="890" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="รับเงิน&#10;+ ออกใบเสร็จ / e-Receipt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="1065" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="กระทบ AR ledger" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1240" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Aging review&#10;รายสัปดาห์" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1415" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="เกินกำหนด?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1590" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="ติดตาม / ทวงหนี้" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1765" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="5" vertex="1">
+          <mxGeometry x="1940" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="No / ปฏิเสธ" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="16" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="17" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="17" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="3_MonthEnd" id="3_MonthEnd">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2185" pageHeight="690" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="3. Month-End Close (ปิดงวดเดือน — Timeline 7 วันทำการ)" style="swimlane;html=1;startSize=30;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#333;swimlaneFillColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="2085" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="AP Officer" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="0" width="2085" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="AR Officer" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#ffe6cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="110" width="2085" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="GL / Tax Accountant" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="220" width="2085" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Manager" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="330" width="2085" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="CFO" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#f8cecc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="440" width="2085" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="วันสิ้นเดือน:&#10;Cut-off เอกสาร" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" parent="5" vertex="1">
+          <mxGeometry x="15" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Day +1:&#10;Accrual&#10;ค่าใช้จ่าย" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Day +1:&#10;Accrual&#10;รายได้" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Day +2:&#10;Bank reconciliation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="365" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Day +3:&#10;กระทบ AP&#10;sub-ledger" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="540" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Day +3:&#10;กระทบ AR&#10;sub-ledger" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="540" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Day +3:&#10;สต็อก + ค่าเสื่อม&#10;+ FX" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="715" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Day +5:&#10;Trial Balance&#10;review" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="890" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Day +5:&#10;Manager&#10;sign-off?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="1065" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Day +5:&#10;Draft P&amp;L / BS / CF" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1240" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Day +7:&#10;CFO review?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="1415" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Day +7:&#10;ส่ง Management&#10;Report" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1590" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="End: ปิดงวดสำเร็จ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="5" vertex="1">
+          <mxGeometry x="1765" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="9" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="12" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="OK" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="16" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="Revise" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="16" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="17" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="Approve" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="Revise" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="19" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="4_TaxFiling" id="4_TaxFiling">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2535" pageHeight="690" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="4. Monthly Tax Filing (ยื่นภาษีรายเดือน — ไทย)" style="swimlane;html=1;startSize=30;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#333;swimlaneFillColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="2435" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="AP / AR (Data prep)" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="0" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Tax Accountant" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="110" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Payroll / HR" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#ffe6cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="220" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Manager" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="330" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="RD e-Filing / สปส." style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#f5f5f5;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="440" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="วันสิ้นเดือน:&#10;รวบรวมข้อมูล" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" parent="4" vertex="1">
+          <mxGeometry x="15" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="Day +1-3:&#10;Download WHT data&#10;(50 ทวิ ทุกใบ)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="Day +3-5:&#10;จัดทำ ภ.ง.ด.&#10;1, 3, 53, 54" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="365" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Day +5:&#10;Manager review" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="540" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Day +7 (≤15 e-Filing):&#10;ยื่น ภ.ง.ด.1/3/53/54" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="715" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Day +1-3:&#10;รายงาน&#10;ภาษีซื้อ + ขาย" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Day +6-13:&#10;กระทบ ภ.พ.30" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="890" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Day +13:&#10;Manager review" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="1065" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Day +15 (≤23 e-Filing):&#10;ยื่น ภ.พ.30 + ชำระ" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="1240" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Day +1-10:&#10;เงินสมทบ&#10;(นายจ้าง + ลูกจ้าง)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Day +12:&#10;Manager review" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="1590" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Day +15:&#10;ยื่น สปส.1-10&#10;+ ชำระ" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="1765" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="บันทึก submission ID&#10;+ เก็บใบเสร็จ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="1940" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="4" vertex="1">
+          <mxGeometry x="2115" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="OK" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="Revise" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="OK" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="Revise" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="17" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="OK" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="Revise" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="12" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="16" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="19" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="20" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="5_PettyCash" id="5_PettyCash">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2360" pageHeight="580" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="5. Petty Cash (เงินสดย่อย)" style="swimlane;html=1;startSize=30;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#333;swimlaneFillColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="2260" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Requestor" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="0" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Petty Cash Custodian" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="110" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Accounting Manager" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="220" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="AP / Cashier" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#e1d5e7;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="330" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Start: ขอเบิก" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" parent="3" vertex="1">
+          <mxGeometry x="15" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="ส่งใบขอเบิก&#10;+ ใบเสร็จต้นฉบับ" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="ตรวจหลักฐาน&#10;+ วงเงิน" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="365" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="ผ่านเกณฑ์?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="540" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="จ่ายเงินสด&#10;+ ออก voucher" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="715" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="บันทึกใน&#10;Petty Cash log" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="890" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="ยอดเหลือ&#10;&lt; เกณฑ์เติม?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="1065" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="ขอเบิกชดเชย&#10;+ สรุป voucher" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="1240" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Manager&#10;อนุมัติ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1415" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="ออกเช็ค/โอน&#10;ชดเชย" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="1590" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="รับเงินเติม&#10;Petty Cash" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="1765" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="4" vertex="1">
+          <mxGeometry x="1940" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="7" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="No / แก้ไข" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="16" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="17" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="6_Payroll" id="6_Payroll">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2360" pageHeight="690" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="6. Payroll (เงินเดือน)" style="swimlane;html=1;startSize=30;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#333;swimlaneFillColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="2260" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Employee" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#f5f5f5;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="0" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="HR" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="110" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Payroll Officer" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="220" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Accounting Manager" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="330" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Bank" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#e1d5e7;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="440" width="2260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="ตัดรอบ&#10;เงินเดือน" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" parent="4" vertex="1">
+          <mxGeometry x="15" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="รวบรวม time/OT&#10;/ leave / commission" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="ส่งข้อมูล&#10;ให้ Payroll" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="365" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="คำนวณเงินเดือน&#10;(gross + ภ.ง.ด.1 + สปส. + PVD)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="540" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Self-review&#10;draft payroll" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="715" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Manager&#10;approve?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="890" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="สร้าง bank file&#10;(payroll batch)" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1065" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="โอนเงินเข้า&#10;บัญชีพนักงาน" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="1240" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="รับเงิน&#10;+ e-Slip" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="3" vertex="1">
+          <mxGeometry x="1415" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="บันทึก GL entry&#10;(payroll expense)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1590" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="เตรียม ภ.ง.ด.1 + สปส.&#10;→ Tax Filing flow" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1765" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="5" vertex="1">
+          <mxGeometry x="1940" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="OK" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="Revise" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="17" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="7_StockCount" id="7_StockCount">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2535" pageHeight="690" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="7. Stock Count (นับสต็อกจริง)" style="swimlane;html=1;startSize=30;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#333;swimlaneFillColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="2435" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Warehouse" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="0" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Counter Team" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="110" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Accounting" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="220" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Manager" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#e1d5e7;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="330" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="External Auditor" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#f8cecc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="440" width="2435" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="วางแผน count&#10;(วัน, freeze cutoff)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" parent="6" vertex="1">
+          <mxGeometry x="15" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="หยุดเคลื่อนไหว&#10;stock + cutoff" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="พิมพ์ count sheet&#10;(blind)" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="365" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="นับครั้งที่ 1&#10;(Team A)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="540" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="นับครั้งที่ 2&#10;(Team B - blind)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="715" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="ตรงกัน?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="890" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="นับครั้งที่ 3&#10;(resolve)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="1065" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="เปรียบเทียบ&#10;Book vs Physical" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1240" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="ผลต่าง &gt; เกณฑ์?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1415" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Investigate&#10;สาเหตุ variance" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="1590" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="บันทึก stock&#10;adjustment entry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1765" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Manager + Auditor&#10;sign-off" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="1940" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Auditor witness&#10;(สำหรับ year-end)" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="1940" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="5" vertex="1">
+          <mxGeometry x="2115" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="16" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="16" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="17" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="20" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="Approved" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="19" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="Reject" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="19" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="8_BankRecon" id="8_BankRecon">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2185" pageHeight="470" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="8. Bank Reconciliation (กระทบยอดธนาคาร)" style="swimlane;html=1;startSize=30;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#333;swimlaneFillColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="2085" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Cashier / Treasury" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#e1d5e7;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="0" width="2085" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="GL Accountant" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="110" width="2085" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Accounting Manager" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="220" width="2085" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="รอบกระทบยอด&#10;(รายเดือน)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" parent="4" vertex="1">
+          <mxGeometry x="15" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Download bank&#10;statement" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Download&#10;book balance" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="365" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="จับคู่ deposit&#10;/ withdrawal / cheque" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="540" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="ตรงกัน?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="715" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="ระบุรายการต่าง:&#10;• outstanding cheque&#10;• deposit in transit&#10;• bank charge / interest" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="890" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="ทำ reconciliation&#10;statement" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="1065" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="บันทึกรายการที่ลืม&#10;(bank charge / interest)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="1240" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Manager review&#10;+ sign-off?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1415" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="เก็บเอกสาร&#10;+ attach หลักฐาน" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="1590" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="4" vertex="1">
+          <mxGeometry x="1765" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="6" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="6" target="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="7" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="8" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="OK" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="Revise" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="9_YearEnd" id="9_YearEnd">
+    <mxGraphModel dx="2400" dy="1400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3235" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="9. Year-End Close (ปิดงวดประจำปี + งบการเงิน + DBD)" style="swimlane;html=1;startSize=30;fontSize=14;fontStyle=1;fillColor=#ffffff;strokeColor=#333;swimlaneFillColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="3135" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="AP / AR / GL" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#fff2cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="0" width="3135" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Tax Accountant" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#dae8fc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="110" width="3135" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Manager" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#d5e8d4;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="220" width="3135" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="CFO" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#f8cecc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="330" width="3135" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="External Auditor" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#ffe6cc;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="440" width="3135" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="DBD / RD / ผู้ถือหุ้น" style="swimlane;html=1;startSize=130;horizontal=0;fontSize=11;fontStyle=1;fillColor=#f5f5f5;strokeColor=#888;" parent="2" vertex="1">
+          <mxGeometry x="0" y="550" width="3135" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="31 ธ.ค.:&#10;Cut-off ใหญ่" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" parent="3" vertex="1">
+          <mxGeometry x="15" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="ปิดเดือน ธ.ค.&#10;(Month-End flow)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="190" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Stock count ใหญ่&#10;+ FA verification" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="365" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="ขอ confirmation&#10;ลูกหนี้/เจ้าหนี้/ธนาคาร" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="540" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Accrual ใหญ่:&#10;โบนัส / leave / deferred tax" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="715" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="ปรับ depreciation&#10;+ FX revaluation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="890" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="ปิดงบเบื้องต้น&#10;(ภายใน 1 เดือน)" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="1065" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Field audit เริ่ม&#10;(Q1 ปีถัดไป)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="1240" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="ตอบ audit query&#10;+ ส่ง supporting docs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="1415" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="Draft audit&#10;report + adjustments" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="7" vertex="1">
+          <mxGeometry x="1590" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Manager review&#10;+ บันทึก audit adj." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="5" vertex="1">
+          <mxGeometry x="1765" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="CFO approve&#10;final งบ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" parent="6" vertex="1">
+          <mxGeometry x="1940" y="12" width="130" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="ประชุมผู้ถือหุ้น&#10;อนุมัติงบ (≤ 4 เดือน)" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="8" vertex="1">
+          <mxGeometry x="2115" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="22" value="คำนวณ + ยื่น ภ.ง.ด.50&#10;(≤ 5 เดือน)" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="4" vertex="1">
+          <mxGeometry x="2290" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="23" value="ยื่นงบ + สบช.3&#10;DBD e-Filing (≤ 5 เดือน)" style="shape=document;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="8" vertex="1">
+          <mxGeometry x="2465" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="เก็บเอกสาร&#10;≥ 5 ปี" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="3" vertex="1">
+          <mxGeometry x="2640" y="20" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" parent="3" vertex="1">
+          <mxGeometry x="2815" y="25" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="9" target="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="10" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="11" target="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="12" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="13" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="14" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="15" target="16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="16" target="17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="17" target="18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="18" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="19" target="20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="Approve" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="20" target="21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="Revise" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="20" target="19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="21" target="22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="21" target="23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="22" target="24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="23" target="24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333;strokeWidth=1.5;fontSize=10;endArrow=block;endFill=1;" parent="1" edge="1" source="24" target="25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

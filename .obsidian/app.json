@@ -1,0 +1,15 @@
+{
+  "userIgnoreFilters": [
+    "node_modules/",
+    ".git/",
+    ".wrangler/",
+    "test-results/",
+    "dist/",
+    "build/",
+    ".next/",
+    ".vite/",
+    ".turbo/",
+    "coverage/",
+    ".DS_Store"
+  ]
+}

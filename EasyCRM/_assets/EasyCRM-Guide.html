@@ -1,0 +1,2637 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyCRM — Onboarding Slide Deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-50:#EAF3FF;
+    --blue-100:#D6E7FF;
+    --blue-200:#A9CCFF;
+    --blue-300:#7FB3FF;
+    --blue-400:#3D8BFF;
+    --blue-500:#1A6BFF;
+    --blue-600:#0A5BEB;
+    --blue-700:#0846B8;
+    --blue-800:#062F7C;
+    --ink-900:#0B1B3D;
+    --ink-700:#243762;
+    --ink-500:#5B6B8E;
+    --ink-300:#9AA7C2;
+    --line:#E4ECF7;
+    --bg:#EFF5FF;
+    --white:#FFFFFF;
+    --success:#1FB85C;
+    --warn:#F59E0B;
+    --danger:#EF4444;
+    --tele:#2AABEE;
+    --shadow-sm:0 1px 2px rgba(11,27,61,.06), 0 1px 1px rgba(11,27,61,.04);
+    --shadow-md:0 8px 24px rgba(11,27,61,.10), 0 2px 6px rgba(11,27,61,.04);
+    --shadow-lg:0 24px 60px rgba(11,27,61,.14), 0 6px 16px rgba(11,27,61,.06);
+    --shadow-3d:0 30px 50px -20px rgba(8,70,184,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;overflow:hidden;}
+  body{
+    font-family:'Inter','Noto Sans Thai',system-ui,-apple-system,sans-serif;
+    color:var(--ink-900);
+    background:
+      radial-gradient(1200px 800px at 100% 0%, rgba(127,179,255,.30), transparent 60%),
+      radial-gradient(900px 600px at 0% 100%, rgba(10,91,235,.18), transparent 60%),
+      var(--bg);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+    position:fixed;inset:0;
+  }
+
+  /* ====== Floating orbs ====== */
+  .orb{
+    position:fixed;border-radius:50%;
+    background:radial-gradient(circle, rgba(26,107,255,.4), transparent 60%);
+    filter:blur(60px);pointer-events:none;z-index:0;
+    animation:orb 20s ease-in-out infinite;
+  }
+  .orb:nth-child(1){width:400px;height:400px;top:-100px;left:-100px;}
+  .orb:nth-child(2){width:500px;height:500px;bottom:-150px;right:-150px;animation-delay:-7s;}
+  .orb:nth-child(3){width:300px;height:300px;top:40%;left:60%;animation-delay:-14s;}
+  @keyframes orb{
+    0%,100%{transform:translate(0,0) scale(1);opacity:.7;}
+    50%{transform:translate(60px,-50px) scale(1.15);opacity:1;}
+  }
+
+  /* ====== Top progress bar + header ====== */
+  .top-bar{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 28px;
+    background:linear-gradient(180deg, rgba(239,245,255,.9), rgba(239,245,255,0));
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:38px;height:38px;border-radius:10px;box-shadow:var(--shadow-sm);}
+  .brand-text strong{display:block;color:var(--blue-700);font-weight:800;font-size:16px;letter-spacing:-.01em;line-height:1;}
+  .brand-text span{display:block;color:var(--ink-500);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-top:3px;}
+  .progress-wrap{
+    flex:1;max-width:340px;margin:0 24px;
+    height:6px;background:rgba(10,91,235,.12);border-radius:3px;overflow:hidden;
+  }
+  .progress-bar{
+    height:100%;background:linear-gradient(90deg, var(--blue-400), var(--blue-700));
+    width:0%;transition:width .5s cubic-bezier(.4,0,.2,1);
+    border-radius:3px;
+    box-shadow:0 0 12px rgba(26,107,255,.4);
+  }
+  .slide-counter{
+    font-size:13px;font-weight:700;color:var(--blue-700);
+    background:#fff;padding:6px 14px;border-radius:999px;
+    box-shadow:var(--shadow-sm);border:1px solid var(--line);
+    min-width:64px;text-align:center;
+  }
+  .slide-counter b{font-size:14px;}
+  .slide-counter span{color:var(--ink-300);font-weight:500;}
+
+  /* ====== Deck container (perspective 3D) ====== */
+  .deck{
+    position:fixed;inset:0;
+    overflow-x:scroll;overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    perspective:1800px;
+    perspective-origin:50% 50%;
+    scrollbar-width:none;
+  }
+  .deck::-webkit-scrollbar{display:none;}
+  .track{
+    display:flex;flex-wrap:nowrap;height:100vh;
+    transform-style:preserve-3d;
+  }
+
+  /* ====== Slide base ====== */
+  .slide{
+    flex:0 0 100vw;height:100vh;
+    scroll-snap-align:center;scroll-snap-stop:always;
+    display:flex;align-items:center;justify-content:center;
+    padding:100px 60px 60px;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform .8s cubic-bezier(.16,1,.3,1), opacity .8s cubic-bezier(.16,1,.3,1);
+    overflow-y:auto;
+  }
+  .slide::-webkit-scrollbar{width:6px;}
+  .slide::-webkit-scrollbar-thumb{background:var(--blue-200);border-radius:3px;}
+  .slide-inner{
+    max-width:1180px;width:100%;
+    transform-style:preserve-3d;
+  }
+
+  /* Slide title block */
+  .slide-eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--blue-600);font-size:12px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;
+    padding:6px 14px;background:#fff;border:1px solid var(--blue-100);
+    border-radius:999px;box-shadow:var(--shadow-sm);
+    margin-bottom:18px;
+  }
+  .slide-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--blue-500);box-shadow:0 0 0 4px rgba(26,107,255,.18);}
+  .slide-title{
+    font-size:clamp(28px,4.2vw,52px);font-weight:800;
+    letter-spacing:-.025em;line-height:1.05;color:var(--ink-900);
+    margin-bottom:14px;
+  }
+  .slide-title .accent{color:var(--blue-600);}
+  .slide-subtitle{
+    font-size:clamp(14px,1.3vw,17px);color:var(--ink-500);
+    max-width:760px;margin-bottom:32px;
+  }
+
+  /* ====== Keyboard hint ====== */
+  .kb-hint{
+    position:fixed;bottom:24px;right:24px;z-index:50;
+    background:rgba(255,255,255,.9);backdrop-filter:blur(10px);
+    padding:8px 14px;border-radius:10px;
+    font-size:11px;color:var(--ink-500);
+    box-shadow:var(--shadow-sm);border:1px solid var(--line);
+    display:flex;align-items:center;gap:10px;
+    animation:hintIn 1s ease, hintOut .5s ease 6s forwards;
+  }
+  .kb-hint kbd{
+    background:#fff;border:1px solid var(--line);border-bottom-width:2px;
+    border-radius:5px;padding:2px 6px;font-family:inherit;font-size:10px;color:var(--ink-700);
+  }
+  @keyframes hintIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes hintOut{from{opacity:1;}to{opacity:0;visibility:hidden;}}
+
+  /* ====== Animation system ====== */
+  .slide[data-active="false"] .slide-inner{opacity:0;}
+  .stagger{
+    opacity:0;
+    transform:translateX(60px) translateZ(-100px) rotateY(-12deg);
+    transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1);
+  }
+  .slide[data-active="true"] .stagger{
+    opacity:1;
+    transform:translateX(0) translateZ(0) rotateY(0);
+  }
+  .slide[data-active="true"] .stagger:nth-child(1){transition-delay:.1s;}
+  .slide[data-active="true"] .stagger:nth-child(2){transition-delay:.2s;}
+  .slide[data-active="true"] .stagger:nth-child(3){transition-delay:.3s;}
+  .slide[data-active="true"] .stagger:nth-child(4){transition-delay:.4s;}
+  .slide[data-active="true"] .stagger:nth-child(5){transition-delay:.5s;}
+  .slide[data-active="true"] .stagger:nth-child(6){transition-delay:.6s;}
+  .slide[data-active="true"] .stagger:nth-child(7){transition-delay:.7s;}
+  .slide[data-active="true"] .stagger:nth-child(8){transition-delay:.8s;}
+  .slide[data-active="true"] .stagger:nth-child(9){transition-delay:.9s;}
+  .slide[data-active="true"] .stagger:nth-child(10){transition-delay:1.0s;}
+
+  .slide[data-active="false"] .slide-inner{
+    transform:scale(.9) rotateY(20deg);
+    transition:transform .8s cubic-bezier(.16,1,.3,1), opacity .6s ease;
+  }
+  .slide[data-active="true"] .slide-inner{
+    opacity:1;
+    transform:scale(1) rotateY(0);
+  }
+
+  /* ====== Layouts ====== */
+  .grid-2{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;}
+  .grid-2.reverse{grid-template-columns:1fr 1.1fr;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+
+  /* ====== Common components ====== */
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:24px;box-shadow:var(--shadow-md);
+    transition:transform .3s ease, box-shadow .3s ease;
+    transform-style:preserve-3d;
+  }
+  .card:hover{transform:translateZ(20px) translateY(-4px);box-shadow:var(--shadow-3d);}
+  .card .ic{
+    width:48px;height:48px;border-radius:12px;
+    background:var(--blue-50);color:var(--blue-600);
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--blue-100);
+    margin-bottom:14px;
+  }
+  .card .ic svg{width:24px;height:24px;}
+  .card h3{font-size:18px;font-weight:700;margin-bottom:6px;}
+  .card p{color:var(--ink-500);font-size:14px;}
+
+  .image-wrap{
+    background:linear-gradient(135deg, var(--blue-50), #fff);
+    border:1px solid var(--blue-100);border-radius:24px;
+    padding:18px;box-shadow:var(--shadow-lg);
+    transition:transform .5s ease;
+    position:relative;
+  }
+  .image-wrap::after{
+    content:"";position:absolute;inset:-2px;border-radius:24px;z-index:-1;
+    background:linear-gradient(135deg, rgba(26,107,255,.3), transparent);
+    filter:blur(30px);
+  }
+  .image-wrap img{width:100%;border-radius:14px;display:block;}
+
+  .check-list{list-style:none;display:flex;flex-direction:column;gap:11px;}
+  .check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink-700);line-height:1.5;}
+  .check-list li svg{flex-shrink:0;width:22px;height:22px;color:var(--blue-600);margin-top:2px;}
+  .check-list li strong{color:var(--blue-700);font-weight:700;}
+
+  /* ====== Cover slide ====== */
+  .cover{text-align:center;}
+  .cover .logo-big{
+    width:120px;height:120px;border-radius:28px;
+    background:#fff;display:flex;align-items:center;justify-content:center;
+    margin:0 auto 28px;box-shadow:var(--shadow-lg);
+    border:1px solid var(--blue-100);
+    animation:float 6s ease-in-out infinite;
+  }
+  .cover .logo-big img{width:96px;height:96px;border-radius:20px;}
+  @keyframes float{
+    0%,100%{transform:translateY(0) rotate(-2deg);}
+    50%{transform:translateY(-12px) rotate(2deg);}
+  }
+  .cover h1{font-size:clamp(44px,6.5vw,84px);font-weight:900;letter-spacing:-.03em;line-height:1;margin-bottom:20px;}
+  .cover h1 .accent{color:var(--blue-600);}
+  .cover .tag{display:inline-block;background:#fff;border:1px solid var(--blue-100);padding:8px 18px;border-radius:999px;font-size:13px;color:var(--blue-700);font-weight:600;margin-bottom:30px;box-shadow:var(--shadow-sm);}
+  .cover .meta{display:flex;justify-content:center;gap:36px;margin-top:32px;}
+  .cover .meta div{text-align:center;}
+  .cover .meta strong{display:block;font-size:24px;font-weight:800;color:var(--blue-600);letter-spacing:-.01em;}
+  .cover .meta span{display:block;font-size:11px;color:var(--ink-500);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+
+  /* ====== Greeting bubble (with emojis - customer-facing message) ====== */
+  .greet{
+    background:linear-gradient(180deg, #fff, var(--blue-50));
+    border:1px solid var(--blue-100);
+    border-radius:24px;
+    padding:32px 36px;
+    box-shadow:var(--shadow-md);
+    position:relative;overflow:hidden;
+    max-width:760px;margin:0 auto;
+  }
+  .greet::before{
+    content:"";position:absolute;top:-60px;right:-60px;
+    width:200px;height:200px;border-radius:50%;
+    background:radial-gradient(circle, rgba(127,179,255,.3), transparent 70%);
+  }
+  .greet-head{
+    display:flex;align-items:center;gap:14px;margin-bottom:18px;position:relative;
+  }
+  .greet-head img{width:54px;height:54px;border-radius:14px;box-shadow:var(--shadow-sm);}
+  .greet-head .gn strong{display:block;font-size:18px;font-weight:800;color:var(--blue-700);letter-spacing:-.01em;}
+  .greet-head .gn span{font-size:12px;color:var(--ink-500);}
+  .greet pre{
+    font-family:inherit;font-size:15.5px;color:var(--ink-700);
+    white-space:pre-wrap;line-height:1.85;
+    position:relative;
+  }
+  .greet-copy{
+    position:absolute;top:18px;right:18px;
+    background:var(--blue-600);color:#fff;border:none;
+    padding:7px 14px;border-radius:9px;font-size:12px;font-weight:700;
+    cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+    box-shadow:0 4px 10px rgba(10,91,235,.3);transition:all .15s ease;
+  }
+  .greet-copy:hover{background:var(--blue-700);transform:translateY(-1px);}
+  .greet-copy svg{width:12px;height:12px;}
+
+  /* ====== Pricing plans ====== */
+  .plans{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;align-items:stretch;}
+  .plan{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:24px 20px;display:flex;flex-direction:column;
+    transition:transform .3s ease, box-shadow .3s ease;
+    transform-style:preserve-3d;
+  }
+  .plan:hover{transform:translateY(-6px) translateZ(20px);box-shadow:var(--shadow-md);}
+  .plan.featured{
+    background:linear-gradient(180deg, var(--blue-600), var(--blue-700));color:#fff;
+    border-color:var(--blue-700);transform:translateY(-8px);box-shadow:var(--shadow-3d);
+  }
+  .plan.featured *{color:#fff;}
+  .plan .ribbon{
+    display:inline-block;background:rgba(255,255,255,.2);color:#fff !important;
+    font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:3px 10px;border-radius:999px;margin-bottom:6px;
+  }
+  .plan .tag{font-size:11px;font-weight:700;color:var(--blue-600);letter-spacing:.1em;text-transform:uppercase;}
+  .plan .name{font-size:20px;font-weight:800;margin:4px 0 12px;}
+  .plan .price{font-size:26px;font-weight:800;letter-spacing:-.02em;}
+  .plan .price small{display:block;font-size:11px;font-weight:500;color:var(--ink-500);margin-top:2px;}
+  .plan.featured .price small{color:var(--blue-100);}
+  .plan ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:7px;}
+  .plan ul li{font-size:12px;color:var(--ink-700);display:flex;gap:6px;align-items:center;}
+  .plan ul li svg{flex-shrink:0;width:13px;height:13px;color:var(--blue-500);}
+
+  /* ====== Matrix table ====== */
+  .matrix{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);}
+  .matrix table{width:100%;border-collapse:collapse;font-size:13px;}
+  .matrix th,.matrix td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--line);}
+  .matrix th{background:linear-gradient(180deg, var(--blue-50), #fff);color:var(--blue-700);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
+  .matrix td:first-child,.matrix th:first-child{text-align:left;color:var(--ink-700);font-weight:500;}
+  .matrix tr:last-child td{border-bottom:none;}
+  .matrix tr:hover td{background:var(--blue-50);}
+  .matrix .yes{color:var(--success);font-weight:700;font-size:15px;}
+  .matrix .no{color:var(--ink-300);font-size:15px;}
+  .matrix .grp td{background:linear-gradient(90deg, var(--blue-600), var(--blue-500));color:#fff !important;font-weight:700;text-align:left !important;text-transform:uppercase;letter-spacing:.08em;font-size:11px;}
+
+  /* ====== Steps / SOP flow ====== */
+  .steps{display:flex;flex-direction:column;gap:10px;}
+  .step{
+    display:flex;gap:14px;align-items:flex-start;
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:14px 18px;box-shadow:var(--shadow-sm);
+    transition:all .25s ease;
+  }
+  .step:hover{transform:translateX(-6px) translateZ(10px);box-shadow:var(--shadow-md);border-color:var(--blue-300);}
+  .step-num{
+    width:38px;height:38px;border-radius:11px;flex-shrink:0;
+    background:linear-gradient(135deg, var(--blue-500), var(--blue-700));
+    color:#fff;font-size:15px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 14px rgba(10,91,235,.35);
+  }
+  .step-body strong{display:block;font-size:14.5px;color:var(--ink-900);margin-bottom:3px;}
+  .step-body p{font-size:12.5px;color:var(--ink-500);line-height:1.5;}
+  .step-meta{
+    display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;
+  }
+  .step-meta span{
+    font-size:10.5px;font-weight:600;
+    background:var(--blue-50);color:var(--blue-700);
+    padding:3px 8px;border-radius:6px;
+    display:inline-flex;align-items:center;gap:4px;
+  }
+  .step-meta span svg{width:10px;height:10px;}
+
+  /* ====== Phase card (SOP / Onboarding phases) ====== */
+  .phase{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:18px;display:flex;flex-direction:column;gap:10px;
+    transition:all .25s ease;
+    transform-style:preserve-3d;
+  }
+  .phase:hover{transform:translateZ(10px);box-shadow:var(--shadow-md);}
+  .phase-head{display:flex;align-items:center;gap:10px;}
+  .phase-num{
+    width:32px;height:32px;border-radius:9px;flex-shrink:0;
+    background:linear-gradient(135deg, var(--blue-500), var(--blue-700));
+    color:#fff;font-size:14px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .phase-head h4{font-size:14.5px;font-weight:700;color:var(--ink-900);}
+  .phase-head span{font-size:10.5px;color:var(--blue-600);font-weight:600;letter-spacing:.06em;}
+  .phase ul{list-style:none;display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-700);}
+  .phase ul li{display:flex;gap:7px;align-items:flex-start;}
+  .phase ul li svg{flex-shrink:0;width:14px;height:14px;color:var(--blue-500);margin-top:2px;}
+
+  /* ====== Role card ====== */
+  .role{
+    background:linear-gradient(180deg, #fff, var(--blue-50));
+    border:1px solid var(--blue-100);border-radius:14px;
+    padding:18px;transition:all .25s ease;
+  }
+  .role:hover{transform:translateZ(10px);box-shadow:var(--shadow-md);}
+  .role-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .role-head .rc{
+    width:38px;height:38px;border-radius:11px;
+    background:var(--blue-600);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;box-shadow:0 4px 10px rgba(10,91,235,.3);
+  }
+  .role-head .rc svg{width:18px;height:18px;}
+  .role-head h4{font-size:14.5px;font-weight:700;color:var(--ink-900);line-height:1.2;}
+  .role-head h4 small{display:block;font-size:11px;color:var(--blue-600);font-weight:600;margin-top:2px;}
+  .role p{font-size:12.5px;color:var(--ink-500);line-height:1.5;margin-bottom:8px;}
+  .role .kpi{
+    background:#fff;border-left:3px solid var(--success);
+    padding:6px 10px;border-radius:6px;font-size:11.5px;color:var(--ink-700);
+  }
+  .role .kpi strong{color:var(--success);}
+
+  /* ====== Token / API box ====== */
+  .token-box{
+    background:linear-gradient(135deg, #061534, #0846B8);
+    color:#A9CCFF;border-radius:18px;padding:24px;
+    font-family:'Inter','Noto Sans Thai',monospace;
+    box-shadow:inset 0 0 40px rgba(0,0,0,.3), 0 14px 30px rgba(6,21,52,.4);
+    position:relative;overflow:hidden;
+  }
+  .token-box::before{
+    content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+    background:radial-gradient(circle, rgba(127,179,255,.15), transparent 50%);
+    animation:tokenGlow 6s ease-in-out infinite;
+  }
+  @keyframes tokenGlow{
+    0%,100%{transform:translate(-10%,-10%);}
+    50%{transform:translate(10%,10%);}
+  }
+  .token-box h4{
+    color:#fff;font-size:14px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;
+    position:relative;
+  }
+  .token-box h4 svg{width:18px;height:18px;}
+  .token-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 16px;background:rgba(0,0,0,.25);
+    border:1px solid rgba(127,179,255,.18);
+    border-radius:10px;margin-bottom:8px;position:relative;
+  }
+  .token-row .k{color:#7FB3FF;font-weight:600;font-size:13px;}
+  .token-row .v{color:#fff;font-size:13px;opacity:.7;letter-spacing:.05em;}
+
+  /* ====== Case card ====== */
+  .case-card{
+    background:#fff;border:1px solid var(--blue-100);border-radius:18px;
+    padding:24px;border-left:5px solid var(--blue-500);
+    box-shadow:var(--shadow-sm);
+    transition:all .25s ease;
+  }
+  .case-card:hover{transform:translateZ(15px);box-shadow:var(--shadow-md);}
+  .case-card .label{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:#fff;background:var(--blue-600);padding:5px 12px;border-radius:8px;
+    margin-bottom:12px;
+  }
+  .case-card.alt{border-left-color:var(--blue-700);}
+  .case-card.alt .label{background:var(--blue-700);}
+  .case-card h4{font-size:18px;font-weight:700;color:var(--ink-900);margin-bottom:8px;}
+  .case-card p{font-size:14px;color:var(--ink-700);line-height:1.6;}
+  .case-card p strong{color:var(--blue-700);}
+
+  /* ====== Callout ====== */
+  .callout{
+    border-radius:14px;padding:16px 20px;
+    display:flex;gap:14px;align-items:flex-start;
+    font-size:14px;line-height:1.6;
+  }
+  .callout svg{width:24px;height:24px;flex-shrink:0;margin-top:2px;}
+  .callout.warn{background:linear-gradient(180deg, #FFF8E1, #FFF3C7);border:1px solid #FFE08A;color:#7C5400;}
+  .callout.warn svg{color:#A36800;}
+  .callout.warn strong{color:#7C2D12;}
+  .callout.danger{background:linear-gradient(180deg, #FEF3F2, #FEE4E2);border:1px solid #FDA29B;color:#9B1C1C;}
+  .callout.danger strong{color:#7F1D1D;}
+  .callout.success{background:linear-gradient(180deg, #E8FBF0, #D9F6E5);border:1px solid #9FE5BB;color:#0F6A2E;}
+  .callout.success strong{color:#0A4F22;}
+
+  /* ====== Template box ====== */
+  .tpl{
+    background:#fff;border:1px solid var(--blue-100);
+    border-radius:14px;padding:18px;position:relative;
+    box-shadow:var(--shadow-sm);
+    transition:all .25s ease;
+  }
+  .tpl:hover{transform:translateZ(10px);box-shadow:var(--shadow-md);}
+  .tpl-label{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--blue-700);background:var(--blue-50);
+    padding:4px 10px;border-radius:6px;margin-bottom:10px;
+  }
+  .tpl-label svg{width:12px;height:12px;}
+  .tpl pre{
+    font-family:'Inter','Noto Sans Thai',monospace;font-size:12.5px;
+    white-space:pre-wrap;color:var(--ink-700);background:var(--blue-50);
+    padding:12px;border-radius:10px;line-height:1.6;
+  }
+  .tpl-copy{
+    position:absolute;top:14px;right:14px;
+    background:var(--blue-600);color:#fff;border:none;
+    padding:6px 12px;border-radius:8px;font-size:11px;font-weight:700;
+    cursor:pointer;display:inline-flex;align-items:center;gap:5px;
+    box-shadow:0 4px 10px rgba(10,91,235,.3);transition:all .15s ease;
+  }
+  .tpl-copy svg{width:11px;height:11px;}
+  .tpl-copy:hover{background:var(--blue-700);transform:translateY(-1px);}
+
+  /* ====== Resource links ====== */
+  .res-link{
+    display:flex;align-items:center;gap:14px;
+    background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:14px 16px;
+    text-decoration:none;color:inherit;
+    transition:all .25s ease;
+  }
+  .res-link:hover{
+    border-color:var(--blue-400);transform:translateX(-4px) translateZ(8px);
+    box-shadow:var(--shadow-md);
+  }
+  .res-link .ric{
+    width:42px;height:42px;border-radius:11px;background:var(--blue-50);
+    color:var(--blue-600);display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .res-link .ric svg{width:20px;height:20px;}
+  .res-link .rt{flex:1;min-width:0;}
+  .res-link .rt strong{font-size:14px;font-weight:700;color:var(--ink-900);display:block;}
+  .res-link .rt span{font-size:11px;color:var(--ink-500);word-break:break-all;}
+  .res-link .ra{color:var(--blue-500);flex-shrink:0;}
+
+  /* ====== Telegram group card ====== */
+  .tg-card{
+    background:linear-gradient(135deg, #fff, var(--blue-50));
+    border:1px solid var(--blue-100);border-radius:18px;
+    padding:20px;display:flex;flex-direction:column;gap:12px;
+    box-shadow:var(--shadow-sm);
+    text-decoration:none;color:inherit;
+    transition:all .25s ease;position:relative;overflow:hidden;
+  }
+  .tg-card::before{
+    content:"";position:absolute;top:-50px;right:-50px;
+    width:140px;height:140px;border-radius:50%;
+    background:radial-gradient(circle, rgba(42,171,238,.2), transparent 70%);
+  }
+  .tg-card:hover{transform:translateZ(15px) translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--blue-300);}
+  .tg-icon{
+    width:46px;height:46px;border-radius:13px;
+    background:linear-gradient(135deg, var(--tele), #1E96D0);
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 18px rgba(42,171,238,.4);
+    position:relative;
+  }
+  .tg-icon svg{width:22px;height:22px;}
+  .tg-card h4{font-size:15px;font-weight:700;color:var(--ink-900);position:relative;}
+  .tg-card p{font-size:12.5px;color:var(--ink-500);position:relative;}
+  .tg-link{font-size:11px;color:var(--blue-600);font-weight:600;word-break:break-all;position:relative;}
+  .tg-card .badge{
+    display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--tele);background:#fff;
+    padding:3px 9px;border-radius:6px;border:1px solid var(--blue-100);
+    align-self:flex-start;position:relative;
+  }
+
+  /* ====== Quotation ====== */
+  .qt-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;}
+  .qt-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);}
+  .qt-card img{width:100%;display:block;}
+  .qt-info h3{font-size:24px;font-weight:800;margin-bottom:14px;}
+  .qt-row{display:flex;justify-content:space-between;padding:10px 0;font-size:14px;border-bottom:1px dashed var(--line);}
+  .qt-row .k{color:var(--ink-500);}
+  .qt-row .v{color:var(--ink-900);font-weight:600;}
+  .qt-total{background:var(--blue-50);border-radius:12px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-top:12px;}
+  .qt-total .k{color:var(--blue-700);font-size:13px;font-weight:700;}
+  .qt-total .v{color:var(--blue-700);font-size:22px;font-weight:800;}
+
+  /* ====== CTA ====== */
+  .cta-card{
+    background:linear-gradient(135deg, var(--blue-600), var(--blue-800));
+    color:#fff;border-radius:28px;padding:48px;
+    box-shadow:var(--shadow-3d);
+    position:relative;overflow:hidden;text-align:center;
+  }
+  .cta-card::before{
+    content:"";position:absolute;width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,255,255,.15), transparent 70%);
+    right:-100px;top:-100px;
+  }
+  .cta-card::after{
+    content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle, rgba(127,179,255,.3), transparent 70%);
+    left:-80px;bottom:-80px;
+  }
+  .cta-card h2{font-size:42px;font-weight:800;margin-bottom:16px;letter-spacing:-.02em;position:relative;}
+  .cta-card p{font-size:17px;opacity:.9;margin-bottom:28px;max-width:600px;margin-left:auto;margin-right:auto;position:relative;}
+  .cta-btn-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;}
+  .cta-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;color:var(--blue-700);
+    padding:14px 28px;border-radius:999px;
+    font-weight:700;font-size:15px;text-decoration:none;
+    box-shadow:0 14px 30px rgba(0,0,0,.25);
+    transition:transform .2s ease;
+  }
+  .cta-btn:hover{transform:translateY(-2px) scale(1.04);}
+  .cta-btn.ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);box-shadow:none;}
+  .cta-btn.ghost:hover{background:rgba(255,255,255,.2);}
+  .cta-channels{
+    display:flex;justify-content:center;gap:14px;margin-top:28px;flex-wrap:wrap;position:relative;
+  }
+  .cta-channel{
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+    padding:8px 16px;border-radius:999px;
+    display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;
+  }
+  .cta-channel svg{width:16px;height:16px;}
+
+  /* ====== Login portal card ====== */
+  .login-card{
+    background:linear-gradient(135deg, #fff, var(--blue-50));
+    border:1px solid var(--blue-100);
+    border-radius:20px;padding:28px;
+    box-shadow:var(--shadow-md);
+    display:flex;align-items:center;gap:24px;
+    transition:all .25s ease;
+    position:relative;overflow:hidden;
+  }
+  .login-card::before{
+    content:"";position:absolute;top:-60px;right:-60px;
+    width:180px;height:180px;border-radius:50%;
+    background:radial-gradient(circle, rgba(127,179,255,.3), transparent 70%);
+  }
+  .login-card:hover{transform:translateZ(15px);box-shadow:var(--shadow-lg);}
+  .login-icon{
+    width:64px;height:64px;border-radius:18px;flex-shrink:0;
+    background:linear-gradient(135deg, var(--blue-500), var(--blue-700));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px rgba(10,91,235,.35);
+    position:relative;
+  }
+  .login-icon svg{width:30px;height:30px;}
+  .login-body{flex:1;position:relative;}
+  .login-body h3{font-size:20px;font-weight:800;color:var(--ink-900);margin-bottom:4px;}
+  .login-body p{font-size:13px;color:var(--ink-500);margin-bottom:8px;}
+  .login-url{
+    display:inline-flex;align-items:center;gap:6px;
+    background:#fff;border:1px solid var(--blue-100);
+    padding:6px 12px;border-radius:8px;
+    font-family:monospace;font-size:12.5px;color:var(--blue-700);font-weight:600;
+    text-decoration:none;transition:all .15s ease;
+  }
+  .login-url:hover{background:var(--blue-600);color:#fff;border-color:var(--blue-600);}
+
+  /* ====== Flow diagram (workflow) ====== */
+  .flow-board{
+    background:linear-gradient(180deg, var(--blue-50), transparent);
+    border:1px solid var(--blue-100);
+    border-radius:24px;padding:32px 24px;
+    margin-bottom:24px;
+    transform-style:preserve-3d;
+  }
+  .flow-row{
+    display:flex;align-items:center;justify-content:center;
+    gap:0;flex-wrap:nowrap;
+  }
+  .flow-node{
+    background:#fff;border:2px solid var(--blue-100);
+    border-radius:18px;padding:18px 12px 14px;
+    width:160px;flex-shrink:0;text-align:center;
+    box-shadow:var(--shadow-md);position:relative;
+    transition:all .3s ease;transform-style:preserve-3d;
+  }
+  .flow-node:hover{transform:translateZ(15px) translateY(-5px);box-shadow:var(--shadow-3d);border-color:var(--blue-400);}
+  .flow-node .fn-num{
+    position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+    width:26px;height:26px;border-radius:50%;
+    background:var(--blue-700);color:#fff;
+    font-size:11px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 14px rgba(8,70,184,.35);
+    border:2px solid #fff;
+  }
+  .flow-node .fn-ic{
+    width:48px;height:48px;border-radius:14px;
+    background:var(--blue-50);color:var(--blue-600);
+    display:flex;align-items:center;justify-content:center;
+    margin:6px auto 10px;border:1px solid var(--blue-100);
+  }
+  .flow-node .fn-ic svg{width:24px;height:24px;}
+  .flow-node h4{font-size:13px;font-weight:700;color:var(--ink-900);margin-bottom:4px;line-height:1.25;}
+  .flow-node p{font-size:11px;color:var(--ink-500);line-height:1.35;}
+  /* Telegram-style node (highlight notify steps) */
+  .flow-node.tg{
+    background:linear-gradient(180deg, #fff, #E8F4FF);
+    border-color:var(--tele);
+  }
+  .flow-node.tg .fn-ic{
+    background:linear-gradient(135deg, var(--tele), #1E96D0);
+    color:#fff;border:none;box-shadow:0 6px 14px rgba(42,171,238,.4);
+  }
+  .flow-node.tg .fn-num{background:var(--tele);}
+  .flow-node.success{
+    background:linear-gradient(180deg, #fff, #E5F8EB);
+    border-color:var(--success);
+  }
+  .flow-node.success .fn-ic{background:linear-gradient(135deg, var(--success), #0E8B45);color:#fff;border:none;}
+  .flow-node.success .fn-num{background:var(--success);}
+  /* Arrow connector */
+  .flow-arrow{
+    flex:1;height:36px;min-width:24px;position:relative;
+    display:flex;align-items:center;
+  }
+  .flow-arrow::before{
+    content:"";flex:1;height:2px;
+    background:repeating-linear-gradient(90deg, var(--blue-400), var(--blue-400) 6px, transparent 6px, transparent 11px);
+  }
+  .flow-arrow::after{
+    content:"";width:0;height:0;
+    border-left:9px solid var(--blue-500);
+    border-top:6px solid transparent;
+    border-bottom:6px solid transparent;
+    margin-left:-1px;
+  }
+
+  /* ====== Telegram mock-up ====== */
+  .tg-mocks{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;
+  }
+  .tg-mock{
+    background:#17212B;color:#fff;border-radius:18px;
+    padding:18px 18px 0;font-size:13px;
+    box-shadow:0 24px 50px rgba(0,0,0,.35);
+    position:relative;overflow:hidden;
+    transition:all .3s ease;
+    transform-style:preserve-3d;
+  }
+  .tg-mock:hover{transform:translateZ(12px) translateY(-3px);box-shadow:0 30px 60px rgba(0,0,0,.45);}
+  .tg-mock-head{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:6px;
+  }
+  .tg-mock-head .ch{color:#5EAFF6;font-size:14px;font-weight:700;}
+  .tg-mock-head .admin{
+    background:rgba(94,175,246,.15);color:#5EAFF6;
+    padding:3px 9px;border-radius:6px;font-size:10px;font-weight:600;
+    border:1px solid rgba(94,175,246,.3);
+  }
+  .tg-mock-title{font-size:14.5px;font-weight:700;margin-bottom:8px;letter-spacing:.02em;color:#fff;}
+  .tg-mock-row{
+    display:flex;gap:6px;padding:2px 0;font-size:12.5px;color:#D5DDE6;
+  }
+  .tg-mock-row b{color:#fff;font-weight:600;}
+  .tg-mock-row .lk{color:#5EAFF6;}
+  .tg-mock-divider{
+    border:none;border-top:1px dashed #354655;
+    margin:9px 0;
+  }
+  .tg-mock-time{
+    text-align:right;font-size:10.5px;color:#7A8E9C;margin-top:6px;
+  }
+  .tg-mock-view{
+    margin:14px -18px 0;padding:11px;
+    background:#1E2A38;text-align:center;
+    color:#5EAFF6;font-weight:600;font-size:13px;
+    border-top:1px solid #2A3645;
+    letter-spacing:.04em;
+  }
+
+  /* ====== Admin Tour ====== */
+  .browser-frame{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    overflow:hidden;box-shadow:var(--shadow-lg);
+    transition:transform .3s ease, box-shadow .3s ease;
+    transform-style:preserve-3d;
+  }
+  .browser-frame:hover{transform:translateZ(20px) translateY(-4px);box-shadow:var(--shadow-3d);}
+  .browser-bar{
+    background:linear-gradient(180deg, #F5F7FA, #EAEEF5);
+    padding:9px 14px;display:flex;align-items:center;gap:8px;
+    border-bottom:1px solid var(--line);
+  }
+  .browser-bar .dots{display:flex;gap:5px;}
+  .browser-bar .dot{width:10px;height:10px;border-radius:50%;}
+  .browser-bar .dot.r{background:#FF5F57;}
+  .browser-bar .dot.y{background:#FEBC2E;}
+  .browser-bar .dot.g{background:#28C840;}
+  .browser-bar .url{
+    flex:1;background:#fff;border:1px solid var(--line);
+    padding:4px 10px;border-radius:6px;font-size:11px;color:var(--ink-500);
+    font-family:monospace;
+  }
+  .browser-frame img{width:100%;display:block;}
+  /* Feature highlight pills inside admin slides */
+  .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+  .pill{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--blue-50);color:var(--blue-700);
+    font-size:11.5px;font-weight:600;
+    padding:5px 11px;border-radius:999px;
+    border:1px solid var(--blue-100);
+  }
+  .pill svg{width:12px;height:12px;}
+  .pill.success{background:#E5F8EB;color:#0A4F22;border-color:#9FE5BB;}
+  .pill.warn{background:#FFF6E0;color:#7C5400;border-color:#FFE08A;}
+  .pill.purple{background:#F1E9FF;color:#5B2EB8;border-color:#D5C2FF;}
+
+  /* Section divider slide */
+  .section-divider{
+    text-align:center;
+    background:linear-gradient(135deg, var(--blue-600), var(--blue-800));
+    color:#fff;border-radius:28px;padding:80px 60px;
+    box-shadow:var(--shadow-3d);
+    position:relative;overflow:hidden;
+  }
+  .section-divider::before{
+    content:"";position:absolute;width:400px;height:400px;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,255,255,.15), transparent 70%);
+    left:-100px;top:-100px;
+  }
+  .section-divider::after{
+    content:"";position:absolute;width:300px;height:300px;border-radius:50%;
+    background:radial-gradient(circle, rgba(127,179,255,.3), transparent 70%);
+    right:-80px;bottom:-80px;
+  }
+  .section-divider .num{
+    display:inline-block;font-size:14px;letter-spacing:.3em;font-weight:700;
+    color:var(--blue-200);margin-bottom:10px;position:relative;
+  }
+  .section-divider h2{
+    font-size:clamp(38px,5.5vw,72px);font-weight:900;letter-spacing:-.025em;
+    line-height:1.05;margin-bottom:16px;position:relative;
+  }
+  .section-divider p{font-size:17px;opacity:.9;max-width:680px;margin:0 auto;position:relative;}
+  .section-divider .icons{
+    display:flex;justify-content:center;gap:18px;margin-top:34px;flex-wrap:wrap;position:relative;
+  }
+  .section-divider .module-pill{
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+    padding:10px 18px;border-radius:14px;
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;
+  }
+  .section-divider .module-pill svg{width:16px;height:16px;}
+
+  /* Module title with icon */
+  .module-title{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .module-title .mt-ic{
+    width:46px;height:46px;border-radius:13px;flex-shrink:0;
+    background:linear-gradient(135deg, var(--blue-500), var(--blue-700));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 18px rgba(10,91,235,.35);
+  }
+  .module-title .mt-ic svg{width:24px;height:24px;}
+  .module-title h2{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1.1;}
+  .module-title h2 small{display:block;font-size:13px;color:var(--blue-600);font-weight:600;margin-top:3px;letter-spacing:.04em;}
+
+  /* Mini stat blocks */
+  .mini-stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+  .ms{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:10px 14px;flex:1;min-width:110px;
+    box-shadow:var(--shadow-sm);
+  }
+  .ms strong{display:block;font-size:20px;font-weight:800;color:var(--blue-600);line-height:1;}
+  .ms span{display:block;font-size:11px;color:var(--ink-500);margin-top:4px;}
+
+  /* Quad image grid (for last consolidated slide) */
+  .quad-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .quad-item{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:14px;display:flex;flex-direction:column;gap:8px;
+    box-shadow:var(--shadow-sm);transition:all .25s ease;
+  }
+  .quad-item:hover{transform:translateZ(12px) translateY(-3px);box-shadow:var(--shadow-md);}
+  .quad-item h4{font-size:13.5px;font-weight:700;color:var(--ink-900);display:flex;align-items:center;gap:8px;}
+  .quad-item h4 svg{width:16px;height:16px;color:var(--blue-600);}
+  .quad-item p{font-size:11.5px;color:var(--ink-500);line-height:1.45;}
+  .quad-item .qi-thumb{
+    border-radius:10px;overflow:hidden;border:1px solid var(--line);
+  }
+  .quad-item .qi-thumb img{width:100%;display:block;}
+
+  /* ====== HERO COVER (full-screen, premium) ====== */
+  .cover-slide{padding:0 !important;overflow:hidden;}
+  .cover-bg{
+    position:absolute;inset:0;pointer-events:none;z-index:1;
+  }
+  .cover-shape{
+    position:absolute;border-radius:50%;
+    filter:blur(50px);will-change:transform;
+  }
+  .cover-shape.s1{
+    width:600px;height:600px;top:-220px;right:-180px;
+    background:radial-gradient(circle, rgba(127,179,255,.55), transparent 70%);
+    animation:cShape 14s ease-in-out infinite;
+  }
+  .cover-shape.s2{
+    width:500px;height:500px;bottom:-180px;left:-140px;
+    background:radial-gradient(circle, rgba(10,91,235,.4), transparent 70%);
+    animation:cShape 18s ease-in-out infinite reverse;
+  }
+  .cover-shape.s3{
+    width:340px;height:340px;top:40%;left:60%;
+    background:radial-gradient(circle, rgba(61,139,255,.35), transparent 70%);
+    animation:cShape 12s ease-in-out infinite -6s;
+  }
+  @keyframes cShape{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(60px,-40px) scale(1.15);}
+  }
+  /* Grid pattern */
+  .cover-grid{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(10,91,235,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(10,91,235,.05) 1px, transparent 1px);
+    background-size:50px 50px;
+    mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    z-index:1;pointer-events:none;
+  }
+  /* Floating product cards */
+  .cover-products{
+    position:absolute;inset:0;pointer-events:none;
+    transform-style:preserve-3d;z-index:2;
+  }
+  .cp{
+    position:absolute;border-radius:18px;overflow:hidden;
+    box-shadow:0 30px 60px rgba(8,70,184,.35), 0 0 0 1px rgba(255,255,255,.5);
+    background:#fff;padding:6px;
+    transition:transform 1.2s cubic-bezier(.2,.7,.2,1), opacity 1.2s ease;
+    opacity:0;
+  }
+  .cp img{width:100%;border-radius:12px;display:block;}
+  .slide[data-active="true"] .cp{opacity:1;}
+  .cp1{
+    width:300px;top:8%;right:-30px;
+    transform:rotate(8deg) translateZ(-50px) translateX(80px);
+  }
+  .slide[data-active="true"] .cp1{transform:rotate(8deg) translateZ(0) translateX(0);transition-delay:.3s;}
+  .cp2{
+    width:240px;bottom:8%;left:-30px;
+    transform:rotate(-7deg) translateZ(-30px) translateX(-80px);
+  }
+  .slide[data-active="true"] .cp2{transform:rotate(-7deg) translateZ(0) translateX(0);transition-delay:.5s;}
+  .cp3{
+    width:180px;top:14%;left:3%;
+    transform:rotate(-12deg) translateZ(-160px) scale(.85);opacity:0;
+  }
+  .slide[data-active="true"] .cp3{transform:rotate(-12deg) translateZ(-120px) scale(.85);opacity:.55;transition-delay:.7s;}
+  .cp4{
+    width:180px;bottom:14%;right:5%;
+    transform:rotate(14deg) translateZ(-160px) scale(.85);opacity:0;
+  }
+  .slide[data-active="true"] .cp4{transform:rotate(14deg) translateZ(-120px) scale(.85);opacity:.55;transition-delay:.9s;}
+  /* Cover content */
+  .cover-content{
+    position:relative;z-index:5;
+    text-align:center;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:140px 40px 60px;height:100vh;
+    max-width:1280px;width:100%;margin:0 auto;
+  }
+  /* Watermark logos in background (no box, no animation) */
+  .cover-brand-strip{
+    position:absolute;inset:0;
+    pointer-events:none;z-index:2;
+  }
+  .bg-logo{
+    position:absolute;
+    width:clamp(220px,22vw,360px);
+    height:auto;
+    opacity:.10;
+    object-fit:contain;
+  }
+  .bg-logo:nth-child(1){
+    top:8vh;left:8vw;
+  }
+  .bg-logo:nth-child(2){
+    bottom:8vh;right:8vw;
+  }
+  /* Centered hero card */
+  .hero-card{
+    background:linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 50%, var(--blue-800) 100%);
+    color:#fff;
+    border-radius:36px;
+    padding:72px 80px;
+    box-shadow:
+      0 50px 90px -25px rgba(8,70,184,.55),
+      0 30px 60px -20px rgba(6,47,124,.45),
+      inset 0 0 0 1px rgba(255,255,255,.08);
+    position:relative;overflow:hidden;
+    text-align:center;
+    transform:translateZ(0);
+    transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .hero-card::before{
+    content:"";position:absolute;width:600px;height:600px;border-radius:50%;
+    background:radial-gradient(circle, rgba(127,179,255,.25), transparent 70%);
+    left:-200px;top:-300px;pointer-events:none;
+  }
+  .hero-card::after{
+    content:"";position:absolute;width:500px;height:500px;border-radius:50%;
+    background:radial-gradient(circle, rgba(61,139,255,.22), transparent 70%);
+    right:-200px;bottom:-250px;pointer-events:none;
+  }
+  .hero-card:hover{transform:translateZ(12px);}
+  .hc-num{
+    display:inline-block;
+    font-size:13px;font-weight:700;
+    color:rgba(169,204,255,.95);letter-spacing:.42em;
+    margin-bottom:28px;position:relative;
+  }
+  .hc-title{
+    font-size:clamp(40px,5.8vw,76px);font-weight:900;
+    letter-spacing:-.025em;line-height:1.02;
+    margin-bottom:24px;color:#fff;position:relative;
+  }
+  .hc-accent{
+    color:#7FB3FF;
+    background:linear-gradient(180deg, #B8D6FF 0%, #7FB3FF 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  .hc-sub{
+    font-size:clamp(14.5px,1.3vw,17px);
+    color:rgba(214,231,255,.9);line-height:1.75;
+    max-width:760px;margin:0 auto 40px;
+    position:relative;
+  }
+  .hc-sub strong{color:#fff;font-weight:700;}
+  .hc-pills{
+    display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
+    position:relative;
+  }
+  .hc-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    color:rgba(255,255,255,.92);
+    padding:11px 20px;border-radius:999px;
+    font-size:13.5px;font-weight:600;letter-spacing:.01em;
+    backdrop-filter:blur(6px);
+    transition:all .25s ease;
+    cursor:default;
+  }
+  .hc-pill svg{width:15px;height:15px;opacity:.85;}
+  .hc-pill:hover{
+    background:rgba(255,255,255,.16);
+    border-color:rgba(255,255,255,.35);
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+  }
+  .hc-pill.featured{
+    background:rgba(255,255,255,.18);
+    border-color:rgba(255,255,255,.42);
+    box-shadow:0 6px 16px rgba(0,0,0,.18);
+  }
+  .cover-logos{
+    display:flex;align-items:center;gap:clamp(40px,7vw,90px);margin:0;
+  }
+  .cl-item{
+    width:clamp(180px,18vw,260px);
+    height:clamp(180px,18vw,260px);
+    border-radius:40px;
+    background:#fff;padding:clamp(24px,2.5vw,36px);
+    box-shadow:0 40px 80px rgba(10,91,235,.22), inset 0 0 0 1px rgba(255,255,255,.9);
+    border:1px solid var(--blue-100);
+    animation:brandFloat 7s ease-in-out infinite;
+  }
+  .cl-item:nth-child(3){animation-delay:-3.5s;}
+  .cl-item img{width:100%;height:100%;border-radius:24px;object-fit:contain;}
+  .cl-divider{
+    color:var(--blue-400);font-weight:300;
+    font-size:clamp(48px,5vw,72px);line-height:1;
+    opacity:.7;
+  }
+  @keyframes cLogo{
+    0%,100%{transform:translateY(0) rotate(-1deg);}
+    50%{transform:translateY(-10px) rotate(1deg);}
+  }
+  .cover-tag{
+    display:inline-block;background:#fff;border:1px solid var(--blue-100);
+    padding:9px 22px;border-radius:999px;font-size:13px;color:var(--blue-700);
+    font-weight:600;margin-bottom:26px;box-shadow:var(--shadow-md);
+    letter-spacing:.05em;
+  }
+  .cover-title{
+    font-size:clamp(46px,7.5vw,96px);font-weight:900;
+    letter-spacing:-.03em;line-height:.96;
+    margin-bottom:22px;color:var(--ink-900);
+  }
+  .cover-title .accent{
+    background:linear-gradient(135deg, var(--blue-500) 0%, var(--blue-700) 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+    position:relative;
+  }
+  .cover-subtitle{
+    font-size:clamp(15px,1.4vw,17.5px);color:var(--ink-500);
+    max-width:640px;line-height:1.7;margin-bottom:36px;
+  }
+  .cover-meta{
+    display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;
+  }
+  .cover-meta .cm{
+    background:rgba(255,255,255,.85);backdrop-filter:blur(10px);
+    border:1px solid var(--blue-100);
+    border-radius:18px;padding:18px 26px;text-align:center;
+    box-shadow:var(--shadow-md);min-width:140px;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .cover-meta .cm:hover{transform:translateY(-6px) translateZ(10px);box-shadow:var(--shadow-lg);}
+  .cover-meta .cm strong{display:block;font-size:30px;font-weight:800;color:var(--blue-600);letter-spacing:-.02em;line-height:1;}
+  .cover-meta .cm span{display:block;font-size:11px;color:var(--ink-500);margin-top:6px;text-transform:uppercase;letter-spacing:.1em;}
+  .cover-scroll{
+    display:inline-flex;align-items:center;gap:10px;
+    color:var(--blue-700);font-size:13px;font-weight:600;
+    background:rgba(255,255,255,.85);backdrop-filter:blur(10px);
+    padding:10px 20px;border-radius:999px;
+    border:1px solid var(--blue-100);box-shadow:var(--shadow-sm);
+  }
+  .cover-scroll svg{
+    width:14px;height:14px;
+    animation:scrollArrow 1.6s ease-in-out infinite;
+  }
+  @keyframes scrollArrow{
+    0%,100%{transform:translateX(0);}
+    50%{transform:translateX(6px);}
+  }
+
+  /* ====== Responsive ====== */
+  @media (max-width:880px){
+    .grid-2,.grid-2.reverse{grid-template-columns:1fr;gap:24px;}
+    .grid-3{grid-template-columns:1fr;}
+    .grid-4{grid-template-columns:1fr 1fr;}
+    .plans{grid-template-columns:repeat(2,1fr);}
+    .qt-grid{grid-template-columns:1fr;}
+    .slide{padding:80px 24px 60px;}
+    .kb-hint{display:none;}
+    .top-bar{padding:14px 16px;}
+    .progress-wrap{margin:0 10px;}
+    .login-card{flex-direction:column;text-align:center;}
+    .cp{display:none;}
+    .cover-title{font-size:clamp(40px,9vw,60px);}
+    .hero-card{padding:48px 28px;border-radius:24px;}
+    .hc-title{font-size:clamp(34px,7vw,52px);}
+    .hc-pills{gap:8px;}
+    .hc-pill{padding:9px 16px;font-size:12.5px;}
+    .cover-content{padding:120px 20px 60px;}
+    .cover-brand-strip{padding:24px 0;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Background orbs -->
+<div class="orb"></div>
+<div class="orb"></div>
+<div class="orb"></div>
+
+<!-- ====== TOP BAR ====== -->
+<header class="top-bar">
+  <div class="brand">
+    <img src="assets/logo.png" alt="EasyCRM">
+    <div class="brand-text">
+      <strong>EasyCRM</strong>
+      <span>Onboarding Deck</span>
+    </div>
+  </div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+  <div class="slide-counter"><b id="slideNow">01</b> <span>/</span> <span id="slideTotal">29</span></div>
+</header>
+
+<!-- ====== HINT ====== -->
+<div class="kb-hint">
+  <span>เลื่อนสไลด์</span>
+  <kbd>←</kbd><kbd>→</kbd>
+  <span>หรือใช้ Mouse Wheel · Swipe</span>
+</div>
+
+<!-- ====== DECK ====== -->
+<main class="deck" id="deck">
+<div class="track">
+
+<!-- =================== SLIDE 1: COVER (CENTERED HERO CARD) =================== -->
+<section class="slide cover-slide" data-active="true">
+  <!-- Subtle background layers -->
+  <div class="cover-bg">
+    <div class="cover-shape s1"></div>
+    <div class="cover-shape s2"></div>
+  </div>
+
+  <!-- Watermark logos in background -->
+  <div class="cover-brand-strip">
+    <img src="assets/logo.png" alt="" class="bg-logo">
+    <img src="assets/team-logo.png" alt="" class="bg-logo">
+  </div>
+
+  <!-- Centered hero card -->
+  <div class="cover-content">
+    <div class="stagger" style="width:100%;max-width:1100px;">
+      <div class="hero-card">
+        <span class="hc-num">PART · 01</span>
+        <h1 class="hc-title">เปลี่ยน<span class="hc-accent">ทุกสลิป</span><br>เป็นแต้ม<span class="hc-accent">อัตโนมัติ</span></h1>
+        <p class="hc-sub">
+          คู่มือสอนแอดมินให้เข้าใจผลิตภัณฑ์ <strong>EasyCRM</strong> แบบครบวงจร —<br>
+          ตั้งแต่ภาพรวมระบบ ฟีเจอร์ ราคา ขั้นตอนการขาย จนถึงการเชื่อมต่อ LINE Official Account
+        </p>
+        <div class="hc-pills">
+          <div class="hc-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            ภาพรวมระบบ
+          </div>
+          <div class="hc-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            ฟีเจอร์
+          </div>
+          <div class="hc-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            ราคา
+          </div>
+          <div class="hc-pill featured">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Onboarding
+          </div>
+          <div class="hc-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            LINE OA
+          </div>
+          <div class="hc-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            SOP
+          </div>
+          <div class="hc-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            ทีมงาน
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stagger" style="margin-top:32px;">
+      <div class="cover-scroll">
+        เลื่อนเพื่อเริ่มเรียนรู้
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 2: GREETING MESSAGE =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:30px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> Customer Greeting Template</span></div>
+      <div class="stagger"><h2 class="slide-title">ข้อความ<span class="accent">ทักทาย</span>ลูกค้า</h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">ข้อความเริ่มต้นสำหรับแนะนำ EasyCRM ให้กับลูกค้าใหม่</p></div>
+    </div>
+    <div class="stagger">
+      <div class="greet">
+        <button class="greet-copy" onclick="copyMsg(this,'greet1')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          คัดลอก
+        </button>
+        <div class="greet-head">
+          <img src="assets/logo.png" alt="EasyCRM">
+          <div class="gn">
+            <strong>EasyCRM</strong>
+            <span>ข้อความทักทายลูกค้าใหม่</span>
+          </div>
+        </div>
+        <pre id="greet1">🌟 Easy CRM สวัสดีค่ะ
+
+เราคือระบบบริหารความสัมพันธ์ลูกค้า (CRM) พร้อมระบบสะสมคะแนนและจัดการสมาชิกแบบครบวงจร 🎁 ซึ้งทำงานร่วมกับ LINE Official Account 💚
+
+ช่วยให้ร้านค้าสามารถ
+✨ จัดเก็บและดูแลข้อมูลลูกค้า
+✨ สะสมคะแนน / แลกของรางวัล
+✨ แบ่งระดับสมาชิก
+✨ มอบสิทธิพิเศษให้ลูกค้า
+✨ และทำการตลาดได้ง่าย ๆ ในระบบเดียว
+
+เหมาะสำหรับธุรกิจขนาดเล็ก–กลาง 🏪
+ที่ต้องการระบบใช้งานง่าย ไม่ซับซ้อน แต่ฟีเจอร์ครบ ตอบโจทย์การดูแลลูกค้าในระยะยาวค่ะ 💖</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 3: WHAT IS EASYCRM =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div class="grid-2">
+      <div>
+        <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> Product Overview</span></div>
+        <div class="stagger"><h2 class="slide-title">EasyCRM <span class="accent">คืออะไร?</span></h2></div>
+        <div class="stagger">
+          <p class="slide-subtitle">
+            ระบบบริหารความสัมพันธ์ลูกค้าที่ออกแบบมาเพื่อ <strong style="color:var(--blue-700);">ความคล่องตัว</strong> และ <strong style="color:var(--blue-700);">ใช้งานได้ง่าย</strong> — ตอบโจทย์ธุรกิจขนาดเล็กถึงกลาง ที่ต้องการระบบที่ไม่ซับซ้อน แต่ครบทุกฟีเจอร์ที่จำเป็น
+          </p>
+        </div>
+        <div class="stagger">
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>เก็บข้อมูลลูกค้า</strong> วิเคราะห์พฤติกรรม และทำการตลาดเฉพาะบุคคล</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>ระบบเริ่มต้นใช้งานได้ง่าย</strong> เชื่อมต่อกับ LINE Official Account</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>มาพร้อมระบบตรวจสลิปโอนเงิน</strong>อัตโนมัติ</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="image-wrap"><img src="assets/pr-2.jpg" alt="EasyCRM intro"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 4: TWO-SIDED PLATFORM =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:30px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> Dual Platform</span></div>
+      <div class="stagger"><h2 class="slide-title">แพลตฟอร์ม<span class="accent">สองด้าน</span> เชื่อมในระบบเดียว</h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">เชื่อมต่อทุกการทำงานระหว่างร้านค้าและลูกค้า ผ่าน LINE Official Account ของร้านคุณ</p></div>
+    </div>
+    <div class="stagger">
+      <div class="image-wrap" style="max-width:1000px;margin:0 auto;"><img src="assets/pr-3.jpg" alt="Two-sided platform"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 5: CORE FEATURES =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:30px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> Core Capabilities</span></div>
+      <div class="stagger"><h2 class="slide-title">เปลี่ยนลูกค้า<span class="accent">ขาจร</span> เป็น<span class="accent">ขาประจำ</span></h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">สะสมคะแนน · ระดับสมาชิก · ของรางวัล · สิทธิพิเศษ · แคมเปญเฉพาะบุคคล</p></div>
+    </div>
+    <div class="stagger">
+      <div class="grid-3">
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>สะสมคะแนน</h3>
+          <p>สะสมคะแนนจากการซื้อ เช็คยอด แลกของรางวัลและส่วนลด</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l3-4h8l3 4v12"/><path d="M9 14h6"/></svg></div>
+          <h3>ระดับสมาชิก</h3>
+          <p>Green · Silver · Gold · Platinum — ยิ่งใช้ ยิ่งได้สิทธิ์</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/></svg></div>
+          <h3>ของรางวัล</h3>
+          <p>คูปองส่วนลด ของแถมพิเศษ แลกแต้มสุดคุ้ม</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <h3>สิทธิพิเศษสมาชิก</h3>
+          <p>สิทธิพิเศษเฉพาะสมาชิก กิจกรรมพิเศษ บริการระดับพรีเมียม</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>แคมเปญเฉพาะบุคคล</h3>
+          <p>แบ่งกลุ่มลูกค้าด้วย RFM ส่งโปรโมชั่นตรงใจ</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 12l4-4 4 4 6-6"/></svg></div>
+          <h3>แดชบอร์ดเรียลไทม์</h3>
+          <p>ภาพรวมยอดขาย มูลค่าลูกค้า ความถี่ในการกลับมา ครบในที่เดียว</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 6: SLIP VERIFICATION =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div class="grid-2 reverse">
+      <div class="stagger">
+        <div class="image-wrap"><img src="assets/pr-5.jpg" alt="Slip verification"></div>
+      </div>
+      <div>
+        <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> ฟีเจอร์เด่น</span></div>
+        <div class="stagger"><h2 class="slide-title">ตรวจสลิป<span class="accent">อัตโนมัติ</span></h2></div>
+        <div class="stagger">
+          <p class="slide-subtitle">
+            เหมาะสำหรับธุรกิจที่ <strong style="color:var(--blue-700);">"รับโอนเงินและต้องตรวจสลิปจำนวนมาก"</strong> — ผ่านการเชื่อมต่อระบบ EasySlip ที่ตรวจสอบสลิปได้อัตโนมัติ
+          </p>
+        </div>
+        <div class="stagger">
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>ยอดเงินตรง · ชื่อบัญชีตรง · เลขบัญชีตรง · เวลาโอนตรง</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>ลดงานซ้ำซ้อน ประหยัดเวลามหาศาล จากเดิมที่ต้องคีย์มือ</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>บันทึกเข้าระบบ EasyCRM ทันที พร้อมจ่ายแต้มอัตโนมัติ</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 7: WORKFLOW =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> วิธีการทำงาน</span></div>
+      <div class="stagger"><h2 class="slide-title">ขั้นตอน<span class="accent">การสะสมคะแนน</span></h2></div>
+    </div>
+    <div class="grid-2">
+      <div class="stagger">
+        <div class="card" style="background:linear-gradient(180deg,#fff,var(--blue-50));">
+          <span class="slide-eyebrow" style="margin-bottom:10px;">รูปแบบที่ 1 · ตรวจสอบโดยแอดมิน</span>
+          <h3 style="margin-bottom:14px;">ลูกค้าถ่ายรูปใบเสร็จ</h3>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-body"><strong>ถ่ายรูปใบเสร็จ</strong><p>ลูกค้าใช้กล้องถ่ายใบเสร็จที่ได้รับจากร้าน</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-body"><strong>อัปโหลดลงระบบ EasyCRM</strong><p>ส่งภาพเข้าระบบผ่าน LINE Official Account ของร้าน</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-body"><strong>รอแอดมินอนุมัติ</strong><p>แอดมินตรวจสอบ กดอนุมัติ ระบบจะจ่ายแต้มทันที</p></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="card" style="background:linear-gradient(180deg,#fff,var(--blue-50));">
+          <span class="slide-eyebrow" style="margin-bottom:10px;">รูปแบบที่ 2 · ตรวจสอบอัตโนมัติ</span>
+          <h3 style="margin-bottom:14px;">สลิปโอนเงิน (อัตโนมัติเต็มรูปแบบ)</h3>
+          <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-body"><strong>ลูกค้าส่งสลิปโอนเงิน</strong><p>หลังการซื้อสินค้า ลูกค้าโอนเงินและส่งสลิป</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-body"><strong>ส่งเข้า LINE Official Account</strong><p>ส่งสลิปเข้า LINE Official Account ที่ใช้ EasyCRM</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-body"><strong>รับคะแนนทันที</strong><p>ระบบตรวจสอบผ่าน EasySlip แล้วจ่ายแต้มอัตโนมัติ</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 8: PRICING =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:32px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> แพ็กเกจและราคา</span></div>
+      <div class="stagger"><h2 class="slide-title">แพ็กเกจและ<span class="accent">ราคา</span></h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">เลือกแพ็กเกจที่เหมาะกับขนาดธุรกิจของคุณ ตั้งแต่ทดลองใช้ 14 วัน ไปจนถึงระดับองค์กร</p></div>
+    </div>
+    <div class="stagger">
+      <div class="plans">
+        <div class="plan">
+          <span class="tag">ทดลองใช้</span>
+          <div class="name">ทดลองใช้งาน</div>
+          <div class="price">ฟรี<small>14 วัน</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>15 สลิป/เดือน</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>สมาชิกไม่จำกัด</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 แอดมิน · 2 ระดับ</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <span class="tag">เริ่มต้น</span>
+          <div class="name">เริ่มต้น</div>
+          <div class="price">฿15,588<small>/ ปี</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1,500 สลิป/เดือน</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2 แอดมิน · 3 ระดับ</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ส่งข้อความแบบกลุ่ม</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ซื้อโควต้าสลิปเพิ่ม</li>
+          </ul>
+        </div>
+        <div class="plan featured">
+          <span class="ribbon">นิยมที่สุด</span>
+          <span class="tag">พลัส</span>
+          <div class="name">พลัส</div>
+          <div class="price">฿23,988<small>/ ปี</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2,800 สลิป/เดือน</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5 แอดมิน · 4 ระดับ</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>หลายสาขา</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ปรับธีมเองได้</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <span class="tag">พรีเมียม</span>
+          <div class="name">พรีเมียม</div>
+          <div class="price">฿35,988<small>/ ปี</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5,000 สลิป/เดือน</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>10 แอดมิน · 6 ระดับ</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ฟีเจอร์พลัสทั้งหมด</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <span class="tag">องค์กร</span>
+          <div class="name">องค์กร</div>
+          <div class="price">ติดต่อ<small>สัญญา</small></div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>สลิปไม่จำกัด</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>แอดมิน/ระดับ ไม่จำกัด</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>แดชบอร์ดเฉพาะองค์กร</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="stagger" style="text-align:center;margin-top:18px;font-size:12px;color:var(--ink-500);">
+      * ราคายังไม่รวมภาษีมูลค่าเพิ่ม 7%
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 9: FEATURE COMPARISON =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> เปรียบเทียบฟีเจอร์</span></div>
+      <div class="stagger"><h2 class="slide-title">เปรียบเทียบ<span class="accent">ฟีเจอร์</span> แต่ละแพ็กเกจ</h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">ฟีเจอร์ทั้งหมดที่ลูกค้าได้รับในแต่ละแพ็กเกจ — ใช้เป็นข้อมูลอ้างอิงเมื่อเสนอขายและตอบคำถามลูกค้า</p></div>
+    </div>
+    <div class="stagger">
+      <div class="matrix" style="max-width:1100px;margin:0 auto;">
+        <table>
+          <thead>
+            <tr><th>รายการ</th><th>ทดลอง</th><th>เริ่มต้น</th><th>พลัส</th><th>พรีเมียม</th><th>องค์กร</th></tr>
+          </thead>
+          <tbody>
+            <tr class="grp"><td colspan="6">ขีดความสามารถ</td></tr>
+            <tr><td>สลิป / เดือน</td><td>15</td><td>1,500</td><td>2,800</td><td>5,000</td><td>ไม่จำกัด</td></tr>
+            <tr><td>สมาชิก</td><td>ไม่จำกัด</td><td>ไม่จำกัด</td><td>ไม่จำกัด</td><td>ไม่จำกัด</td><td>ไม่จำกัด</td></tr>
+            <tr><td>แอดมิน</td><td>1</td><td>2</td><td>5</td><td>10</td><td>ไม่จำกัด</td></tr>
+            <tr><td>ระดับสมาชิก</td><td>2</td><td>3</td><td>4</td><td>6</td><td>ไม่จำกัด</td></tr>
+            <tr><td>ซื้อโควต้าสลิปเพิ่ม</td><td class="no">×</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr class="grp"><td colspan="6">ฟีเจอร์หลัก</td></tr>
+            <tr><td>สะสมคะแนน · สะสมแต้ม · สะสมแสตมป์</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>คะแนนหมดอายุ · โอนแต้มให้เพื่อน</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>ส่งสลิปสะสมแต้ม · ตรวจสลิปอัตโนมัติ</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>สะสมผ่านคิวอาร์ · การ์ดดิจิทัล</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr class="grp"><td colspan="6">สิทธิพิเศษและของรางวัล</td></tr>
+            <tr><td>คูปอง · โปรโมชั่น · แคมเปญพิเศษ · คูปองวันเกิด</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr class="grp"><td colspan="6">การสื่อสารและการตลาด</td></tr>
+            <tr><td>เชื่อมต่อ LINE Official Account · Rich Menu · Auto-Reply</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>ส่งข้อความแบบกลุ่ม (Broadcast)</td><td class="no">×</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr class="grp"><td colspan="6">ระบบหลังบ้าน</td></tr>
+            <tr><td>แดชบอร์ด</td><td>พื้นฐาน</td><td>พื้นฐาน</td><td>พื้นฐาน</td><td>พื้นฐาน</td><td>เฉพาะองค์กร</td></tr>
+            <tr><td>จัดการลูกค้า · สลิป · คะแนน · คูปอง</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>หลายสาขา · สิทธิ์ตามบทบาท · ปรับธีมเองได้</td><td class="no">×</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 10: QUOTATION EXAMPLE =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:32px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> ตัวอย่างการขาย</span></div>
+      <div class="stagger"><h2 class="slide-title">ตัวอย่าง<span class="accent">ใบเสนอราคา</span></h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">รูปแบบใบเสนอราคามาตรฐานที่ออกในนาม "บริษัท อีซี่สลิป จำกัด" สำหรับลูกค้าที่สนใจแพ็กเกจ EasyCRM</p></div>
+    </div>
+    <div class="qt-grid">
+      <div class="stagger">
+        <div class="qt-card"><img src="assets/qt-1.jpg" alt="Quotation"></div>
+      </div>
+      <div class="qt-info">
+        <div class="stagger"><h3>QT202606080001 — แพ็กเกจเริ่มต้น</h3></div>
+        <div class="stagger">
+          <div class="qt-row"><span class="k">วันที่ออก</span><span class="v">08/06/2026</span></div>
+          <div class="qt-row"><span class="k">ระยะเวลาให้บริการ</span><span class="v">12 เดือน</span></div>
+          <div class="qt-row"><span class="k">โควต้าสลิป</span><span class="v">1,500 / เดือน</span></div>
+          <div class="qt-row"><span class="k">จำนวนสมาชิก</span><span class="v">ไม่จำกัด</span></div>
+          <div class="qt-row"><span class="k">แอดมิน · ระดับสมาชิก</span><span class="v">2 user · 3 ระดับ</span></div>
+          <div class="qt-row"><span class="k">เพิ่มโควต้าสลิปได้</span><span class="v">ทำได้</span></div>
+          <div class="qt-row"><span class="k">ภาษีมูลค่าเพิ่ม 7%</span><span class="v">฿1,091.16</span></div>
+          <div class="qt-total"><span class="k">จำนวนเงินรวมทั้งสิ้น</span><span class="v">฿16,679.16</span></div>
+        </div>
+        <div class="stagger" style="margin-top:18px;font-size:12.5px;color:var(--ink-500);">
+          ในนาม <strong style="color:var(--blue-700);">บริษัท อีซี่สลิป จำกัด</strong> — สำนักงานใหญ่ ขอนแก่น<br>
+          เครดิต 15 วัน · บัญชีรับชำระ: กสิกรไทย สาขาเซ็นทรัลขอนแก่น
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 11: ONBOARDING DATA =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:30px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> การเตรียมข้อมูลของลูกค้า</span></div>
+      <div class="stagger"><h2 class="slide-title">สิ่งที่ <span class="accent">ลูกค้า</span> ต้องเตรียม</h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">ก่อนเริ่มใช้งานวันแรก ทีมแอดมินใช้ข้อมูลด้านล่างนี้ในการสร้างร้านค้าและตั้งค่าระบบ</p></div>
+    </div>
+    <div class="grid-2">
+      <div class="stagger">
+        <div class="card" style="height:100%;">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h3>ข้อมูลสร้างบัญชี</h3>
+          <ul class="check-list" style="margin-top:14px;">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ชื่อธุรกิจ หรือชื่อร้านค้า</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>อัตลักษณ์ร้านค้า (สีของแบรนด์)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>บัญชี LINE Official Account</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>รหัสตัวกลางเชื่อมต่อ Messaging API</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ภาพโลโก้</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>อีเมล · เบอร์ติดต่อ · ที่อยู่</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="card" style="height:100%;">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></div>
+          <h3>การเข้าใช้งานระบบ</h3>
+          <ul class="check-list" style="margin-top:14px;">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ภาพ Rich Menu</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>สร้างทางเข้าใช้งานบน Rich Menu ของ LINE Official Account</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>แนะนำใส่ข้อความ "สมาชิก / สะสมคะแนน"</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>เชื่อมต่อ Messaging API + LINE Login</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 10: LINE OA - MESSAGING API =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div class="grid-2">
+      <div>
+        <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> การเชื่อมต่อ LINE OA · 1 จาก 3</span></div>
+        <div class="stagger"><h2 class="slide-title">ข้อมูล <span class="accent">Messaging API</span></h2></div>
+        <div class="stagger">
+          <p class="slide-subtitle">
+            ค่าทั้ง 3 ที่ลูกค้าต้องส่งให้แอดมิน เพื่อเชื่อมต่อ LINE Official Account เข้าสู่ระบบ EasyCRM — ดึงจาก <strong style="color:var(--blue-700);">LINE Developers Console</strong>
+          </p>
+        </div>
+        <div class="stagger">
+          <div class="callout warn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span><strong>ข้อควรระวัง</strong> — การตั้งค่าทุกขั้นตอน <strong>ต้องดำเนินการบนคอมพิวเตอร์หรือโน้ตบุ๊กเท่านั้น</strong> ไม่สามารถทำผ่านมือถือได้ เพราะหน้า LINE Developers Console รองรับเฉพาะหน้าจอเดสก์ท็อป</span>
+          </div>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="token-box">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            ข้อมูล Messaging API
+          </h4>
+          <div class="token-row"><span class="k">Channel ID</span><span class="v">••••••••••••</span></div>
+          <div class="token-row"><span class="k">Channel Secret</span><span class="v">••••••••••••••••••••</span></div>
+          <div class="token-row"><span class="k">Channel Access Token</span><span class="v">•••••••••••••••••••••••••</span></div>
+          <p style="color:#A9CCFF;font-size:12px;margin-top:14px;position:relative;">ส่งครบทั้ง 3 ค่านี้ให้ทีม EasyCRM เพื่อตั้งค่าระบบสมาชิก</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 11: LINE OA - CASE 1 vs CASE 2 =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> การเชื่อมต่อ LINE OA · 2 จาก 3</span></div>
+      <div class="stagger"><h2 class="slide-title">2 กรณี <span class="accent">การเชื่อมต่อ</span> Messaging API</h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">ขึ้นอยู่กับว่า "ใคร" เป็นคนเปิด Messaging API ของ LINE Official Account ไว้ตั้งแต่แรก</p></div>
+    </div>
+    <div class="grid-2">
+      <div class="stagger">
+        <div class="case-card">
+          <span class="label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            กรณีที่ 1
+          </span>
+          <h4>ยังไม่ได้เปิด Messaging API</h4>
+          <p>ทีมแอดมิน EasyCRM สามารถ <strong>เข้าไปตั้งค่าให้ได้ทั้งหมด</strong> แล้วโอนสิทธิ์ผู้ให้บริการกลับให้ลูกค้าเมื่อเสร็จเรียบร้อย — ลูกค้าไม่ต้องทำเอง</p>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="case-card alt">
+          <span class="label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            กรณีที่ 2
+          </span>
+          <h4>ลูกค้าเปิด Messaging API ไว้แล้ว</h4>
+          <p>ลูกค้าต้องเข้า <strong>LINE OA Manager</strong> และ <strong>LINE Developers Console</strong> เพื่อดึงค่า Channel ID, Channel Secret, Access Token ด้วยตัวเอง แล้วส่งให้แอดมิน</p>
+        </div>
+      </div>
+    </div>
+    <div class="stagger" style="margin-top:24px;">
+      <div class="callout danger" style="max-width:920px;margin:0 auto;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span><strong>กรณีพิเศษ</strong> — ถ้าลูกค้า <strong>ไม่ใช่ผู้สร้างบัญชีผู้ให้บริการเดิม</strong> ต้องติดต่อคนที่เปิด Messaging API ตอนแรกเพื่อขอเข้าถึงข้อมูล — ระบบของ LINE ไม่อนุญาตให้คนอื่นเข้าถึงโดยไม่มีสิทธิ์</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 12: LINE OA - LINE LOGIN + PROVIDER =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> การเชื่อมต่อ LINE OA · 3 จาก 3</span></div>
+      <div class="stagger"><h2 class="slide-title">LINE Login & <span class="accent">สิทธิ์ผู้ให้บริการ</span></h2></div>
+    </div>
+    <div class="grid-2">
+      <div class="stagger">
+        <div class="token-box" style="background:linear-gradient(135deg, #0846B8, #1A6BFF);">
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            ข้อมูล LINE Login
+          </h4>
+          <div class="token-row"><span class="k">Channel ID</span><span class="v">••••••••••••</span></div>
+          <div class="token-row"><span class="k">Channel Secret</span><span class="v">••••••••••••••••••••</span></div>
+          <p style="color:#A9CCFF;font-size:12px;margin-top:14px;position:relative;">ค่า 2 ตัวที่ลูกค้าต้องส่งให้แอดมิน เพื่อเปิดใช้งานระบบสมาชิก — หลักการเดียวกับ Messaging API (ขึ้นกับว่าใครเป็นเจ้าของช่องเดิม)</p>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="case-card" style="border-left-color:var(--success);">
+          <span class="label" style="background:var(--success);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="20 6 9 17 4 12"/></svg>
+            ผู้ให้บริการเต็ม
+          </span>
+          <h4>สร้างช่องเพิ่มไม่ได้?</h4>
+          <p>ลูกค้าสามารถ <strong>มอบสิทธิ์ระดับ "แอดมิน"</strong> ในส่วน <strong>Roles</strong> ของ LINE Developers Console ให้ทีม EasyCRM ที่ระดับผู้ให้บริการ — ทีมงานจะสามารถสร้างช่องในนามของลูกค้าได้</p>
+          <a href="https://www.youtube.com/watch?v=wuo4sIydVts" target="_blank" rel="noopener" class="res-link" style="margin-top:14px;">
+            <span class="ric"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></span>
+            <span class="rt"><strong>วิดีโอ — วิธีเพิ่มแอดมิน LINE Official Account</strong><span>youtube.com/watch?v=wuo4sIydVts</span></span>
+            <span class="ra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="9 18 15 12 9 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 13: ONBOARDING FLOW DIAGRAM =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> Workflow Diagram</span></div>
+      <div class="stagger"><h2 class="slide-title">Flow การทำงาน <span class="accent">ครบวงจร</span></h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">ตั้งแต่ลูกค้ากรอกข้อมูลลงทะเบียน — จนถึงร้านค้าพร้อมใช้งาน พร้อมระบบแจ้งเตือนอัตโนมัติเข้ากลุ่ม Telegram <strong style="color:var(--blue-700);">EasyCRM - SignUp Notify</strong></p></div>
+    </div>
+
+    <!-- Flow diagram -->
+    <div class="stagger">
+      <div class="flow-board">
+        <div class="flow-row">
+          <!-- Step 1 -->
+          <div class="flow-node">
+            <div class="fn-num">1</div>
+            <div class="fn-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h4>กรอกข้อมูลลงทะเบียน</h4>
+            <p>ลูกค้ากรอกเองที่หน้าเว็บ หรือทีม Sales กรอกแทน</p>
+          </div>
+          <div class="flow-arrow"></div>
+          <!-- Step 2 -->
+          <div class="flow-node tg">
+            <div class="fn-num">2</div>
+            <div class="fn-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5l-19 8 6 2 2 6 4-4 7 7z"/></svg>
+            </div>
+            <h4>ระบบแจ้งเตือน Telegram</h4>
+            <p>ยิงข้อมูลเข้ากลุ่ม SignUp Notify อัตโนมัติ</p>
+          </div>
+          <div class="flow-arrow"></div>
+          <!-- Step 3 -->
+          <div class="flow-node">
+            <div class="fn-num">3</div>
+            <div class="fn-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h4>ทีม Dev สร้างร้านค้า</h4>
+            <p>สร้าง Subdomain, Portal, ระบบผู้ใช้</p>
+          </div>
+          <div class="flow-arrow"></div>
+          <!-- Step 4 -->
+          <div class="flow-node success">
+            <div class="fn-num">4</div>
+            <div class="fn-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4>ตอบกลับ STORE CONNECTED</h4>
+            <p>Dev ตอบในกลุ่มเดิม พร้อมลิงก์ + รหัส</p>
+          </div>
+          <div class="flow-arrow"></div>
+          <!-- Step 5 -->
+          <div class="flow-node">
+            <div class="fn-num">5</div>
+            <div class="fn-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+            </div>
+            <h4>ส่งมอบให้ Sales</h4>
+            <p>Sales เริ่มขั้นตอน Onboarding กับลูกค้า</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Telegram mockups -->
+    <div class="stagger">
+      <div class="tg-mocks">
+        <!-- SignUp Notify -->
+        <div class="tg-mock">
+          <div class="tg-mock-head">
+            <span class="ch">EasyCRM - SignUp Notify</span>
+            <span class="admin">admin</span>
+          </div>
+          <div class="tg-mock-title">SIGN-UP</div>
+          <div class="tg-mock-row"><b>ชื่อธุรกิจ :</b><span>ร้านรำไพเพ็ญศรี</span></div>
+          <div class="tg-mock-row"><b>ประเภทธุรกิจ :</b><span>ร้านกาแฟ</span></div>
+          <hr class="tg-mock-divider">
+          <div class="tg-mock-row"><b>ชื่อผู้ดูแล :</b><span>เตชิณี นาคเกิด</span></div>
+          <div class="tg-mock-row"><b>เบอร์โทรศัพท์ :</b><span class="lk">0645129184</span></div>
+          <div class="tg-mock-row"><b>Email :</b><span>-</span></div>
+          <hr class="tg-mock-divider">
+          <div class="tg-mock-row"><b>บัญชี LINE OA :</b><span>มีบัญชี LINE OA</span></div>
+          <div class="tg-mock-row"><b>ออกแบบ Rich Menu :</b><span>ต้องการ</span></div>
+          <div class="tg-mock-row"><b>แหล่งที่มา :</b><span>คนรู้จักแนะนำ</span></div>
+          <div class="tg-mock-row"><b>แพ็กเกจ :</b><span>Starter</span></div>
+          <div class="tg-mock-row"><b>รายละเอียด :</b><span>12 เดือน · ฿15,588 · สลิป 1,500/เดือน</span></div>
+          <hr class="tg-mock-divider">
+          <div class="tg-mock-row"><b>วันที่ :</b><span>08/06/2569, 12:03</span></div>
+          <div class="tg-mock-time">12:03</div>
+          <div class="tg-mock-view">View</div>
+        </div>
+
+        <!-- STORE CONNECTED Reply -->
+        <div class="tg-mock">
+          <div class="tg-mock-head">
+            <span class="ch">EasyCRM - SignUp Notify</span>
+            <span class="admin">admin</span>
+          </div>
+          <div class="tg-mock-title" style="color:#3BCB6E;">STORE CONNECTED</div>
+          <div class="tg-mock-row"><b>ชื่อธุรกิจ :</b><span>Day Hotel</span></div>
+          <div class="tg-mock-row"><b>ประเภทธุรกิจ :</b><span>โรงแรม</span></div>
+          <div class="tg-mock-row"><b>แพ็กเกจ :</b><span>Starter</span></div>
+          <div class="tg-mock-row"><b>สถานะ :</b><span>ยังไม่เชื่อมต่อ</span></div>
+          <hr class="tg-mock-divider">
+          <div class="tg-mock-row"><b>Link หน้าบ้าน :</b><span class="lk">day-hotel.easy-crm.co/portal</span></div>
+          <div class="tg-mock-row"><b>Link ผู้ดูแลระบบ :</b><span class="lk">day-hotel.easy-crm.co/admin</span></div>
+          <hr class="tg-mock-divider">
+          <div class="tg-mock-row"><b>Username :</b><span>owner</span></div>
+          <div class="tg-mock-row"><b>Password :</b><span>L3*******Bb</span></div>
+          <hr class="tg-mock-divider">
+          <div class="tg-mock-row"><b>Messaging API :</b><span class="lk">developers.line.biz/console/channel/...</span></div>
+          <div class="tg-mock-row"><b>LINE Login :</b><span class="lk">developers.line.biz/console/channel/...</span></div>
+          <div class="tg-mock-row"><b>Callback URL :</b><span class="lk">day-hotel.easy-crm.co/api/portal/auth/line/callback</span></div>
+          <hr class="tg-mock-divider">
+          <div class="tg-mock-row"><b>หมดอายุ :</b><span>27/05/2570 (365 วัน)</span></div>
+          <div class="tg-mock-row"><b>วันที่ :</b><span>28/05/2569, 21:33</span></div>
+          <div class="tg-mock-time">21:33</div>
+          <div class="tg-mock-view">View</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 14: TEAM ROLES (SOP) =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> ระเบียบการทำงานหลังการขาย · ภาพรวม</span></div>
+      <div class="stagger"><h2 class="slide-title">ทีมงาน<span class="accent">ผู้รับผิดชอบ</span></h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">แต่ละบทบาทในการดูแลลูกค้าหลังการขายของ EasyCRM และตัวชี้วัดผลงาน</p></div>
+    </div>
+    <div class="stagger">
+      <div class="grid-4">
+        <div class="role">
+          <div class="role-head">
+            <div class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h4>ผู้บริหารการขาย<small>Sales Executive</small></h4>
+          </div>
+          <p>ดูแลภาพรวม วางแผน Onboarding ติดตามตัวชี้วัด</p>
+          <div class="kpi"><strong>เครื่องมือ:</strong> Dashboard, Tracker, ฟอร์มความพึงพอใจ</div>
+          <div class="kpi" style="margin-top:6px;border-left-color:var(--blue-600);"><strong>ตัวชี้วัด:</strong> ความพึงพอใจ ≥ 4.5/5</div>
+        </div>
+        <div class="role">
+          <div class="role-head">
+            <div class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+            <h4>ทีมแอดมินซัปพอร์ต<small>Admin Support</small></h4>
+          </div>
+          <p>ตั้งค่าระบบ ฝึกอบรม ส่งมอบงาน ดูแล Ticket</p>
+          <div class="kpi"><strong>เครื่องมือ:</strong> EasyCRM Admin Panel, ฟอร์ม</div>
+          <div class="kpi" style="margin-top:6px;border-left-color:var(--blue-600);"><strong>ตัวชี้วัด:</strong> ตั้งค่าเสร็จ ≤ 3 วัน</div>
+        </div>
+        <div class="role">
+          <div class="role-head">
+            <div class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M17.5 10.5L13 14M10 17l-6 6"/><path d="M16.5 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/></svg></div>
+            <h4>นักออกแบบกราฟิก<small>Graphic Designer</small></h4>
+          </div>
+          <p>ออกแบบ Rich Menu, แบนเนอร์, กราฟิกตามแพ็กเกจ</p>
+          <div class="kpi"><strong>เครื่องมือ:</strong> Canva, Adobe, Generative AI</div>
+          <div class="kpi" style="margin-top:6px;border-left-color:var(--blue-600);"><strong>ตัวชี้วัด:</strong> งานเสร็จตามกำหนด</div>
+        </div>
+        <div class="role">
+          <div class="role-head">
+            <div class="rc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h11v-2H9.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h6.62a2 2 0 0 0 1.79-1.11l3.58-6.49A1 1 0 0 0 21 5H6.21l-.94-2H3v2z"/></svg></div>
+            <h4>ฝ่ายลูกค้าสัมพันธ์<small>Customer Service</small></h4>
+          </div>
+          <p>รับ Ticket แก้ปัญหา ปิด Ticket ดูแลรายเดือน</p>
+          <div class="kpi"><strong>เครื่องมือ:</strong> Ticket System, LINE OA</div>
+          <div class="kpi" style="margin-top:6px;border-left-color:var(--blue-600);"><strong>ตัวชี้วัด:</strong> ตอบครั้งแรก &lt; 1 ชม.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 14: POST-SALE SOP =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> ระเบียบการทำงานหลังการขาย</span></div>
+      <div class="stagger"><h2 class="slide-title">ขั้นตอน<span class="accent">หลังการขาย</span> ครบวงจร</h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">9 ขั้นตอนมาตรฐาน ตั้งแต่วันที่ลูกค้าชำระเงินจนถึงการต่ออายุ</p></div>
+    </div>
+    <div class="stagger">
+      <div class="matrix" style="max-width:1100px;margin:0 auto;">
+        <table>
+          <thead>
+            <tr><th style="width:5%;">ขั้น</th><th style="width:25%;">ชื่อขั้นตอน</th><th style="width:36%;">รายละเอียด</th><th style="width:17%;">ผู้รับผิดชอบ</th><th style="width:17%;">ระยะเวลา</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1</strong></td><td>ยืนยันการชำระเงิน</td><td>ตรวจสอบสลิปหรือใบเสร็จจากลูกค้า บันทึกในระบบ</td><td>ฝ่ายการเงิน</td><td>ภายใน 2 ชม.</td></tr>
+            <tr><td><strong>2</strong></td><td>ส่งอีเมลต้อนรับ + ข้อมูลเข้าระบบ</td><td>ส่งอีเมลพร้อมลิงก์เข้าระบบ คู่มือเริ่มต้น</td><td>ผู้บริหารการขาย</td><td>ภายใน 24 ชม.</td></tr>
+            <tr><td><strong>3</strong></td><td>นัดประชุมเริ่มต้นโครงการ</td><td>วิดีโอคอลแจ้งภาพรวมระบบ และแนะนำทีมงาน</td><td>ผู้บริหารการขาย</td><td>ภายใน 3 วันทำการ</td></tr>
+            <tr><td><strong>4</strong></td><td>ตั้งค่าระบบเริ่มต้น</td><td>ตั้งค่าโปรไฟล์ LINE OA, เมนู, ข้อความอัตโนมัติ</td><td>ทีมแอดมินซัปพอร์ต</td><td>ภายใน 3 วันทำการ</td></tr>
+            <tr><td><strong>5</strong></td><td>ออกแบบกราฟิก</td><td>รับโจทย์ ออกแบบ Rich Menu / แบนเนอร์ ตามโควต้า</td><td>นักออกแบบกราฟิก</td><td>3 วันต่อชิ้นงาน</td></tr>
+            <tr><td><strong>6</strong></td><td>ฝึกอบรมการใช้ระบบ</td><td>สอนการใช้งานผ่าน Google Meet หรือสถานที่ลูกค้า</td><td>ผู้บริหารการขาย</td><td>ภายใน 5 วันทำการ</td></tr>
+            <tr><td><strong>7</strong></td><td>ส่งมอบระบบ</td><td>เริ่มใช้งานจริง</td><td>ทีมแอดมินซัปพอร์ต</td><td>1 วันหลังตั้งค่าเสร็จ</td></tr>
+            <tr><td><strong>8</strong></td><td>ติดตามผลรายเดือน</td><td>ติดตามผล รับข้อเสนอแนะ ตรวจโควต้ากราฟิก</td><td>ทีมแอดมินซัปพอร์ต</td><td>ทุกเดือน (วันที่ 1-5)</td></tr>
+            <tr><td><strong>9</strong></td><td>แจ้งเตือนต่ออายุ</td><td>แจ้งเตือนต่ออายุล่วงหน้า 30 วัน</td><td>ผู้บริหารการขาย</td><td>30 วันก่อนหมดอายุ</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 15: ONBOARDING CHECKLIST PHASES =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> รายการตรวจสอบลูกค้าใหม่</span></div>
+      <div class="stagger"><h2 class="slide-title">5 เฟส <span class="accent">การเริ่มต้นใช้งาน</span></h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">รายการตรวจสอบทุกขั้นตอน ตั้งแต่ยืนยันการขายจนถึงส่งมอบ — มาตรฐาน 14 วันทำการ</p></div>
+    </div>
+    <div class="stagger">
+      <div class="grid-3" style="grid-template-columns:repeat(5,1fr);gap:14px;">
+        <div class="phase">
+          <div class="phase-head">
+            <div class="phase-num">1</div>
+            <div><h4>ยืนยันการขาย</h4><span>วันที่ 0-1</span></div>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ยืนยันการชำระเงิน</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>สร้างประวัติลูกค้า</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ส่งอีเมลต้อนรับ</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>แจ้งทีมภายใน</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-head">
+            <div class="phase-num">2</div>
+            <div><h4>วางแผนเริ่มต้น</h4><span>วันที่ 1-3</span></div>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>นัดประชุม</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>คุยเป้าหมาย</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>กรอกฟอร์มเริ่มต้น</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-head">
+            <div class="phase-num">3</div>
+            <div><h4>ตั้งค่าระบบ</h4><span>วันที่ 5-6</span></div>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ตั้งค่าโปรไฟล์ LINE OA</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ข้อความอัตโนมัติ</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>เชื่อมต่อ EasyCRM</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ทดสอบระบบ</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-head">
+            <div class="phase-num">4</div>
+            <div><h4>กราฟิก</h4><span>วันที่ 3-11</span></div>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>รับโจทย์ออกแบบ</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ออกแบบ Rich Menu</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ลูกค้าอนุมัติ</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ติดตั้งใช้งาน</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <div class="phase-head">
+            <div class="phase-num">5</div>
+            <div><h4>ฝึกอบรม + ส่งมอบ</h4><span>วันที่ 10-14</span></div>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>เตรียมเอกสาร</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ฝึกอบรม</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ตอบคำถาม</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ลงนามส่งมอบ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 16: SETUP & GRAPHIC QUOTA =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> โควต้ากราฟิก & การตั้งค่า</span></div>
+      <div class="stagger"><h2 class="slide-title">งานออกแบบและการตั้งค่า<span class="accent">ตามแพ็กเกจ</span></h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">โควต้างานออกแบบกราฟิกและการฝึกอบรมที่ลูกค้าได้รับตามแพ็กเกจ</p></div>
+    </div>
+    <div class="grid-2">
+      <div class="stagger">
+        <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow-md);">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:14px;color:var(--blue-700);display:flex;align-items:center;gap:8px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="13.5" cy="6.5" r="2.5"/><path d="M17.5 10.5L13 14M10 17l-6 6"/></svg>
+            โควต้างานออกแบบ
+          </h3>
+          <div class="matrix" style="box-shadow:none;border:1px solid var(--line);">
+            <table>
+              <thead><tr><th>รายการ</th><th>เริ่มต้น</th><th>พลัส</th><th>พรีเมียม</th><th>องค์กร</th></tr></thead>
+              <tbody>
+                <tr><td>Rich Menu / ตามระยะอายุ</td><td>1</td><td>2</td><td>3</td><td>ไม่จำกัด</td></tr>
+                <tr><td>แบนเนอร์โปรโมชัน / เดือน</td><td>2</td><td>5</td><td>10</td><td>ไม่จำกัด</td></tr>
+                <tr><td>ภาพกราฟิก / เดือน</td><td>3</td><td>10</td><td>15</td><td>ไม่จำกัด</td></tr>
+                <tr><td>แคมเปญพิเศษ / ปี</td><td class="no">—</td><td class="no">—</td><td>1 ครั้ง</td><td>3 ครั้ง</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="stagger">
+        <div style="background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:var(--shadow-md);">
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:14px;color:var(--blue-700);display:flex;align-items:center;gap:8px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            หัวข้อการตั้งค่าระบบ
+          </h3>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ชื่อ + รูปโปรไฟล์ + ภาพปก LINE Official Account</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ข้อความต้อนรับ + Auto-Reply Keywords</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Rich Menu เริ่มต้น + ระบบป้ายกำกับลูกค้า</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>เชื่อมต่อแดชบอร์ด EasyCRM</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>เทมเพลตข้อความส่งกลุ่ม</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ทดสอบทุกฟังก์ชั่นก่อนส่งมอบ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 17: ADMIN MESSAGE TEMPLATES =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> เทมเพลตข้อความ</span></div>
+      <div class="stagger"><h2 class="slide-title">เทมเพลต<span class="accent">ข้อความ</span> สำหรับติดต่อลูกค้า</h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">กดปุ่ม "คัดลอก" ที่มุมขวาบนของแต่ละกล่อง เพื่อคัดลอกข้อความไปใช้ได้ทันที</p></div>
+    </div>
+    <div class="grid-4">
+      <div class="stagger">
+        <div class="tpl">
+          <button class="tpl-copy" onclick="copyMsg(this,'msg1')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            คัดลอก
+          </button>
+          <span class="tpl-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/></svg>
+            แจ้งลงทะเบียน
+          </span>
+          <pre id="msg1">ข้อมูลที่ต้องการในการสร้างร้านค้านะคะ
+
+รบกวนกรอกข้อมูลตามแบบฟอร์มหรือแจ้งข้อมูลด้านล่างนี้ค่ะ
+https://easycrm-two.vercel.app/register</pre>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="tpl">
+          <button class="tpl-copy" onclick="copyMsg(this,'msg2')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            คัดลอก
+          </button>
+          <span class="tpl-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            ขอข้อมูล LINE OA
+          </span>
+          <pre id="msg2">ข้อมูล Line Official Account (Line OA) ที่ใช้สำหรับการเชื่อมต่อระบบ
+รบกวนส่งข้อมูลดังต่อไปนี้ให้แอดมินค่ะ
+
+1. Channel ID :
+2. Channel Secret :
+3. Access Token :
+
+เมื่อแอดมินได้รับข้อมูลครบถ้วนแล้ว จะดำเนินการสร้างระบบสมาชิกให้ทันทีค่ะ</pre>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="tpl">
+          <button class="tpl-copy" onclick="copyMsg(this,'msg3')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            คัดลอก
+          </button>
+          <span class="tpl-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            ขอ LINE Login
+          </span>
+          <pre id="msg3">ข้อมูล LINE Login ที่ใช้สำหรับการเชื่อมต่อระบบ
+รบกวนส่งข้อมูลดังต่อไปนี้ให้แอดมินค่ะ
+
+1. Channel ID :
+2. Channel Secret :
+
+เมื่อแอดมินได้รับข้อมูลครบถ้วนแล้ว จะดำเนินการสร้างระบบสมาชิกให้ทันทีค่ะ</pre>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="tpl">
+          <button class="tpl-copy" onclick="copyMsg(this,'msg4')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            คัดลอก
+          </button>
+          <span class="tpl-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            ขอสิทธิ์แอดมิน
+          </span>
+          <pre id="msg4">วิธีการเพิ่มแอดมิน
+
+- สร้างลิงก์สิทธิ์เป็น "แอดมิน" (เท่านั้น)
+  Line Official / ไลน์ออฟ / ไลน์ OA
+  ของลูกค้า และส่งลิงก์ให้แอดมิน
+
+วิดีโอแนะนำ:
+https://www.youtube.com/watch?v=wuo4sIydVts</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 18: TEAM CHANNELS & LOGIN =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:28px;">
+      <div class="stagger" style="display:flex;justify-content:center;margin-bottom:14px;">
+        <img src="assets/team-logo.png" alt="EasyCRM Team" style="width:72px;height:72px;border-radius:16px;box-shadow:var(--shadow-lg);">
+      </div>
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> ทีม EasyCRM</span></div>
+      <div class="stagger"><h2 class="slide-title">ช่องทาง<span class="accent">ทีมงาน</span> + ระบบหลังบ้าน</h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">กลุ่ม Telegram สำหรับทีมงาน และลิงก์เข้าสู่ระบบจัดการหลังบ้าน</p></div>
+    </div>
+
+    <div class="stagger">
+      <div class="grid-3" style="margin-bottom:22px;">
+        <a class="tg-card" href="https://t.me/+ZC285GLzTBIxMmNl" target="_blank" rel="noopener">
+          <span class="badge">Telegram</span>
+          <div class="tg-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 4.5l-19 8 6 2 2 6 4-4 7 7z"/></svg>
+          </div>
+          <h4>EasyCRM Sales Alerts</h4>
+          <p>กลุ่มแจ้งเตือนการขาย — รับ Lead, การปิดดีล, และสถิติยอดขาย</p>
+          <span class="tg-link">t.me/+ZC285GLzTBIxMmNl</span>
+        </a>
+        <a class="tg-card" href="https://t.me/+HYCerY7S_9EyZmRl" target="_blank" rel="noopener">
+          <span class="badge">Telegram</span>
+          <div class="tg-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h4>EasyCRM Alert Center</h4>
+          <p>ศูนย์แจ้งเตือนระบบ — รับ Alert จากระบบ ปัญหาทางเทคนิค และการแจ้งเตือนสำคัญ</p>
+          <span class="tg-link">t.me/+HYCerY7S_9EyZmRl</span>
+        </a>
+        <div class="tg-card" style="cursor:default;">
+          <span class="badge">Internal Group</span>
+          <div class="tg-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>EasyCRM — All Team</h4>
+          <p>กลุ่มหลักของทีมงานทุกแผนก — การสื่อสารภายในทั้งหมด ประกาศบริษัท และข่าวสารร่วม</p>
+          <span class="tg-link" style="color:var(--ink-500);">ติดต่อหัวหน้าทีมเพื่อขอเข้าร่วม</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stagger">
+      <div class="login-card">
+        <div class="login-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+        </div>
+        <div class="login-body">
+          <h3>เข้าสู่ระบบจัดการหลังบ้าน</h3>
+          <p>หน้าเข้าสู่ระบบสำหรับแอดมินและทีมงานเพื่อจัดการระบบ EasyCRM ทุกฟังก์ชั่น</p>
+          <a class="login-url" href="https://easycrm-two.vercel.app/login" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            easycrm-two.vercel.app/login
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 22: ADMIN PORTAL INTRO =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div class="stagger">
+      <div class="section-divider">
+        <span class="num">PART · 03</span>
+        <h2>ระบบหลังบ้าน<br>EasyCRM <span style="color:var(--blue-200);">Admin Portal</span></h2>
+        <p>ทัวร์ระบบจัดการทั้งหมดที่แอดมินจะใช้งานประจำวัน — ครอบคลุมตั้งแต่ภาพรวม, จัดการลูกค้า, Onboarding, การเงิน ไปจนถึงการตั้งค่าระบบ</p>
+        <div class="icons">
+          <div class="module-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> ภาพรวม</div>
+          <div class="module-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> ปฏิทินนัด</div>
+          <div class="module-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> จัดการลูกค้า</div>
+          <div class="module-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Onboarding</div>
+          <div class="module-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> บริการลูกค้า</div>
+          <div class="module-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> จัดการปัญหา</div>
+          <div class="module-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> ประวัติการเงิน</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 23: ADMIN - DASHBOARD =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div class="grid-2">
+      <div>
+        <div class="stagger">
+          <div class="module-title">
+            <div class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+            <h2>ภาพรวม <small>Dashboard</small></h2>
+          </div>
+        </div>
+        <div class="stagger"><p class="slide-subtitle">ศูนย์รวมข้อมูลทั้งหมดในหน้าเดียว — รายได้, สถานะลูกค้า, Onboarding, นัดหมาย, และปัญหา</p></div>
+        <div class="stagger">
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>รายได้รวม</strong> · รายได้เดือนนี้ · รายได้วันนี้</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>สถิติงบประมาณ</strong> Paid vs Trial</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>ลูกค้าทั้งหมด</strong> · ลูกค้าจ่ายแล้ว · ลูกค้าทดลองใช้</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Onboarding ค้างอยู่</strong> · นัดหมายวันนี้ · ปัญหาที่เปิดอยู่</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>เปรียบเทียบ <strong>vs เดือนก่อน</strong> และ % การเติบโต</span></li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">กรองช่วงเวลา</span>
+            <span class="pill">ประเภทธุรกิจ</span>
+            <span class="pill">แหล่งที่มา</span>
+            <span class="pill success">Export CSV</span>
+          </div>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="url">easycrm-two.vercel.app/dashboard</div>
+          </div>
+          <img src="assets/admin-overview.png" alt="Dashboard">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 24: ADMIN - CALENDAR =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div class="grid-2 reverse">
+      <div class="stagger">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="url">easycrm-two.vercel.app/calendar</div>
+          </div>
+          <img src="assets/admin-calendar.png" alt="Calendar">
+        </div>
+      </div>
+      <div>
+        <div class="stagger">
+          <div class="module-title">
+            <div class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <h2>ปฏิทินนัดลูกค้า <small>Calendar</small></h2>
+          </div>
+        </div>
+        <div class="stagger"><p class="slide-subtitle">จัดการนัดหมายของทุกคนในทีม — แยกตาม Sales เป็นคอลัมน์ พร้อมสถิติยอดนัดและ Conversion Rate</p></div>
+        <div class="stagger">
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>มุมมอง <strong>วัน · สัปดาห์ · เดือน · ปี · List</strong></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>แยกตาราง <strong>MIZTEEN · OLIVE · SUPPORT</strong> เป็นคอลัมน์</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>สถิติ: <strong>นัดทั้งหมด, วันนี้, สัปดาห์นี้, รอติดตาม, สำเร็จ</strong></span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Conversion Rate</strong> — สัดส่วนนัดที่ปิดดีล</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>ค้นหา · ซ่อนตัวกรอง · พิมพ์ · Export</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 25: ADMIN - CUSTOMERS + DETAIL =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:24px;">
+      <div class="stagger">
+        <div class="module-title" style="justify-content:center;">
+          <div class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h2 style="text-align:left;">จัดการลูกค้า <small>Customer Management — แหล่งข้อมูลลูกค้าหลัก</small></h2>
+        </div>
+      </div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">ตารางรวมข้อมูลลูกค้า · เบอร์ · แพ็กเกจ · วันที่ลงทะเบียน · สถานะการเชื่อมต่อ — กดที่ <strong>"รูปตา (ดูรายละเอียด)"</strong> เพื่อเปิดข้อมูลลูกค้าทั้งหมด</p></div>
+    </div>
+    <div class="grid-2">
+      <div class="stagger">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="url">easycrm-two.vercel.app/customers</div>
+          </div>
+          <img src="assets/admin-customers.png" alt="Customers list">
+        </div>
+        <div class="pill-row" style="justify-content:center;">
+          <span class="pill">ค้นหาชื่อ / LINE OA</span>
+          <span class="pill">กรองแพ็กเกจ</span>
+          <span class="pill">กรองสถานะ</span>
+          <span class="pill success">+ เพิ่มลูกค้าใหม่</span>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="url">customers · detail panel</div>
+          </div>
+          <img src="assets/admin-customer-detail.png" alt="Customer detail">
+        </div>
+        <div class="pill-row" style="justify-content:center;">
+          <span class="pill">ข้อมูลธุรกิจ TH/EN</span>
+          <span class="pill">ข้อมูลผู้ดูแล</span>
+          <span class="pill">LINE OA</span>
+          <span class="pill purple">ประวัติการนัด</span>
+          <span class="pill warn">เอกสาร &amp; การเงิน</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 26: ADMIN - ONBOARDING =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div class="grid-2">
+      <div>
+        <div class="stagger">
+          <div class="module-title">
+            <div class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h2>Onboarding <small>ติดตามและตรวจสอบงาน 5 Phases</small></h2>
+          </div>
+        </div>
+        <div class="stagger"><p class="slide-subtitle">รวมทุกงาน Onboarding ของลูกค้าทุกราย — แสดงงานที่ค้าง, เกินกำหนด, และสำเร็จแล้ว แยกตาม Role และ Phase</p></div>
+        <div class="stagger">
+          <div class="mini-stats">
+            <div class="ms"><strong>1</strong><span>ค้างดำเนินการ</span></div>
+            <div class="ms"><strong>2</strong><span>เกินกำหนด</span></div>
+            <div class="ms"><strong>2</strong><span>สำเร็จแล้ว</span></div>
+          </div>
+        </div>
+        <div class="stagger">
+          <ul class="check-list" style="margin-top:14px;">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>5 Phases:</strong> ยืนยันการขาย → Kick-off → Setup → กราฟิก → ฝึกอบรม</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>กรองตาม <strong>Role:</strong> CSM · Specialist · Designer</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>กดปุ่ม <strong>"เสร็จ"</strong> เพื่อปิดงานแต่ละข้อ</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>เห็น Progress ของแต่ละลูกค้า (เช่น <strong>2/5 PHASES</strong>)</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="stagger">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="url">easycrm-two.vercel.app/onboarding</div>
+          </div>
+          <img src="assets/admin-onboarding.png" alt="Onboarding">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 27: ADMIN - SERVICE + ISSUE =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:20px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> ดูแลลูกค้าหลังการขาย</span></div>
+      <div class="stagger"><h2 class="slide-title">บริการลูกค้า · <span class="accent">จัดการปัญหา</span></h2></div>
+    </div>
+    <div class="grid-2">
+      <div class="stagger">
+        <div class="module-title" style="margin-bottom:10px;">
+          <div class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <h2 style="font-size:22px;">บริการลูกค้า <small>Customer Service</small></h2>
+        </div>
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="url">easycrm-two.vercel.app/service</div>
+          </div>
+          <img src="assets/admin-service.png" alt="Service">
+        </div>
+        <ul class="check-list" style="margin-top:14px;font-size:13.5px;">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>ติดตามวันหมดอายุ &amp; ปัญหาแต่ละราย</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>กรอง: <strong>ใช้งานสด · ใกล้หมดอายุ · หมดอายุแล้ว</strong></span></li>
+        </ul>
+      </div>
+      <div class="stagger">
+        <div class="module-title" style="margin-bottom:10px;">
+          <div class="mt-ic" style="background:linear-gradient(135deg, #EF4444, #B91C1C);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+          <h2 style="font-size:22px;">จัดการปัญหา <small>Issue Tracker</small></h2>
+        </div>
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="url">easycrm-two.vercel.app/issues</div>
+          </div>
+          <img src="assets/admin-issue.png" alt="Issue">
+        </div>
+        <ul class="check-list" style="margin-top:14px;font-size:13.5px;">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>บันทึกหัวข้อปัญหา · ความสำคัญ · สถานะ</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Tab <strong>"จัดการ Feedback"</strong> สำหรับฟีดแบ็คลูกค้า</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 28: ADMIN - PACKAGES + FINANCE =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:20px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> รายได้ และแพ็กเกจ</span></div>
+      <div class="stagger"><h2 class="slide-title">จัดการแพ็กเกจ · <span class="accent">ประวัติการเงิน</span></h2></div>
+    </div>
+    <div class="grid-2">
+      <div class="stagger">
+        <div class="module-title" style="margin-bottom:10px;">
+          <div class="mt-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+          <h2 style="font-size:22px;">จัดการแพ็กเกจ <small>Package Manager</small></h2>
+        </div>
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="url">easycrm-two.vercel.app/packages</div>
+          </div>
+          <img src="assets/admin-packages.png" alt="Packages">
+        </div>
+        <ul class="check-list" style="margin-top:14px;font-size:13.5px;">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>การ์ดสรุป <strong>Trial · Starter · Plus · Premium · Enterprise</strong></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>แก้ไขราคา/สลิป/Admin/Tier · เปิด-ปิดใช้งาน</span></li>
+        </ul>
+      </div>
+      <div class="stagger">
+        <div class="module-title" style="margin-bottom:10px;">
+          <div class="mt-ic" style="background:linear-gradient(135deg, #1FB85C, #0F8B45);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h2 style="font-size:22px;">ประวัติการเงิน <small>Finance &amp; Transactions</small></h2>
+        </div>
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+            <div class="url">easycrm-two.vercel.app/finance</div>
+          </div>
+          <img src="assets/admin-finance.png" alt="Finance">
+        </div>
+        <ul class="check-list" style="margin-top:14px;font-size:13.5px;">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>รายได้ยืนยันแล้ว · ใบเสนอราคา · สลิปทั้งหมด</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span>Tab: <strong>สลิปทั้งหมด · ใบเสนอราคา · ใบกำกับ/ภบบ · สรุปยอด</strong></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SLIDE 29: ADMIN - DOCS / MEDIA / MANUAL / SETTINGS =================== -->
+<section class="slide" data-active="false">
+  <div class="slide-inner">
+    <div style="text-align:center;margin-bottom:20px;">
+      <div class="stagger"><span class="slide-eyebrow"><span class="dot"></span> เอกสาร · ตั้งค่า · คู่มือ</span></div>
+      <div class="stagger"><h2 class="slide-title">เครื่องมือ<span class="accent">เสริม</span> สำหรับแอดมิน</h2></div>
+      <div class="stagger"><p class="slide-subtitle" style="margin:0 auto;">เครื่องมือที่ช่วยให้ทำงานง่ายขึ้น — จัดเก็บเอกสาร, ภาพประกอบ, คู่มือการใช้งาน, และการตั้งค่าระบบ</p></div>
+    </div>
+    <div class="stagger">
+      <div class="quad-grid">
+        <div class="quad-item">
+          <div class="qi-thumb"><img src="assets/admin-documents.png" alt=""></div>
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            จัดเก็บเอกสาร <span style="color:var(--ink-500);font-weight:400;">— Document Storage</span>
+          </h4>
+          <p>รวมเอกสาร, Drive Link, Google Docs ที่เกี่ยวข้องกับลูกค้าแต่ละราย — ค้นหา / เพิ่ม / กรองได้</p>
+        </div>
+        <div class="quad-item">
+          <div class="qi-thumb" style="background:#F7FAFF;display:flex;align-items:center;justify-content:center;padding:20px;color:var(--blue-300);font-size:13px;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Media Stock <span style="color:var(--ink-500);font-weight:400;">— คลังภาพ</span>
+          </h4>
+          <p>จัดเก็บรูปภาพและไฟล์มีเดียที่ทีมใช้ — Rich Menu, Banner, Logo, อ้างอิงการออกแบบ</p>
+        </div>
+        <div class="quad-item">
+          <div class="qi-thumb"><img src="assets/admin-manual.png" alt=""></div>
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            คู่มือ CRM <span style="color:var(--ink-500);font-weight:400;">— Manual</span>
+          </h4>
+          <p>คู่มือ 4 ชุด: เมนูการจัดการ, การใช้งาน EasyCRM, การตั้งค่า LINE OA, คู่มือ Thunder Bot</p>
+        </div>
+        <div class="quad-item">
+          <div class="qi-thumb"><img src="assets/admin-settings.png" alt=""></div>
+          <h4>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            ตั้งค่าระบบ <span style="color:var(--ink-500);font-weight:400;">— Settings</span>
+          </h4>
+          <p>โปรไฟล์, จัดการผู้ใช้, ประวัติการใช้งาน — ตั้งค่ารหัสผ่าน + สิทธิ์การเข้าถึงของทีมงาน</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<script>
+  const deck = document.getElementById('deck');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const progressBar = document.getElementById('progressBar');
+  const slideNow = document.getElementById('slideNow');
+  const slideTotal = document.getElementById('slideTotal');
+
+  const TOTAL = slides.length;
+  slideTotal.textContent = String(TOTAL).padStart(2,'0');
+  let currentIndex = 0;
+
+  function goTo(idx){
+    idx = Math.max(0, Math.min(TOTAL-1, idx));
+    deck.scrollTo({left: idx*window.innerWidth, behavior:'smooth'});
+  }
+
+  function updateUI(idx){
+    if(idx === currentIndex) return;
+    currentIndex = idx;
+    slides.forEach((s,i)=>s.setAttribute('data-active', String(i===idx)));
+    slideNow.textContent = String(idx+1).padStart(2,'0');
+    progressBar.style.width = ((idx+1)/TOTAL*100) + '%';
+  }
+
+  // Initial state
+  progressBar.style.width = (1/TOTAL*100) + '%';
+
+  // Scroll detection
+  let scrollTO;
+  deck.addEventListener('scroll',()=>{
+    clearTimeout(scrollTO);
+    scrollTO = setTimeout(()=>{
+      const idx = Math.round(deck.scrollLeft / window.innerWidth);
+      updateUI(idx);
+    }, 80);
+  });
+
+  // Keyboard
+  document.addEventListener('keydown',(e)=>{
+    if(e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' '){e.preventDefault();goTo(currentIndex+1);}
+    else if(e.key === 'ArrowLeft' || e.key === 'PageUp'){e.preventDefault();goTo(currentIndex-1);}
+    else if(e.key === 'Home'){e.preventDefault();goTo(0);}
+    else if(e.key === 'End'){e.preventDefault();goTo(TOTAL-1);}
+  });
+
+  // Mouse wheel
+  let wheelTO;
+  let wheelLock = false;
+  deck.addEventListener('wheel',(e)=>{
+    if(wheelLock) return;
+    const dir = Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+    if(Math.abs(dir) < 20) return;
+    e.preventDefault();
+    wheelLock = true;
+    if(dir > 0) goTo(currentIndex+1);
+    else goTo(currentIndex-1);
+    clearTimeout(wheelTO);
+    wheelTO = setTimeout(()=>{wheelLock=false;}, 700);
+  }, {passive:false});
+
+  // Touch swipe
+  let touchX = 0;
+  deck.addEventListener('touchstart',(e)=>{ touchX = e.touches[0].clientX; });
+  deck.addEventListener('touchend',(e)=>{
+    const dx = e.changedTouches[0].clientX - touchX;
+    if(Math.abs(dx) > 60){
+      if(dx < 0) goTo(currentIndex+1);
+      else goTo(currentIndex-1);
+    }
+  });
+
+  // Window resize
+  window.addEventListener('resize',()=>{
+    deck.scrollLeft = currentIndex * window.innerWidth;
+  });
+
+  // Copy template
+  function copyMsg(btn, id){
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(()=>{
+      const orig = btn.innerHTML;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><polyline points="20 6 9 17 4 12"/></svg> คัดลอกแล้ว';
+      btn.style.background = 'var(--success)';
+      setTimeout(()=>{btn.innerHTML=orig;btn.style.background='';},1600);
+    });
+  }
+  window.copyMsg = copyMsg;
+</script>
+</body>
+</html>

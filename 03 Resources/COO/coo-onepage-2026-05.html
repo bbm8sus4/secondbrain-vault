@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>COO One-Page Briefing · พ.ค. 2569</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --text: #0d1426;
+    --soft: #4a5470;
+    --muted: #7a8499;
+    --line: #d8dde8;
+    --bg: #ffffff;
+    --green: #0f9967;
+    --green-bg: #ecf7f2;
+    --amber: #c47a00;
+    --amber-bg: #fbf5e7;
+    --red: #c92e3c;
+    --red-bg: #fbeaec;
+    --blue: #1e6cd6;
+    --blue-bg: #e7f0fc;
+    --violet: #6d52d9;
+    --violet-bg: #ede8f9;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans Thai','Inter',-apple-system,sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.4;
+  }
+  .num { font-family: 'Inter',sans-serif; font-variant-numeric: tabular-nums; }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 11mm 12mm;
+    margin: 0 auto;
+    background: white;
+  }
+
+  /* Header */
+  header {
+    display: flex; align-items: baseline; gap: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--text);
+    margin-bottom: 12px;
+  }
+  header h1 {
+    font-size: 16pt;
+    letter-spacing: -.2px;
+  }
+  header .sub {
+    font-size: 9pt;
+    color: var(--muted);
+    margin-left: auto;
+  }
+  header .pill {
+    background: var(--green-bg); color: var(--green);
+    padding: 2px 8px; border-radius: 999px;
+    font-size: 8pt; font-weight: 700;
+  }
+
+  /* TL;DR strip */
+  .tldr {
+    background: var(--blue-bg);
+    border-left: 3px solid var(--blue);
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    border-radius: 0 6px 6px 0;
+  }
+  .tldr-title { font-size: 8.5pt; font-weight: 700; color: var(--blue); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .tldr ol { margin-left: 18px; }
+  .tldr li { margin: 2px 0; font-size: 10pt; }
+  .tldr li b { font-weight: 700; }
+
+  /* KPI grid */
+  .kpis {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 6px; margin-bottom: 12px;
+  }
+  .kpi {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 8px 10px;
+  }
+  .kpi .label { font-size: 7.5pt; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+  .kpi .value { font-family: 'Inter'; font-weight: 800; font-size: 16pt; line-height: 1.1; margin-top: 2px; letter-spacing: -.3px; }
+  .kpi .sub { font-size: 7.5pt; color: var(--soft); margin-top: 2px; }
+  .kpi.green .value { color: var(--green); }
+  .kpi.red   .value { color: var(--red); }
+  .kpi.amber .value { color: var(--amber); }
+
+  /* Section */
+  section {
+    margin-bottom: 9px;
+  }
+  section h2 {
+    font-size: 10.5pt;
+    margin-bottom: 5px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--line);
+    letter-spacing: -.1px;
+  }
+
+  /* Two-col */
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+
+  /* Heroes/Concerns lists */
+  ul.tight { list-style: none; }
+  ul.tight li {
+    padding: 4px 0 4px 18px;
+    position: relative;
+    font-size: 9.5pt;
+    border-bottom: 1px dashed var(--line);
+  }
+  ul.tight li:last-child { border-bottom: none; }
+  ul.tight li::before {
+    content: "";
+    position: absolute; left: 4px; top: 9px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--blue);
+  }
+  ul.tight.green li::before { background: var(--green); }
+  ul.tight.red   li::before { background: var(--red); }
+  ul.tight.amber li::before { background: var(--amber); }
+
+  /* Priorities */
+  .priority {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--blue);
+    border-radius: 5px;
+    padding: 8px 10px;
+    background: white;
+  }
+  .priority.green  { border-left-color: var(--green); background: var(--green-bg); }
+  .priority.amber  { border-left-color: var(--amber); background: var(--amber-bg); }
+  .priority.violet { border-left-color: var(--violet); background: var(--violet-bg); }
+  .priority h3 { font-size: 10pt; margin-bottom: 3px; }
+  .priority p { font-size: 9pt; color: var(--soft); margin: 1px 0; }
+  .priority p b { color: var(--text); }
+
+  /* Talking points box */
+  .talking {
+    background: #fafbfd;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+  .talking h3 { font-size: 9pt; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .talking p { font-size: 10pt; line-height: 1.55; margin: 4px 0; }
+  .talking p::before { content: "→ "; color: var(--blue); font-weight: 700; }
+
+  /* Q&A */
+  .qa-mini { display: grid; gap: 4px; }
+  .qa-mini .qa-item { font-size: 9pt; line-height: 1.45; padding: 4px 0; border-bottom: 1px dashed var(--line); }
+  .qa-mini .qa-item:last-child { border-bottom: none; }
+  .qa-mini .qa-item .q { color: var(--text); font-weight: 600; }
+  .qa-mini .qa-item .a { color: var(--soft); margin-top: 2px; }
+
+  /* Footer */
+  footer {
+    margin-top: 14px; padding-top: 8px;
+    border-top: 1px solid var(--line);
+    display: flex; gap: 14px;
+    font-size: 8pt; color: var(--muted);
+  }
+  footer .right { margin-left: auto; }
+
+  /* Pills */
+  .p { display: inline-block; padding: 1px 7px; border-radius: 999px; font-size: 8pt; font-weight: 600; margin-right: 3px; }
+  .p.g { background: var(--green-bg); color: var(--green); }
+  .p.r { background: var(--red-bg); color: var(--red); }
+  .p.a { background: var(--amber-bg); color: var(--amber); }
+  .p.b { background: var(--blue-bg); color: var(--blue); }
+
+  @media print {
+    body, .page { background: white; padding: 0; margin: 0; width: 100%; min-height: auto; }
+    .page { padding: 12mm; }
+    @page { margin: 0; size: A4; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <h1>Thunder Group · COO All-Hands Briefing</h1>
+      <div style="font-size:8.5pt;color:var(--muted);margin-top:2px;">ประชุมประจำเดือน · พฤษภาคม 2569 · 10 นาที · เอกสารหน้าเดียว</div>
+    </div>
+    <span class="pill">YoY +28.5%</span>
+    <div class="sub">8 พ.ค. 2569</div>
+  </header>
+
+  <div class="tldr">
+    <div class="tldr-title">TL;DR · 3 ประโยคจำกลับบ้าน</div>
+    <ol>
+      <li>ปีนี้เรา <b>โต +28% YoY</b> และอยู่ใน track ที่จะปิดปีตามเป้า — เครื่องเราเดินไหลลื่น</li>
+      <li>เดือนนี้ <b>ฮีโร่: Thunder API +180%, EasySlip +28%, Flex +71%</b> · แต่ฐาน active แค่ 16% (โอกาส)</li>
+      <li>30 วันข้างหน้า: <b>ปลุกฐานหลับ · ดัน EasySlip API · เปลี่ยนคนสมัครเป็นคนจ่าย</b></li>
+    </ol>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi green">
+      <div class="label">YoY Group</div>
+      <div class="value">+28.5%</div>
+      <div class="sub">vs ปีก่อน</div>
+    </div>
+    <div class="kpi">
+      <div class="label">เป้าปีทำได้</div>
+      <div class="value">34.1%</div>
+      <div class="sub">/ผ่าน 34.8%</div>
+    </div>
+    <div class="kpi green">
+      <div class="label">เดือนนี้</div>
+      <div class="value">29.1%</div>
+      <div class="sub">เป้า · ผ่าน 25.8%</div>
+    </div>
+    <div class="kpi green">
+      <div class="label">Margin/สลิป</div>
+      <div class="value">82.4%</div>
+      <div class="sub">unit econ.</div>
+    </div>
+    <div class="kpi red">
+      <div class="label">Margin MTD</div>
+      <div class="value">−47.5%</div>
+      <div class="sub">pre-paid cycle</div>
+    </div>
+    <div class="kpi amber">
+      <div class="label">Active rate</div>
+      <div class="value">16.0%</div>
+      <div class="sub">~10.7K/67K</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="row2">
+      <div>
+        <h2>🌟 ของดีเดือนนี้</h2>
+        <ul class="tight green">
+          <li><b>Thunder API +180.7% MoM</b> (run-rate) · พระเอกของเดือน</li>
+          <li><b>Flex +71.6% MoM</b> · สินค้าใหม่ที่กำลังโต</li>
+          <li><b>EasySlip +28.8% MoM, +28.5% YoY</b> · พระเอกของกลุ่ม</li>
+          <li><b>Easy Bot +7.2% MoM</b> · เริ่มฟื้นตัว</li>
+          <li><b>API Deposits +102.3% YoY</b> · ลูกค้าใหม่ปีนี้ ยอดเงิน +60%</li>
+          <li><b>Volume เก่ง</b> · ~15.86M สลิป/8วัน · peak ฿910K/วัน</li>
+        </ul>
+      </div>
+      <div>
+        <h2>⚠️ ที่ต้องเร่งปรับ</h2>
+        <ul class="tight red">
+          <li><b>Margin MTD −47.5%</b> · pre-paid cycle ปกติ · EOM จะกลับบวก</li>
+          <li><b>Active rate 16%</b> · 56,000+ คนหลับ → ปลุกได้</li>
+          <li><b>Bot −11.7% MoM</b> · ARPU 8x ห่าง API · ต้อง upgrade path</li>
+          <li><b>Acquisition −31.9%</b> · ลูกค้าใหม่ลด · ตรวจ channel</li>
+          <li><b>Run-rate 1.0x gap</b> · ปลายปีต่ำกว่าเป้า ฿2.35M</li>
+          <li><b>v2 API adoption</b> · 37 vs v1 7,461 · ต้องเร่ง migrate</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🎯 Focus 30 วันข้างหน้า · 3 Priorities</h2>
+    <div class="row3">
+      <div class="priority green">
+        <h3>① ปลุกฐานลูกค้าหลับ</h3>
+        <p><b>เป้า:</b> Active rate ≥ 20%</p>
+        <p><b>ใคร:</b> CRM/Marketing/Product</p>
+        <p><b>วิธี:</b> Campaign ติดต่อกลับ + offer + feature trigger</p>
+        <p><b>วัด:</b> active rate รายสัปดาห์</p>
+      </div>
+      <div class="priority amber">
+        <h3>② ดัน EasySlip API</h3>
+        <p><b>เป้า:</b> Pace +10% (1.1x → 1.0x)</p>
+        <p><b>ใคร:</b> Sales/Dev/Support</p>
+        <p><b>วิธี:</b> Top 50 upsell + ออก feature + ลด churn</p>
+        <p><b>วัด:</b> รายได้ EasySlip API vs pace ปี</p>
+      </div>
+      <div class="priority violet">
+        <h3>③ เปลี่ยนสมัคร→จ่าย</h3>
+        <p><b>เป้า:</b> First-pay conv. ~6% → 10%</p>
+        <p><b>ใคร:</b> Onboarding/Sales</p>
+        <p><b>วิธี:</b> Welcome flow + demo + follow-up 24h</p>
+        <p><b>วัด:</b> conversion rate</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="row2">
+      <div>
+        <h2>🗣️ Talking Points · เปิด/ปิด</h2>
+        <div class="talking">
+          <h3>OPEN</h3>
+          <p>"เดือนนี้ผ่านไป 8 วัน · ปีนี้ผ่าน 1/3 · ใช้เวลา 10 นาทีให้เห็นภาพเดียวกัน"</p>
+          <h3 style="margin-top:8px;">FRAME</h3>
+          <p>"ของดี · ของจริง · 3 priority"</p>
+          <h3 style="margin-top:8px;">CLOSE</h3>
+          <p>"เครื่องเราเดินได้ — เดือนหน้าเครื่องเราเร่งได้"</p>
+        </div>
+      </div>
+      <div>
+        <h2>❓ Q&amp;A · 3 คำถามใหญ่ที่อาจโดน</h2>
+        <div class="qa-mini">
+          <div class="qa-item">
+            <div class="q">Q: Margin −47% ขาดทุนเหรอ?</div>
+            <div class="a">A: pre-paid cycle ปกติ · margin/สลิป 82% ดีระดับโลก · EOM กลับบวก</div>
+          </div>
+          <div class="qa-item">
+            <div class="q">Q: Bot ลด ลูกค้าหายเหรอ?</div>
+            <div class="a">A: ARPU Bot ฿120 vs API ฿986 · ลูกค้ากำลัง upgrade · เราจะช่วย path</div>
+          </div>
+          <div class="qa-item">
+            <div class="q">Q: Run-rate ต่ำกว่าเป้า ทำไม่ทันเหรอ?</div>
+            <div class="a">A: 1.0x · ขาดแค่ ~3% · 3 priorities สำเร็จครึ่งเดียวก็ปิด gap</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>📊 ตัวเลขสำคัญสำหรับอ้างอิง · ห้ามใส่ใน slide สาธารณะ</h2>
+    <table style="width:100%;font-size:8.5pt;border-collapse:collapse;">
+      <tr style="background:#fafbfd;">
+        <td style="padding:4px 8px;border:1px solid var(--line);"><b>รายได้ MTD</b></td>
+        <td style="padding:4px 8px;border:1px solid var(--line);">~3.03 ลบ. (29.1% เป้าเดือน)</td>
+        <td style="padding:4px 8px;border:1px solid var(--line);"><b>YTD</b></td>
+        <td style="padding:4px 8px;border:1px solid var(--line);">~41.7 ลบ. / 125 ลบ. (34.1%)</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px;border:1px solid var(--line);"><b>Run-rate</b></td>
+        <td style="padding:4px 8px;border:1px solid var(--line);">~119.86 ลบ. vs 122.21 ลบ.</td>
+        <td style="padding:4px 8px;border:1px solid var(--line);"><b>EasySlip YTD</b></td>
+        <td style="padding:4px 8px;border:1px solid var(--line);">22.9/70 ลบ. (1.1x gap)</td>
+      </tr>
+      <tr style="background:#fafbfd;">
+        <td style="padding:4px 8px;border:1px solid var(--line);"><b>MRR</b></td>
+        <td style="padding:4px 8px;border:1px solid var(--line);">~2.73 ลบ. (API 297K + ES 2.50M)</td>
+        <td style="padding:4px 8px;border:1px solid var(--line);"><b>ฐานลูกค้า</b></td>
+        <td style="padding:4px 8px;border:1px solid var(--line);">66,991 (Active 16% · Inactive 56K · Banned 278)</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px;border:1px solid var(--line);"><b>ลูกค้าใหม่ MTD</b></td>
+        <td style="padding:4px 8px;border:1px solid var(--line);">478 (−31.9%) · first-pay 29 (24.0%)</td>
+        <td style="padding:4px 8px;border:1px solid var(--line);"><b>Volume</b></td>
+        <td style="padding:4px 8px;border:1px solid var(--line);">15.86M สลิป · 19.14 สต./สลิป · 82.4% margin</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <div><b>เอกสารใช้ภายใน</b> · ห้ามแชร์ตัวเลขรายได้ในที่ประชุม → ใช้ % เท่านั้น</div>
+    <div class="right">v3 · จัดทำ 8 พ.ค. 2569 จาก Master Dashboard</div>
+  </footer>
+
+</div>
+</body>
+</html>

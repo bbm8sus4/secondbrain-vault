@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ใบเสนอราคา Redesign — Matsu Sushi (Sales Page) | Easyslip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #c8102e;
+    --primary-dark: #8a0a1f;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --muted: #767676;
+    --line: #e5e5e5;
+    --bg: #fafafa;
+    --card: #ffffff;
+    --accent: #f5f0e8;
+    --green: #2d7a3e;
+    --red: #c8102e;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans Thai', 'Inter', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  .page {
+    max-width: 880px;
+    margin: 32px auto;
+    background: var(--card);
+    padding: 56px 64px;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.06);
+    border-radius: 8px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 28px;
+    border-bottom: 3px solid var(--primary);
+    margin-bottom: 32px;
+  }
+  .brand .logo {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .brand .tagline {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .doc-meta {
+    text-align: right;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .doc-meta .doc-no {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  /* Title */
+  h1 {
+    font-size: 28px;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    color: var(--ink);
+    font-weight: 700;
+  }
+  h1 .tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+  h1 .website {
+    display: block;
+    font-size: 15px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 6px;
+  }
+
+  /* Parties block */
+  .parties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    background: var(--accent);
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin-bottom: 36px;
+  }
+  .party .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .party .name {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .party .sub {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+
+  /* Sections */
+  section { margin-bottom: 36px; }
+  h2 {
+    font-size: 18px;
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 15px;
+    margin: 18px 0 10px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Lists */
+  ul.clean {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul.clean li {
+    padding: 6px 0 6px 22px;
+    position: relative;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+  }
+  ul.clean li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+  }
+  ul.check li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    background: transparent;
+    color: var(--green);
+    font-weight: 700;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+  }
+  ul.cross li::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    background: transparent;
+    color: var(--red);
+    font-weight: 700;
+    font-size: 14px;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+  }
+  ol.numbered {
+    margin: 0;
+    padding-left: 22px;
+  }
+  ol.numbered li {
+    padding: 4px 0;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+  }
+
+  /* Summary cards */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .callout {
+    background: #fff8e6;
+    border-left: 4px solid #d4a017;
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .callout strong { color: var(--ink); }
+
+  /* Pricing block */
+  .price-card {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    color: #fff;
+    padding: 28px 32px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+    margin: 12px 0 16px;
+  }
+  .price-card .item .label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .price-card .item .value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .price-card .item.featured .value {
+    color: #ffd95c;
+    font-size: 28px;
+  }
+  .price-card .item .sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 2px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 12px;
+    background: #f5f5f5;
+    font-weight: 600;
+    color: var(--ink);
+    border-bottom: 2px solid var(--line);
+    font-size: 13px;
+  }
+  table td {
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    vertical-align: top;
+  }
+  table .price-col {
+    text-align: right;
+    color: var(--ink);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  table .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--accent);
+    border-radius: 12px;
+    font-size: 11px;
+    color: var(--ink-soft);
+  }
+
+  .payment-row {
+    display: flex;
+    align-items: center;
+    padding: 14px 18px;
+    margin-bottom: 8px;
+    background: #f9f9f9;
+    border-left: 4px solid var(--primary);
+    border-radius: 4px;
+  }
+  .payment-row .pct {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    min-width: 70px;
+  }
+  .payment-row .desc {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+  }
+  .payment-row .desc strong { color: var(--ink); }
+
+  /* Footer */
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 2px solid var(--line);
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  footer .contact {
+    font-size: 14px;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  footer a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  footer a:hover { text-decoration: underline; }
+
+  /* Print button (screen only) */
+  .print-bar {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+  }
+  .print-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-family: inherit;
+  }
+  .print-btn:hover { background: var(--primary-dark); }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; padding: 24px 32px; max-width: 100%; }
+    .print-bar { display: none; }
+    .price-card { background: #1a1a1a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2 .num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    section { break-inside: avoid; }
+  }
+
+  @media (max-width: 720px) {
+    .page { padding: 28px 20px; margin: 16px 8px; }
+    .header { flex-direction: column; gap: 16px; }
+    .doc-meta { text-align: left; }
+    .parties { grid-template-columns: 1fr; }
+    .price-card { grid-template-columns: 1fr; gap: 16px; }
+    .info-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <button class="print-btn" onclick="window.print()">🖨 พิมพ์ / บันทึก PDF</button>
+</div>
+
+<div class="page">
+
+  <header class="header">
+    <div class="brand">
+      <div class="logo">EASYSLIP</div>
+      <div class="tagline">Web Design &amp; Development</div>
+    </div>
+    <div class="doc-meta">
+      <div class="doc-no">QUOTATION #2026-MTSU-001</div>
+      <div>วันที่ออก: 4 พฤษภาคม 2026</div>
+      <div>ใบเสนอราคามีอายุ 30 วัน</div>
+    </div>
+  </header>
+
+  <h1>
+    ใบเสนอราคา Redesign เว็บไซต์<span class="tag">Sales Page</span>
+    <span class="website">matsusushithailand.com</span>
+  </h1>
+
+  <div class="parties">
+    <div class="party">
+      <div class="label">จาก / FROM</div>
+      <div class="name">Easyslip</div>
+      <div class="sub">hello@easyslip.com</div>
+    </div>
+    <div class="party">
+      <div class="label">ถึง / TO</div>
+      <div class="name">Matsu Sushi (มัตสึ ซูชิ)</div>
+      <div class="sub">Japanese Premium Buffet &amp; Omakase</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>สรุปจากการคุย</h2>
+    <div class="callout">
+      <ul class="clean" style="margin:0;">
+        <li>ลูกค้าต้องการ <strong>Sales Page ทั่วไป</strong> — เน้นโชว์ข้อมูล</li>
+        <li>ไม่มีฟีเจอร์เสริม (ไม่เอาระบบจอง / E-commerce / Gallery / สมาชิก)</li>
+        <li>เป็นแบบพื้นฐานก่อน <strong>"ทำเปิดทาง"</strong></li>
+        <li>รอบนี้อาจไม่จบในครั้งเดียว — มีการคุยเพิ่มเติม</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">1</span>ขอบเขตงาน (Scope)</h2>
+    <p style="color:var(--ink-soft); margin-top:0;">Redesign 8 หน้าเดิมให้ทันสมัย โหลดเร็ว มือถือสวย:</p>
+
+    <div class="info-grid">
+      <ul class="clean">
+        <li>Home (หน้าแรก)</li>
+        <li>About Us — แก้หน้า 404 + เขียนเนื้อหาใหม่</li>
+        <li>Buffet (3 tier ราคาเดิม)</li>
+        <li>Omakase</li>
+      </ul>
+      <ul class="clean">
+        <li>Franchise (หน้าแสดงข้อมูล + ฟอร์มติดต่อ)</li>
+        <li>News &amp; Event</li>
+        <li>Join Us (สมัครงาน)</li>
+        <li>Contact / Open House</li>
+      </ul>
+    </div>
+
+    <h3>สิ่งที่รวมในงาน</h3>
+    <div class="info-grid">
+      <ul class="clean check">
+        <li>ดีไซน์ใหม่ทุกหน้า (Mobile-first responsive)</li>
+        <li>ใช้ระบบเดิม WordPress + Elementor (ไม่ต้อง migrate)</li>
+        <li>รองรับไทย / อังกฤษ</li>
+        <li>แก้ปัญหา About Us 404</li>
+        <li>ปรับ layout / รูป / ฟอนต์ ให้ดูพรีเมี่ยมขึ้น</li>
+      </ul>
+      <ul class="clean check">
+        <li>Basic SEO + Schema (LocalBusiness, Restaurant)</li>
+        <li>เชื่อม Google Maps</li>
+        <li>Speed optimization (LCP &lt; 2.5s)</li>
+        <li>ฟอร์มติดต่อส่งเข้า Email / LINE</li>
+      </ul>
+    </div>
+
+    <h3>สิ่งที่ "ไม่รวม" ในรอบนี้ (ตามที่ลูกค้าระบุ)</h3>
+    <div class="info-grid">
+      <ul class="clean cross">
+        <li>ระบบจองโต๊ะออนไลน์</li>
+        <li>Online Ordering / Delivery</li>
+        <li>ระบบสมาชิก / Loyalty</li>
+        <li>Gallery / Photo album</li>
+      </ul>
+      <ul class="clean cross">
+        <li>E-commerce</li>
+        <li>Multi-branch / Franchise Portal</li>
+        <li>ระบบจัดการเนื้อหาเพิ่มเติม (ใช้ Elementor ของเดิม)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>ราคาและระยะเวลา</h2>
+    <div class="price-card">
+      <div class="item featured">
+        <div class="label">ราคา (เริ่มต้น)</div>
+        <div class="value">฿45,000</div>
+        <div class="sub">ปรับได้ตามขอบเขตจริง</div>
+      </div>
+      <div class="item">
+        <div class="label">ระยะเวลา</div>
+        <div class="value">3–4 สัปดาห์</div>
+        <div class="sub">หลังได้ข้อมูล / รูปครบ</div>
+      </div>
+      <div class="item">
+        <div class="label">รับประกัน</div>
+        <div class="value">30 วัน</div>
+        <div class="sub">แก้บั๊กหลัง go-live</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>งวดชำระเงิน</h2>
+    <div class="payment-row">
+      <div class="pct">50%</div>
+      <div class="desc"><strong>งวดที่ 1</strong> — ยืนยันรับงาน / เริ่มดีไซน์</div>
+    </div>
+    <div class="payment-row">
+      <div class="pct">50%</div>
+      <div class="desc"><strong>งวดที่ 2</strong> — ส่งมอบ / เปิดเว็บจริง</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>สิ่งที่ลูกค้าต้องเตรียม</h2>
+    <ol class="numbered">
+      <li>Logo / Brand Asset (ถ้ามี)</li>
+      <li>รูปอาหาร / รูปร้าน <span style="color:var(--muted); font-size:13px;">— ถ้าไม่มี เสนอ photoshoot เพิ่มเติม</span></li>
+      <li>เนื้อหา About Us / Brand Story</li>
+      <li>ข้อมูลโปรโมชั่น / เมนู Buffet / Omakase ล่าสุด</li>
+      <li>ข้อมูลแฟรนไชส์ที่ต้องการแสดง</li>
+      <li>Access เว็บปัจจุบัน (WordPress admin + Hosting)</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>ค่าใช้จ่ายต่อเนื่อง (ไม่รวมในราคา)</h2>
+    <table>
+      <thead>
+        <tr><th>รายการ</th><th class="price-col">ราคา</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hosting + Domain + SSL</td>
+          <td class="price-col"><span class="badge">ลูกค้าจ่ายตรง</span></td>
+        </tr>
+        <tr>
+          <td>Maintenance retainer (optional)</td>
+          <td class="price-col">3,500 บาท / เดือน</td>
+        </tr>
+        <tr>
+          <td>เพิ่มเนื้อหา / ข่าว</td>
+          <td class="price-col">1,500 บาท / โพสต์</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>Add-on (Phase 2 — ขยายต่อในอนาคต)</h2>
+    <table>
+      <thead>
+        <tr><th>ฟีเจอร์เสริม</th><th class="price-col">ราคาเพิ่ม</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ระบบจองโต๊ะออนไลน์</td><td class="price-col">+25,000 – 40,000</td></tr>
+        <tr><td>Franchise Portal + ROI Calculator</td><td class="price-col">+30,000 – 50,000</td></tr>
+        <tr><td>เชื่อม LINE OA + Push Notification</td><td class="price-col">+15,000 – 25,000</td></tr>
+        <tr><td>Online Ordering / Delivery integration</td><td class="price-col">+50,000 – 100,000</td></tr>
+        <tr><td>Photoshoot รูปอาหาร (1 วัน)</td><td class="price-col">+15,000 – 25,000</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    <div class="contact">Easyslip</div>
+    <div>📧 <a href="mailto:hello@easyslip.com">hello@easyslip.com</a></div>
+    <div style="margin-top:14px; font-size:12px; color:var(--muted);">
+      เอกสารนี้จัดทำเพื่อเสนอราคาเฉพาะลูกค้า Matsu Sushi (มัตสึ ซูชิ) เท่านั้น<br>
+      ใบเสนอราคามีอายุ 30 วันนับจากวันที่ออก
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

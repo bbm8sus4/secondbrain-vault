@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthropic เปลี่ยนนโยบาย Agent SDK — มีผล 15 มิ.ย. 2026</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --muted: #666;
+    --border: #e5e5e5;
+    --accent: #d97706;
+    --accent-soft: #fef3c7;
+    --green: #059669;
+    --green-soft: #d1fae5;
+    --red: #dc2626;
+    --red-soft: #fee2e2;
+    --blue: #2563eb;
+    --blue-soft: #dbeafe;
+    --code-bg: #f3f4f6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Sarabun", "Noto Sans Thai", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+  header {
+    text-align: center;
+    padding: 32px 0 24px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 32px;
+    margin: 8px 0 12px;
+    line-height: 1.3;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 17px;
+  }
+  .meta {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .meta a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .meta a:hover { text-decoration: underline; }
+
+  section {
+    margin-bottom: 36px;
+  }
+  h2 {
+    font-size: 22px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+    margin: 0 0 18px;
+  }
+  h3 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 720px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    h1 { font-size: 24px; }
+  }
+
+  .card.before {
+    border-top: 4px solid var(--muted);
+  }
+  .card.after {
+    border-top: 4px solid var(--green);
+  }
+  .card-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .card.after .card-label { color: var(--green); }
+  .card h3 { margin-top: 0; }
+
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    background: #f8f8f8;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  tr:last-child td { border-bottom: none; }
+  td.price {
+    font-weight: 600;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  code {
+    background: var(--code-bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "SF Mono", Menlo, Monaco, monospace;
+    font-size: 0.9em;
+  }
+
+  .alert {
+    padding: 16px 20px;
+    border-radius: 10px;
+    border-left: 4px solid;
+    margin: 16px 0;
+  }
+  .alert.warn {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+  }
+  .alert.danger {
+    background: var(--red-soft);
+    border-color: var(--red);
+  }
+  .alert.info {
+    background: var(--blue-soft);
+    border-color: var(--blue);
+  }
+  .alert.ok {
+    background: var(--green-soft);
+    border-color: var(--green);
+  }
+  .alert strong { display: block; margin-bottom: 4px; }
+
+  .compare-table th, .compare-table td {
+    vertical-align: top;
+    font-size: 14px;
+  }
+  .compare-table th:first-child {
+    width: 22%;
+  }
+
+  .key {
+    font-weight: 600;
+  }
+
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .pill.green { background: var(--green-soft); color: var(--green); }
+  .pill.red { background: var(--red-soft); color: var(--red); }
+  .pill.amber { background: var(--accent-soft); color: var(--accent); }
+
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .tldr {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    border: 1px solid #fde68a;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .tldr h3 {
+    margin-top: 0;
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <span class="badge">มีผล 15 มิถุนายน 2026</span>
+    <h1>Anthropic เปลี่ยนวิธีนับโควต้า Claude Agent SDK</h1>
+    <p class="subtitle">ไม่ใช่ "ปิด API ทั้งหมด" — แต่คือ "แยกกระเป๋า" ระหว่างงานคนกับงานบอท</p>
+    <p class="meta">
+      ต้นฉบับ:
+      <a href="https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan" target="_blank" rel="noopener">
+        Use the Claude Agent SDK with your Claude plan — Claude Help Center
+      </a>
+    </p>
+  </header>
+
+  <div class="tldr">
+    <h3>TL;DR</h3>
+    <p style="margin: 0;">
+      ตั้งแต่ <strong>15 มิ.ย. 2026</strong> การใช้งาน <strong>Claude Agent SDK</strong> และคำสั่ง
+      <code>claude -p</code> จะถูก<strong>แยกออกจากโควต้า Subscription หลัก</strong>
+      ไปใช้ <strong>เครดิตรายเดือน</strong> ที่แจกตามแพ็กเกจแทน (Pro $20 / Max 5x $100 / Max 20x $200 / Team & Enterprise ตามที่นั่ง)
+      โควต้าเดิมจะสงวนไว้สำหรับงาน <em>interactive</em> เท่านั้น (Claude.ai, Claude Code โต้ตอบ, Claude Cowork)
+    </p>
+  </div>
+
+  <section>
+    <h2>What's Changing — Before / After</h2>
+    <div class="grid-2">
+      <div class="card before">
+        <div class="card-label">⏳ ก่อน 15 มิ.ย. 2026</div>
+        <h3>กระเป๋าเดียว ปนกัน</h3>
+        <ul>
+          <li>การใช้งาน Agent SDK และ <code>claude -p</code> <strong>ดึงโควต้าจากแพ็กเกจหลัก</strong></li>
+          <li>ไม่ว่าจะแชทเอง หรือปล่อยสคริปต์รัน Background — กินจากกระเป๋าเดียวกัน</li>
+          <li>ระวังแค่ "ชนเพดาน" รายชั่วโมง</li>
+        </ul>
+      </div>
+      <div class="card after">
+        <div class="card-label">🚀 หลัง 15 มิ.ย. 2026</div>
+        <h3>แยกกระเป๋าชัดเจน</h3>
+        <ul>
+          <li>โควต้า Subscription <strong>สงวนไว้ให้งานโต้ตอบ (Interactive)</strong> เท่านั้น</li>
+          <li>งาน Agent SDK / Automation ไปใช้ <strong>เครดิตรายเดือนแยกต่างหาก</strong></li>
+          <li>เครดิตจะรีเฟรชใหม่ตามรอบบิล</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Monthly Credit by Plan</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th>Monthly Credit สำหรับ Agent SDK</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Pro</td><td class="price">$20 / เดือน</td></tr>
+        <tr><td>Max 5x</td><td class="price">$100 / เดือน</td></tr>
+        <tr><td>Max 20x</td><td class="price">$200 / เดือน</td></tr>
+        <tr><td>Team — Standard seats</td><td class="price">$20 / seat / เดือน</td></tr>
+        <tr><td>Team — Premium seats</td><td class="price">$100 / seat / เดือน</td></tr>
+        <tr><td>Enterprise (usage-based)</td><td class="price">$20 – $200 / เดือน</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>เปรียบเทียบผลกระทบตามพฤติกรรมการใช้งาน</h2>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>พฤติกรรม</th>
+          <th>ก่อน 15 มิ.ย. 2026</th>
+          <th>หลัง 15 มิ.ย. 2026</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="key">Browser / Desktop App</td>
+          <td>ใช้โควต้า Usage Limit ของแพ็กเกจ</td>
+          <td><span class="pill green">เหมือนเดิม</span> ใช้โควต้า Subscription ต่อไป</td>
+        </tr>
+        <tr>
+          <td class="key">Terminal (Warp) แบบโต้ตอบ</td>
+          <td>นับรวมในโควต้า Subscription ปกติ</td>
+          <td><span class="pill green">เหมือนเดิม</span> ตราบใดที่เป็น Interactive (Claude Code โต้ตอบ)</td>
+        </tr>
+        <tr>
+          <td class="key">Automation / Agent SDK / <code>claude -p</code></td>
+          <td>ดึงจาก "กระเป๋าหลัก" ร่วมกับการแชทปกติ</td>
+          <td><span class="pill amber">แยกกระเป๋า</span> หักจากเครดิตรายเดือน (เช่น $200 สำหรับ Max 20x)</td>
+        </tr>
+        <tr>
+          <td class="key">แชร์บัญชีกับเพื่อนหลายคน</td>
+          <td>ระวังแค่การชนเพดานข้อความรายชั่วโมง</td>
+          <td><span class="pill red">ความเสี่ยงเพิ่ม</span> ถ้ามีคนรันสคริปต์หนัก เครดิตอาจหมดไว และทั้งกลุ่มจะรัน Automation ไม่ได้</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>วิเคราะห์ผลกระทบกับพฤติกรรมการแชร์บัญชี Max 20x</h2>
+
+    <h3>1. สายแชท / แก้โค้ดผ่าน Terminal (Interactive)</h3>
+    <div class="alert ok">
+      <strong>✅ แทบไม่ได้รับผลกระทบ</strong>
+      เปิด Warp พิมพ์คุยกับ Claude Code หรือเปิด Browser ถามตอบทั่วไป ยังอยู่ในโควต้า Subscription เดิมที่จ่ายรายเดือนอยู่แล้ว
+    </div>
+
+    <h3>2. สายพัฒนาระบบ / Automation (Agent SDK)</h3>
+    <div class="alert info">
+      <strong>ข้อดี</strong>
+      งานหนัก ๆ จากการรันสคริปต์จะไม่ไปแย่งโควต้าแชทของเพื่อนคนอื่นในกลุ่มอีกต่อไป
+    </div>
+    <div class="alert warn">
+      <strong>⚠️ ข้อควรระวัง</strong>
+      เครดิต $200 สำหรับ Max 20x แม้จะดูเยอะ แต่ถ้าแชร์กันหลายคนและมีคนรันวนลูป (Loop) หรือประมวลผลไฟล์จำนวนมาก เครดิตอาจหมดก่อนสิ้นเดือนได้ง่าย ๆ
+    </div>
+
+    <h3>3. จุดเสี่ยงในการแชร์ยูสเซอร์เดียวกัน</h3>
+    <div class="alert danger">
+      <strong>🚨 ความเสี่ยง: บัญชีอาจถูกตรวจจับว่าเป็น "บอท"</strong>
+      <ul style="margin: 8px 0 0;">
+        <li><strong>Concurrency:</strong> หลาย Request พร้อมกันในเสี้ยววินาที = ระบบมองว่าเป็น Multi-threading</li>
+        <li><strong>Request Velocity:</strong> RPM (Requests Per Minute) เกินขีดจำกัดของมนุษย์ปกติ</li>
+        <li><strong>IP Address ขัดแย้งกัน:</strong> Active Session จากหลาย ISP / หลายวงเน็ต ดูเหมือน API Proxy หรือถูกแฮ็ก</li>
+        <li><strong>Context Switching:</strong> สลับหัวข้อ/สลับคิวรีเร็วเกินมนุษย์</li>
+      </ul>
+    </div>
+
+    <h3>ผลกระทบที่อาจเกิดขึ้นกับบัญชี</h3>
+    <ol>
+      <li><strong>ถูกบังคับ Log out / ติด CAPTCHA</strong> — ทุกคนหลุดกลางคัน ต้องยืนยันตัวใหม่</li>
+      <li><strong>Rate Limit ชั่วคราว</strong> — โดนบล็อก 2–4 ชม. แม้จะเป็น Max 20x</li>
+      <li><strong>Account Ban (ระงับถาวร)</strong> — ToS ของ Anthropic ห้ามแชร์บัญชี Personal กับบุคคลอื่น ถ้าระบบฟันธงว่าเป็น API Wrapper หรือเชิงพาณิชย์ บัญชีอาจถูกแบน</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>คำแนะนำก่อนถึงวันที่ 15 มิ.ย. 2026</h2>
+    <div class="card">
+      <ul>
+        <li><strong>ตรวจ workflow ปัจจุบัน:</strong> ดูว่ามีตรงไหนรัน Agent SDK / <code>claude -p</code> / GitHub Actions / third-party tools บ้าง — ส่วนนั้นจะเริ่มกินเครดิตแยก</li>
+        <li><strong>คำนวณเครดิตที่จำเป็น:</strong> Max 20x ได้ $200/เดือน — ถ้าเกิน ต้องวางแผนลด job หรือซื้อเครดิตเพิ่ม</li>
+        <li><strong>แยกบัญชีเพื่อนออก:</strong> ถ้าทีมจริงจัง พิจารณา <strong>แพ็กเกจ Team</strong> ที่จัดสิทธิ์รายคนได้ ลดความเสี่ยงโดน Ban</li>
+        <li><strong>ตรวจสอบใครรัน Automation อยู่:</strong> ถ้ามีคนเดียวในกลุ่มเผลอลูปสคริปต์หนัก ๆ เครดิตกลางจะหายเร็วมาก</li>
+        <li><strong>เลี่ยงการรัน Concurrent ผ่าน Session เดียวกัน:</strong> ลดสัญญาณ "บอท" ที่ระบบจับได้</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>สรุปสั้น</h2>
+    <div class="alert info">
+      <strong>นี่ไม่ใช่ "ปิด API ทั้งหมด"</strong>
+      แต่คือการเปลี่ยนจาก <strong>"ใช้รวมในโควต้า Subscription"</strong> ไปเป็น
+      <strong>"แยกเครดิตสำหรับ Agent SDK โดยเฉพาะ"</strong>
+      <ul style="margin: 10px 0 0;">
+        <li><strong>คนใช้แชทปกติ / Claude Code โต้ตอบ:</strong> แทบไม่ได้รับผลกระทบ</li>
+        <li><strong>สาย dev ที่ขับ Agent / GitHub Actions / Workflow อัตโนมัติ:</strong> กระทบหนัก ต้องวางแผนเครดิตใหม่</li>
+        <li><strong>คนแชร์บัญชีกับเพื่อน:</strong> ความเสี่ยงสูงขึ้น ทั้งเครดิตหมดเร็วและเสี่ยงโดนตรวจจับว่าเป็นบอท</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      สรุปจากต้นฉบับ:
+      <a href="https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan" target="_blank" rel="noopener">
+        support.claude.com/en/articles/15036540
+      </a>
+    </p>
+    <p>เอกสารสรุปภายใน — อัปเดต 2026-05-15</p>
+  </footer>
+
+</div>
+</body>
+</html>

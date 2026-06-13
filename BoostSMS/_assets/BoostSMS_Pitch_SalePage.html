@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoostSMS — Sales Pitch Deck</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Prompt:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --font-display: "Chinda", "Chakra Petch", system-ui, sans-serif;
+  --font-body: "Gemini", "IBM Plex Sans Thai", system-ui, sans-serif;
+  --font-accent: "Typhoon", "Prompt", system-ui, sans-serif;
+  --font-en: "Inter", system-ui, sans-serif;
+
+  --bg: #ffffff;
+  --bg-secondary: #f8f9fc;
+  --text: #1a1a2e;
+  --text-secondary: #64748b;
+  --blue: #3871fe;
+  --red: #e42637;
+  --yellow: #feca3f;
+  --green: #00c9a7;
+  --dark: #1a1a2e;
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,.06);
+  --card-shadow: 0 2px 16px rgba(0,0,0,.04);
+  --nav-bg: rgba(255,255,255,.78);
+  --nav-border: rgba(0,0,0,.06);
+  --radius: 24px;
+  --slide-counter-bg: rgba(255,255,255,.85);
+  --faq-border: rgba(0,0,0,.08);
+  --sms-ex-bg: #ddf4ff;
+  --sms-ex-color: #0550ae;
+  --toggle-bg: rgba(0,0,0,.06);
+}
+
+[data-theme="dark"]{
+  --bg: #0b0b1a;
+  --bg-secondary: #12122a;
+  --text: #f0f0f5;
+  --text-secondary: #94a3b8;
+  --card-bg: #161630;
+  --card-border: rgba(255,255,255,.06);
+  --card-shadow: 0 2px 16px rgba(0,0,0,.2);
+  --nav-bg: rgba(11,11,26,.82);
+  --nav-border: rgba(255,255,255,.06);
+  --slide-counter-bg: rgba(22,22,48,.85);
+  --faq-border: rgba(255,255,255,.08);
+  --sms-ex-bg: rgba(56,113,254,.12);
+  --sms-ex-color: #93b4ff;
+  --toggle-bg: rgba(255,255,255,.08);
+}
+
+html{scroll-behavior:smooth;scroll-snap-type:y proximity}
+body{
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background .3s ease, color .3s ease;
+}
+::selection{background:rgba(56,113,254,.18)}
+
+/* ── Typography ── */
+.hero-title, .section-title {
+  font-family: var(--font-display);
+}
+.eyebrow, .badge, .price-name, .nav-pill, .step-label {
+  font-family: var(--font-accent);
+}
+p, .section-desc, .subtitle, .feature-card p, .step p, .use-case p, .testi-card .quote, .faq-a {
+  font-family: var(--font-body);
+}
+.stat-num, .proof-num, .compare-val, .price-amount, .price-per {
+  font-family: var(--font-en);
+}
+
+/* ── Nav ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  background:var(--nav-bg);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--nav-border);
+  height:56px;display:flex;align-items:center;justify-content:center;
+  transition: background .3s ease, border-color .3s ease;
+}
+nav .nav-inner{max-width:1120px;width:100%;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-display);font-weight:800;font-size:1.1rem;color:var(--blue);letter-spacing:-.02em}
+.nav-pills{display:flex;gap:6px}
+.nav-pill{
+  padding:6px 16px;border-radius:980px;border:none;
+  background:transparent;color:var(--text-secondary);
+  cursor:pointer;font-size:.8rem;font-weight:600;
+  transition:all .2s;
+}
+.nav-pill:hover,.nav-pill.active{background:var(--blue);color:#fff}
+
+/* ── Progress ── */
+.progress{position:fixed;top:56px;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--red));z-index:300;width:0;transition:width .1s linear}
+
+/* ── Slide Counter ── */
+.slide-count{
+  position:fixed;bottom:24px;right:28px;font-size:.75rem;font-family:var(--font-en);
+  color:var(--text-secondary);z-index:100;
+  background:var(--slide-counter-bg);
+  backdrop-filter:blur(12px);padding:5px 14px;border-radius:20px;
+  border:1px solid var(--card-border);
+  transition: background .3s ease, border-color .3s ease;
+}
+
+/* ── Theme Toggle ── */
+.theme-toggle{
+  position:fixed;bottom:24px;left:24px;z-index:300;
+  width:48px;height:48px;border-radius:50%;border:none;
+  background:var(--toggle-bg);
+  backdrop-filter:blur(12px);
+  color:var(--text);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;
+  transition: background .3s ease, color .3s ease, transform .2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.theme-toggle:hover{transform:scale(1.08)}
+
+/* ── Slide ── */
+.slide{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:100px 48px;position:relative;scroll-snap-align:start;
+  transition: background .3s ease;
+}
+.slide-inner{max-width:1120px;width:100%;text-align:center}
+
+/* ── Eyebrow ── */
+.eyebrow{
+  display:inline-block;font-size:.82rem;font-weight:700;
+  color:var(--blue);margin-bottom:20px;letter-spacing:.04em;text-transform:uppercase;
+}
+
+/* ── Titles ── */
+.hero-title{
+  font-size:clamp(2.6rem,6.5vw,5rem);font-weight:800;
+  letter-spacing:-.05em;line-height:1.08;margin-bottom:24px;
+}
+.hero-title .gradient{
+  background:linear-gradient(135deg,#3871fe 0%,#e42637 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.subtitle{
+  font-size:clamp(1rem,2.2vw,1.25rem);color:var(--text-secondary);
+  font-weight:400;max-width:660px;margin:0 auto;line-height:1.7;
+}
+.section-title{
+  font-size:clamp(2rem,5vw,3.2rem);font-weight:800;
+  letter-spacing:-.04em;line-height:1.12;margin-bottom:20px;
+}
+.section-desc{
+  font-size:clamp(.95rem,1.8vw,1.12rem);color:var(--text-secondary);
+  max-width:600px;margin:0 auto;line-height:1.7;
+}
+
+/* ── Dark / Gradient / Surface Slides ── */
+.dark-bg{background:var(--dark);color:#fff}
+.dark-bg .eyebrow{color:var(--yellow)}
+.dark-bg .section-desc,.dark-bg .subtitle{color:rgba(255,255,255,.55)}
+[data-theme="dark"] .dark-bg{background:#08081a}
+
+.gradient-bg{background:linear-gradient(135deg,#3871fe 0%,#5e3dea 50%,#e42637 100%);color:#fff}
+.gradient-bg .section-desc{color:rgba(255,255,255,.8)}
+
+.surface-bg{background:var(--bg-secondary)}
+
+/* ── Stats ── */
+.stat-row{display:flex;justify-content:center;gap:56px;margin-top:52px;flex-wrap:wrap}
+.stat-block{text-align:center}
+.stat-num{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:900;letter-spacing:-.04em;line-height:1}
+.stat-label{font-size:.82rem;color:var(--text-secondary);margin-top:8px;font-weight:500}
+.dark-bg .stat-label{color:rgba(255,255,255,.4)}
+
+/* ── Feature Cards ── */
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px;text-align:left}
+.feature-card{
+  background:var(--card-bg);border-radius:var(--radius);padding:32px 28px;
+  transition:box-shadow .3s,transform .3s;
+  border:1px solid var(--card-border);
+  box-shadow:var(--card-shadow);
+}
+.feature-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08);transform:translateY(-4px)}
+[data-theme="dark"] .feature-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.feature-icon{
+  width:52px;height:52px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;margin-bottom:18px;
+}
+.feature-card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;margin-bottom:10px}
+.feature-card p{font-size:.87rem;color:var(--text-secondary);line-height:1.6}
+
+/* ── Steps ── */
+.steps{display:flex;gap:40px;margin-top:52px;flex-wrap:wrap;justify-content:center}
+.step{flex:1;min-width:240px;max-width:320px;text-align:center}
+.step-icon{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;margin:0 auto 18px;
+  box-shadow:0 4px 20px rgba(56,113,254,.25);
+}
+.step h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;margin-bottom:10px}
+.step p{font-size:.87rem;color:var(--text-secondary);line-height:1.55}
+
+/* ── Flow Diagram ── */
+.flow-diagram{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;margin-top:56px;flex-wrap:wrap;
+  padding:20px 0;
+}
+.flow-box{
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:16px;padding:16px 20px;
+  text-align:center;min-width:130px;
+  box-shadow:var(--card-shadow);
+  transition: background .3s ease;
+}
+.flow-box i{display:block;font-size:1.2rem;color:var(--blue);margin-bottom:8px}
+.flow-box span{font-size:.78rem;font-weight:600;color:var(--text);line-height:1.3;display:block}
+.flow-arrow{
+  font-size:1.2rem;color:var(--blue);
+  padding:0 8px;flex-shrink:0;
+}
+
+/* ── Comparison Bars ── */
+.compare-section{margin-top:52px}
+.bar-chart{display:flex;flex-direction:column;gap:18px;max-width:640px;margin:0 auto}
+.bar-item{text-align:left}
+.bar-label{font-size:.85rem;font-weight:600;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.bar-label span{font-family:var(--font-en);font-weight:800;font-size:1rem}
+.bar-track{height:36px;background:rgba(255,255,255,.08);border-radius:12px;overflow:hidden;position:relative}
+.bar-fill{height:100%;border-radius:12px;display:flex;align-items:center;padding-left:16px;font-size:.75rem;font-weight:700;color:#fff;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.bar-fill.sms{background:linear-gradient(90deg,var(--blue),#5e3dea);width:0}
+.bar-fill.email{background:rgba(255,255,255,.15);width:0}
+.bar-fill.line{background:rgba(255,255,255,.12);width:0}
+.bar-fill.fb{background:rgba(255,255,255,.08);width:0}
+
+.proof-strip{display:flex;gap:20px;margin-top:52px;flex-wrap:wrap;justify-content:center}
+.proof-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);padding:28px 32px;
+  text-align:center;min-width:160px;flex:1;max-width:220px;
+}
+.proof-num{font-size:2.2rem;font-weight:900;letter-spacing:-.03em;margin-bottom:4px}
+.proof-label{font-size:.8rem;opacity:.5;font-weight:500}
+
+/* ── Use Cases ── */
+.use-cases{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:52px}
+.use-case{
+  background:var(--card-bg);border-radius:var(--radius);padding:32px 24px;
+  text-align:center;border:1px solid var(--card-border);
+  box-shadow:var(--card-shadow);transition:all .3s;
+}
+.use-case:hover{border-color:var(--blue);transform:translateY(-4px);box-shadow:0 12px 40px rgba(56,113,254,.1)}
+.use-case .uc-icon{
+  width:56px;height:56px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;font-size:1.4rem;
+}
+.use-case h3{font-family:var(--font-display);font-size:.95rem;font-weight:700;margin-bottom:8px}
+.use-case p{font-size:.82rem;color:var(--text-secondary);line-height:1.55}
+.use-case .sms-ex{
+  font-size:.75rem;color:var(--sms-ex-color);
+  background:var(--sms-ex-bg);
+  padding:8px 12px;border-radius:10px;margin-top:12px;
+  display:inline-block;line-height:1.5;text-align:left;
+  font-family:var(--font-body);
+}
+
+/* ── Pricing ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px}
+.price-card{
+  background:var(--card-bg);border:1px solid var(--card-border);
+  border-radius:var(--radius);padding:28px 22px;text-align:center;
+  box-shadow:var(--card-shadow);transition:all .3s;
+}
+.price-card:hover{border-color:var(--blue);box-shadow:0 8px 32px rgba(56,113,254,.12)}
+.price-card.featured{border:2px solid var(--blue);position:relative;background:linear-gradient(180deg,rgba(56,113,254,.04),transparent)}
+[data-theme="dark"] .price-card.featured{background:linear-gradient(180deg,rgba(56,113,254,.08),transparent)}
+.price-card.featured::before{
+  content:"แนะนำ";position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--blue);color:#fff;font-size:.7rem;font-weight:700;
+  font-family:var(--font-accent);
+  padding:3px 16px;border-radius:980px;
+}
+.price-name{font-size:.78rem;color:var(--text-secondary);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+.price-amount{font-size:1.8rem;font-weight:800;letter-spacing:-.03em;color:var(--text)}
+.price-amount span{font-size:.85rem;font-weight:500;color:var(--text-secondary)}
+.price-credits{font-size:.8rem;color:var(--text-secondary);margin:10px 0 14px}
+.price-per{font-size:.78rem;color:var(--blue);font-weight:700}
+
+/* ── Testimonials ── */
+.testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:52px;text-align:left}
+.testi-card{
+  background:var(--card-bg);border-radius:var(--radius);padding:32px;
+  border:1px solid var(--card-border);box-shadow:var(--card-shadow);
+}
+.testi-card .quote-icon{color:var(--blue);font-size:1.4rem;margin-bottom:14px;opacity:.5}
+.testi-card .quote{font-size:.9rem;color:var(--text);line-height:1.7;margin-bottom:18px;font-style:italic}
+.testi-card .author{display:flex;align-items:center;gap:12px}
+.testi-card .avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--blue),#5e3dea);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;font-size:.9rem;font-family:var(--font-en);
+  flex-shrink:0;
+}
+.testi-card .name{font-family:var(--font-display);font-size:.88rem;font-weight:700}
+.testi-card .role{font-size:.75rem;color:var(--text-secondary)}
+
+/* ── Partners ── */
+.partners{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:44px;align-items:center}
+.partner{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text-secondary);opacity:.45;transition:opacity .3s}
+.partner:hover{opacity:1}
+
+/* ── FAQ ── */
+.faq-list{max-width:720px;margin:52px auto 0;text-align:left}
+.faq-item{border-bottom:1px solid var(--faq-border);padding:22px 0;transition:border-color .3s ease}
+.faq-q{font-family:var(--font-display);font-size:1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q::after{content:"+";font-size:1.4rem;color:var(--blue);transition:transform .25s;flex-shrink:0}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:.9rem;color:var(--text-secondary);line-height:1.7}
+.faq-item.open .faq-a{max-height:200px;padding-top:14px}
+
+/* ── CTA ── */
+.cta-btn{
+  display:inline-block;padding:18px 42px;border-radius:980px;
+  background:#fff;color:var(--dark);
+  font-size:1rem;font-weight:700;text-decoration:none;
+  font-family:var(--font-display);border:none;cursor:pointer;
+  transition:all .25s;margin-top:36px;
+}
+.cta-btn:hover{transform:scale(1.04);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+.cta-sub{margin-top:18px;font-size:.85rem;opacity:.7;line-height:1.6}
+.cta-contact{margin-top:12px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:.85rem;opacity:.7}
+.cta-contact i{margin-right:6px}
+
+/* ── Footer ── */
+footer{
+  text-align:center;padding:36px 28px;color:var(--text-secondary);font-size:.78rem;
+  border-top:1px solid var(--card-border);
+  background:var(--bg);
+  transition: background .3s ease, border-color .3s ease;
+}
+
+/* ── Reveal Animation ── */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal .stagger{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible .stagger{opacity:1;transform:translateY(0)}
+
+/* ── Counter Animation ── */
+.counter{display:inline-block}
+
+/* ── Responsive ── */
+@media(max-width:1024px){
+  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:repeat(2,1fr)}
+  .use-cases{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:repeat(2,1fr)}
+  .flow-diagram{gap:4px}
+  .flow-box{min-width:100px;padding:12px 14px}
+  .flow-box span{font-size:.7rem}
+}
+
+@media(max-width:734px){
+  .slide{padding:60px 20px}
+  .stat-row{gap:28px}
+  .features-grid{grid-template-columns:1fr}
+  .steps{flex-direction:column;align-items:center}
+  .pricing-grid{grid-template-columns:1fr 1fr}
+  .use-cases{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .flow-diagram{flex-direction:column;gap:0}
+  .flow-arrow{transform:rotate(90deg);padding:4px 0}
+  .flow-box{min-width:200px}
+  .bar-chart{max-width:100%}
+  .proof-strip{gap:12px}
+  .proof-card{min-width:140px;padding:20px 16px}
+  .nav-pills{gap:3px}
+  .nav-pill{padding:5px 10px;font-size:.72rem}
+  .cta-contact{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="slide-count" id="slideCount">1 / 12</div>
+
+<!-- Theme Toggle -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+  <i class="fa-solid fa-moon"></i>
+</button>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">BoostSMS</div>
+    <div class="nav-pills">
+      <button class="nav-pill" onclick="go(1)">ปัญหา</button>
+      <button class="nav-pill" onclick="go(3)">ทางออก</button>
+      <button class="nav-pill" onclick="go(8)">ราคา</button>
+      <button class="nav-pill" onclick="go(11)">เริ่มต้น</button>
+    </div>
+  </div>
+</nav>
+
+<!-- S0: TITLE -->
+<section class="slide" id="s0">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Send. Track. Boost.</div>
+  <h1 class="hero-title">SMS Marketing<br>สำหรับธุรกิจไทย<br><span class="gradient">ที่วัดผลได้จริง.</span></h1>
+  <p class="subtitle">ส่ง SMS ถึงลูกค้าทุกค่ายภายใน 3 วินาที ใช้งานง่ายผ่านเว็บ<br>ไม่ต้องเขียนโค้ด Tracking Link วัดผลทุกคลิก</p>
+  <div class="stat-row">
+    <div class="stat-block stagger" style="transition-delay:.1s"><div class="stat-num" style="color:var(--blue)"><span class="counter" data-target="1000000" data-suffix="+" data-format="short">1M+</span></div><div class="stat-label">SMS ส่งสำเร็จ</div></div>
+    <div class="stat-block stagger" style="transition-delay:.2s"><div class="stat-num" style="color:var(--green)"><span class="counter" data-target="99.9" data-suffix="%" data-decimal="1">99.9%</span></div><div class="stat-label">Uptime</div></div>
+    <div class="stat-block stagger" style="transition-delay:.3s"><div class="stat-num" style="color:var(--yellow)">&lt;3s</div><div class="stat-label">ส่งถึงปลายทาง</div></div>
+    <div class="stat-block stagger" style="transition-delay:.4s"><div class="stat-num" style="color:var(--red)">฿0.20</div><div class="stat-label">เริ่มต้น/ข้อความ</div></div>
+  </div>
+</div>
+</section>
+
+<!-- S1: PROBLEM 1 -->
+<section class="slide dark-bg" id="s1">
+<div class="slide-inner reveal">
+  <div class="eyebrow"><i class="fa-solid fa-arrow-trend-up"></i> Problem</div>
+  <h2 class="section-title">ค่าโฆษณาแพงขึ้นทุกปี<br>แต่ลูกค้าไม่เพิ่ม.</h2>
+  <p class="section-desc">Facebook Ads, Google Ads, LINE Ads ราคาแพงขึ้นทุกปี<br>Organic Reach ลดลงเรื่อยๆ งบเพิ่มแต่ผลลัพธ์ลด</p>
+  <div class="stat-row">
+    <div class="stat-block stagger" style="transition-delay:.1s"><div class="stat-num" style="color:var(--red)">+30-50%</div><div class="stat-label">ค่าโฆษณาเพิ่มขึ้นทุกปี</div></div>
+    <div class="stat-block stagger" style="transition-delay:.2s"><div class="stat-num" style="color:var(--yellow)"><i class="fa-solid fa-arrow-trend-down" style="font-size:.7em"></i> 60%</div><div class="stat-label">Organic Reach ลดลง</div></div>
+    <div class="stat-block stagger" style="transition-delay:.3s"><div class="stat-num" style="color:#fff">5-15%</div><div class="stat-label">Reach เฉลี่ย LINE OA</div></div>
+  </div>
+</div>
+</section>
+
+<!-- S2: PROBLEM 2 -->
+<section class="slide dark-bg" id="s2">
+<div class="slide-inner reveal">
+  <div class="eyebrow"><i class="fa-solid fa-user-slash"></i> Problem</div>
+  <h2 class="section-title">ลูกค้าเก่าหาย<br>ฐานเบอร์ถูกทิ้งไว้เฉยๆ</h2>
+  <p class="section-desc">เบอร์ลูกค้าอยู่ใน Excel, POS, CRM แต่ไม่เคยถูกใช้สร้างยอดขาย<br>ทีมงานโทรทีละคน เสียเวลาหลายชั่วโมงต่อวัน</p>
+  <div class="stat-row">
+    <div class="stat-block stagger" style="transition-delay:.1s"><div class="stat-num" style="color:var(--yellow)"><span class="counter" data-target="80" data-suffix="%">80%</span></div><div class="stat-label">ลูกค้าเก่าไม่กลับมาซื้อซ้ำ</div></div>
+    <div class="stat-block stagger" style="transition-delay:.2s"><div class="stat-num" style="color:var(--red)">฿50K-500K</div><div class="stat-label">มูลค่าที่สูญเสียต่อเดือน</div></div>
+  </div>
+</div>
+</section>
+
+<!-- S3: SOLUTION -->
+<section class="slide" id="s3">
+<div class="slide-inner reveal">
+  <div class="eyebrow"><i class="fa-solid fa-bolt"></i> Solution</div>
+  <h2 class="hero-title" style="font-size:clamp(2.4rem,6vw,4.5rem)">BoostSMS<br><span class="gradient">คือทางออก.</span></h2>
+  <p class="subtitle">เปลี่ยนฐานเบอร์ลูกค้าเก่า ให้กลับมาเป็นยอดขาย<br>ส่ง SMS ถึงทุกเบอร์ ทุกค่าย ภายใน 3 วินาที ใช้งานง่ายบนเว็บ</p>
+</div>
+</section>
+
+<!-- S4: HOW IT WORKS -->
+<section class="slide surface-bg" id="s4">
+<div class="slide-inner reveal">
+  <div class="eyebrow">ง่ายแค่ 3 ขั้นตอน</div>
+  <h2 class="section-title">อัปโหลด. พิมพ์. ส่ง.</h2>
+  <div class="steps">
+    <div class="step stagger" style="transition-delay:.1s">
+      <div class="step-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+      <h3>อัปโหลดรายชื่อ</h3>
+      <p>นำเข้าจาก Excel หรือ CSV จาก POS, CRM จัดกลุ่มและแท็กได้ตามต้องการ</p>
+    </div>
+    <div class="step stagger" style="transition-delay:.2s">
+      <div class="step-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+      <h3>เขียนข้อความ</h3>
+      <p>พิมพ์โปรโมชัน ใส่ Tracking Link ย่อ URL อัตโนมัติ ดูตัวอย่างก่อนส่ง</p>
+    </div>
+    <div class="step stagger" style="transition-delay:.3s">
+      <div class="step-icon"><i class="fa-solid fa-paper-plane"></i></div>
+      <h3>ส่ง &amp; วัดผล</h3>
+      <p>ส่งทันทีหรือตั้งเวลา ดู Dashboard แบบ Real-time รู้ทันทีว่าใครคลิก</p>
+    </div>
+  </div>
+
+  <!-- Use Case Flow Diagram -->
+  <div class="flow-diagram">
+    <div class="flow-box stagger" style="transition-delay:.15s">
+      <i class="fa-solid fa-database"></i>
+      <span>ฐานเบอร์ลูกค้า</span>
+    </div>
+    <div class="flow-arrow stagger" style="transition-delay:.2s"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="flow-box stagger" style="transition-delay:.25s">
+      <i class="fa-solid fa-cloud-arrow-up"></i>
+      <span>อัปโหลด BoostSMS</span>
+    </div>
+    <div class="flow-arrow stagger" style="transition-delay:.3s"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="flow-box stagger" style="transition-delay:.35s">
+      <i class="fa-solid fa-pen-to-square"></i>
+      <span>สร้างแคมเปญ</span>
+    </div>
+    <div class="flow-arrow stagger" style="transition-delay:.4s"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="flow-box stagger" style="transition-delay:.45s">
+      <i class="fa-solid fa-paper-plane"></i>
+      <span>ส่ง SMS ทุกค่าย</span>
+    </div>
+    <div class="flow-arrow stagger" style="transition-delay:.5s"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="flow-box stagger" style="transition-delay:.55s">
+      <i class="fa-solid fa-chart-line"></i>
+      <span>Dashboard วัดผล</span>
+    </div>
+    <div class="flow-arrow stagger" style="transition-delay:.6s"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="flow-box stagger" style="transition-delay:.65s">
+      <i class="fa-solid fa-handshake"></i>
+      <span>ทีมขาย ปิดดีล</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- S5: FEATURES -->
+<section class="slide" id="s5">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Features</div>
+  <h2 class="section-title">ทุกฟีเจอร์ที่ธุรกิจต้องการ.</h2>
+  <div class="features-grid">
+    <div class="feature-card stagger" style="transition-delay:.1s">
+      <div class="feature-icon" style="background:rgba(56,113,254,.08);color:var(--blue)"><i class="fa-solid fa-message"></i></div>
+      <h3>Web SMS</h3>
+      <p>ส่ง SMS ปริมาณมากผ่านเว็บ รองรับไทย+อังกฤษ อัปโหลด Excel/CSV ส่งได้สูงสุด 10,000 เบอร์ต่อครั้ง</p>
+    </div>
+    <div class="feature-card stagger" style="transition-delay:.2s">
+      <div class="feature-icon" style="background:rgba(254,202,63,.1);color:#c89b1e"><i class="fa-solid fa-link"></i></div>
+      <h3>SMS Tracking</h3>
+      <p>ย่อ URL อัตโนมัติ เก็บข้อมูลทุกคลิก คัดกรอง Hot Lead ให้ทีมขายปิดดีลได้ทันที</p>
+    </div>
+    <div class="feature-card stagger" style="transition-delay:.3s">
+      <div class="feature-icon" style="background:rgba(228,38,55,.08);color:var(--red)"><i class="fa-solid fa-shield-halved"></i></div>
+      <h3>SMS OTP</h3>
+      <p>รหัส 6 หลักอัตโนมัติ Direct Route ผ่าน Spam Filter ถึงปลายทางใน 3-5 วินาที</p>
+    </div>
+    <div class="feature-card stagger" style="transition-delay:.4s">
+      <div class="feature-icon" style="background:rgba(56,113,254,.08);color:var(--blue)"><i class="fa-solid fa-code"></i></div>
+      <h3>SMS API</h3>
+      <p>เชื่อมต่อระบบเดิม รองรับ PHP, Python, Java, Node.js ไม่ต้องพัฒนา SMS Module เอง</p>
+    </div>
+    <div class="feature-card stagger" style="transition-delay:.5s">
+      <div class="feature-icon" style="background:rgba(0,201,167,.08);color:var(--green)"><i class="fa-solid fa-chart-line"></i></div>
+      <h3>Smart Dashboard</h3>
+      <p>วิเคราะห์ Real-time สรุปจากทุก Sender Name แสดง ROI และ CTR ชัดเจน</p>
+    </div>
+    <div class="feature-card stagger" style="transition-delay:.6s">
+      <div class="feature-icon" style="background:rgba(100,116,139,.08);color:var(--text-secondary)"><i class="fa-solid fa-chart-bar"></i></div>
+      <h3>Campaign Report</h3>
+      <p>เปรียบเทียบประสิทธิภาพแคมเปญ วิเคราะห์ CTR, CPC รู้ทันทีว่าอันไหนเวิร์ก</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- S6: SMS vs OTHERS -->
+<section class="slide dark-bg" id="s6">
+<div class="slide-inner reveal">
+  <div class="eyebrow">ทำไมต้อง SMS</div>
+  <h2 class="section-title">Open Rate สูงกว่า<br>ทุกช่องทาง.</h2>
+  <p class="section-desc">SMS ถึงมือลูกค้าโดยตรง ไม่ถูก algorithm ซ่อน ไม่ต้องรอลูกค้าเปิดแอป</p>
+
+  <!-- Bar Chart -->
+  <div class="compare-section">
+    <div class="bar-chart">
+      <div class="bar-item stagger" style="transition-delay:.1s">
+        <div class="bar-label"><span style="color:#fff">SMS</span> <span style="color:var(--blue)">98%</span></div>
+        <div class="bar-track"><div class="bar-fill sms" data-width="98%"></div></div>
+      </div>
+      <div class="bar-item stagger" style="transition-delay:.2s">
+        <div class="bar-label"><span style="color:rgba(255,255,255,.7)">Email</span> <span style="color:rgba(255,255,255,.5)">20%</span></div>
+        <div class="bar-track"><div class="bar-fill email" data-width="20%"></div></div>
+      </div>
+      <div class="bar-item stagger" style="transition-delay:.3s">
+        <div class="bar-label"><span style="color:rgba(255,255,255,.7)">LINE OA</span> <span style="color:rgba(255,255,255,.5)">15%</span></div>
+        <div class="bar-track"><div class="bar-fill line" data-width="15%"></div></div>
+      </div>
+      <div class="bar-item stagger" style="transition-delay:.4s">
+        <div class="bar-label"><span style="color:rgba(255,255,255,.7)">Facebook</span> <span style="color:rgba(255,255,255,.5)">5%</span></div>
+        <div class="bar-track"><div class="bar-fill fb" data-width="5%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proof-strip">
+    <div class="proof-card stagger" style="transition-delay:.15s"><div class="proof-num" style="color:var(--blue)"><span class="counter" data-target="99.8" data-suffix="%" data-decimal="1">99.8%</span></div><div class="proof-label">Delivery Rate</div></div>
+    <div class="proof-card stagger" style="transition-delay:.25s"><div class="proof-num" style="color:var(--yellow)">3 วิ</div><div class="proof-label">ส่งถึงทุกค่าย</div></div>
+    <div class="proof-card stagger" style="transition-delay:.35s"><div class="proof-num" style="color:var(--green)"><span class="counter" data-target="145" data-suffix="ms">145ms</span></div><div class="proof-label">System Latency</div></div>
+    <div class="proof-card stagger" style="transition-delay:.45s"><div class="proof-num" style="color:var(--blue)"><span class="counter" data-target="99.9" data-suffix="%" data-decimal="1">99.9%</span></div><div class="proof-label">Uptime</div></div>
+  </div>
+  <p style="margin-top:28px;font-size:.82rem;opacity:.45;line-height:1.6">
+    <i class="fa-solid fa-circle-check" style="margin-right:4px"></i> ผ่าน UAT ครบทุก Function &middot; True, DTAC, AIS &middot; NBTC (กสทช.) Certified &middot; Critical Bugs: 0
+  </p>
+</div>
+</section>
+
+<!-- S7: USE CASES -->
+<section class="slide" id="s7">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Use Cases</div>
+  <h2 class="section-title">ใช้ได้ทุกอุตสาหกรรม.</h2>
+  <p class="section-desc">ไม่ว่าธุรกิจของคุณจะอยู่ในสายไหน SMS ช่วยเพิ่มยอดขายและรักษาฐานลูกค้าได้ทันที</p>
+  <div class="use-cases">
+    <div class="use-case stagger" style="transition-delay:.1s">
+      <div class="uc-icon" style="background:rgba(228,38,55,.08);color:var(--red)"><i class="fa-solid fa-heart-pulse"></i></div>
+      <h3>คลินิก / ความงาม</h3>
+      <p>แจ้งนัดหมาย โปรโมชันทรีตเมนต์ ลด No-show</p>
+      <div class="sms-ex">"ถึงเวลานัดดูแลผิวรอบถัดไป รับสิทธิ์พิเศษ: [link]"</div>
+    </div>
+    <div class="use-case stagger" style="transition-delay:.2s">
+      <div class="uc-icon" style="background:rgba(56,113,254,.08);color:var(--blue)"><i class="fa-solid fa-store"></i></div>
+      <h3>ร้านค้า / E-commerce</h3>
+      <p>Flash Sale, โค้ดส่วนลด, กระตุ้นซื้อซ้ำ</p>
+      <div class="sms-ex">"โปรพิเศษลูกค้าเก่า ลดเพิ่มเฉพาะวันนี้: [link]"</div>
+    </div>
+    <div class="use-case stagger" style="transition-delay:.3s">
+      <div class="uc-icon" style="background:rgba(254,202,63,.1);color:#c89b1e"><i class="fa-solid fa-landmark"></i></div>
+      <h3>การเงิน / ลีสซิ่ง</h3>
+      <p>แจ้งเตือนชำระ OTP ลดหนี้เสีย</p>
+      <div class="sms-ex">"ยอดชำระใกล้ครบกำหนด ชำระผ่าน: [link]"</div>
+    </div>
+    <div class="use-case stagger" style="transition-delay:.4s">
+      <div class="uc-icon" style="background:rgba(0,201,167,.08);color:var(--green)"><i class="fa-solid fa-graduation-cap"></i></div>
+      <h3>บริการ / การศึกษา</h3>
+      <p>เปิดรับสมัคร แจ้งอีเวนต์ ติดตามหลังจบ</p>
+      <div class="sms-ex">"คอร์สรอบใหม่เปิดแล้ว สมัครรับสิทธิ์พิเศษ: [link]"</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- S8: PRICING -->
+<section class="slide surface-bg" id="s8">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Pricing</div>
+  <h2 class="section-title">เริ่มต้นแค่ ฿350.</h2>
+  <p class="section-desc">ไม่มีค่ารายเดือน จ่ายเฉพาะตามที่ใช้ ยิ่งซื้อเยอะยิ่งถูก</p>
+  <div class="pricing-grid">
+    <div class="price-card stagger" style="transition-delay:.05s">
+      <div class="price-name">Free Trial</div>
+      <div class="price-amount">฿0</div>
+      <div class="price-credits">100 เครดิต &middot; 7 วัน</div>
+      <div class="price-per">ทดลองส่งฟรี</div>
+    </div>
+    <div class="price-card stagger" style="transition-delay:.1s">
+      <div class="price-name">Boost Spark</div>
+      <div class="price-amount">฿350</div>
+      <div class="price-credits">800 เครดิต</div>
+      <div class="price-per">~฿0.44 / SMS</div>
+    </div>
+    <div class="price-card stagger" style="transition-delay:.15s">
+      <div class="price-name">Boost Shop</div>
+      <div class="price-amount">฿1,000</div>
+      <div class="price-credits">2,500 เครดิต</div>
+      <div class="price-per">~฿0.40 / SMS</div>
+    </div>
+    <div class="price-card featured stagger" style="transition-delay:.2s">
+      <div class="price-name">Boost Grow</div>
+      <div class="price-amount">฿3,500</div>
+      <div class="price-credits">9,000 เครดิต</div>
+      <div class="price-per">~฿0.39 / SMS</div>
+    </div>
+    <div class="price-card stagger" style="transition-delay:.25s">
+      <div class="price-name">Boost Pro</div>
+      <div class="price-amount">฿10,000</div>
+      <div class="price-credits">30,000 เครดิต</div>
+      <div class="price-per">~฿0.33 / SMS</div>
+    </div>
+    <div class="price-card stagger" style="transition-delay:.3s">
+      <div class="price-name">Boost Business</div>
+      <div class="price-amount">฿30K</div>
+      <div class="price-credits">110,000 เครดิต</div>
+      <div class="price-per">~฿0.27 / SMS</div>
+    </div>
+    <div class="price-card stagger" style="transition-delay:.35s">
+      <div class="price-name">Boost Scale</div>
+      <div class="price-amount">฿100K</div>
+      <div class="price-credits">400,000 เครดิต</div>
+      <div class="price-per">~฿0.25 / SMS</div>
+    </div>
+    <div class="price-card stagger" style="transition-delay:.4s">
+      <div class="price-name">Enterprise+</div>
+      <div class="price-amount">฿1.2<span>M</span></div>
+      <div class="price-credits">6,000,000 เครดิต</div>
+      <div class="price-per">~฿0.20 / SMS</div>
+    </div>
+  </div>
+  <p style="margin-top:24px;font-size:.78rem;color:var(--text-secondary)">* ราคายังไม่รวม VAT 7% &middot; 1 เครดิต = ไทย 70 ตัวอักษร / EN 160 ตัวอักษร &middot; รองรับโอนธนาคาร, บัตรเครดิต, PromptPay, QR Code</p>
+</div>
+</section>
+
+<!-- S9: TESTIMONIALS -->
+<section class="slide" id="s9">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Testimonials</div>
+  <h2 class="section-title">ลูกค้าพูดถึงเรา.</h2>
+  <div class="testi-grid">
+    <div class="testi-card stagger" style="transition-delay:.1s">
+      <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+      <div class="quote">"ระบบใช้งานง่ายมาก ส่ง SMS แจ้งเตือนนัดหมายให้ลูกค้า อัตราลูกค้ากลับมาใช้บริการเพิ่มขึ้นอย่างเห็นได้ชัด"</div>
+      <div class="author"><div class="avatar">P</div><div><div class="name">พิมพ์ชนก</div><div class="role">ผู้จัดการคลินิก &middot; Keenix</div></div></div>
+    </div>
+    <div class="testi-card stagger" style="transition-delay:.2s">
+      <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+      <div class="quote">"ระบบเสถียรมากและส่งเร็ว ทีม Dev เชื่อมต่อ API ได้ภายในวันเดียว Dashboard ควบคุมต้นทุนได้ดีเยี่ยม"</div>
+      <div class="author"><div class="avatar">N</div><div><div class="name">ณัฐวุฒิ</div><div class="role">Development Lead &middot; Jetder</div></div></div>
+    </div>
+    <div class="testi-card stagger" style="transition-delay:.3s">
+      <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+      <div class="quote">"ตอบโจทย์ทั้งความเร็วและความแม่นยำ ระบบเสถียร รายงานครบถ้วน ใช้ส่งแจ้งเตือนลูกค้าได้ดี"</div>
+      <div class="author"><div class="avatar">K</div><div><div class="name">กิตติ</div><div class="role">ผู้จัดการสนามกอล์ฟ &middot; Easy Golfsim</div></div></div>
+    </div>
+    <div class="testi-card stagger" style="transition-delay:.4s">
+      <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+      <div class="quote">"ลูกค้ากลับมาใช้บริการซ้ำเพิ่มขึ้นอย่างชัดเจน ระบบใช้งานง่าย ส่ง SMS โปรโมชันได้สะดวก"</div>
+      <div class="author"><div class="avatar">W</div><div><div class="name">วัชรินทร์</div><div class="role">เจ้าของร้านกาแฟ &middot; SHIFT CRM</div></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- S10: PARTNERS + FAQ -->
+<section class="slide surface-bg" id="s10">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Partners &amp; FAQ</div>
+  <h2 class="section-title">ธุรกิจที่ไว้วางใจเรา.</h2>
+  <div class="partners">
+    <div class="partner stagger" style="transition-delay:.1s">Thunder Solution</div>
+    <div class="partner stagger" style="transition-delay:.15s">EasySlip</div>
+    <div class="partner stagger" style="transition-delay:.2s">Easy CRM</div>
+    <div class="partner stagger" style="transition-delay:.25s">Jetder</div>
+    <div class="partner stagger" style="transition-delay:.3s">Keenix</div>
+    <div class="partner stagger" style="transition-delay:.35s">Easy Golfsim</div>
+    <div class="partner stagger" style="transition-delay:.4s">SHIFT</div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">ส่ง SMS ได้สูงสุดกี่เบอร์ต่อครั้ง?</div>
+      <div class="faq-a">รองรับการส่งไม่จำกัด สามารถส่ง SMS จำนวนมากได้ตามแพ็กเกจที่เลือก ระบบรองรับ batch sending สูงสุด 10,000 เบอร์ต่อครั้งต่อ 1 campaign</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">1 เครดิตส่งได้กี่ตัวอักษร?</div>
+      <div class="faq-a">ภาษาไทย 70 ตัวอักษร/เครดิต, English 160 ตัวอักษร/เครดิต หากข้อความยาวกว่า 1 เครดิต ระบบจะคำนวณและแสดงจำนวนเครดิตที่ใช้ก่อนส่ง</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">ขอ Sender Name ใช้เวลากี่วัน?</div>
+      <div class="faq-a">ใช้เวลาอนุมัติ 3-7 วันทำการ ผ่านการตรวจสอบจาก กสทช. (NBTC) ทีมงานจะช่วยดำเนินการให้ตลอดกระบวนการ</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">รองรับค่ายอะไรบ้าง?</div>
+      <div class="faq-a">รองรับครบทุกค่าย: True, DTAC, AIS ผ่านการ UAT และ certified จาก กสทช. Delivery Rate 99.8% ระบบ Latency 145ms</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">ชำระเงินช่องทางไหนได้บ้าง?</div>
+      <div class="faq-a">รองรับโอนธนาคาร, บัตรเครดิต, PromptPay และ QR Code ออกใบเสร็จ/ใบกำกับภาษีได้</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- S11: CTA -->
+<section class="slide gradient-bg" id="s11">
+<div class="slide-inner reveal">
+  <h2 class="section-title" style="color:#fff">พร้อมเปลี่ยนฐานเบอร์<br>ให้เป็นยอดขาย?</h2>
+  <p class="section-desc">ทดลองใช้งานฟรี 100 เครดิต &middot; ไม่ต้องผูกบัตร &middot; เริ่มส่งได้ทันที</p>
+  <button class="cta-btn" onclick="window.open('https://boost-sms.com/')">เริ่มใช้งานฟรี</button>
+  <div class="cta-contact">
+    <span><i class="fa-solid fa-phone"></i> ฝ่ายขาย 094-389-1495</span>
+    <span><i class="fa-solid fa-phone"></i> ฝ่ายบริการ 02-124-3423</span>
+    <span><i class="fa-solid fa-comments"></i> LINE: @boostsms</span>
+  </div>
+  <div class="cta-sub"><i class="fa-solid fa-circle-check" style="margin-right:4px"></i> กสทช. Certified &middot; True &middot; DTAC &middot; AIS &middot; boost-sms.com</div>
+</div>
+</section>
+
+<footer>BoostSMS Sales Pitch Deck &middot; บริษัท อีซี่สลิป จำกัด &middot; Thunder Solution &middot; 2026</footer>
+
+<script>
+/* ── Slides & Progress ── */
+const slides = document.querySelectorAll('.slide');
+const progress = document.getElementById('progress');
+const slideCount = document.getElementById('slideCount');
+const total = slides.length;
+
+/* ── Reveal on Scroll with Stagger ── */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const rev = e.target.querySelector('.reveal');
+      if (rev) {
+        rev.classList.add('visible');
+        // Animate bar fills
+        rev.querySelectorAll('.bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width;
+        });
+        // Counter animation
+        rev.querySelectorAll('.counter').forEach(c => {
+          if (c.dataset.animated) return;
+          c.dataset.animated = '1';
+          animateCounter(c);
+        });
+      }
+    }
+  });
+}, { threshold: 0.12 });
+slides.forEach(s => revealObserver.observe(s));
+
+/* ── Counter Animation ── */
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const decimal = parseInt(el.dataset.decimal) || 0;
+  const format = el.dataset.format;
+  const duration = 1200;
+  const start = performance.now();
+
+  function tick(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    let current = eased * target;
+
+    if (format === 'short') {
+      if (current >= 1000000) {
+        el.textContent = (current / 1000000).toFixed(0) + 'M' + suffix;
+      } else if (current >= 1000) {
+        el.textContent = (current / 1000).toFixed(0) + 'K' + suffix;
+      } else {
+        el.textContent = Math.floor(current) + suffix;
+      }
+    } else if (decimal > 0) {
+      el.textContent = current.toFixed(decimal) + suffix;
+    } else {
+      el.textContent = Math.floor(current) + suffix;
+    }
+
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ── Scroll Progress & Slide Counter ── */
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  progress.style.width = pct + '%';
+
+  let current = 1;
+  slides.forEach((s, i) => {
+    const r = s.getBoundingClientRect();
+    if (r.top < window.innerHeight / 2) current = i + 1;
+  });
+  slideCount.textContent = current + ' / ' + total;
+
+  // Nav pill active state
+  const pills = document.querySelectorAll('.nav-pill');
+  pills.forEach(p => p.classList.remove('active'));
+  if (current <= 2) pills[0]?.classList.add('active');
+  else if (current <= 5) pills[1]?.classList.add('active');
+  else if (current === 9) pills[2]?.classList.add('active');
+  else if (current === 12) pills[3]?.classList.add('active');
+}, { passive: true });
+
+function go(i) { slides[i]?.scrollIntoView({ behavior: 'smooth' }); }
+
+/* ── Theme Toggle ── */
+const toggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+function setTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('boostsms-theme', theme);
+  const icon = toggle.querySelector('i');
+  if (theme === 'dark') {
+    icon.className = 'fa-solid fa-sun';
+  } else {
+    icon.className = 'fa-solid fa-moon';
+  }
+}
+
+// Init from localStorage or system preference
+const saved = localStorage.getItem('boostsms-theme');
+if (saved) {
+  setTheme(saved);
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  setTheme('dark');
+}
+
+toggle.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+</script>
+</body>
+</html>

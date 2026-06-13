@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoostSMS — Full Business Presentation</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Prompt:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  --font-display: "Chinda", "Chakra Petch", system-ui, sans-serif;
+  --font-body: "Gemini", "IBM Plex Sans Thai", system-ui, sans-serif;
+  --font-accent: "Typhoon", "Prompt", system-ui, sans-serif;
+
+  --bg: #ffffff;
+  --bg-secondary: #f8f9fc;
+  --text: #1a1a2e;
+  --text-secondary: #64748b;
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,0.06);
+  --table-border: rgba(0,0,0,0.08);
+  --table-header-border: rgba(0,0,0,0.12);
+  --nav-bg: rgba(255,255,255,0.78);
+  --nav-border: rgba(0,0,0,0.06);
+  --slide-count-bg: rgba(255,255,255,0.85);
+  --slide-count-border: rgba(0,0,0,0.06);
+  --selection-bg: rgba(56,113,254,0.12);
+  --hover-shadow: rgba(0,0,0,0.06);
+  --badge-green-bg: #dafbe1;
+  --badge-green-text: #116329;
+  --badge-blue-bg: #ddf4ff;
+  --badge-blue-text: #0550ae;
+  --badge-yellow-bg: #fff8c5;
+  --badge-yellow-text: #7a4e05;
+  --badge-red-bg: #ffebe9;
+  --badge-red-text: #82071e;
+  --badge-purple-bg: #f0e6ff;
+  --badge-purple-text: #5b21b6;
+  --gate-go-bg: #e8f5e9;
+  --gate-go-border: #a5d6a7;
+  --gate-pivot-bg: #fff8e1;
+  --gate-pivot-border: #ffe082;
+  --gate-stop-bg: #ffebee;
+  --gate-stop-border: #ef9a9a;
+  --gate-text: #444;
+
+  --blue: #3871fe;
+  --red: #e42637;
+  --yellow: #feca3f;
+  --green: #00c9a7;
+  --purple: #7c3aed;
+  --orange: #f39c12;
+  --radius: 24px;
+}
+
+[data-theme="dark"] {
+  --bg: #0b0b1a;
+  --bg-secondary: #12122a;
+  --text: #f0f0f5;
+  --text-secondary: #94a3b8;
+  --card-bg: #161630;
+  --card-border: rgba(255,255,255,0.08);
+  --table-border: rgba(255,255,255,0.08);
+  --table-header-border: rgba(255,255,255,0.15);
+  --nav-bg: rgba(11,11,26,0.82);
+  --nav-border: rgba(255,255,255,0.06);
+  --slide-count-bg: rgba(22,22,48,0.9);
+  --slide-count-border: rgba(255,255,255,0.08);
+  --selection-bg: rgba(56,113,254,0.25);
+  --hover-shadow: rgba(0,0,0,0.3);
+  --badge-green-bg: rgba(0,201,167,0.15);
+  --badge-green-text: #00c9a7;
+  --badge-blue-bg: rgba(56,113,254,0.15);
+  --badge-blue-text: #6fa0ff;
+  --badge-yellow-bg: rgba(254,202,63,0.15);
+  --badge-yellow-text: #feca3f;
+  --badge-red-bg: rgba(228,38,55,0.15);
+  --badge-red-text: #f47a84;
+  --badge-purple-bg: rgba(124,58,237,0.15);
+  --badge-purple-text: #b794f4;
+  --gate-go-bg: rgba(0,201,167,0.1);
+  --gate-go-border: rgba(0,201,167,0.3);
+  --gate-pivot-bg: rgba(254,202,63,0.1);
+  --gate-pivot-border: rgba(254,202,63,0.3);
+  --gate-stop-bg: rgba(228,38,55,0.1);
+  --gate-stop-border: rgba(228,38,55,0.3);
+  --gate-text: #c0c0d0;
+}
+
+[data-theme="dark"] .dark-bg {
+  background: #060612;
+}
+
+[data-theme="dark"] .surface-bg {
+  background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .gradient-bg {
+  background: linear-gradient(135deg, #1e3a8a, #0f766e);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background 300ms ease, color 300ms ease;
+}
+
+::selection { background: var(--selection-bg) }
+
+/* ── NAVIGATION ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: var(--nav-bg);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--nav-border);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 300ms ease, border-color 300ms ease;
+}
+
+nav .nav-inner {
+  max-width: 1120px;
+  width: 100%;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--blue);
+}
+
+.nav-pills { display: flex; gap: 4px; flex-wrap: wrap }
+
+.nav-pill {
+  font-family: var(--font-accent);
+  padding: 5px 14px;
+  border-radius: 980px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.74rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.nav-pill:hover, .nav-pill.active {
+  background: var(--blue);
+  color: #fff;
+}
+
+/* ── PROGRESS & COUNTER ── */
+.progress {
+  position: fixed;
+  top: 56px; left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  z-index: 300;
+  width: 0;
+  transition: width 0.1s linear;
+}
+
+.slide-count {
+  position: fixed;
+  bottom: 24px; right: 28px;
+  font-family: var(--font-accent);
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+  z-index: 100;
+  background: var(--slide-count-bg);
+  backdrop-filter: blur(10px);
+  padding: 6px 14px;
+  border-radius: 24px;
+  border: 1px solid var(--slide-count-border);
+  transition: all 300ms ease;
+}
+
+/* ── DARK/LIGHT TOGGLE ── */
+.theme-toggle {
+  position: fixed;
+  bottom: 24px; left: 24px;
+  z-index: 300;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 300ms ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* ── SLIDES ── */
+.slide {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 48px;
+  position: relative;
+  scroll-snap-align: start;
+  transition: background 300ms ease;
+}
+
+.slide-inner {
+  max-width: 1120px;
+  width: 100%;
+  text-align: center;
+}
+
+.dark-bg { background: #1a1a2e; color: #fff }
+.dark-bg .eyebrow { color: var(--yellow) }
+.dark-bg .section-desc, .dark-bg .subtitle { color: rgba(255,255,255,0.6) }
+.dark-bg .stat-label { color: rgba(255,255,255,0.45) }
+
+.surface-bg { background: var(--bg-secondary); }
+.gradient-bg { background: linear-gradient(135deg, #3871fe, #00c9a7); color: #fff }
+.gradient-bg .section-desc { color: rgba(255,255,255,0.8) }
+
+/* ── TYPOGRAPHY ── */
+.eyebrow {
+  font-family: var(--font-accent);
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.hero-title .g1 {
+  background: linear-gradient(135deg, #3871fe, #00c9a7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.section-desc {
+  font-family: var(--font-body);
+  font-size: clamp(0.92rem, 1.6vw, 1.08rem);
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  color: var(--text-secondary);
+  font-weight: 400;
+  max-width: 660px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── STATS ── */
+.stat-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+.stat-block { text-align: center }
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-accent);
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ── GRIDS ── */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; text-align: left }
+.grid3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; text-align: left }
+.grid4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 40px; text-align: left }
+.grid6 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; text-align: left }
+
+@media(max-width:768px) {
+  .grid2, .grid3, .grid4, .grid6 { grid-template-columns: 1fr }
+}
+
+/* ── CARDS ── */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 36px var(--hover-shadow);
+  transform: translateY(-3px);
+}
+
+.card .card-icon {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--blue);
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(56,113,254,0.08);
+}
+
+.card .card-icon.icon-green { color: var(--green); background: rgba(0,201,167,0.08) }
+.card .card-icon.icon-purple { color: var(--purple); background: rgba(124,58,237,0.08) }
+.card .card-icon.icon-red { color: var(--red); background: rgba(228,38,55,0.08) }
+.card .card-icon.icon-yellow { color: var(--yellow); background: rgba(254,202,63,0.1) }
+.card .card-icon.icon-orange { color: var(--orange); background: rgba(243,156,18,0.08) }
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.card .card-num {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+.card .card-label {
+  font-family: var(--font-accent);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* ── DARK CARDS ── */
+.dark-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .dark-card {
+  background: rgba(255,255,255,0.04);
+}
+
+.dark-card:hover {
+  background: rgba(255,255,255,0.09);
+  transform: translateY(-2px);
+}
+
+.dark-card .dark-card-icon {
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  opacity: 0.7;
+}
+
+.dark-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.dark-card p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.65;
+}
+
+/* ── TABLES ── */
+.table-wrap { overflow-x: auto; margin-top: 36px; border-radius: 16px }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+th {
+  font-family: var(--font-accent);
+  padding: 14px 18px;
+  border-bottom: 2px solid var(--table-header-border);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--table-border);
+}
+
+.dark-bg th { border-bottom-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.5) }
+.dark-bg td { border-bottom-color: rgba(255,255,255,0.08) }
+
+/* ── BADGES ── */
+.badge {
+  font-family: var(--font-accent);
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 24px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.b-green { background: var(--badge-green-bg); color: var(--badge-green-text) }
+.b-blue { background: var(--badge-blue-bg); color: var(--badge-blue-text) }
+.b-yellow { background: var(--badge-yellow-bg); color: var(--badge-yellow-text) }
+.b-red { background: var(--badge-red-bg); color: var(--badge-red-text) }
+.b-purple { background: var(--badge-purple-bg); color: var(--badge-purple-text) }
+
+/* ── TIMELINE ── */
+.timeline {
+  display: flex;
+  gap: 0;
+  margin-top: 40px;
+  overflow-x: auto;
+}
+
+.tl-item {
+  flex: 1;
+  min-width: 110px;
+  text-align: center;
+  padding: 20px 10px;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.tl-item:last-child { border-right: none }
+.tl-item:hover { background: rgba(56,113,254,0.03) }
+.tl-item .tl-dot { width: 14px; height: 14px; border-radius: 50%; margin: 0 auto 12px }
+.tl-item .tl-date { font-family: var(--font-accent); font-size: 0.7rem; color: var(--text-secondary); font-weight: 700 }
+.tl-item .tl-text { font-family: var(--font-display); font-size: 0.82rem; font-weight: 700; margin-top: 6px }
+.tl-item .tl-sub { font-family: var(--font-body); font-size: 0.68rem; color: var(--text-secondary); margin-top: 2px }
+
+/* ── FUNNEL ── */
+.funnel {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.funnel-step {
+  flex: 1;
+  min-width: 100px;
+  text-align: center;
+  padding: 18px 10px;
+}
+
+.funnel-step .fn { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; color: var(--blue) }
+.funnel-step .fl { font-family: var(--font-body); font-size: 0.72rem; color: var(--text-secondary) }
+.funnel-step .fr { font-family: var(--font-accent); font-size: 0.68rem; color: var(--green); font-weight: 700; margin-top: 4px }
+.funnel-arrow { color: var(--text-secondary); font-size: 1.1rem; opacity: 0.4 }
+
+/* ── GATE CARDS ── */
+.gate-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 40px }
+@media(max-width:600px) { .gate-grid { grid-template-columns: 1fr } }
+
+.gate-card {
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.gate-card:hover { transform: translateY(-2px) }
+.gate-card.go { background: var(--gate-go-bg); border: 2px solid var(--gate-go-border) }
+.gate-card.pivot { background: var(--gate-pivot-bg); border: 2px solid var(--gate-pivot-border) }
+.gate-card.stop { background: var(--gate-stop-bg); border: 2px solid var(--gate-stop-border) }
+.gate-card .gt { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800 }
+.gate-card .gc { font-family: var(--font-body); font-size: 0.8rem; color: var(--gate-text); margin-top: 6px }
+.gate-card .ga { font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; margin-top: 12px }
+
+[data-theme="dark"] .gate-card .gt { color: var(--text) }
+
+/* ── SCENARIOS ── */
+.scenario-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px }
+@media(max-width:600px) { .scenario-row { grid-template-columns: 1fr } }
+
+.scenario {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.scenario:hover { transform: translateY(-2px) }
+.scenario .sc-title { font-family: var(--font-accent); font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; margin-bottom: 10px }
+.scenario .sc-num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; color: var(--green) }
+.scenario .sc-detail { font-family: var(--font-body); font-size: 0.78rem; color: var(--text-secondary); margin-top: 10px; line-height: 1.6 }
+
+/* ── ARCHITECTURE DIAGRAM ── */
+.arch-diagram {
+  margin-top: 48px;
+  padding: 36px 24px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  overflow-x: auto;
+}
+
+.arch-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  min-width: 700px;
+}
+
+.arch-box {
+  padding: 16px 20px;
+  border-radius: 14px;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 120px;
+  line-height: 1.5;
+}
+
+.arch-box.blue { background: rgba(56,113,254,0.1); border: 1.5px solid rgba(56,113,254,0.25); color: var(--blue) }
+.arch-box.green { background: rgba(0,201,167,0.1); border: 1.5px solid rgba(0,201,167,0.25); color: var(--green) }
+.arch-box.purple { background: rgba(124,58,237,0.1); border: 1.5px solid rgba(124,58,237,0.25); color: var(--purple) }
+.arch-box.neutral { background: var(--card-bg); border: 1.5px solid var(--card-border); color: var(--text) }
+
+.arch-arrow {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  padding: 0 8px;
+  opacity: 0.5;
+}
+
+.arch-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+}
+
+.arch-down-arrow {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.arch-sub {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+/* ── CTA BUTTON ── */
+.cta-btn {
+  display: inline-block;
+  padding: 18px 40px;
+  border-radius: 980px;
+  background: #fff;
+  color: #1a1a2e;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 36px;
+}
+
+.cta-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 36px rgba(0,0,0,0.2);
+}
+
+.cta-sub {
+  font-family: var(--font-body);
+  margin-top: 18px;
+  font-size: 0.88rem;
+  opacity: 0.7;
+}
+
+/* ── CHECKLIST ── */
+.checklist-box {
+  background: rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  text-align: left;
+}
+
+.checklist-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checklist-box .checklist-item {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 2.2;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checklist-box .checklist-item i {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* ── ANIMATIONS ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0) }
+
+.reveal.visible .stagger { opacity: 0; animation: staggerIn 0.5s ease forwards }
+@keyframes staggerIn { to { opacity: 1; transform: translateY(0) } }
+
+.stagger {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 40px 28px;
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  border-top: 1px solid var(--card-border);
+  background: var(--bg);
+  transition: all 300ms ease;
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px) {
+  .slide { padding: 60px 20px }
+  nav .nav-inner { padding: 0 16px }
+  .nav-pills { display: none }
+  .stat-row { gap: 28px }
+  .arch-diagram { padding: 24px 16px }
+  .timeline { gap: 0 }
+  .gate-grid { gap: 12px }
+}
+
+/* ── MISC ── */
+.compliance-note {
+  margin-top: 28px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.dark-bg .compliance-note { color: rgba(255,255,255,0.45) }
+
+.quote-text {
+  margin-top: 28px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  opacity: 0.65;
+  font-style: italic;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature-icon-wrap {
+  width: 52px; height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.highlight-border { border: 2px solid var(--blue) }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="slide-count" id="slideCount">1 / 15</div>
+
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+  <i class="fa-solid fa-moon"></i>
+</button>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">BoostSMS — Full Deck</div>
+    <div class="nav-pills">
+      <button class="nav-pill active" onclick="go(0)">Overview</button>
+      <button class="nav-pill" onclick="go(3)">Product</button>
+      <button class="nav-pill" onclick="go(6)">Marketing</button>
+      <button class="nav-pill" onclick="go(10)">Sales</button>
+      <button class="nav-pill" onclick="go(12)">Finance</button>
+      <button class="nav-pill" onclick="go(14)">Next</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════ S0: TITLE ════════════════════════════════════════ -->
+<section class="slide" id="s0">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Business Presentation 2026</div>
+  <h1 class="hero-title">BoostSMS<br><span class="g1">Business Overview.</span></h1>
+  <p class="subtitle">แพลตฟอร์ม SMS Marketing สำหรับธุรกิจไทย<br>เจ้าของ: บริษัท อีซี่สลิป จำกัด (Thunder Solution)</p>
+  <div class="stat-row">
+    <div class="stat-block stagger" style="--i:0">
+      <div class="stat-num" style="color:var(--blue)">&#3647;2M</div>
+      <div class="stat-label">มูลค่าลงทุน</div>
+    </div>
+    <div class="stat-block stagger" style="--i:1">
+      <div class="stat-num" style="color:var(--green)">8+Trial</div>
+      <div class="stat-label">แพ็กเกจ</div>
+    </div>
+    <div class="stat-block stagger" style="--i:2">
+      <div class="stat-num" style="color:var(--purple)">3</div>
+      <div class="stat-label">ระบบ (Sale / App / Admin)</div>
+    </div>
+    <div class="stat-block stagger" style="--i:3">
+      <div class="stat-num" style="color:var(--red)">15 ส.ค. 68</div>
+      <div class="stat-label">ส่งมอบงาน</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S1: COMPANY & ORIGIN ════════════════════════════════════════ -->
+<section class="slide surface-bg" id="s1">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Company</div>
+  <h2 class="section-title">ที่มาของ BoostSMS.</h2>
+  <div class="grid2">
+    <div class="card stagger" style="--i:0">
+      <div class="card-icon"><i class="fa-solid fa-building"></i></div>
+      <h3>เจ้าของโปรดักส์</h3>
+      <p><strong>บ. อีซี่สลิป จำกัด</strong> (EasySlip Co., Ltd.)<br>ภายใต้แบรนด์ Thunder Solution<br>CEO: วัชรินทร์ แก้วม่วง</p>
+    </div>
+    <div class="card stagger" style="--i:1">
+      <div class="card-icon icon-purple"><i class="fa-solid fa-code"></i></div>
+      <h3>Source Code</h3>
+      <p>ซื้อจาก <strong>บ. มูนรึทึ่ม จำกัด</strong><br>มูลค่า &#3647;2,000,000<br>โอนกรรมสิทธิ์สมบูรณ์ (IP Transfer)</p>
+    </div>
+    <div class="card stagger" style="--i:2">
+      <div class="card-icon icon-orange"><i class="fa-solid fa-gears"></i></div>
+      <h3>Development</h3>
+      <p>8 ก.ค. — 15 ส.ค. 2568 (38 วัน)<br>UX/UI &rarr; ฟีเจอร์เพิ่ม &rarr; SIT/UAT<br>DevOps: มหาสมุทร ฉัตรปราการ</p>
+    </div>
+    <div class="card stagger" style="--i:3">
+      <div class="card-icon icon-green"><i class="fa-solid fa-circle-check"></i></div>
+      <h3>UAT ผ่านหมด</h3>
+      <p>Delivery Rate: <strong>99.8%</strong><br>System Latency: <strong>145ms</strong><br>Uptime: <strong>99.9%</strong> &middot; Critical Bugs: <strong>0</strong></p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S2: MARKET PROBLEM ════════════════════════════════════════ -->
+<section class="slide dark-bg" id="s2">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Market Opportunity</div>
+  <h2 class="section-title">ปัญหาที่ธุรกิจไทยเจอ.</h2>
+  <div class="grid3" style="text-align:left">
+    <div class="dark-card stagger" style="--i:0">
+      <div class="dark-card-icon"><i class="fa-solid fa-arrow-trend-up" style="color:var(--red)"></i></div>
+      <h3>ค่าแอดแพงขึ้น</h3>
+      <p>ต้นทุนหาลูกค้าใหม่สูงขึ้น +30-50%/ปี<br>Organic Reach ลดลง 60%</p>
+    </div>
+    <div class="dark-card stagger" style="--i:1">
+      <div class="dark-card-icon"><i class="fa-solid fa-user-slash" style="color:var(--orange)"></i></div>
+      <h3>ลูกค้าเก่าหาย</h3>
+      <p>80% ลูกค้าเก่าไม่กลับมาซื้อซ้ำ<br>มูลค่าสูญเสีย &#3647;50K-500K/เดือน</p>
+    </div>
+    <div class="dark-card stagger" style="--i:2">
+      <div class="dark-card-icon"><i class="fa-solid fa-eye-slash" style="color:var(--yellow)"></i></div>
+      <h3>ช่องทางถึงยาก</h3>
+      <p>LINE OA Reach แค่ 5-15%<br>Facebook Reach เหลือ 2-5%</p>
+    </div>
+    <div class="dark-card stagger" style="--i:3">
+      <div class="dark-card-icon"><i class="fa-solid fa-mobile-screen" style="color:var(--blue)"></i></div>
+      <h3>โทรทีละคนไม่ Scale</h3>
+      <p>ทีมโทรได้ 30-50 คน/วัน<br>SMS ส่งได้ 10,000 คนในพริบตา</p>
+    </div>
+    <div class="dark-card stagger" style="--i:4">
+      <div class="dark-card-icon"><i class="fa-solid fa-crosshairs" style="color:var(--purple)"></i></div>
+      <h3>ไม่รู้ใครสนใจ</h3>
+      <p>ส่งโปรแล้ว ไม่รู้ใครคลิก<br>ทีมขายโทรสุ่ม ปิดดีลยาก</p>
+    </div>
+    <div class="dark-card stagger" style="--i:5">
+      <div class="dark-card-icon"><i class="fa-solid fa-lightbulb" style="color:var(--green)"></i></div>
+      <h3>SMS = โอกาส</h3>
+      <p>Open Rate 98% (vs Email 20%)<br>ถึงลูกค้าโดยตรง ไม่ถูก algorithm ซ่อน</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S3: PRODUCT FEATURES ════════════════════════════════════════ -->
+<section class="slide" id="s3">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Product</div>
+  <h2 class="section-title">BoostSMS ทำอะไรได้บ้าง.</h2>
+  <div class="grid3">
+    <div class="card stagger" style="--i:0">
+      <div class="card-icon"><i class="fa-solid fa-message"></i></div>
+      <h3>Web SMS</h3>
+      <p>ส่ง SMS ผ่านเว็บ อัปโหลด Excel/CSV ตั้งเวลาส่งล่วงหน้า รองรับ 10,000 เบอร์/ครั้ง</p>
+    </div>
+    <div class="card stagger" style="--i:1">
+      <div class="card-icon icon-green"><i class="fa-solid fa-shield-halved"></i></div>
+      <h3>OTP &amp; 2FA</h3>
+      <p>ระบบยืนยันตัวตนอัตโนมัติ Direct Route ถึงปลายทางใน 3-5 วินาที</p>
+    </div>
+    <div class="card stagger" style="--i:2">
+      <div class="card-icon icon-purple"><i class="fa-solid fa-plug"></i></div>
+      <h3>SMS API</h3>
+      <p>RESTful API รองรับ PHP, Python, Java, Node.js เชื่อมต่อ CRM/ERP</p>
+    </div>
+    <div class="card stagger" style="--i:3">
+      <div class="card-icon icon-orange"><i class="fa-solid fa-link"></i></div>
+      <h3>Tracking Link</h3>
+      <p>ย่อ URL อัตโนมัติ นับทุกคลิก คัดกรอง Hot Lead ให้ทีมขาย</p>
+    </div>
+    <div class="card stagger" style="--i:4">
+      <div class="card-icon icon-red"><i class="fa-solid fa-chart-line"></i></div>
+      <h3>Dashboard</h3>
+      <p>Real-time reporting สถานะส่ง/สำเร็จ/ล้มเหลว Export CSV/PNG</p>
+    </div>
+    <div class="card stagger" style="--i:5">
+      <div class="card-icon icon-yellow"><i class="fa-solid fa-address-book"></i></div>
+      <h3>Contact Management</h3>
+      <p>รายชื่อ, กลุ่ม, แท็ก Import/Export CSV จัดการครบ</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S4: SYSTEM ARCHITECTURE ════════════════════════════════════════ -->
+<section class="slide surface-bg" id="s4">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Architecture</div>
+  <h2 class="section-title">ระบบ 3 ส่วน.</h2>
+  <div class="grid3">
+    <div class="card stagger" style="--i:0; border-top: 4px solid var(--blue)">
+      <div class="feature-icon-wrap" style="background:rgba(56,113,254,0.08); color:var(--blue)"><i class="fa-solid fa-globe"></i></div>
+      <h3>Sale Page</h3>
+      <p style="font-size:.85rem;color:var(--blue);font-weight:600;margin-bottom:8px">boost-sms.com</p>
+      <p>Landing Page สาธารณะ<br>ฟีเจอร์ ราคา Use Case<br>ปุ่มสมัครทดลองฟรี<br>FAQ + Testimonials</p>
+    </div>
+    <div class="card stagger" style="--i:1; border-top: 4px solid var(--green)">
+      <div class="feature-icon-wrap" style="background:rgba(0,201,167,0.08); color:var(--green)"><i class="fa-solid fa-mobile-screen-button"></i></div>
+      <h3>App Dashboard</h3>
+      <p style="font-size:.85rem;color:var(--green);font-weight:600;margin-bottom:8px">app.boost-sms.com</p>
+      <p>ส่ง SMS / ตั้งเวลา<br>จัดการผู้ติดต่อ + แคมเปญ<br>ซื้อแพ็กเกจ + ดูรายงาน<br>API Keys + OTP</p>
+    </div>
+    <div class="card stagger" style="--i:2; border-top: 4px solid var(--purple)">
+      <div class="feature-icon-wrap" style="background:rgba(124,58,237,0.08); color:var(--purple)"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+      <h3>Backoffice Admin</h3>
+      <p style="font-size:.85rem;color:var(--purple);font-weight:600;margin-bottom:8px">backoffice.boost-sms.com</p>
+      <p>จัดการผู้ใช้ + คำสั่งซื้อ<br>ตรวจสลิป + อนุมัติ Sender<br>Dashboard CEO/CTO/Finance<br>Audit Logs + RBAC</p>
+    </div>
+  </div>
+
+  <!-- System Architecture Diagram -->
+  <div class="arch-diagram stagger" style="--i:3">
+    <div class="arch-flow">
+      <div class="arch-box neutral">
+        <i class="fa-solid fa-user" style="margin-right:6px"></i>ลูกค้า
+      </div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-box blue">
+        <i class="fa-solid fa-globe" style="margin-right:6px"></i>boost-sms.com<br>
+        <span class="arch-sub">Sale Page</span>
+      </div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-box neutral">
+        <i class="fa-solid fa-right-to-bracket" style="margin-right:6px"></i>สมัคร/ล็อกอิน
+      </div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-box green">
+        <i class="fa-solid fa-mobile-screen-button" style="margin-right:6px"></i>app.boost-sms.com<br>
+        <span class="arch-sub">Dashboard</span>
+      </div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-box neutral">
+        <i class="fa-solid fa-paper-plane" style="margin-right:6px"></i>ส่ง SMS / ดูรายงาน
+      </div>
+    </div>
+    <div class="arch-down">
+      <div class="arch-down-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="arch-box purple">
+        <i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px"></i>backoffice.boost-sms.com<br>
+        <span class="arch-sub">จัดการผู้ใช้ / อนุมัติ Sender / Finance</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="compliance-note stagger" style="--i:4">
+    <i class="fa-solid fa-certificate" style="margin-right:6px; color:var(--green)"></i>
+    Compliance: NBTC Certified (กสทช.) &middot; ครอบคลุม True, DTAC, AIS &middot; PDPA Ready &middot; TH 70 chars/credit &middot; EN 160 chars/credit
+  </p>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S5: PRICING STRATEGY ════════════════════════════════════════ -->
+<section class="slide" id="s5">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Pricing</div>
+  <h2 class="section-title">8 แพ็กเกจ + Free Trial.</h2>
+  <p class="section-desc">โมเดล Prepaid Credit — ไม่มีค่ารายเดือน ยิ่งซื้อเยอะยิ่งถูก (&#3647;0.44 &rarr; &#3647;0.20/SMS)</p>
+  <div class="table-wrap stagger" style="--i:0">
+    <table>
+      <thead>
+        <tr>
+          <th>กลุ่ม</th>
+          <th>แพ็กเกจ</th>
+          <th>ราคา (&#3647;)</th>
+          <th>เครดิต</th>
+          <th>&#3647;/SMS</th>
+          <th>Sender</th>
+          <th>เหมาะกับ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge b-yellow">Trial</span></td>
+          <td>Free Trial</td>
+          <td>0</td>
+          <td>100</td>
+          <td>&mdash;</td>
+          <td>1</td>
+          <td>ทดลองใช้</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-blue">Starter</span></td>
+          <td>Spark</td>
+          <td>350</td>
+          <td>800</td>
+          <td>0.44</td>
+          <td>1</td>
+          <td>ธุรกิจเริ่มต้น</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-blue">Starter</span></td>
+          <td>Shop</td>
+          <td>1,000</td>
+          <td>2,500</td>
+          <td>0.40</td>
+          <td>2</td>
+          <td>ร้านค้าเล็ก</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-green">Growth</span></td>
+          <td>Grow</td>
+          <td>3,500</td>
+          <td>9,000</td>
+          <td>0.39</td>
+          <td>5</td>
+          <td>คลินิก ฐานพันคน</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-green">Growth</span></td>
+          <td>Pro</td>
+          <td>10,000</td>
+          <td>30,000</td>
+          <td>0.33</td>
+          <td>10</td>
+          <td>ส่งต่อเนื่องทุกเดือน</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-purple">Business</span></td>
+          <td>Business</td>
+          <td>30,000</td>
+          <td>110,000</td>
+          <td>0.27</td>
+          <td>Multi</td>
+          <td>หลายแคมเปญ</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-purple">Business</span></td>
+          <td>Scale</td>
+          <td>100,000</td>
+          <td>400,000</td>
+          <td>0.25</td>
+          <td>Multi</td>
+          <td>ปริมาณสูง</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-red">Enterprise</span></td>
+          <td>Enterprise</td>
+          <td>300,000</td>
+          <td>1,300,000</td>
+          <td>0.23</td>
+          <td>Unlimited</td>
+          <td>องค์กรใหญ่</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-red">Enterprise</span></td>
+          <td>Enterprise+</td>
+          <td>1,200,000</td>
+          <td>6,000,000</td>
+          <td>0.20</td>
+          <td>Unlimited</td>
+          <td>High-volume</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S6: TARGET AUDIENCE ════════════════════════════════════════ -->
+<section class="slide dark-bg" id="s6">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Target</div>
+  <h2 class="section-title">กลุ่มเป้าหมาย &amp; อุตสาหกรรมนำร่อง.</h2>
+  <div class="grid2" style="margin-top:40px">
+    <div class="stagger" style="--i:0">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ระดับ</th><th>กลุ่ม</th><th>บทบาท</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--red);font-weight:700"><i class="fa-solid fa-bullseye" style="margin-right:6px"></i>หลัก</td>
+              <td>เจ้าของ SME / คลินิก / แบรนด์</td>
+              <td>ผู้ตัดสินใจซื้อ</td>
+            </tr>
+            <tr>
+              <td style="color:var(--yellow);font-weight:700"><i class="fa-solid fa-bullseye" style="margin-right:6px"></i>รอง</td>
+              <td>Marketing / CRM / Sales Mgr</td>
+              <td>ผู้เสนอเครื่องมือ</td>
+            </tr>
+            <tr>
+              <td style="color:var(--blue);font-weight:700"><i class="fa-solid fa-bullseye" style="margin-right:6px"></i>สนับสนุน</td>
+              <td>Admin / Ops / CS</td>
+              <td>ผู้ใช้ประจำวัน</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="stagger" style="--i:1">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>อุตสาหกรรม</th><th>เหตุผล</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color:var(--green);font-weight:700">1</td>
+              <td>Clinic / Beauty / Wellness</td>
+              <td>เหมาะสุด — ฐานลูกค้าเก่า นัดหมายซ้ำ</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Retail / E-commerce</td>
+              <td>Flash Sale, โค้ดส่วนลด</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Finance / Leasing</td>
+              <td>Billing Reminder, Payment Link</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Service / Education</td>
+              <td>กลุ่มขยายผลหลัง Case แรก</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <p class="quote-text stagger" style="--i:2">"ฐานเบอร์ลูกค้าที่คุณมี อาจสร้างยอดขายเพิ่มได้ทันที ถ้าใช้ SMS ให้ถูกวิธี"</p>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S7: MARKETING FUNNEL ════════════════════════════════════════ -->
+<section class="slide" id="s7">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Marketing Strategy</div>
+  <h2 class="section-title">Funnel Marketing Plan — 7 วัน.</h2>
+  <p class="section-desc">ค่อยๆ สร้างปัญหา อธิบายวิธีใช้ สร้างความมั่นใจ แล้วปิดการขาย</p>
+  <div class="timeline stagger" style="--i:0">
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--blue)"></div>
+      <div class="tl-date">Day 1</div>
+      <div class="tl-text">Hook</div>
+      <div class="tl-sub">Awareness</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--red)"></div>
+      <div class="tl-date">Day 2</div>
+      <div class="tl-text">Pain Point</div>
+      <div class="tl-sub">Interest</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--purple)"></div>
+      <div class="tl-date">Day 3</div>
+      <div class="tl-text">Educate</div>
+      <div class="tl-sub">Interest</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--orange)"></div>
+      <div class="tl-date">Day 4</div>
+      <div class="tl-text">Use Case</div>
+      <div class="tl-sub">Consideration</div>
+    </div>
+    <div class="tl-item" style="background:rgba(254,202,63,0.06)">
+      <div class="tl-dot" style="background:var(--yellow)"></div>
+      <div class="tl-date">Day 5 <i class="fa-solid fa-star" style="font-size:0.6rem"></i></div>
+      <div class="tl-text">Promo</div>
+      <div class="tl-sub">Conversion</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:var(--green)"></div>
+      <div class="tl-date">Day 6</div>
+      <div class="tl-text">Developer</div>
+      <div class="tl-sub">Technical</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot" style="background:#2980b9"></div>
+      <div class="tl-date">Day 7</div>
+      <div class="tl-text">Recap</div>
+      <div class="tl-sub">Closing</div>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:28px">
+    <div class="card stagger" style="--i:1">
+      <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+      <h3>Online</h3>
+      <p>Facebook Page (หลัก) &middot; LINE OA (Conversion) &middot; TikTok/Reels (Awareness) &middot; Landing Page &middot; Google Search Ads &middot; Retargeting</p>
+    </div>
+    <div class="card stagger" style="--i:2">
+      <div class="card-icon icon-purple"><i class="fa-solid fa-building-columns"></i></div>
+      <h3>Offline</h3>
+      <p>Clinic/Business Visit (30-50 แห่ง) &middot; Brochure + QR Code &middot; Mini Demo Walk-in &middot; Event/Expo Outreach</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S8: WEEK 1 EXECUTION ════════════════════════════════════════ -->
+<section class="slide surface-bg" id="s8">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Execution</div>
+  <h2 class="section-title">Week 1 — งบ &#3647;25,000.</h2>
+  <div class="funnel stagger" style="--i:0">
+    <div class="funnel-step">
+      <div class="fn">35,000</div>
+      <div class="fl">Reach</div>
+    </div>
+    <div class="funnel-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    <div class="funnel-step">
+      <div class="fn">1,750</div>
+      <div class="fl">Engagement</div>
+      <div class="fr">5%</div>
+    </div>
+    <div class="funnel-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    <div class="funnel-step">
+      <div class="fn">200</div>
+      <div class="fl">Inbox/Click</div>
+      <div class="fr">11.4%</div>
+    </div>
+    <div class="funnel-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    <div class="funnel-step">
+      <div class="fn" style="color:var(--green)">60</div>
+      <div class="fl">Trial Signup</div>
+      <div class="fr">30%</div>
+    </div>
+    <div class="funnel-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+    <div class="funnel-step">
+      <div class="fn" style="color:var(--red)">9+</div>
+      <div class="fl">Paid (30d)</div>
+      <div class="fr">15%</div>
+    </div>
+  </div>
+  <div class="grid4" style="text-align:center">
+    <div class="card stagger" style="--i:1">
+      <div class="card-num">&#3647;9K</div>
+      <div class="card-label">Paid Boost (36%)</div>
+    </div>
+    <div class="card stagger" style="--i:2">
+      <div class="card-num">&#3647;8K</div>
+      <div class="card-label">Creative (32%)</div>
+    </div>
+    <div class="card stagger" style="--i:3">
+      <div class="card-num">&#3647;5K</div>
+      <div class="card-label">KOL (20%)</div>
+    </div>
+    <div class="card stagger" style="--i:4">
+      <div class="card-num">&#3647;3K</div>
+      <div class="card-label">Tools + สำรอง (12%)</div>
+    </div>
+  </div>
+  <div class="grid3" style="text-align:center; margin-top:18px">
+    <div class="card stagger" style="--i:5">
+      <div class="card-num" style="font-size:1.4rem">&le; &#3647;45</div>
+      <div class="card-label">CPL (Paid only)</div>
+    </div>
+    <div class="card stagger" style="--i:6">
+      <div class="card-num" style="font-size:1.4rem">&le; &#3647;417</div>
+      <div class="card-label">CAC (blended)</div>
+    </div>
+    <div class="card stagger" style="--i:7">
+      <div class="card-num" style="font-size:1.4rem">&ge; 15%</div>
+      <div class="card-label">Trial &rarr; Paid</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S9: DECISION GATE ════════════════════════════════════════ -->
+<section class="slide" id="s9">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Decision Gate</div>
+  <h2 class="section-title">จบ Week 1 แล้วทำอะไรต่อ.</h2>
+  <div class="gate-grid">
+    <div class="gate-card go stagger" style="--i:0">
+      <div class="gt"><i class="fa-solid fa-circle-check" style="color:var(--green); margin-right:6px"></i>GO</div>
+      <div class="gc">Trial &ge; 60 &middot; CPL &le; 45</div>
+      <div class="ga">Scale Week 2 งบ x2<br>เพิ่ม Google Ads</div>
+    </div>
+    <div class="gate-card pivot stagger" style="--i:1">
+      <div class="gt"><i class="fa-solid fa-triangle-exclamation" style="color:var(--orange); margin-right:6px"></i>PIVOT</div>
+      <div class="gc">Trial 30-59 &middot; CPL 45-80</div>
+      <div class="ga">ปรับ Creative + เพิ่ม Retarget<br>ลด Cold เพิ่ม Warm</div>
+    </div>
+    <div class="gate-card stop stagger" style="--i:2">
+      <div class="gt"><i class="fa-solid fa-hand" style="color:var(--red); margin-right:6px"></i>STOP</div>
+      <div class="gc">Trial &lt; 30 &middot; CPL &gt; 80</div>
+      <div class="ga">หยุด Paid ทั้งหมด<br>ประเมิน Product-Market Fit ใหม่</div>
+    </div>
+  </div>
+  <div class="table-wrap stagger" style="--i:3">
+    <table>
+      <thead>
+        <tr><th>Review</th><th>เมื่อไหร่</th><th>ทำอะไร</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge b-blue">Daily</span></td>
+          <td>ทุกวัน 09:00</td>
+          <td>เช็ก Reach, ER, Inbox ของโพสต์เมื่อวาน</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-yellow">Mid-week</span></td>
+          <td>Day 4</td>
+          <td>Review Funnel ถึงครึ่งทางไหม</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-red">Final</span></td>
+          <td>Day 8</td>
+          <td>สรุปทุก KPI + Decision Gate</td>
+        </tr>
+        <tr>
+          <td><span class="badge b-green">30d</span></td>
+          <td>Day 38</td>
+          <td>วัด Trial &rarr; Paid + คำนวณ ROAS จริง</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S10: SALES TEAM ════════════════════════════════════════ -->
+<section class="slide dark-bg" id="s10">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Sales</div>
+  <h2 class="section-title">โครงสร้างทีมขาย.</h2>
+  <div class="grid3">
+    <div class="dark-card stagger" style="--i:0; text-align:center">
+      <div class="dark-card-icon"><i class="fa-solid fa-wallet" style="color:var(--yellow); font-size:1.5rem"></i></div>
+      <h3 style="color:var(--yellow)">เงินเดือนฐาน</h3>
+      <p style="font-size:1.5rem;font-weight:800;color:#fff;margin:14px 0;font-family:var(--font-display)">&#3647;15K — 25K</p>
+      <p>ใหม่ &#3647;15K &middot; มีประสบการณ์ &#3647;18K<br>Senior/Lead &#3647;22-25K</p>
+    </div>
+    <div class="dark-card stagger" style="--i:1; text-align:center">
+      <div class="dark-card-icon"><i class="fa-solid fa-percent" style="color:var(--green); font-size:1.5rem"></i></div>
+      <h3 style="color:var(--green)">คอมมิชชั่น</h3>
+      <p style="font-size:1.5rem;font-weight:800;color:#fff;margin:14px 0;font-family:var(--font-display)">8%</p>
+      <p>ของราคาแพ็กเกจ (ก่อน VAT)<br>Recurring: 4% ถ้าซื้อซ้ำใน 6 เดือน</p>
+    </div>
+    <div class="dark-card stagger" style="--i:2; text-align:center">
+      <div class="dark-card-icon"><i class="fa-solid fa-trophy" style="color:var(--blue); font-size:1.5rem"></i></div>
+      <h3 style="color:var(--blue)">โบนัสเป้า</h3>
+      <p style="font-size:1.5rem;font-weight:800;color:#fff;margin:14px 0;font-family:var(--font-display)">&#3647;3K — 15K</p>
+      <p>&ge;&#3647;100K: +&#3647;3K &middot; &ge;&#3647;300K: +&#3647;8K<br>&ge;&#3647;500K: +&#3647;15K (ไม่สะสม)</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S11: EARNING SCENARIOS ════════════════════════════════════════ -->
+<section class="slide" id="s11">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Earning Potential</div>
+  <h2 class="section-title">ตัวอย่างรายได้รายเดือน.</h2>
+  <div class="scenario-row">
+    <div class="scenario stagger" style="--i:0">
+      <div class="sc-title">เซลส์ใหม่ — แพ็กเกจเล็ก</div>
+      <div class="sc-num">&#3647;15,940</div>
+      <div class="sc-detail">เงินเดือน 15K<br>Spark x5 + Shop x3 + Grow x2<br>ยอดขาย &#3647;10,750 (ยังไม่ถึงเป้า)</div>
+    </div>
+    <div class="scenario highlight-border stagger" style="--i:1">
+      <div class="sc-title">เซลส์ปกติ — ผสมเล็ก+กลาง</div>
+      <div class="sc-num">&#3647;27,600</div>
+      <div class="sc-detail">เงินเดือน 18K<br>Shop x5 + Grow x5 + Pro x3 + Business x1<br>ยอดขาย &#3647;152,500 &rarr; โบนัส &#3647;3K</div>
+    </div>
+    <div class="scenario stagger" style="--i:2">
+      <div class="sc-title">Top Sales — ดีลใหญ่</div>
+      <div class="sc-num">&#3647;84,200</div>
+      <div class="sc-detail">เงินเดือน 18K<br>Pro x5 + Business x3 + Scale x2 + Enterprise x1<br>ยอดขาย &#3647;640,000 &rarr; โบนัส &#3647;15K</div>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:28px">
+    <div class="card stagger" style="--i:3">
+      <div class="card-icon icon-orange"><i class="fa-solid fa-calendar-days"></i></div>
+      <h3>เงื่อนไขสำคัญ</h3>
+      <p>จ่ายคอมทุกวันที่ 10 เดือนถัดไป &middot; Refund ใน 7 วันไม่นับ &middot; เป้าขั้นต่ำเดือน 4+: &#3647;30K &middot; ต่ำกว่า 3 เดือนติด = ประเมิน</p>
+    </div>
+    <div class="card stagger" style="--i:4">
+      <div class="card-icon icon-green"><i class="fa-solid fa-gift"></i></div>
+      <h3>สวัสดิการทีมขาย</h3>
+      <p>ค่าเดินทางเบิกจริง &le; &#3647;3K/เดือน &middot; ค่าโทร &#3647;500/เดือน &middot; Demo Account ฟรี &middot; ช่วงทดลองงานเงินเดือนเต็ม</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S12: FINANCIALS ════════════════════════════════════════ -->
+<section class="slide surface-bg" id="s12">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Financials</div>
+  <h2 class="section-title">สินทรัพย์ &amp; ตัวเลข.</h2>
+  <div class="grid2">
+    <div class="card stagger" style="--i:0">
+      <div class="card-icon"><i class="fa-solid fa-coins"></i></div>
+      <h3>ต้นทุนสินทรัพย์ (Intangible Asset)</h3>
+      <div class="table-wrap" style="margin-top:16px">
+        <table>
+          <tbody>
+            <tr>
+              <td>ค่าลิขสิทธิ์ Source Code</td>
+              <td style="text-align:right;font-weight:700;color:var(--blue)">&#3647;2,000,000</td>
+            </tr>
+            <tr>
+              <td>DevOps (15K x 100% x 1.25 เดือน)</td>
+              <td style="text-align:right">&#3647;18,750</td>
+            </tr>
+            <tr>
+              <td>CTO (100K x 10% x 1.25 เดือน)</td>
+              <td style="text-align:right">&#3647;12,500</td>
+            </tr>
+            <tr style="border-top:2px solid var(--red)">
+              <td><strong>รวมต้นทุน</strong></td>
+              <td style="text-align:right;font-weight:900;color:var(--red);font-size:1.1rem">&#3647;2,031,250</td>
+            </tr>
+            <tr>
+              <td>ตัดจำหน่าย 3 ปี (36 เดือน)</td>
+              <td style="text-align:right;font-weight:600">~&#3647;56,424/เดือน</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card stagger" style="--i:1">
+      <div class="card-icon icon-green"><i class="fa-solid fa-chart-bar"></i></div>
+      <h3>สถานะปัจจุบัน (19 พ.ค. 2026)</h3>
+      <div class="table-wrap" style="margin-top:16px">
+        <table>
+          <tbody>
+            <tr>
+              <td>เครดิตคงเหลือ</td>
+              <td style="text-align:right;font-weight:700;color:var(--blue)">24,752 SMS</td>
+            </tr>
+            <tr>
+              <td>แพ็กเกจ Active</td>
+              <td style="text-align:right">Boost Pro (หมดอายุ 10 พ.ค. 71)</td>
+            </tr>
+            <tr>
+              <td>Sender Names</td>
+              <td style="text-align:right">3 (อนุมัติหมด)</td>
+            </tr>
+            <tr>
+              <td>ผู้ใช้ใหม่ล่าสุด</td>
+              <td style="text-align:right">3 คน</td>
+            </tr>
+            <tr>
+              <td>SMS วันนี้</td>
+              <td style="text-align:right">138</td>
+            </tr>
+            <tr>
+              <td>แคมเปญทดสอบ</td>
+              <td style="text-align:right"><span class="badge b-green">สำเร็จ 100%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S13: REVENUE PROJECTION ════════════════════════════════════════ -->
+<section class="slide dark-bg" id="s13">
+<div class="slide-inner reveal">
+  <div class="eyebrow">Projection</div>
+  <h2 class="section-title">Revenue Projection.</h2>
+  <p class="section-desc">จากแผน Week 1 ถ้าได้ 9 Paid Customers แรก</p>
+  <div class="grid3" style="margin-top:40px; text-align:center">
+    <div class="dark-card stagger" style="--i:0; text-align:center">
+      <p style="font-size:2.2rem;font-weight:900;color:var(--yellow);font-family:var(--font-display)">9+</p>
+      <p style="font-size:.85rem;opacity:.6;margin-top:8px">Paid Customers (30d)<br>60 Trial x 15%</p>
+    </div>
+    <div class="dark-card stagger" style="--i:1; text-align:center">
+      <p style="font-size:2.2rem;font-weight:900;color:var(--green);font-family:var(--font-display)">&#3647;18K+</p>
+      <p style="font-size:.85rem;opacity:.6;margin-top:8px">Projected MRR<br>(9 x ARPU &#3647;2K)</p>
+    </div>
+    <div class="dark-card stagger" style="--i:2; text-align:center">
+      <p style="font-size:2.2rem;font-weight:900;color:var(--blue);font-family:var(--font-display)">2.0x</p>
+      <p style="font-size:.85rem;opacity:.6;margin-top:8px">ROAS (เดือนแรก)<br>MRR &divide; Ad Spend &#3647;9K</p>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:24px; text-align:center">
+    <div class="dark-card stagger" style="--i:3; text-align:center">
+      <p style="font-size:2rem;font-weight:900;color:var(--orange);font-family:var(--font-display)">~1.4 เดือน</p>
+      <p style="font-size:.85rem;opacity:.6;margin-top:8px">Payback Period<br>CAC &#3647;417 &divide; ARPU &#3647;2K/mo</p>
+    </div>
+    <div class="dark-card stagger" style="--i:4; text-align:center">
+      <p style="font-size:2rem;font-weight:900;color:var(--green);font-family:var(--font-display)">&#3647;56K</p>
+      <p style="font-size:.85rem;opacity:.6;margin-top:8px">Break-even ต่อเดือน<br>(= ค่าตัดจำหน่ายสินทรัพย์)</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════ S14: NEXT STEPS ════════════════════════════════════════ -->
+<section class="slide gradient-bg" id="s14">
+<div class="slide-inner reveal">
+  <h2 class="section-title" style="color:#fff">Next Steps.</h2>
+  <p class="section-desc">สิ่งที่ต้องทำเพื่อให้ BoostSMS เริ่มสร้างรายได้</p>
+  <div class="grid2" style="margin-top:40px; text-align:left">
+    <div class="checklist-box stagger" style="--i:0">
+      <h3><i class="fa-solid fa-clipboard-list"></i> ก่อน Launch (Pre-Day 1)</h3>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> Landing Page tested &lt; 2s</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> Signup flow ทำงานครบ</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> UTM tracking ทดสอบใน GA4</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> Promo Code LAUNCH20 ตั้งค่าแล้ว</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> Creative 7 ชิ้นส่งครบ</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> KOL confirm Day 5</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> LINE OA ข้อความต้อนรับพร้อม</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> Email drip sequence ตั้งค่าแล้ว</div>
+    </div>
+    <div class="checklist-box stagger" style="--i:1">
+      <h3><i class="fa-solid fa-rocket"></i> หลัง Week 1</h3>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> Final Review Day 8 — Decision Gate</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> Lead Nurture (~140 คนยังไม่สมัคร)</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> Email onboarding drip 3 ฉบับ</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> Sales follow-up Trial Users</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> วัด Trial &rarr; Paid (Day 38)</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> คำนวณ ROAS จริง</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> วางแผน Week 2 (ถ้า GO)</div>
+      <div class="checklist-item"><i class="fa-regular fa-square"></i> V.2 Roadmap: AI Integration</div>
+    </div>
+  </div>
+  <button class="cta-btn" onclick="window.open('https://boost-sms.com/')">
+    <i class="fa-solid fa-globe" style="margin-right:8px"></i>boost-sms.com
+  </button>
+  <div class="cta-sub">
+    <i class="fa-solid fa-phone" style="margin-right:4px"></i> ฝ่ายขาย 094-389-1495 &middot;
+    <i class="fa-solid fa-headset" style="margin-right:4px"></i> ฝ่ายบริการ 02-124-3423 &middot;
+    LINE: @boostsms
+  </div>
+</div>
+</section>
+
+<footer>BoostSMS Full Business Presentation &middot; บริษัท อีซี่สลิป จำกัด &middot; Thunder Solution &middot; 2026</footer>
+
+<script>
+/* ── Theme Toggle ── */
+const toggle = document.getElementById('themeToggle');
+const icon = toggle.querySelector('i');
+const html = document.documentElement;
+
+function setTheme(theme) {
+  if (theme === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    icon.className = 'fa-solid fa-sun';
+  } else {
+    html.removeAttribute('data-theme');
+    icon.className = 'fa-solid fa-moon';
+  }
+  localStorage.setItem('boostsms-theme', theme);
+}
+
+// Load saved theme
+const saved = localStorage.getItem('boostsms-theme');
+if (saved) setTheme(saved);
+
+toggle.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+/* ── Slides & Progress ── */
+const slides = document.querySelectorAll('.slide');
+const progress = document.getElementById('progress');
+const slideCount = document.getElementById('slideCount');
+const total = slides.length;
+const navPills = document.querySelectorAll('.nav-pill');
+
+/* ── Scroll Reveal with Stagger ── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const reveal = e.target.querySelector('.reveal');
+      if (reveal) {
+        reveal.classList.add('visible');
+        // Stagger children
+        const staggers = reveal.querySelectorAll('.stagger');
+        staggers.forEach((el, i) => {
+          el.style.animationDelay = (i * 100) + 'ms';
+        });
+      }
+    }
+  });
+}, { threshold: 0.15 });
+
+slides.forEach(s => observer.observe(s));
+
+/* ── Scroll Progress & Counter ── */
+const sectionRanges = [
+  { label: 'Overview', start: 0, end: 2 },
+  { label: 'Product', start: 3, end: 5 },
+  { label: 'Marketing', start: 6, end: 9 },
+  { label: 'Sales', start: 10, end: 11 },
+  { label: 'Finance', start: 12, end: 13 },
+  { label: 'Next', start: 14, end: 14 }
+];
+
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  progress.style.width = pct + '%';
+
+  let current = 0;
+  slides.forEach((s, i) => {
+    const r = s.getBoundingClientRect();
+    if (r.top < window.innerHeight / 2) current = i;
+  });
+
+  slideCount.textContent = (current + 1) + ' / ' + total;
+
+  // Update nav pills
+  navPills.forEach(p => p.classList.remove('active'));
+  for (const range of sectionRanges) {
+    if (current >= range.start && current <= range.end) {
+      navPills.forEach(p => {
+        if (p.textContent.trim() === range.label) p.classList.add('active');
+      });
+      break;
+    }
+  }
+}, { passive: true });
+
+/* ── Navigation ── */
+function go(i) {
+  slides[i]?.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

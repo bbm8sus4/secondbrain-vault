@@ -1,0 +1,16 @@
+# Obsidian local/cache state (regenerates, machine-specific)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+
+# Smart Connections embedding cache (~50M, regenerates)
+.smart-env/
+
+# OS cruft
+.DS_Store
+**/.DS_Store
+.trash/
+
+# Temp/intermediate scratch from scripts
+**/_source/*.tmp
+*.swp

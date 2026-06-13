@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>รายงานผู้บริหาร — Thunder Group · พ.ค. 2569</title>
+<style>
+  :root{
+    --bg:#f5f5f7;
+    --card:#ffffff;
+    --ink:#1d1d1f;
+    --ink2:#5a5a60;
+    --ink3:#6e6e73;
+    --line:#e5e5ea;
+    --line2:#ededf0;
+    --blue:#0066cc;
+    --blue-d:#0058b0;
+    --green:#34c759;
+    --green-d:#1c8c3d;
+    --red:#ff3b30;
+    --red-d:#c4291e;
+    /* Brand palette */
+    --thunder:#5e5ce6;       /* Thunder purple */
+    --thunder-d:#4a48c4;
+    --easyslip:#0a84ff;      /* EasySlip blue */
+    --easyslip-d:#0066cc;
+    --orange:#ff9f0a;
+    --orange-d:#ff6f0a;
+    --radius:22px;
+    --radius-sm:16px;
+    --radius-xs:12px;
+    --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.06);
+    --shadow-h:0 2px 6px rgba(0,0,0,.06), 0 18px 44px rgba(0,0,0,.11);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Sukhumvit Set","Noto Sans Thai","Leelawadee UI","Tahoma",sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    padding:0 0 64px;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1060px;margin:0 auto;padding:0 22px;}
+  ::selection{background:rgba(94,92,230,.18);}
+
+  /* ===== Header ===== */
+  header{padding:60px 0 26px;}
+  .eyebrow{
+    font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--blue);margin-bottom:12px;
+  }
+  h1{
+    font-size:clamp(28px,5.4vw,48px);font-weight:700;letter-spacing:-.022em;line-height:1.1;
+    margin-bottom:16px;
+  }
+  .sub{
+    font-size:16px;color:var(--ink2);max-width:700px;line-height:1.55;
+  }
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+  .chip{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12.5px;font-weight:500;color:var(--ink2);
+    background:#fff;border:1px solid var(--line);border-radius:999px;
+    padding:6px 13px;
+  }
+  .chip b{color:var(--ink);font-weight:600;}
+
+  /* ===== Section ===== */
+  section{margin-top:42px;}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
+  .sec-head h2{font-size:23px;font-weight:700;letter-spacing:-.012em;}
+  .sec-head .tag{font-size:13px;color:var(--ink3);font-weight:500;}
+
+  /* ===== Hero ===== */
+  .hero{
+    background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:40px 40px 36px;text-align:center;position:relative;overflow:hidden;
+    transition:box-shadow .35s ease, transform .35s ease;
+  }
+  .hero:hover{box-shadow:var(--shadow-h);transform:translateY(-2px);}
+  .hero-eyebrow{
+    font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--blue);margin-bottom:14px;
+  }
+  .hero-val{
+    font-size:clamp(46px,12vw,116px);font-weight:700;letter-spacing:-.04em;line-height:.98;
+    color:#3a4bd6;
+    margin-bottom:6px;font-variant-numeric:tabular-nums;word-break:break-word;
+  }
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    .hero-val{
+      background:linear-gradient(120deg,#5e5ce6 0%,#0a84ff 55%,#0071e3 100%);
+      -webkit-background-clip:text;background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+  }
+  .hero-val .cur{font-size:.42em;font-weight:600;vertical-align:.34em;margin-right:.04em;
+    -webkit-text-fill-color:initial;color:var(--ink3);background:none;}
+  .hero-cap{font-size:14px;color:var(--ink2);font-weight:600;margin-bottom:20px;}
+  .hero-row{display:flex;align-items:center;gap:13px;flex-wrap:wrap;justify-content:center;}
+  .hero-prev{font-size:14px;color:var(--ink2);font-variant-numeric:tabular-nums;}
+  .pill.lg{font-size:16px;padding:7px 16px;}
+  .pill.lg .arr{font-size:13px;}
+  .hero-note{
+    margin:24px auto 0;max-width:640px;font-size:13px;color:var(--ink2);
+    background:#f5f7ff;border:1px solid #e3ecfb;border-radius:14px;padding:12px 16px;line-height:1.55;
+  }
+  .hero-note b{color:var(--ink);font-weight:600;}
+
+  /* ===== Pill badge ===== */
+  .pill{
+    display:inline-flex;align-items:center;gap:4px;
+    font-size:13.5px;font-weight:700;border-radius:999px;padding:4px 11px;
+    font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+  .pill .arr{font-size:11px;line-height:1;}
+  .up{background:rgba(28,140,61,.14);color:var(--green-d);}
+  .down{background:rgba(196,41,30,.13);color:var(--red-d);}
+  .flat{background:rgba(110,110,115,.14);color:#4f4f54;}
+  .pill.sm{font-size:12px;padding:3px 9px;}
+
+  /* ===== KPI tile grid ===== */
+  .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:14px;}
+  .tile{
+    background:var(--card);border-radius:var(--radius-sm);box-shadow:var(--shadow);
+    padding:18px 18px 16px;transition:box-shadow .3s ease, transform .3s ease;min-width:0;
+  }
+  .tile:hover{box-shadow:var(--shadow-h);transform:translateY(-2px);}
+  .tile .t-lab{font-size:12.5px;color:var(--ink2);font-weight:600;display:flex;align-items:center;gap:6px;}
+  .tile .t-val{font-size:24px;font-weight:700;letter-spacing:-.02em;margin:8px 0 4px;font-variant-numeric:tabular-nums;}
+  .tile .t-val .cur{font-size:.6em;color:var(--ink3);font-weight:600;margin-right:1px;}
+  .tile .t-prev{font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums;}
+  .tile .t-bar{display:flex;gap:6px;align-items:flex-end;height:30px;margin-top:12px;}
+  .tile .t-bar .b{flex:1;border-radius:4px 4px 0 0;min-height:4px;}
+  .tile .t-bar .b.apr{background:#c7c7cc;}
+  .tile .t-bar .b.may{background:var(--blue);}
+  .tile .t-foot{display:flex;justify-content:space-between;align-items:center;gap:6px;font-size:10.5px;color:var(--ink3);margin-top:6px;}
+
+  /* dot helper */
+  .dot{width:9px;height:9px;display:inline-block;border-radius:50%;flex:none;}
+  .dot-thunder{background:var(--thunder);}
+  .dot-easyslip{background:var(--easyslip);}
+
+  /* ===== Brand card ===== */
+  .brand{
+    background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+    overflow:hidden;transition:box-shadow .35s ease, transform .35s ease;
+  }
+  .brand:hover{box-shadow:var(--shadow-h);transform:translateY(-2px);}
+  .brand-head{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    padding:24px 30px 20px;border-bottom:1px solid var(--line);
+  }
+  .brand-id{display:flex;align-items:center;gap:14px;}
+  .brand-dot{width:14px;height:14px;border-radius:50%;flex:none;}
+  .brand-dot.dot-thunder{background:var(--thunder);}
+  .brand-dot.dot-easyslip{background:var(--easyslip);}
+  .brand-id h3{font-size:20px;font-weight:700;letter-spacing:-.01em;}
+  .brand-id .s{font-size:12.5px;color:var(--ink3);font-weight:500;}
+  .brand-tot{text-align:right;}
+  .brand-tot .lab{font-size:11px;color:var(--ink3);font-weight:600;letter-spacing:.03em;text-transform:uppercase;}
+  .brand-tot .v{font-size:26px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+  .brand-tot .v .cur{font-size:.6em;color:var(--ink3);font-weight:600;}
+  .brand-tot .row{display:flex;align-items:center;gap:10px;justify-content:flex-end;margin-top:6px;}
+  .brand-tot .prev{font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums;}
+
+  /* ===== iOS Settings-style product table ===== */
+  .ptable{padding:6px 30px 8px;}
+  .prow2{
+    display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;align-items:center;gap:12px;
+    padding:15px 0;border-bottom:1px solid var(--line2);
+  }
+  .prow2.head{
+    padding:12px 0 10px;border-bottom:1px solid var(--line);
+    font-size:11px;font-weight:600;color:var(--ink3);letter-spacing:.02em;text-transform:uppercase;
+  }
+  .prow2.head .num{text-align:right;}
+  .prow2:last-child{border-bottom:none;}
+  .pt-name{font-size:15px;font-weight:600;display:flex;flex-direction:column;gap:2px;min-width:0;}
+  .pt-name .nm{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .pt-name .sub{font-size:12px;color:var(--ink3);font-weight:500;}
+  .pt-name .tg{font-size:10.5px;font-weight:600;color:#fff;background:var(--blue);border-radius:6px;padding:1px 7px;}
+  .num{text-align:right;font-variant-numeric:tabular-nums;font-size:14px;}
+  .num .cur{color:var(--ink3);font-weight:500;font-size:.85em;margin-right:1px;}
+  .num.apr{color:var(--ink2);}
+  .num.may{color:var(--ink);font-weight:600;}
+  .pt-chg{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
+  .pt-chg .delta{font-size:11.5px;color:var(--ink2);font-variant-numeric:tabular-nums;}
+
+  /* ===== Product chart rows (SVG) ===== */
+  .prod{padding:6px 30px 24px;}
+  .prod-title{font-size:12px;font-weight:600;color:var(--ink3);letter-spacing:.02em;text-transform:uppercase;padding:18px 0 4px;}
+  .prow{padding:14px 0;border-bottom:1px solid var(--line2);}
+  .prow:last-child{border-bottom:none;}
+  .prow-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px;flex-wrap:wrap;}
+  .prow-name{font-size:14px;font-weight:600;}
+  .prow-name .sub{font-size:12px;color:var(--ink3);font-weight:500;margin-left:6px;}
+  .svg-bars{width:100%;display:block;height:auto;}
+  .bar-cap{font:600 12px -apple-system,"Noto Sans Thai","Sukhumvit Set",sans-serif;fill:var(--ink2);}
+  .bar-num{font:600 12.5px -apple-system,"Noto Sans Thai","Sukhumvit Set",sans-serif;fill:var(--ink);font-variant-numeric:tabular-nums;}
+
+  /* legend */
+  .legend{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:12px;color:var(--ink2);padding:14px 30px 2px;}
+  .legend .li{display:inline-flex;align-items:center;gap:6px;}
+  .legend .sw{width:11px;height:11px;border-radius:3px;flex:none;}
+  .sw-apr{background:#9a9aa0;}
+  .sw-may-thunder{background:var(--thunder);}
+  .sw-may-easyslip{background:var(--easyslip);}
+  .legend .note{margin-left:auto;font-size:11.5px;color:var(--ink3);}
+
+  /* ===== Split / proportion ===== */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .panel{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px;transition:box-shadow .35s ease, transform .35s ease;}
+  .panel:hover{box-shadow:var(--shadow-h);transform:translateY(-2px);}
+  .panel h3{font-size:17px;font-weight:700;margin-bottom:4px;}
+  .panel .ph{font-size:12.5px;color:var(--ink3);margin-bottom:18px;}
+  .split-bar{display:flex;height:46px;border-radius:13px;overflow:hidden;}
+  .split-bar .seg{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;white-space:nowrap;min-width:0;}
+  .seg-easyslip{background:linear-gradient(90deg,#0a84ff,#0066cc);}
+  .seg-thunder{background:linear-gradient(90deg,#6e6cf0,#5e5ce6);}
+  .split-leg{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-size:13px;flex-wrap:wrap;}
+  .split-leg .it{display:flex;align-items:center;gap:8px;}
+  .split-leg .it .d{width:11px;height:11px;border-radius:3px;flex:none;}
+  .split-leg .it b{font-weight:600;}
+  .split-leg .it .pc{font-weight:700;font-variant-numeric:tabular-nums;}
+
+  /* concentration / risk meter */
+  .conc-track{height:28px;background:#eef0f2;border-radius:9px;overflow:hidden;position:relative;display:flex;}
+  .conc-fill{height:100%;background:linear-gradient(90deg,#ff9f0a,#ff6f0a);display:flex;align-items:center;padding-left:13px;color:#fff;font-weight:700;font-size:13px;white-space:nowrap;min-width:0;}
+  .conc-rest{flex:1;display:flex;align-items:center;justify-content:flex-end;padding-right:11px;font-size:11.5px;color:var(--ink3);font-weight:600;}
+  .warn-line{display:flex;gap:9px;align-items:flex-start;margin-top:16px;font-size:13px;color:var(--ink2);line-height:1.55;}
+  .warn-line .ic{flex:none;}
+  .warn-line b{color:var(--ink);font-weight:600;}
+
+  /* ===== Insights ===== */
+  .insights{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:8px 30px 24px;}
+  .ins{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line2);}
+  .ins:last-child{border-bottom:none;}
+  .ins-n{flex:none;width:30px;height:30px;border-radius:50%;background:#e7eefc;color:var(--blue-d);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;}
+  .ins.alert .ins-n{background:#fde9e2;color:#b9380c;}
+  .ins-b{flex:1;min-width:0;}
+  .ins-b .h{font-size:15px;font-weight:600;margin-bottom:3px;}
+  .ins-b .d{font-size:13.5px;color:var(--ink2);line-height:1.55;}
+  .ins-b .d b{color:var(--ink);font-weight:600;}
+
+  /* ===== Notes ===== */
+  .notes{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);box-shadow:var(--shadow);padding:22px 24px;margin-top:18px;}
+  .notes .nh{font-size:14px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+  .notes ul{list-style:none;display:flex;flex-direction:column;gap:11px;}
+  .notes li{font-size:13px;color:var(--ink2);line-height:1.6;display:flex;gap:10px;align-items:flex-start;}
+  .notes li .b{flex:none;width:6px;height:6px;border-radius:50%;background:var(--ink3);margin-top:7px;}
+  .notes li b{color:var(--ink);font-weight:600;}
+
+  footer{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--ink3);line-height:1.65;}
+
+  @media (max-width:880px){
+    .tiles{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:680px){
+    header{padding:42px 0 22px;}
+    .hero{padding:30px 20px 28px;}
+    .grid2{grid-template-columns:1fr;}
+    .brand-head,.prod,.ptable,.insights,.panel{padding-left:20px;padding-right:20px;}
+    .legend{padding-left:20px;padding-right:20px;}
+    .legend .note{margin-left:0;width:100%;}
+    .tiles{grid-template-columns:1fr 1fr;}
+    .brand-head{align-items:flex-start;}
+    .brand-tot{text-align:left;}
+    .brand-tot .row{justify-content:flex-start;}
+    /* Responsive table: keep ALL columns — restack into card rows */
+    .prow2.head{display:none;}
+    .prow2{
+      grid-template-columns:1fr auto;grid-template-areas:
+        "name chg"
+        "vals vals";
+      row-gap:10px;padding:16px 0;
+    }
+    .pt-name{grid-area:name;}
+    .pt-chg{grid-area:chg;}
+    .num{display:none;}
+    .pt-vals{
+      grid-area:vals;display:flex;gap:18px;flex-wrap:wrap;
+      background:#f5f5f7;border-radius:10px;padding:10px 13px;width:100%;
+    }
+    .pt-vals .cell{display:flex;flex-direction:column;gap:2px;}
+    .pt-vals .cell .lb{font-size:10.5px;color:var(--ink3);font-weight:600;text-transform:uppercase;letter-spacing:.02em;}
+    .pt-vals .cell .vv{font-size:14px;font-variant-numeric:tabular-nums;}
+    .pt-vals .cell.apr .vv{color:var(--ink2);}
+    .pt-vals .cell.may .vv{color:var(--ink);font-weight:600;}
+  }
+  /* show mobile value block only on small screens */
+  .pt-vals{display:none;}
+  @media (max-width:680px){.pt-vals{display:flex;}}
+  @media (max-width:430px){
+    .tiles{grid-template-columns:1fr;}
+    .wrap{padding:0 16px;}
+    .split-bar .seg{font-size:12.5px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto;}
+    .hero,.tile,.brand,.panel{transition:none;}
+    .hero:hover,.tile:hover,.brand:hover,.panel:hover{transform:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="eyebrow">รายงานผู้บริหาร · Thunder Group</div>
+    <h1>ภาพรวมรายได้กลุ่ม<br>เมษายน → พฤษภาคม 2569</h1>
+    <p class="sub">เปรียบเทียบรายได้ระดับกลุ่มและรายสินค้าของ Thunder และ EasySlip โดย พ.ค. เป็นยอดสะสมระหว่างเดือน (MTD) ถึงวันที่ 29 ขณะที่ เม.ย. เป็นยอดเต็มเดือน</p>
+    <div class="meta">
+      <span class="chip"><b>แหล่งข้อมูล</b> Master Dashboard — Thunder Group</span>
+      <span class="chip"><b>เม.ย.</b> เต็มเดือน · 30 วัน</span>
+      <span class="chip"><b>พ.ค.</b> MTD วันที่ 1–29 · ~93.5% ของเดือน</span>
+      <span class="chip"><b>สกุลเงิน</b> บาท (฿)</span>
+    </div>
+  </header>
+
+  <!-- HERO KPI -->
+  <div class="hero">
+    <div class="hero-eyebrow">รายได้รวมทั้งกลุ่ม · พ.ค. (MTD 1–29)</div>
+    <div class="hero-val"><span class="cur">฿</span>10,756,309</div>
+    <div class="hero-cap">เทียบ เม.ย. (เต็มเดือน) ฿10,054,604</div>
+    <div class="hero-row">
+      <span class="pill up lg"><span class="arr">▲</span> +7.0%</span>
+      <span class="hero-prev">+฿701,705 จากเดือนก่อน</span>
+    </div>
+    <div class="hero-note"><b>พ.ค. ยังเหลืออีก 2 วัน</b> — ยอดสะสมเพียง 29 วันแซง เม.ย. ทั้งเดือนไปแล้ว · หน้าภาพรวม dashboard แสดง ฿10,756,661 (ต่างจากบล็อกเปรียบเทียบ 352 บาท)</div>
+  </div>
+
+  <!-- KPI TILES -->
+  <section>
+    <div class="sec-head">
+      <h2>ตัวชี้วัดหลัก</h2>
+      <span class="tag">พ.ค. (MTD) เทียบ เม.ย. (เต็มเดือน)</span>
+    </div>
+    <div class="tiles">
+      <div class="tile">
+        <div class="t-lab"><span class="dot dot-thunder"></span> Thunder รวม</div>
+        <div class="t-val"><span class="cur">฿</span>4,670,882</div>
+        <div class="t-prev">เม.ย. ฿4,625,039</div>
+        <div class="t-bar"><div class="b apr" style="height:99%"></div><div class="b may" style="height:100%;background:var(--thunder)"></div></div>
+        <div class="t-foot"><span>เม.ย. → พ.ค.</span><span class="pill sm up"><span class="arr">▲</span>+1.0%</span></div>
+      </div>
+      <div class="tile">
+        <div class="t-lab"><span class="dot dot-easyslip"></span> EasySlip รวม</div>
+        <div class="t-val"><span class="cur">฿</span>6,085,427</div>
+        <div class="t-prev">เม.ย. ฿5,429,565</div>
+        <div class="t-bar"><div class="b apr" style="height:89%"></div><div class="b may" style="height:100%;background:var(--easyslip)"></div></div>
+        <div class="t-foot"><span>เม.ย. → พ.ค.</span><span class="pill sm up"><span class="arr">▲</span>+12.1%</span></div>
+      </div>
+      <div class="tile">
+        <div class="t-lab"><span class="dot dot-easyslip"></span> EasySlip API</div>
+        <div class="t-val"><span class="cur">฿</span>5,894,767</div>
+        <div class="t-prev">เม.ย. ฿5,248,614</div>
+        <div class="t-bar"><div class="b apr" style="height:89%"></div><div class="b may" style="height:100%;background:var(--easyslip)"></div></div>
+        <div class="t-foot"><span>ก้อนใหญ่สุด</span><span class="pill sm up"><span class="arr">▲</span>+12.3%</span></div>
+      </div>
+      <div class="tile">
+        <div class="t-lab"><span class="dot dot-thunder"></span> Thunder API</div>
+        <div class="t-val"><span class="cur">฿</span>761,744</div>
+        <div class="t-prev">เม.ย. ฿513,880</div>
+        <div class="t-bar"><div class="b apr" style="height:67%"></div><div class="b may" style="height:100%;background:var(--thunder)"></div></div>
+        <div class="t-foot"><span>โตแรงสุด %</span><span class="pill sm up"><span class="arr">▲</span>+48.2%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THUNDER -->
+  <section>
+    <div class="sec-head">
+      <h2>Thunder</h2>
+      <span class="tag">รายสินค้า · BOT / API / Flex</span>
+    </div>
+    <div class="brand">
+      <div class="brand-head">
+        <div class="brand-id">
+          <span class="brand-dot dot-thunder"></span>
+          <div>
+            <h3>Thunder</h3>
+            <div class="s">รวมทุกสินค้าในแบรนด์</div>
+          </div>
+        </div>
+        <div class="brand-tot">
+          <div class="lab">รวม Thunder · พ.ค.</div>
+          <div class="v"><span class="cur">฿</span>4,670,882</div>
+          <div class="row"><span class="prev">เม.ย. ฿4,625,039</span><span class="pill up"><span class="arr">▲</span>+1.0%</span></div>
+        </div>
+      </div>
+
+      <!-- iOS Settings-style table: exact numbers for every product -->
+      <div class="ptable">
+        <div class="prow2 head">
+          <span>สินค้า</span><span class="num">เม.ย.</span><span class="num">พ.ค.</span><span class="num">เปลี่ยนแปลง</span>
+        </div>
+        <div class="prow2">
+          <div class="pt-name">
+            <span class="nm">BOT</span>
+            <span class="sub">Thunder Bot · สินค้าใหญ่อันดับ 2 ของกลุ่ม</span>
+          </div>
+          <div class="num apr"><span class="cur">฿</span>4,093,987</div>
+          <div class="num may"><span class="cur">฿</span>3,891,057</div>
+          <div class="pt-chg"><span class="pill down"><span class="arr">▼</span>−5.0%</span><span class="delta">−฿202,930</span></div>
+          <div class="pt-vals">
+            <span class="cell apr"><span class="lb">เม.ย.</span><span class="vv">฿4,093,987</span></span>
+            <span class="cell may"><span class="lb">พ.ค.</span><span class="vv">฿3,891,057</span></span>
+          </div>
+        </div>
+        <div class="prow2">
+          <div class="pt-name">
+            <span class="nm">API <span class="tg">โตแรงสุด</span></span>
+            <span class="sub">Thunder API</span>
+          </div>
+          <div class="num apr"><span class="cur">฿</span>513,880</div>
+          <div class="num may"><span class="cur">฿</span>761,744</div>
+          <div class="pt-chg"><span class="pill up"><span class="arr">▲</span>+48.2%</span><span class="delta">+฿247,864</span></div>
+          <div class="pt-vals">
+            <span class="cell apr"><span class="lb">เม.ย.</span><span class="vv">฿513,880</span></span>
+            <span class="cell may"><span class="lb">พ.ค.</span><span class="vv">฿761,744</span></span>
+          </div>
+        </div>
+        <div class="prow2">
+          <div class="pt-name">
+            <span class="nm">Flex</span>
+            <span class="sub">สินค้าย่อย</span>
+          </div>
+          <div class="num apr"><span class="cur">฿</span>17,172</div>
+          <div class="num may"><span class="cur">฿</span>18,081</div>
+          <div class="pt-chg"><span class="pill up"><span class="arr">▲</span>+5.3%</span><span class="delta">+฿909</span></div>
+          <div class="pt-vals">
+            <span class="cell apr"><span class="lb">เม.ย.</span><span class="vv">฿17,172</span></span>
+            <span class="cell may"><span class="lb">พ.ค.</span><span class="vv">฿18,081</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="legend">
+        <span class="li"><span class="sw sw-apr"></span> เม.ย. (เต็มเดือน)</span>
+        <span class="li"><span class="sw sw-may-thunder"></span> พ.ค. (MTD 1–29)</span>
+        <span class="note">แท่งเทียบ “ค่ารายได้” ของแต่ละสินค้า (สเกลต่อแถว) — ไม่ใช่จำนวนวัน</span>
+      </div>
+
+      <div class="prod">
+        <div class="prod-title">เปรียบเทียบสัดส่วนค่ารายได้ (ต่อสินค้า)</div>
+        <!-- Thunder BOT : honest per-row scale (max=540) apr 540 / may 513.0 -->
+        <div class="prow">
+          <div class="prow-top">
+            <div class="prow-name">BOT <span class="sub">Thunder Bot</span></div>
+          </div>
+          <svg class="svg-bars" viewBox="0 0 620 74" role="img" aria-label="Thunder BOT เม.ย. 4,093,987 บาท พ.ค. 3,891,057 บาท ลดลง 5.0 เปอร์เซ็นต์">
+            <text x="0" y="15" class="bar-cap">เม.ย.</text>
+            <rect x="46" y="6" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="6" width="540" height="13" rx="6" fill="#9a9aa0"/>
+            <text x="586" y="16" text-anchor="end" class="bar-num">฿4,093,987</text>
+            <text x="0" y="50" class="bar-cap">พ.ค.</text>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="41" width="513.0" height="13" rx="6" fill="#5e5ce6"/>
+            <text x="586" y="68" text-anchor="end" class="bar-num">฿3,891,057</text>
+          </svg>
+        </div>
+        <!-- Thunder API : apr 364.3 / may 540 -->
+        <div class="prow">
+          <div class="prow-top">
+            <div class="prow-name">API <span class="sub">Thunder API</span></div>
+          </div>
+          <svg class="svg-bars" viewBox="0 0 620 74" role="img" aria-label="Thunder API เม.ย. 513,880 บาท พ.ค. 761,744 บาท เพิ่มขึ้น 48.2 เปอร์เซ็นต์">
+            <text x="0" y="15" class="bar-cap">เม.ย.</text>
+            <rect x="46" y="6" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="6" width="364.3" height="13" rx="6" fill="#9a9aa0"/>
+            <text x="586" y="16" text-anchor="end" class="bar-num">฿513,880</text>
+            <text x="0" y="50" class="bar-cap">พ.ค.</text>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#5e5ce6"/>
+            <text x="586" y="68" text-anchor="end" class="bar-num">฿761,744</text>
+          </svg>
+        </div>
+        <!-- Thunder Flex : apr 512.9 / may 540 -->
+        <div class="prow">
+          <div class="prow-top">
+            <div class="prow-name">Flex <span class="sub">สินค้าย่อย</span></div>
+          </div>
+          <svg class="svg-bars" viewBox="0 0 620 74" role="img" aria-label="Thunder Flex เม.ย. 17,172 บาท พ.ค. 18,081 บาท เพิ่มขึ้น 5.3 เปอร์เซ็นต์">
+            <text x="0" y="15" class="bar-cap">เม.ย.</text>
+            <rect x="46" y="6" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="6" width="512.9" height="13" rx="6" fill="#9a9aa0"/>
+            <text x="586" y="16" text-anchor="end" class="bar-num">฿17,172</text>
+            <text x="0" y="50" class="bar-cap">พ.ค.</text>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#5e5ce6"/>
+            <text x="586" y="68" text-anchor="end" class="bar-num">฿18,081</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EASYSLIP -->
+  <section>
+    <div class="sec-head">
+      <h2>EasySlip</h2>
+      <span class="tag">รายสินค้า · BOT / API / BoostSMS</span>
+    </div>
+    <div class="brand">
+      <div class="brand-head">
+        <div class="brand-id">
+          <span class="brand-dot dot-easyslip"></span>
+          <div>
+            <h3>EasySlip</h3>
+            <div class="s">รวมทุกสินค้าในแบรนด์</div>
+          </div>
+        </div>
+        <div class="brand-tot">
+          <div class="lab">รวม EasySlip · พ.ค.</div>
+          <div class="v"><span class="cur">฿</span>6,085,427</div>
+          <div class="row"><span class="prev">เม.ย. ฿5,429,565</span><span class="pill up"><span class="arr">▲</span>+12.1%</span></div>
+        </div>
+      </div>
+
+      <!-- iOS Settings-style table -->
+      <div class="ptable">
+        <div class="prow2 head">
+          <span>สินค้า</span><span class="num">เม.ย.</span><span class="num">พ.ค.</span><span class="num">เปลี่ยนแปลง</span>
+        </div>
+        <div class="prow2">
+          <div class="pt-name">
+            <span class="nm">API <span class="tg">ก้อนใหญ่สุด</span></span>
+            <span class="sub">EasySlip API · ~55% ของรายได้กลุ่ม</span>
+          </div>
+          <div class="num apr"><span class="cur">฿</span>5,248,614</div>
+          <div class="num may"><span class="cur">฿</span>5,894,767</div>
+          <div class="pt-chg"><span class="pill up"><span class="arr">▲</span>+12.3%</span><span class="delta">+฿646,153</span></div>
+          <div class="pt-vals">
+            <span class="cell apr"><span class="lb">เม.ย.</span><span class="vv">฿5,248,614</span></span>
+            <span class="cell may"><span class="lb">พ.ค.</span><span class="vv">฿5,894,767</span></span>
+          </div>
+        </div>
+        <div class="prow2">
+          <div class="pt-name">
+            <span class="nm">BOT</span>
+            <span class="sub">Easy Bot</span>
+          </div>
+          <div class="num apr"><span class="cur">฿</span>169,038</div>
+          <div class="num may"><span class="cur">฿</span>178,104</div>
+          <div class="pt-chg"><span class="pill up"><span class="arr">▲</span>+5.4%</span><span class="delta">+฿9,066</span></div>
+          <div class="pt-vals">
+            <span class="cell apr"><span class="lb">เม.ย.</span><span class="vv">฿169,038</span></span>
+            <span class="cell may"><span class="lb">พ.ค.</span><span class="vv">฿178,104</span></span>
+          </div>
+        </div>
+        <div class="prow2">
+          <div class="pt-name">
+            <span class="nm">BoostSMS</span>
+            <span class="sub">ข้อมูลไม่สมบูรณ์ · ตัวเลขโดยประมาณ</span>
+          </div>
+          <div class="num apr"><span class="cur">~฿</span>12,834</div>
+          <div class="num may"><span class="cur">~฿</span>12,850</div>
+          <div class="pt-chg"><span class="pill flat">ทรงตัว</span><span class="delta">~คงที่</span></div>
+          <div class="pt-vals">
+            <span class="cell apr"><span class="lb">เม.ย.</span><span class="vv">~฿12,834</span></span>
+            <span class="cell may"><span class="lb">พ.ค.</span><span class="vv">~฿12,850</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="legend">
+        <span class="li"><span class="sw sw-apr"></span> เม.ย. (เต็มเดือน)</span>
+        <span class="li"><span class="sw sw-may-easyslip"></span> พ.ค. (MTD 1–29)</span>
+        <span class="note">แท่งเทียบ “ค่ารายได้” ของแต่ละสินค้า (สเกลต่อแถว) — ไม่ใช่จำนวนวัน</span>
+      </div>
+
+      <div class="prod">
+        <div class="prod-title">เปรียบเทียบสัดส่วนค่ารายได้ (ต่อสินค้า)</div>
+        <!-- EasySlip API : apr 480.8 / may 540 -->
+        <div class="prow">
+          <div class="prow-top">
+            <div class="prow-name">API <span class="sub">EasySlip API</span></div>
+          </div>
+          <svg class="svg-bars" viewBox="0 0 620 74" role="img" aria-label="EasySlip API เม.ย. 5,248,614 บาท พ.ค. 5,894,767 บาท เพิ่มขึ้น 12.3 เปอร์เซ็นต์">
+            <text x="0" y="15" class="bar-cap">เม.ย.</text>
+            <rect x="46" y="6" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="6" width="480.8" height="13" rx="6" fill="#9a9aa0"/>
+            <text x="586" y="16" text-anchor="end" class="bar-num">฿5,248,614</text>
+            <text x="0" y="50" class="bar-cap">พ.ค.</text>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#0a84ff"/>
+            <text x="586" y="68" text-anchor="end" class="bar-num">฿5,894,767</text>
+          </svg>
+        </div>
+        <!-- EasySlip BOT : apr 512.5 / may 540 -->
+        <div class="prow">
+          <div class="prow-top">
+            <div class="prow-name">BOT <span class="sub">Easy Bot</span></div>
+          </div>
+          <svg class="svg-bars" viewBox="0 0 620 74" role="img" aria-label="EasySlip BOT เม.ย. 169,038 บาท พ.ค. 178,104 บาท เพิ่มขึ้น 5.4 เปอร์เซ็นต์">
+            <text x="0" y="15" class="bar-cap">เม.ย.</text>
+            <rect x="46" y="6" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="6" width="512.5" height="13" rx="6" fill="#9a9aa0"/>
+            <text x="586" y="16" text-anchor="end" class="bar-num">฿169,038</text>
+            <text x="0" y="50" class="bar-cap">พ.ค.</text>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#0a84ff"/>
+            <text x="586" y="68" text-anchor="end" class="bar-num">฿178,104</text>
+          </svg>
+        </div>
+        <!-- EasySlip BoostSMS : apr 539.3 / may 540 (approx) -->
+        <div class="prow">
+          <div class="prow-top">
+            <div class="prow-name">BoostSMS <span class="sub">ข้อมูลไม่สมบูรณ์</span></div>
+          </div>
+          <svg class="svg-bars" viewBox="0 0 620 74" role="img" aria-label="EasySlip BoostSMS เม.ย. ประมาณ 12,834 บาท พ.ค. ประมาณ 12,850 บาท ทรงตัว ข้อมูลไม่สมบูรณ์">
+            <text x="0" y="15" class="bar-cap">เม.ย.</text>
+            <rect x="46" y="6" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="6" width="539.3" height="13" rx="6" fill="#9a9aa0"/>
+            <text x="586" y="16" text-anchor="end" class="bar-num">~฿12,834</text>
+            <text x="0" y="50" class="bar-cap">พ.ค.</text>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#ececed"/>
+            <rect x="46" y="41" width="540" height="13" rx="6" fill="#0a84ff"/>
+            <text x="586" y="68" text-anchor="end" class="bar-num">~฿12,850</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPORTION + RISK -->
+  <section>
+    <div class="sec-head">
+      <h2>สัดส่วน & ความเสี่ยง</h2>
+      <span class="tag">เดือน พ.ค.</span>
+    </div>
+    <div class="grid2">
+      <div class="panel">
+        <h3>สัดส่วนรายได้กลุ่ม</h3>
+        <div class="ph">EasySlip เทียบ Thunder · พ.ค.</div>
+        <div class="split-bar">
+          <div class="seg seg-easyslip" style="width:57%">EasySlip 57%</div>
+          <div class="seg seg-thunder" style="width:43%">Thunder 43%</div>
+        </div>
+        <div class="split-leg">
+          <span class="it"><span class="d" style="background:var(--easyslip)"></span><b>EasySlip</b> <span class="pc">~57%</span></span>
+          <span class="it"><span class="d" style="background:var(--thunder)"></span><b>Thunder</b> <span class="pc">~43%</span></span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>ความเสี่ยงกระจุกตัว</h3>
+        <div class="ph">สัดส่วน EasySlip API ในรายได้ EasySlip</div>
+        <div class="conc-track">
+          <div class="conc-fill" style="width:96.9%">EasySlip API 96.9%</div>
+          <div class="conc-rest">3.1%</div>
+        </div>
+        <div class="warn-line">
+          <span class="ic">⚠️</span>
+          <span>รายได้ EasySlip เกือบทั้งหมดมาจาก <b>EasySlip API (96.9%)</b> — dashboard เตือนความเสี่ยงรวมศูนย์นี้เอง</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section>
+    <div class="sec-head">
+      <h2>Insights สำหรับผู้บริหาร</h2>
+      <span class="tag">มุมมอง COO</span>
+    </div>
+    <div class="insights">
+      <div class="ins">
+        <div class="ins-n">1</div>
+        <div class="ins-b">
+          <div class="h">พ.ค. แซง เม.ย. ทั้งเดือนแล้ว ทั้งที่ยังไม่จบเดือน</div>
+          <div class="d">พ.ค. นับเพียง 29 วัน (ยังไม่จบเดือน) แต่ยอดรวมแซง เม.ย. ทั้งเดือนไปแล้ว <b>+7%</b> และยังเหลืออีก 2 วัน</div>
+        </div>
+      </div>
+      <div class="ins">
+        <div class="ins-n">2</div>
+        <div class="ins-b">
+          <div class="h">ตัวขับเคลื่อนหลักคือฝั่ง API ทั้งสองแบรนด์</div>
+          <div class="d"><b>EasySlip API +฿646K (+12.3%)</b> เป็นก้อนใหญ่สุด ~55% ของรายได้กลุ่ม และ <b>Thunder API +48.2%</b> โตแรงสุดเชิง %</div>
+        </div>
+      </div>
+      <div class="ins alert">
+        <div class="ins-n">3</div>
+        <div class="ins-b">
+          <div class="h">⚠️ Thunder Bot หดตัว — จุดที่ต้องจับตา</div>
+          <div class="d">Thunder Bot ลดลง <b>−฿203K (−5.0%)</b> ทั้งที่เป็นสินค้าใหญ่อันดับ 2 ของกลุ่ม</div>
+        </div>
+      </div>
+      <div class="ins alert">
+        <div class="ins-n">4</div>
+        <div class="ins-b">
+          <div class="h">⚠️ ความเสี่ยงรวมศูนย์ที่ EasySlip API</div>
+          <div class="d">EasySlip API คิดเป็น <b>96.9% ของรายได้ EasySlip</b> — รายได้แบรนด์พึ่งพาสินค้าตัวเดียวเกือบทั้งหมด</div>
+        </div>
+      </div>
+      <div class="ins">
+        <div class="ins-n">5</div>
+        <div class="ins-b">
+          <div class="h">BoostSMS เล็กมากและข้อมูลยังไม่สมบูรณ์</div>
+          <div class="d">BoostSMS ~฿13K และข้อมูลยังไม่สมบูรณ์ — ระบบขึ้น “ยังไม่มี log การส่ง”, SMS sent = 0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div class="notes">
+      <div class="nh">📌 หมายเหตุ &amp; ข้อควรระวัง</div>
+      <ul>
+        <li><span class="b"></span><span>พ.ค. เป็นยอดสะสมระหว่างเดือน (MTD) ถึง 29 พ.ค. เทียบกับ เม.ย. แบบเต็มเดือน — จึง <b>ยังไม่ใช่การเทียบแบบ apple-to-apple</b> แต่ พ.ค. แซง เม.ย. ไปแล้ว</span></li>
+        <li><span class="b"></span><span><b>ความต่างของยอดรวมจาก 2 แหล่ง:</b> หน้าภาพรวม dashboard แสดงยอดรวมกลุ่ม พ.ค. = <b>฿10,756,661</b> ขณะที่บล็อก “เปรียบเทียบสินค้า” = <b>฿10,756,309</b> (ต่างกัน 352 บาท) — รายงานนี้อ้างอิงบล็อกเปรียบเทียบเพื่อให้สอดคล้องกับตัวเลขรายสินค้า</span></li>
+        <li><span class="b"></span><span>แท่งกราฟเปรียบเทียบในแต่ละแถวเป็นการ <b>เทียบ “ค่ารายได้”</b> ระหว่างสองเดือน โดยปรับสเกลแยกต่อสินค้า (สินค้าที่มากกว่าเต็มแท่ง) — <b>ไม่ใช่</b> การเทียบจำนวนวันหรือ day-coverage</span></li>
+        <li><span class="b"></span><span>ตัวเลขรายสินค้าอ้างอิงจากบล็อก “เปรียบเทียบสินค้า” บน Master Dashboard · BoostSMS เป็นค่าโดยประมาณ (~) เนื่องจากข้อมูลยังไม่สมบูรณ์</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    รายงานจัดทำจากข้อมูลที่ verify แล้วผ่าน Master Dashboard — Thunder Group (ดึงผ่าน Chrome MCP, ยืนยันตรงกับ % MoM ที่ dashboard แสดงเอง) · ปีพุทธศักราช 2569 = ค.ศ. 2026 · สกุลเงิน บาท (฿) · ตัวเลขทั้งหมดเป็นไปตามข้อมูลต้นทาง ไม่มีการปัด/แต่งเพิ่ม
+  </footer>
+
+</div>
+</body>
+</html>

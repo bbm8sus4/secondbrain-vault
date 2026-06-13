@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thunder Solution — BNI 5-Minute Presentation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;600;700;800;900&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --thunder-blue: #1a237e;
+    --thunder-accent: #0091ea;
+    --thunder-gold: #ffc107;
+    --thunder-dark: #0d1421;
+    --thunder-light: #e3f2fd;
+    --gradient-main: linear-gradient(135deg, #0d1421 0%, #1a237e 50%, #0091ea 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255,255,255,0.75);
+    --slide-w: 100vw;
+    --slide-h: 100vh;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    background: var(--thunder-dark);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+
+  /* Slide container */
+  .slide {
+    width: var(--slide-w);
+    min-height: var(--slide-h);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .slide > * { position: relative; z-index: 1; }
+
+  /* ---- Slide 1: Cover ---- */
+  .slide-cover {
+    background: var(--gradient-main);
+    text-align: center;
+  }
+  .slide-cover::before {
+    background:
+      radial-gradient(circle at 20% 80%, rgba(0,145,234,0.25) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255,193,7,0.15) 0%, transparent 50%);
+  }
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255,193,7,0.15);
+    border: 1px solid rgba(255,193,7,0.4);
+    color: var(--thunder-gold);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 28px;
+    border-radius: 100px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .cover-logo {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #fff 0%, var(--thunder-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .cover-sub {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+  }
+  .cover-tagline {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--thunder-gold);
+    margin-bottom: 16px;
+  }
+  .cover-desc {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    line-height: 1.7;
+  }
+  .cover-presenter {
+    margin-top: 48px;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+  }
+  .cover-presenter strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* ---- Slide 2: Problem ---- */
+  .slide-problem {
+    background: linear-gradient(135deg, #1a0000 0%, #4a0000 40%, #8b0000 100%);
+    text-align: center;
+  }
+  .slide-problem::before {
+    background: radial-gradient(circle at 50% 50%, rgba(255,0,0,0.08) 0%, transparent 60%);
+  }
+  .problem-icon {
+    font-size: 5rem;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 0 30px rgba(255,0,0,0.4));
+  }
+  .section-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+  .slide-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    line-height: 1.3;
+  }
+  .problem-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1000px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 36px 24px;
+    text-align: center;
+  }
+  .stat-card .stat-num {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: #ff4444;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-card .stat-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .problem-quote {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+    max-width: 700px;
+    line-height: 1.7;
+    border-left: 3px solid #ff4444;
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  /* ---- Slide 3: Solution / USP ---- */
+  .slide-solution {
+    background: var(--gradient-main);
+  }
+  .slide-solution::before {
+    background:
+      radial-gradient(circle at 30% 70%, rgba(0,145,234,0.2) 0%, transparent 50%),
+      radial-gradient(circle at 70% 30%, rgba(255,193,7,0.1) 0%, transparent 50%);
+  }
+  .solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+  }
+  .solution-left .slide-title {
+    text-align: left;
+    font-size: 2.6rem;
+  }
+  .solution-left .highlight {
+    color: var(--thunder-gold);
+  }
+  .solution-desc {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-top: 16px;
+  }
+  .solution-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .usp-item {
+    background: var(--gradient-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .usp-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,145,234,0.15);
+    border-radius: 12px;
+  }
+  .usp-text h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .usp-text p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ---- Slide 4: Products ---- */
+  .slide-products {
+    background: linear-gradient(135deg, #0d1421 0%, #0a1628 50%, #102040 100%);
+  }
+  .slide-products .slide-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    width: 100%;
+  }
+  .product-card {
+    background: var(--gradient-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0,145,234,0.3);
+  }
+  .product-card .p-icon {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+  }
+  .product-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .product-card .p-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .product-card .p-stat {
+    display: inline-block;
+    background: rgba(0,145,234,0.12);
+    border: 1px solid rgba(0,145,234,0.25);
+    color: var(--thunder-accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 100px;
+  }
+  .product-card.star {
+    border-color: rgba(255,193,7,0.3);
+    background: linear-gradient(135deg, rgba(255,193,7,0.08) 0%, rgba(255,193,7,0.02) 100%);
+  }
+  .product-card.star .p-stat {
+    background: rgba(255,193,7,0.12);
+    border-color: rgba(255,193,7,0.3);
+    color: var(--thunder-gold);
+  }
+
+  /* ---- Slide 5: Proof / Case Study ---- */
+  .slide-proof {
+    background: linear-gradient(135deg, #002f1a 0%, #004d2e 50%, #006640 100%);
+    text-align: center;
+  }
+  .slide-proof::before {
+    background: radial-gradient(circle at 50% 40%, rgba(0,200,83,0.1) 0%, transparent 60%);
+  }
+  .proof-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    max-width: 1100px;
+    width: 100%;
+    margin-bottom: 48px;
+  }
+  .proof-card {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 32px 20px;
+  }
+  .proof-card .p-num {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #00e676;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .proof-card .p-label {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+  .proof-testimonial {
+    max-width: 800px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 36px 40px;
+    text-align: left;
+  }
+  .proof-testimonial .t-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    color: rgba(255,255,255,0.85);
+  }
+  .proof-testimonial .t-author {
+    font-size: 0.95rem;
+    color: #00e676;
+    font-weight: 600;
+  }
+
+  /* ---- Slide 6: Pricing ---- */
+  .slide-pricing {
+    background: var(--gradient-main);
+    text-align: center;
+  }
+  .slide-pricing .slide-title { margin-bottom: 12px; }
+  .pricing-sub {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+  }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+  .price-card {
+    background: var(--gradient-card);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+  }
+  .price-card.featured {
+    border-color: var(--thunder-gold);
+    background: linear-gradient(135deg, rgba(255,193,7,0.1) 0%, rgba(255,193,7,0.03) 100%);
+    transform: scale(1.05);
+  }
+  .price-card .tier-name {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+  }
+  .price-card.featured .tier-name { color: var(--thunder-gold); }
+  .price-card .tier-price {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-card .tier-unit {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+  .price-card .tier-detail {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .price-card .tier-detail strong {
+    color: #fff;
+  }
+  .pricing-note {
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+  .pricing-note strong {
+    color: var(--thunder-gold);
+  }
+
+  /* ---- Slide 7: Referral Request ---- */
+  .slide-referral {
+    background: linear-gradient(135deg, #1a1a00 0%, #333300 50%, #4d4d00 100%);
+    text-align: center;
+  }
+  .slide-referral::before {
+    background: radial-gradient(circle at 50% 50%, rgba(255,193,7,0.08) 0%, transparent 60%);
+  }
+  .slide-referral .slide-title {
+    margin-bottom: 48px;
+  }
+  .referral-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1000px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .ref-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,193,7,0.2);
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .ref-card .r-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+  .ref-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--thunder-gold);
+  }
+  .ref-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .referral-bonus {
+    display: inline-block;
+    background: rgba(255,193,7,0.12);
+    border: 1px solid rgba(255,193,7,0.3);
+    border-radius: 16px;
+    padding: 20px 36px;
+    font-size: 1.15rem;
+    color: var(--thunder-gold);
+    font-weight: 600;
+  }
+
+  /* ---- Slide 8: CTA / Contact ---- */
+  .slide-cta {
+    background: var(--gradient-main);
+    text-align: center;
+  }
+  .slide-cta::before {
+    background:
+      radial-gradient(circle at 30% 70%, rgba(0,145,234,0.25) 0%, transparent 40%),
+      radial-gradient(circle at 70% 30%, rgba(255,193,7,0.2) 0%, transparent 40%);
+  }
+  .cta-main {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .cta-main .gold { color: var(--thunder-gold); }
+  .cta-sub {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 48px;
+  }
+  .contact-item {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .contact-item .c-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  .contact-item .c-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+  }
+  .contact-item .c-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .cta-qr-hint {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+  }
+  .cta-closing {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--thunder-gold);
+  }
+
+  /* ---- Navigation ---- */
+  .nav-bar {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px;
+    padding: 8px 16px;
+    z-index: 100;
+  }
+  .nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .nav-dot.active {
+    background: var(--thunder-gold);
+    transform: scale(1.3);
+  }
+
+  .slide-number {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.3);
+    font-weight: 600;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 768px) {
+    .slide { padding: 40px 24px; }
+    .cover-logo { font-size: 2.8rem; }
+    .cover-tagline { font-size: 1.5rem; }
+    .slide-title { font-size: 2rem; }
+    .problem-stats, .proof-stats { grid-template-columns: 1fr 1fr; }
+    .products-grid { grid-template-columns: 1fr 1fr; }
+    .solution-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .referral-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .price-card.featured { transform: scale(1); }
+  }
+
+  @media print {
+    .nav-bar { display: none; }
+    .slide { page-break-after: always; min-height: 100vh; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDE 1: COVER / INTRODUCTION ============ -->
+<section class="slide slide-cover" id="slide-1">
+  <span class="slide-number">1 / 8</span>
+  <div class="cover-badge">BNI Featured Presentation</div>
+  <h1 class="cover-logo">Thunder Solution</h1>
+  <p class="cover-sub">& EasySlip</p>
+  <p class="cover-tagline">ระบบตรวจสลิปปลอม #1 ของไทย</p>
+  <p class="cover-desc">
+    เราช่วยธุรกิจออนไลน์กว่า 3,000 ราย ตรวจสอบสลิปโอนเงินแบบ Real-time<br>
+    ป้องกันสลิปปลอม สลิปซ้ำ สลิปแก้ไข — อัตโนมัติ 100%
+  </p>
+  <p class="cover-presenter">
+    นำเสนอโดย <strong>[ชื่อผู้นำเสนอ]</strong> — COO, Thunder Solution Co., Ltd.
+  </p>
+</section>
+
+<!-- ============ SLIDE 2: PROBLEM ============ -->
+<section class="slide slide-problem" id="slide-2">
+  <span class="slide-number">2 / 8</span>
+  <div class="problem-icon">&#9888;&#65039;</div>
+  <div class="section-label">ปัญหาที่ทุกธุรกิจเจอ</div>
+  <h2 class="slide-title">สลิปปลอม — ภัยเงียบของธุรกิจออนไลน์</h2>
+  <div class="problem-stats">
+    <div class="stat-card">
+      <div class="stat-num">1.2 ล้าน</div>
+      <div class="stat-label">สลิปปลอมที่เราตรวจจับได้<br>จากระบบ EasySlip</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">28%</div>
+      <div class="stat-label">ของสลิปทั้งหมด<br>ที่ตรวจพบว่า "ผิดปกติ"</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">1 วินาที</div>
+      <div class="stat-label">คือทุกอย่างที่มิจฉาชีพต้องใช้<br>ในการ Photoshop สลิป</div>
+    </div>
+  </div>
+  <div class="problem-quote">
+    "ตรวจด้วยตาไม่ทันหรอก — สลิปปลอมยุคนี้ ต่อให้ขยายเต็มจอก็แยกไม่ออก<br>
+    แต่ QR Code ในสลิปโกหกไม่ได้"
+  </div>
+</section>
+
+<!-- ============ SLIDE 3: SOLUTION / USP ============ -->
+<section class="slide slide-solution" id="slide-3">
+  <span class="slide-number">3 / 8</span>
+  <div class="solution-grid">
+    <div class="solution-left">
+      <div class="section-label">ทำไมต้อง Thunder</div>
+      <h2 class="slide-title">
+        ตรวจสลิปผ่าน<br>
+        <span class="highlight">ธนาคารแห่งประเทศไทย</span><br>
+        ไม่ใช่แค่ OCR
+      </h2>
+      <p class="solution-desc">
+        ระบบของเราอ่าน QR Code ในสลิป แล้วยืนยันข้อมูลกับระบบ BoT โดยตรง —
+        ไม่ว่าจะแก้ไขรูปมายังไง ก็หลอกไม่ได้
+      </p>
+    </div>
+    <div class="solution-right">
+      <div class="usp-item">
+        <div class="usp-icon">&#9889;</div>
+        <div class="usp-text">
+          <h3>ตรวจใน 0.3 วินาที</h3>
+          <p>ลูกค้าส่งสลิป — ได้คำตอบทันที ไม่ต้องรอแอดมิน</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">&#128274;</div>
+        <div class="usp-text">
+          <h3>จับสลิปซ้ำ (Duplicate)</h3>
+          <p>ใช้สลิปใบเดียวซื้อหลายร้าน — ระบบจับได้หมด</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">&#127975;</div>
+        <div class="usp-text">
+          <h3>รองรับ 18+ ธนาคาร</h3>
+          <p>ครอบคลุมทุก Mobile Banking + TrueMoney Wallet</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        <div class="usp-icon">&#129302;</div>
+        <div class="usp-text">
+          <h3>AI ความแม่นยำ 99.98%</h3>
+          <p>เทรนจากสลิปจริงหลายล้านใบ ฉลาดขึ้นทุกวัน</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 4: PRODUCTS ============ -->
+<section class="slide slide-products" id="slide-4">
+  <span class="slide-number">4 / 8</span>
+  <div class="section-label">เลือกแบบที่เหมาะกับธุรกิจคุณ</div>
+  <h2 class="slide-title">4 ช่องทางเชื่อมต่อ</h2>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="p-icon">&#128172;</div>
+      <h3>LINE Chatbot</h3>
+      <p class="p-desc">เพิ่มบอทเข้ากลุ่ม LINE<br>ลูกค้าส่งสลิป — บอทตรวจให้ทันที<br>ไม่ต้องเขียนโค้ดเลย</p>
+      <span class="p-stat">53,000+ ร้านค้า</span>
+    </div>
+    <div class="product-card star">
+      <div class="p-icon">&#128187;</div>
+      <h3>EasySlip API</h3>
+      <p class="p-desc">REST API สำหรับ Developer<br>เชื่อมต่อกับระบบหลังบ้านได้ทุกภาษา<br>Documentation พร้อมใช้</p>
+      <span class="p-stat">&#11088; STAR Product</span>
+    </div>
+    <div class="product-card">
+      <div class="p-icon">&#128722;</div>
+      <h3>WooCommerce</h3>
+      <p class="p-desc">Plugin สำหรับ WordPress<br>ตรวจสลิปอัตโนมัติ<br>ตอนลูกค้ายืนยันชำระเงิน</p>
+      <span class="p-stat">ติดตั้งง่าย</span>
+    </div>
+    <div class="product-card">
+      <div class="p-icon">&#9881;&#65039;</div>
+      <h3>n8n / Automation</h3>
+      <p class="p-desc">Node สำเร็จรูปสำหรับ n8n<br>สร้าง Workflow อัตโนมัติ<br>ต่อกับระบบอื่นได้ทันที</p>
+      <span class="p-stat">Open Source</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 5: PROOF / SUCCESS METRICS ============ -->
+<section class="slide slide-proof" id="slide-5">
+  <span class="slide-number">5 / 8</span>
+  <div class="section-label">ผลลัพธ์ที่พิสูจน์แล้ว</div>
+  <h2 class="slide-title">ตัวเลขไม่โกหก</h2>
+  <div class="proof-stats">
+    <div class="proof-card">
+      <div class="p-num">3,000+</div>
+      <div class="p-label">ธุรกิจที่ไว้วางใจ</div>
+    </div>
+    <div class="proof-card">
+      <div class="p-num">2 ล้าน</div>
+      <div class="p-label">สลิปตรวจต่อวัน</div>
+    </div>
+    <div class="proof-card">
+      <div class="p-num">99.98%</div>
+      <div class="p-label">ความแม่นยำ</div>
+    </div>
+    <div class="proof-card">
+      <div class="p-num">82%</div>
+      <div class="p-label">Gross Margin ต่อสลิป</div>
+    </div>
+  </div>
+  <div class="proof-testimonial">
+    <p class="t-text">
+      "ก่อนใช้ Thunder เราโดนสลิปปลอมเดือนละ 3-5 ครั้ง ครั้งละ 500-2,000 บาท
+      ตั้งแต่ติดบอท ไม่เคยโดนอีกเลย — คืนทุนตั้งแต่เดือนแรก"
+    </p>
+    <p class="t-author">-- เจ้าของร้านค้าออนไลน์ สมาชิกมากกว่า 2 ปี</p>
+  </div>
+</section>
+
+<!-- ============ SLIDE 6: PRICING ============ -->
+<section class="slide slide-pricing" id="slide-6">
+  <span class="slide-number">6 / 8</span>
+  <div class="section-label">ราคาที่จับต้องได้</div>
+  <h2 class="slide-title">เริ่มต้นแค่วันละ 3 บาท</h2>
+  <p class="pricing-sub">ทดลองฟรี 150 สลิป / 15 วัน — ไม่ต้องใส่บัตรเครดิต</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="tier-name">Start</div>
+      <div class="tier-price">99.-</div>
+      <div class="tier-unit">บาท / เดือน</div>
+      <div class="tier-detail">
+        <strong>400 สลิป</strong><br>
+        เหมาะกับร้านเริ่มต้น<br>
+        ต้นทุนต่อสลิป ~0.25 บาท
+      </div>
+    </div>
+    <div class="price-card featured">
+      <div class="tier-name">&#11088; Gold</div>
+      <div class="tier-price">1,599.-</div>
+      <div class="tier-unit">บาท / เดือน</div>
+      <div class="tier-detail">
+        <strong>14,000 สลิป</strong><br>
+        ขายดีที่สุด<br>
+        ต้นทุนต่อสลิป ~0.11 บาท
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="tier-name">Premium</div>
+      <div class="tier-price">14,000.-</div>
+      <div class="tier-unit">บาท / เดือน</div>
+      <div class="tier-detail">
+        <strong>150,000 สลิป</strong><br>
+        สำหรับ Enterprise<br>
+        ต้นทุนต่อสลิป ~0.09 บาท
+      </div>
+    </div>
+  </div>
+  <p class="pricing-note">
+    รวม <strong>12 แพ็กเกจ</strong> ตั้งแต่ 99 - 14,000 บาท/เดือน
+    &bull; จ่ายรายปีลด 20%
+  </p>
+</section>
+
+<!-- ============ SLIDE 7: REFERRAL REQUEST ============ -->
+<section class="slide slide-referral" id="slide-7">
+  <span class="slide-number">7 / 8</span>
+  <div class="section-label">Referral ที่อยากได้</div>
+  <h2 class="slide-title">ช่วยแนะนำคนเหล่านี้ให้ผมได้ไหมครับ?</h2>
+  <div class="referral-grid">
+    <div class="ref-card">
+      <div class="r-icon">&#128722;</div>
+      <h3>เจ้าของร้านค้าออนไลน์</h3>
+      <p>ขายของผ่าน LINE, Facebook, Shopee, Lazada ที่รับโอนเงินผ่าน PromptPay ทุกวัน</p>
+    </div>
+    <div class="ref-card">
+      <div class="r-icon">&#128187;</div>
+      <h3>Developer / Software House</h3>
+      <p>บริษัทพัฒนาซอฟต์แวร์ที่กำลังสร้างระบบ Payment Confirmation ให้ลูกค้า</p>
+    </div>
+    <div class="ref-card">
+      <div class="r-icon">&#127980;</div>
+      <h3>ธุรกิจหลายสาขา</h3>
+      <p>ร้านอาหาร แฟรนไชส์ โรงแรม คลินิก ที่ต้องตรวจสลิปหลายจุด พร้อมรายงานรวม</p>
+    </div>
+  </div>
+  <div class="referral-bonus">
+    &#127873; Referral ที่สมัครใช้งาน — ผมมีของขอบคุณให้ทุก Referral ครับ
+  </div>
+</section>
+
+<!-- ============ SLIDE 8: CTA / CONTACT ============ -->
+<section class="slide slide-cta" id="slide-8">
+  <span class="slide-number">8 / 8</span>
+  <h2 class="cta-main">
+    หยุดเสียเงินกับ<span class="gold">สลิปปลอม</span><br>
+    เริ่มตรวจวันนี้
+  </h2>
+  <p class="cta-sub">
+    ทดลองฟรี 15 วัน — ไม่ต้องผูกบัตร<br>
+    ติดตั้งเสร็จใน 5 นาที
+  </p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="c-icon">&#127760;</div>
+      <div class="c-label">เว็บไซต์</div>
+      <div class="c-value">thunder.in.th</div>
+    </div>
+    <div class="contact-item">
+      <div class="c-icon">&#128172;</div>
+      <div class="c-label">LINE OA</div>
+      <div class="c-value">@thunder-api</div>
+    </div>
+    <div class="contact-item">
+      <div class="c-icon">&#128222;</div>
+      <div class="c-label">โทร</div>
+      <div class="c-value">02-114-8423</div>
+    </div>
+  </div>
+  <p class="cta-qr-hint">
+    สแกน QR Code ด้านล่างเพื่อเพิ่มเพื่อน LINE ได้เลยครับ
+  </p>
+  <p class="cta-closing">ขอบคุณครับ &#128591;</p>
+</section>
+
+<!-- ============ NAVIGATION ============ -->
+<nav class="nav-bar" id="navBar">
+  <div class="nav-dot active" data-slide="1"></div>
+  <div class="nav-dot" data-slide="2"></div>
+  <div class="nav-dot" data-slide="3"></div>
+  <div class="nav-dot" data-slide="4"></div>
+  <div class="nav-dot" data-slide="5"></div>
+  <div class="nav-dot" data-slide="6"></div>
+  <div class="nav-dot" data-slide="7"></div>
+  <div class="nav-dot" data-slide="8"></div>
+</nav>
+
+<script>
+  const dots = document.querySelectorAll('.nav-dot');
+  const slides = document.querySelectorAll('.slide');
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const target = document.getElementById('slide-' + dot.dataset.slide);
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id.replace('slide-', '');
+        dots.forEach(d => d.classList.toggle('active', d.dataset.slide === id));
+      }
+    });
+  }, { threshold: 0.5 });
+
+  slides.forEach(s => observer.observe(s));
+
+  document.addEventListener('keydown', e => {
+    const current = [...dots].findIndex(d => d.classList.contains('active'));
+    if ((e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === ' ') && current < slides.length - 1) {
+      e.preventDefault();
+      slides[current + 1].scrollIntoView({ behavior: 'smooth' });
+    }
+    if ((e.key === 'ArrowUp' || e.key === 'ArrowLeft') && current > 0) {
+      e.preventDefault();
+      slides[current - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เปรียบเทียบเครื่องมือ Workspace — ทีมการตลาด 8 คน</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Thai', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    padding: 32px 16px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+  }
+  .header p {
+    font-size: 15px;
+    color: #6b7280;
+  }
+  .header .badge {
+    display: inline-block;
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  .header .rate {
+    display: inline-block;
+    background: #f3f4f6;
+    color: #6b7280;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    margin-top: 6px;
+    margin-left: 4px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    min-width: 920px;
+  }
+  thead th {
+    background: #1e1b4b;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 18px 14px 16px;
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
+  thead th:first-child {
+    text-align: left;
+    padding-left: 24px;
+    width: 190px;
+  }
+  thead th .plan-price {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+  thead th .plan-sub {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-top: 2px;
+  }
+
+  thead th.recommended {
+    background: #4f46e5;
+    position: relative;
+  }
+  thead th.recommended::before {
+    content: 'คุ้มค่าที่สุด';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f59e0b;
+    color: #1a1a2e;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 14px;
+    border-radius: 0 0 8px 8px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  td.highlight {
+    background: #f5f3ff;
+  }
+
+  tbody td {
+    padding: 13px 14px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+  }
+  tbody td:first-child {
+    text-align: left;
+    padding-left: 24px;
+    font-weight: 500;
+    color: #374151;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #fafbfc; }
+  tbody tr:hover td.highlight { background: #eef2ff; }
+
+  .check { color: #10b981; font-size: 18px; font-weight: 700; }
+  .cross { color: #d1d5db; font-size: 16px; }
+  .limited { color: #f59e0b; font-size: 13px; font-weight: 500; }
+  .info { font-size: 13px; color: #6b7280; }
+
+  .section-row td {
+    background: #f8fafc;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #6366f1;
+    padding: 10px 14px;
+  }
+  .section-row td:first-child { padding-left: 24px; }
+
+  .cost-row td {
+    background: #fefce8;
+    font-weight: 700;
+    font-size: 15px;
+    color: #92400e;
+    border-bottom: 2px solid #fde68a;
+  }
+  .cost-row td.highlight {
+    background: #eef2ff;
+    color: #4338ca;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 28px;
+    padding: 24px 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+  .footer p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.8;
+  }
+  .footer .verdict {
+    font-size: 17px;
+    font-weight: 600;
+    color: #4338ca;
+    margin-bottom: 10px;
+  }
+
+  .logos {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .logos span {
+    font-size: 11px;
+    background: #f3f4f6;
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: #6b7280;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>เปรียบเทียบเครื่องมือ Workspace</h1>
+    <p>ทีมการตลาด &mdash; 8 คน &middot; จ่ายรายปี</p>
+    <div class="badge">อัปเดต: พ.ค. 2569</div>
+    <div class="rate">อัตราแลกเปลี่ยน: 1 USD = 32.60 บาท</div>
+  </div>
+
+  <div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th class="recommended">
+          ClickUp<br>
+          <span class="plan-price">~228 ฿</span>
+          <span class="plan-sub">/คน/เดือน (Unlimited)</span>
+        </th>
+        <th>
+          Slite<br>
+          <span class="plan-price">~261 ฿</span>
+          <span class="plan-sub">/คน/เดือน (Standard)</span>
+        </th>
+        <th>
+          Notion<br>
+          <span class="plan-price">~261 ฿</span>
+          <span class="plan-sub">/คน/เดือน (Plus รายปี)</span>
+        </th>
+        <th>
+          AppFlowy<br>
+          <span class="plan-price">~326 ฿</span>
+          <span class="plan-sub">/คน/เดือน (Pro)</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- ค่าใช้จ่าย -->
+      <tr class="section-row"><td colspan="5">ค่าใช้จ่าย (8 คน)</td></tr>
+      <tr class="cost-row">
+        <td>ต่อเดือน</td>
+        <td class="highlight">~1,826 ฿</td>
+        <td>~2,087 ฿</td>
+        <td>~2,087 ฿</td>
+        <td>~2,608 ฿</td>
+      </tr>
+      <tr class="cost-row">
+        <td>ต่อปี</td>
+        <td class="highlight">~21,907 ฿</td>
+        <td>~25,037 ฿</td>
+        <td>~25,037 ฿</td>
+        <td>~31,296 ฿</td>
+      </tr>
+      <tr class="cost-row">
+        <td>ประหยัดเทียบ Notion</td>
+        <td class="highlight" style="color:#10b981;">-3,130 ฿/ปี</td>
+        <td>เท่ากัน</td>
+        <td>&mdash;</td>
+        <td style="color:#ef4444;">+6,259 ฿/ปี</td>
+      </tr>
+
+      <!-- ฟีเจอร์หลัก -->
+      <tr class="section-row"><td colspan="5">ฟีเจอร์หลัก</td></tr>
+      <tr>
+        <td>เอกสาร / Wiki</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+      </tr>
+      <tr>
+        <td>ฐานข้อมูล / ตาราง</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+      </tr>
+      <tr>
+        <td>จัดการงาน / โปรเจกต์</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="limited">พื้นฐาน</span></td>
+        <td><span class="limited">พื้นฐาน</span></td>
+      </tr>
+      <tr>
+        <td>Kanban Board</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+      </tr>
+      <tr>
+        <td>Gantt Chart</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="limited">Timeline</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>ปฏิทิน</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+      </tr>
+      <tr>
+        <td>ติดตามเป้าหมาย</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>จับเวลาการทำงาน</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>ฟอร์ม</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>สร้างเว็บไซต์ / หน้าเพจ</td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+
+      <!-- พื้นที่จัดเก็บ -->
+      <tr class="section-row"><td colspan="5">พื้นที่จัดเก็บ &amp; ข้อจำกัด</td></tr>
+      <tr>
+        <td>พื้นที่เก็บข้อมูล</td>
+        <td class="highlight"><span class="info">ไม่จำกัด</span></td>
+        <td><span class="info">5 GB/คน</span></td>
+        <td><span class="info">ไม่จำกัด</span></td>
+        <td><span class="info">ไม่จำกัด</span></td>
+      </tr>
+      <tr>
+        <td>ขนาดไฟล์อัปโหลด</td>
+        <td class="highlight"><span class="info">ไม่จำกัด</span></td>
+        <td><span class="info">200 MB/ไฟล์</span></td>
+        <td><span class="info">ไม่จำกัด</span></td>
+        <td><span class="info">ไม่จำกัด</span></td>
+      </tr>
+      <tr>
+        <td>ผู้ใช้ภายนอก (Guest)</td>
+        <td class="highlight"><span class="info">ไม่จำกัด</span></td>
+        <td><span class="info">ไม่จำกัด</span></td>
+        <td><span class="info">ไม่จำกัด</span></td>
+        <td><span class="info">100 คน</span></td>
+      </tr>
+      <tr>
+        <td>ประวัติหน้า</td>
+        <td class="highlight"><span class="info">ไม่จำกัด</span></td>
+        <td><span class="info">ไม่จำกัด</span></td>
+        <td><span class="info">30 วัน</span></td>
+        <td><span class="info">ไม่จำกัด</span></td>
+      </tr>
+
+      <!-- AI -->
+      <tr class="section-row"><td colspan="5">ฟีเจอร์ AI</td></tr>
+      <tr>
+        <td>AI ในตัว</td>
+        <td class="highlight"><span class="limited">ทดลอง</span></td>
+        <td><span class="limited">30 คำถาม/เดือน</span></td>
+        <td><span class="limited">ทดลอง</span></td>
+        <td><span class="check">&#10003;</span> <span class="info">ไม่จำกัด</span></td>
+      </tr>
+      <tr>
+        <td>ค่า AI เพิ่มเติม</td>
+        <td class="highlight"><span class="info">+~293 ฿/คน/เดือน</span></td>
+        <td><span class="info">รวมแล้ว (จำกัด)</span></td>
+        <td><span class="info">+~326 ฿/คน/เดือน</span></td>
+        <td><span class="info">+~261 ฿/คน/เดือน</span></td>
+      </tr>
+
+      <!-- การเชื่อมต่อ -->
+      <tr class="section-row"><td colspan="5">การเชื่อมต่อ &amp; อื่นๆ</td></tr>
+      <tr>
+        <td>เชื่อมต่อ Slack</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>เชื่อมต่อ Google Drive</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>เชื่อมต่ออีเมล</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="limited">Notion Mail</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>ออโตเมชัน</td>
+        <td class="highlight"><span class="info">พื้นฐาน</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="limited">พื้นฐาน</span></td>
+        <td><span class="cross">&#10005;</span></td>
+      </tr>
+      <tr>
+        <td>โอเพนซอร์ส</td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td><span class="cross">&#10005;</span></td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+      </tr>
+
+      <!-- ความง่ายในการใช้งาน -->
+      <tr class="section-row"><td colspan="5">ประสบการณ์ใช้งาน</td></tr>
+      <tr>
+        <td>ความง่ายของ UX</td>
+        <td class="highlight"><span class="limited">ซับซ้อน</span></td>
+        <td><span class="check">ง่ายมาก</span></td>
+        <td><span class="check">สะอาด</span></td>
+        <td><span class="check">คล้าย Notion</span></td>
+      </tr>
+      <tr>
+        <td>ระยะเวลาเรียนรู้</td>
+        <td class="highlight"><span class="limited">ปานกลาง-สูง</span></td>
+        <td><span class="check">ต่ำ</span></td>
+        <td><span class="info">ปานกลาง</span></td>
+        <td><span class="info">ปานกลาง</span></td>
+      </tr>
+      <tr>
+        <td>แอปมือถือ</td>
+        <td class="highlight"><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+        <td><span class="check">&#10003;</span></td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+  <div class="footer">
+    <p class="verdict">แนะนำ: ClickUp Unlimited (~228 ฿/คน/เดือน) &mdash; คุ้มค่าที่สุดสำหรับทีมการตลาด</p>
+    <p>
+      ได้ฟีเจอร์ต่อบาทสูงที่สุด — พื้นที่เก็บไม่จำกัด, จัดการโปรเจกต์ครบ, Gantt chart, ติดตามเป้าหมาย
+      ซึ่งเครื่องมืออื่นต้องซื้อเพิ่มหรือไม่มี
+      <br>ข้อแลกเปลี่ยน: หน้าตาซับซ้อนกว่า Notion — ควรเผื่อเวลาเรียนรู้ ~1 สัปดาห์
+      <br>ถ้าทีมชอบ UX ที่สะอาดแบบ Notion → Notion Plus (~261 ฿/คน/เดือน รายปี) แพงกว่าแค่ ~3,130 ฿/ปี
+    </p>
+    <div class="logos">
+      <span>clickup.com</span>
+      <span>slite.com</span>
+      <span>notion.com</span>
+      <span>appflowy.com</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

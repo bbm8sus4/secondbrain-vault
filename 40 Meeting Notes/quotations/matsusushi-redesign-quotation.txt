@@ -1,0 +1,161 @@
+ใบเสนอราคา — Redesign เว็บไซต์ Matsu Sushi Thailand
+matsusushithailand.com
+═══════════════════════════════════════════════════════════════
+
+วันที่: 4 พฤษภาคม 2026
+ลูกค้า: Matsu Sushi (มัตสึ ซูชิ) — Japanese Premium Buffet & Omakase
+เว็บไซต์ปัจจุบัน: https://matsusushithailand.com/
+ที่ตั้ง: 262 ถ.ชยางกูร ต.ในเมือง อ.เมือง จ.อุบลราชธานี 34000
+โทร: 097-925-5544 | LINE: @matsusushi | FB: Matsusushi.Ubon
+
+
+1. ข้อมูลแบรนด์ / Brand Snapshot
+═══════════════════════════════════════════════════════════════
+
+• ชื่อแบรนด์: Matsu Sushi (มัตสึ ซูชิ)
+• Positioning: Japanese Premium Buffet & Omakase
+• โมเดลธุรกิจ: ร้านอาหารญี่ปุ่น + ขาย Franchise (สำคัญมาก)
+• สาขาปัจจุบัน: 1 สาขา (อุบลราชธานี)
+• เวลาทำการ: จันทร์–อาทิตย์ 11:00–22:00 น.
+• ภาษา: ไทย + อังกฤษ
+• Tech ปัจจุบัน: WordPress + Elementor
+
+
+2. โครงสร้างเว็บปัจจุบัน (8 หน้า)
+═══════════════════════════════════════════════════════════════
+
+หน้าที่พบในเว็บไซต์ปัจจุบัน:
+1. Home (หน้าแรก)
+2. About Us — ⚠️ ปัจจุบัน 404 พัง
+3. Franchise (ฟอร์มเปล่าๆ ไม่มีรายละเอียด package)
+4. Buffet (3 tier: 490++ / 875++ / 1,190++ บาท)
+5. Omakase (เนื้อหาน้อย รูปน้อย)
+6. News & Event — ⚠️ อัพเดทล่าสุด ธ.ค. 2020 (ค้างมา 5 ปี)
+7. Join Us (สมัครงาน)
+8. Open House (ลงทะเบียนงาน)
+
+
+3. ปัญหาเว็บปัจจุบัน (Pain Points)
+═══════════════════════════════════════════════════════════════
+
+ปัญหาที่ตรวจพบและส่งผลต่อยอดขาย / ภาพลักษณ์แบรนด์:
+
+(1) About Us หน้า 404 — เสียความน่าเชื่อถือทันที
+(2) News อัพเดทล่าสุดปี 2020 — ดูเหมือนร้านเลิกกิจการ
+(3) ไม่มีระบบจองโต๊ะออนไลน์ — เสียยอดทุกวัน (สำคัญมากสำหรับ Premium Buffet)
+(4) หน้า Franchise ไม่มี Package / ROI Calculator / Brochure ดาวน์โหลด — โอกาสปิดดีลแฟรนไชส์หายไป
+(5) ไม่มี Online Ordering / Delivery (LINE MAN, Grab, Robinhood ไม่เชื่อม)
+(6) ไม่มี Instagram / TikTok ใน footer — ร้านอาหาร 2026 ขาดไม่ได้
+(7) ไม่มี Testimonials / Google Reviews embed — Trust ต่ำ
+(8) โครงสร้างไม่รองรับ multi-branch — ถ้าขยายสาขาต้อง redesign อีกรอบ
+(9) ไม่มี SEO Schema (Restaurant, LocalBusiness) — เสียโอกาสบน Google Maps
+(10) ไม่มี Digital Menu / Menu PDF — ลูกค้าไม่เห็นเมนูครบก่อนเข้าร้าน
+
+
+4. ขอบเขตงานและราคา (Scope & Pricing)
+═══════════════════════════════════════════════════════════════
+
+นำเสนอ 3 แพ็คเกจให้เลือกตามงบและเป้าหมาย
+
+
+─────────────────────────────────────────────────────────────────
+PACKAGE A — REFRESH (ราคาเริ่มต้น)
+ราคา: 65,000 – 95,000 บาท
+Timeline: 4–6 สัปดาห์
+─────────────────────────────────────────────────────────────────
+
+ขอบเขตงาน:
+• Redesign UI ทุกหน้า (8 หน้าเดิม)
+• แก้ About Us 404 + เขียน Brand Story ใหม่
+• ปรับโครงสร้างให้รองรับ multi-branch ในอนาคต
+• ติดตั้ง Reservation Form (ส่งเข้า LINE / Email)
+• เชื่อม Google Maps + Reviews Widget
+• SEO Basic + Schema Markup (LocalBusiness, Restaurant, Menu)
+• ภาษาไทย + อังกฤษ (WPML หรือ Polylang)
+• Mobile-first responsive
+• Speed optimization (LCP < 2.5 วินาที)
+
+
+─────────────────────────────────────────────────────────────────
+PACKAGE B — GROWTH ★ แนะนำที่สุด ★
+ราคา: 120,000 – 180,000 บาท
+Timeline: 6–10 สัปดาห์
+─────────────────────────────────────────────────────────────────
+
+ขอบเขตงาน (ทุกอย่างใน Package A บวกเพิ่ม):
+• ระบบจองโต๊ะแบบเต็มรูปแบบ (เลือกวัน/เวลา/จำนวนคน, ยืนยันผ่าน Email/SMS)
+• Franchise Portal — Package Tiers + ROI Calculator + Brochure PDF + Lead Form แยก
+• Digital Menu แบบ interactive (filter ตามหมวด, รูปทุกเมนู)
+• News / Promotion CMS — admin อัพเดทเองได้ + Auto-post ขึ้น Facebook
+• เชื่อม LINE Official Account (LINE Login + push notification)
+• Google Analytics 4 + Meta Pixel + Conversion Tracking
+• Photoshoot รูปอาหาร 30 รูป (optional +25,000 บาท)
+
+เหตุผลที่แนะนำ:
+ลูกค้ามีโมเดล Franchise — Franchise Portal + ROI Calculator คือสิ่งที่
+จะคืนทุนค่า redesign ได้เร็วที่สุด
+(1 ดีลแฟรนไชส์ = คืนทุนทั้งโครงการ)
+
+
+─────────────────────────────────────────────────────────────────
+PACKAGE C — PREMIUM / FRANCHISE-READY
+ราคา: 220,000 – 350,000 บาท
+Timeline: 10–16 สัปดาห์
+─────────────────────────────────────────────────────────────────
+
+ขอบเขตงาน (ทุกอย่างใน Package B บวกเพิ่ม):
+• Online Ordering / Delivery — เชื่อม LINE MAN, Grab API หรือ in-house cart
+• Multi-branch Management System — แยก stock / promo / reservation รายสาขา
+• Member / Loyalty System — สะสมแต้ม, e-coupon, birthday voucher
+• Franchisee Backend — ผู้สมัครแฟรนไชส์ login ดูเอกสาร, สถานะ, training portal
+• Custom Design (ไม่ใช้ template Elementor) — แบรนด์ระดับ Premium จริง
+• Headless CMS (Next.js + Sanity / Strapi) แทน WordPress (โหลดเร็ว, scale ได้)
+• 3 ภาษา (TH / EN / JP — สำหรับนักท่องเที่ยวญี่ปุ่น)
+
+
+5. ค่าใช้จ่ายต่อเนื่อง / Add-ons
+═══════════════════════════════════════════════════════════════
+
+รายการที่ลูกค้าควรเตรียมงบเพิ่ม (ไม่รวมในราคา redesign):
+
+• Hosting + Domain + SSL (ปีแรก)        6,000 – 18,000 บาท / ปี
+• Maintenance retainer                   4,500 – 15,000 บาท / เดือน
+• Content update (ข่าว/โปร)              1,500 บาท / โพสต์ หรือ retainer
+• SEO ongoing                            8,000 – 25,000 บาท / เดือน
+• Food Photography (1 วัน)               15,000 – 35,000 บาท
+• Copywriting TH/EN                      800 – 1,500 บาท / หน้า
+
+
+6. คำถามที่ต้องตอบก่อนปิดราคา
+═══════════════════════════════════════════════════════════════
+
+ขอข้อมูลเพิ่มเติมจากลูกค้าเพื่อปิดราคาได้ชัดเจน:
+
+(1) มีแผนขยายกี่สาขาใน 12–24 เดือน? (multi-branch จำเป็นไหม)
+(2) เป้าหมายหลักของเว็บใหม่?
+    □ ขายแฟรนไชส์
+    □ ดึงลูกค้าจองโต๊ะ
+    □ ขาย delivery
+(3) เคยมี Online Ordering / Reservation อยู่แล้วหรือไม่?
+(4) มี POS / Stock System ที่ต้องเชื่อมไหม (Wongnai POS, FoodStory, Loyverse)
+(5) มี Logo / Brand Guideline / รูปอาหารคุณภาพสูงพร้อมแล้วหรือยัง?
+(6) ต้องการเก็บ WordPress หรือเปิดให้เปลี่ยนเป็น Next.js / Webflow ได้?
+(7) งบประมาณเป้าหมายอยู่ช่วงไหน?
+(8) Deadline เปิดตัวเว็บใหม่ — มีอีเวนต์ / Open House ผูกอยู่ไหม?
+
+
+7. เงื่อนไขการชำระเงิน (เสนอ)
+═══════════════════════════════════════════════════════════════
+
+• งวดที่ 1 (มัดจำ)        30%   — เริ่มงาน
+• งวดที่ 2 (Design Approval)  30%   — อนุมัติดีไซน์
+• งวดที่ 3 (UAT)          30%   — ทดสอบเสร็จ
+• งวดที่ 4 (Go-live)      10%   — เปิดเว็บจริง
+
+รับประกันแก้บั๊ก 30 วันหลัง go-live (ไม่รวม feature เพิ่มเติม)
+
+
+═══════════════════════════════════════════════════════════════
+จัดทำโดย: [ชื่อผู้จัดทำ]
+ติดต่อ: hello@easyslip.com
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,32 @@
+[2026-06-12 07:22:11] WEEKLY: 2026-06-06 → 2026-06-12 (label: 2026-W24)
+Wrote /tmp/friday_source_2026-W24.md — 31,463 chars, 30 weekly, 57 daily
+[2026-06-12 07:22:14] WEEKLY: source size =    53495 chars
+[2026-06-12 07:22:14] WEEKLY: invoking Claude for synthesis → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W24.md
+ไฟล์อยู่ใน `/tmp/` ซึ่ง Claude Code block ไว้ครับ ต้องย้ายไฟล์มาก่อน หรือ allow permission ให้ `/tmp/` ก่อนได้เลย
+
+วิธีเร็วที่สุด: รัน command นี้ใน terminal แล้วบอกผมครับ
+
+```sh
+cp /tmp/friday_source_2026-W24.md ~/SecondBrain/Friday/
+```
+[2026-06-12 07:22:32] WEEKLY: ⚠️ output file not created
+[2026-06-12 07:22:32] DONE: weekly
+[2026-06-12 07:23:00] WEEKLY: 2026-06-06 → 2026-06-12 (label: 2026-W24)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W24.md — 31,463 chars, 30 weekly, 57 daily
+[2026-06-12 07:23:02] WEEKLY: source size =    53495 chars
+[2026-06-12 07:23:02] WEEKLY: invoking Claude for synthesis → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W24.md
+You've hit your session limit · resets 8:30am (Asia/Bangkok)
+[2026-06-12 07:25:52] WEEKLY: claude exit 1
+[2026-06-12 07:25:52] WEEKLY: ✅ wrote    11200 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W24.md
+[2026-06-12 07:25:52] DONE: weekly
+[2026-06-12 09:17:34] MONTHLY: 2026-06-01 → 2026-06-30 (label: 2026-06 มิถุนายน)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/monthly_2026-06.md — 42,429 chars, 30 weekly, 125 daily
+[2026-06-12 09:17:37] MONTHLY: source size =    73687 chars
+[2026-06-12 09:17:37] MONTHLY: invoking Claude for synthesis → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+DONE — เขียนไฟล์ `/Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md` เรียบร้อยครับ
+
+ครอบคลุมครบ 7 หมวด: ตัวเลขภาษี, ยอดคืนเครดิต, leads CRM ใหม่ 4 ราย, สถานะ PR/merge, HR เข้าใหม่ 2 คน, Watch List 17 รายการ + Highlights 15 ข้อ พร้อมเข้าประชุมครับ
+[2026-06-12 09:24:35] MONTHLY: ✅ wrote    26810 chars → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+[2026-06-12 09:24:35] DONE: monthly
+[2026-06-12 23:55:00] AUTO: DOW=5 DOM=12 TOMORROW=13
+[2026-06-12 23:55:00] DONE: auto

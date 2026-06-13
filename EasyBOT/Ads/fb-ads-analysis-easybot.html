@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook Ads Analysis — SC Awareness (EasyBot)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #fff;
+    color: #1d1d1f;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    text-align: center;
+    padding: 80px 0 60px;
+  }
+
+  .hero .eyebrow {
+    font-size: 21px;
+    font-weight: 600;
+    color: #6e6e73;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.07;
+    margin-top: 6px;
+    background: linear-gradient(135deg, #1d1d1f 40%, #6e6e73 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero .date-pill {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #f5f5f7;
+    border-radius: 980px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6e6e73;
+  }
+
+  /* ── Alert ── */
+  .alert {
+    background: #fff2f0;
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin: 0 auto 56px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    max-width: 780px;
+  }
+
+  .alert .icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .alert h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #de071c;
+    margin-bottom: 4px;
+  }
+
+  .alert p {
+    font-size: 14px;
+    color: #6e6e73;
+    line-height: 1.5;
+  }
+
+  /* ── Metrics ── */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+
+  @media (max-width: 734px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 40px; }
+  }
+
+  .metric {
+    text-align: center;
+    padding: 32px 16px;
+    background: #f5f5f7;
+    border-radius: 18px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .metric:hover { transform: scale(1.02); }
+
+  .metric .label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #86868b;
+    margin-bottom: 8px;
+  }
+
+  .metric .num {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .metric .num.red { color: #de071c; }
+  .metric .num.amber { color: #bf4800; }
+  .metric .num.blue { color: #0066cc; }
+  .metric .num.green { color: #03a10e; }
+
+  .metric .sub {
+    font-size: 12px;
+    color: #86868b;
+    margin-top: 4px;
+  }
+
+  /* ── Sections ── */
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #86868b;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+  }
+
+  .divider {
+    height: 1px;
+    background: #d2d2d7;
+    margin: 56px 0;
+  }
+
+  /* ── Table ── */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 14px;
+    border: 1px solid #d2d2d7;
+    margin-bottom: 12px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  thead th {
+    background: #f5f5f7;
+    color: #86868b;
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid #d2d2d7;
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #e8e8ed;
+    color: #1d1d1f;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #f5f5f7; }
+
+  .badge-active {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #03a10e;
+  }
+
+  .badge-active::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: #03a10e;
+    border-radius: 50%;
+  }
+
+  .val-zero {
+    color: #de071c;
+    font-weight: 600;
+  }
+
+  .total-row td {
+    font-weight: 700;
+    border-top: 2px solid #1d1d1f;
+    background: #f5f5f7;
+  }
+
+  .table-footnote {
+    font-size: 12px;
+    color: #86868b;
+    margin-top: 8px;
+  }
+
+  /* ── Cause cards ── */
+  .causes {
+    list-style: none;
+    counter-reset: cause;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .causes li {
+    counter-increment: cause;
+    padding: 24px 24px 24px 64px;
+    background: #f5f5f7;
+    border-radius: 14px;
+    position: relative;
+  }
+
+  .causes li::before {
+    content: counter(cause);
+    position: absolute;
+    left: 20px;
+    top: 24px;
+    width: 28px;
+    height: 28px;
+    background: #1d1d1f;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .causes li strong {
+    font-size: 15px;
+    color: #1d1d1f;
+  }
+
+  .causes li .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 980px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .tag.high { background: #fddee1; color: #de071c; }
+  .tag.med  { background: #fce8d4; color: #bf4800; }
+  .tag.low  { background: #d4e4fc; color: #0066cc; }
+
+  .causes li .desc {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #6e6e73;
+    line-height: 1.5;
+  }
+
+  /* ── Action grid ── */
+  .actions {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 734px) {
+    .actions { grid-template-columns: 1fr; }
+  }
+
+  .actions li {
+    padding: 24px;
+    background: #f5f5f7;
+    border-radius: 14px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .actions li:hover { transform: scale(1.01); }
+
+  .actions li .priority-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 980px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+
+  .priority-tag.urgent    { background: #de071c; color: #fff; }
+  .priority-tag.important { background: #bf4800; color: #fff; }
+  .priority-tag.next      { background: #0066cc; color: #fff; }
+
+  .actions li h4 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 6px;
+  }
+
+  .actions li p {
+    font-size: 14px;
+    color: #6e6e73;
+    line-height: 1.5;
+  }
+
+  /* ── Strategy box ── */
+  .strategy {
+    margin-top: 32px;
+    padding: 32px;
+    background: #f5f5f7;
+    border-radius: 18px;
+  }
+
+  .strategy h3 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 16px;
+  }
+
+  .strategy ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .strategy ul li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 15px;
+    color: #1d1d1f;
+    line-height: 1.5;
+  }
+
+  .strategy ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    background: #0066cc;
+    border-radius: 50%;
+  }
+
+  .strategy ul li strong {
+    font-weight: 600;
+  }
+
+  .strategy ul li span {
+    color: #6e6e73;
+  }
+
+  /* ── Billing ── */
+  .billing-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 14px 20px;
+    background: #f5f5f7;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #6e6e73;
+  }
+
+  .billing-note .dot-icon {
+    width: 8px;
+    height: 8px;
+    background: #bf4800;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 48px 0 56px;
+    font-size: 12px;
+    color: #86868b;
+  }
+
+  .footer .sep {
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background: #d2d2d7;
+    margin: 0 10px;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <p class="eyebrow">EasyBot Official &mdash; Ad Account Analysis</p>
+    <h1>SC Awareness Campaign</h1>
+    <div class="date-pill">Apr 26, 2026 &ndash; May 25, 2026 &nbsp;(30 days)</div>
+  </div>
+
+  <!-- Alert -->
+  <div class="alert">
+    <div class="icon">&#9888;&#65039;</div>
+    <div>
+      <h3>Critical: Active Ads with Zero Delivery</h3>
+      <p>10 ads Active มา 30 วัน แต่ไม่มี Impression, ไม่มี Reach, ใช้เงินรวม &#3647;0.00 ทั้งหมด &mdash; ต้องตรวจสอบและแก้ไขทันที</p>
+    </div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="metrics">
+    <div class="metric">
+      <div class="label">Total Ads</div>
+      <div class="num blue">10</div>
+      <div class="sub">Active ทั้ง 10 ตัว</div>
+    </div>
+    <div class="metric">
+      <div class="label">Amount Spent</div>
+      <div class="num red">&#3647;0</div>
+      <div class="sub">ตลอด 30 วัน</div>
+    </div>
+    <div class="metric">
+      <div class="label">Impressions</div>
+      <div class="num red">0</div>
+      <div class="sub">ไม่มี delivery เลย</div>
+    </div>
+    <div class="metric">
+      <div class="label">Reach</div>
+      <div class="num red">0</div>
+      <div class="sub">ไม่มีคนเห็น ad</div>
+    </div>
+    <div class="metric">
+      <div class="label">Daily Budget</div>
+      <div class="num amber">&#3647;2,000</div>
+      <div class="sub">&#3647;200/ad &times; 10</div>
+    </div>
+    <div class="metric">
+      <div class="label">Prepaid Balance</div>
+      <div class="num green">&#3647;30,600</div>
+      <div class="sub">พร้อมใช้งาน</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Ads Table -->
+  <p class="section-label">Performance</p>
+  <h2 class="section-title">รายละเอียด Ads ทั้ง 10 ตัว</h2>
+
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Ad Name</th>
+        <th>Status</th>
+        <th>Budget</th>
+        <th>Spent</th>
+        <th>Impressions</th>
+        <th>Ends</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>SC Awareness &ndash; ทำไมต้องใช้ EasyBot? &#129300;</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>SC Awareness &ndash; ทำไมต้องเลือก Easy Bot? &#128737;&#65039;</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>SC Awareness &ndash; ยกระดับความปลอดภัยให้กลุ่ม</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>SC Awareness &ndash; อยู่ดี ๆ กลุ่มตัวแทนบิน?</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>SC Awareness &ndash; เบื่อมั้ย? ที่กลุ่มไลน์มีสแปม</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>SC Awareness &ndash; 5 สิ่งที่เปลี่ยนไป... เมื่อใช้ EasyBot</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>SC Awareness &ndash; ทำไมลูกค้า EasyBot ถึงกลับมา</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>SC Awareness &ndash; ใช้ EasyBot ดีกว่าอย่างไร</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>SC Awareness &ndash; EasyBot ตัวช่วยเบอร์ 1 ของคุณ</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>SC Awareness &ndash; (Ad #10)</td>
+        <td><span class="badge-active">Active</span></td>
+        <td>&#3647;200/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">&mdash;</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="2">Total (10 Ads)</td>
+        <td></td>
+        <td>&#3647;2,000/day</td>
+        <td class="val-zero">&#3647;0.00</td>
+        <td class="val-zero">0</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="table-footnote">Objective: Reach &nbsp;&bull;&nbsp; Optimization: Per 1,000 People Reached &nbsp;&bull;&nbsp; Attribution: 7-day click, All conversions</p>
+
+  <div class="divider"></div>
+
+  <!-- Root Cause -->
+  <p class="section-label">Diagnosis</p>
+  <h2 class="section-title">สาเหตุที่เป็นไปได้</h2>
+
+  <ol class="causes">
+    <li>
+      <strong>Campaign / Ad Set ถูกปิดอยู่ในระดับบน</strong>
+      <span class="tag high">โอกาสสูง</span>
+      <p class="desc">Ad level แสดง Active แต่ Campaign หรือ Ad Set level อาจถูก pause/off &mdash; ทำให้ไม่มี delivery แม้ ad จะเปิดอยู่</p>
+    </li>
+    <li>
+      <strong>Ads อยู่ระหว่าง Review หรือถูก Reject</strong>
+      <span class="tag high">โอกาสสูง</span>
+      <p class="desc">Facebook อาจยังไม่ approve content หรือ reject ไปแล้ว โดยเฉพาะถ้ามีภาพ/ข้อความที่อาจขัด policy</p>
+    </li>
+    <li>
+      <strong>Billing / Payment ยังไม่เชื่อมต่อสมบูรณ์</strong>
+      <span class="tag med">ปานกลาง</span>
+      <p class="desc">มี prepaid balance &#3647;30,600 แต่มี transaction เดียว (&#3647;600 วันที่ 1 พ.ค.) อาจมีปัญหาเรื่อง payment method ที่ยังไม่ verify</p>
+    </li>
+    <li>
+      <strong>Audience Targeting แคบเกินไป</strong>
+      <span class="tag med">ปานกลาง</span>
+      <p class="desc">ถ้า estimated audience size เล็กมากหรือเป็น 0 Facebook จะไม่ deliver &mdash; ต้องตรวจ targeting ที่ระดับ Ad Set</p>
+    </li>
+    <li>
+      <strong>Account-level Restriction</strong>
+      <span class="tag low">โอกาสต่ำ</span>
+      <p class="desc">บัญชีอาจถูกจำกัด (disabled, restricted, หรืออยู่ระหว่าง review) &mdash; ตรวจได้ที่ Account Quality</p>
+    </li>
+  </ol>
+
+  <div class="divider"></div>
+
+  <!-- Action Items -->
+  <p class="section-label">Next Steps</p>
+  <h2 class="section-title">สิ่งที่ต้องทำ</h2>
+
+  <ul class="actions">
+    <li>
+      <div class="priority-tag urgent">Urgent</div>
+      <h4>ตรวจ Campaign &amp; Ad Set Level</h4>
+      <p>เข้า Ads Manager &gt; Campaign tab &gt; ดูว่า Campaign และ Ad Set เปิด (On) อยู่จริงหรือไม่ &mdash; สาเหตุ #1 ที่พบบ่อยที่สุด</p>
+    </li>
+    <li>
+      <div class="priority-tag urgent">Urgent</div>
+      <h4>ตรวจ Ad Review Status</h4>
+      <p>คลิกแต่ละ ad &gt; ดูว่า Approved / In Review / Rejected &mdash; ถ้า Rejected ต้อง appeal หรือแก้ creative</p>
+    </li>
+    <li>
+      <div class="priority-tag important">Important</div>
+      <h4>ตรวจ Account Quality</h4>
+      <p>ไป Business Settings &gt; Account Quality &gt; ดูว่ามี restriction, policy violation หรือ warning ไหม</p>
+    </li>
+    <li>
+      <div class="priority-tag important">Important</div>
+      <h4>ตรวจ Audience &amp; Targeting</h4>
+      <p>เข้า Ad Set level &gt; ดู estimated audience size &mdash; ถ้าน้อยกว่า 1,000 ต้องขยาย targeting</p>
+    </li>
+    <li>
+      <div class="priority-tag next">Next Step</div>
+      <h4>ลดจำนวน Ads เหลือ 3&ndash;4 ตัว</h4>
+      <p>10 ads แย่งกัน deliver ใน budget น้อย &mdash; เลือก top 3&ndash;4 creative แล้วเพิ่ม budget เป็น &#3647;500+/ad/day</p>
+    </li>
+    <li>
+      <div class="priority-tag next">Next Step</div>
+      <h4>A/B Test Creative</h4>
+      <p>ทดสอบ 2&ndash;3 versions (image vs. video, pain point vs. benefit) เพื่อหา winning creative ก่อน scale</p>
+    </li>
+  </ul>
+
+  <!-- Strategy -->
+  <div class="strategy">
+    <h3>คำแนะนำเชิงกลยุทธ์</h3>
+    <ul>
+      <li><strong>Objective Reach</strong> <span>&mdash; เหมาะกับ awareness แต่ถ้าเป้าหมายคือ leads/conversions ควรเปลี่ยนเป็น Traffic หรือ Lead Gen</span></li>
+      <li><strong>Budget &#3647;200/day/ad</strong> <span>&mdash; ต่ำเกินไปสำหรับ 10 ads Facebook ต้องการอย่างน้อย &#3647;500&ndash;1,000/day/ad set เพื่อออก Learning Phase</span></li>
+      <li><strong>Creative ทั้ง 10 ชิ้นเป็นแนว content/education</strong> <span>&mdash; ดีสำหรับ awareness แต่ต้องมี CTA ชัดเจน (สมัครทดลอง, ดูรายละเอียด, LINE OA)</span></li>
+      <li><strong>ควรเพิ่ม Retargeting</strong> <span>&mdash; สร้าง Custom Audience จากคนที่เคย engage แล้วยิง conversion ad ตาม</span></li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Billing -->
+  <p class="section-label">Billing</p>
+  <h2 class="section-title">สรุปการเงิน</h2>
+
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Transaction ID</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Method</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-family:SFMono-Regular,Menlo,monospace;font-size:13px;">26776361675 / 26798979196</td>
+        <td>May 1, 2026</td>
+        <td>&#3647;600.00</td>
+        <td>Manual payment</td>
+        <td><span style="color:#03a10e;font-weight:600;">Funded</span></td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="2">Prepaid Balance</td>
+        <td colspan="3" style="font-size:17px;color:#03a10e;">&#3647;30,600.00</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="billing-note">
+    <div class="dot-icon"></div>
+    มีเงินในบัญชีเพียงพอ แต่ยังไม่ถูกใช้ &mdash; ปัญหาไม่ใช่เรื่องเงิน แต่เป็นเรื่อง delivery/approval
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Analysis generated on May 26, 2026
+    <span class="sep"></span>
+    EasyBot Official (2400968090397583)
+    <span class="sep"></span>
+    Business ID: 1651339506138540
+  </div>
+
+</div>
+</body>
+</html>
