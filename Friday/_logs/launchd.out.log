@@ -16,3 +16,7 @@
 Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W25.md — 41,949 chars, 29 weekly, 85 daily
 [2026-06-18 23:55:07] WEEKLY: source size =    73180 chars
 [2026-06-18 23:55:07] WEEKLY: invoking Claude for synthesis → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W25.md
+Your organization has disabled Claude subscription access for Claude Code · Use an Anthropic API key instead, or ask your admin to enable access
+[2026-06-19 05:56:15] WEEKLY: claude exit 1
+[2026-06-19 05:56:15] WEEKLY: ⚠️ output file not created
+[2026-06-19 05:56:15] DONE: auto
