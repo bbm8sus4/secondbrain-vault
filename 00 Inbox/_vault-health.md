@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-06-17 09:00:03 · ไฟล์ .md ทั้งหมด 147
+> สแกนอัตโนมัติ · 2026-06-18 09:00:02 · ไฟล์ .md ทั้งหมด 149
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -9,12 +9,12 @@
 | รายการ | ผล |
 |---|---|
 | 🔗 ลิงก์เสีย (dead links) | 15 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 12 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 13 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 47 ↔ 47 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W24 (5 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (4 วันที่แล้ว) |
+| 🔄 memory source ↔ mirror | 48 ↔ 48 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 2 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W24 (6 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (5 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -48,4 +48,5 @@
 - `Friday/Monthly Recaps/Friday-Monthly-Recap-May-2026.md`
 - `Friday/Weekly Recaps/2026-W24.md`
 - `Friday/_scripts/recap_prompts.md`
+- `Thunder Solution/Reports/kbank-api-pricing-and-easy-thunder-crossbilling.md`
 
