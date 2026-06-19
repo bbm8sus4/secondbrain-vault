@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-06-18 09:00:02 · ไฟล์ .md ทั้งหมด 149
+> สแกนอัตโนมัติ · 2026-06-19 09:00:01 · ไฟล์ .md ทั้งหมด 150
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -12,9 +12,9 @@
 | 🏝️ โน้ตโดดเดี่ยว (orphans) | 13 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
 | 🔄 memory source ↔ mirror | 48 ↔ 48 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 2 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W24 (6 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (5 วันที่แล้ว) |
+| ⏱️ sync ล่าสุด (vault commit) | 1 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W24 (7 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (6 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
