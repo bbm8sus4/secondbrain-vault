@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-06-19 09:00:01 · ไฟล์ .md ทั้งหมด 150
+> สแกนอัตโนมัติ · 2026-06-20 09:00:00 · ไฟล์ .md ทั้งหมด 154
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,13 +8,13 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 15 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 13 |
+| 🔗 ลิงก์เสีย (dead links) | 19 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 12 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 48 ↔ 48 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 1 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W24 (7 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (6 วันที่แล้ว) |
+| 🔄 memory source ↔ mirror | 50 ↔ 50 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W24 (8 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (7 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -33,6 +33,10 @@
 - `BoostSMS/_knowledge/K09-Sender-Name-Thailand.md` → `[[K13-Deliverability-DLR]]` (ไม่พบ)
 - `BoostSMS/_knowledge/K09-Sender-Name-Thailand.md` → `[[K14-Compliance-AntiSpam]]` (ไม่พบ)
 - `BoostSMS/_knowledge/K10-Global-Case-Studies.md` → `[[K14-Compliance-AntiSpam]]` (ไม่พบ)
+- `EasySlip/Documents/api-pricing-packages.md` → `[[easyslip-business-overview-2568-final]]` (ไม่พบ)
+- `EasySlip/Documents/api-pricing-packages.md` → `[[บันทึกข้อตกลงการใช้บริการ_API_Slip_Verification_อีซี่สลิป]]` (ไม่พบ)
+- `Thunder Solution/Reports/thunder-corporate-api-sales-commission.md` → `[[thunder-corporate-api-commission.xlsx]]` (ไม่พบ)
+- `Thunder Solution/Reports/thunder-corporate-api-sales-commission.md` → `[[บันทึกข้อตกลงการใช้บริการ_API_Slip_Verification_อีซี่สลิป]]` (ไม่พบ)
 
 ## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
 
@@ -48,5 +52,4 @@
 - `Friday/Monthly Recaps/Friday-Monthly-Recap-May-2026.md`
 - `Friday/Weekly Recaps/2026-W24.md`
 - `Friday/_scripts/recap_prompts.md`
-- `Thunder Solution/Reports/kbank-api-pricing-and-easy-thunder-crossbilling.md`
 
