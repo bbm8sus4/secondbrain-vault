@@ -7,7 +7,9 @@ owner: Bob (COO)
 status: draft
 stage: pre-traction
 date: 2026-06-21
-tags: [brand-strategy, kuangolf, positioning, persona, usp, pain-point, golf, saas]
+updated: 2026-06-21
+version: 2.0 (brand bible expansion)
+tags: [brand-strategy, kuangolf, positioning, persona, usp, pain-point, golf, saas, brand-bible]
 related:
   - "[[KuanGolf — Thunder Solution's golf scoring app]]"
   - "[[โปรเจกต์ - Thunder Solution]]"
@@ -357,3 +359,330 @@ PROOF 3       : ไม่ถือเงิน · ไม่ auto-renew · refund
 ---
 
 *สังเคราะห์โดย Brand Strategy session — 2026-06-21 · stage: pre-traction · ต้อง validate ก่อน execute*
+
+
+---
+---
+
+# 📕 PART II — BRAND BIBLE EXPANSION (v2.0)
+
+> ส่วนนี้ขยายทุก section ด้านบนให้ละเอียดระดับ brand bible
+> **กฎอ่าน**: 🟢 = ข้อมูลจริง/ตรรกะแน่น · 🟡 = [สมมติฐาน] ต้อง validate · 🔴 = เดาล้วน ความเสี่ยงสูง
+> เนื้อหา emotional/persona/pain ส่วนใหญ่เป็น 🟡 — อย่าอ่านแล้วเข้าใจว่า validated แล้ว
+
+## สารบัญส่วนขยาย
+
+- [[#E1 Business Model ละเอียด]]
+- [[#E2 Unit Economics + Financial สมมติฐาน]]
+- [[#E3 Moat Analysis + SWOT เต็ม]]
+- [[#E4 Brand Value — Value Pyramid + Ladder]]
+- [[#E5 Positioning — Perceptual Map + Archetype]]
+- [[#E6 Persona เต็ม + Secondary Persona]]
+- [[#E7 Jobs-to-be-Done]]
+- [[#E8 Pain Hierarchy + Emotional Journey]]
+- [[#E9 Objection Handling Matrix เต็ม]]
+- [[#E10 USP — Message House + RTB]]
+- [[#E11 Competitive Defense ทุกคู่แข่ง]]
+- [[#E12 Brand Voice เต็ม + ตัวอย่าง]]
+
+---
+
+## E1) Business Model ละเอียด
+
+### Business Model Canvas
+
+**1. Value Proposition** 🟢
+- ลบบทบาท "เหรัญญิก" ออกจากหัวก๊วน
+- คำนวณ side-bet ไทย + ส่ง QR PromptPay + สรุปเข้า LINE ใน 30 วินาที
+- "ไม่มีใครเป็นจำเลย" — ตัวกลางเป็นกลาง
+
+**2. Customer Segments**
+- 🟢 Primary: หัวก๊วน 45-65, SME owner, A/B+, Bangkok metro
+- 🟡 Secondary: เพื่อนก๊วน (ผู้ตาม) — adopt ตาม Captain
+- 🟡 Tertiary (phase 2+): สนามกอล์ฟ (B2B), inbound golfer (EN/JP/KR)
+
+**3. Channels**
+- 🟡 Captain referral (LINE ก๊วน) — ช่องหลัก
+- 🟡 FB ads targeting 45-65 ชาย
+- 🟢 LINE OA (ใช้ BoostSMS/EasyCRM infra)
+- 🟡 ที่สนาม (phase 2)
+
+**4. Customer Relationships**
+- 🟢 LINE OA = main touchpoint (self-serve + broadcast)
+- 🟡 Founding Captain program = high-touch (เดือน 1-3)
+- 🟡 CSM ช่วย onboard ก๊วนแรก
+
+**5. Revenue Streams**
+- 🟢 Subscription: Free / Pro ฿999 / Group ฿1,290 / Lifetime ฿2,490
+- 🟡 (phase 2) B2B สนาม — license/SaaS
+- 🔴 (phase 3) Inbound golfer premium EN/JP/KR
+
+**6. Key Resources**
+- 🟢 Thunder Solution infra (EasySlip, BoostSMS, EasyCRM)
+- 🟢 PromptPay integration capability
+- 🟡 Bob's network (Captain + COO/SME)
+- 🟢 Dev team (Thunder)
+
+**7. Key Activities**
+- 🟢 Product dev (PWA + LINE-native)
+- 🟡 Customer interview + validation (เดือน 1)
+- 🟡 Content + community building
+- 🟡 Founding Captain acquisition
+
+**8. Key Partnerships**
+- 🟡 สนามกอล์ฟ (phase 2 — signage, QR, official tool)
+- 🔴 TGA (handicap — political, ยังไม่เริ่ม)
+- 🟢 Thunder Solution sister products (cross-promote)
+
+**9. Cost Structure**
+- 🟢 Dev + maintenance (แชร์กับ Thunder = ถูกลง)
+- 🟡 Marketing/ads (ยังไม่รู้งบ — รอ Bob)
+- 🟢 PromptPay transaction (ต่ำ/ฟรี ถ้าไม่ถือเงิน)
+- 🟢 LINE OA / infra (แชร์ Thunder)
+
+### Revenue Model — ทำไมตั้งราคาแบบนี้ 🟡
+
+| Tier | ราคา | บทบาทเชิงกลยุทธ์ | Target |
+|---|---|---|---|
+| Free | ฿0 | Acquisition + network seeding | เพื่อนก๊วน, trial Captain |
+| Pro | ฿999/ปี | Core revenue, anchor = greenfee 1 หลุม | individual Captain |
+| Group | ฿1,290/ปี | **Wedge แท้** — Captain เก็บ ฿200/หัว × 7 = กำไร | ก๊วน 4-8 คน |
+| Lifetime | ฿2,490 | Scarcity (Founding 100), cash upfront | early believer |
+
+**Logic การตั้งราคา** 🟡:
+- ไม่ขายแบบ "เดือนละ ฿83" — ขายแบบ "เท่า greenfee 1 หลุม"
+- Group เป็น hero tier — เพราะ Captain ไม่จ่ายเอง (เก็บจากเพื่อน) → margin ลูกค้าบวก = ขายง่าย
+- Lifetime ใช้ใน 90 วันแรกเป็น scarcity แล้วปิด
+
+**[ข้อเสนอปรับจาก research]** 🟡 — เพิ่ม Starter ฿499 (entry ตาม benchmark 199-499) + Group+ ฿1,890 (ก๊วน 8-12) → ดู E2
+
+---
+
+## E2) Unit Economics + Financial สมมติฐาน
+
+> 🔴 **คำเตือนหนัก**: ทุกตัวเลขด้านล่างเป็น [สมมติฐาน] ล้วน — pre-traction ไม่มี data จริงสักตัว
+> ใช้เป็น "กรอบคิด" เท่านั้น ห้ามเอาไปใส่ board deck โดยไม่เขียน "projection/assumption"
+
+### ARPU สมมติฐาน 🔴
+
+| Tier | ราคา | สัดส่วน paid mix (เดา) | contribution |
+|---|---|---|---|
+| Pro ฿999 | 999 | 50% | 500 |
+| Group ฿1,290 | 1,290 | 35% | 452 |
+| Lifetime ฿2,490 | 2,490 (÷3 ปี = 830/ปี) | 15% | 125 |
+| **Blended ARPU/ปี** | | | **~฿1,077** |
+
+### Funnel สมมติฐาน 🔴
+
+```
+ก๊วน 100 ก๊วน เห็นแอป
+  ↓ 40% Captain ลองโหลด        → 40 Captain
+  ↓ 50% ใช้จริง 1 รอบ           → 20 active Captain
+  ↓ 30% Free→Paid               → 6 paid Captain
+  + เพื่อนในก๊วน 6 × 4-12 คน    → 24-72 active golfer (ฟรี/seed)
+```
+
+→ ต้อง validate ทุก % conversion ใน pilot เดือน 2-3
+
+### CAC สมมติฐาน 🔴
+
+| Channel | CAC ต่อ paid Captain (เดา) | หมายเหตุ |
+|---|---|---|
+| Captain referral | ฿0-100 | organic, ต่ำสุด — เป้าหลัก |
+| FB ads | ฿300-800 | ต้องทดสอบจริง |
+| LINE OA broadcast | ฿50-200 | ถ้ามีฐาน add แล้ว |
+| ที่สนาม | ฿200-500 | + ค่า booth/signage |
+
+### LTV สมมติฐาน 🔴
+
+- ARPU ฿1,077/ปี × retention 🔴 (เดา 2-3 ปี เพราะ network lock-in) = **LTV ฿2,150-3,230**
+- LTV:CAC ที่ดี ควร > 3:1 → CAC ต้องคุมไม่เกิน ~฿700-1,000
+- **ถ้า referral เป็นช่องหลัก** → LTV:CAC อาจ > 10:1 (จุดแข็งของ network model)
+
+### Break-even สมมติฐาน 🔴
+
+- ต้องรู้ fixed cost/เดือนก่อน (รอ Bob: dev + marketing + CSM)
+- ถ้า fixed ~฿50K/เดือน → ต้องมี ~46 paid Captain ใหม่/เดือน (ที่ ARPU ฿1,077) เพื่อ cover
+- **ยังคำนวณจริงไม่ได้** จนกว่าจะรู้ cost structure
+
+### ตัวเลขที่ต้องเก็บตั้งแต่วันแรก (instrumentation) 🟢
+- Captain signup → activation (ใช้จริง 1 รอบ)
+- Free → Paid conversion (per tier)
+- รอบ/ก๊วน/เดือน (engagement)
+- Referral coefficient (1 Captain ชวนได้กี่ก๊วน) — **ตัวชี้วัดสำคัญสุด**
+- Churn rate (ปีที่ 2)
+
+---
+
+## E3) Moat Analysis + SWOT เต็ม
+
+### Moat — เรียงตามความแข็งแรง
+
+**1. Network effect ก๊วน** 🟢 (แข็งสุด)
+- เพื่อน 1 คนใช้ → ก๊วน 4-12 คนใช้ตาม
+- เปลี่ยน app ต้องเปลี่ยนพร้อมกันทั้งก๊วน = switching cost สูงมาก
+- ยิ่งก๊วนใช้นาน ยิ่งมีประวัติ/ลูกหนี้ค้าง → ออกยาก
+
+**2. Thunder Solution infra** 🟢 (แข็ง — เลียนแบบยาก)
+- EasySlip + BoostSMS + EasyCRM + PromptPay = ทำ settlement flow ได้เร็ว/ถูก
+- คู่แข่งต้องสร้าง infra นี้เองทั้งหมด = เสียเวลา 6-12 เดือน
+
+**3. Cultural/language fit** 🟡 (กลาง — เลียนแบบได้แต่ช้า)
+- ต่อแต้ม, halve-on-tie, System 36, ภาษาก๊วนไทย
+- global player ต้อง localize ลึก (BirdieX ทำได้เพราะเป็นไทย)
+
+**4. PromptPay settlement** 🟡 (กลาง — feature เลียนแบบได้)
+- ตอนนี้ 0 competitor ทำ แต่เป็น feature → ลอกได้ใน 6-12 เดือน
+- ต้องรีบใช้ช่วงที่ยังไม่มีใครทำ เพื่อสร้าง brand association
+
+**5. Brand = "ตัวกลางเป็นกลาง"** 🟡 (อ่อน-กลาง — ต้องสร้างเวลา)
+- ถ้า own คำว่า "ไม่มีใครเป็นจำเลย" ได้ก่อน = mental moat
+- แต่ต้องลงทุน content/time
+
+### SWOT เต็ม
+
+**Strengths** 🟢
+- Thunder infra (PromptPay/LINE/CRM พร้อม)
+- Bob = COO (business sense + network)
+- Blank slate (0 legacy constraint)
+- Specialist focus (lean, ไม่แตก)
+- Native Thai stack
+
+**Weaknesses** 🟢
+- Pre-traction (0 user/paying/data)
+- 0 validated insight
+- ไม่มี media engine (vs golfdigg/InVent)
+- ไม่มี course distribution (vs SmartScore/BirdieX)
+- มาทีหลัง 1-3 ปี
+- ทีม/งบ marketing ยังไม่ชัด
+
+**Opportunities** 🟡
+- Layer 3 (settlement) ยังว่าง 0 competitor
+- Window 12 เดือน ก่อนยักษ์ขยับ
+- Captain network multiplier
+- B2B สนาม (phase 2)
+- Inbound golfer (phase 3)
+- TGA partnership (ถ้าได้)
+
+**Threats** 🟡
+- 🔴 BirdieX/InVent push หนัก (ทุน + media + 150 สนาม)
+- 🔴 Beezer ขยาย SEA + เพิ่ม PromptPay
+- 🔴 18Birdies localize ไทย
+- 🟡 TGA ออก scorecard app เอง
+- 🟡 โลกัณฑ์กอล์ฟ เป็น direct match (ต้อง audit)
+- 🟡 Apple Watch / Garmin native golf
+- 🟡 Legal risk (PromptPay settlement = e-money/gambling?)
+
+### TOWS — กลยุทธ์จับคู่ 🟡
+
+| | Opportunities | Threats |
+|---|---|---|
+| **Strengths** | ใช้ Thunder infra เร่ง PromptPay settlement ครอง Layer 3 ก่อนใคร (SO) | ใช้ network effect สร้าง switching cost ก่อน Beezer/BirdieX มาถึง (ST) |
+| **Weaknesses** | ใช้ Captain referral แก้ปัญหาไม่มี media engine (WO) | เร่ง validate + pilot ก่อน window 12 เดือนปิด มิฉะนั้นยักษ์กิน niche (WT) |
+
+---
+
+## E4) Brand Value — Value Pyramid + Ladder
+
+### Value Pyramid (4 ชั้น — ล่างขึ้นบน)
+
+```
+         ┌─────────────────────────┐
+   ชั้น 4 │  SOCIAL IMPACT          │  "ก๊วนไทยอยู่ด้วยกันนานขึ้น"
+         │  (มิตรภาพไม่แตกเพราะเงิน) │  🟡
+         ├─────────────────────────┤
+   ชั้น 3 │  LIFE-CHANGING          │  "เป็น Captain ที่ภูมิใจ ไม่ใช่เหรัญญิก"
+         │  (identity upgrade)      │  🟡
+         ├─────────────────────────┤
+   ชั้น 2 │  EMOTIONAL              │  "ไม่เป็นจำเลย · กลับมาสนุก · ดูจัดการเป็น"
+         │  (ความรู้สึก)            │  🟡
+         ├─────────────────────────┤
+   ชั้น 1 │  FUNCTIONAL             │  "คิดเร็ว · ถูก · มีหลักฐาน · ส่ง LINE"
+         │  (ใช้งานได้จริง)         │  🟢
+         └─────────────────────────┘
+```
+
+**กลยุทธ์การสื่อสาร**:
+- **ขายชั้น 3 (identity)** เป็นหลัก — แตะลึกสุด, คู่แข่งไม่พูด
+- **พิสูจน์ด้วยชั้น 1 (functional)** — demo ได้ จับต้องได้
+- ชั้น 2 + 4 เป็น supporting narrative
+
+### Value Ladder (เส้นทาง value ตามการใช้งาน) 🟡
+
+```
+ก่อนใช้      →  ใช้ครั้งแรก   →  ใช้ประจำ      →  ก๊วน lock-in
+─────────       ─────────       ─────────        ─────────
+"ลองดู          "เออ เร็วดี"    "ไม่ต้องคิด      "ก๊วนเราขาด
+ ไม่เสียอะไร"    (functional)    เลขแล้ว"        ไม่ได้แล้ว"
+(no risk)                       (habit)          (identity +
+                                                  network moat)
+```
+
+### Proof สำหรับแต่ละ Value 🟡
+
+| Value claim | Proof point | สถานะ |
+|---|---|---|
+| "คิดเร็ว 30 วินาที" | demo timer + before/after | 🟢 ทำได้ |
+| "ไม่มีใครเป็นจำเลย" | testimonial Captain + ระบบโปร่งใส | 🟡 ต้องมี case |
+| "ของก๊วนไทย" | ต่อแต้ม/halve-on-tie ใน UI | 🟢 ทำได้ |
+| "ก๊วนอยู่ด้วยกันนานขึ้น" | story เพื่อนไม่ทะเลาะ | 🔴 ต้องสะสมหลักฐาน |
+| "Captain ที่ภูมิใจ" | UGC + image Captain ยุคใหม่ | 🟡 ต้องสร้าง |
+
+---
+
+## E5) Positioning — Perceptual Map + Archetype
+
+### Perceptual Map 2 แกน
+
+**แกน X**: Generalist (ครบทุกอย่าง) ←→ Specialist (เรื่องเดียว)
+**แกน Y**: Global/ฝรั่ง ←→ Thai/ก๊วนไทย
+
+```
+              Thai / ก๊วนไทย
+                    │
+       โลกัณฑ์ ●    │    ● BirdieX/golfdigg
+      (calc TH)     │      (social+booking ครบ)
+                    │
+   ★ KuanGolf ●     │    ● DogFight Golf
+   (settlement      │      (scoring TH)
+    specialist)     │
+   ─────────────────┼─────────────────  Generalist
+   Specialist       │
+                    │
+       Beezer ●     │    ● 18Birdies / Hole19
+       (betting     │      (GPS+social ครบ)
+        niche)      │    ● SmartScore (B2B)
+                    │    ● Garmin (hardware)
+                    │
+              Global / ฝรั่ง
+```
+
+**ช่องว่างที่ KuanGolf ยืน** 🟢: มุมซ้ายบน — **Specialist + Thai** ที่ไม่มีใครอยู่เต็มๆ
+- โลกัณฑ์ฯ ใกล้สุด แต่เป็น calculator เปล่า (ไม่มี LINE/PromptPay/network)
+- BirdieX เป็น Thai แต่ generalist (social + booking)
+
+### Brand Archetype 🟡
+
+**Primary: The Sage (ปราชญ์) + The Everyman (คนธรรมดา)**
+- **Sage**: ตัวกลางที่รู้กติกา, เป็นกลาง, เชื่อถือได้, "คำนวณก็คือคำนวณ"
+- **Everyman**: เพื่อนก๊วนที่เข้าใจ ไม่หรู ไม่อวด tech, พูดภาษาคน
+
+**ทำไมไม่ใช่ archetype อื่น**:
+- ❌ The Hero (ผู้พิชิต) — เกินจริง, ไม่ใช่ "ปฏิวัติวงการ"
+- ❌ The Magician (นักมายา) — "AI เปลี่ยนชีวิต" = ผิดกลุ่ม 45-65
+- ❌ The Outlaw (กบฏ) — ขัดกับลูกค้าผู้บริหารที่ต้องการความน่าเชื่อถือ
+
+**Archetype ในทางปฏิบัติ**:
+> พูดเหมือน "เพื่อน Captain อาวุโสที่รู้กติกาดี เป็นกลาง ไม่เข้าข้างใคร แต่เป็นกันเอง"
+
+### Tone Spectrum (วางตำแหน่งบนสเกล) 🟡
+
+```
+ทางการ ●──────────○──── สบายๆ        → ค่อนทางการนิดๆ (ผู้บริหาร)
+จริงจัง ●────○──────────  ตลก          → จริงจัง (เงิน + ความน่าเชื่อถือ)
+หรู    ──────────○────● ติดดิน        → ติดดิน (ภาษาคน)
+มั่นใจ ●──○────────────  ถ่อมตัว       → มั่นใจ (แต่ไม่โอ้อวด)
+เทคนิค ──────────○────● ภาษาคน        → ภาษาคน 100%
+```
+
+---

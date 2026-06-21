@@ -37,6 +37,7 @@ tags: [project, kuangolf, thunder-solution, golf, line-app]
 - [[Marketing]] — สถานะ Facebook · 30-day content brief · pointer ไป Assets
 - [[FAQ — Live]] — Q&A จากหน้า /sale ปัจจุบัน
 - [[llms.txt mirror]] — สำเนา llms.txt สำหรับ partner reference
+- [[Vendor Quote — Taatuu x Easy Design Studio]] — Scope งาน LINE OA + Linktree + Facebook setup (จาก Apple Notes 2025-08-18)
 
 ## สถานะปัจจุบัน (2026-06-21)
 - **Product**: live, app-version 0.1.0
