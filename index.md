@@ -27,7 +27,7 @@ tags: [index, vault, catalog]
 
 ## 01 Projects (มี deadline)
 - [[01 Projects/KuanGolf/README|KuanGolf]] — Thunder Solution's golf scoring app · ก๊วนกอล์ฟไทย · LINE-native
-  - [[01 Projects/KuanGolf/Brand Strategy Brain|Brand Strategy Brain]] — 7 ส่วน Business→USP
+  - [[01 Projects/KuanGolf/Brand Strategy Brain|Brand Strategy Brain v2.0]] ⭐⭐⭐ — Full Brand Bible 1037 บรรทัด · Part I (7 ส่วน) + Part II (E1–E12 expansion)
   - [[01 Projects/KuanGolf/Strategic Analysis|Strategic Analysis]] — COO assessment + paths
   - [[01 Projects/KuanGolf/Research Demand — Report|Research Demand Report]]
   - [[01 Projects/KuanGolf/Product|Product]]
@@ -36,9 +36,11 @@ tags: [index, vault, catalog]
   - [[01 Projects/KuanGolf/FAQ — Live|FAQ — Live]]
   - [[01 Projects/KuanGolf/llms.txt mirror|llms.txt mirror]]
   - [[01 Projects/KuanGolf/Vendor Quote — Taatuu x Easy Design Studio|Vendor Quote]] · imported 2026-06-21
+- [[01 Projects/HUG COMPANY/README|HUG COMPANY]] — ERP project · Thunder Solution → ขอนแก่น · SRS v0.0.2 (2025-05) · **status unclear ต้อง verify**
+  - [[01 Projects/HUG COMPANY/SRS v0.0.2 — ERP System|SRS v0.0.2]]
 
 ## 02 Areas (ต่อเนื่อง)
-- _(ยังไม่มี — เพิ่มเมื่อเริ่ม area งาน)_
+- [[02 Areas/COO Daily Log|COO Daily Log]] — Auto-managed by Morning Briefing artifact · last_verified 2026-06-21
 
 ## 03 Resources
 - [[03 Resources/แผนที่ - โปรเจกต์|แผนที่ - โปรเจกต์]] — index project ทั้งหมด
@@ -48,14 +50,25 @@ tags: [index, vault, catalog]
 - [[03 Resources/คู่มือ - Claude Skills สำหรับ COO|คู่มือ - Claude Skills สำหรับ COO]]
 - [[03 Resources/คู่มือ - ภาษาไทยสไลด์ผู้บริหาร|คู่มือ - ภาษาไทยสไลด์ผู้บริหาร]]
 - [[03 Resources/คู่มือ - สไลด์ HTML ปิดบังตัวเลข|คู่มือ - สไลด์ HTML ปิดบังตัวเลข]]
+- **[[03 Resources/Prompt Library/README|Prompt Library]]** ⭐ — 31 prompts ไทย 30+ หมวด · imported 2026-06-21
+- **[[03 Resources/People/Job Descriptions/README|Job Descriptions]]** — 5 JD (CS / Dev / HR / Sale-API / Sale-BOT)
+- `03 Resources/People/บ๊อบ.md` — profile placeholder
+- `03 Resources/Compliance/` — PDPA · Scanned Documents
+- `03 Resources/Clippings/` — YouTube/podcast clippings
+  - [[03 Resources/Clippings/Go with the Four EP.0 — COO Takeaways|Go with the Four EP.0 — COO Takeaways]] ⭐ — Live Commerce / demographics / AI doom-loop / leverage
+  - คนยุคโบราณทำแผนที่ EP.398
 - `03 Resources/AI Workshops/`
 - `03 Resources/Accounting/`
 - `03 Resources/COO/`
-- `03 Resources/People/`
 - `03 Resources/Tools/`
 
 ## 04 Archive
-- _(เพิ่มเมื่อโอนของจาก projects)_
+- `04 Archive/Old Job Logs/` — 17 daily/weekly logs จากที่ทำงานเดิม
+- `04 Archive/Old Job POS/` — 5 POS notes (10.10.10.15) จากที่ทำงานเดิม
+- `04 Archive/Old Snippets/` — 3 code/shell snippets
+- `04 Archive/Old Planning/` — บ้านแชร์ (chit fund idea) · Easy Exchange (placeholder)
+- `04 Archive/Old Apple Notes Raw/` — [[Apple Notes Import — 2026-06-21]] manifest + raw vendor quote
+- `04 Archive/Old Inbox/` — old test files
 
 ## Brand KBs (per-brand knowledge base)
 
@@ -81,11 +94,11 @@ tags: [index, vault, catalog]
 - Monthly recaps · weekly summaries · themes
 
 ## 00 Inbox (raw, รอจัด)
-- [[00 Inbox/Apple Notes/README|Apple Notes import]] · 70 notes · 8 categories · 2026-06-21
-  - `Customers & Projects/` · `Daily & Weekly Logs/` · `Docs & Compliance/`
-  - `POS & LINE/` · `Prompt Library/` · `Roles & JD/` · `Code Snippets/` · `Todo/`
-- [[00 Inbox/2026-06-11 ทดสอบระบบ Second Brain]]
-- [[00 Inbox/_vault-health]]
+- [[00 Inbox/_vault-health|_vault-health]] — auto-generated · last update 2026-06-21 09:00
+- _(สะอาด — Apple Notes ingest 2026-06-21 จบ ดู [[Apple Notes Import — 2026-06-21]])_
+
+## _attachments (vault-root)
+- 40 images (Apple Notes extraction) — wiki-link `[[_attachments/<name>.png]]` ใช้ได้ทุกหน้า
 
 ## 10 Daily
 - [[10 Daily/...|Daily notes]] (auto)

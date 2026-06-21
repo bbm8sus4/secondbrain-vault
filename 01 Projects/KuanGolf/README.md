@@ -29,6 +29,9 @@ tags: [project, kuangolf, thunder-solution, golf, line-app]
 | Admin | Watcharin Kaewmoung · watcharin.k@thunder.in.th |
 
 ## ดัชนีไฟล์
+- [[Brand Strategy Brain]] ⭐⭐⭐ — **v2.0 Brand Bible** (1037 บรรทัด) · Part I 7 ส่วน (Business→USP) + Part II 12 ส่วน expansion
+  - Part I: Business Brain · Brand Value · Positioning · Persona · Pain Point · USP · Action Items
+  - Part II: E1 Business Model · E2 Unit Economics · E3 Moat+SWOT · E4 Value Pyramid · E5 Perceptual Map+Archetype · E6 Persona เต็ม+Secondary · E7 JTBD · E8 Pain Hierarchy+Emotional Journey · E9 Objection Matrix · E10 Message House+RTB · E11 Competitive Defense · E12 Brand Voice
 - [[Strategic Analysis]] ⭐ — COO assessment + 3 paths (A/B/C) + decision matrix · **Recommend Path B (Park)**
 - [[Research Demand — Report]] ⭐⭐ — Market intelligence 7 หัวข้อ (TAM, pain, VoC, drivers) · 60+ sources · 15 verbatim quotes
 - [[Research Demand — Prompt]] — Reusable prompt template
