@@ -15,6 +15,19 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-06-21 15:35] decision | enable auto-router for inbox
+- built: `~/bin/inbox-auto-ingest.py` (rule-based router, no AI)
+- built: `~/Library/LaunchAgents/com.aexgee.inbox-auto-ingest.plist` (StartInterval=180s)
+- loaded: launchctl + verified PID
+- documented: [[WIKI]] §3.5 (Auto-router section) · [[หน้าหลัก]] system block
+- first rule: `tags: clippings` → `03 Resources/Clippings/`
+- safety: skip `_vault-health.md` · skip mtime < 30s · name-collision suffix
+- side-effect log: cleaned old _test-clipping entry (test artifact)
+
+## [2026-06-21 15:32] auto-ingest | inbox sweep (1 file(s))
+- routed `CSM-SME Manager — AI Co-worker Setup Lab v4` → `03 Resources/Clippings/CSM-SME Manager — AI Co-worker Setup Lab v4.md` (rule: clippings)
+- agent: `~/bin/inbox-auto-ingest.py` (rule-based, no AI)
+
 ## [2026-06-21 15:30] ingest | KuanGolf Brand Strategy Brain v2.0 (external Desktop Commander session)
 - updated: [[01 Projects/KuanGolf/Brand Strategy Brain]] · 359 → 1037 บรรทัด
   - frontmatter: เติม `source:` + `last_verified:` + backlink `[[README]]` ให้ตรง WIKI schema (เดิม external session ไม่รู้กฎใหม่)

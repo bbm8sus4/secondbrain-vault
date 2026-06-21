@@ -83,6 +83,37 @@ tags: [schema, wiki, rules, agent]
 ดู `[[WIKI - Lint Playbook]]`
 - รัน weekly/monthly: contradictions · stale · orphans · missing pages · gaps
 
+## 3.5) Auto-router (rule-based)
+
+`~/bin/inbox-auto-ingest.py` ทำงานเงียบ ๆ ทุก 3 นาทีผ่าน launchd (`com.aexgee.inbox-auto-ingest`)
+
+**กฎปัจจุบัน**
+| frontmatter tag | ปลายทาง |
+|---|---|
+| `clippings` (Web Clipper) | `03 Resources/Clippings/` |
+
+**กฎความปลอดภัย**
+- Skip `_vault-health.md` (auto-regen)
+- Skip ไฟล์ที่ mtime ใหม่กว่า 30 วินาที (อาจกำลังเขียน)
+- ถ้าชื่อชนกัน → suffix `(auto-HHMMSS).md` ไม่ทับ
+- หลัง route → update `last_verified:` + insert log entry `auto-ingest | inbox sweep`
+
+**เพิ่มกฎใหม่**
+แก้ list `ROUTES` ใน script — ตัวอย่าง:
+```python
+ROUTES = [
+    (re.compile(r"\bclippings\b"), "03 Resources/Clippings", "clippings"),
+    # (re.compile(r"\bmeeting\b"), "40 Meeting Notes", "meeting"),  # ถ้าเปิด
+]
+```
+
+**ตรวจสุขภาพ**
+```bash
+launchctl list | grep inbox-auto-ingest      # ต้องเห็น PID
+tail ~/Library/Logs/inbox-auto-ingest.log    # ดู route ล่าสุด
+grep "auto-ingest" ~/SecondBrain/log.md | head   # ดู audit
+```
+
 ---
 
 ## 4) Memory ↔ Wiki Bridge

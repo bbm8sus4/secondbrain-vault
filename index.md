@@ -54,9 +54,11 @@ tags: [index, vault, catalog]
 - **[[03 Resources/People/Job Descriptions/README|Job Descriptions]]** — 5 JD (CS / Dev / HR / Sale-API / Sale-BOT)
 - `03 Resources/People/บ๊อบ.md` — profile placeholder
 - `03 Resources/Compliance/` — PDPA · Scanned Documents
-- `03 Resources/Clippings/` — YouTube/podcast clippings
+- `03 Resources/Clippings/` — Web clippings (auto-router target) · ดู [[WIKI]] §3.5
   - [[03 Resources/Clippings/Go with the Four EP.0 — COO Takeaways|Go with the Four EP.0 — COO Takeaways]] ⭐ — Live Commerce / demographics / AI doom-loop / leverage
+  - CSM-SME Manager — AI Co-worker Setup Lab v4 (atom-csm.github.io)
   - คนยุคโบราณทำแผนที่ EP.398
+  - Go with the Four EP.0 (raw transcript)
 - `03 Resources/AI Workshops/`
 - `03 Resources/Accounting/`
 - `03 Resources/COO/`
