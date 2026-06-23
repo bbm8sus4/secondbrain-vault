@@ -48,10 +48,19 @@ tags: [project, kuangolf, thunder-solution, golf, line-app]
 - **Marketing**: Facebook page เริ่มใหม่มาก (2 โพสต์ · 0 engagement · ไม่มี Instagram)
 - **Content brief**: มี 30-day content brief พร้อม + Logo/Mascot/Pattern พร้อม → แค่ยังไม่ได้โพสต์จริง
 
-## Assets นอก Obsidian
-- Working set: `~/Desktop/Work+/KuanGolf/` (Logo · Mascot 3D · Content · 2D barcodes · LINE OA cover · FB cover)
-- Brand kit: `~/Desktop/04 Archive/Media/kuan-golf-club-assets/` (logo-lockups · mascot-poses · app-icons · patterns)
-- Original research notes: `~/Desktop/Projects/Business/KuanGolf/` (7 markdown + HTML briefs/calendar)
+## Working files (นอก vault)
+ทุกอย่างที่ไม่ใช่ `.md` รวมที่ [~/Work/KuanGolf/](file:///Users/aexgee/Work/KuanGolf/) (จัดระเบียบ 2026-06-23)
+ใน Obsidian เปิดผ่าน [[_files]] (symlink ใน vault) ก็ได้
+
+| โฟลเดอร์ | เปิดใน Finder | เปิดใน Obsidian | มีอะไร |
+|---|---|---|---|
+| brand/ | [↗](file:///Users/aexgee/Work/KuanGolf/brand/) | [[_files/brand\|brand]] | Logo · Mascot 3D · covers (FB · Line OA · Rich Menu) |
+| assets/ | [↗](file:///Users/aexgee/Work/KuanGolf/assets/) | [[_files/assets\|assets]] | qr/ (2D barcodes) · misc/ |
+| content/ | [↗](file:///Users/aexgee/Work/KuanGolf/content/) | [[_files/content\|content]] | content drops พร้อมโพสต์ |
+| marketing/ | [↗](file:///Users/aexgee/Work/KuanGolf/marketing/) | [[_files/marketing\|marketing]] | specs (01-07) · briefs-html (60Day_*) · briefs-md · Marketing Manager Roadmap.docx |
+| archive/ | [↗](file:///Users/aexgee/Work/KuanGolf/archive/) | [[_files/archive\|archive]] | brand kit เก่า · logo-lockups · mascot-poses · app-icons · patterns |
+
+**กฎ:** SecondBrain เก็บแค่ `.md` (สมอง) · `~/Work/KuanGolf/` เก็บไฟล์งานจริง (โกดัง) · `_files` symlink เชื่อมสองที่
 
 ## Quick wins ที่ยังไม่ได้ทำ (จาก analysis เดิม)
 1. โพสต์ Facebook จริงตาม 30-day brief (มีพร้อมแล้ว)
