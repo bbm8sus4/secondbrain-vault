@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-06-23 09:00:00 · ไฟล์ .md ทั้งหมด 251
+> สแกนอัตโนมัติ · 2026-06-24 09:00:00 · ไฟล์ .md ทั้งหมด 251
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,13 +8,13 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 64 |
+| 🔗 ลิงก์เสีย (dead links) | 76 |
 | 🏝️ โน้ตโดดเดี่ยว (orphans) | 47 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
 | 🔄 memory source ↔ mirror | 51 ↔ 51 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W24 (11 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (10 วันที่แล้ว) |
+| ⏱️ sync ล่าสุด (vault commit) | 9 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W24 (12 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (11 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -57,6 +57,18 @@
 - `01 Projects/HUG COMPANY/SRS v0.0.2 — ERP System.md` → `[[HUG COMPANY-7-399b0c459c.png]]` (ไม่พบ)
 - `01 Projects/HUG COMPANY/SRS v0.0.2 — ERP System.md` → `[[HUG COMPANY-8-159be7fc5b.png]]` (ไม่พบ)
 - `01 Projects/HUG COMPANY/SRS v0.0.2 — ERP System.md` → `[[HUG COMPANY-9-c67937cb90.png]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[KuanGolf]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[_files]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[archive]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[archive\]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[assets]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[assets\]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[brand]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[brand\]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[content]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[content\]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[marketing]]` (ไม่พบ)
+- `01 Projects/KuanGolf/README.md` → `[[marketing\]]` (ไม่พบ)
 - `01 Projects/KuanGolf/Strategic Analysis.md` → `[[project_thunder_solution]]` (ไม่พบ)
 - `03 Resources/Clippings/Go with the Four EP.0 — COO Takeaways.md` → `[[ไม่เปลี่ยนคือตาย! \"วู้ดดี้-หนุ่ย-วิทย์-CK\" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0]]` (ไม่พบ)
 - `03 Resources/Clippings/คนยุคโบราณ ทำแผนที่ยังไง?  8 Minute History EP.398.md` → `[[THE STANDARD PODCAST]]` (ไม่พบ)
