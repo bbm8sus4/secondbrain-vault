@@ -221,7 +221,8 @@ durations: [1 month, 3 months, 6 months, 12 months]
 - 50–60% → 12% (Beginner, Silver, Gold, Diamond, Premium-1)
 - 40–50% → 7% (Premium-2, Premium-3, Premium-4)
 
-ต้องการ Excel commission สำหรับ BOT แบบเดียวกับ API ให้สร้างต่อได้
+✅ **Excel commission สำหรับ BOT มีแล้ว:** `easyslip-bot-sales-commission.xlsx` — **flat 10% ทุกแพ็ก ทุกรอบ** (1/3/6/12mo อยู่ในชีตเดียว 4 quadrants)
+- ⚠️ Premium-2 ขึ้นไป ต้องระวัง 10% flat — ถ้า Others 100% ขาดทุนเลือดออกหนักกว่า cost อยู่แล้ว
 
 ### Quick-quote ลูกค้าที่ถามรอบ 3 / 6 เดือน
 - บอกตรงๆ ว่า "ราคา × N ไม่มีส่วนลดทั้ง 2 รอบ"
@@ -241,4 +242,6 @@ durations: [1 month, 3 months, 6 months, 12 months]
 - [[api-pricing-packages|EasySlip API — public pricing & margin]]
 - [[../../Thunder Solution/Reports/kbank-api-pricing-and-easy-thunder-crossbilling|KBank cost + Thunder cross-billing]]
 - [[../หน้าหลัก|EasySlip brand index]]
-- [[easyslip-api-sales-commission.xlsx|EasySlip API commission Excel]]
+- `easyslip-bot-sales-commission.xlsx` — **BOT commission flat 10%** (4 quadrants 1/3/6/12mo)
+- `easyslip-api-sales-commission.xlsx` — API commission tiered (5/7/12/15%, 1mo + 12mo)
+- `easyslip-api-commission-cost-analysis.xlsx` — API commission with cost X 0.11 + X 0.077 scenarios

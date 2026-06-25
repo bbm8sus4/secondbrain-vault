@@ -105,8 +105,28 @@ updated: 2026-06-19
 
 ---
 
+## Commission Excel files (สำหรับ Sales)
+
+มี 2 รูปแบบให้เลือกใช้ตามบริบท:
+
+### 1. `easyslip-api-sales-commission.xlsx` — **Thunder API style** (1mo + 12mo)
+- เรท band 5% / 7% / 12% / 15% เลือกตาม GP% (≥60% → 15%, 50–60% → 12%, 20–50% → 7%, <20% → 5%)
+- 10 แพ็ก × 2 รอบ (1 เดือน + 12 เดือน)
+- Quick cost @ สลิป × 0.11
+- **ใช้เมื่อ:** คุยกับ sales ภายในบริษัทแบบเดียวกับ Thunder
+
+### 2. `easyslip-api-commission-cost-analysis.xlsx` — **Thunder Corporate style** (2 scenarios)
+- มี 2 ตาราง: X 0.11 (worst Others 100%) + X 0.077 (mix blend ~30/70)
+- Columns: Slips | Price | Cost | Profit | Margin | กำไรสุทธิถ้าไม่จ่ายค่าคอม | 1% 2% 3% 4% 5%
+- เลือกเรทอัตโนมัติตาม gross margin: ≥40% → 5%, 25–40% → 4%, 15–25% → 3%, <15% → 2%
+- **ใช้เมื่อ:** ต้องการเห็นต้นทุนชัด + กำไรสุทธิหลังจ่ายคอม + ตัดสินใจเรทคอมตาม cost scenario
+
+---
+
 ## Related
+- [[bot-verify-slip-packages|EasySlip BOT (Verify Slip) — สินค้าคู่ขนาน 1/3/6/12 เดือน]]
 - [[../หน้าหลัก|EasySlip brand index]]
 - [[../../Thunder Solution/บันทึกข้อตกลงการใช้บริการ_API_Slip_Verification_อีซี่สลิป|MOU KBank — ต้นทุน API (PDF)]]
 - [[../../Thunder Solution/Reports/kbank-api-pricing-and-easy-thunder-crossbilling|KBank pricing + Easy×Thunder cross-billing]]
+- [[../../Thunder Solution/Reports/thunder-corporate-api-sales-commission|Thunder Corporate commission — สูตรอ้างอิง]]
 - [[easyslip-business-overview-2568-final|Business Overview 2568 — MRR Tier breakdown]]

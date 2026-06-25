@@ -33,6 +33,16 @@ metadata:
 - 50–60% → 12% (Beginner, Silver, Gold, Diamond, Premium-1)
 - 40–50% → 7% (Premium-2, Premium-3, Premium-4)
 
+## Commission Excel ที่ทำไว้ใน Documents/ (3 ไฟล์)
+
+1. **`easyslip-bot-sales-commission.xlsx`** — BOT คอม **flat 10%** ทุกแพ็ก ทุกรอบ (1/3/6/12mo) — 4 quadrants ใน sheet เดียว
+2. **`easyslip-api-sales-commission.xlsx`** — API คอม tiered 5/7/12/15% (Thunder API style), 1mo + 12mo
+3. **`easyslip-api-commission-cost-analysis.xlsx`** — API คอม Thunder Corp style, 2 ตาราง (X 0.11 + X 0.077) มี Cost/Profit/Margin/Net column ครบ
+
+**คอมที่เลือกใช้:**
+- BOT = flat 10% (เหมือน Thunder BOT, สินค้าราคา/สลิปเท่ากันเป๊ะกับ Thunder BOT)
+- API = tiered 5/7/12/15% ตาม GP% (เหมือน Thunder API)
+
 ## Related
 - [[EasySlip API pricing + margin matrix|reference_easyslip_api_pricing]] — สินค้าหลัก API (คนละ pricing structure)
 - [[Kbank API pricing + Easy×Thunder cross-billing|reference_kbank_api_pricing]] — ฝั่ง cost ที่ใช้คำนวณ margin
