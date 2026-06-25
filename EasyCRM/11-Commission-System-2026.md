@@ -104,3 +104,80 @@
 - [ ] เรต Rate setting = 10% ทุกแพ็กเกจ — ยืนยันว่าตั้งใจ หรือควรเป็น 10/12/15
 - [ ] dropdown M (Marketing) อาจกรองให้เหลือเฉพาะคน Marketing (ตอนนี้โชว์ทั้ง 3 ชื่อ)
 - [ ] โหมด "ภายในทีม" (35/35/30) — Sale Record มี Sales ช่องเดียว ยังรองรับ 2 sales ไม่เต็ม
+
+---
+
+## 📋 ฟีดแบ็ก Mark (2026-06-25) — คุณวุทธอนุมัติแนวทางแล้ว
+
+> เอกสาร `EasyCRM_Commission_Update_Summary_For_Secretary_Marketing.pdf` (Prepared by Mark)
+> สถานะ: อนุมัติแนวทาง · **ทำไฟล์ใหม่ก่อน** แล้วค่อยแก้ชีตจริง
+
+### แก่น: Lead Source เป็นตัวตัดสินการแบ่ง (ไม่ใช่ "ทีม/รายคน")
+Marketing ได้ 30% **เฉพาะดีลที่ Lead มาจาก Online/Marketing** — ถ้า Sales หา Lead เอง → Sales 100%
+
+| สถานการณ์ | Lead Source | แบ่ง | Transaction |
+|---|---|---|---|
+| Marketing หา Lead → Sales ปิด | Online/Marketing | 70/30 | |
+| Sales หา + ปิดเอง | Sales Own | 100/0 (ไม่แบ่ง MK) | |
+| 2 Sales ช่วยปิด + Marketing | (มี Second Sales) | 35/35/30 | |
+| ต่ออายุ | — | เรต 5% แล้วแบ่งตาม source | Renewal |
+
+### คอลัมน์ใหม่ใน Sale Record (ฝั่งคอม)
+| ช่อง | ค่าตัวอย่าง | หน้าที่ |
+|---|---|---|
+| Lead Source | Online / Marketing / Sales Own / Referral | ตัดสิน MK ได้ 30% ไหม |
+| Marketing Owner | JADI / ว่าง | คนสร้าง Lead |
+| Closer Sales | MIZTEEN / OLIVE | คนปิดดีล |
+| Second Sales | ชื่อคนที่ 2 / ว่าง | รองรับ 35/35/30 |
+| Payout Type | auto จาก 3 ช่องบน | เลือกวิธีแบ่ง |
+
+### สูตรแบ่งอัตโนมัติ
+```
+Payout Type = IFS(
+  Second Sales<>"","35/35/30",
+  AND(Lead Source<>"Sales Own", Marketing Owner<>""),"70/30",
+  TRUE,"Sales 100%")
+```
+- คอม Closer = รวม × (0.35 ถ้า two-sales / 0.7 ถ้า 70-30 / 1 ถ้า 100%)
+- คอม Second = รวม × (0.35 ถ้า two-sales / 0)
+- คอม Marketing = รวม × (0.3 ถ้ามี MK / 0)
+
+### ปัญหา Report เดิมที่ต้องแก้
+- Mizteen ขาดดีล Kintsu · Olive มี Kintsu เกิน · Jadi เลขถูกแต่หัวเป็น Olive/SR002
+- **สาเหตุ:** Sale Record ไม่มี Lead Source · Report กรอกเอง ไม่ดึงจาก Sale Record
+- **แก้:** Report ทุกคน **ดึงจาก Sale Record อัตโนมัติ** (Source of Truth) ไม่กรอกแยก
+
+---
+
+## 💰 ฝั่งต้นทุน (Cost Model) — phase 2 (จากฟีดแบ็ก Mark)
+
+### ต้นทุนปัจจุบัน (Cost Sheet)
+| แพ็กเกจ | ราคาขาย | ต้นทุนสลิป | คอม 10% | รวมในชีต | กำไร | Margin |
+|---|---|---|---|---|---|---|
+| Starter | 15,588 | 1,980 | 1,559 | 3,539 | 12,049 | 77.3% |
+| Plus | 23,988 | 3,696 | 2,399 | 6,095 | 17,893 | 74.6% |
+| Premium | 35,988 | 6,600 | 3,599 | 10,199 | 25,789 | 71.7% |
+
+ต้นทุนสลิป = จำนวนสลิป × 0.11 (Starter 18,000 / Plus 33,600 / Premium 60,000)
+
+### ⚠️ Margin จริงหลังต้นทุนแฝง = 28-36% (ไม่ใช่ 70%)
+ต้องเพิ่มต้นทุนแฝงใน Cost per Deal: Onboarding/Training · Customer Support · Server/DB · SMS/LINE · Marketing CAC · Sales Expense · Dev Maintenance · Admin/Finance · Risk/Refund (2-5%)
+
+| แพ็กเกจ | ต้นทุนแฝงประมาณ | Margin จริงประมาณ |
+|---|---|---|
+| Starter | 6,500 | 35.6% |
+| Plus | 9,800 | 33.7% |
+| Premium | 15,600 | 28.3% |
+
+→ ต้องคุม scope, support, customization ให้ดี
+
+---
+
+## ✅ ขั้นตอนถัดไป (จากฟีดแบ็ก — ยังไม่ทำ)
+1. [ ] ทำ Google Sheet เวอร์ชันใหม่ก่อน (ไม่แก้ไฟล์จริงทันที)
+2. [ ] เพิ่มช่อง: Lead Source, Marketing Owner, Closer Sales, Second Sales, Payout Type, Slip Volume, Deal Cost Type
+3. [ ] สูตรคอมเลือก 70/30, 100%, 35/35/30 อัตโนมัติจาก Payout Type
+4. [ ] Report รายคนดึงจาก Sale Record เป็นหลัก (แก้ Mizteen/Olive/Jadi mismatch)
+5. [ ] ใส่ต้นทุนแฝงทุกหมวดใน Cost per Deal
+6. [ ] ตรวจ 4 ดีลตัวอย่างให้ยอดตรง logic
+7. [ ] ส่งคุณวุทธตรวจก่อนใช้แทนไฟล์จริง
