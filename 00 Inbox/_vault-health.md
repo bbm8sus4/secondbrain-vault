@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-06-24 09:00:00 · ไฟล์ .md ทั้งหมด 251
+> สแกนอัตโนมัติ · 2026-06-25 09:00:00 · ไฟล์ .md ทั้งหมด 252
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -9,12 +9,12 @@
 | รายการ | ผล |
 |---|---|
 | 🔗 ลิงก์เสีย (dead links) | 76 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 47 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 48 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
 | 🔄 memory source ↔ mirror | 51 ↔ 51 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 9 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W24 (12 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (11 วันที่แล้ว) |
+| ⏱️ sync ล่าสุด (vault commit) | 5 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W24 (13 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (12 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -139,6 +139,7 @@
 - `BoostSMS/Materials/PROJECT_BRIEF.md`
 - `BoostSMS/Materials/SALES_COMMISSION.md`
 - `EasyBOT/Legal/easybot_partner_agreement_formal.md`
+- `EasyCRM/11-Commission-System-2026.md`
 - `Friday/Monthly Recaps/2026-06 มิถุนายน.md`
 - `Friday/Monthly Recaps/Friday-Monthly-Recap-May-2026.md`
 - `Friday/Weekly Recaps/2026-W24.md`
