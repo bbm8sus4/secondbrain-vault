@@ -15,6 +15,10 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-06-25 14:32] auto-ingest | inbox sweep (1 file(s))
+- routed `เปิดคลังแจก 10+ วิธีใช้ ChatGPT Image 2.0 ฟรี!!!` → `03 Resources/Clippings/เปิดคลังแจก 10+ วิธีใช้ ChatGPT Image 2.0 ฟรี!!!.md` (rule: clippings)
+- agent: `~/bin/inbox-auto-ingest.py` (rule-based, no AI)
+
 ## [2026-06-25 13:32] auto-ingest | inbox sweep (2 file(s))
 - routed `ChatGPT Images 2.0 เก่งขนาดนี้ แทนกราฟิก ได้หรือยัง – พูดคุยความเห็น` → `03 Resources/Clippings/ChatGPT Images 2.0 เก่งขนาดนี้ แทนกราฟิก ได้หรือยัง – พูดคุยความเห็น.md` (rule: clippings)
 - routed `วิธีสร้างภาพให้สวย อัปเดต AI ตัวใหม่ … ผลลัพธ์เกินคาด!!! สวย ง่าย เร็ว  ChatGPT Images 2.0` → `03 Resources/Clippings/วิธีสร้างภาพให้สวย อัปเดต AI ตัวใหม่ … ผลลัพธ์เกินคาด!!! สวย ง่าย เร็ว  ChatGPT Images 2.0.md` (rule: clippings)
