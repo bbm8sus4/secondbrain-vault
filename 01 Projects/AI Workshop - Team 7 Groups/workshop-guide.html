@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Workshop — คู่มือใช้ ChatGPT เพื่อส่งงาน 2 ชิ้น</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface-2: #1a1a26;
+    --surface-3: #222233;
+    --border: #2a2a3d;
+    --border-light: #3a3a4d;
+    --text: #e8e8f0;
+    --text-dim: #8888a0;
+    --text-mute: #5a5a6e;
+    --accent: #6c5ce7;
+    --accent-light: #a29bfe;
+    --accent-glow: rgba(108, 92, 231, 0.15);
+    --green: #00cec9;
+    --green-glow: rgba(0, 206, 201, 0.12);
+    --orange: #fdcb6e;
+    --orange-glow: rgba(253, 203, 110, 0.12);
+    --red: #ff6b6b;
+    --blue: #74b9ff;
+    --pink: #fd79a8;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'IBM Plex Sans Thai', 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    padding: 80px 24px 60px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, #1a1035 0%, var(--bg) 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(108,92,231,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--accent-glow);
+    border: 1px solid rgba(108,92,231,0.3);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-light);
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .hero h1 {
+    font-family: 'Inter', 'IBM Plex Sans Thai', sans-serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #fff 30%, var(--accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+  }
+  .hero p.lead {
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 640px;
+    margin: 0 auto 32px;
+    position: relative;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .number {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent-light);
+    line-height: 1;
+  }
+  .hero-stat .label {
+    font-size: 12px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+  }
+
+  /* ============ CONTAINER ============ */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============ SECTION ============ */
+  section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    background: var(--accent-glow);
+    border-radius: 6px;
+  }
+  .section-title {
+    font-family: 'Inter', 'IBM Plex Sans Thai', sans-serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    font-size: 17px;
+    color: var(--text-dim);
+    max-width: 720px;
+    margin-bottom: 40px;
+  }
+
+  /* ============ STEP CARD ============ */
+  .step-grid {
+    display: grid;
+    gap: 20px;
+  }
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 28px 28px 80px;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .step:hover {
+    border-color: var(--border-light);
+  }
+  .step-num {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px var(--accent-glow);
+  }
+  .step h3 {
+    font-size: 19px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+  .step p {
+    color: var(--text-dim);
+    font-size: 15px;
+  }
+  .step ul {
+    margin-top: 12px;
+    padding-left: 18px;
+  }
+  .step ul li {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  /* ============ PROMPT BLOCK ============ */
+  .prompt {
+    background: #0d0d14;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .prompt-head {
+    padding: 12px 18px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .prompt-head .name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-light);
+    letter-spacing: 0.5px;
+  }
+  .prompt-head .tag {
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .copy-btn {
+    background: var(--surface-3);
+    color: var(--text-dim);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .copy-btn:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .copy-btn.ok {
+    background: var(--green);
+    color: #fff;
+    border-color: var(--green);
+  }
+  .prompt pre {
+    padding: 20px;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', 'IBM Plex Sans Thai', monospace;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #d8d8e8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* ============ ROLE GRID ============ */
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .role-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+  }
+  .role-card .icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 14px;
+    border-radius: 14px;
+    background: var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--accent-light);
+    font-family: 'Inter', sans-serif;
+  }
+  .role-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .role-card .en {
+    font-size: 12px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+  .role-card p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* ============ COMPANY TABLE ============ */
+  .co-table {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 24px;
+  }
+  .co-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .co-table th, .co-table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .co-table th {
+    background: var(--surface-2);
+    color: var(--text-dim);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .co-table tr:last-child td { border-bottom: none; }
+  .co-table .grp {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    line-height: 28px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ============ CALLOUT ============ */
+  .callout {
+    background: var(--orange-glow);
+    border: 1px solid rgba(253, 203, 110, 0.3);
+    border-left: 4px solid var(--orange);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin: 24px 0;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .callout strong { color: var(--orange); }
+  .callout.good {
+    background: var(--green-glow);
+    border-color: rgba(0, 206, 201, 0.3);
+    border-left-color: var(--green);
+  }
+  .callout.good strong { color: var(--green); }
+  .callout.bad {
+    background: rgba(255, 107, 107, 0.08);
+    border-color: rgba(255, 107, 107, 0.3);
+    border-left-color: var(--red);
+  }
+  .callout.bad strong { color: var(--red); }
+
+  /* ============ DELIVERABLE CARDS ============ */
+  .deliv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .deliv {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .deliv::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  }
+  .deliv-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-light);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .deliv h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .deliv p { color: var(--text-dim); font-size: 14px; }
+  .deliv ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+  }
+  .deliv ul li {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    padding: 4px 0 4px 18px;
+    position: relative;
+  }
+  .deliv ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-light);
+  }
+  @media (max-width: 720px) {
+    .deliv-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============ TIMELINE/FLOW ============ */
+  .flow {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-top: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.9;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .flow .hl { color: var(--accent-light); font-weight: 600; }
+  .flow .ok { color: var(--green); }
+
+  /* ============ CHECKLIST ============ */
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+  .checklist li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px 14px 50px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: var(--accent-light);
+  }
+  .checklist li strong { color: var(--accent-light); }
+
+  /* ============ TOOL ROW ============ */
+  .tool-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .tool {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+  }
+  .tool h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 8px;
+  }
+  .tool h4 .icon {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .tool p { color: var(--text-dim); font-size: 13px; line-height: 1.6; }
+  @media (max-width: 720px) {
+    .tool-row { grid-template-columns: 1fr; }
+  }
+
+  /* ============ NAV ============ */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin: 32px auto 0;
+    max-width: 720px;
+  }
+  .toc-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .toc ol {
+    padding-left: 22px;
+    color: var(--text-dim);
+  }
+  .toc ol li {
+    margin-bottom: 6px;
+    font-size: 14.5px;
+  }
+  .toc ol li a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .toc ol li a:hover { color: var(--accent-light); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    text-align: center;
+    padding: 60px 24px;
+    color: var(--text-mute);
+    font-size: 13px;
+  }
+  footer .brand {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+
+  /* ============ TIP INLINE ============ */
+  .tip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-glow);
+    color: var(--accent-light);
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-badge"><span class="dot"></span>WORKSHOP TRAINING GUIDE</div>
+  <h1>ใช้ ChatGPT ส่งงาน 2 ชิ้น ในคอร์สเดียว</h1>
+  <p class="lead">คู่มือผู้เรียน + ผู้สอน · จากโจทย์บริษัทจำลอง → Brand & GTM Proposal + ภาพคอนเทนต์ · ใช้ ChatGPT อย่างเดียวตั้งแต่ต้นจนจบ</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="number">28</div><div class="label">ผู้เรียน</div></div>
+    <div class="hero-stat"><div class="number">7</div><div class="label">กลุ่ม</div></div>
+    <div class="hero-stat"><div class="number">4</div><div class="label">บทบาท / กลุ่ม</div></div>
+    <div class="hero-stat"><div class="number">2</div><div class="label">งานส่ง</div></div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-label">เนื้อหาทั้งหมด</div>
+    <ol>
+      <li><a href="#overview">ภาพรวมและการจัดทีม</a></li>
+      <li><a href="#deliverables">งานที่ต้องส่ง 2 ชิ้น</a></li>
+      <li><a href="#part1">PART 1 — แต่ละคนทำงานตามบทบาท (8 สเตป)</a></li>
+      <li><a href="#part2">PART 2 — รวมงาน 4 คน เป็น 1 ก้อน</a></li>
+      <li><a href="#part3">PART 3 — สร้างภาพ Proposal (ทีมละ 1 ภาพ)</a></li>
+      <li><a href="#part4">PART 4 — สร้างภาพคอนเทนต์ (คนละ 1 ภาพ)</a></li>
+      <li><a href="#trainer">Trainer Checklist เตรียมก่อนสอน</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ============ OVERVIEW ============ -->
+<section id="overview">
+  <div class="container">
+    <span class="section-label">01 · ภาพรวม</span>
+    <h2 class="section-title">โครงสร้างทีม 4 บทบาท × 7 บริษัทจำลอง</h2>
+    <p class="section-desc">แต่ละกลุ่มได้บริษัทเดียวเป็นโจทย์ ในกลุ่มมี 4 คน แต่ละคนทำหน้าที่ต่างกัน เปิด AI Prompt Playbook (Google Sheet) ของบทบาทตัวเอง แล้วทำงานผ่าน ChatGPT</p>
+
+    <div class="role-grid">
+      <div class="role-card">
+        <div class="icon">ST</div>
+        <h4>นักการตลาด</h4>
+        <div class="en">STRATEGIST</div>
+        <p>วางตำแหน่งแบรนด์ · ตัวตน · สารหลัก · คุณค่า</p>
+      </div>
+      <div class="role-card">
+        <div class="icon">RS</div>
+        <h4>นักวิจัยตลาด</h4>
+        <div class="en">RESEARCHER</div>
+        <p>ICP/Persona · Customer Journey · Pain Point · Behavior</p>
+      </div>
+      <div class="role-card">
+        <div class="icon">CT</div>
+        <h4>นักเขียนคอนเทนต์</h4>
+        <div class="en">CONTENT</div>
+        <p>Content Plan · Campaign · Communication · ภาพคอนเทนต์</p>
+      </div>
+      <div class="role-card">
+        <div class="icon">SL</div>
+        <h4>ผู้ช่วยฝ่ายขาย</h4>
+        <div class="en">SALES</div>
+        <p>Channel · Pricing · Promotion · Sales Forecast</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:18px;font-weight:600;margin:40px 0 12px;color:var(--text-dim);">7 บริษัทจำลอง (ทีมละ 1 ตัว)</h3>
+    <div class="co-table">
+      <table>
+        <thead><tr><th>กลุ่ม</th><th>บริษัท</th><th>หมวด</th><th>ที่ตั้ง</th><th>รายได้/ปี</th></tr></thead>
+        <tbody>
+          <tr><td><span class="grp">1</span></td><td>GreenLeaf Furniture</td><td>เฟอร์นิเจอร์ไม้</td><td>เชียงใหม่</td><td>320 ลบ.</td></tr>
+          <tr><td><span class="grp">2</span></td><td>PureHarvest Foods</td><td>อาหารออร์แกนิก</td><td>นครปฐม</td><td>210 ลบ.</td></tr>
+          <tr><td><span class="grp">3</span></td><td>Crystal Homeware</td><td>เครื่องครัว</td><td>สมุทรปราการ</td><td>450 ลบ.</td></tr>
+          <tr><td><span class="grp">4</span></td><td>Urban Cycle</td><td>จักรยาน/EV bike</td><td>กรุงเทพฯ</td><td>280 ลบ.</td></tr>
+          <tr><td><span class="grp">5</span></td><td>Bloom & Co.</td><td>ดอกไม้/ของขวัญ</td><td>กรุงเทพฯ</td><td>95 ลบ.</td></tr>
+          <tr><td><span class="grp">6</span></td><td>Sunny Pet Nutrition</td><td>อาหารสัตว์เลี้ยง</td><td>ชลบุรี</td><td>560 ลบ.</td></tr>
+          <tr><td><span class="grp">7</span></td><td>Aroma Mattress</td><td>ที่นอน/เครื่องนอน</td><td>อยุธยา</td><td>780 ลบ.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tool-row">
+      <div class="tool">
+        <h4><span class="icon"></span>AI Prompt Playbook</h4>
+        <p>Google Sheet 4 ชีตตามบทบาท · พรอมต์พร้อมใช้ + ตัวอย่าง output + Tips · ผู้เรียนแค่ copy แล้วเติม <code>{{ตัวแปร}}</code></p>
+      </div>
+      <div class="tool">
+        <h4><span class="icon"></span>โฟลเดอร์บริษัท</h4>
+        <p>profile.md (12 หัวข้อ) · Logo · CI Branding · Mood Board · Product 6 รูป — ครบทุกอย่างที่ต้องใช้ในงานทั้ง 2 ชิ้น</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DELIVERABLES ============ -->
+<section id="deliverables">
+  <div class="container">
+    <span class="section-label">02 · งานที่ต้องส่ง</span>
+    <h2 class="section-title">2 ชิ้น พร้อมนำเสนอ</h2>
+    <p class="section-desc">ทีมต้องส่งภาพ Proposal 1 ภาพ และทุกคนต้องส่งภาพคอนเทนต์คนละ 1 ภาพ จากนั้นนำเสนอหน้าห้อง</p>
+
+    <div class="deliv-grid">
+      <div class="deliv">
+        <div class="deliv-num">ชิ้นที่ 1 · ทีมละ 1 ภาพ</div>
+        <h3>Brand & Go-to-Market Proposal</h3>
+        <p>ภาพเดียวที่รวม 3 บล็อกใหญ่ 15 หัวข้อย่อย</p>
+        <ul>
+          <li>Brand Strategy (Positioning · Identity · Messaging · Value Prop)</li>
+          <li>Target Customer (ICP · Journey · Pain Point · Behavior)</li>
+          <li>Sales & Marketing Plan (Comm · Channel · Content · Campaign · Pricing · Promotion · Forecast)</li>
+        </ul>
+      </div>
+      <div class="deliv">
+        <div class="deliv-num">ชิ้นที่ 2 · คนละ 1 ภาพ</div>
+        <h3>ภาพสื่อสารคอนเทนต์</h3>
+        <p>โพสต์โซเชียล 1 ภาพต่อคน รวม 4 ภาพต่อทีม</p>
+        <ul>
+          <li>ใช้รูปสินค้า + Mood Board + Logo ของบริษัท</li>
+          <li>สไตล์/สี/อารมณ์ สะท้อนตัวตนแบรนด์</li>
+          <li>มี caption ภาษาไทยอ่านง่าย</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART 1 — INDIVIDUAL ============ -->
+<section id="part1">
+  <div class="container">
+    <span class="section-label">PART 1 · ตัวคนเดียว</span>
+    <h2 class="section-title">8 สเตปแต่ละคนทำงานตามบทบาท</h2>
+    <p class="section-desc">ก่อนรวมทีม แต่ละคนต้องได้ output ของบทบาทตัวเองออกมาก่อน — ทำสเตปต่อสเตปไม่ข้าม</p>
+
+    <div class="step-grid">
+      <div class="step"><span class="step-num">1</span>
+        <h3>รู้ตัวเอง 3 อย่าง</h3>
+        <p>ก่อนแตะ ChatGPT — เคลียร์ในใจให้ได้ว่า ตัวเองอยู่กลุ่มไหน บริษัทอะไร บทบาทอะไร เขียนแปะกระดาษไว้กันลืม</p>
+      </div>
+      <div class="step"><span class="step-num">2</span>
+        <h3>เปิด 2 ของพร้อมกัน</h3>
+        <p>1) โฟลเดอร์บริษัทตัวเอง — อ่าน <code>profile.md</code> ให้จบ + ดูรูปสินค้า/โลโก้/Mood<br>
+        2) AI Prompt Playbook — เปิด <strong>ชีตของบทบาทตัวเอง</strong> ชีตเดียวพอ ไม่ต้องดูของคนอื่น</p>
+      </div>
+      <div class="step"><span class="step-num">3</span>
+        <h3>หาพรอมต์ที่ตรงงานในชีต</h3>
+        <p>ดูคอลัมน์ "สถานการณ์ใช้งาน" เลือกที่ตรงกับสิ่งที่บทบาทตัวเองต้องส่ง:</p>
+        <ul>
+          <li><strong>Strategist</strong> — Positioning · Brand Identity · Messaging · Value Proposition</li>
+          <li><strong>Researcher</strong> — ICP/Persona · Customer Journey · Pain Point · Behavior</li>
+          <li><strong>Sales</strong> — Pricing · Promotion · Forecast · Channel</li>
+          <li><strong>Content</strong> — Content Plan · Campaign · Communication</li>
+        </ul>
+      </div>
+      <div class="step"><span class="step-num">4</span>
+        <h3>เปิด ChatGPT แชทใหม่ + paste พรอมต์</h3>
+        <p>ขึ้นแชทใหม่เสมอสำหรับงานใหม่ ไม่ปนกับเรื่องอื่น แล้ว copy พรอมต์จากชีตวางลงไป</p>
+      </div>
+      <div class="step"><span class="step-num">5</span>
+        <h3>แทน <code>{{ตัวแปร}}</code> ทุกตัว</h3>
+        <p>หาช่อง <code>{{ }}</code> ในพรอมต์ → ดึงข้อมูลจาก profile.md มาใส่</p>
+        <div class="callout"><strong>ตัวอย่าง:</strong> <code>{{brand_name}}</code> → "GreenLeaf Furniture" · <code>{{target}}</code> → คัดมาจากหัวข้อ Target Customers ใน profile</div>
+      </div>
+      <div class="step"><span class="step-num">6</span>
+        <h3>รัน ChatGPT แล้วอ่านอย่างจริงจัง</h3>
+        <p>ถ้า output ลอย/ทั่วไปเกินไป → บอก ChatGPT ปรับ เช่น "เจาะจงกับบริษัทฉันมากกว่านี้" · "สั้นลง 50%" · "เป็นภาษาที่ลูกค้าเข้าใจ" · "เพิ่ม 2 ตัวอย่าง"</p>
+      </div>
+      <div class="step"><span class="step-num">7</span>
+        <h3>เก็บผลลัพธ์ลง Google Doc ส่วนตัว</h3>
+        <p>ก่อนทำหัวข้อต่อไป — copy ผลลัพธ์ที่พอใจเก็บไว้ใน Doc ของบทบาทตัวเอง ไม่ต้องรอเสร็จทั้งหมด</p>
+      </div>
+      <div class="step"><span class="step-num">8</span>
+        <h3>ทำซ้ำ 3-6 จนครบหัวข้อของบทบาทตัวเอง</h3>
+        <p>เปลี่ยนพรอมต์ในชีตเป็นข้อถัดไป แล้ววนทำใหม่ จนได้ output ครบทุกหัวข้อย่อยของบทบาท</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>เคล็ดที่ห้ามลืม:</strong> ห้ามรัน ChatGPT แบบไม่อ่าน profile ก่อน — output จะลอย ถ้าใส่ context จาก profile.md เยอะ ผลจะคม <em>เพราะพรอมต์ในชีตออกแบบให้เติมตัวแปรเข้าไป ไม่ใช่ใช้ดิบ ๆ</em>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART 2 — MERGE ============ -->
+<section id="part2">
+  <div class="container">
+    <span class="section-label">PART 2 · รวมทีม</span>
+    <h2 class="section-title">รวม output 4 คน เป็นไฟล์สรุปก้อนเดียว</h2>
+    <p class="section-desc">เมื่อ 4 คนได้ผลลัพธ์ของตัวเองครบแล้ว — มารวมกันใน ChatGPT แชทเดียวด้วย 3 พรอมต์ ก่อนที่จะเอาไปทำภาพ Proposal</p>
+
+    <div class="flow">
+1) เปิดแชท ChatGPT ใหม่ <span class="hl">(ของทีม)</span>
+2) แปะ context — profile บริษัท + ผลงาน 4 บทบาท
+3) ยิงพรอมต์ <span class="hl">"Merge & Structure"</span>  →  ได้ draft ครบ 15 หัวข้อ
+4) ยิงพรอมต์ <span class="hl">"Tighten"</span>          →  ตัดสั้นพอลงในภาพ
+5) ยิงพรอมต์ <span class="hl">"Self-check"</span>      →  เจอจุดอ่อน + แก้
+6) Copy ผลลัพธ์ลง Google Doc กลาง <span class="ok">= ไฟล์สรุปทีม</span></div>
+
+    <h3 style="font-size:18px;margin-top:36px;margin-bottom:8px;color:var(--text);">สเตป 1 · แปะ context ลง ChatGPT</h3>
+    <p style="color:var(--text-dim);font-size:14px;margin-bottom:0;">ส่งทีเดียวให้ ChatGPT มีของในมือครบก่อนสั่งทำ — อย่ายิงทีละก้อน</p>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">CONTEXT PASTE — ส่งก่อนสั่งทำ</span>
+        <span class="tag">เตรียมของ</span>
+      </div>
+      <pre id="p0">ข้อมูลบริษัทของทีม:
+[paste profile.md ทั้งก้อน]
+
+ผลงาน 4 บทบาทที่ทีมทำมา ผ่าน ChatGPT รอบแรก:
+
+== STRATEGIST ==
+[paste output ของ Strategist]
+
+== RESEARCHER ==
+[paste output ของ Researcher]
+
+== SALES ==
+[paste output ของ Sales]
+
+== CONTENT ==
+[paste output ของ Content]</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="p0">Copy</button>
+      </div>
+    </div>
+
+    <h3 style="font-size:18px;margin-top:36px;margin-bottom:8px;">พรอมต์ 1 · Merge & Structure</h3>
+    <p style="color:var(--text-dim);font-size:14px;margin-bottom:0;">รวบผลงานทุกคน → เรียงตาม 3 บล็อก 15 หัวข้อ ตามที่ workshop กำหนด</p>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">PROMPT 1 — รวบเป็นโครงสร้างเดียว</span>
+        <span class="tag">งานหลัก</span>
+      </div>
+      <pre id="p1">ทำหน้าที่เป็น Marketing Director ที่ต้องส่งงาน Brand & Go-to-Market Proposal
+ให้กับทีมผู้บริหาร
+
+ภารกิจ: นำผลงาน 4 บทบาทด้านบนมาประกอบเป็นเอกสารสรุป 1 ฉบับ
+ตามโครงสร้าง 3 บล็อก 15 หัวข้อย่อย "เป๊ะตามนี้":
+
+[บล็อก 1] BRAND STRATEGY (แบรนด์ที่ชัดและต่าง)
+1) Positioning — แบรนด์ยืนอยู่จุดไหนในตลาด
+2) Brand Identity — อัตลักษณ์ (โทน เสียง บุคลิก)
+3) Brand Messaging — สารหลักที่จะสื่อสาร
+4) Value Proposition — คุณค่าที่ลูกค้าได้
+
+[บล็อก 2] TARGET CUSTOMER (รู้ว่าลูกค้าคือใคร)
+5) ICP / Persona — ลูกค้าในอุดมคติ 1 persona พร้อมชื่อ อายุ อาชีพ พฤติกรรม
+6) Customer Journey — Awareness → Consideration → Purchase → Loyalty
+7) Pain Point — ปัญหา 3 ข้อหลัก
+8) Buying Behavior — ซื้อเมื่อไหร่ ที่ไหน อย่างไร
+
+[บล็อก 3] SALES & MARKETING PLAN (สร้าง Awareness → Lead → ยอดขาย)
+9) Communication Strategy — สื่อสารยังไง ใช้ tone ไหน
+10) Channel Strategy — เน้นช่องไหน เพราะอะไร
+11) Content Plan — คอนเทนต์หลัก 3-5 ธีม
+12) Campaign Plan — แคมเปญใหญ่ 1 ตัว พร้อม objective + KPI
+13) Pricing Strategy — ราคา/แพ็คเกจ
+14) Promotion Strategy — โปรโมชั่นช่วงเปิดตัว
+15) Sales Forecast — คาดการณ์ยอดขาย 3 เดือนแรก
+
+กติกา:
+- ตัดข้อมูลซ้ำ/ขัดแย้งกันออก เลือกอันที่ "ตรง profile บริษัทที่สุด"
+- ทุกหัวข้อย่อสรุปไม่เกิน 3-4 บรรทัด (เพราะต้องลงในภาพ 1 หน้า)
+- ห้ามมีหัวข้อไหน "ข้ามไป" ถ้าข้อมูลขาด ให้ใส่ "[ต้องเติมจาก Researcher]"
+- ใช้ภาษาไทยกระชับ ขายของ ไม่ใช่ภาษาราชการ
+
+เริ่มได้เลย</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="p1">Copy</button>
+      </div>
+    </div>
+
+    <h3 style="font-size:18px;margin-top:36px;margin-bottom:8px;">พรอมต์ 2 · Tighten</h3>
+    <p style="color:var(--text-dim);font-size:14px;margin-bottom:0;">ตัดให้สั้นพอลงในภาพได้</p>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">PROMPT 2 — ตัดสั้น</span>
+        <span class="tag">หลัง prompt 1</span>
+      </div>
+      <pre id="p2">ดีมาก ทีนี้ตัดให้สั้นลงอีก 30% โดยไม่เสียใจความ
+แต่ละหัวข้อย่อยควรอ่านจบใน 1 สายตา (ไม่เกิน 50 คำ)
+เพราะต้องไปอยู่ในภาพนำเสนอ "1 ภาพ" เท่านั้น</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="p2">Copy</button>
+      </div>
+    </div>
+
+    <h3 style="font-size:18px;margin-top:36px;margin-bottom:8px;">พรอมต์ 3 · Self-check</h3>
+    <p style="color:var(--text-dim);font-size:14px;margin-bottom:0;">ตรวจตัวเองก่อนส่ง — กันพลาด</p>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">PROMPT 3 — ตรวจก่อนส่ง</span>
+        <span class="tag">หลัง prompt 2</span>
+      </div>
+      <pre id="p3">ในฐานะกรรมการตัดสิน ลองตรวจ Proposal นี้ตาม 4 เกณฑ์:
+1. ครบ — มี 15 หัวข้อย่อยไหม
+2. ตรง profile — ทุกหัวข้อสอดคล้องกับบริษัท [ใส่ชื่อบริษัท] ไหม
+   หรือมีจุดที่ดูเป็น template ลอย ๆ
+3. ไม่ขัดกันเอง — Positioning vs Messaging vs Pricing ไปทางเดียวกันไหม
+4. ขายได้จริง — ถ้าเอาไป pitch CEO จะซื้อแผนนี้ไหม
+
+ถ้ามีจุดอ่อน บอกข้อ + แก้ให้เลย</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="p3">Copy</button>
+      </div>
+    </div>
+
+    <div class="callout good">
+      <strong>หลังจบ 3 พรอมต์:</strong> ก่อน copy ลงภาพ ให้พิมพ์ในแชทเดียวกันว่า <em>"ช่วย format ผลลัพธ์สุดท้ายเป็น 3 ตาราง ตาม 3 บล็อก คอลัมน์: หัวข้อ | สรุป | KPI"</em> → ได้ตารางพร้อมยกลงภาพได้เลย ไม่ต้องจัดเอง
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART 3 — IMAGE PROPOSAL ============ -->
+<section id="part3">
+  <div class="container">
+    <span class="section-label">PART 3 · ภาพ Proposal</span>
+    <h2 class="section-title">สร้างภาพ Proposal ด้วย Code Interpreter</h2>
+    <p class="section-desc">ใน ChatGPT มี 2 เครื่องมือสร้างภาพ — สำหรับภาพ Proposal ที่มีตัวอักษรเยอะ 15 หัวข้อ ต้องใช้ Code Interpreter (Python) เพราะ DALL-E เขียนภาษาไทยยาว ๆ ยังไม่เป๊ะ</p>
+
+    <div class="callout bad">
+      <strong>ห้ามทำเด็ดขาด:</strong> สั่ง DALL-E ทำภาพ Proposal โดยตรง → ตัวอักษรไทยจะเพี้ยน อ่านไม่ออก ผู้เรียนจะเสียเวลา
+    </div>
+
+    <div class="step-grid">
+      <div class="step"><span class="step-num">1</span>
+        <h3>เปิด Code Interpreter</h3>
+        <p>ใน ChatGPT พิมพ์ <code>/</code> แล้วเลือก "Run Python" หรือคลิกไอคอนคลิป → "Analyze data" จะเข้า Python sandbox</p>
+      </div>
+      <div class="step"><span class="step-num">2</span>
+        <h3>แปะผลสรุปสุดท้ายจาก Part 2</h3>
+        <p>วาง 15 หัวข้อย่อยที่ผ่าน 3 พรอมต์มาแล้ว — ChatGPT จะเอาไปเป็นข้อมูลในภาพ</p>
+      </div>
+      <div class="step"><span class="step-num">3</span>
+        <h3>ยิงพรอมต์ "วาดภาพ Proposal"</h3>
+        <p>พรอมต์ด้านล่าง copy ใช้ได้เลย — แก้แค่ชื่อบริษัท + แปะ output 15 หัวข้อ</p>
+      </div>
+      <div class="step"><span class="step-num">4</span>
+        <h3>Iterate ในแชทเดียว ไม่สั่งใหม่ทั้งภาพ</h3>
+        <p>หลังได้ภาพแรก ปรับทีละจุด: <em>"เพิ่มขนาดหัวข้อย่อย 20%"</em> · <em>"เปลี่ยนสีพื้นหลังเป็นโทนเขียวธรรมชาติ"</em> · <em>"คอลัมน์กลางแน่นไป ลดเหลือ 3 บรรทัด/หัวข้อ"</em> · <em>"ใส่ icon ข้างหัวบล็อก"</em></p>
+      </div>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">PROMPT — วาดภาพ Proposal (Code Interpreter)</span>
+        <span class="tag">copy แล้วเติม</span>
+      </div>
+      <pre id="p4">ใช้ Python + matplotlib สร้างภาพ Brand & GTM Proposal 1 ภาพ
+ขนาด 1920×1080 px (สไลด์ 16:9)
+
+Layout 3 คอลัมน์เท่ากัน:
+- ซ้าย: BRAND STRATEGY (4 หัวข้อ)
+- กลาง: TARGET CUSTOMER (4 หัวข้อ)
+- ขวา: SALES & MARKETING PLAN (7 หัวข้อ)
+
+แต่ละบล็อกมี:
+- หัวบล็อกตัวใหญ่ + สีพื้นหลังตาม CI ของ [ชื่อบริษัท]
+- ใต้หัวบล็อกใส่ "หัวข้อย่อย: สรุป" เรียงลงมา
+- ใช้ฟอนต์ที่อ่านภาษาไทยได้ (TH Sarabun / Noto Sans Thai / Sarabun)
+
+ด้านบนสุดมี header: ชื่อบริษัท + โลโก้ตำแหน่งซ้าย
+ด้านล่างสุดมี footer: "By Team [N]" + วันที่
+
+ข้อมูลที่ต้องใส่ในภาพ:
+[paste ผลสรุปสุดท้าย 15 หัวข้อจาก Part 2]
+
+สี/บุคลิกแบรนด์: [paste Core Values + Vision จาก profile]
+
+ส่งออกเป็น PNG ให้ดาวน์โหลดได้</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="p4">Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PART 4 — IMAGE CONTENT ============ -->
+<section id="part4">
+  <div class="container">
+    <span class="section-label">PART 4 · ภาพคอนเทนต์</span>
+    <h2 class="section-title">สร้างภาพคอนเทนต์ด้วย GPT-4o Image</h2>
+    <p class="section-desc">งานชิ้นที่ 2 — โพสต์โซเชียลคนละ 1 ภาพ ใช้ DALL-E / GPT-4o image gen ได้เลย แต่ต้องเตรียม reference ก่อน</p>
+
+    <div class="step-grid">
+      <div class="step"><span class="step-num">1</span>
+        <h3>อัปโหลด reference 2-3 รูป</h3>
+        <p>ใน ChatGPT คลิกคลิป → อัปโหลด: 1 รูปสินค้าจากโฟลเดอร์ + 1 Mood Board + 1 Logo</p>
+      </div>
+      <div class="step"><span class="step-num">2</span>
+        <h3>ให้ ChatGPT "เข้าใจแบรนด์" ก่อน</h3>
+        <p>อย่าเพิ่งสั่งทำภาพ — ให้สรุปก่อนว่าแบรนด์นี้เป็นยังไง</p>
+      </div>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">PROMPT A — สรุปตัวตนแบรนด์ก่อน</span>
+        <span class="tag">ทำก่อนสั่งทำภาพ</span>
+      </div>
+      <pre id="p5">นี่คือสินค้า + Mood Board + Logo ของแบรนด์ [ชื่อ]
+จะให้ช่วยสร้างภาพโพสต์โซเชียล 1 ภาพ
+ขอให้ดูสไตล์/สี/อารมณ์จากภาพอ้างอิงก่อน
+สรุปให้ฟัง 3 บรรทัด ว่า "ตัวตนแบรนด์" คืออะไร</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="p5">Copy</button>
+      </div>
+    </div>
+
+    <div class="step-grid" style="margin-top:24px;">
+      <div class="step"><span class="step-num">3</span>
+        <h3>ยิงพรอมต์สร้างภาพจริง</h3>
+        <p>หลัง ChatGPT สรุปตัวตนแบรนด์แล้ว — สั่งสร้างต่อในแชทเดียวกัน</p>
+      </div>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">PROMPT B — สร้างภาพโพสต์</span>
+        <span class="tag">หลัง prompt A</span>
+      </div>
+      <pre id="p6">สร้างภาพโพสต์ Instagram 1080×1080 px
+- ใช้ [ชื่อสินค้า] เป็นพระเอกของภาพ
+- สไตล์/สี/อารมณ์ตามที่สรุปด้านบน
+- มุมมอง: [วางบนโต๊ะไม้ในห้องครัวธรรมชาติ / ฯลฯ]
+- แสง: [แสงธรรมชาติช่วงเช้า / สตูดิโอ / ฯลฯ]
+- มี space ด้านบนเหลือไว้ใส่ text caption "[ข้อความ caption ตามแคมเปญ]"
+- ไม่ต้องใส่ text ในภาพ (จะใส่ทีหลัง)
+- อย่ายืดหรือบิดรูปสินค้าต้นฉบับ</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="p6">Copy</button>
+      </div>
+    </div>
+
+    <div class="step-grid" style="margin-top:24px;">
+      <div class="step"><span class="step-num">4</span>
+        <h3>ใส่ caption ภาษาไทยด้วย Code Interpreter</h3>
+        <p>ถ้าต้องใส่ตัวอักษรไทยลงบนภาพ → กลับไปใช้ Python เพื่อให้ตัวอักษรคม ไม่เพี้ยน</p>
+      </div>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">PROMPT C — แปะ caption ไทยลงภาพ</span>
+        <span class="tag">ใช้ Code Interpreter</span>
+      </div>
+      <pre id="p7">เอาภาพที่เพิ่ง generate มาใส่ caption ภาษาไทย:
+"[ข้อความ caption]"
+
+ตำแหน่ง: ด้านบน
+ฟอนต์: Noto Sans Thai
+สี: ขาว มี shadow ดำเล็กน้อย
+ขนาด: 80px, ตัวหนา
+
+ส่งกลับเป็น PNG</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="p7">Copy</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRAINER ============ -->
+<section id="trainer">
+  <div class="container">
+    <span class="section-label">FOR TRAINER · เตรียมก่อนสอน</span>
+    <h2 class="section-title">Checklist สำหรับผู้สอน</h2>
+    <p class="section-desc">เตรียม 5 อย่างนี้ก่อนวันจริง — ขาดอันใดอันหนึ่ง workshop จะสะดุด</p>
+
+    <ul class="checklist">
+      <li><strong>ChatGPT Plus ทุกเครื่อง</strong> — Code Interpreter + GPT-4o image gen ใช้ได้เฉพาะ Plus ขึ้นไป (ฟรีทำไม่ได้)</li>
+      <li><strong>ตัวอย่างภาพ Proposal สำเร็จ 1 ตัว</strong> — โชว์ก่อนเริ่ม ผู้เรียนเห็นปลายทางจะทำง่ายขึ้น 3 เท่า</li>
+      <li><strong>ตัวอย่างภาพคอนเทนต์สำเร็จ 2-3 ตัว</strong> — แสดงว่า "ภาพแบบไหนคือผ่าน" กันใจตก</li>
+      <li><strong>Cheat Sheet 1 หน้า</strong> — รวมพรอมต์ทั้งหมดให้ผู้เรียน copy ได้ทันที (ไฟล์นี้คือเวอร์ชั่นเต็ม)</li>
+      <li><strong>โน้ตเตือนความเสี่ยง</strong> — ตัวอักษรไทยใน DALL-E เพี้ยน ต้องใช้ Code Interpreter เท่านั้นสำหรับ Proposal</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">AI WORKSHOP · TEAM 7 GROUPS</div>
+  <div style="margin-top:8px;">คู่มือผู้สอน + ผู้เรียน · ใช้ ChatGPT อย่างเดียวตั้งแต่ต้นจนจบ</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-target');
+      var pre = document.getElementById(id);
+      if (!pre) return;
+      var text = pre.innerText;
+      navigator.clipboard.writeText(text).then(function () {
+        var old = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('ok');
+        setTimeout(function () {
+          btn.textContent = old;
+          btn.classList.remove('ok');
+        }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>
