@@ -605,6 +605,7 @@
     <ol>
       <li><a href="#overview">ภาพรวมและการจัดทีม</a></li>
       <li><a href="#deliverables">งานที่ต้องส่ง 2 ชิ้น</a></li>
+      <li><a href="#setup">SETUP — ตั้ง ChatGPT Project + Instructions (ทำครั้งเดียวก่อนเริ่ม)</a></li>
       <li><a href="#part1">PART 1 — แต่ละคนทำงานตามบทบาท (8 สเตป)</a></li>
       <li><a href="#part2">PART 2 — รวมงาน 4 คน เป็น 1 ก้อน</a></li>
       <li><a href="#part3">PART 3 — สร้างภาพ Proposal (ทีมละ 1 ภาพ)</a></li>
@@ -704,6 +705,118 @@
           <li>สไตล์/สี/อารมณ์ สะท้อนตัวตนแบรนด์</li>
           <li>มี caption ภาษาไทยอ่านง่าย</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SETUP — CHATGPT PROJECT ============ -->
+<section id="setup">
+  <div class="container">
+    <span class="section-label">SETUP · ทำครั้งเดียวก่อนเริ่ม</span>
+    <h2 class="section-title">ตั้ง ChatGPT Project + ใส่ Project Instructions</h2>
+    <p class="section-desc">ใน ChatGPT มีฟีเจอร์ "Projects" ที่ให้สร้างพื้นที่งานเฉพาะแบรนด์ — อัปโหลด Sources (profile + asset) ทีเดียว ใส่ Instructions ทีเดียว แล้วทุกแชทใน Project นั้นจะรู้บริบทอัตโนมัติ ไม่ต้อง paste context ซ้ำทุกครั้ง</p>
+
+    <div class="callout good">
+      <strong>ทำไมต้องเซ็ตอันนี้ก่อน:</strong> ถ้าไม่ตั้ง Project ผู้เรียนต้อง paste profile.md ทุกครั้งที่เปิดแชทใหม่ → เสียเวลา และมักลืม context สำคัญ → output ลอย ผิดแบรนด์
+    </div>
+
+    <div class="step-grid">
+      <div class="step"><span class="step-num">1</span>
+        <h3>สร้าง Project ใหม่ใน ChatGPT</h3>
+        <p>กด "+ New Project" ที่ sidebar ซ้าย → ตั้งชื่อเป็นชื่อบริษัทของทีม (เช่น <em>"GreenLeaf Furniture"</em>, <em>"Bloom & Co."</em>) — ไม่ต้องใส่ emoji</p>
+      </div>
+      <div class="step"><span class="step-num">2</span>
+        <h3>Add Sources — อัปโหลดเอกสารและรูปทั้งหมด</h3>
+        <p>เปิดแท็บ <strong>Sources</strong> → "Add sources" → อัปโหลด:</p>
+        <ul>
+          <li><code>profile.md</code> (บังคับ)</li>
+          <li>รูปทุกใบในโฟลเดอร์ <code>Logo/</code>, <code>CI Branding/</code>, <code>Mood Board/</code></li>
+          <li>รูปสินค้าทั้ง 6 ใบในโฟลเดอร์ <code>Product/</code></li>
+          <li>ไฟล์เพิ่มเติมที่ทีมสร้างเอง (เช่น brand strategy, marketing matrix) ก็ใส่ได้</li>
+        </ul>
+      </div>
+      <div class="step"><span class="step-num">3</span>
+        <h3>เปิด Project settings → ช่อง Instructions</h3>
+        <p>กดจุดสามจุดมุมขวาบนของ Project → <strong>Project settings</strong> → จะเจอช่อง <em>Instructions: Set context and customize how ChatGPT responds in this project</em></p>
+      </div>
+      <div class="step"><span class="step-num">4</span>
+        <h3>วาง Project Instructions ด้านล่าง — แล้ว Save</h3>
+        <p>พรอมต์กลางต่อไปนี้ใช้ได้กับทุกบริษัท ทุกกลุ่ม — ไม่ต้องแก้ ChatGPT จะดึงบริบทแบรนด์จาก Sources ที่อัปโหลดเอง</p>
+      </div>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">PROJECT INSTRUCTIONS — กลาง ใช้ได้กับทุกธุรกิจ</span>
+        <span class="tag">วางใน Project settings</span>
+      </div>
+      <pre id="p-setup">คุณคือผู้ช่วยทำงานให้ทีมการตลาดของแบรนด์นี้
+เพื่อสร้าง Brand & Go-to-Market Proposal และคอนเทนต์ของแบรนด์
+
+[บริบท]
+รายละเอียดของแบรนด์ (ชื่อบริษัท ธุรกิจ ที่ตั้ง ขนาด USP กลุ่มลูกค้า
+ช่องทางขาย วิสัยทัศน์ คู่แข่ง ฯลฯ) อยู่ใน Sources ที่อัปโหลดไว้ใน Project นี้
+เช่น profile.md และไฟล์อื่น ๆ ของแบรนด์ (logo, mood board, รูปสินค้า)
+
+ทุกคำตอบต้องอ้างอิงข้อมูลใน Sources เป็นหลัก ไม่ใช่ความรู้ทั่วไป
+ก่อนเริ่มงานชิ้นแรกในแชท ให้สรุปสั้น ๆ ว่า "เข้าใจแบรนด์นี้ว่าคือ..."
+แล้วค่อยทำงานต่อ — เพื่อให้ผู้ใช้ตรวจว่าคุณดึงข้อมูลถูกต้อง
+
+[หน้าที่]
+ในแต่ละแชท ผู้ใช้จะระบุว่ารับบทไหนใน 4 บทบาท:
+- Strategist (นักการตลาด) → Positioning · Brand Identity · Messaging · Value Proposition
+- Researcher (นักวิจัยตลาด) → ICP/Persona · Customer Journey · Pain Point · Buying Behavior
+- Sales (ผู้ช่วยฝ่ายขาย) → Pricing · Promotion · Sales Forecast · Channel
+- Content (นักเขียนคอนเทนต์) → Communication · Content Plan · Campaign
+
+ตอบเฉพาะมุมของบทบาทนั้น แต่ดึงข้อมูลร่วมจาก Sources ทุกครั้ง
+ถ้าผู้ใช้ไม่ระบุบทบาท ให้ถามก่อนว่ารับบทไหน
+
+[กติกาตอบ]
+- ภาษาไทยธรรมชาติ เหมือนคนไทยคุยกันจริง ไม่ใช่ภาษาแปลหรือราชการ
+- กระชับ ตรงประเด็น ขายได้จริง ไม่อ้อมค้อม
+- ทุกข้อสรุปต้องเชื่อมกับ "ตัวตนของแบรนด์นี้" เสมอ ไม่ใช่ template ลอย ๆ
+- ถ้ามีตัวเลข ให้บอกฐานคำนวณ/สมมุติฐานควบคู่
+- ถ้าผู้ใช้ขอสร้างภาพที่มีตัวอักษรไทยเยอะ ให้ใช้ Code Interpreter
+  (Python + matplotlib หรือ PIL) ไม่ใช้ DALL-E เพราะตัวอักษรไทยจะเพี้ยน
+- ถ้าสร้างภาพคอนเทนต์ (ไม่ใส่ text) ใช้ภาพอ้างอิงจาก Sources เป็นหลัก
+  (รูปสินค้า · mood board · logo) เพื่อให้สี/สไตล์ตรงแบรนด์
+
+[ห้าม]
+- ห้ามใช้ emoji เยอะ หรือสำนวน clickbait แบบ "Sale!! ลดสุดสุด!!"
+- ห้ามใช้ภาษาราชการ ("ดำเนินการเรียบร้อย" "กรุณาตรวจสอบ")
+- ห้ามแนะนำให้ผู้ใช้ "ไปค้นในเว็บ" — ให้ตอบจาก Sources ที่มี
+- ห้าม fabricate ตัวเลข — ถ้าไม่มีใน Sources ให้ระบุว่า "ประมาณการ"
+  พร้อมแจ้งสมมุติฐาน
+- ห้ามเปลี่ยนตัวตน/ตำแหน่งของแบรนด์ระหว่างแชท ถ้าผู้ใช้ขอแบบที่ขัดกับ
+  Positioning ใน Sources ให้ทักก่อน</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="p-setup">Copy</button>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>หลังตั้งเสร็จ — ทดสอบ 1 ครั้ง:</strong> เปิดแชทใหม่ใน Project พิมพ์ <em>"สรุปแบรนด์นี้ให้ฟัง 3 บรรทัด"</em> → ถ้า ChatGPT สรุปได้ตรงกับ profile.md = setup ผ่าน พร้อมเข้า Part 1 ถ้าสรุปลอย หรือไม่ตรง = ตรวจว่าอัปโหลด Sources ครบหรือยัง
+    </div>
+
+    <h3 style="font-size:18px;font-weight:600;margin:32px 0 12px;color:var(--text);">Project Instructions ทำอะไรให้บ้าง</h3>
+    <div class="tool-row">
+      <div class="tool">
+        <h4><span class="icon"></span>ทุกแชทรู้บริบทอัตโนมัติ</h4>
+        <p>ผู้เรียนไม่ต้อง paste profile ทุกครั้ง · ChatGPT อ่าน Sources ก่อนตอบ · กัน output ลอย</p>
+      </div>
+      <div class="tool">
+        <h4><span class="icon"></span>บังคับสรุปก่อนเริ่มงาน</h4>
+        <p>เช็คได้ทันทีว่า ChatGPT อ่านถูกแบรนด์ไหม · กันเสียเวลารันแล้วผิด</p>
+      </div>
+      <div class="tool">
+        <h4><span class="icon"></span>รู้จัก 4 บทบาท</h4>
+        <p>แค่บอก "ฉันเป็น Strategist" → ChatGPT รู้ขอบเขตงานทันที · ไม่ต้องอธิบายซ้ำ</p>
+      </div>
+      <div class="tool">
+        <h4><span class="icon"></span>กฎภาพ DALL-E vs Code Interpreter</h4>
+        <p>กันพังตอนทำ Proposal (text-heavy) · บอกให้เลือกเครื่องมือถูกตั้งแต่ต้น</p>
       </div>
     </div>
   </div>
