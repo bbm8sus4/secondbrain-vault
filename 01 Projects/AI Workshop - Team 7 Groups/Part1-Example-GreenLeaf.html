@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ตัวอย่าง Part 1 — กลุ่ม 1 GreenLeaf Furniture</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface-2: #1a1a26;
+    --surface-3: #222233;
+    --border: #2a2a3d;
+    --border-light: #3a3a4d;
+    --text: #e8e8f0;
+    --text-dim: #8888a0;
+    --text-mute: #5a5a6e;
+    --accent: #6c5ce7;
+    --accent-light: #a29bfe;
+    --accent-glow: rgba(108, 92, 231, 0.15);
+    --green: #00cec9;
+    --green-glow: rgba(0, 206, 201, 0.12);
+    --orange: #fdcb6e;
+    --orange-glow: rgba(253, 203, 110, 0.12);
+    --red: #ff6b6b;
+    --blue: #74b9ff;
+    --blue-glow: rgba(116, 185, 255, 0.12);
+    --pink: #fd79a8;
+    --pink-glow: rgba(253, 121, 168, 0.12);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'IBM Plex Sans Thai', 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    position: relative;
+    padding: 70px 24px 50px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, #102818 0%, var(--bg) 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0,206,201,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: var(--green-glow);
+    border: 1px solid rgba(0,206,201,0.3);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--green);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero-badge .dot {
+    width: 6px; height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .hero h1 {
+    font-family: 'Inter', 'IBM Plex Sans Thai', sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, #fff 30%, var(--green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+  }
+  .hero p.lead {
+    font-size: 17px;
+    color: var(--text-dim);
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    background: var(--accent-glow);
+    border-radius: 6px;
+  }
+  .section-title {
+    font-family: 'Inter', 'IBM Plex Sans Thai', sans-serif;
+    font-size: clamp(26px, 3.5vw, 36px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+  .section-desc {
+    font-size: 16px;
+    color: var(--text-dim);
+    max-width: 740px;
+    margin-bottom: 32px;
+  }
+
+  /* ==== Company Card ==== */
+  .co-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 28px;
+  }
+  .co-card .left { border-right: 1px solid var(--border); padding-right: 28px; }
+  .co-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .co-card .en { color: var(--text-mute); font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  .co-card .meta-row { display: flex; gap: 14px; margin-top: 10px; flex-wrap: wrap; }
+  .co-card .meta { background: var(--surface-2); border: 1px solid var(--border); padding: 6px 10px; border-radius: 6px; font-size: 12.5px; color: var(--text-dim); }
+  .co-card .meta strong { color: var(--text); }
+  .co-card h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-mute);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .co-card .right p { font-size: 14.5px; color: var(--text-dim); margin-bottom: 14px; }
+  .co-card .right p:last-child { margin-bottom: 0; }
+  @media (max-width: 720px) {
+    .co-card { grid-template-columns: 1fr; }
+    .co-card .left { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 20px; }
+  }
+
+  /* ==== Person Card ==== */
+  .person {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+  .person-head {
+    padding: 24px 28px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .person-avatar {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .person-strategist .person-avatar { background: linear-gradient(135deg, #6c5ce7, #a29bfe); box-shadow: 0 4px 16px var(--accent-glow); }
+  .person-researcher .person-avatar { background: linear-gradient(135deg, #00cec9, #55efc4); box-shadow: 0 4px 16px var(--green-glow); }
+  .person-sales      .person-avatar { background: linear-gradient(135deg, #fdcb6e, #fab1a0); box-shadow: 0 4px 16px var(--orange-glow); }
+  .person-content    .person-avatar { background: linear-gradient(135deg, #fd79a8, #74b9ff); box-shadow: 0 4px 16px var(--pink-glow); }
+  .person-head .meta { flex: 1; }
+  .person-head h3 { font-size: 18px; font-weight: 700; margin-bottom: 2px; }
+  .person-head .role {
+    font-size: 12px;
+    color: var(--text-mute);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .person-head .scope {
+    background: var(--surface-3);
+    border: 1px solid var(--border-light);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .person-body { padding: 24px 28px 28px; }
+
+  /* === Output block === */
+  .out {
+    margin-bottom: 22px;
+  }
+  .out:last-child { margin-bottom: 0; }
+  .out h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .out h4 .num {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    background: var(--surface-3);
+    border: 1px solid var(--border-light);
+    color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .out p, .out ul { font-size: 14.5px; color: var(--text-dim); }
+  .out ul { padding-left: 22px; }
+  .out ul li { margin-bottom: 4px; }
+  .out p { margin-bottom: 6px; }
+  .out .quote {
+    background: var(--surface-2);
+    border-left: 3px solid var(--accent-light);
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: var(--text);
+    font-size: 14.5px;
+    margin: 6px 0;
+    font-style: italic;
+  }
+  .out .kv {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px 14px;
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .out .kv .k { color: var(--text); font-weight: 500; }
+  .out strong { color: var(--text); font-weight: 600; }
+
+  /* === Prompt block === */
+  .prompt {
+    background: #0d0d14;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  .prompt-head {
+    padding: 12px 18px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .prompt-head .name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-light);
+    letter-spacing: 0.5px;
+  }
+  .prompt-head .tag {
+    font-size: 11px;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .copy-btn {
+    background: var(--surface-3);
+    color: var(--text-dim);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .copy-btn:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .copy-btn.ok { background: var(--green); color: #fff; border-color: var(--green); }
+  .prompt pre {
+    padding: 20px;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', 'IBM Plex Sans Thai', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #d8d8e8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* === Callout === */
+  .callout {
+    background: var(--orange-glow);
+    border: 1px solid rgba(253, 203, 110, 0.3);
+    border-left: 4px solid var(--orange);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    margin: 20px 0;
+    font-size: 14px;
+    color: var(--text);
+  }
+  .callout strong { color: var(--orange); }
+  .callout.good {
+    background: var(--green-glow);
+    border-color: rgba(0,206,201,0.3);
+    border-left-color: var(--green);
+  }
+  .callout.good strong { color: var(--green); }
+
+  /* === Tag row === */
+  .tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags .t {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+    color: var(--accent-light);
+  }
+
+  /* === Footer === */
+  footer {
+    text-align: center;
+    padding: 50px 24px;
+    color: var(--text-mute);
+    font-size: 13px;
+  }
+  footer .brand {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+
+  /* === ToC === */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin: 24px auto 0;
+    max-width: 720px;
+    position: relative;
+  }
+  .toc-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .toc ol { padding-left: 22px; color: var(--text-dim); }
+  .toc ol li { margin-bottom: 4px; font-size: 14px; }
+  .toc ol li a { color: var(--text); text-decoration: none; }
+  .toc ol li a:hover { color: var(--accent-light); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge"><span class="dot"></span>EXAMPLE OUTPUT · ทำให้ดูจริง</div>
+  <h1>Part 1 ฉบับลงสนาม — กลุ่ม 1 GreenLeaf Furniture</h1>
+  <p class="lead">ตัวอย่าง output ที่ 4 คนในทีมจะได้หลังทำตามสเตป 1-8 ของ Part 1 พร้อมพรอมต์ที่ใช้กับ ChatGPT และก้อน Context Paste พร้อมยกไปแปะใน ChatGPT ของทีมเพื่อทำ Part 2 ต่อ</p>
+
+  <div class="toc">
+    <div class="toc-label">หน้าตาที่ผู้เรียนจะเห็น</div>
+    <ol>
+      <li><a href="#company">บริษัทโจทย์ของกลุ่ม 1</a></li>
+      <li><a href="#strategist">คนที่ 1 — บี (Strategist) → Brand Strategy</a></li>
+      <li><a href="#researcher">คนที่ 2 — เอ (Researcher) → Target Customer</a></li>
+      <li><a href="#sales">คนที่ 3 — ซี (Sales) → Pricing/Promotion/Forecast/Channel</a></li>
+      <li><a href="#content">คนที่ 4 — ดี (Content) → Communication/Content/Campaign</a></li>
+      <li><a href="#paste">ก้อน Context Paste พร้อมแปะ ChatGPT</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- COMPANY -->
+<section id="company">
+  <div class="container">
+    <span class="section-label">โจทย์ของกลุ่ม 1</span>
+    <h2 class="section-title">บริษัท กรีนลีฟ เฟอร์นิเจอร์ จำกัด</h2>
+    <p class="section-desc">เฟอร์นิเจอร์ไม้จริงและสั่งทำ สำหรับบ้าน คาเฟ่ โรงแรม สำนักงาน เน้นงานออกแบบอบอุ่น วัสดุไม้คุณภาพ บริการติดตั้งครบวงจร</p>
+
+    <div class="co-card">
+      <div class="left">
+        <h3>GreenLeaf Furniture</h3>
+        <div class="en">Co., Ltd. · ก่อตั้ง 2558</div>
+        <div class="meta-row">
+          <span class="meta"><strong>เชียงใหม่</strong></span>
+          <span class="meta"><strong>85</strong> คน</span>
+          <span class="meta"><strong>฿320M</strong>/ปี</span>
+          <span class="meta">เป้าโต <strong>+22%</strong></span>
+        </div>
+        <div style="margin-top:18px;">
+          <h4>USP</h4>
+          <p style="font-size:14px;color:var(--text-dim);">งานไม้จริงคุณภาพสูง รับสั่งทำตามพื้นที่ มีทีมวัดหน้างานและติดตั้ง พร้อมบริการดูแลหลังการขาย</p>
+        </div>
+      </div>
+      <div class="right">
+        <h4>Vision</h4>
+        <p>เป็นแบรนด์เฟอร์นิเจอร์ไม้ไทยที่ลูกค้าไว้วางใจมากที่สุด ในกลุ่มบ้าน คาเฟ่ และธุรกิจบริการ</p>
+        <h4>Target Customers</h4>
+        <p>เจ้าของบ้านระดับกลาง-บน · เจ้าของคาเฟ่/ร้านอาหาร/โรงแรมบูติก · Interior Designer และสถาปนิก · โครงการบ้านจัดสรร</p>
+        <h4>Product Portfolio</h4>
+        <p>โต๊ะอาหารไม้จริง · โต๊ะทำงาน · ชั้นวาง/ตู้ · เตียง+หัวเตียง · เฟอร์นิเจอร์สั่งทำสำหรับคาเฟ่/โรงแรม</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIST -->
+<section id="strategist">
+  <div class="container">
+    <span class="section-label" style="color:var(--accent-light);background:var(--accent-glow);">คนที่ 1 · นักการตลาด</span>
+    <h2 class="section-title">บี — Strategist</h2>
+    <p class="section-desc">เปิดชีต <em>"นักการตลาด Strategist"</em> ในชีต Playbook → หยิบพรอมต์ 4 ตัว (Positioning / Brand Identity / Messaging / Value Prop) ทีละอัน → ใส่ context จาก profile → ได้ output ด้านล่าง</p>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">ตัวอย่างพรอมต์ที่บีใช้ในแชท ChatGPT (อันแรก)</span>
+        <span class="tag">จากชีต Playbook</span>
+      </div>
+      <pre id="px-1">ฉันเป็นนักการตลาดของบริษัท GreenLeaf Furniture
+ขอให้ช่วยกำหนด Brand Positioning โดยอ้างอิงจาก context ด้านล่าง
+
+CONTEXT:
+- ธุรกิจ: เฟอร์นิเจอร์ไม้จริงและสั่งทำ สำหรับบ้าน คาเฟ่ โรงแรม
+- สำนักงาน: เชียงใหม่ ก่อตั้ง 2558 รายได้ ฿320M/ปี
+- USP: ไม้จริง · รับสั่งทำตามพื้นที่ · มีทีมวัด+ติดตั้ง+ดูแลหลังการขาย
+- Target: บ้านระดับกลาง-บน · คาเฟ่/โรงแรมบูติก · Interior Designer · โครงการ
+- คู่แข่ง: WoodCraft Living, Baanmai Design, Natural Room, Teak & Home, Loftwood
+
+OUTPUT ที่ต้องการ:
+1. Positioning Statement 1 ประโยค ที่ตอกย้ำ "ไม้จริง + สั่งทำ + service ครบ"
+2. จุดยืนเทียบคู่แข่ง (เหนือใคร / ต่ำกว่าใคร / ต่างยังไง)
+3. ประโยคในใจลูกค้าหลังเจอแบรนด์ (1 บรรทัด)</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="px-1">Copy</button>
+      </div>
+    </div>
+
+    <div class="person person-strategist">
+      <div class="person-head">
+        <div class="person-avatar">ST</div>
+        <div class="meta">
+          <h3>บี — นักการตลาด (Strategist)</h3>
+          <div class="role">Brand Strategy · 4 หัวข้อย่อย</div>
+        </div>
+        <div class="scope">หัวข้อ 1-4</div>
+      </div>
+      <div class="person-body">
+
+        <div class="out">
+          <h4><span class="num">1</span>Positioning</h4>
+          <div class="quote">"เฟอร์นิเจอร์ไม้จริงสั่งทำ สำหรับบ้านอบอุ่นและธุรกิจที่ต้องการบรรยากาศไม้แท้ — ไม่ใช่ Mass-market ราคาถูก และไม่ pretentious แบบไม้นำเข้าหรู"</div>
+          <ul>
+            <li><strong>เหนือ:</strong> Index/SB ในเรื่อง "ไม้จริง + งานสั่งทำ + บริการหน้างาน"</li>
+            <li><strong>ต่ำกว่า:</strong> เฟอร์นิเจอร์ไม้ยุโรปนำเข้า ในเรื่องราคาและ brand snob</li>
+            <li><strong>ต่าง:</strong> "พี่ช่างไม้รุ่นใหญ่" ที่คุยด้วยได้ ไม่ใช่ "designer brand" ที่เข้าไม่ถึง</li>
+          </ul>
+          <p style="margin-top:10px;"><strong>ในใจลูกค้า:</strong> <em>"ถ้าจะใช้ไม้จริง ต้องที่นี่ — มืออาชีพ มี service ครบ ไม่ต้องลุ้น"</em></p>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">2</span>Brand Identity</h4>
+          <div class="kv">
+            <span class="k">โทน</span><span>อบอุ่น เป็นมิตร เชี่ยวชาญ — เหมือนพี่ช่างไม้รุ่นใหญ่ที่ใส่ใจรายละเอียด</span>
+            <span class="k">บุคลิก</span><span>มืออาชีพแต่เข้าถึงง่าย ไม่หยิ่ง พูดเรื่องไม้ได้เป็นชั่วโมง</span>
+            <span class="k">โทนสี</span><span>เอิร์ธโทน — น้ำตาลไม้สัก + เขียวธรรมชาติ + ครีมขาวอ่อน</span>
+            <span class="k">ภาพ</span><span>พื้นผิวไม้จริงในทุก asset · มีคนใช้งานจริงในภาพ (ไม่ใช่สตูดิโอเปล่า)</span>
+            <span class="k">ห้าม</span><span>เปลือกพรีเมียมเกินจริง · ภาษาอินฟลูฯ · ป้ายราคาทับภาพหลัก</span>
+          </div>
+          <div class="tags">
+            <span class="t">#wooden</span><span class="t">#warm</span><span class="t">#craftsman</span><span class="t">#earthtone</span><span class="t">#trustworthy</span>
+          </div>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">3</span>Brand Messaging</h4>
+          <p>สารหลัก 3 ชั้น:</p>
+          <ul>
+            <li><strong>ระดับใจ:</strong> "ไม้แท้ที่อยู่กับคุณไปจนแก่"</li>
+            <li><strong>ระดับใช้:</strong> "วัดหน้างาน + ติดตั้ง + ดูแลหลังการขาย ทีมทำให้ครบ"</li>
+            <li><strong>ระดับเงิน:</strong> "ราคาคุยกันได้ ไม่ใช่ของเล่นเศรษฐี"</li>
+          </ul>
+          <div class="quote">แคปชั่นมาตรฐาน: "GreenLeaf — บ้านที่ดี เริ่มจากไม้ที่ใช่"</div>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">4</span>Value Proposition</h4>
+          <p>"ส่งมอบเฟอร์นิเจอร์ไม้จริงคุณภาพสูง พร้อมทีมวัดหน้างาน-ติดตั้ง-ซ่อมบำรุง ให้บ้านและธุรกิจของคุณมีบรรยากาศไม้แท้ที่ใช้งานได้จริงทุกวัน นานเป็น 10 ปี"</p>
+          <div class="tags">
+            <span class="t">ไม้จริง</span><span class="t">สั่งทำ</span><span class="t">มีทีมดูแลตลอด</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCHER -->
+<section id="researcher">
+  <div class="container">
+    <span class="section-label" style="color:var(--green);background:var(--green-glow);">คนที่ 2 · นักวิจัยตลาด</span>
+    <h2 class="section-title">เอ — Researcher</h2>
+    <p class="section-desc">เปิดชีต <em>"นักวิจัยตลาด Researcher"</em> → หยิบพรอมต์ ICP/Persona + Journey + Pain Point + Buying Behavior → ใส่ context จาก profile ของ GreenLeaf → ได้ output ด้านล่าง</p>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">ตัวอย่างพรอมต์ที่เอใช้ในแชท ChatGPT (Persona)</span>
+        <span class="tag">จากชีต Playbook</span>
+      </div>
+      <pre id="px-2">ฉันเป็นนักวิจัยตลาดของบริษัท GreenLeaf Furniture (เฟอร์นิเจอร์ไม้จริง สั่งทำ)
+ขอให้สร้าง Ideal Customer Profile (ICP) + Persona 1 คน
+
+CONTEXT:
+- Target ในตอนนี้: บ้านระดับกลาง-บน · คาเฟ่/ร้านอาหาร/โรงแรมบูติก ·
+  Interior Designer · โครงการบ้านจัดสรร
+- USP ของแบรนด์: ไม้จริง · สั่งทำตามพื้นที่ · มีทีมวัด+ติดตั้ง+ดูแล
+- ขายผ่าน: โชว์รูมเชียงใหม่/กทม., ตัวแทน, FB/IG/Website/Marketplace
+- กลยุทธ์การตลาดที่ใช้: คอนเทนต์แต่งบ้าน, Before/After,
+  รีวิวลูกค้า, วิดีโอผลิต, งานแฟร์
+
+OUTPUT ที่ต้องการ:
+1. เลือก persona เด่นสุด 1 คน — ชื่อสมมุติ อายุ อาชีพ รายได้ พฤติกรรม
+2. Customer Journey 4 ขั้น (Awareness → Consideration → Purchase → Loyalty)
+3. Pain Point 3 ข้อหลัก (เรียงจากปวดสุดลงมา)
+4. Buying Behavior — ซื้อเมื่อไหร่ ที่ไหน อย่างไร เกณฑ์ตัดสิน
+
+ขอภาษาธรรมชาติแบบคนไทยคุยกัน ไม่ใช่ภาษาราชการ</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="px-2">Copy</button>
+      </div>
+    </div>
+
+    <div class="person person-researcher">
+      <div class="person-head">
+        <div class="person-avatar">RS</div>
+        <div class="meta">
+          <h3>เอ — นักวิจัยตลาด (Researcher)</h3>
+          <div class="role">Target Customer · 4 หัวข้อย่อย</div>
+        </div>
+        <div class="scope">หัวข้อ 5-8</div>
+      </div>
+      <div class="person-body">
+
+        <div class="out">
+          <h4><span class="num">5</span>ICP / Persona</h4>
+          <p><strong>คุณภาวินี (มินนี่) อายุ 38 ปี</strong></p>
+          <div class="kv">
+            <span class="k">อาชีพ</span><span>เจ้าของคาเฟ่ + แม่บ้าน 2 บทบาท</span>
+            <span class="k">รายได้</span><span>฿80,000-150,000/เดือน (ครอบครัว)</span>
+            <span class="k">ที่อยู่</span><span>ทาวน์โฮม-บ้านเดี่ยว เชียงใหม่/กทม. ปริมณฑล</span>
+            <span class="k">พฤติกรรม</span><span>เสพ Pinterest/IG บ้านสวย · ใช้ LINE คุยช่างประจำ · ตัดสินใจซื้อ 2-4 สัปดาห์</span>
+            <span class="k">ใส่ใจ</span><span>คุณภาพมากกว่าราคา แต่ไม่อยากโดนหลอก — ต้องการคำปรึกษาจริง</span>
+            <span class="k">ไม่ใช่</span><span>คนที่หาของถูกสุด หรือคนที่ต้อง designer brand</span>
+          </div>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">6</span>Customer Journey</h4>
+          <div class="kv">
+            <span class="k">Awareness</span><span>เห็นโพสต์ FB/IG "บ้านสวยใช้ไม้จริง" หรือเข้าโชว์รูมโดยบังเอิญตอนหา café ในเชียงใหม่</span>
+            <span class="k">Consideration</span><span>เปรียบเทียบ 3 ร้าน → อ่านรีวิว → DM ขอ quote → นัดส่งช่างไปวัดหน้างาน</span>
+            <span class="k">Purchase</span><span>เลือกสเปก → มัดจำ 50% → รอ 6-10 สัปดาห์ → ทีมติดตั้งหน้างาน → จ่ายส่วนที่เหลือ</span>
+            <span class="k">Loyalty</span><span>กลับมาขอบริการซ่อม/ขัดไม้ใหม่หลัง 2-3 ปี → แนะนำเพื่อน/ลูกค้าคาเฟ่</span>
+          </div>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">7</span>Pain Point (3 ข้อ เรียงจากปวดสุด)</h4>
+          <ul>
+            <li><strong>1. กลัวซื้อแล้วผิดสเปก ไม่ตรงพื้นที่</strong> — เพราะบ้านไม่สี่เหลี่ยมเป๊ะ ผนังเอียง พื้นต่างระดับ ของสำเร็จรูปมักวางไม่ลงตัว</li>
+            <li><strong>2. ไม่มีเวลาคุมคุณภาพ</strong> — ทำงาน+ดูแลลูก ไม่ทันคุยกับช่าง ต้องการคนที่ไว้ใจได้</li>
+            <li><strong>3. เคยซื้อไม้ MDF แล้วผุใน 2 ปี</strong> — เข็ดกับของถูก อยากเปลี่ยนเป็นไม้จริงแต่กลัวจ่ายแพงแล้วโดนหลอกซ้ำ</li>
+          </ul>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">8</span>Buying Behavior</h4>
+          <div class="kv">
+            <span class="k">ซื้อเมื่อ</span><span>ย้ายบ้าน / รีโนเวต / เปิดร้านใหม่ / เฟอร์ฯ ชุดเก่าพังครบ 5-7 ปี</span>
+            <span class="k">ที่ไหน</span><span>โชว์รูม 60% · Website/LINE 25% · ผ่าน Interior Designer 15%</span>
+            <span class="k">อย่างไร</span><span>ขอ quote 2-3 เจ้า → ส่งช่างวัด → ต่อรอง → เลือกเจ้าที่ตอบเร็ว ให้คำปรึกษาดี</span>
+            <span class="k">เกณฑ์</span><span>คุณภาพไม้ &gt; บริการหลังการขาย &gt; ราคา &gt; ดีไซน์</span>
+            <span class="k">ไม่ใช่</span><span>คนตัดสินจากราคาถูกสุด หรือคนที่ตัดสินใจในวันเดียว</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SALES -->
+<section id="sales">
+  <div class="container">
+    <span class="section-label" style="color:var(--orange);background:var(--orange-glow);">คนที่ 3 · ผู้ช่วยฝ่ายขาย</span>
+    <h2 class="section-title">ซี — Sales</h2>
+    <p class="section-desc">เปิดชีต <em>"ผู้ช่วยฝ่ายขาย Sales"</em> → หยิบพรอมต์ Pricing / Promotion / Sales Forecast / Channel → ใส่ context จาก profile + Target จากเอ → ได้ output ด้านล่าง</p>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">ตัวอย่างพรอมต์ที่ซีใช้ในแชท ChatGPT (Pricing + Forecast)</span>
+        <span class="tag">จากชีต Playbook</span>
+      </div>
+      <pre id="px-3">ฉันเป็นผู้ช่วยฝ่ายขายของ GreenLeaf Furniture
+ขอให้ช่วยวาง Pricing Strategy + Promotion + Sales Forecast Q1 ปีหน้า
+
+CONTEXT:
+- รายได้ปีนี้ ฿320M เป้าโต +22% (= ฿390M)
+- กลุ่มสินค้า: โต๊ะอาหาร/โต๊ะทำงาน/ชั้น-ตู้/เตียง+หัวเตียง/Custom คาเฟ่+โรงแรม
+- Target: บ้านระดับกลาง-บน + คาเฟ่/โรงแรมบูติก + Interior Designer + โครงการ
+- USP: ไม้จริง · สั่งทำ · มีทีมวัด+ติดตั้ง+ดูแลหลังการขาย
+- ช่องทาง: โชว์รูม 2 ที่ + Dealer + FB/IG + Website + Interior Partner
+
+OUTPUT:
+1. Pricing Strategy — แบ่ง tier ราคา + เกณฑ์ Bundle B2C/B2B
+2. Promotion Strategy — โปรเปิดตัว Q4 + ปฏิทินเทศกาล
+3. Sales Forecast 3 เดือนแรกของ Q1 ปีหน้า (เดือน 1, 2, 3 พร้อมเหตุผล)
+4. Channel Strategy — Lead/Conversion/Repeat/B2B แต่ละช่อง</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="px-3">Copy</button>
+      </div>
+    </div>
+
+    <div class="person person-sales">
+      <div class="person-head">
+        <div class="person-avatar">SL</div>
+        <div class="meta">
+          <h3>ซี — ผู้ช่วยฝ่ายขาย (Sales)</h3>
+          <div class="role">Sales Plan · 4 หัวข้อย่อย</div>
+        </div>
+        <div class="scope">หัวข้อ 10, 13, 14, 15</div>
+      </div>
+      <div class="person-body">
+
+        <div class="out">
+          <h4><span class="num">10</span>Channel Strategy</h4>
+          <ul>
+            <li><strong>Lead Gen 50%:</strong> FB/IG Ads + Pinterest → กดนัดโชว์รูม</li>
+            <li><strong>Conversion 70%:</strong> โชว์รูมเชียงใหม่ + กทม. ทีมขายมือ 1 + sample ไม้ให้จับ</li>
+            <li><strong>Repeat 35%:</strong> LINE OA + Email Campaign สำหรับลูกค้าเก่า (ซ่อม/ขัด/เพิ่มชุด)</li>
+            <li><strong>B2B:</strong> Direct Sales ลงคาเฟ่/โรงแรมเป้าหมาย + เปิด Interior Designer Program คอม 10%</li>
+          </ul>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">13</span>Pricing Strategy</h4>
+          <div class="kv">
+            <span class="k">Essential</span><span>฿15,000-30,000/ชิ้น — โต๊ะทำงาน เก้าอี้ ชั้นวางเล็ก</span>
+            <span class="k">Signature</span><span>฿30,000-80,000/ชิ้น — โต๊ะอาหาร 6 ที่ ตู้ใหญ่ เตียงไม้</span>
+            <span class="k">Custom</span><span>฿80,000+ — งานสั่งทำเต็มชุด/คาเฟ่/โรงแรม (โควต case-by-case)</span>
+          </div>
+          <p style="margin-top:10px;"><strong>Bundle B2C:</strong> ชุด 3-5 ชิ้น ลด 10-15% · <strong>Bundle B2B:</strong> ครบเซ็ตคาเฟ่ ฿250-500k ติดตั้งฟรี</p>
+          <p><strong>ไม่ลดราคาหน้าโชว์รูม</strong> — ให้ Gift (เก้าอี้เด็ก/หมอนรองหลัง) แทน เพื่อรักษา brand premium</p>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">14</span>Promotion Strategy</h4>
+          <ul>
+            <li><strong>เปิดตัว Q4:</strong> ส่วนลด 12% (ครบรอบ 12 ปี GreenLeaf) สำหรับสั่งทำใน Q4</li>
+            <li><strong>ฟรี:</strong> วัดหน้างาน + ออกแบบ 3D (มูลค่า ฿5,000) เมื่องบ ≥ ฿50,000</li>
+            <li><strong>B2B Trade-in:</strong> รับเฟอร์ฯ เก่าเป็นเครดิต ฿5,000-15,000 สำหรับคาเฟ่/โรงแรม</li>
+            <li><strong>ปฏิทิน:</strong> Sofa Day (พ.ค.) · ออกแบบบ้านใหม่ (ก.ค.) · เข้าหน้าหนาว (พ.ย.)</li>
+          </ul>
+          <p style="margin-top:8px;"><strong>หลัก:</strong> ไม่มีโปร "ลดตลอด" — ลดเฉพาะรอบที่ชัดเจน รักษาภาพ premium</p>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">15</span>Sales Forecast (Q1 ปีหน้า)</h4>
+          <div class="kv">
+            <span class="k">เดือน 1</span><span><strong>฿4.5M</strong> — โครงการเก่าตามต่อ + วอล์คอินตามปกติ</span>
+            <span class="k">เดือน 2</span><span><strong>฿6M</strong> — เริ่มเห็นผลคอนเทนต์ + ออกบูธ Baan &amp; Garden Fair</span>
+            <span class="k">เดือน 3</span><span><strong>฿8M</strong> — ปิดดีลคาเฟ่ 2-3 เจ้า + repeat order บ้านจัดสรร 1 โครงการ</span>
+            <span class="k">รวม Q1</span><span><strong>฿18.5M</strong> = ~5% ของเป้ารายปี ฿390M (Q1 เน้นปูพื้น คอนเทนต์ + ดีล B2B รออัดเข้า Q2-Q3)</span>
+          </div>
+          <p style="margin-top:10px;"><strong>Lead:</strong> ตั้งเป้า 35-40 ราย/เดือน · <strong>Conversion:</strong> 25% = ปิด 9-10 ดีล/เดือน</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section id="content">
+  <div class="container">
+    <span class="section-label" style="color:var(--pink);background:var(--pink-glow);">คนที่ 4 · นักเขียนคอนเทนต์</span>
+    <h2 class="section-title">ดี — Content</h2>
+    <p class="section-desc">เปิดชีต <em>"นักเขียนคอนเทนต์ Content"</em> → หยิบพรอมต์ Communication / Content Plan / Campaign Plan → ใส่ context จาก profile + บุคลิกแบรนด์จากบี → ได้ output ด้านล่าง</p>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">ตัวอย่างพรอมต์ที่ดีใช้ในแชท ChatGPT (Content Plan + Campaign)</span>
+        <span class="tag">จากชีต Playbook</span>
+      </div>
+      <pre id="px-4">ฉันเป็นนักเขียนคอนเทนต์ของ GreenLeaf Furniture
+ขอให้ช่วยวาง Communication Strategy + Content Plan + Campaign Plan
+
+CONTEXT:
+- บุคลิกแบรนด์ (จาก Strategist): พี่ช่างไม้รุ่นใหญ่ อบอุ่น เข้าใจคนรุ่นใหม่
+  โทนสีเอิร์ธ ห้ามใช้ภาษาอินฟลูฯ/clickbait
+- Target Persona (จาก Researcher): มินนี่ 38 เจ้าของคาเฟ่+แม่บ้าน
+  เสพ Pinterest/IG บ้านสวย, ตัดสินใจ 2-4 สัปดาห์
+- Pain Point: กลัวผิดสเปก ไม่มีเวลาคุมงาน เคยโดน MDF ผุ
+- ช่องทาง: FB/IG/TikTok/YouTube/Website
+- รายได้ปีนี้ ฿320M เป้าโต +22%
+
+OUTPUT:
+1. Communication Strategy — โทน/ห้าม/อนุญาต
+2. Content Plan — 5 ธีมหลัก พร้อมความถี่
+3. Campaign Plan ใหญ่ 1 ตัว — Objective, Mechanic, Channel, KPI, Budget</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="px-4">Copy</button>
+      </div>
+    </div>
+
+    <div class="person person-content">
+      <div class="person-head">
+        <div class="person-avatar">CT</div>
+        <div class="meta">
+          <h3>ดี — นักเขียนคอนเทนต์ (Content)</h3>
+          <div class="role">Communication + Content + Campaign · 3 หัวข้อย่อย</div>
+        </div>
+        <div class="scope">หัวข้อ 9, 11, 12</div>
+      </div>
+      <div class="person-body">
+
+        <div class="out">
+          <h4><span class="num">9</span>Communication Strategy</h4>
+          <ul>
+            <li><strong>โทนหลัก:</strong> อบอุ่นแบบช่างไม้รุ่นใหญ่ — ไม่ใช้คำขายแบบ FB ads ดาษดื่น</li>
+            <li><strong>คำที่ใช้บ่อย:</strong> "ไม้สัก" "ไม้ยางพารา" "ไม้โอ๊ค" (ไม่ใช่ "วัสดุ" "องค์ประกอบ")</li>
+            <li><strong>สัดส่วน:</strong> ขายของ 30% / ความรู้-ความรู้สึก 70%</li>
+            <li><strong>ภาษา:</strong> ที่ลูกค้าใช้คุยกันเวลาเลือกบ้าน ไม่ใช่ภาษาแบรนด์</li>
+            <li><strong>ห้าม:</strong> emoji เยอะ · "Sale!! ลดสุดสุด!!" · clickbait · ภาษาราชการ</li>
+          </ul>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">11</span>Content Plan — 5 ธีมหลัก</h4>
+          <ul>
+            <li><strong>1. Behind the Wood</strong> — วิดีโอช่างไม้ทำงาน จากท่อนไม้สู่ชิ้นงาน (TikTok+IG Reel)</li>
+            <li><strong>2. Before/After บ้านลูกค้า</strong> — case study 1 บ้าน/สัปดาห์ (FB+IG carousel)</li>
+            <li><strong>3. เลือกไม้ยังไงไม่ผิดพลาด</strong> — ความรู้ ไม้สัก vs ยางพารา vs โอ๊ค (YouTube + บทความ)</li>
+            <li><strong>4. คาเฟ่ในฝัน</strong> — collab คาเฟ่ที่ใช้เฟอร์ฯ ของเรา ถ่ายมุมสวย (IG Story+Reel)</li>
+            <li><strong>5. คุยกับมินนี่</strong> — series สัมภาษณ์เจ้าของบ้าน 5 นาที ตอกย้ำ USP "เราดูแลจริง"</li>
+          </ul>
+          <p style="margin-top:8px;"><strong>ความถี่:</strong> FB/IG 4 โพสต์/สัปดาห์ + TikTok 2 รีล/สัปดาห์ + YouTube 1 ตอน/เดือน</p>
+        </div>
+
+        <div class="out">
+          <h4><span class="num">12</span>Campaign Plan — "บ้านไม้ที่อยู่ด้วยกันนาน 10 ปี"</h4>
+          <div class="kv">
+            <span class="k">Objective</span><span>สร้าง Brand Equity + Lead Q4 1,200 ราย</span>
+            <span class="k">Mechanic</span><span>เก็บ case ลูกค้าเก่าใช้ของ GreenLeaf 10+ ปี → ซีรีส์ "ครบรอบ 10 ปีกับ GreenLeaf" 12 ตอน คู่กับโปรครบรอบลด 12%</span>
+            <span class="k">Channels</span><span>FB/IG (organic+ads) · YouTube long-form · รีลคาเฟ่ · Press Release ลง บ้าน&amp;สวน</span>
+            <span class="k">KPI</span><span>Reach 3M · Lead 1,200 · Showroom Walk-in +35% · Conversion ≥ 25% · ROI ≥ 4.0x</span>
+            <span class="k">Budget</span><span>฿800,000 (Ads 60% / Production 30% / PR 10%)</span>
+            <span class="k">Timeline</span><span>ต.ค. → ก.ย. ปีถัดไป (12 เดือน)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PASTE BLOCK -->
+<section id="paste">
+  <div class="container">
+    <span class="section-label">สเตป 1 ของ Part 2</span>
+    <h2 class="section-title">ก้อน Context Paste พร้อมยกไปแปะ ChatGPT</h2>
+    <p class="section-desc">เปิดแชท ChatGPT ใหม่ (ของทีม) → กดปุ่ม Copy ด้านล่าง → วางลงแชท → จากนั้นค่อยยิงพรอมต์ Merge / Tighten / Self-check ตามลำดับใน Part 2</p>
+
+    <div class="callout good">
+      <strong>เคล็ด:</strong> ก้อนนี้ยาว ~600 บรรทัด ChatGPT รับได้สบาย ไม่ต้องตัด — แต่ต้อง <em>วางทีเดียวก่อนพิมพ์พรอมต์</em> เพื่อให้รุ่นเข้าใจ context ครบก่อนเริ่มประมวลผล
+    </div>
+
+    <div class="prompt">
+      <div class="prompt-head">
+        <span class="name">CONTEXT PASTE สำเร็จรูป — กลุ่ม 1 GreenLeaf</span>
+        <span class="tag">copy แล้ววางทันที</span>
+      </div>
+      <pre id="paste-final">ข้อมูลบริษัทของทีม:
+
+# บริษัท กรีนลีฟ เฟอร์นิเจอร์ จำกัด (GreenLeaf Furniture Co., Ltd.)
+- ประเภท: เฟอร์นิเจอร์ไม้ (Wooden Furniture)
+- ลักษณะ: ผู้ผลิตและจัดจำหน่ายเฟอร์นิเจอร์ไม้จริงและสั่งทำสำหรับบ้าน คาเฟ่ โรงแรม สำนักงาน
+- สำนักงาน: เชียงใหม่ ก่อตั้ง 2558 พนักงาน 85 คน รายได้ ฿320M/ปี
+- Vision: เป็นแบรนด์เฟอร์นิเจอร์ไม้ไทยที่ลูกค้าไว้วางใจมากที่สุด ในกลุ่มบ้าน คาเฟ่ และธุรกิจบริการ
+- Mission: ออกแบบ ผลิต ส่งมอบเฟอร์นิเจอร์ไม้คุณภาพสูง พร้อมบริการให้คำปรึกษา วัดพื้นที่ ติดตั้งอย่างมืออาชีพ
+- Core Values: คุณภาพ · ความรับผิดชอบ · งานฝีมือ · ลูกค้าเป็นศูนย์กลาง
+- Products: โต๊ะอาหารไม้จริง · โต๊ะทำงาน · ชั้น/ตู้ · เตียงไม้+หัวเตียง · เฟอร์ฯ สั่งทำคาเฟ่/โรงแรม
+- Target: บ้านระดับกลาง-บน · คาเฟ่/ร้านอาหาร/โรงแรมบูติก · Interior Designer · โครงการบ้านจัดสรร
+- USP: ไม้จริงคุณภาพสูง · สั่งทำตามพื้นที่ · มีทีมวัดหน้างาน+ติดตั้ง · บริการหลังการขาย
+- Channels: โชว์รูมเชียงใหม่+กทม. · ตัวแทน · FB · IG · Website · Marketplace · Interior Partner
+- Goal ปีหน้า: รายได้ +22% · ตัวแทน +15 ราย · ยอดคาเฟ่/โรงแรม +30%
+- Competitors: WoodCraft Living · Baanmai Design · Natural Room · Teak & Home · Loftwood Furniture
+
+ผลงาน 4 บทบาทที่ทีมทำมา ผ่าน ChatGPT รอบแรก:
+
+== STRATEGIST (บี) ==
+
+1) POSITIONING
+"เฟอร์นิเจอร์ไม้จริงสั่งทำ สำหรับบ้านอบอุ่นและธุรกิจที่ต้องการบรรยากาศไม้แท้ — ไม่ใช่ Mass-market ราคาถูก และไม่ pretentious แบบไม้นำเข้าหรู"
+- เหนือ Index/SB ในเรื่อง "ไม้จริง + งานสั่งทำ + บริการหน้างาน"
+- ต่ำกว่าเฟอร์นิเจอร์ไม้ยุโรปนำเข้า ในเรื่องราคาและ brand snob
+- ต่าง: "พี่ช่างไม้รุ่นใหญ่" คุยด้วยได้ ไม่ใช่ "designer brand" เข้าไม่ถึง
+ในใจลูกค้า: "ถ้าจะใช้ไม้จริง ต้องที่นี่ — มืออาชีพ มี service ครบ ไม่ต้องลุ้น"
+
+2) BRAND IDENTITY
+- โทน: อบอุ่น เป็นมิตร เชี่ยวชาญ — เหมือนพี่ช่างไม้รุ่นใหญ่
+- บุคลิก: มืออาชีพแต่เข้าถึงง่าย ไม่หยิ่ง พูดเรื่องไม้ได้เป็นชั่วโมง
+- โทนสี: น้ำตาลไม้สัก + เขียวธรรมชาติ + ครีมขาวอ่อน
+- ภาพ: พื้นผิวไม้จริงทุก asset, มีคนใช้งานจริง ไม่ใช่สตูดิโอเปล่า
+- ห้าม: เปลือกพรีเมียมเกินจริง · ภาษาอินฟลูฯ · ป้ายราคาทับภาพหลัก
+
+3) BRAND MESSAGING
+- ระดับใจ: "ไม้แท้ที่อยู่กับคุณไปจนแก่"
+- ระดับใช้: "วัดหน้างาน + ติดตั้ง + ดูแลหลังการขาย ทีมทำให้ครบ"
+- ระดับเงิน: "ราคาคุยกันได้ ไม่ใช่ของเล่นเศรษฐี"
+แคปชั่นมาตรฐาน: "GreenLeaf — บ้านที่ดี เริ่มจากไม้ที่ใช่"
+
+4) VALUE PROPOSITION
+ส่งมอบเฟอร์นิเจอร์ไม้จริงคุณภาพสูง พร้อมทีมวัดหน้างาน-ติดตั้ง-ซ่อมบำรุง ให้บ้านและธุรกิจมีบรรยากาศไม้แท้ที่ใช้งานได้จริงทุกวัน นานเป็น 10 ปี
+keywords: ไม้จริง / สั่งทำ / มีทีมดูแลตลอด
+
+== RESEARCHER (เอ) ==
+
+5) ICP / PERSONA
+คุณภาวินี (มินนี่) อายุ 38 ปี
+- อาชีพ: เจ้าของคาเฟ่ + แม่บ้าน
+- รายได้ครอบครัว: ฿80,000-150,000/เดือน
+- ที่อยู่: ทาวน์โฮม-บ้านเดี่ยว เชียงใหม่/กทม. ปริมณฑล
+- พฤติกรรม: เสพ Pinterest/IG บ้านสวย · ใช้ LINE คุยช่างประจำ · ตัดสินใจซื้อ 2-4 สัปดาห์
+- ใส่ใจ: คุณภาพมากกว่าราคา แต่ไม่อยากโดนหลอก ต้องการคำปรึกษาจริง
+- ไม่ใช่: คนหาของถูกสุด / คนที่ต้อง designer brand
+
+6) CUSTOMER JOURNEY
+- Awareness: เห็นโพสต์ FB/IG "บ้านสวยใช้ไม้จริง" หรือเดินเข้าโชว์รูมโดยบังเอิญตอนหา café ในเชียงใหม่
+- Consideration: เปรียบเทียบ 3 ร้าน → อ่านรีวิว → DM ขอ quote → นัดส่งช่างวัดหน้างาน
+- Purchase: เลือกสเปก → มัดจำ 50% → รอ 6-10 สัปดาห์ → ทีมติดตั้งหน้างาน → จ่ายส่วนที่เหลือ
+- Loyalty: กลับมาขอบริการซ่อม/ขัดไม้ใหม่หลัง 2-3 ปี → แนะนำเพื่อน/ลูกค้าคาเฟ่
+
+7) PAIN POINT (เรียงจากปวดสุด)
+1. กลัวซื้อแล้วผิดสเปก ไม่ตรงพื้นที่ (บ้านไม่สี่เหลี่ยมเป๊ะ)
+2. ไม่มีเวลาคุมคุณภาพ ทำงาน+ดูแลลูก ไม่ทันคุยกับช่าง
+3. เคยซื้อไม้ MDF แล้วผุใน 2 ปี — เข็ดกับของถูก
+
+8) BUYING BEHAVIOR
+- ซื้อเมื่อ: ย้ายบ้าน / รีโนเวต / เปิดร้านใหม่ / เฟอร์ฯ ชุดเก่าพังครบ 5-7 ปี
+- ที่ไหน: โชว์รูม 60% · Website/LINE 25% · Interior Designer 15%
+- อย่างไร: quote 2-3 เจ้า → ส่งช่างวัด → ต่อรอง → เลือกเจ้าที่ตอบเร็ว ให้คำปรึกษาดี
+- เกณฑ์ตัดสิน: คุณภาพไม้ > บริการหลังการขาย > ราคา > ดีไซน์
+
+== SALES (ซี) ==
+
+10) CHANNEL STRATEGY
+- Lead Gen 50%: FB/IG Ads + Pinterest → กดนัดโชว์รูม
+- Conversion 70%: โชว์รูมเชียงใหม่ + กทม. ทีมขายมือ 1 + sample ไม้
+- Repeat 35%: LINE OA + Email Campaign ลูกค้าเก่า (ซ่อม/ขัด/เพิ่มชุด)
+- B2B: Direct Sales ลงคาเฟ่/โรงแรม + Interior Designer Program (commission 10%)
+
+13) PRICING STRATEGY
+- Essential ฿15,000-30,000/ชิ้น (โต๊ะทำงาน เก้าอี้ ชั้นเล็ก)
+- Signature ฿30,000-80,000/ชิ้น (โต๊ะอาหาร 6 ที่ ตู้ใหญ่ เตียงไม้)
+- Custom ฿80,000+ (งานสั่งทำเต็มชุด คาเฟ่ โรงแรม)
+- Bundle B2C: ชุด 3-5 ชิ้น ลด 10-15%
+- Bundle B2B: ครบเซ็ตคาเฟ่ ฿250-500k ติดตั้งฟรี
+- ไม่ลดราคาหน้าโชว์รูม ให้ Gift แทน เพื่อรักษา premium
+
+14) PROMOTION STRATEGY
+- Q4 เปิดตัว: ส่วนลด 12% (ครบรอบ 12 ปี GreenLeaf)
+- ฟรี: วัดหน้างาน + ออกแบบ 3D เมื่องบ ≥ ฿50,000
+- B2B Trade-in: รับเฟอร์ฯ เก่าเป็นเครดิต ฿5,000-15,000
+- ปฏิทินเทศกาล: Sofa Day พ.ค. · ออกแบบบ้านใหม่ ก.ค. · เข้าหน้าหนาว พ.ย.
+- หลัก: ไม่มีโปรลดตลอด ลดเฉพาะรอบที่ชัด
+
+15) SALES FORECAST (Q1 ปีหน้า)
+- เดือน 1: ฿4.5M (โครงการเก่าตามต่อ + วอล์คอินปกติ)
+- เดือน 2: ฿6M (เริ่มเห็นผลคอนเทนต์ + ออกบูธ Baan & Garden Fair)
+- เดือน 3: ฿8M (ปิดดีลคาเฟ่ 2-3 เจ้า + repeat order บ้านจัดสรร)
+- รวม Q1: ฿18.5M (~5% เป้ารายปี ฿390M)
+- Lead เป้า 35-40 ราย/เดือน · Conversion 25% = ปิด 9-10 ดีล/เดือน
+
+== CONTENT (ดี) ==
+
+9) COMMUNICATION STRATEGY
+- โทนหลัก: อบอุ่นแบบช่างไม้รุ่นใหญ่ ไม่ใช้คำขายแบบ FB ads ดาษดื่น
+- คำที่ใช้บ่อย: ไม้สัก / ไม้ยางพารา / ไม้โอ๊ค (ไม่ใช่ "วัสดุ" "องค์ประกอบ")
+- สัดส่วน: ขายของ 30% / ความรู้-ความรู้สึก 70%
+- ภาษา: ที่ลูกค้าใช้คุยกันเวลาเลือกบ้าน
+- ห้าม: emoji เยอะ · "Sale!! ลดสุดสุด!!" · clickbait · ภาษาราชการ
+
+11) CONTENT PLAN — 5 ธีมหลัก
+1. Behind the Wood — วิดีโอช่างไม้ทำงาน จากท่อนไม้สู่ชิ้นงาน (TikTok+Reel)
+2. Before/After บ้านลูกค้า — case study 1 บ้าน/สัปดาห์ (FB+IG carousel)
+3. เลือกไม้ยังไงไม่ผิดพลาด — ไม้สัก vs ยางพารา vs โอ๊ค (YouTube+บทความ)
+4. คาเฟ่ในฝัน — collab คาเฟ่ที่ใช้เฟอร์ฯ เรา ถ่ายมุมสวย
+5. คุยกับมินนี่ — series สัมภาษณ์เจ้าของบ้าน 5 นาที
+ความถี่: FB/IG 4 โพสต์/สัปดาห์ + TikTok 2 รีล/สัปดาห์ + YouTube 1 ตอน/เดือน
+
+12) CAMPAIGN PLAN — "บ้านไม้ที่อยู่ด้วยกันนาน 10 ปี"
+- Objective: สร้าง Brand Equity + Lead Q4 1,200 ราย
+- Mechanic: case ลูกค้าใช้ของเรา 10+ ปี → ซีรีส์ "ครบรอบ 10 ปีกับ GreenLeaf" 12 ตอน + โปรครบรอบลด 12%
+- Channels: FB/IG (organic+ads) · YouTube long · รีลคาเฟ่ · PR บ้าน&สวน
+- KPI: Reach 3M · Lead 1,200 · Showroom Walk-in +35% · Conversion ≥ 25% · ROI ≥ 4.0x
+- Budget: ฿800,000 (Ads 60% / Production 30% / PR 10%)
+- Timeline: ต.ค. → ก.ย. ปีถัดไป (12 เดือน)</pre>
+      <div style="padding:12px 18px;border-top:1px solid var(--border);text-align:right;">
+        <button class="copy-btn" data-target="paste-final">Copy ทั้งก้อน</button>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>ขั้นต่อไป:</strong> หลังวางก้อนนี้ลงแชท ChatGPT แล้ว — ให้ยิงพรอมต์ <em>"Merge & Structure"</em> ตามด้วย <em>"Tighten"</em> และ <em>"Self-check"</em> จาก Part 2 ในไฟล์ AI-Workshop-Guide.html → ได้ output 3 บล็อก 15 หัวข้อย่อยที่พร้อมเอาไปเข้า Code Interpreter วาดเป็นภาพ Proposal (Part 3)
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">EXAMPLE OUTPUT · GROUP 1 GREENLEAF</div>
+  <div style="margin-top:8px;">ทำให้ดูเป็น reference · ผู้เรียนกลุ่มอื่นปรับ context ตามบริษัทตัวเอง</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.getAttribute('data-target');
+      var pre = document.getElementById(id);
+      if (!pre) return;
+      navigator.clipboard.writeText(pre.innerText).then(function () {
+        var old = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('ok');
+        setTimeout(function () {
+          btn.textContent = old;
+          btn.classList.remove('ok');
+        }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>
