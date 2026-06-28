@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-06-27 09:00:00 · ไฟล์ .md ทั้งหมด 265
+> สแกนอัตโนมัติ · 2026-06-28 09:00:00 · ไฟล์ .md ทั้งหมด 268
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,13 +8,13 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 80 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 50 |
+| 🔗 ลิงก์เสีย (dead links) | 81 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 52 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 54 ↔ 54 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 3 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W24 (15 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (14 วันที่แล้ว) |
+| 🔄 memory source ↔ mirror | 55 ↔ 55 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W24 (16 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (15 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -74,6 +74,7 @@
 - `03 Resources/Clippings/Go with the Four EP.0 — COO Takeaways.md` → `[[ไม่เปลี่ยนคือตาย! \"วู้ดดี้-หนุ่ย-วิทย์-CK\" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0]]` (ไม่พบ)
 - `03 Resources/Clippings/คนยุคโบราณ ทำแผนที่ยังไง?  8 Minute History EP.398.md` → `[[THE STANDARD PODCAST]]` (ไม่พบ)
 - `03 Resources/Clippings/วิธีสร้างภาพให้สวย อัปเดต AI ตัวใหม่ … ผลลัพธ์เกินคาด!!! สวย ง่าย เร็ว  ChatGPT Images 2.0.md` → `[[Readyplanet]]` (ไม่พบ)
+- `03 Resources/Clippings/หยุดไล่ล่าชีวิตและเวลาที่สมบูรณ์แบบ สรุปหนังสือ Four Thousand Weeks  Mission To The Moon EP.2684.md` → `[[Mission To The Moon]]` (ไม่พบ)
 - `03 Resources/Clippings/เปิดคลังแจก 10+ วิธีใช้ ChatGPT Image 2.0 ฟรี!!!.md` → `[[KEM LIFE]]` (ไม่พบ)
 - `03 Resources/Clippings/ไม่เปลี่ยนคือตาย! "วู้ดดี้-หนุ่ย-วิทย์-CK" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0.md` → `[[WoodyWorld]]` (ไม่พบ)
 - `03 Resources/People/บ๊อบ.md` → `[[บ๊อบ-1-24f3957a65.png]]` (ไม่พบ)
@@ -108,6 +109,7 @@
 - `03 Resources/Clippings/ChatGPT Images 2.0 เก่งขนาดนี้ แทนกราฟิก ได้หรือยัง – พูดคุยความเห็น.md`
 - `03 Resources/Clippings/คนยุคโบราณ ทำแผนที่ยังไง?  8 Minute History EP.398.md`
 - `03 Resources/Clippings/วิธีสร้างภาพให้สวย อัปเดต AI ตัวใหม่ … ผลลัพธ์เกินคาด!!! สวย ง่าย เร็ว  ChatGPT Images 2.0.md`
+- `03 Resources/Clippings/หยุดไล่ล่าชีวิตและเวลาที่สมบูรณ์แบบ สรุปหนังสือ Four Thousand Weeks  Mission To The Moon EP.2684.md`
 - `03 Resources/Clippings/เปิดคลังแจก 10+ วิธีใช้ ChatGPT Image 2.0 ฟรี!!!.md`
 - `03 Resources/Compliance/PDPA.md`
 - `03 Resources/Compliance/Scanned Documents.md`
@@ -145,6 +147,7 @@
 - `BoostSMS/Materials/ChatGPT_Slides_Prompt.md`
 - `BoostSMS/Materials/PROJECT_BRIEF.md`
 - `BoostSMS/Materials/SALES_COMMISSION.md`
+- `CRM หวย/เงื่อนไขกรอง - ลูกค้าขาดฝาก.md`
 - `EasyBOT/Legal/easybot_partner_agreement_formal.md`
 - `Friday/Monthly Recaps/2026-06 มิถุนายน.md`
 - `Friday/Monthly Recaps/Friday-Monthly-Recap-May-2026.md`
