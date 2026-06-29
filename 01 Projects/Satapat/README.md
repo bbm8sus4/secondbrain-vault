@@ -4,14 +4,22 @@
 > Working files: `~/Desktop/02 In progress/Satapat/`
 
 ## Context
-- **ผู้ถูกประเมิน:** **สถาปัตย์ ต๊ะศรี** (Satapat) — Senior Marketing Officer
-- **ผู้ประเมิน (หัวหน้างาน):** **อดิศร เงสันเทียะ** (Adison)
+- **ผู้ถูกประเมิน:** **สถาปัตย์ ต๊ะศรี** (Satapat) · ชื่อเล่น **Nook** · Senior Marketing Officer
+- **ผู้ประเมิน (หัวหน้างาน):** **อดิศร เงสันเทียะ** (Adison) · ชื่อเล่น **Jee** · Marketing Manager
 - **รอบประเมิน:** Q2/2026 (นำร่อง) · รหัสฟอร์ม `HR-MKT-EVAL-01 v1.0` (Q2–Q3/2026)
 - **สถานะ:** In progress (มีฉบับ v2 ปรับปรุงแล้ว)
 
-## เงินเดือน (Updated 2026-06-29)
-- **เงินเดือนปัจจุบัน:** 17,750 บาท
-- **ปรับฐานทันทีก่อน 1 ก.ค. 2569:** **17,750 → 21,000** บาท · **เพิ่มขึ้น 3,250 บาท (+18.31%)** (ไม่ขึ้นกับผลประเมิน เป็นการปรับฐานก่อนเริ่มรอบ)
+## ⚠️ มี 2 ระบบประเมินซ้อนกัน (ต้องเคลียร์)
+1. **ระบบรายเดือนของ Jee** — Google Sheet, 5 หมวด generic (KPI 40% / Exec 25% / Ownership 15% / Teamwork 10% / Initiative 10%), ใช้ทั้งทีม Marketing 7 คน, output = Top/Strong/Dev/Under/Critical. **ไม่ผูกกับเงินเดือน** — แค่ coaching/reward
+2. **ระบบนี้ (Adison ประเมิน Satapat รอบ ก.ค.–ส.ค.)** — Marketing-specific 5 KPI + 6 Competency + Lead Quality Gate, **ผูกตรงกับ band 21-25k**
+
+**Risk:** Nook อาจได้ Strong Performer 75 รายเดือน แต่ถูก Gate ตัดในรอบนี้ → สับสน
+**Decision pending:** ระบบนี้ replace ระบบรายเดือน, หรือใช้คู่กัน (รายเดือน=coach, รอบนี้=ปรับเงินเดือน)?
+
+## เงินเดือน + Promotion (Updated 2026-06-29)
+- **ก่อน 1 ก.ค. 2569:** Marketing Officer · 17,750 บาท
+- **1 ก.ค. 2569 (ทันที):** **เลื่อนเป็น Senior Marketing Officer** · ปรับฐานเงินเดือน **17,750 → 21,000** บาท (**+3,250 / +18.31%**) ไม่ขึ้นกับผลประเมิน
+- **ก.ย. 2569 (หลังประเมิน):** คงตำแหน่ง Senior Marketing Officer · เงินเดือนตามคะแนน KPI (band 21k-25k)
 - **Salary Band หลังประเมิน (ผลใช้ตั้งแต่ ก.ย. 2569):**
 
 | คะแนนรวม KPI | เงินเดือนใหม่ | เพิ่มจากฐานใหม่ (21,000) | ระดับผลงาน |
@@ -27,22 +35,31 @@
 - 5.0–6.9 → **เพดาน 23,000**
 - < 5.0 → **ตันที่ฐาน 21,000**
 
-## 5 KPI หลัก
-| # | KPI | น้ำหนัก | หมายเหตุ |
-|---|---|---|---|
-| 1 | Lead Quality (MQL→SQL Acceptance) | **25%** | **[GATE]** <50 ตัดทั้งใบ |
-| 2 | Sales Pipeline Contribution | 20% | Shared KPI กับฝ่ายขาย |
-| 3 | Cost Efficiency (CPL) | 15% | |
-| 4 | Strategic Insight → Action | 25% | |
-| 5 | Operational Excellence | 15% | ส่งตรงเวลา ≥90% |
+## โครงสร้างคะแนน Composite (3 ส่วน) — Updated 2026-06-29
+**สูตร:** คะแนนรวม = (A × 0.5) + (B × 0.3) + (C × 0.2) = 0-100 → Salary Band
 
-## 6 Competency (Power Level)
+### ส่วน A (50%) — KPI การตลาดเฉพาะ 4 ข้อ
+| KPI | น้ำหนักใน A |
+|---|---|
+| 1. Lead Quality (Gate) | 38% |
+| 2. Pipeline Contribution | 25% |
+| 3. Cost Efficiency (CPL) | 25% |
+| 4. Strategic Insight | 12% |
+
+### ส่วน B (30%) — KPI รายเดือนของ Jee/อดิศร (เฉลี่ย ก.ค. + ส.ค.)
+| หมวด | น้ำหนักใน B |
+|---|---|
+| 1. KPI Performance | 40% |
+| 2. Execution Quality | 25% |
+| 3. Ownership & Responsibility | 15% |
+| 4. Teamwork & Communication | 10% |
+| 5. Initiative & Improvement | 10% |
+
+### ส่วน C (20%) — สมรรถนะ 6 ด้าน (Competency)
 กลยุทธ์ · ข้อมูล · ครีเอทีฟ · สื่อสาร · บริหารงาน · ภาวะผู้นำ
-**น้ำหนักผู้ให้คะแนน:** ตัวเอง 20% / หัวหน้า 60% / Stakeholder-ฝ่ายขาย 20%
+C = ค่าเฉลี่ย 6 ด้าน × 10 = 0-100
 
-ระดับ: 0-40 ทำตามสั่ง · 50-60 ทำเองได้บางส่วน · **70-80 เชื่อถือได้ (ผ่าน)** · 85-95 ยกระดับทีม · 96-100 เป็นมาตรฐาน
-
-ตัวอย่างที่กรอกในฉบับสรุป: **Power 69 · Rank C (Mid→Senior)** · แข็งสุด บริหารงาน 86 · อ่อนสุด ภาวะผู้นำ 53 → อนุมัติเงินเดือน 24,400
+**Lead Quality Gate** ยังคงบังคับ: <5.0 ตัน 21k / 5.0-6.9 เพดาน 23k / ≥7 ตามคะแนน
 
 ## เส้นทางเหนือเพดาน 25,000
 - **Market Adjustment** — ปีถัดไป ปรับฐานใหม่ตามผลงานสะสม
