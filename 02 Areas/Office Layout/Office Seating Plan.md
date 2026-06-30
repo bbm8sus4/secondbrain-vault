@@ -133,6 +133,16 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 
 ---
 
+## Roadmap มุมมองถัดไป (จาก multi-agent stakeholder analysis + aidebate 2026-07-01)
+
+8 personas (COO/CEO/CFO/HR/Lead/พนักงานใหม่/Facilities/Board) → 25 มุม → 3-AI debate. สรุป:
+**4 ธีมที่ stakeholder อยากเห็นเพิ่ม:** เงิน (cost/seat, ค่าเช่าเสียโอกาส) · เวลา (runway/breach + ประวัติ) · ความเสี่ยงคน (key-person/bus-factor) · ความพร้อม day-1.
+
+**ทำสัปดาห์นี้ (localStorage):** (1) room max-capacity + ธง breach (2) onboarding readiness swimlane (3) org handover risk = persist reports-to + key-person/span/orphan. **ฟรีบังคับ:** Export/Import backup (กลไกส่งมอบ COO ใหม่) + ปุ่ม Current vs After-7-Hires.
+**เดือนนี้:** Money layer (หลังเก็บเลขสะอาด · ยกเว้น Easy Space vacancy=รายได้จริง ดึงเร็วได้) · group 6 บริษัท · scenario diff · seniority pyramid.
+**ไตรมาสนี้:** deploy DB จริง → lease-alert+snapshot history → presence/attendance → booking → financial/chargeback.
+**Litmus test ขอบเขต:** "ถ้า localStorage ถูกล้างคืนนี้ มีใครเดือดร้อนไหม?" ถ้าใช่ → อย่าให้ tool นี้เป็นเจ้าของข้อมูล (เป็น planning layer ไม่ใช่ HRIS). Transcript: ~/ai-debate/debates/20260701-030136.md
+
 ## เครื่องมือ — Interactive Seating Planner (HTML)
 
 ไฟล์: `~/Desktop/office-seating-planner.html` (single-file, เปิดด้วยเบราว์เซอร์, ไม่ต้องต่อเน็ต)
@@ -156,6 +166,8 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 
 **เมนู "ผังองค์กร" (v2.7, 2026-06-30):** เพิ่ม tab สลับ "ผังที่นั่ง / ผังองค์กร". Org chart สร้างจาก PDF `~/Downloads/Telegram Desktop/Organization Thunder.pdf` — 5 ระดับ (CO-FOUNDER → C-LEVEL → MANAGER → LEAD → WORKER) สีไล่น้ำเงิน + เส้นเชื่อมสายบังคับบัญชา (SVG วัด DOM จริง).
 **แก้ไขได้เหมือนผังที่นั่ง:** + เพิ่มคน / ลากกล่องย้ายตำแหน่ง (วางในเซลล์ = ย้าย, วางบนคนอื่น = reparent) / คลิกแก้ไข / ลบ / Reset. เก็บแยก localStorage `osp.org.v1` (seed = `ORG`). กัน cycle ด้วย isAncestor.
+**v2.11 — org 2 บริษัท + ลบเส้น:** เมนูผังองค์กรมีปุ่มสลับ **Thunder / EasySlip**. แต่ละบริษัทมีโครงสร้าง+ข้อมูล+ระดับ+สีของตัวเอง (Thunder = น้ำเงิน 4 ระดับ ไม่มี cofounder · EasySlip = ม่วง 5 ระดับ มี CO-FOUNDER, avatar เขียว E). เก็บแยก localStorage (`osp.org.v1` / `osp.org.easyslip.v1`) + จำบริษัทล่าสุด (`osp.org.company`). org-template เก็บ company ด้วย. **ลบเส้นโยงออกหมด** (ผู้ใช้บอกรก) เหลือแถบระดับ + chip. EasySlip seed = วัชรินทร์(CEO)/ภูมิชนะ(CTO) → GM วราพงศ์ มะโนมัย → CS เกวลิน/ธนัญญา, SEO ธัญญาภรณ์, บัญชี ปวีณา. config ที่ `ORG_DEFS`.
+
 **v2.10 — org compact (จาก aidebate):** Codex+Typhoon+Claude สรุปตรงกัน → **chip แนวนอน** (avatar 30px ซ้าย + ชื่อ+ตำแหน่งไทยขวา, สูง 40px, ตัด EN ไป tooltip, truncate บรรทัดเดียว) + **ลบ EMPTY ถาวร** (เพิ่มผ่านปุ่ม/คลิก cell ว่าง/hover "+ เพิ่ม") + band กระชับ (`grid-auto-rows:min-content`+`align-items:start`). เตี้ยลง ~2-3 เท่า (~1400px→~700px เห็นจอเดียว). **จุดสำคัญ:** เส้น SVG anchor ที่ `.oav` + `.brow` ต้อง transparent (ไม่งั้นพื้นขาวบังเส้น) + ResizeObserver redraw. Transcript: ~/ai-debate/debates/20260701-021142.md
 
 **v2.9 — เทมเพลต (save scenarios):** ปุ่ม "เทมเพลต" ทั้ง 2 เมนู → บันทึกแบบปัจจุบันเป็นชื่อ (เช่น "ที่นั่งแบบ A", "ผังองค์กรแบบ A") → เปิด/คัดลอก/ลบ/Export-Import ได้. เก็บ localStorage `osp.templates.v1` (แยก seating/org). ไว้เปิดเทียบ/เสนอ. **"บนเว็บจริง" (URL แชร์ทีม) = ต้อง deploy Cloudflare Pages + KV (ยังไม่ทำ).**
