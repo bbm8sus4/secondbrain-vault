@@ -155,7 +155,10 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 **บทเรียน:** ผู้ใช้ทดลองหลายแบบ — สรุปชอบ **ผังอาคารจริง + avatar seats**. เคยลองจุดแดง/เขียว แต่เปลี่ยนมาเป็น avatar. ทุกครั้งที่แก้ดีไซน์ใหญ่: backup ก่อน + screenshot ยืนยัน + ยึด reference จริงของผู้ใช้.
 
 **เมนู "ผังองค์กร" (v2.7, 2026-06-30):** เพิ่ม tab สลับ "ผังที่นั่ง / ผังองค์กร". Org chart สร้างจาก PDF `~/Downloads/Telegram Desktop/Organization Thunder.pdf` — 5 ระดับ (CO-FOUNDER → C-LEVEL → MANAGER → LEAD → WORKER) สีไล่น้ำเงิน + เส้นเชื่อมสายบังคับบัญชา (SVG วัด DOM จริง).
-**แก้ไขได้เหมือนผังที่นั่ง:** + เพิ่มคน / ลากกล่องย้ายตำแหน่ง (วางในเซลล์ระดับ-คอลัมน์ = ย้าย, วางบนกล่องอื่น = reparent อยู่ใต้บังคับบัญชา) / คลิกแก้ไข (ชื่อ/ตำแหน่ง/ระดับ/คอลัมน์/reports-to) / ลบ (ลูกย้ายขึ้นหา grandparent) / Reset กลับ PDF. **เก็บแยกใน localStorage `osp.org.v1`** (default seed = array `ORG`), ไม่ผูกกับ seating data `osp.v2`. กันcycle ด้วย isAncestor.
+**แก้ไขได้เหมือนผังที่นั่ง:** + เพิ่มคน / ลากกล่องย้ายตำแหน่ง (วางในเซลล์ = ย้าย, วางบนคนอื่น = reparent) / คลิกแก้ไข / ลบ / Reset. เก็บแยก localStorage `osp.org.v1` (seed = `ORG`). กัน cycle ด้วย isAncestor.
+**v2.9 — เทมเพลต (save scenarios):** ปุ่ม "เทมเพลต" ทั้ง 2 เมนู → บันทึกแบบปัจจุบันเป็นชื่อ (เช่น "ที่นั่งแบบ A", "ผังองค์กรแบบ A") → เปิด/คัดลอก/ลบ/Export-Import ได้. เก็บ localStorage `osp.templates.v1` (แยก seating/org). ไว้เปิดเทียบ/เสนอ. **"บนเว็บจริง" (URL แชร์ทีม) = ต้อง deploy Cloudflare Pages + KV (ยังไม่ทำ).**
+
+**v2.8:** เปลี่ยน node เป็น **avatar เหมือน OFFICE SEATING PLAN เป๊ะ** (วงกลมสีบริษัท + อักษรย่อ + T/E badge + ชื่อ + ตำแหน่ง · ช่องว่าง = วงประ EMPTY กดเพิ่มได้ทุกเซลล์) บนพื้นขาว + label ระดับสีน้ำเงินซ้ายมือ + เส้นเชื่อมเทา. **ลบ CO-FOUNDER ออก** → เริ่มที่ C-LEVEL (migrateOrg flag `cofounderRemoved` shift lv ลง 1 + clear orphan parent + เติม company default). org node มี field `company` แก้ได้ใน modal.
 
 ## Change Log
 
