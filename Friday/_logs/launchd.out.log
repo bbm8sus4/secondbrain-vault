@@ -145,3 +145,38 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/monthly_2026-06.md — 139,681 ch
 - Bob/Watcharin ปรับรูปแบบ monthly meeting ให้เน้น trend/problem แทนการโชว์ตัวเลข และเปิดหัวข้อ people management ที่ต้องแก้จริงในทีมครับ
 [2026-06-30 15:09:37] MONTHLY: ✅ wrote    51156 chars → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
 [2026-06-30 15:09:37] DONE: auto
+[2026-06-30 23:55:00] AUTO: DOW=2 DOM=30 TOMORROW=01
+[2026-06-30 23:55:00] CATCHUP: scanning past 14 days for missed runs
+[2026-06-30 23:55:00] AUTO: Last day of month → monthly
+[2026-06-30 23:55:00] MONTHLY: 2026-06-01 → 2026-06-30 (label: 2026-06 มิถุนายน)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/monthly_2026-06.md — 141,544 chars, 120 weekly, 363 daily
+[2026-06-30 23:55:03] SIZE GUARD: source   261077 > 80000 → truncating to top 80000 bytes
+[2026-06-30 23:55:03] MONTHLY: source size =    80067 chars
+[2026-06-30 23:55:03] MONTHLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+
+- Thunder: ต้องปิด loop ตัวเลขคืนเครดิต มิ.ย. รวมทั้ง 35,164.09 บาทจาก พ.ค., 3,345 บาท, 3,396 บาท, 4,338 บาท และสาเหตุซ้ำ
+- Thunder API: เคสบอทไม่ตรวจสลิป Clicx, API ไม่เข้ายูส, ต่ออายุซ้ำ และสลิปใบกำกับย่อ ยังต้องมี owner/ETA ชัด
+- Accounting: P&L Thunder ทั้งรายได้-ค่าใช้จ่าย-กำไร ที่ Watcharin ขอ 15 มิ.ย. ยังต้องสรุปกลับ
+- เงินเดือนคุณนุ๊ก: เอกสาร/ผลกระทบยังค้าง review ตั้งแต่ต้นเดือน
+- EasyCRM: ปัญหาสิทธิ์ผู้จัดการร้านให้คะแนนลูกค้า และลูกค้าส่งคำขอคะแนนไม่ได้ เจอ 28 มิ.ย. ต้องตาม fix
+- Server/EasyCRM: หลังปรับเซิร์ฟเวอร์ 29-30 มิ.ย. ต้องเก็บ incident time จากลูกค้าถ้าเจอซ้ำ
+- Mr. Wagyuu: ต้องตามเคสใบเสร็จ 4 รายการไม่เข้าหลังบ้าน, ดีไซน์/Portal/Flex ให้จบก่อนกลับมาขายเต็มแรง
+- Kinzu: ต้องสรุป product decision เรื่อง Silver/Gold privilege, staff QR login, duplicate point prevention
+- Flex/Portal design standard: ยังมีประเด็น font, alignment, card design, standard ใหม่ที่ Khunjadi/Bank/Poom/Bob ต้อง lock
+- HR: เคสหนิง, Head of CS, คุณภาพงานฝ้าย และอำนาจ COO ต้อง follow-up เชิงโครงสร้าง
+- Ingram/Techsauce 2026: ต้อง confirm สถานะเข้าร่วมบูธมูลค่า 50,000 บาท หลัง deadline 26 มิ.ย.
+
+### ✅ Highlights สำเร็จ
+
+- EasyCRM มี release ใหญ่หลายรอบ: Portal ใหม่, Flex/Slip, Coupon, Cron, RFM, Analytics, Segment builder, Broadcast, Multi-branch
+- `boostsms-salepage` เข้า main แล้ว และ `CRM-407` phone-first OTP BoostSMS เข้า main/day-hotel
+- Day Hotel auto reply/Flex issue ไล่เจอ root cause และแก้ใน main/day-hotel แล้ว
+- ตรวจสลิป/TTB QR/Easy API/Flex response ถูกปรับขึ้นระบบลูกค้าแล้ว
+- Mr. Wagyuu go-live/onboarding เดินหน้า: เชื่อม LINE, ทำ Flex Theme Slip/แต้ม, เปลี่ยนลิงก์ Portal, ตัด OTP ที่เป็น friction
+- คูปองอัตโนมัติแก้ทันก่อน Kinzu demo และ deploy แบบไม่กระทบลูกค้า
+- Admin SOP บัญชี Thunder/EasySlip เริ่มเป็นรูปเป็นร่าง ครอบคลุมใบเสนอราคา, ใบกำกับภาษี, หัก ณ ที่จ่าย
+- Thunder Sale Page รองรับ Safari/iOS แล้ว และ Cotactic Webpage Thunder deploy รอบ MA ได้
+- EasyBOT เริ่มถูกวางเป็น production workflow สำหรับคอนเทนต์ ไม่ใช่งานรายวันเฉพาะหน้า
+- ทีมเริ่มใช้ monthly meeting format ใหม่ เน้น trend/problem แทนการพรีเซนต์ตัวเลขอย่างเดียวครับ
+[2026-06-30 23:56:34] MONTHLY: ✅ wrote    20245 chars → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+[2026-06-30 23:56:34] DONE: auto
