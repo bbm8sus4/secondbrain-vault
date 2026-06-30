@@ -140,3 +140,4 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 
 - **2026-06-30** — สร้าง doc เริ่มต้น, เพิ่ม Marketing EasySlip Room (9 ที่), บันทึก plan รับพนักงานใหม่ + Bob ย้ายตำแหน่ง
 - **2026-06-30** — สร้าง interactive HTML planner v2.0.0 (drag-drop + onboarding tray + durability + export). Multi-agent design + review, 25 บั๊กแก้แล้ว
+- **2026-06-30** — ลอง UX/UI redesign v2.1 (poster + SVG floor plan) แต่ผู้ใช้ไม่ชอบ → **revert กลับ v2.0 dashboard**. บทเรียน: เก็บ backup ทุกเวอร์ชันที่ `~/Desktop/.seating-backups/` ก่อนแก้ใหญ่ทุกครั้ง

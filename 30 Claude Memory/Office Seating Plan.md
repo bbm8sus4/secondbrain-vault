@@ -10,7 +10,8 @@ metadata:
 ออฟฟิศมี 5 ห้อง (Marketing, Development, Jetder, Thunder, Marketing EasySlip ห้องใหม่) รวม 49 ที่นั่ง
 
 **Single source of truth (เนื้อหา):** `~/SecondBrain/02 Areas/Office Layout/Office Seating Plan.md`
-**Interactive tool:** `~/Desktop/office-seating-planner.html` — single-file HTML v2.0.0, drag-drop seating planner (Pointer Events), onboarding tray (7 new hires pre-loaded), localStorage+IndexedDB durability, undo/redo, search/filter, PNG/PDF/CSV export, lock + presentation mode. Built via multi-agent workflow + adversarial review (25 bugs fixed), passes headless smoke test. Validate edits with the extract-script + `node -c` + /tmp/osp-smoke.js harness. Next step (not done): deploy to Cloudflare Pages.
+**Interactive tool:** `~/Desktop/office-seating-planner.html` — single-file HTML **v2.0 dashboard** (current, ผู้ใช้เลือกเวอร์ชันนี้). Drag-drop (Pointer Events), onboarding tray (7 new hires pre-loaded), localStorage+IndexedDB durability, undo/redo, search/filter, PNG/PDF/CSV export, lock + presentation mode. 25 bugs fixed, passes headless smoke test.
+**สำคัญ:** ผู้ใช้ลอง redesign v2.1 (poster/SVG) แล้ว **ไม่ชอบ → revert กลับ v2.0**. อย่าเสนอ redesign ใหญ่ซ้ำเว้นแต่ผู้ใช้ขอ. **เก็บ backup ก่อนแก้ใหญ่ทุกครั้งที่ `~/Desktop/.seating-backups/`** (overwrite Write ทับเวอร์ชันเก่าโดยไม่มี git = เคยทำเกือบหายมาแล้ว). Validate ด้วย extract-script + `node -c` + smoke harness. Next (ยังไม่ทำ): deploy Cloudflare Pages.
 
 ทุก update เรื่องที่นั่ง / พนักงานเข้า-ออก / ย้ายห้อง → แก้ที่ Obsidian อย่างเดียว memory ไม่ต้องเก็บรายชื่อ
 
