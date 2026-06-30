@@ -52,3 +52,30 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/monthly_2026-06.md — 139,681 ch
 [2026-06-30 14:28:47] SIZE GUARD: source   257500 > 80000 → truncating to top 80000 bytes
 [2026-06-30 14:28:47] MONTHLY: source size =    80067 chars
 [2026-06-30 14:28:47] MONTHLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+
+- **Bob decisions:** ประชุมประจำเดือนเปลี่ยนจากพรีเซนต์ตัวเลขเป็นเทรนด์/ปัญหา; เดือนหน้าค่อยพิจารณาหัวข้ออีกที; Bob/Watcharin ถกสิทธิ์ COO และความเด็ดขาด, COO self-eval ได้ 10/10 หลายข้อแต่ติดเรื่องเด็ดขาด; Bob ขอลาธุดงค์เพราะตื้อ/คิดงานไม่ออก
+- **People management:** Watcharin ชี้ปัญหาคุณภาพงานฝ้าย, หนิง, Head of CS; สั่งให้จัดการเด็ดขาด ถ้าทำไม่ได้/สร้างปัญหาต้องเคลียร์; Bob เสนอทำผังเรื่องหนิงใน meet; มีข้อกำหนดเสียง/ระเบียบใช้พื้นที่และ Guitar ต้องเทียบไทม์ไลน์ปัญหาเสียง 4 ตัวละคร
+- **AI/Hermes:** Watcharin สาธิต Hermes ให้ Bob, ใช้หลายเมลได้และกำลังทำเชื่อมหลายเมล; สรุปอีเมล 2,094 ฉบับ พบ Supabase ค้าง/GitHub token หมด รวมถึง KKP เงินเข้า, KBank/KTC รายการเงิน; Watcharin เปิดคลาส AI Transformation 21 มิ.ย.; Bob ให้ feedback ว่าเนื้อหาเหมาะผู้บริหาร/CSM อิน AI
+- **SHIFT/cafe ops:** SHIFT ฝากเงิน 8-12 พ.ค. รวม 5,554 บาท: 878, 1,598, 1,013, 1,220, 845; โปรเค้กกล้วยหอมสมาชิก SHIFT ราคา 29 จาก 39 บาท; Bob ขอพิมพ์ A5 โปรโมท; เคส Broadcast เด้งหน้าร้าน SHIFT ถูก Bank แก้
+- **Legal/benefits:** Bob แจ้งกฎหมายใหม่ กองทุนสงเคราะห์ลูกจ้าง/PVD มีผล 1 ต.ค. 2569; Bob แจ้งผลเสียการปรับเงินเดือนต่อบริษัท: OT, โบนัส, ประกันสังคม, กองทุน, ค่าชดเชย
+- **Equipment/office:** ติดตั้งสาย LAN ชั้น 2 วันที่ 26 มิ.ย. 09:00-18:00; ติดตั้งโซล่าเซลล์เลื่อนเป็น 29-30 มิ.ย.; Mac Mini ให้นำไปร้านช่างขอนแก่น; Asana ยกเลิก 7 มิ.ย.; มีงานสไลด์ด่วนให้ ดร.ปาล 27 มิ.ย. และอนุมัติค่าคอม Q2
+
+## 7. ⚠️ Master Watch List ค้างสิ้นเดือน + ✅ Highlights สำเร็จ
+
+### ⚠️ Master Watch List
+
+- **EasyCRM production:** monitor maintenance 30 มิ.ย. 23:30, server issue ที่ Ning ต้องตามเวลาเกิดเหตุ, สิทธิ์ผู้จัดการร้านให้คะแนนลูกค้า, ลูกค้าส่งคำขอคะแนนไม่ได้, Kinzu staff login/approval, Mr.WAGYUU ใบเสร็จ 4 รายการไม่เข้าหลังบ้าน, Day Hotel “ผิดบัญชี”
+- **Product/API:** CLICX bank ยังต้องปิดให้จบ, API ID 2309/2289 quota/TEST, Axone168 เติมเครดิต, chalidalee QR, Billing ข้อมูลเดือน 5 หาย/INV-202606-942, Bank ยังต้องส่งลิสต์ต้นทุน dev CRM/BoostSMS ให้ Bob
+- **Finance:** P&L/รายได้-ค่าใช้จ่าย-กำไร Thunder/EasySlip ยังไม่ consolidate ชัด, company name EasySlip แก้ได้รอบหน้า, Invoice 22800 ส่งบัญชี, WHT original จากลูกค้าสิ้นเดือน, pending withdraw noey777/smk7889/Tanachaibos/สุวรรณ
+- **Commercial:** Commission table Easy API/CRM/BoostSMS/Easy API Partner ยังถูกตาม, Ingram booth Techsauce ต้องยืนยัน, Plus-Connect รอพิจารณา, Alphamind TH ต้องขออนุมัติใช้ Easy API เพราะสลิปน้อย, AIS/Bay ต้องตัดสินใจ entity Easy vs Thunder
+- **HR/Org:** เงินเดือนนุ๊ก, เคสหนิง, Head of CS role fit, ผลสัมภาษณ์ Pongsathorn PO, Tester hiring, timeline ปัญหาเสียง, รายชื่อวันลาบางวันยังค้าง
+
+### ✅ Highlights สำเร็จ
+
+- **EasyCRM shipped หนัก:** merge ใหญ่ 59 ไฟล์, 140 commits, Portal/Theme/Coupon/Cron/Flex/RFM/Analytics, phone-first OTP Boost SMS, Flex template, auto reply Day Hotel PR#18, coupon auto fix, deploy PR #70/#71/#72
+- **Mr.WAGYUU go-live:** ย้ายจากระบบเดิม, เชื่อม LINE, ทำ Flex Theme Slip/แต้ม, ตัด OTP ลด friction, มีลูกค้าเพิ่มแต้มแล้ว 9 ราย
+- **Finance cleared หลายก้อน:** ภงด.50 EasySlip 2,059,384.35, Thunder 453,018, ภพ.30 152,540.07, EasySlip tax 97,889.25, Thunder tax/สปส. 271,747.75, อนุมัติ RAM 101,200.60, foreign expense 71,951.18/7,684.88, server commission 56,490
+- **Ops process mature ขึ้น:** SOP Admin-บัญชี 3 หัวข้อ, PDPA Policy, renewal/change package API doc, support monitoring, admin coordination rule แยกเซลล์/บัญชี/dev ชัดขึ้น
+- **Growth assets:** BoostSMS Sale Page เข้า main, LineOA BoostSMS invite แล้ว, Thunder Sale Page รองรับ Safari/iOS, AIS SMS 2 ปีเดินหน้า, CRM quota 18,000 slips/year ถูกเลือก, pipeline ใหม่จาก Alphamind/Rusty/Kinzu/Adam&eve/Mango/Plus-Connect/BNI/Ingram ครับ
+[2026-06-30 14:33:44] MONTHLY: ✅ wrote    23994 chars → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+[2026-06-30 14:33:44] DONE: auto
