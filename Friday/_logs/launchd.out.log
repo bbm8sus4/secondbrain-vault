@@ -44,3 +44,11 @@ D1 query failed:
 [2026-06-28 23:55:03] DONE: auto
 [2026-06-29 23:55:00] AUTO: DOW=1 DOM=29 TOMORROW=30
 [2026-06-29 23:55:00] DONE: auto
+[2026-06-30 14:28:41] AUTO: DOW=2 DOM=30 TOMORROW=01
+[2026-06-30 14:28:41] CATCHUP: scanning past 14 days for missed runs
+[2026-06-30 14:28:41] AUTO: Last day of month → monthly
+[2026-06-30 14:28:41] MONTHLY: 2026-06-01 → 2026-06-30 (label: 2026-06 มิถุนายน)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/monthly_2026-06.md — 139,681 chars, 120 weekly, 356 daily
+[2026-06-30 14:28:47] SIZE GUARD: source   257500 > 80000 → truncating to top 80000 bytes
+[2026-06-30 14:28:47] MONTHLY: source size =    80067 chars
+[2026-06-30 14:28:47] MONTHLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md

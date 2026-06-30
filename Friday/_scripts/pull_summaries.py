@@ -10,34 +10,49 @@ import json
 import os
 import subprocess
 import sys
+import time
 from collections import defaultdict
 from pathlib import Path
 
 BOT_DIR = Path.home() / "my-ai-bot"
 DB_NAME = "my-ai-bot-db"
+MAX_RETRIES = 3
+RETRY_SLEEP = 30
 
 
 def run_d1(sql: str) -> list:
-    """Run a D1 query via wrangler, return list of result rows."""
-    result = subprocess.run(
-        ["npx", "wrangler", "d1", "execute", DB_NAME, "--remote",
-         "--command", sql, "--json"],
-        cwd=BOT_DIR,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    if result.returncode != 0:
-        print(f"D1 query failed: {result.stderr}", file=sys.stderr)
-        sys.exit(1)
-    # wrangler prints status before JSON — extract JSON only
-    stdout = result.stdout
-    json_start = stdout.find("[")
-    if json_start < 0:
-        print(f"No JSON in output: {stdout[:500]}", file=sys.stderr)
-        sys.exit(1)
-    data = json.loads(stdout[json_start:])
-    return data[0]["results"]
+    """Run a D1 query via wrangler with retry. Returns list of result rows."""
+    last_err = ""
+    for attempt in range(1, MAX_RETRIES + 1):
+        result = subprocess.run(
+            ["npx", "wrangler", "d1", "execute", DB_NAME, "--remote",
+             "--command", sql, "--json"],
+            cwd=BOT_DIR,
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=180,
+        )
+        if result.returncode == 0:
+            stdout = result.stdout
+            json_start = stdout.find("[")
+            if json_start >= 0:
+                try:
+                    data = json.loads(stdout[json_start:])
+                    return data[0]["results"]
+                except (json.JSONDecodeError, KeyError, IndexError) as e:
+                    last_err = f"JSON parse: {e} · stdout[:300]={stdout[:300]}"
+            else:
+                last_err = f"No JSON in output: {stdout[:300]}"
+        else:
+            last_err = result.stderr.strip() or f"exit={result.returncode}"
+
+        print(f"D1 attempt {attempt}/{MAX_RETRIES} failed: {last_err}", file=sys.stderr)
+        if attempt < MAX_RETRIES:
+            time.sleep(RETRY_SLEEP)
+
+    print(f"D1 query failed after {MAX_RETRIES} retries: {last_err}", file=sys.stderr)
+    sys.exit(1)
 
 
 def fetch(start: str, end: str) -> tuple[list, list]:

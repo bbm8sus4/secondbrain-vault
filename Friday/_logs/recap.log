@@ -74,3 +74,123 @@ D1 query failed:
 [2026-06-28 23:55:03] DONE: auto
 [2026-06-29 23:55:00] AUTO: DOW=1 DOM=29 TOMORROW=30
 [2026-06-29 23:55:00] DONE: auto
+[2026-06-30 14:07:55] WEEKLY: 2026-06-12 → 2026-06-18 (label: 2026-W25)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W25.md — 47,255 chars, 29 weekly, 104 daily
+[2026-06-30 14:08:01] WEEKLY: source size =    83028 chars
+[2026-06-30 14:08:01] WEEKLY: invoking Codex for synthesis → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W25.md
+## Flex theme - ออกแบบตามความต้องการ  (69 chars)
+================================================================================
+
+### DAILY
+
+**2026-06-18** (1 msgs)
+ธีมเช็กสลิป ก.ค. 69 (Aunxp)
+3 ธีม: ใบโคลเวอร์ พลังงานหิน คิงคอง
+กำหนด
+```
+deprecated: `[features].codex_hooks` is deprecated. Use `[features].hooks` instead.
+Enable it with `--enable hooks` or `[features].hooks` in config.toml. See https://developers.openai.com/codex/config-basic#feature-flags for details.
+hook: SessionStart
+hook: SessionStart
+hook: SessionStart Completed
+hook: SessionStart Completed
+hook: UserPromptSubmit
+hook: UserPromptSubmit Failed
+ERROR: {"type":"error","status":400,"error":{"type":"invalid_request_error","message":"The 'gpt-5' model is not supported when using Codex with a ChatGPT account."}}
+ERROR: {"type":"error","status":400,"error":{"type":"invalid_request_error","message":"The 'gpt-5' model is not supported when using Codex with a ChatGPT account."}}
+[2026-06-30 14:08:09] WEEKLY: codex exit 1
+[2026-06-30 14:08:09] WEEKLY: ⚠️ output file empty or not created
+[2026-06-30 14:08:09] DONE: weekly
+[2026-06-30 14:08:59] WEEKLY: 2026-06-12 → 2026-06-18 (label: 2026-W25)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W25.md — 47,255 chars, 29 weekly, 104 daily
+[2026-06-30 14:09:02] WEEKLY: source size =    83028 chars
+[2026-06-30 14:09:02] WEEKLY: invoking Codex for synthesis → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W25.md
+- 15 มิ.ย. Bobsanchezz ขอพิมพ์ A5 โปรโมทให้ SHIFT; Bum Easy รับทราบ
+- 17 มิ.ย. Bobsanchezz ขอ Bacon ออกแบบให้ดีกว่า Mr.wagyuu และนัดประชุมอธิบายงานทันที
+- 18 มิ.ย. Bobsanchezz ขอปรับกล่องบางๆ ลบตัวหนังสือ และให้ Bacon ส่งงานทั้งหมด
+- Bob/HR: 15 มิ.ย. Watcharin เตือนเรื่องความเด็ดขาดในการจัดการทีม โดยเฉพาะเคสหนิงและคุณภาพงานฝ้าย
+
+## ⚠️ Watch list
+- Mr. Wagyu: งานดีไซน์/Portal/Flex Message ยังต้องปิดให้จบในสัปดาห์นี้
+- Mr. Wagyu ติดตั้งค้าง เพราะลูกค้าติดสิทธิ Line API เก่า
+- AIS SMS: รอจบเอกสาร/เงื่อนไขแพ็กเกจ 2 ปี และราคา 0.12 บ./SMS สำหรับ 4M บาท
+- Thunder Finance: ภาษี 05/2569 จำนวน 271,747.75 บาท, ถอนนายสุวรรณ อุ่นเรือน 1,484 บาท และรายการรอชำระบางส่วนยังต้องตาม
+- HR: Guitar ยังทำข้อมูลเทียบไทม์ไลน์ปัญหาเสียงไม่เสร็จ
+- Plus-Connect ยังรอพิจารณา Thunder API/SMS
+
+## ✅ Highlights
+- Easy CRM Mr. Wagyuu ขึ้นใช้งานแล้ว และ Line เชื่อมสำเร็จ
+- Watcharin เลือกแพ็กเกจ CRM โควต้า 18,000 สลิป/ปี
+- Thunder SOP ฝั่ง Admin-บัญชีพร้อมให้ตรวจ
+- EasySlip ชำระภาษี พ.ค. 69 รวม 97,889.25 บาท และ Cloud Server เคลียร์แล้ว
+- สัมภาษณ์ Pongsathorn Prombutr ตำแหน่ง PO เสร็จวันที่ 17 มิ.ย.
+- ทีมเริ่มใช้ Hermes/AI workflow มากขึ้น ทั้ง email summary, project migration skill, และงาน EasyBOT ครับ
+[2026-06-30 14:09:46] WEEKLY: ✅ wrote     7480 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W25.md
+[2026-06-30 14:09:46] DONE: weekly
+[2026-06-30 14:10:00] WEEKLY: 2026-06-19 → 2026-06-25 (label: 2026-W26)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W26.md — 43,564 chars, 35 weekly, 82 daily
+[2026-06-30 14:10:04] WEEKLY: source size =    75248 chars
+[2026-06-30 14:10:04] WEEKLY: invoking Codex for synthesis → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W26.md
+- 24 มิ.ย. SHIFT นำเงินสดฝาก 21 มิ.ย. ยอด 1,626 บาท และ 22 มิ.ย. ยอด 1,270 บาท
+- 22-24 มิ.ย. Bob ตามดีไซน์: Final 80%, ต่อมา Bobsanchezz แจ้งดีไซน์ใกล้เคียง 70-80% ให้เช็ก Layout ก่อน, Bank คาดเสร็จค่ำ 24 มิ.ย. อาจมี OT เก็บรายละเอียด
+- 25 มิ.ย. ซู่ว ซู่ว นะ แจ้งติดตั้งสาย LAN ชั้น 2 วันที่ 26 มิ.ย. 09.00-18.00 และติดตั้งโซล่าเซลล์ 26 มิ.ย.
+
+## ⚠️ Watch list ค้างปลายสัปดาห์
+- Mr. Wagyuu: 20 มิ.ย. ลูกค้าแนบใบเสร็จ 4 รายการไม่เข้าระบบหลังบ้าน
+- EasyCRM Sale Page ยังรอ Bank แก้ตามคอมเมนต์ Khunjadi
+- CLICX: 23 มิ.ย. Prae แจ้งบอทไม่ตรวจสอบสลิปธนาคาร Clicx
+- Thunder API: 25 มิ.ย. ลูกค้า API ID 2309, 2289 พบปัญหาโควต้าเกิน/อายุแพ็กเกจ TEST ผิด
+- Ingram / Techsauce 2026 ต้องยืนยันเข้าร่วมบูธภายใน 26 มิ.ย. 69
+- Billing: 25 มิ.ย. มิ้นท์แจ้งยอดอินวอยซ์ 447 บาท ระบบผิดเป็น 298 บาท
+- โซล่าเซลล์: ปรับช่างเข้าหน้างานเป็น 29-30 มิ.ย. 2569
+
+## ✅ Highlights สำเร็จ
+- CRM merge รอบใหญ่ 140 commits เข้า main/day-hotel แล้ว
+- Bank ตัด OTP LINE OA ออกจาก Mr. Wagyuu แล้ว 20 มิ.ย.
+- คูปองอัตโนมัติแก้เสร็จและใช้งานได้ก่อน Kinzu Demo
+- ภาษี ภพ.30 พ.ค. 152,540.07 บาท ชำระแล้ว
+- Bob อนุมัติโอนเงิน 3 รายการ และพี่วุทธสำรอง 1.2M สำเร็จ
+- เว็บ Thunder deploy ไม่มีปัญหา และ Bank แก้วิดีโอ Sale Page Thunder รองรับ Safari/IOS แล้ว
+[2026-06-30 14:10:51] WEEKLY: ✅ wrote     7770 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W26.md
+[2026-06-30 14:10:51] DONE: weekly
+[2026-06-30 14:11:12] MONTHLY: 2026-06-01 → 2026-06-30 (label: 2026-06 มิถุนายน)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/monthly_2026-06.md — 139,681 chars, 120 weekly, 356 daily
+[2026-06-30 14:11:15] MONTHLY: source size =   257500 chars
+[2026-06-30 14:11:15] MONTHLY: invoking Codex for synthesis → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+- โซลาร์เซลล์: ช่างเข้า 29-30 มิ.ย. ต้องตามสถานะหน้างาน
+- บัตรวงเงินเต็มสำหรับ Claude/API tools: Bob แจ้งจะเปลี่ยนบัตร ต้อง confirm ใช้งานได้
+
+### ✅ Highlights สำเร็จ
+
+- EasyCRM ship งานใหญ่หลายรอบ: Portal, Theme, Coupon, Cron, Flex, RFM, Analytics, Segment builder, phone-first OTP BoostSMS
+- Mr. Wagyuu go-live เป็นลูกค้า EasyCRM สำคัญ เชื่อม Line, Portal, Flex Slip/แต้ม และตัด OTP หลังติดปัญหา
+- Day Hotel auto reply ปิด root cause ในโค้ดและ deploy แก้สำเร็จ
+- Auto coupon bug แก้ทันก่อน Kinzu demo และใช้งานได้ในน้องหมา
+- Thunder/Easy API outage 15 มิ.ย. กลับมาใช้งานได้
+- เคส Arunjai ใช้งานเกินโควต้าแก้แล้ว 26 มิ.ย.
+- โครงสร้าง Support ชัดขึ้นว่า Admin/Support/Dev/บัญชี/เซลล์ประสานกันยังไง
+- ชำระ/อนุมัติรายการใหญ่หลายรายการ: ภงด.50, VAT พ.ค., ภาษี 271,747.75, RAM 101,200.60, server 56,490, สำรอง KAPI 1.2M
+- Thunder refund/credit มีรายงานเป็นช่วงชัดขึ้น และเริ่มทำ SOP Admin-บัญชี
+- AIS SMS และโควต้า CRM เดินหน้า: เลือก 18,000 สลิป/ปี และเตรียม final meeting
+- BoostSMS Sale Page เข้า main และ PR News เตรียมลง Content Shifu 30 มิ.ย.
+- Marketing เริ่มบังคับใช้ EasyBOT กับงานคุณภาพต่ำ และมี feedback loop เรื่องภาษา AI/ดีไซน์
+- HR pipeline เดิน: ไอซ์เริ่มงาน, เน็กกำหนดเริ่ม 6 ก.ค., PO/Tester เริ่มคัดและสัมภาษณ์
+- SHIFT ฝากเงินสดสม่ำเสมอ, เมนู/โปรโมชัน/กราฟิกหน้าร้านเดินต่อ
+- Hermes/AI workflow เริ่มถูกใช้จริงกับอีเมล 2,094 ฉบับ และเป็นเครื่องมือช่วยงานผู้บริหารในเดือนนี้
+[2026-06-30 14:14:25] MONTHLY: ✅ wrote    40709 chars → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+[2026-06-30 14:14:25] DONE: monthly
+[2026-06-30 14:28:41] AUTO: DOW=2 DOM=30 TOMORROW=01
+[2026-06-30 14:28:41] CATCHUP: scanning past 14 days for missed runs
+[2026-06-30 14:28:41] AUTO: Last day of month → monthly
+[2026-06-30 14:28:41] MONTHLY: 2026-06-01 → 2026-06-30 (label: 2026-06 มิถุนายน)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/monthly_2026-06.md — 139,681 chars, 120 weekly, 356 daily
+[2026-06-30 14:28:47] SIZE GUARD: source   257500 > 80000 → truncating to top 80000 bytes
+[2026-06-30 14:28:47] MONTHLY: source size =    80067 chars
+[2026-06-30 14:28:47] MONTHLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+[2026-06-30 14:30:00] CATCHUP: scanning past 14 days for missed runs
+[2026-06-30 14:30:00] DONE: catchup
+[2026-06-30 14:30:23] WEEKLY: 2098-12-27 → 2099-01-02 (label: 2099-W01)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2099-W01.md — 87 chars, 0 weekly, 0 daily
+[2026-06-30 14:30:25] WEEKLY: source size =       91 chars
+[2026-06-30 14:30:25] WEEKLY: source too small (<500 chars), skipping
+[2026-06-30 14:30:25] DONE: weekly
