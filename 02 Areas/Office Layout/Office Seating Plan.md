@@ -150,7 +150,9 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 > ข้อมูลใน tool sync กับ doc นี้ ณ 2026-06-30 (7 ห้อง / 62 ที่นั่ง / 23 นั่งแล้ว / 7 รอจัด)
 > **ขั้นต่อไปที่ยังไม่ทำ:** deploy ขึ้น Cloudflare Pages (URL ถาวรให้ทีมเข้าดู) — รออนุมัติ
 
-**หน้า Overview (read-only one-pager):** `~/Desktop/office-seating-overview.html` — หน้าสรุปสวยๆ อ่านอย่างเดียว แสดงทุกห้อง+ทุกคนในหน้าเดียว ตามผังอาคารจริง (2 แถว + เลขห้อง). ดึงข้อมูลจาก localStorage `osp.v2` ตัวเดียวกับ editor (ถ้าไม่มีใช้ seed). พิมพ์ A3 ได้. ไม่เขียนทับ data ของ editor.
+**`~/Desktop/office-seating-overview.html` (v2.3 — แอปหลักตอนนี้):** **ผังอาคารจริง (architectural floor plan)** — ห้องเป็นกล่องต่อกันตามสัดส่วน 2 แถว (เลขห้อง 203-209) + เฟอร์นิเจอร์โซนรับรอง + ที่นั่งเป็น **จุดสี: แดง=มีคนนั่ง / เขียว=ว่าง / เหลือง=จอง** (ตาม blueprint ที่ผู้ใช้ส่งมา). เอาเมาส์ชี้จุด=ดูชื่อ/ตำแหน่ง/บริษัท. ยังมี toolbar เต็ม + sidebar (Onboarding Tray/Lenses/Utilization) + ลากวาง/แก้ไข/persist/undo ครบ. SVG เดียว scale ได้ พิมพ์ A3 ได้. แชร์ localStorage `osp.v2`. **`office-seating-planner.html` (dashboard เดิม) = backup, sync ผ่าน localStorage.**
+**ดีไซน์สุดท้าย (v2.4):** **ผังอาคารจริง** (กล่องห้องต่อกัน 2 แถว สัดส่วนตามจำนวนที่นั่ง 203 กว้างสุด + เฟอร์นิเจอร์โซนรับรองซ้ายมือ) + **ที่นั่งเป็น avatar เต็ม** (วงกลมสีบริษัท + อักษรย่อ + badge T/E + ชื่อ + ตำแหน่ง · ที่ว่าง = วงประ EMPTY). คือ "layout ผังอาคาร (ภาพ blueprint) + seat แบบ avatar (ไม่ใช่จุดสี)".
+**บทเรียน:** ผู้ใช้ทดลองหลายแบบ — สรุปชอบ **ผังอาคารจริง + avatar seats**. เคยลองจุดแดง/เขียว แต่เปลี่ยนมาเป็น avatar. ทุกครั้งที่แก้ดีไซน์ใหญ่: backup ก่อน + screenshot ยืนยัน + ยึด reference จริงของผู้ใช้.
 
 ## Change Log
 
