@@ -77,6 +77,18 @@ C = ค่าเฉลี่ย 6 ด้าน × 10 = 0-100
     ├── 01_แบบประเมินผลงาน_พนักงาน.docx     ← ตัวจริง
     └── 02_คู่มือประเมินผลงาน_ผู้ประเมิน.docx ← ตัวจริง
 ```
+
+## Google Doc copies (upload + typography fix · 2026-06-29/30)
+- **01_แบบประเมินผลงาน_พนักงาน:** `https://docs.google.com/document/d/1UlbiPeMNvJwUTvtox76xCN01QcDdY43VfPYf1d7gRi8/edit`
+  - ⚠️ Upload ก่อนแก้ชื่อล่าสุด — ยังมี "อดิสร" (ผิด) ในไฟล์ Google Doc · ของจริงใน docx ใช้ "อดิศร เงสันเทียะ" แล้ว
+- **02_คู่มือประเมินผลงาน_ผู้ประเมิน:** `https://docs.google.com/document/d/14wSNJ0h0xpWk1svai4WJb1_Y06N19BOzqcjqWpKeegU/edit`
+  - Upload หลังแก้ชื่อ — ชื่อถูก
+
+**Typography ที่ apply ผ่าน Chrome MCP (ทั้ง 2 ไฟล์):**
+- Line spacing 1.5 (จาก 1.15 default) → 25→35 หน้า / 27→36 หน้า
+- เพิ่มช่องว่างหลังย่อหน้า
+- ไม่แตะ font size (จะทำ heading พัง)
+- เทคนิคจดไว้ที่ `[[Chrome MCP × Google Docs editing playbook]]` (update 2026-06-30)
 > ทิ้งแล้วทั้งหมด:
 > - รอบ 1 (`~/.Trash/Satapat-cleanup-20260629-140327/`): v1 doc/ html/ pdf/ xlsx/ + 9 backup files
 > - รอบ 2 (`~/.Trash/Satapat-cleanup-20260629-140750/`): `_source/` ทั้งโฟลเดอร์ (html ต้นฉบับ + build.sh + .py + reference + changelog)

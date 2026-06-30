@@ -8,6 +8,42 @@ Google Docs uses canvas rendering, so Chrome MCP behaves very differently from a
 
 **Why this matters:** Going in blind, almost everything fails — clicks land on the wrong tab, keyboard shortcuts do nothing, and clipboard writes get blocked. Without this playbook, attempting to edit a Google Doc via Chrome MCP wastes a lot of cycles before realizing what won't work.
 
+## Update 2026-06-30 — Cmd+A + Format-menu typography fix DOES work
+
+Old playbook says Cmd+A doesn't work. **It DOES work** via the newer `chrome_keyboard` tool (NOT the older `chrome_computer` action=key). Verified flow for bulk typography fix on a 25–35 page Thai doc (Satapat eval):
+
+```
+# 1. Focus editor canvas
+chrome_javascript: document.querySelector('.kix-canvas-tile-content').click()
+
+# 2. Select all
+chrome_keyboard: keys="Meta+a"        # NOT chrome_computer
+
+# 3. Open Format menu
+chrome_click_element: selector="#docs-format-menu"
+
+# 4. Click "ระยะห่างระหว่างบรรทัดและย่อหน้า" submenu
+chrome_javascript: find coords of menu item by text → {x,y}
+chrome_click_element: coordinates={x,y}      # JS .click() does NOT open goog submenu
+
+# 5. Click "1.5" (or any line-spacing option)
+chrome_javascript: find '.goog-menuitem-content' with textContent=='1.5' → coords
+chrome_click_element: coordinates={x,y}
+
+# 6. Paragraph spacing: re-select (Meta+a), reopen Format → line-spacing submenu,
+#    then click "เพิ่มช่องว่างด้านหลังย่อหน้า" same coords trick
+```
+
+**Key insight:** `goog-menuitem`s reject programmatic `.click()` — they need real mouse events at viewport coordinates. Find coords via JS, then `chrome_click_element coordinates={x,y}`.
+
+**Verification:** page count change is the cleanest proof (e.g. 25 → 35 pages after applying 1.5 line spacing).
+
+**Caveat:** Cmd+A applied to a doc with mixed font sizes (headings 24pt / body 16pt) means **DON'T change font size on the full selection** — it will flatten all headings. Line spacing and paragraph spacing are safe per-paragraph properties.
+
+**Curl-fallback also worked:** when MCP tools aren't registered in Claude Code session but HTTP server is up at port 12306, init session via JSONRPC + use mcp-session-id header on subsequent calls. Tool args are `arguments` in `tools/call`. Screenshot returns `base64Data` (not `base64`) inside content[0].text JSON.
+
+---
+
 ## What WORKS
 
 1. **`mcp__chrome-mcp__chrome_switch_tab`** — REQUIRED before any chrome_computer interaction. Without it, OS focus is wrong and clicks land on the wrong window. **Even after switch_tab succeeds, `chrome_computer` action=`type` may still target the previously-active tab if the OS hasn't actually transferred focus.** ALWAYS verify with `chrome_javascript` (`location.href` + `document.hasFocus()`) on the target tabId BEFORE typing, AND type a small `TEST_MARKER` first then verify via mobilebasic that it landed in the right doc. The cost of a 2-second verify is nothing compared to spraying 6000 chars into the wrong file (happened once on user's expense spreadsheet — see incident note below).
