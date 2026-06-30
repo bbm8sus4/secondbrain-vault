@@ -13,6 +13,7 @@
 
 ## โครงสร้างไฟล์
 
+- [[05-INCIDENT-ข้อมูลหาย-กู้คืน]] — ⚠️ บทเรียน clearAllItems ทับฟอร์มมี response + วิธีกู้ผ่าน Forms REST API (สำคัญ อ่านก่อนแก้ฟอร์ม)
 - [[01-Forms-Setup]] — Apps Script + Form IDs + Web App deployment
 - [[02-Survey-Content]] — เนื้อหาฟอร์มทั้ง 2 (เจ้าของ + ผู้เรียน)
 - [[03-Gaps-Analysis]] — จาก aidebate: 3 insight สำคัญที่ใส่เพิ่มแล้ว
