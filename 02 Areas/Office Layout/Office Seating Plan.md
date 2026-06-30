@@ -119,6 +119,24 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 
 ---
 
+## เครื่องมือ — Interactive Seating Planner (HTML)
+
+ไฟล์: `~/Desktop/office-seating-planner.html` (single-file, เปิดด้วยเบราว์เซอร์, ไม่ต้องต่อเน็ต)
+
+**v2.0.0 production-grade** (ออกแบบผ่าน multi-agent workflow + adversarial review, แก้ 25 บั๊ก, ผ่าน headless smoke test):
+- **Drag-drop** ด้วย Pointer Events → ใช้ได้ทั้งเมาส์/trackpad/จอสัมผัส (ลากคนลงที่นั่ง, ลากชนกัน = สลับที่, ลากออก = unassigned)
+- **Onboarding tray** — 7 พนักงานใหม่ pre-load ไว้ในกองรอจัดที่ (PM, COO ใหม่, Sales, Marketing Exec, PO, CFO, CS Manager) สถานะ new-hire มี badge NEW
+- **จองที่นั่ง (Reserve/Hold)** สำหรับคนที่ยังไม่รู้ชื่อ
+- **กันข้อมูลหาย**: two-key localStorage + IndexedDB ring-buffer + corruption recovery + private-browsing detection
+- **Undo/Redo** (Cmd+Z), **Search**, **Filter lenses** (บริษัท/สถานะ/ทีม), **Utilization bars**
+- **Export**: PNG ต่อห้อง (ตามสไตล์สไลด์เดิม), Print→PDF, JSON, Roster CSV
+- **Lock mode** (ดูอย่างเดียว) + **Presentation/kiosk** fullscreen
+- Capacity banner เตือนเมื่อที่นั่งไม่พอรับคนใหม่
+
+> ข้อมูลใน tool sync กับ doc นี้ ณ 2026-06-30 (23 คนนั่งแล้ว / 7 รอจัด / 49 ที่นั่ง / ว่าง 26)
+> **ขั้นต่อไปที่ยังไม่ทำ:** deploy ขึ้น Cloudflare Pages (URL ถาวรให้ทีมเข้าดู) — รออนุมัติ
+
 ## Change Log
 
 - **2026-06-30** — สร้าง doc เริ่มต้น, เพิ่ม Marketing EasySlip Room (9 ที่), บันทึก plan รับพนักงานใหม่ + Bob ย้ายตำแหน่ง
+- **2026-06-30** — สร้าง interactive HTML planner v2.0.0 (drag-drop + onboarding tray + durability + export). Multi-agent design + review, 25 บั๊กแก้แล้ว
