@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>สรุปแบบสำรวจผู้เข้าอบรม (ฉบับเต็ม) | Claude AI Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f5f5f7;--card:#fff;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#5b62e6;--accent2:#3257d6;--ok:#1a9e57;--warn:#b5790a;--risk:#cc342b;--track:#ececf0;--shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans","IBM Plex Sans Thai",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-kerning:normal;line-height:1.5}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 22px 70px}
+  header.hero{max-width:1280px;margin:0 auto;padding:40px 22px 22px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent2)}
+  h1{font-size:clamp(23px,3vw,30px);font-weight:600;letter-spacing:-.3px;margin:10px 0 6px}
+  .sub{color:var(--muted);font-size:15.5px;margin:0}
+  .kpi{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:22px 0 8px}
+  .k{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 15px;box-shadow:var(--shadow)}
+  .k .n{font-size:26px;font-weight:600;letter-spacing:-.5px;font-feature-settings:"tnum" 1;line-height:1.1}
+  .k .n.r{color:var(--risk)} .k .n.w{color:var(--warn)} .k .n.a{color:var(--accent2)}
+  .k .l{font-size:11.5px;color:var(--muted);margin-top:3px}
+  section{margin-top:30px}
+  .sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+  .sec-head h2{font-size:20px;font-weight:600;margin:0;letter-spacing:-.2px}
+  .sec-head .n{font-size:12px;font-weight:600;color:var(--accent2);background:#eef1fc;border-radius:8px;padding:3px 9px}
+  .two{display:grid;grid-template-columns:1.05fr 1fr;gap:16px}
+  @media(max-width:880px){.two{grid-template-columns:1fr} .kpi{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);min-width:0}
+  .card h3{margin:0 0 12px;font-size:13px;font-weight:600;color:var(--muted)}
+  /* ranking */
+  .rank{display:flex;flex-direction:column;gap:11px}
+  .rrow{display:grid;grid-template-columns:26px 1fr 92px 32px;align-items:center;gap:10px}
+  .rk{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;background:#eef1fc;color:var(--accent2);font-feature-settings:"tnum" 1}
+  .rk.top{background:#e6f6ec;color:var(--ok)} .rk.crit{background:#fdeceb;color:var(--risk)}
+  .rnm{font-size:13px;font-weight:600;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .rnm em{font-style:normal;font-weight:400;color:var(--muted);font-size:11.5px}
+  .rbar{height:7px;background:var(--track);border-radius:999px;overflow:hidden}
+  .rbar i{display:block;height:100%;border-radius:999px;background:var(--accent2)}
+  .rbar i.g{background:var(--ok)} .rbar i.w{background:var(--warn)} .rbar i.r{background:var(--risk)}
+  .rpct{font-size:12px;font-weight:600;color:var(--muted);text-align:right;font-feature-settings:"tnum" 1}
+  .qchart-wrap{position:relative}
+  .exwrap{position:relative;height:330px}
+  /* question grid */
+  .qgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  @media(max-width:880px){.qgrid{grid-template-columns:1fr}}
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);min-width:0}
+  .qhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
+  .qhead h3{margin:0;font-size:14.5px;font-weight:600;line-height:1.35}
+  .qhead .qn{font-size:11.5px;color:var(--muted);white-space:nowrap;flex:0 0 auto}
+  .qchart{position:relative;min-width:0}
+  .qchart canvas{position:absolute;inset:0;width:100%!important;height:100%!important}
+  .exwrap canvas{position:absolute;inset:0;width:100%!important;height:100%!important}
+  footer{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+
+  .rrow{cursor:pointer; border-radius:8px; padding:3px 6px; margin:0 -6px; transition:background .12s}
+  .rrow:hover{background:#f3f4f9}
+  .rhint{font-size:11.5px;color:#a9a9b2;margin:2px 2px 12px}
+  .pm-ov{position:fixed;inset:0;background:rgba(22,22,28,.46);display:none;align-items:center;justify-content:center;z-index:60;padding:20px}
+  .pm-ov.open{display:flex}
+  .pm{background:#fff;border-radius:18px;max-width:680px;width:100%;max-height:88vh;display:flex;flex-direction:column;box-shadow:0 24px 64px rgba(0,0,0,.28);overflow:hidden}
+  .pm-head{display:flex;align-items:center;gap:14px;padding:20px 22px;border-bottom:1px solid var(--line);flex:0 0 auto}
+  .pm-ava{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;font-weight:600;flex:0 0 auto}
+  .pm-id{flex:1;min-width:0}
+  .pm-id h3{margin:0;font-size:18px;font-weight:600;letter-spacing:-.2px}
+  .pm-id .meta{font-size:13px;color:var(--muted);margin-top:2px}
+  .pm-fit{font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;white-space:nowrap;flex:0 0 auto}
+  .pm-x{flex:0 0 auto;width:32px;height:32px;border-radius:9px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:17px;color:var(--muted);line-height:1}
+  .pm-body{padding:6px 22px 22px;overflow:auto}
+  .pm-row{padding:12px 0;border-top:1px solid var(--line)}
+  .pm-row:first-child{border-top:0}
+  .pm-q{font-size:12px;color:var(--muted);margin-bottom:6px}
+  .pm-a{font-size:14px;color:var(--ink);font-weight:500}
+  .pm-chips{display:flex;flex-wrap:wrap;gap:6px}
+  .pm-chip{background:#eef1fc;color:#3257d6;font-size:12.5px;font-weight:500;padding:4px 10px;border-radius:8px}
+
+
+  .pm-an{background:#f6f8fc;border:1px solid #e7ebf7;border-radius:13px;padding:15px 17px;margin:14px 0 4px}
+  .pm-an .v{font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.5}
+  .pm-an .grp{margin-top:11px}
+  .pm-an .lab{font-size:11px;font-weight:700;letter-spacing:.5px;margin-bottom:4px}
+  .pm-an .lab.s{color:#1a9e57} .pm-an .lab.r{color:#cc342b} .pm-an .lab.p{color:#3257d6}
+  .pm-an ul{margin:0;padding-left:17px}
+  .pm-an li{font-size:13px;line-height:1.55;color:#3a3a40;margin:1px 0}
+
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">Claude AI Workshop · บ.ขอนแก่นอิเล็คทริค</div>
+  <h1>สรุปแบบสำรวจผู้เข้าอบรม — ฉบับเต็มทุกคำถาม</h1>
+  <p class="sub">จากคำตอบจริง 8 คน · กราฟแสดงผลทุกคำถาม พร้อมจำนวนผู้ตอบและเปอร์เซ็นต์ (รวมตัวเลือกที่ไม่มีผู้ใดเลือก)</p>
+  <div class="kpi">
+    <div class="k"><div class="n a">8</div><div class="l">ผู้เข้าอบรม</div></div>
+    <div class="k"><div class="n">7<span style="font-size:13px;color:var(--muted)">/8</span></div><div class="l">สายการตลาด</div></div>
+    <div class="k"><div class="n w">2.6<span style="font-size:13px;color:var(--muted)">/5</span></div><div class="l">ความมั่นใจในการใช้ AI (ค่าเฉลี่ย)</div></div>
+    <div class="k"><div class="n r">5<span style="font-size:13px;color:var(--muted)">/8</span></div><div class="l">ไม่เคยเขียนโค้ด</div></div>
+    <div class="k"><div class="n r">6<span style="font-size:13px;color:var(--muted)">/7</span></div><div class="l">กังวลว่าจะเรียนไม่ทัน</div></div>
+    <div class="k"><div class="n w">0</div><div class="l">ใช้งาน Claude เป็นประจำ</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section>
+    <div class="sec-head"><h2>ภาพรวมผู้เรียน</h2></div>
+    <div class="two">
+      <div class="card">
+        <h3>ระดับความพร้อม — จากความกังวลน้อยไปมาก</h3>
+        <div class="rhint">แตะที่ชื่อเพื่อดูคำตอบทั้งหมดของคนนั้น</div>
+        <div class="rank">
+          <div class="rrow" data-key="ต่อ"><span class="rk top">1</span><span class="rnm">ต่อ <em>· เขียนเว็บได้ · สามารถติดตั้งเอง · ไม่กังวล</em></span><span class="rbar"><i class="g" style="width:88%"></i></span><span class="rpct">88</span></div>
+          <div class="rrow" data-key="นัท"><span class="rk top">2</span><span class="rnm">นัท <em>· มีความมั่นใจในการใช้ AI สูง · เคยใช้ SQL</em></span><span class="rbar"><i class="g" style="width:80%"></i></span><span class="rpct">80</span></div>
+          <div class="rrow" data-key="ฟ้า"><span class="rk">3</span><span class="rnm">ฟ้า <em>· ออกแบบตรงตาม use case · สามารถติดตั้งเอง</em></span><span class="rbar"><i style="width:60%"></i></span><span class="rpct">60</span></div>
+          <div class="rrow" data-key="อาร์ม"><span class="rk">4</span><span class="rnm">อาร์ม <em>· เคยเห็น HTML · ทดลองใช้งาน Claude</em></span><span class="rbar"><i style="width:57%"></i></span><span class="rpct">57</span></div>
+          <div class="rrow" data-key="แม็ก"><span class="rk">5</span><span class="rnm">แม็ก <em>· เคยเห็น HTML · ยังไม่ชัดเจนว่าเป้าหมายคืออะไร</em></span><span class="rbar"><i style="width:55%"></i></span><span class="rpct">55</span></div>
+          <div class="rrow" data-key="เมย์"><span class="rk">6</span><span class="rnm">เมย์ <em>· มีความมั่นใจในการใช้ AI ต่ำ · มีข้อกังวล 3 เรื่อง</em></span><span class="rbar"><i class="w" style="width:40%"></i></span><span class="rpct">40</span></div>
+          <div class="rrow" data-key="ขิม"><span class="rk">7</span><span class="rnm">ขิม <em>· มีข้อกังวลมากที่สุด 4 เรื่อง · ต้องให้ IT ลง</em></span><span class="rbar"><i class="w" style="width:30%"></i></span><span class="rpct">30</span></div>
+          <div class="rrow" data-key="มอส"><span class="rk crit">8</span><span class="rnm">มอส <em>· อยู่ในระดับต่ำทุกด้าน · ไม่เคยใช้ AI</em></span><span class="rbar"><i class="r" style="width:15%"></i></span><span class="rpct">15</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>ระดับความพร้อมในแต่ละหัวข้อ (0 = ยังไม่พร้อม · 3 = ทำเองได้จริง)</h3>
+        <div class="exwrap"><canvas id="cRadar"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>รายละเอียดของทุกคำถาม</h2><span class="n">17 คำถาม</span></div>
+    <div class="qgrid">
+      <div class="qcard">
+        <div class="qhead"><h3>แผนก</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:250px"><canvas id="q0"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>ระบบปฏิบัติการ</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:250px"><canvas id="q1"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>สิทธิ์ในการติดตั้งโปรแกรม</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:250px"><canvas id="q2"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>ประสบการณ์ในการเขียนโค้ด</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:250px"><canvas id="q3"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>ระดับการใช้งาน Claude</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:250px"><canvas id="q4"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>เคยใช้ AI ตัวไหนบ้าง</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:196px"><canvas id="q5"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>เคยใช้เครื่องมือทางเทคนิค</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:196px"><canvas id="q6"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>มีบัญชี cloud หรือไม่</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:256px"><canvas id="q7"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>เคยใช้ AI ช่วยในการทำงานอะไรบ้าง</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:346px"><canvas id="q8"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>งานประจำที่ใช้เวลามากที่สุด</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:346px"><canvas id="q9"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>งานที่อยากให้ AI ช่วย</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:376px"><canvas id="q10"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>โปรแกรมที่ใช้งานเป็นประจำ</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:376px"><canvas id="q11"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>สิ่งที่อยากทำได้หลังจากอบรม</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:256px"><canvas id="q12"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>ข้อกังวล / อุปสรรค</h3><span class="qn">จำนวนคำตอบ 7 ข้อ</span></div>
+        <div class="qchart" style="height:256px"><canvas id="q13"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>ข้อจำกัดด้านอาหาร</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:316px"><canvas id="q14"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>ความคล่องแคล่วในการใช้คอมพิวเตอร์ (1–5)</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:230px"><canvas id="q15"></canvas></div>
+      </div>
+      <div class="qcard">
+        <div class="qhead"><h3>ความมั่นใจในการใช้ AI (1–5)</h3><span class="qn">จำนวนคำตอบ 8 ข้อ</span></div>
+        <div class="qchart" style="height:230px"><canvas id="q16"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>ที่มา: แบบสำรวจผู้เข้าอบรม (8 คำตอบ) · รวบรวมข้อมูลเมื่อ 30 มิถุนายน 2026 · เปอร์เซ็นต์คำนวณจากจำนวนผู้ตอบในแต่ละคำถาม</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script>
+var QDATA = [{"title": "แผนก", "type": "pie", "answered": 8, "labels": ["งานซ้ำๆ ในทีมกินเวลามากเกินไป", "คู่แข่ง/ตลาดเริ่มใช้ AI แล้ว", "อยากให้ทีมเรียนรู้สิ่งใหม่ ทันยุค", "มีโปรเจกต์/ระบบใหม่ที่จะใช้ AI", "อยากลดต้นทุน/headcount", "เป็นนโยบายของบริษัท/ผู้บริหาร", "ลูกค้าเริ่มถามถึง AI", "อื่นๆ"], "counts": [0, 0, 0, 0, 0, 0, 0, 9]}, {"title": "ระบบปฏิบัติการ", "type": "pie", "answered": 8, "labels": ["Windows", "macOS", "Linux", "ไม่แน่ใจ"], "counts": [6, 2, 0, 0]}, {"title": "สิทธิ์ติดตั้งโปรแกรม", "type": "pie", "answered": 8, "labels": ["ติดตั้งเองได้", "ต้องให้ IT ติดตั้งให้", "ไม่แน่ใจ", "อื่นๆ"], "counts": [3, 0, 3, 2]}, {"title": "ประสบการณ์เขียนโค้ด", "type": "pie", "answered": 8, "labels": ["ไม่เคยเลย", "เคยเห็น HTML/CSS", "เขียนโปรแกรม/ทำเว็บได้"], "counts": [5, 2, 1]}, {"title": "ระดับการใช้ Claude", "type": "pie", "answered": 8, "labels": ["ไม่เคย", "เคยลองเล่น", "ใช้บ้างเป็นครั้งคราว", "ใช้ประจำ"], "counts": [6, 2, 0, 0]}, {"title": "เคยใช้ AI ตัวไหนบ้าง", "type": "hbar", "answered": 8, "labels": ["ChatGPT", "Claude", "Gemini", "Microsoft Copilot", "ไม่เคยใช้เลย"], "counts": [7, 0, 7, 0, 1]}, {"title": "เคยใช้เครื่องมือเทคนิค", "type": "hbar", "answered": 8, "labels": ["GitHub / Git", "Command line (Terminal)", "ฐานข้อมูล SQL", "ฐานข้อมูล NoSQL", "ไม่เคยเลย"], "counts": [0, 1, 2, 0, 6]}, {"title": "มีบัญชี cloud แล้ว", "type": "hbar", "answered": 8, "labels": ["GitHub", "Vercel", "Netlify", "Supabase", "Firebase", "MongoDB", "ยังไม่มีเลย"], "counts": [0, 0, 0, 0, 0, 0, 8]}, {"title": "เคยใช้ AI ช่วยงานอะไร", "type": "hbar", "answered": 8, "labels": ["เขียน/แก้ภาษาไทย-อังกฤษ", "สรุปข้อความ / เอกสาร", "แปลภาษา", "ค้นคว้าข้อมูล", "ตอบลูกค้า / chatbot", "สร้าง content (caption, blog)", "วิเคราะห์ Excel / data", "เขียนโค้ด / script", "สร้างภาพ", "ยังไม่เคยใช้"], "counts": [4, 8, 5, 8, 2, 3, 3, 3, 8, 0]}, {"title": "งานประจำที่กินเวลา", "type": "hbar", "answered": 8, "labels": ["ทำรายงาน / สรุปข้อมูล", "กรอกข้อมูลซ้ำๆ (copy-paste)", "ตอบลูกค้า / chat", "ตรวจสอบ / approve เอกสาร", "ประชุม / ตามงาน", "สร้าง content social", "ทำ invoice / slip / เอกสาร", "วิเคราะห์ข้อมูล / Excel", "ค้นหาข้อมูล", "งานช่าง / หน้างาน"], "counts": [5, 3, 3, 1, 1, 6, 1, 2, 3, 2]}, {"title": "งานที่อยากให้ AI ช่วย", "type": "hbar", "answered": 8, "labels": ["สรุปประชุม / chat", "แปล / เขียนภาษาอังกฤษ", "ตอบลูกค้า", "สร้าง content social", "วิเคราะห์ Excel", "ตรวจสอบ / แก้เอกสาร", "ค้นหาข้อมูล", "สร้างเว็บ / landing page", "สร้างภาพประกอบ", "automation งานซ้ำๆ", "อื่นๆ"], "counts": [3, 4, 3, 7, 3, 2, 5, 6, 8, 4, 1]}, {"title": "โปรแกรมที่ใช้ประจำ", "type": "hbar", "answered": 8, "labels": ["Excel / Google Sheets", "Word / Google Docs", "PowerPoint / Slides", "LINE / LINE OA", "Facebook / Instagram", "Email (Outlook / Gmail)", "โปรแกรมบัญชี (Express, Peak, ฯลฯ)", "EasySlip", "ERP / WMS", "Photoshop / Canva", "Notion / Trello"], "counts": [4, 5, 5, 4, 8, 5, 0, 0, 0, 5, 0]}, {"title": "หลังอบรมอยากทำอะไรได้", "type": "hbar", "answered": 8, "labels": ["ใช้ AI ช่วยงานประจำได้คล่อง", "สร้าง prompt ที่ใช้ซ้ำได้", "ทำหน้าเว็บโปรไฟล์ / landing page เองได้", "ทำ internal tool / dashboard ของแผนก", "เชื่อม AI กับ Excel / ฐานข้อมูล", "สอนเพื่อนต่อได้", "ยังไม่ชัด ขอเรียนในคลาส"], "counts": [7, 7, 6, 5, 5, 3, 3]}, {"title": "ข้อกังวล / อุปสรรค", "type": "hbar", "answered": 7, "labels": ["กลัวข้อมูลรั่วไหล", "กลัวเรียนไม่ทัน", "กังวลภาษาอังกฤษ", "ไม่เคยใช้ command line", "ไม่มีสิทธิ์ติดตั้งโปรแกรม", "ไม่มีเวลาฝึก", "ไม่กังวลอะไรเป็นพิเศษ"], "counts": [1, 6, 4, 3, 0, 0, 1]}, {"title": "ข้อจำกัดด้านอาหาร", "type": "hbar", "answered": 8, "labels": ["ไม่มี / กินทุกอย่าง", "มังสวิรัติ", "เจ", "ไม่กินหมู", "ไม่กินเนื้อ", "แพ้อาหารทะเล", "แพ้นม (lactose intolerant)", "แพ้กลูเตน", "แพ้ถั่ว"], "counts": [6, 0, 0, 0, 1, 1, 1, 0, 0]}, {"title": "ความคล่องคอมพิวเตอร์ (1–5)", "type": "scale", "answered": 8, "labels": ["1", "2", "3", "4", "5"], "counts": [1, 0, 7, 0, 0]}, {"title": "ความมั่นใจใช้ AI (1–5)", "type": "scale", "answered": 8, "labels": ["1", "2", "3", "4", "5"], "counts": [1, 2, 4, 1, 0]}];
+(function(){
+  if(typeof Chart==='undefined') return;
+  if(typeof ChartDataLabels!=='undefined') Chart.register(ChartDataLabels);
+  Chart.defaults.font.family='IBM Plex Sans, IBM Plex Sans Thai, -apple-system, sans-serif';
+  Chart.defaults.font.size=11; Chart.defaults.color='#6e6e73';
+  var ACC='#5b62e6';
+  var PAL=['#3257d6','#1a9e57','#b5790a','#cc342b','#7b61ff','#0aa2c0','#e8590c','#5b7bf0','#c7c7cc','#16a34a','#9333ea'];
+  function pf(v,ans){ if(!ans) return ''; var p=Math.round(v/ans*1000)/10; return v+' ('+p+'%)'; }
+
+  new Chart(document.getElementById('cRadar'),{type:'radar',
+    data:{labels:['Claude','ทำเว็บ deploy','ฐานข้อมูล','GitHub','ใช้ AI ทั่วไป'],datasets:[{data:[1.2,1.1,0.6,0.4,1.9],borderColor:'#1a9e57',backgroundColor:'rgba(26,158,87,.16)',borderWidth:2,pointBackgroundColor:'#1a9e57',pointRadius:3}]},
+    options:{maintainAspectRatio:false,scales:{r:{min:0,max:3,ticks:{stepSize:1,backdropColor:'transparent'},pointLabels:{font:{size:12,weight:'600'}}}},plugins:{legend:{display:false},datalabels:{display:false}}}});
+
+  QDATA.forEach(function(q,i){
+    var ctx=document.getElementById('q'+i); if(!ctx) return; var ans=q.answered;
+    if(q.type==='pie'){
+      new Chart(ctx,{type:'pie',data:{labels:q.labels,datasets:[{data:q.counts,backgroundColor:PAL,borderColor:'#fff',borderWidth:2}]},
+        options:{maintainAspectRatio:false,plugins:{
+          legend:{position:'right',labels:{boxWidth:9,font:{size:11},padding:8,usePointStyle:true,pointStyle:'circle'}},
+          datalabels:{color:'#fff',font:{size:11,weight:'700'},formatter:function(v){return v? Math.round(v/ans*1000)/10+'%':'';}}
+        }}});
+    } else {
+      var horiz=(q.type==='hbar');
+      var mx=horiz? ans : Math.max.apply(null,q.counts)+1;
+      new Chart(ctx,{type:'bar',data:{labels:q.labels,datasets:[{data:q.counts,backgroundColor:ACC,borderRadius:4,barThickness:horiz?15:34}]},
+        options:{maintainAspectRatio:false,indexAxis:horiz?'y':'x',layout:{padding:{right:horiz?52:6,top:horiz?0:18}},
+          scales: horiz
+            ? {x:{beginAtZero:true,max:ans,ticks:{stepSize:Math.max(1,Math.round(ans/4)),font:{size:10}},grid:{color:'#f0f0f2'}},y:{ticks:{font:{size:11},autoSkip:false},grid:{display:false}}}
+            : {y:{beginAtZero:true,max:mx,ticks:{stepSize:1,font:{size:10}},grid:{color:'#f0f0f2'}},x:{grid:{display:false},ticks:{font:{size:12}}}},
+          plugins:{legend:{display:false},
+            datalabels:{anchor:'end',align:'end',clamp:true,color:'#5a5a62',font:{size:10.5,weight:'600'},formatter:function(v){return pf(v,ans);}}}}});
+    }
+  });
+})();
+</script>
+
+<div class="pm-ov" id="pmOv">
+  <div class="pm" role="dialog" aria-modal="true">
+    <div class="pm-head">
+      <div class="pm-ava" id="pmAva"></div>
+      <div class="pm-id"><h3 id="pmName"></h3><div class="meta" id="pmMeta"></div></div>
+      <div class="pm-fit" id="pmFit"></div>
+      <button class="pm-x" id="pmX" aria-label="ปิด">✕</button>
+    </div>
+    <div class="pm-body" id="pmBody"></div>
+  </div>
+</div>
+<script>
+var PEOPLE = {"ต่อ": {"name": "จิรวัฒน์ ยิ่งยืน", "nick": "ต่อ", "fit": 88, "tier": "top", "color": "#1a9e57", "fields": [["แผนก", "การตลาด"], ["ตำแหน่ง", "การตลาดออนไลน์ โซเชียลมีเดีย"], ["อีเมล", "torcalrabee@gmail.com"], ["ความคล่องคอมพิวเตอร์ (1–5)", "3"], ["ความมั่นใจในการใช้ AI (1–5)", "3"], ["ระบบปฏิบัติการ", "macOS"], ["สิทธิ์ติดตั้งโปรแกรม", "ติดตั้งเองได้"], ["ประสบการณ์เขียนโค้ด / ทำเว็บ", "เขียนโปรแกรม/ทำเว็บได้"], ["เคยใช้เครื่องมือทางเทคนิค", ["Command line (Terminal)", "ฐานข้อมูล SQL"]], ["มีบัญชี cloud", ["ยังไม่มีเลย"]], ["เคยใช้ AI ตัวไหนบ้าง", ["ChatGPT", "Gemini"]], ["ระดับการใช้งาน Claude", "เคยลองเล่น"], ["เคยใช้ AI ช่วยงานอะไร", ["เขียน/แก้ภาษาไทย-อังกฤษ", "สรุปข้อความ / เอกสาร", "แปลภาษา", "ค้นคว้าข้อมูล", "ตอบลูกค้า / chatbot", "สร้าง content (caption, blog)", "วิเคราะห์ Excel / data", "เขียนโค้ด / script", "สร้างภาพ"]], ["งานประจำที่ใช้เวลามากที่สุด", ["ทำรายงาน / สรุปข้อมูล", "กรอกข้อมูลซ้ำๆ (copy-paste)", "ตอบลูกค้า / chat", "ตรวจสอบ / approve เอกสาร", "ประชุม / ตามงาน", "สร้าง content social", "ทำ invoice / slip / เอกสาร", "วิเคราะห์ข้อมูล / Excel", "ค้นหาข้อมูล", "งานช่าง / หน้างาน"]], ["งานที่อยากให้ AI ช่วย", ["สรุปประชุม / chat", "แปล / เขียนภาษาอังกฤษ", "ตอบลูกค้า", "สร้าง content social", "วิเคราะห์ Excel", "ตรวจสอบ / แก้เอกสาร", "ค้นหาข้อมูล", "สร้างเว็บ / landing page", "สร้างภาพประกอบ", "automation งานซ้ำๆ"]], ["โปรแกรมที่ใช้ประจำ", ["Excel / Google Sheets", "Word / Google Docs", "PowerPoint / Slides", "LINE / LINE OA", "Facebook / Instagram", "Email (Outlook / Gmail)", "Photoshop / Canva"]], ["สิ่งที่อยากทำได้หลังอบรม", ["ใช้ AI ช่วยงานประจำได้คล่อง", "สร้าง prompt ที่ใช้ซ้ำได้", "ทำหน้าเว็บโปรไฟล์ / landing page เองได้", "ทำ internal tool / dashboard ของแผนก", "เชื่อม AI กับ Excel / ฐานข้อมูล", "สอนเพื่อนต่อได้", "ยังไม่ชัด ขอเรียนในคลาส"]], ["ข้อกังวล / อุปสรรค", "—"], ["ข้อจำกัดด้านอาหาร", ["ไม่มี / กินทุกอย่าง"]]]}, "นัท": {"name": "ณัฐพงศ์  ดอกจันทร์", "nick": "นัท", "fit": 80, "tier": "top", "color": "#1a9e57", "fields": [["แผนก", "ช่าง / เทคนิค"], ["ตำแหน่ง", "ช่าง"], ["อีเมล", "Nuttpongdokchan@gmail.com"], ["ความคล่องคอมพิวเตอร์ (1–5)", "3"], ["ความมั่นใจในการใช้ AI (1–5)", "4"], ["ระบบปฏิบัติการ", "Windows"], ["สิทธิ์ติดตั้งโปรแกรม", "ติดตั้งเองได้"], ["ประสบการณ์เขียนโค้ด / ทำเว็บ", "ไม่เคยเลย"], ["เคยใช้เครื่องมือทางเทคนิค", ["ฐานข้อมูล SQL"]], ["มีบัญชี cloud", ["ยังไม่มีเลย"]], ["เคยใช้ AI ตัวไหนบ้าง", ["ChatGPT", "Gemini"]], ["ระดับการใช้งาน Claude", "ไม่เคย"], ["เคยใช้ AI ช่วยงานอะไร", ["สรุปข้อความ / เอกสาร", "ค้นคว้าข้อมูล", "วิเคราะห์ Excel / data", "สร้างภาพ"]], ["งานประจำที่ใช้เวลามากที่สุด", ["ทำรายงาน / สรุปข้อมูล", "สร้าง content social", "วิเคราะห์ข้อมูล / Excel", "งานช่าง / หน้างาน"]], ["งานที่อยากให้ AI ช่วย", ["สรุปประชุม / chat", "สร้าง content social", "วิเคราะห์ Excel", "สร้างเว็บ / landing page", "สร้างภาพประกอบ"]], ["โปรแกรมที่ใช้ประจำ", ["Excel / Google Sheets", "Word / Google Docs", "PowerPoint / Slides", "LINE / LINE OA", "Facebook / Instagram", "Email (Outlook / Gmail)", "Photoshop / Canva"]], ["สิ่งที่อยากทำได้หลังอบรม", ["ใช้ AI ช่วยงานประจำได้คล่อง", "สร้าง prompt ที่ใช้ซ้ำได้", "ทำหน้าเว็บโปรไฟล์ / landing page เองได้", "ทำ internal tool / dashboard ของแผนก", "เชื่อม AI กับ Excel / ฐานข้อมูล"]], ["ข้อกังวล / อุปสรรค", ["ไม่กังวลอะไรเป็นพิเศษ"]], ["ข้อจำกัดด้านอาหาร", ["ไม่มี / กินทุกอย่าง"]]]}, "ฟ้า": {"name": "กานต์รวี เกตุแก้ว", "nick": "ฟ้า", "fit": 60, "tier": "mid", "color": "#3257d6", "fields": [["แผนก", "การตลาด"], ["ตำแหน่ง", "กราฟิกดีไซน์"], ["อีเมล", "skynewf44@gmail.com"], ["ความคล่องคอมพิวเตอร์ (1–5)", "3"], ["ความมั่นใจในการใช้ AI (1–5)", "3"], ["ระบบปฏิบัติการ", "Windows"], ["สิทธิ์ติดตั้งโปรแกรม", "ติดตั้งเองได้"], ["ประสบการณ์เขียนโค้ด / ทำเว็บ", "ไม่เคยเลย"], ["เคยใช้เครื่องมือทางเทคนิค", ["ไม่เคยเลย"]], ["มีบัญชี cloud", ["ยังไม่มีเลย"]], ["เคยใช้ AI ตัวไหนบ้าง", ["ChatGPT", "Gemini"]], ["ระดับการใช้งาน Claude", "ไม่เคย"], ["เคยใช้ AI ช่วยงานอะไร", ["สรุปข้อความ / เอกสาร", "ค้นคว้าข้อมูล", "สร้างภาพ"]], ["งานประจำที่ใช้เวลามากที่สุด", ["สร้าง content social"]], ["งานที่อยากให้ AI ช่วย", ["สรุปประชุม / chat", "แปล / เขียนภาษาอังกฤษ", "ตอบลูกค้า", "สร้าง content social", "วิเคราะห์ Excel", "ตรวจสอบ / แก้เอกสาร", "ค้นหาข้อมูล", "สร้างเว็บ / landing page", "สร้างภาพประกอบ", "automation งานซ้ำๆ"]], ["โปรแกรมที่ใช้ประจำ", ["PowerPoint / Slides", "LINE / LINE OA", "Facebook / Instagram", "Email (Outlook / Gmail)", "Photoshop / Canva"]], ["สิ่งที่อยากทำได้หลังอบรม", ["ใช้ AI ช่วยงานประจำได้คล่อง", "สร้าง prompt ที่ใช้ซ้ำได้", "ทำหน้าเว็บโปรไฟล์ / landing page เองได้", "ทำ internal tool / dashboard ของแผนก", "เชื่อม AI กับ Excel / ฐานข้อมูล", "สอนเพื่อนต่อได้", "ยังไม่ชัด ขอเรียนในคลาส"]], ["ข้อกังวล / อุปสรรค", ["กลัวเรียนไม่ทัน"]], ["ข้อจำกัดด้านอาหาร", ["ไม่กินเนื้อ", "แพ้นม (lactose intolerant)"]]]}, "อาร์ม": {"name": "อัจฉราพรรณ คำองค์", "nick": "อาร์ม", "fit": 57, "tier": "mid", "color": "#3257d6", "fields": [["แผนก", "การตลาด"], ["ตำแหน่ง", "การตลาด"], ["อีเมล", "—"], ["ความคล่องคอมพิวเตอร์ (1–5)", "3"], ["ความมั่นใจในการใช้ AI (1–5)", "3"], ["ระบบปฏิบัติการ", "macOS"], ["สิทธิ์ติดตั้งโปรแกรม", "ไม่แน่ใจ"], ["ประสบการณ์เขียนโค้ด / ทำเว็บ", "เคยเห็น HTML/CSS"], ["เคยใช้เครื่องมือทางเทคนิค", ["ไม่เคยเลย"]], ["มีบัญชี cloud", ["ยังไม่มีเลย"]], ["เคยใช้ AI ตัวไหนบ้าง", ["ChatGPT", "Gemini"]], ["ระดับการใช้งาน Claude", "เคยลองเล่น"], ["เคยใช้ AI ช่วยงานอะไร", ["สรุปข้อความ / เอกสาร", "ค้นคว้าข้อมูล", "สร้าง content (caption, blog)", "สร้างภาพ"]], ["งานประจำที่ใช้เวลามากที่สุด", ["ทำรายงาน / สรุปข้อมูล", "กรอกข้อมูลซ้ำๆ (copy-paste)", "สร้าง content social"]], ["งานที่อยากให้ AI ช่วย", ["สร้าง content social", "สร้างเว็บ / landing page", "สร้างภาพประกอบ", "automation งานซ้ำๆ"]], ["โปรแกรมที่ใช้ประจำ", ["Excel / Google Sheets", "Facebook / Instagram", "Photoshop / Canva"]], ["สิ่งที่อยากทำได้หลังอบรม", ["ใช้ AI ช่วยงานประจำได้คล่อง", "สร้าง prompt ที่ใช้ซ้ำได้"]], ["ข้อกังวล / อุปสรรค", ["กลัวเรียนไม่ทัน", "กังวลภาษาอังกฤษ"]], ["ข้อจำกัดด้านอาหาร", ["ไม่มี / กินทุกอย่าง"]]]}, "แม็ก": {"name": "อิทธิพล", "nick": "แม็ก", "fit": 55, "tier": "mid", "color": "#3257d6", "fields": [["แผนก", "การตลาด"], ["ตำแหน่ง", "ทำสื่อโฆษณา"], ["อีเมล", "—"], ["ความคล่องคอมพิวเตอร์ (1–5)", "3"], ["ความมั่นใจในการใช้ AI (1–5)", "3"], ["ระบบปฏิบัติการ", "Windows"], ["สิทธิ์ติดตั้งโปรแกรม", "ไม่แน่ใจ"], ["ประสบการณ์เขียนโค้ด / ทำเว็บ", "เคยเห็น HTML/CSS"], ["เคยใช้เครื่องมือทางเทคนิค", ["ไม่เคยเลย"]], ["มีบัญชี cloud", ["ยังไม่มีเลย"]], ["เคยใช้ AI ตัวไหนบ้าง", ["ChatGPT", "Gemini"]], ["ระดับการใช้งาน Claude", "ไม่เคย"], ["เคยใช้ AI ช่วยงานอะไร", ["สรุปข้อความ / เอกสาร", "แปลภาษา", "ค้นคว้าข้อมูล", "เขียนโค้ด / script", "สร้างภาพ"]], ["งานประจำที่ใช้เวลามากที่สุด", ["สร้าง content social"]], ["งานที่อยากให้ AI ช่วย", ["สร้าง content social", "สร้างเว็บ / landing page", "สร้างภาพประกอบ", "automation งานซ้ำๆ", "สร้างแอพพลิเคชั่น ลงเพลย์สโตร์"]], ["โปรแกรมที่ใช้ประจำ", ["Facebook / Instagram", "Email (Outlook / Gmail)", "Photoshop / Canva"]], ["สิ่งที่อยากทำได้หลังอบรม", ["ยังไม่ชัด ขอเรียนในคลาส"]], ["ข้อกังวล / อุปสรรค", ["กลัวเรียนไม่ทัน"]], ["ข้อจำกัดด้านอาหาร", ["แพ้อาหารทะเล"]]]}, "เมย์": {"name": "ภัทร์ธมนต์ ภิรมย์วัชรดี", "nick": "เมย์", "fit": 40, "tier": "watch", "color": "#b5790a", "fields": [["แผนก", "การตลาด"], ["ตำแหน่ง", "การตลาด"], ["อีเมล", "May@1688.biz"], ["ความคล่องคอมพิวเตอร์ (1–5)", "3"], ["ความมั่นใจในการใช้ AI (1–5)", "2"], ["ระบบปฏิบัติการ", "Windows"], ["สิทธิ์ติดตั้งโปรแกรม", "ไม่แน่ใจ"], ["ประสบการณ์เขียนโค้ด / ทำเว็บ", "ไม่เคยเลย"], ["เคยใช้เครื่องมือทางเทคนิค", ["ไม่เคยเลย"]], ["มีบัญชี cloud", ["ยังไม่มีเลย"]], ["เคยใช้ AI ตัวไหนบ้าง", ["ChatGPT", "Gemini"]], ["ระดับการใช้งาน Claude", "ไม่เคย"], ["เคยใช้ AI ช่วยงานอะไร", ["เขียน/แก้ภาษาไทย-อังกฤษ", "สรุปข้อความ / เอกสาร", "แปลภาษา", "ค้นคว้าข้อมูล", "สร้าง content (caption, blog)", "สร้างภาพ"]], ["งานประจำที่ใช้เวลามากที่สุด", ["สร้าง content social", "ค้นหาข้อมูล"]], ["งานที่อยากให้ AI ช่วย", ["แปล / เขียนภาษาอังกฤษ", "สร้าง content social", "ค้นหาข้อมูล", "สร้างภาพประกอบ"]], ["โปรแกรมที่ใช้ประจำ", ["Word / Google Docs", "Facebook / Instagram"]], ["สิ่งที่อยากทำได้หลังอบรม", ["ใช้ AI ช่วยงานประจำได้คล่อง", "สร้าง prompt ที่ใช้ซ้ำได้", "ทำหน้าเว็บโปรไฟล์ / landing page เองได้"]], ["ข้อกังวล / อุปสรรค", ["กลัวเรียนไม่ทัน", "กังวลภาษาอังกฤษ", "ไม่เคยใช้ command line"]], ["ข้อจำกัดด้านอาหาร", ["ไม่มี / กินทุกอย่าง"]]]}, "ขิม": {"name": "ขวัญนรินทร์พร ศรีหานนท์", "nick": "ขิม", "fit": 30, "tier": "watch", "color": "#b5790a", "fields": [["แผนก", "การตลาด"], ["ตำแหน่ง", "Selling"], ["อีเมล", "pz_khim@hotmail.com"], ["ความคล่องคอมพิวเตอร์ (1–5)", "3"], ["ความมั่นใจในการใช้ AI (1–5)", "2"], ["ระบบปฏิบัติการ", "Windows"], ["สิทธิ์ติดตั้งโปรแกรม", "ต้องให้ทัมวิทยากรติดตั้งให้"], ["ประสบการณ์เขียนโค้ด / ทำเว็บ", "ไม่เคยเลย"], ["เคยใช้เครื่องมือทางเทคนิค", ["ไม่เคยเลย"]], ["มีบัญชี cloud", ["ยังไม่มีเลย"]], ["เคยใช้ AI ตัวไหนบ้าง", ["ChatGPT", "Gemini"]], ["ระดับการใช้งาน Claude", "ไม่เคย"], ["เคยใช้ AI ช่วยงานอะไร", ["เขียน/แก้ภาษาไทย-อังกฤษ", "สรุปข้อความ / เอกสาร", "แปลภาษา", "ค้นคว้าข้อมูล", "สร้างภาพ"]], ["งานประจำที่ใช้เวลามากที่สุด", ["ทำรายงาน / สรุปข้อมูล", "กรอกข้อมูลซ้ำๆ (copy-paste)", "ตอบลูกค้า / chat"]], ["งานที่อยากให้ AI ช่วย", ["แปล / เขียนภาษาอังกฤษ", "ค้นหาข้อมูล", "สร้างภาพประกอบ"]], ["โปรแกรมที่ใช้ประจำ", ["Excel / Google Sheets", "Word / Google Docs", "PowerPoint / Slides", "LINE / LINE OA", "Facebook / Instagram", "Email (Outlook / Gmail)"]], ["สิ่งที่อยากทำได้หลังอบรม", ["ใช้ AI ช่วยงานประจำได้คล่อง", "สร้าง prompt ที่ใช้ซ้ำได้", "ทำหน้าเว็บโปรไฟล์ / landing page เองได้", "ทำ internal tool / dashboard ของแผนก", "เชื่อม AI กับ Excel / ฐานข้อมูล"]], ["ข้อกังวล / อุปสรรค", ["กลัวข้อมูลรั่วไหล", "กลัวเรียนไม่ทัน", "กังวลภาษาอังกฤษ", "ไม่เคยใช้ command line"]], ["ข้อจำกัดด้านอาหาร", ["ไม่มี / กินทุกอย่าง"]]]}, "มอส": {"name": "ศุภณัฐ จันทร์ทา", "nick": "มอส", "fit": 15, "tier": "crit", "color": "#cc342b", "fields": [["แผนก", "การตลาด"], ["ตำแหน่ง", "พนักงานขายทั่วไป"], ["อีเมล", "byebye999.th@gmail.com"], ["ความคล่องคอมพิวเตอร์ (1–5)", "1"], ["ความมั่นใจในการใช้ AI (1–5)", "1"], ["ระบบปฏิบัติการ", "Windows"], ["สิทธิ์ติดตั้งโปรแกรม", "ต้องให้ทัมวิทยากรติดตั้งให้"], ["ประสบการณ์เขียนโค้ด / ทำเว็บ", "ไม่เคยเลย"], ["เคยใช้เครื่องมือทางเทคนิค", ["ไม่เคยเลย"]], ["มีบัญชี cloud", ["ยังไม่มีเลย"]], ["เคยใช้ AI ตัวไหนบ้าง", ["ไม่เคยใช้เลย"]], ["ระดับการใช้งาน Claude", "ไม่เคย"], ["เคยใช้ AI ช่วยงานอะไร", ["เขียน/แก้ภาษาไทย-อังกฤษ", "สรุปข้อความ / เอกสาร", "แปลภาษา", "ค้นคว้าข้อมูล", "ตอบลูกค้า / chatbot", "วิเคราะห์ Excel / data", "เขียนโค้ด / script", "สร้างภาพ"]], ["งานประจำที่ใช้เวลามากที่สุด", ["ทำรายงาน / สรุปข้อมูล", "ตอบลูกค้า / chat", "ค้นหาข้อมูล"]], ["งานที่อยากให้ AI ช่วย", ["ตอบลูกค้า", "สร้าง content social", "ค้นหาข้อมูล", "สร้างเว็บ / landing page", "สร้างภาพประกอบ"]], ["โปรแกรมที่ใช้ประจำ", ["Word / Google Docs", "PowerPoint / Slides", "Facebook / Instagram"]], ["สิ่งที่อยากทำได้หลังอบรม", ["ใช้ AI ช่วยงานประจำได้คล่อง", "สร้าง prompt ที่ใช้ซ้ำได้", "ทำหน้าเว็บโปรไฟล์ / landing page เองได้", "ทำ internal tool / dashboard ของแผนก", "เชื่อม AI กับ Excel / ฐานข้อมูล", "สอนเพื่อนต่อได้"]], ["ข้อกังวล / อุปสรรค", ["กลัวเรียนไม่ทัน", "กังวลภาษาอังกฤษ", "ไม่เคยใช้ command line"]], ["ข้อจำกัดด้านอาหาร", ["ไม่มี / กินทุกอย่าง"]]]}};
+var ANALYSIS = {"ต่อ": {"v": "พร้อมที่สุดในกลุ่ม — ลงมือทำเองได้ทันที เหมาะเป็นผู้ช่วยสอนเพื่อน", "s": ["เขียนเว็บได้ + เคยใช้ Terminal และ SQL", "ติดตั้งโปรแกรมเองได้ ใช้ macOS", "ไม่มีข้อกังวล มั่นใจพอตัว"], "r": ["อาจรู้สึกช้าถ้าคลาสเดินตามคนเริ่มต้น"], "p": ["จัดเข้า advanced track — deploy จริง + ฐานข้อมูล", "มอบบทบาท buddy/ผู้ช่วย ดูแลเพื่อนสายเทคนิค", "ให้โจทย์ stretch กันเบื่อ"]}, "นัท": {"v": "พื้นฐานแน่น มั่นใจ AI สูงสุดในกลุ่ม — สายเทคนิคคนเดียว เป็นกำลังหลักได้", "s": ["ความมั่นใจในการใช้ AI สูงสุด (4/5)", "เคยใช้ฐานข้อมูล SQL + ติดตั้งเองได้", "ไม่มีข้อกังวล"], "r": ["ยังไม่เคยเขียนโค้ดเต็มตัว (แต่พื้น SQL ช่วยได้มาก)"], "p": ["เข้า advanced track คู่กับ ต่อ", "เป็น buddy ดูแลกลุ่มที่อ่อนกว่า", "ต่อยอดสู่งานช่าง/เทคนิคจริงของบริษัท"]}, "ฟ้า": {"v": "สายดีไซน์ที่ตรงกับ use case คอนเทนต์/ภาพพอดี — ไปได้ดีถ้าจังหวะเหมาะ", "s": ["ติดตั้งโปรแกรมเองได้", "ทักษะกราฟิกตรงกับโจทย์การตลาด", "ความมั่นใจปานกลาง (3/5)"], "r": ["ยังไม่เคยเขียนโค้ด", "กังวลว่าจะเรียนไม่ทัน"], "p": ["core track เน้น content + ภาพ + landing page แบบ no-code", "ใช้ทักษะดีไซน์เป็นแต้มต่อ ให้ทำงานจริงของตัวเอง"]}, "อาร์ม": {"v": "พื้นฐานพอมี (เคยเห็น HTML + ลองเล่น Claude) แต่ต้องเคลียร์เรื่องเครื่อง + ภาษา", "s": ["เคยเห็น HTML/CSS", "เคยลองเล่น Claude มาก่อน"], "r": ["สิทธิ์ติดตั้งโปรแกรมยังไม่แน่ใจ", "กังวลเรียนไม่ทัน + ภาษาอังกฤษ"], "p": ["เตรียม/ทดสอบเครื่องล่วงหน้า", "แจก cheat sheet ศัพท์อังกฤษ + error", "จัดเข้า core track"]}, "แม็ก": {"v": "สาย creative ตั้งเป้าสูง (อยากทำแอป) แต่เป้ายังไม่ชัด ต้องช่วยให้โฟกัส", "s": ["เคยเห็น HTML/CSS", "แรงจูงใจสูง อยากสร้างแอปจริง"], "r": ["สิทธิ์ติดตั้งไม่แน่ใจ", "เป้าหมายหลังเรียนยังไม่ชัด อาจหลุดโฟกัส"], "p": ["ช่วยตั้งโจทย์ให้เป็นรูปธรรม 1 ชิ้น", "เตรียมเครื่องล่วงหน้า", "core track ต่อยอดสู่ prototype"]}, "เมย์": {"v": "ต้องเฝ้า — ความมั่นใจ AI ต่ำ + กังวลหลายเรื่อง ต้องประกบใกล้", "s": ["เคยใช้ ChatGPT/Gemini มาบ้าง"], "r": ["ความมั่นใจในการใช้ AI ต่ำ (2/5)", "กังวล 3 เรื่อง: เรียนไม่ทัน · ภาษาอังกฤษ · command line", "สิทธิ์ติดตั้งไม่แน่ใจ"], "p": ["จับคู่ buddy ประกบ", "เดินช้า มีจุดพัก", "เตรียมเครื่อง + cheat sheet ก่อนวันงาน"]}, "ขิม": {"v": "ต้องเฝ้าใกล้ — กังวลมากที่สุดในกลุ่ม (4 เรื่อง) + ต้องให้ IT ติดตั้ง", "s": ["ใช้ ChatGPT/Gemini + โปรแกรม office หลายตัว"], "r": ["ความมั่นใจในการใช้ AI ต่ำ (2/5)", "กังวลมากที่สุด 4 เรื่อง รวมกลัวข้อมูลรั่วไหล", "ต้องให้ IT ติดตั้งโปรแกรม (logistics)"], "p": ["ประสาน IT ติดตั้งเครื่องล่วงหน้า", "อธิบาย data policy เพื่อลดกังวลข้อมูลรั่ว", "buddy ประกบ + เดินช้า"]}, "มอส": {"v": "น่าห่วงที่สุด — ต่ำทุกตัวชี้วัด และเป็นคนเดียวที่ไม่เคยใช้ AI เลย ต้องดูแล 1:1", "s": ["มีความตั้งใจ (เลือกว่าอยากทำเว็บ/เชื่อม AI กับข้อมูลได้)"], "r": ["ความคล่องคอมพิวเตอร์ 1/5 + มั่นใจ AI 1/5 (ต่ำสุด)", "ไม่เคยใช้ AI เลย", "ต้องให้ IT ติดตั้งโปรแกรม"], "p": ["ดูแลแบบ 1:1 ตั้งแต่พื้นฐานสุด", "เริ่มจากใช้ AI แชทพื้นฐานก่อน อย่ากดดันให้ถึง deploy", "เตรียมเครื่องผ่าน IT"]}};
+(function(){
+  var ov=document.getElementById('pmOv');
+  function tc(t){return t==='top'?['#e6f6ec','#1a9e57']:t==='watch'?['#fdf3e0','#b5790a']:t==='crit'?['#fdeceb','#cc342b']:['#eef1fc','#3257d6'];}
+  function ul(items){var u=document.createElement('ul'); items.forEach(function(x){var li=document.createElement('li'); li.textContent=x; u.appendChild(li);}); return u;}
+  function grp(cls,label,items){var g=document.createElement('div'); g.className='grp'; var l=document.createElement('div'); l.className='lab '+cls; l.textContent=label; g.appendChild(l); g.appendChild(ul(items)); return g;}
+  function open(key){
+    var p=PEOPLE[key]; if(!p) return; var an=ANALYSIS[key];
+    var a=document.getElementById('pmAva'); a.textContent=key.charAt(0); a.style.background=p.color;
+    document.getElementById('pmName').textContent=p.name+' ('+p.nick+')';
+    var dept='',pos='';
+    p.fields.forEach(function(f){if(f[0]==='แผนก')dept=f[1];if(f[0]==='ตำแหน่ง')pos=f[1];});
+    document.getElementById('pmMeta').textContent=[dept,pos].filter(function(x){return x&&x!=='—';}).join(' · ');
+    var c=tc(p.tier); var fb=document.getElementById('pmFit'); fb.textContent='ความพร้อม '+p.fit; fb.style.background=c[0]; fb.style.color=c[1];
+    var body=document.getElementById('pmBody'); body.innerHTML='';
+    if(an){
+      var box=document.createElement('div'); box.className='pm-an';
+      var v=document.createElement('div'); v.className='v'; v.textContent=an.v; box.appendChild(v);
+      if(an.s&&an.s.length) box.appendChild(grp('s','จุดแข็ง',an.s));
+      if(an.r&&an.r.length) box.appendChild(grp('r','ต้องระวัง',an.r));
+      if(an.p&&an.p.length) box.appendChild(grp('p','แนวทางในคลาส',an.p));
+      body.appendChild(box);
+    }
+    p.fields.forEach(function(f){
+      var row=document.createElement('div'); row.className='pm-row';
+      var q=document.createElement('div'); q.className='pm-q'; q.textContent=f[0]; row.appendChild(q);
+      var val=f[1];
+      if(Array.isArray(val)){
+        var wrap=document.createElement('div'); wrap.className='pm-a pm-chips';
+        val.forEach(function(x){var s=document.createElement('span'); s.className='pm-chip'; s.textContent=x; wrap.appendChild(s);});
+        row.appendChild(wrap);
+      } else {
+        var av=document.createElement('div'); av.className='pm-a'; av.textContent=val; row.appendChild(av);
+      }
+      body.appendChild(row);
+    });
+    ov.classList.add('open');
+  }
+  function close(){ov.classList.remove('open');}
+  document.querySelectorAll('.rrow[data-key]').forEach(function(r){r.addEventListener('click',function(){open(r.getAttribute('data-key'));});});
+  document.getElementById('pmX').addEventListener('click',close);
+  ov.addEventListener('click',function(e){if(e.target===ov)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  if(location.hash.indexOf('p=')>=0){try{open(decodeURIComponent(location.hash.split('p=')[1]));}catch(e){}}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,3679 @@
+RESPONSES http=200
+{
+  "responses": [
+    {
+      "responseId": "ACYDBNj29JYlOWpjiC9Ps52nDzWVgmusz9C9P8CK_msNKdtd4NC609ohkO3XXec9xzxxdHE",
+      "createTime": "2026-06-30T09:18:08.556Z",
+      "lastSubmittedTime": "2026-06-30T09:18:08.556447Z",
+      "answers": {
+        "5f5dd39d": {
+          "questionId": "5f5dd39d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "21914d2e": {
+          "questionId": "21914d2e",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "byebye999.th@gmail.com"
+              }
+            ]
+          }
+        },
+        "7e6c72a6": {
+          "questionId": "7e6c72a6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "3af33c43": {
+          "questionId": "3af33c43",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ศุภณัฐ จันทร์ทา"
+              }
+            ]
+          }
+        },
+        "35bffd18": {
+          "questionId": "35bffd18",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคย"
+              }
+            ]
+          }
+        },
+        "5c7457ae": {
+          "questionId": "5c7457ae",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              }
+            ]
+          }
+        },
+        "1af49383": {
+          "questionId": "1af49383",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ตอบลูกค้า"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "สร้างเว็บ / landing page"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              }
+            ]
+          }
+        },
+        "66d921d7": {
+          "questionId": "66d921d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Windows"
+              }
+            ]
+          }
+        },
+        "3c40cb3b": {
+          "questionId": "3c40cb3b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยใช้เลย"
+              }
+            ]
+          }
+        },
+        "2e8118f5": {
+          "questionId": "2e8118f5",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "52368213": {
+          "questionId": "52368213",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เขียน/แก้ภาษาไทย-อังกฤษ"
+              },
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "แปลภาษา"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "ตอบลูกค้า / chatbot"
+              },
+              {
+                "value": "วิเคราะห์ Excel / data"
+              },
+              {
+                "value": "เขียนโค้ด / script"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "023abd33": {
+          "questionId": "023abd33",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "1b032adf": {
+          "questionId": "1b032adf",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "พนักงานขายทั่วไป"
+              }
+            ]
+          }
+        },
+        "308240e3": {
+          "questionId": "308240e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              },
+              {
+                "value": "สร้าง prompt ที่ใช้ซ้ำได้"
+              },
+              {
+                "value": "ทำหน้าเว็บโปรไฟล์ / landing page เองได้"
+              },
+              {
+                "value": "ทำ internal tool / dashboard ของแผนก"
+              },
+              {
+                "value": "เชื่อม AI กับ Excel / ฐานข้อมูล"
+              },
+              {
+                "value": "สอนเพื่อนต่อได้"
+              }
+            ]
+          }
+        },
+        "28f49189": {
+          "questionId": "28f49189",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "2724f8af": {
+          "questionId": "2724f8af",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "มอส"
+              }
+            ]
+          }
+        },
+        "102c4e1a": {
+          "questionId": "102c4e1a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ต้องให้ทัมวิทยากรติดตั้งให้"
+              }
+            ]
+          }
+        },
+        "42b42178": {
+          "questionId": "42b42178",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "04daf723": {
+          "questionId": "04daf723",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำรายงาน / สรุปข้อมูล"
+              },
+              {
+                "value": "ตอบลูกค้า / chat"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              }
+            ]
+          }
+        },
+        "253364fe": {
+          "questionId": "253364fe",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กลัวเรียนไม่ทัน"
+              },
+              {
+                "value": "กังวลภาษาอังกฤษ"
+              },
+              {
+                "value": "ไม่เคยใช้ command line"
+              }
+            ]
+          }
+        },
+        "4b8b4ac7": {
+          "questionId": "4b8b4ac7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Word / Google Docs"
+              },
+              {
+                "value": "PowerPoint / Slides"
+              },
+              {
+                "value": "Facebook / Instagram"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNgMOphOa1euCps7Urqcxs5t58sAd1fuO02ID2kul77ZiGEGgZ8cYG_QjlwQ3-tlRVY",
+      "createTime": "2026-06-30T09:10:27.244Z",
+      "lastSubmittedTime": "2026-06-30T09:10:27.244063Z",
+      "answers": {
+        "5f5dd39d": {
+          "questionId": "5f5dd39d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "21914d2e": {
+          "questionId": "21914d2e",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "pz_khim@hotmail.com"
+              }
+            ]
+          }
+        },
+        "7e6c72a6": {
+          "questionId": "7e6c72a6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "3af33c43": {
+          "questionId": "3af33c43",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ขวัญนรินทร์พร ศรีหานนท์"
+              }
+            ]
+          }
+        },
+        "35bffd18": {
+          "questionId": "35bffd18",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคย"
+              }
+            ]
+          }
+        },
+        "5c7457ae": {
+          "questionId": "5c7457ae",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              }
+            ]
+          }
+        },
+        "1af49383": {
+          "questionId": "1af49383",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "แปล / เขียนภาษาอังกฤษ"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              }
+            ]
+          }
+        },
+        "66d921d7": {
+          "questionId": "66d921d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Windows"
+              }
+            ]
+          }
+        },
+        "3c40cb3b": {
+          "questionId": "3c40cb3b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "2e8118f5": {
+          "questionId": "2e8118f5",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "2"
+              }
+            ]
+          }
+        },
+        "52368213": {
+          "questionId": "52368213",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เขียน/แก้ภาษาไทย-อังกฤษ"
+              },
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "แปลภาษา"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "023abd33": {
+          "questionId": "023abd33",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "1b032adf": {
+          "questionId": "1b032adf",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Selling"
+              }
+            ]
+          }
+        },
+        "308240e3": {
+          "questionId": "308240e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              },
+              {
+                "value": "สร้าง prompt ที่ใช้ซ้ำได้"
+              },
+              {
+                "value": "ทำหน้าเว็บโปรไฟล์ / landing page เองได้"
+              },
+              {
+                "value": "ทำ internal tool / dashboard ของแผนก"
+              },
+              {
+                "value": "เชื่อม AI กับ Excel / ฐานข้อมูล"
+              }
+            ]
+          }
+        },
+        "28f49189": {
+          "questionId": "28f49189",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "2724f8af": {
+          "questionId": "2724f8af",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ขิม"
+              }
+            ]
+          }
+        },
+        "102c4e1a": {
+          "questionId": "102c4e1a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ต้องให้ทัมวิทยากรติดตั้งให้"
+              }
+            ]
+          }
+        },
+        "42b42178": {
+          "questionId": "42b42178",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "04daf723": {
+          "questionId": "04daf723",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำรายงาน / สรุปข้อมูล"
+              },
+              {
+                "value": "กรอกข้อมูลซ้ำๆ (copy-paste)"
+              },
+              {
+                "value": "ตอบลูกค้า / chat"
+              }
+            ]
+          }
+        },
+        "253364fe": {
+          "questionId": "253364fe",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กลัวข้อมูลรั่วไหล"
+              },
+              {
+                "value": "กลัวเรียนไม่ทัน"
+              },
+              {
+                "value": "กังวลภาษาอังกฤษ"
+              },
+              {
+                "value": "ไม่เคยใช้ command line"
+              }
+            ]
+          }
+        },
+        "4b8b4ac7": {
+          "questionId": "4b8b4ac7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Excel / Google Sheets"
+              },
+              {
+                "value": "Word / Google Docs"
+              },
+              {
+                "value": "PowerPoint / Slides"
+              },
+              {
+                "value": "LINE / LINE OA"
+              },
+              {
+                "value": "Facebook / Instagram"
+              },
+              {
+                "value": "Email (Outlook / Gmail)"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNjsQALMPkTP7nP9hQR8E4r2XF7DDL0zL12EDv3lLHnPhHCnzjx-2lS4E59seylk5b0",
+      "createTime": "2026-06-30T09:42:39.707Z",
+      "lastSubmittedTime": "2026-06-30T09:42:39.707471Z",
+      "answers": {
+        "5f5dd39d": {
+          "questionId": "5f5dd39d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "21914d2e": {
+          "questionId": "21914d2e",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "torcalrabee@gmail.com"
+              }
+            ]
+          }
+        },
+        "7e6c72a6": {
+          "questionId": "7e6c72a6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Command line (Terminal)"
+              },
+              {
+                "value": "ฐานข้อมูล SQL"
+              }
+            ]
+          }
+        },
+        "3af33c43": {
+          "questionId": "3af33c43",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "จิรวัฒน์ ยิ่งยืน"
+              }
+            ]
+          }
+        },
+        "35bffd18": {
+          "questionId": "35bffd18",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เคยลองเล่น"
+              }
+            ]
+          }
+        },
+        "5c7457ae": {
+          "questionId": "5c7457ae",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              }
+            ]
+          }
+        },
+        "1af49383": {
+          "questionId": "1af49383",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปประชุม / chat"
+              },
+              {
+                "value": "แปล / เขียนภาษาอังกฤษ"
+              },
+              {
+                "value": "ตอบลูกค้า"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "วิเคราะห์ Excel"
+              },
+              {
+                "value": "ตรวจสอบ / แก้เอกสาร"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "สร้างเว็บ / landing page"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              },
+              {
+                "value": "automation งานซ้ำๆ"
+              }
+            ]
+          }
+        },
+        "66d921d7": {
+          "questionId": "66d921d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "macOS"
+              }
+            ]
+          }
+        },
+        "3c40cb3b": {
+          "questionId": "3c40cb3b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "2e8118f5": {
+          "questionId": "2e8118f5",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "52368213": {
+          "questionId": "52368213",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เขียน/แก้ภาษาไทย-อังกฤษ"
+              },
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "แปลภาษา"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "ตอบลูกค้า / chatbot"
+              },
+              {
+                "value": "สร้าง content (caption, blog)"
+              },
+              {
+                "value": "วิเคราะห์ Excel / data"
+              },
+              {
+                "value": "เขียนโค้ด / script"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "023abd33": {
+          "questionId": "023abd33",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เขียนโปรแกรม/ทำเว็บได้"
+              }
+            ]
+          }
+        },
+        "1b032adf": {
+          "questionId": "1b032adf",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาดออนไลน์ โซเชียลมีเดีย"
+              }
+            ]
+          }
+        },
+        "308240e3": {
+          "questionId": "308240e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              },
+              {
+                "value": "สร้าง prompt ที่ใช้ซ้ำได้"
+              },
+              {
+                "value": "ทำหน้าเว็บโปรไฟล์ / landing page เองได้"
+              },
+              {
+                "value": "ทำ internal tool / dashboard ของแผนก"
+              },
+              {
+                "value": "เชื่อม AI กับ Excel / ฐานข้อมูล"
+              },
+              {
+                "value": "สอนเพื่อนต่อได้"
+              },
+              {
+                "value": "ยังไม่ชัด ขอเรียนในคลาส"
+              }
+            ]
+          }
+        },
+        "28f49189": {
+          "questionId": "28f49189",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "2724f8af": {
+          "questionId": "2724f8af",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ต่อ"
+              }
+            ]
+          }
+        },
+        "102c4e1a": {
+          "questionId": "102c4e1a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ติดตั้งเองได้"
+              }
+            ]
+          }
+        },
+        "42b42178": {
+          "questionId": "42b42178",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "04daf723": {
+          "questionId": "04daf723",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำรายงาน / สรุปข้อมูล"
+              },
+              {
+                "value": "กรอกข้อมูลซ้ำๆ (copy-paste)"
+              },
+              {
+                "value": "ตอบลูกค้า / chat"
+              },
+              {
+                "value": "ตรวจสอบ / approve เอกสาร"
+              },
+              {
+                "value": "ประชุม / ตามงาน"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "ทำ invoice / slip / เอกสาร"
+              },
+              {
+                "value": "วิเคราะห์ข้อมูล / Excel"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "งานช่าง / หน้างาน"
+              }
+            ]
+          }
+        },
+        "4b8b4ac7": {
+          "questionId": "4b8b4ac7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Excel / Google Sheets"
+              },
+              {
+                "value": "Word / Google Docs"
+              },
+              {
+                "value": "PowerPoint / Slides"
+              },
+              {
+                "value": "LINE / LINE OA"
+              },
+              {
+                "value": "Facebook / Instagram"
+              },
+              {
+                "value": "Email (Outlook / Gmail)"
+              },
+              {
+                "value": "Photoshop / Canva"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNhiWBas-PNJQBl5_C6sBTakytAHqLYlkslB-mik8LyBRS7U0hORGz43fNrgVSAvsxg",
+      "createTime": "2026-06-30T09:09:13.045Z",
+      "lastSubmittedTime": "2026-06-30T09:09:13.045439Z",
+      "answers": {
+        "5f5dd39d": {
+          "questionId": "5f5dd39d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "21914d2e": {
+          "questionId": "21914d2e",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Nuttpongdokchan@gmail.com"
+              }
+            ]
+          }
+        },
+        "7e6c72a6": {
+          "questionId": "7e6c72a6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ฐานข้อมูล SQL"
+              }
+            ]
+          }
+        },
+        "3af33c43": {
+          "questionId": "3af33c43",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ณัฐพงศ์  ดอกจันทร์"
+              }
+            ]
+          }
+        },
+        "35bffd18": {
+          "questionId": "35bffd18",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคย"
+              }
+            ]
+          }
+        },
+        "5c7457ae": {
+          "questionId": "5c7457ae",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              }
+            ]
+          }
+        },
+        "1af49383": {
+          "questionId": "1af49383",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปประชุม / chat"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "วิเคราะห์ Excel"
+              },
+              {
+                "value": "สร้างเว็บ / landing page"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              }
+            ]
+          }
+        },
+        "66d921d7": {
+          "questionId": "66d921d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Windows"
+              }
+            ]
+          }
+        },
+        "3c40cb3b": {
+          "questionId": "3c40cb3b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "2e8118f5": {
+          "questionId": "2e8118f5",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "4"
+              }
+            ]
+          }
+        },
+        "52368213": {
+          "questionId": "52368213",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "วิเคราะห์ Excel / data"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "023abd33": {
+          "questionId": "023abd33",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "1b032adf": {
+          "questionId": "1b032adf",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ช่าง"
+              }
+            ]
+          }
+        },
+        "308240e3": {
+          "questionId": "308240e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              },
+              {
+                "value": "สร้าง prompt ที่ใช้ซ้ำได้"
+              },
+              {
+                "value": "ทำหน้าเว็บโปรไฟล์ / landing page เองได้"
+              },
+              {
+                "value": "ทำ internal tool / dashboard ของแผนก"
+              },
+              {
+                "value": "เชื่อม AI กับ Excel / ฐานข้อมูล"
+              }
+            ]
+          }
+        },
+        "28f49189": {
+          "questionId": "28f49189",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "2724f8af": {
+          "questionId": "2724f8af",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "นัท"
+              }
+            ]
+          }
+        },
+        "102c4e1a": {
+          "questionId": "102c4e1a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ติดตั้งเองได้"
+              }
+            ]
+          }
+        },
+        "42b42178": {
+          "questionId": "42b42178",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ช่าง / เทคนิค"
+              }
+            ]
+          }
+        },
+        "04daf723": {
+          "questionId": "04daf723",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำรายงาน / สรุปข้อมูล"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "วิเคราะห์ข้อมูล / Excel"
+              },
+              {
+                "value": "งานช่าง / หน้างาน"
+              }
+            ]
+          }
+        },
+        "253364fe": {
+          "questionId": "253364fe",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่กังวลอะไรเป็นพิเศษ"
+              }
+            ]
+          }
+        },
+        "4b8b4ac7": {
+          "questionId": "4b8b4ac7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Excel / Google Sheets"
+              },
+              {
+                "value": "Word / Google Docs"
+              },
+              {
+                "value": "PowerPoint / Slides"
+              },
+              {
+                "value": "LINE / LINE OA"
+              },
+              {
+                "value": "Facebook / Instagram"
+              },
+              {
+                "value": "Email (Outlook / Gmail)"
+              },
+              {
+                "value": "Photoshop / Canva"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNgR7TZZkCl75GsgJkBEww9oCocweRKm4RgngYYGbVFJ8mBYC1eoGZQKYPGbtt4EpJ4",
+      "createTime": "2026-06-30T16:21:14.583Z",
+      "lastSubmittedTime": "2026-06-30T16:21:14.583727Z",
+      "answers": {
+        "66b71f10": {
+          "questionId": "66b71f10",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคย"
+              }
+            ]
+          }
+        },
+        "54b96338": {
+          "questionId": "54b96338",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "5ed80053": {
+          "questionId": "5ed80053",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "2b99bddb": {
+          "questionId": "2b99bddb",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "622e6937": {
+          "questionId": "622e6937",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำรายงาน / สรุปข้อมูล"
+              },
+              {
+                "value": "กรอกข้อมูลซ้ำๆ (copy-paste)"
+              },
+              {
+                "value": "ตอบลูกค้า / chat"
+              },
+              {
+                "value": "ตรวจสอบ / approve เอกสาร"
+              },
+              {
+                "value": "ประชุม / ตามงาน"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "ทำ invoice / slip / เอกสาร"
+              },
+              {
+                "value": "วิเคราะห์ข้อมูล / Excel"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "งานช่าง / หน้างาน"
+              }
+            ]
+          }
+        },
+        "266c2d0f": {
+          "questionId": "266c2d0f",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "273768d7": {
+          "questionId": "273768d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              }
+            ]
+          }
+        },
+        "3d3a679b": {
+          "questionId": "3d3a679b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เคยเห็น HTML/CSS"
+              }
+            ]
+          }
+        },
+        "542c0038": {
+          "questionId": "542c0038",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เขียน/แก้ภาษาไทย-อังกฤษ"
+              },
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "แปลภาษา"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "เขียนโค้ด / script"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "4f53479b": {
+          "questionId": "4f53479b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กราฟฟิก"
+              }
+            ]
+          }
+        },
+        "25bd76e8": {
+          "questionId": "25bd76e8",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              },
+              {
+                "value": "สร้าง prompt ที่ใช้ซ้ำได้"
+              },
+              {
+                "value": "ทำหน้าเว็บโปรไฟล์ / landing page เองได้"
+              },
+              {
+                "value": "ทำ internal tool / dashboard ของแผนก"
+              },
+              {
+                "value": "เชื่อม AI กับ Excel / ฐานข้อมูล"
+              },
+              {
+                "value": "สอนเพื่อนต่อได้"
+              }
+            ]
+          }
+        },
+        "1844c142": {
+          "questionId": "1844c142",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "chaiwatttt2@gmail.com"
+              }
+            ]
+          }
+        },
+        "4851e3e3": {
+          "questionId": "4851e3e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เจ"
+              }
+            ]
+          }
+        },
+        "61c4ca0a": {
+          "questionId": "61c4ca0a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Excel / Google Sheets"
+              },
+              {
+                "value": "Word / Google Docs"
+              },
+              {
+                "value": "PowerPoint / Slides"
+              },
+              {
+                "value": "LINE / LINE OA"
+              },
+              {
+                "value": "Facebook / Instagram"
+              },
+              {
+                "value": "Email (Outlook / Gmail)"
+              },
+              {
+                "value": "โปรแกรมบัญชี (Express, Peak, ฯลฯ)"
+              },
+              {
+                "value": "EasySlip"
+              },
+              {
+                "value": "ERP / WMS"
+              },
+              {
+                "value": "Photoshop / Canva"
+              }
+            ]
+          }
+        },
+        "11d0215d": {
+          "questionId": "11d0215d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กลัวข้อมูลรั่วไหล"
+              },
+              {
+                "value": "กลัวเรียนไม่ทัน"
+              }
+            ]
+          }
+        },
+        "209f937b": {
+          "questionId": "209f937b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปประชุม / chat"
+              },
+              {
+                "value": "แปล / เขียนภาษาอังกฤษ"
+              },
+              {
+                "value": "ตอบลูกค้า"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "วิเคราะห์ Excel"
+              },
+              {
+                "value": "ตรวจสอบ / แก้เอกสาร"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "สร้างเว็บ / landing page"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              },
+              {
+                "value": "automation งานซ้ำๆ"
+              }
+            ]
+          }
+        },
+        "5af58ca6": {
+          "questionId": "5af58ca6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่แน่ใจ"
+              }
+            ]
+          }
+        },
+        "0abc4395": {
+          "questionId": "0abc4395",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "58ddbea4": {
+          "questionId": "58ddbea4",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ชัยวัฒน์ มีดี"
+              }
+            ]
+          }
+        },
+        "12d549f4": {
+          "questionId": "12d549f4",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "7573ca07": {
+          "questionId": "7573ca07",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "macOS"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNhQxcY6f1-lzjr2_-GZU6MoFHLCUg5Q8e91rGzVZbUPQ-oOxTC-t4GUMf-x6kV5STc",
+      "createTime": "2026-06-30T09:24:43.044Z",
+      "lastSubmittedTime": "2026-06-30T09:24:43.044239Z",
+      "answers": {
+        "5f5dd39d": {
+          "questionId": "5f5dd39d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "21914d2e": {
+          "questionId": "21914d2e",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "skynewf44@gmail.com"
+              }
+            ]
+          }
+        },
+        "7e6c72a6": {
+          "questionId": "7e6c72a6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "3af33c43": {
+          "questionId": "3af33c43",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กานต์รวี เกตุแก้ว"
+              }
+            ]
+          }
+        },
+        "35bffd18": {
+          "questionId": "35bffd18",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคย"
+              }
+            ]
+          }
+        },
+        "5c7457ae": {
+          "questionId": "5c7457ae",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่กินเนื้อ"
+              },
+              {
+                "value": "แพ้นม (lactose intolerant)"
+              }
+            ]
+          }
+        },
+        "1af49383": {
+          "questionId": "1af49383",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปประชุม / chat"
+              },
+              {
+                "value": "แปล / เขียนภาษาอังกฤษ"
+              },
+              {
+                "value": "ตอบลูกค้า"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "วิเคราะห์ Excel"
+              },
+              {
+                "value": "ตรวจสอบ / แก้เอกสาร"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "สร้างเว็บ / landing page"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              },
+              {
+                "value": "automation งานซ้ำๆ"
+              }
+            ]
+          }
+        },
+        "66d921d7": {
+          "questionId": "66d921d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Windows"
+              }
+            ]
+          }
+        },
+        "3c40cb3b": {
+          "questionId": "3c40cb3b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "2e8118f5": {
+          "questionId": "2e8118f5",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "52368213": {
+          "questionId": "52368213",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "023abd33": {
+          "questionId": "023abd33",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "1b032adf": {
+          "questionId": "1b032adf",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กราฟิกดีไซน์"
+              }
+            ]
+          }
+        },
+        "308240e3": {
+          "questionId": "308240e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              },
+              {
+                "value": "สร้าง prompt ที่ใช้ซ้ำได้"
+              },
+              {
+                "value": "ทำหน้าเว็บโปรไฟล์ / landing page เองได้"
+              },
+              {
+                "value": "ทำ internal tool / dashboard ของแผนก"
+              },
+              {
+                "value": "เชื่อม AI กับ Excel / ฐานข้อมูล"
+              },
+              {
+                "value": "สอนเพื่อนต่อได้"
+              },
+              {
+                "value": "ยังไม่ชัด ขอเรียนในคลาส"
+              }
+            ]
+          }
+        },
+        "28f49189": {
+          "questionId": "28f49189",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "2724f8af": {
+          "questionId": "2724f8af",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ฟ้า"
+              }
+            ]
+          }
+        },
+        "102c4e1a": {
+          "questionId": "102c4e1a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ติดตั้งเองได้"
+              }
+            ]
+          }
+        },
+        "42b42178": {
+          "questionId": "42b42178",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "04daf723": {
+          "questionId": "04daf723",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สร้าง content social"
+              }
+            ]
+          }
+        },
+        "253364fe": {
+          "questionId": "253364fe",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กลัวเรียนไม่ทัน"
+              }
+            ]
+          }
+        },
+        "4b8b4ac7": {
+          "questionId": "4b8b4ac7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "PowerPoint / Slides"
+              },
+              {
+                "value": "LINE / LINE OA"
+              },
+              {
+                "value": "Facebook / Instagram"
+              },
+              {
+                "value": "Email (Outlook / Gmail)"
+              },
+              {
+                "value": "Photoshop / Canva"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNiC_NtbRbzY4g6LZr6WkRZ5FB0Z_obIof9vmhtaN_w9zEnDMXp5GE48BH4zgmxx8AI",
+      "createTime": "2026-06-30T09:22:36.474Z",
+      "lastSubmittedTime": "2026-06-30T09:22:36.474527Z",
+      "answers": {
+        "5f5dd39d": {
+          "questionId": "5f5dd39d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "7e6c72a6": {
+          "questionId": "7e6c72a6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "3af33c43": {
+          "questionId": "3af33c43",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "อัจฉราพรรณ คำองค์"
+              }
+            ]
+          }
+        },
+        "35bffd18": {
+          "questionId": "35bffd18",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เคยลองเล่น"
+              }
+            ]
+          }
+        },
+        "5c7457ae": {
+          "questionId": "5c7457ae",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              }
+            ]
+          }
+        },
+        "1af49383": {
+          "questionId": "1af49383",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "สร้างเว็บ / landing page"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              },
+              {
+                "value": "automation งานซ้ำๆ"
+              }
+            ]
+          }
+        },
+        "66d921d7": {
+          "questionId": "66d921d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "macOS"
+              }
+            ]
+          }
+        },
+        "3c40cb3b": {
+          "questionId": "3c40cb3b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "2e8118f5": {
+          "questionId": "2e8118f5",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "52368213": {
+          "questionId": "52368213",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "สร้าง content (caption, blog)"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "023abd33": {
+          "questionId": "023abd33",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เคยเห็น HTML/CSS"
+              }
+            ]
+          }
+        },
+        "1b032adf": {
+          "questionId": "1b032adf",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "308240e3": {
+          "questionId": "308240e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              },
+              {
+                "value": "สร้าง prompt ที่ใช้ซ้ำได้"
+              }
+            ]
+          }
+        },
+        "28f49189": {
+          "questionId": "28f49189",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "2724f8af": {
+          "questionId": "2724f8af",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "อาร์ม"
+              }
+            ]
+          }
+        },
+        "102c4e1a": {
+          "questionId": "102c4e1a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่แน่ใจ"
+              }
+            ]
+          }
+        },
+        "42b42178": {
+          "questionId": "42b42178",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "04daf723": {
+          "questionId": "04daf723",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำรายงาน / สรุปข้อมูล"
+              },
+              {
+                "value": "กรอกข้อมูลซ้ำๆ (copy-paste)"
+              },
+              {
+                "value": "สร้าง content social"
+              }
+            ]
+          }
+        },
+        "253364fe": {
+          "questionId": "253364fe",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กลัวเรียนไม่ทัน"
+              },
+              {
+                "value": "กังวลภาษาอังกฤษ"
+              }
+            ]
+          }
+        },
+        "4b8b4ac7": {
+          "questionId": "4b8b4ac7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Excel / Google Sheets"
+              },
+              {
+                "value": "Facebook / Instagram"
+              },
+              {
+                "value": "Photoshop / Canva"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNjL2MY-_L_g4I4_An-C54sUrMlPCotJoDs0x7piqCM4Wp_XITq7AwwHBOYdI8LirGE",
+      "createTime": "2026-06-30T16:16:16.199Z",
+      "lastSubmittedTime": "2026-06-30T16:16:16.199669Z",
+      "answers": {
+        "66b71f10": {
+          "questionId": "66b71f10",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ประจำ"
+              }
+            ]
+          }
+        },
+        "54b96338": {
+          "questionId": "54b96338",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "5"
+              }
+            ]
+          }
+        },
+        "5ed80053": {
+          "questionId": "5ed80053",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "GitHub / Git"
+              },
+              {
+                "value": "Command line (Terminal)"
+              },
+              {
+                "value": "ฐานข้อมูล SQL"
+              }
+            ]
+          }
+        },
+        "2b99bddb": {
+          "questionId": "2b99bddb",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Claude"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "622e6937": {
+          "questionId": "622e6937",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำรายงาน / สรุปข้อมูล"
+              },
+              {
+                "value": "สร้าง content social"
+              }
+            ]
+          }
+        },
+        "266c2d0f": {
+          "questionId": "266c2d0f",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ช่าง / เทคนิค"
+              }
+            ]
+          }
+        },
+        "273768d7": {
+          "questionId": "273768d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              },
+              {
+                "value": "แพ้นม (lactose intolerant)"
+              }
+            ]
+          }
+        },
+        "3d3a679b": {
+          "questionId": "3d3a679b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เขียนโปรแกรม/ทำเว็บได้"
+              }
+            ]
+          }
+        },
+        "542c0038": {
+          "questionId": "542c0038",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เขียน/แก้ภาษาไทย-อังกฤษ"
+              },
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "แปลภาษา"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "สร้าง content (caption, blog)"
+              },
+              {
+                "value": "วิเคราะห์ Excel / data"
+              },
+              {
+                "value": "เขียนโค้ด / script"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "4f53479b": {
+          "questionId": "4f53479b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "หัวหน้างาน"
+              }
+            ]
+          }
+        },
+        "25bd76e8": {
+          "questionId": "25bd76e8",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สอนเพื่อนต่อได้"
+              }
+            ]
+          }
+        },
+        "4851e3e3": {
+          "questionId": "4851e3e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เบนซ์"
+              }
+            ]
+          }
+        },
+        "61c4ca0a": {
+          "questionId": "61c4ca0a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Facebook / Instagram"
+              },
+              {
+                "value": "Photoshop / Canva"
+              }
+            ]
+          }
+        },
+        "11d0215d": {
+          "questionId": "11d0215d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กลัวข้อมูลรั่วไหล"
+              },
+              {
+                "value": "ไม่กังวลอะไรเป็นพิเศษ"
+              }
+            ]
+          }
+        },
+        "209f937b": {
+          "questionId": "209f937b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปประชุม / chat"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              }
+            ]
+          }
+        },
+        "5af58ca6": {
+          "questionId": "5af58ca6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ติดตั้งเองได้"
+              }
+            ]
+          }
+        },
+        "0abc4395": {
+          "questionId": "0abc4395",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "5"
+              }
+            ]
+          }
+        },
+        "58ddbea4": {
+          "questionId": "58ddbea4",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Nutpongsakorn Suwannarong"
+              }
+            ]
+          }
+        },
+        "12d549f4": {
+          "questionId": "12d549f4",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "GitHub"
+              },
+              {
+                "value": "Vercel"
+              },
+              {
+                "value": "Claude AI"
+              }
+            ]
+          }
+        },
+        "7573ca07": {
+          "questionId": "7573ca07",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "macOS"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNg0IeGKWGJ4AZkarmYhGgwKnl1r1yF1X6l1WSFCdT4x8A60O4ttn_XmPvxgcR_75lk",
+      "createTime": "2026-06-30T09:30:49.362Z",
+      "lastSubmittedTime": "2026-06-30T09:30:49.362783Z",
+      "answers": {
+        "5f5dd39d": {
+          "questionId": "5f5dd39d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "21914d2e": {
+          "questionId": "21914d2e",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "May@1688.biz"
+              }
+            ]
+          }
+        },
+        "7e6c72a6": {
+          "questionId": "7e6c72a6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "3af33c43": {
+          "questionId": "3af33c43",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ภัทร์ธมนต์ ภิรมย์วัชรดี"
+              }
+            ]
+          }
+        },
+        "35bffd18": {
+          "questionId": "35bffd18",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคย"
+              }
+            ]
+          }
+        },
+        "5c7457ae": {
+          "questionId": "5c7457ae",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              }
+            ]
+          }
+        },
+        "1af49383": {
+          "questionId": "1af49383",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "แปล / เขียนภาษาอังกฤษ"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              }
+            ]
+          }
+        },
+        "66d921d7": {
+          "questionId": "66d921d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Windows"
+              }
+            ]
+          }
+        },
+        "3c40cb3b": {
+          "questionId": "3c40cb3b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "2e8118f5": {
+          "questionId": "2e8118f5",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "2"
+              }
+            ]
+          }
+        },
+        "52368213": {
+          "questionId": "52368213",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เขียน/แก้ภาษาไทย-อังกฤษ"
+              },
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "แปลภาษา"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "สร้าง content (caption, blog)"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "023abd33": {
+          "questionId": "023abd33",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "1b032adf": {
+          "questionId": "1b032adf",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "308240e3": {
+          "questionId": "308240e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              },
+              {
+                "value": "สร้าง prompt ที่ใช้ซ้ำได้"
+              },
+              {
+                "value": "ทำหน้าเว็บโปรไฟล์ / landing page เองได้"
+              }
+            ]
+          }
+        },
+        "28f49189": {
+          "questionId": "28f49189",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "2724f8af": {
+          "questionId": "2724f8af",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เมย์"
+              }
+            ]
+          }
+        },
+        "102c4e1a": {
+          "questionId": "102c4e1a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่แน่ใจ"
+              }
+            ]
+          }
+        },
+        "42b42178": {
+          "questionId": "42b42178",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "04daf723": {
+          "questionId": "04daf723",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              }
+            ]
+          }
+        },
+        "253364fe": {
+          "questionId": "253364fe",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กลัวเรียนไม่ทัน"
+              },
+              {
+                "value": "กังวลภาษาอังกฤษ"
+              },
+              {
+                "value": "ไม่เคยใช้ command line"
+              }
+            ]
+          }
+        },
+        "4b8b4ac7": {
+          "questionId": "4b8b4ac7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Word / Google Docs"
+              },
+              {
+                "value": "Facebook / Instagram"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNgwWOxYOBv9XzThJgIBAec0o25i5Z4YmHEDxFtl4-b3YiILiCae7-HQmIXIfZqfeLk",
+      "createTime": "2026-06-30T16:42:21.819Z",
+      "lastSubmittedTime": "2026-06-30T16:42:21.819087Z",
+      "answers": {
+        "66b71f10": {
+          "questionId": "66b71f10",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคย"
+              }
+            ]
+          }
+        },
+        "54b96338": {
+          "questionId": "54b96338",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "5ed80053": {
+          "questionId": "5ed80053",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "2b99bddb": {
+          "questionId": "2b99bddb",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "622e6937": {
+          "questionId": "622e6937",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ค้นหาข้อมูล"
+              }
+            ]
+          }
+        },
+        "266c2d0f": {
+          "questionId": "266c2d0f",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "273768d7": {
+          "questionId": "273768d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              }
+            ]
+          }
+        },
+        "3d3a679b": {
+          "questionId": "3d3a679b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "542c0038": {
+          "questionId": "542c0038",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "แปลภาษา"
+              }
+            ]
+          }
+        },
+        "4f53479b": {
+          "questionId": "4f53479b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "25bd76e8": {
+          "questionId": "25bd76e8",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              }
+            ]
+          }
+        },
+        "4851e3e3": {
+          "questionId": "4851e3e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "โดนัท"
+              }
+            ]
+          }
+        },
+        "11d0215d": {
+          "questionId": "11d0215d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กังวลภาษาอังกฤษ"
+              }
+            ]
+          }
+        },
+        "209f937b": {
+          "questionId": "209f937b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "สร้างเว็บ / landing page"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              }
+            ]
+          }
+        },
+        "5af58ca6": {
+          "questionId": "5af58ca6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่แน่ใจ"
+              }
+            ]
+          }
+        },
+        "0abc4395": {
+          "questionId": "0abc4395",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "1"
+              }
+            ]
+          }
+        },
+        "58ddbea4": {
+          "questionId": "58ddbea4",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ธีรภัทร์ พุทธาศรี"
+              }
+            ]
+          }
+        },
+        "12d549f4": {
+          "questionId": "12d549f4",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "7573ca07": {
+          "questionId": "7573ca07",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Windows"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "responseId": "ACYDBNj6NRmYHcp4KqRbLA-ZSIZkiNhmYGvgmiuqTrlIzUeg_-0vFT2BQqIs5ZFIkZGwTI0",
+      "createTime": "2026-06-30T09:39:03.886Z",
+      "lastSubmittedTime": "2026-06-30T09:39:03.886671Z",
+      "answers": {
+        "5f5dd39d": {
+          "questionId": "5f5dd39d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "7e6c72a6": {
+          "questionId": "7e6c72a6",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        },
+        "3af33c43": {
+          "questionId": "3af33c43",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "อิทธิพล"
+              }
+            ]
+          }
+        },
+        "35bffd18": {
+          "questionId": "35bffd18",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่เคย"
+              }
+            ]
+          }
+        },
+        "5c7457ae": {
+          "questionId": "5c7457ae",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "แพ้อาหารทะเล"
+              }
+            ]
+          }
+        },
+        "1af49383": {
+          "questionId": "1af49383",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "สร้างเว็บ / landing page"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              },
+              {
+                "value": "automation งานซ้ำๆ"
+              },
+              {
+                "value": "สร้างแอพพลิเคชั่น ลงเพลย์สโตร์"
+              }
+            ]
+          }
+        },
+        "66d921d7": {
+          "questionId": "66d921d7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Windows"
+              }
+            ]
+          }
+        },
+        "3c40cb3b": {
+          "questionId": "3c40cb3b",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Gemini"
+              }
+            ]
+          }
+        },
+        "2e8118f5": {
+          "questionId": "2e8118f5",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "3"
+              }
+            ]
+          }
+        },
+        "52368213": {
+          "questionId": "52368213",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "แปลภาษา"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "เขียนโค้ด / script"
+              },
+              {
+                "value": "สร้างภาพ"
+              }
+            ]
+          }
+        },
+        "023abd33": {
+          "questionId": "023abd33",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เคยเห็น HTML/CSS"
+              }
+            ]
+          }
+        },
+        "1b032adf": {
+          "questionId": "1b032adf",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำสื่อโฆษณา"
+              }
+            ]
+          }
+        },
+        "308240e3": {
+          "questionId": "308240e3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่ชัด ขอเรียนในคลาส"
+              }
+            ]
+          }
+        },
+        "28f49189": {
+          "questionId": "28f49189",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        },
+        "2724f8af": {
+          "questionId": "2724f8af",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "แม็ก"
+              }
+            ]
+          }
+        },
+        "102c4e1a": {
+          "questionId": "102c4e1a",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ไม่แน่ใจ"
+              }
+            ]
+          }
+        },
+        "42b42178": {
+          "questionId": "42b42178",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "การตลาด"
+              }
+            ]
+          }
+        },
+        "04daf723": {
+          "questionId": "04daf723",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "สร้าง content social"
+              }
+            ]
+          }
+        },
+        "253364fe": {
+          "questionId": "253364fe",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "กลัวเรียนไม่ทัน"
+              }
+            ]
+          }
+        },
+        "4b8b4ac7": {
+          "questionId": "4b8b4ac7",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Facebook / Instagram"
+              },
+              {
+                "value": "Email (Outlook / Gmail)"
+              },
+              {
+                "value": "Photoshop / Canva"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
+
+=== FORM SCHEMA http=200 ===
+{
+  "formId": "1ekrJsyjnlVluHixcDwyJy0AcTnwO9vuYYfzfkw81G7o",
+  "info": {
+    "title": "แบบสำรวจผู้เข้าอบรม — Claude AI Workshop",
+    "description": "แบบสำรวจนี้ใช้เตรียมหลักสูตรให้ตรงกับงานและพื้นฐานของท่าน รบกวนตอบตามจริงครับ ไม่มีถูกผิด ส่วนใหญ่กดเลือกได้เลย ใช้เวลา ~5 นาที",
+    "documentTitle": "แบบสำรวจผู้เข้าอบรม — Claude AI Workshop"
+  },
+  "settings": {
+    "emailCollectionType": "DO_NOT_COLLECT"
+  },
+  "revisionId": "0000059f",
+  "responderUri": "https://docs.google.com/forms/d/e/1FAIpQLSeBCuLJ6zUNICcylKvQTfng_lrnSPt10BhYijD-76ow9MJfTw/viewform",
+  "items": [
+    {
+      "itemId": "756b67a9",
+      "textItem": {},
+      "title": "ส่วนที่ 1: ข้อมูลทั่วไป"
+    },
+    {
+      "itemId": "742c0916",
+      "title": "ชื่อ-นามสกุล",
+      "questionItem": {
+        "question": {
+          "questionId": "58ddbea4",
+          "required": true,
+          "textQuestion": {}
+        }
+      }
+    },
+    {
+      "itemId": "4b0515d9",
+      "title": "ชื่อเล่น",
+      "questionItem": {
+        "question": {
+          "questionId": "4851e3e3",
+          "required": true,
+          "textQuestion": {}
+        }
+      }
+    },
+    {
+      "itemId": "1b4012cf",
+      "title": "แผนก",
+      "questionItem": {
+        "question": {
+          "questionId": "266c2d0f",
+          "required": true,
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "บัญชี / การเงิน"
+              },
+              {
+                "value": "การตลาด"
+              },
+              {
+                "value": "วิศวกร"
+              },
+              {
+                "value": "ช่าง / เทคนิค"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "07034861",
+      "title": "ตำแหน่ง / หน้าที่หลัก",
+      "questionItem": {
+        "question": {
+          "questionId": "4f53479b",
+          "required": true,
+          "textQuestion": {}
+        }
+      }
+    },
+    {
+      "itemId": "5f6f10f5",
+      "title": "อีเมล (สำหรับส่งสื่อ/ติดตามผล)",
+      "questionItem": {
+        "question": {
+          "questionId": "1844c142",
+          "textQuestion": {}
+        }
+      }
+    },
+    {
+      "itemId": "15174c9f",
+      "textItem": {},
+      "title": "ส่วนที่ 2: พื้นฐานทั่วไป"
+    },
+    {
+      "itemId": "029a61a8",
+      "title": "ความคล่องในการใช้คอมพิวเตอร์",
+      "description": "1 = พิมพ์งาน เปิดเว็บได้ · 3 = ใช้ Excel จัดไฟล์คล่อง · 5 = ติดตั้งโปรแกรม แก้ปัญหาคอมเองได้",
+      "questionItem": {
+        "question": {
+          "questionId": "54b96338",
+          "required": true,
+          "scaleQuestion": {
+            "low": 1,
+            "high": 5,
+            "lowLabel": "เริ่มต้น",
+            "highLabel": "คล่องมาก"
+          }
+        }
+      }
+    },
+    {
+      "itemId": "66d7d1e2",
+      "textItem": {},
+      "title": "ส่วนที่ 3: ความพร้อมด้านเทคนิค",
+      "description": "คอร์สมี deploy เว็บ + ฐานข้อมูล จึงขอประเมินส่วนนี้"
+    },
+    {
+      "itemId": "56c0f769",
+      "title": "ระบบปฏิบัติการของเครื่องที่จะใช้ในวันอบรม",
+      "questionItem": {
+        "question": {
+          "questionId": "7573ca07",
+          "required": true,
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "Windows"
+              },
+              {
+                "value": "macOS"
+              },
+              {
+                "value": "Linux"
+              },
+              {
+                "value": "ไม่แน่ใจ"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "1568755b",
+      "title": "การติดตั้งโปรแกรมบนเครื่อง (Claude/Git/Node)",
+      "description": "ถ้าไม่แน่ใจ ลองดูว่าเคยลงโปรแกรมเอง (Zoom, Chrome, LINE) ได้ไหม",
+      "questionItem": {
+        "question": {
+          "questionId": "5af58ca6",
+          "required": true,
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "ติดตั้งเองได้"
+              },
+              {
+                "value": "ต้องให้ทีมวิทยากรติดตั้งให้"
+              },
+              {
+                "value": "ไม่แน่ใจ"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "7484e9bf",
+      "title": "ประสบการณ์เขียนโค้ด / ทำเว็บ",
+      "questionItem": {
+        "question": {
+          "questionId": "3d3a679b",
+          "required": true,
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "ไม่เคยเลย"
+              },
+              {
+                "value": "เคยเห็น HTML/CSS"
+              },
+              {
+                "value": "เขียนโปรแกรม/ทำเว็บได้"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "73e8874b",
+      "title": "เคยใช้เครื่องมือเหล่านี้ไหม (เลือกที่เคยใช้)",
+      "questionItem": {
+        "question": {
+          "questionId": "5ed80053",
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "GitHub / Git"
+              },
+              {
+                "value": "Command line (Terminal)"
+              },
+              {
+                "value": "ฐานข้อมูล SQL"
+              },
+              {
+                "value": "ไม่เคยเลย"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "15ad7208",
+      "title": "ฉันมีบัญชีเหล่านี้แล้ว",
+      "questionItem": {
+        "question": {
+          "questionId": "12d549f4",
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "GitHub"
+              },
+              {
+                "value": "Vercel"
+              },
+              {
+                "value": "Supabase"
+              },
+              {
+                "value": "Claude AI"
+              },
+              {
+                "value": "ยังไม่มีเลย"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "13c5578b",
+      "title": "ความสบายใจในการใช้เครื่องมือเทคนิค (Git, Terminal, ฐานข้อมูล)",
+      "description": "1 = ไม่เคยใช้ ไม่อยากแตะ · 3 = ใช้ได้แต่ต้องมีคนสอน · 5 = ใช้ประจำ สบายมาก",
+      "questionItem": {
+        "question": {
+          "questionId": "0abc4395",
+          "required": true,
+          "scaleQuestion": {
+            "low": 1,
+            "high": 5,
+            "lowLabel": "อึดอัดมาก",
+            "highLabel": "สบายมาก"
+          }
+        }
+      }
+    },
+    {
+      "itemId": "59b9d6a8",
+      "textItem": {},
+      "title": "ส่วนที่ 4: ประสบการณ์ AI"
+    },
+    {
+      "itemId": "0083df8d",
+      "title": "เคยใช้ AI ตัวไหนบ้าง",
+      "questionItem": {
+        "question": {
+          "questionId": "2b99bddb",
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "ChatGPT"
+              },
+              {
+                "value": "Claude"
+              },
+              {
+                "value": "Gemini"
+              },
+              {
+                "value": "Microsoft Copilot"
+              },
+              {
+                "value": "ไม่เคยใช้เลย"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "2fb5252c",
+      "title": "ระดับการใช้ Claude",
+      "questionItem": {
+        "question": {
+          "questionId": "66b71f10",
+          "required": true,
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "ไม่เคย"
+              },
+              {
+                "value": "เคยลองเล่น"
+              },
+              {
+                "value": "ใช้บ้างเป็นครั้งคราว"
+              },
+              {
+                "value": "ใช้ประจำ"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "11a98fa5",
+      "title": "ถ้าเคยใช้ AI เคยนำไปช่วยงานอะไรบ้าง (เลือกได้หลายข้อ)",
+      "questionItem": {
+        "question": {
+          "questionId": "542c0038",
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "เขียน/แก้ภาษาไทย-อังกฤษ"
+              },
+              {
+                "value": "สรุปข้อความ / เอกสาร"
+              },
+              {
+                "value": "แปลภาษา"
+              },
+              {
+                "value": "ค้นคว้าข้อมูล"
+              },
+              {
+                "value": "ตอบลูกค้า / chatbot"
+              },
+              {
+                "value": "สร้าง content (caption, blog)"
+              },
+              {
+                "value": "วิเคราะห์ Excel / data"
+              },
+              {
+                "value": "เขียนโค้ด / script"
+              },
+              {
+                "value": "สร้างภาพ"
+              },
+              {
+                "value": "ยังไม่เคยใช้"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "4d3857c0",
+      "textItem": {},
+      "title": "ส่วนที่ 5: งานจริง & สิ่งที่อยากได้"
+    },
+    {
+      "itemId": "32a48bf9",
+      "title": "งานประจำที่กินเวลามากที่สุด (เลือกได้หลายข้อ)",
+      "questionItem": {
+        "question": {
+          "questionId": "622e6937",
+          "required": true,
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "ทำรายงาน / สรุปข้อมูล"
+              },
+              {
+                "value": "กรอกข้อมูลซ้ำๆ (copy-paste)"
+              },
+              {
+                "value": "ตอบลูกค้า / chat"
+              },
+              {
+                "value": "ตรวจสอบ / approve เอกสาร"
+              },
+              {
+                "value": "ประชุม / ตามงาน"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "ทำ invoice / slip / เอกสาร"
+              },
+              {
+                "value": "วิเคราะห์ข้อมูล / Excel"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "งานช่าง / หน้างาน"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "7a300c1b",
+      "title": "งานที่อยากให้ AI ช่วยมากที่สุด (เลือกได้หลายข้อ)",
+      "questionItem": {
+        "question": {
+          "questionId": "209f937b",
+          "required": true,
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "สรุปประชุม / chat"
+              },
+              {
+                "value": "แปล / เขียนภาษาอังกฤษ"
+              },
+              {
+                "value": "ตอบลูกค้า"
+              },
+              {
+                "value": "สร้าง content social"
+              },
+              {
+                "value": "วิเคราะห์ Excel"
+              },
+              {
+                "value": "ตรวจสอบ / แก้เอกสาร"
+              },
+              {
+                "value": "ค้นหาข้อมูล"
+              },
+              {
+                "value": "สร้างเว็บ / landing page"
+              },
+              {
+                "value": "สร้างภาพประกอบ"
+              },
+              {
+                "value": "automation งานซ้ำๆ"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "34d912fc",
+      "title": "โปรแกรม/เครื่องมือที่ใช้ประจำ (เลือกได้หลายข้อ)",
+      "questionItem": {
+        "question": {
+          "questionId": "61c4ca0a",
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "Excel / Google Sheets"
+              },
+              {
+                "value": "Word / Google Docs"
+              },
+              {
+                "value": "PowerPoint / Slides"
+              },
+              {
+                "value": "LINE / LINE OA"
+              },
+              {
+                "value": "Facebook / Instagram"
+              },
+              {
+                "value": "Email (Outlook / Gmail)"
+              },
+              {
+                "value": "โปรแกรมบัญชี (Express, Peak, ฯลฯ)"
+              },
+              {
+                "value": "EasySlip"
+              },
+              {
+                "value": "ERP / WMS"
+              },
+              {
+                "value": "Photoshop / Canva"
+              },
+              {
+                "value": "Notion / Trello"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "6900ce82",
+      "title": "หลังอบรมจบ อยากทำอะไรได้ (เลือกได้หลายข้อ)",
+      "questionItem": {
+        "question": {
+          "questionId": "25bd76e8",
+          "required": true,
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "ใช้ AI ช่วยงานประจำได้คล่อง"
+              },
+              {
+                "value": "สร้าง prompt ที่ใช้ซ้ำได้"
+              },
+              {
+                "value": "ทำหน้าเว็บโปรไฟล์ / landing page เองได้"
+              },
+              {
+                "value": "ทำ internal tool / dashboard ของแผนก"
+              },
+              {
+                "value": "เชื่อม AI กับ Excel / ฐานข้อมูล"
+              },
+              {
+                "value": "สอนเพื่อนต่อได้"
+              },
+              {
+                "value": "ไม่แน่ใจ"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "5a5eb3c2",
+      "textItem": {},
+      "title": "ส่วนที่ 6: อื่นๆ"
+    },
+    {
+      "itemId": "31fe8561",
+      "title": "มีข้อกังวล / อุปสรรค (เลือกที่ตรง)",
+      "questionItem": {
+        "question": {
+          "questionId": "11d0215d",
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "กลัวข้อมูลรั่วไหล"
+              },
+              {
+                "value": "กลัวเรียนไม่ทัน"
+              },
+              {
+                "value": "กังวลภาษาอังกฤษ"
+              },
+              {
+                "value": "ไม่เคยใช้ command line"
+              },
+              {
+                "value": "ไม่มีสิทธิ์ติดตั้งโปรแกรม"
+              },
+              {
+                "value": "ไม่มีเวลาฝึก"
+              },
+              {
+                "value": "ไม่กังวลอะไรเป็นพิเศษ"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "3f5f9989",
+      "title": "ข้อจำกัดด้านอาหาร (เลือกที่ตรง)",
+      "questionItem": {
+        "question": {
+          "questionId": "273768d7",
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "ไม่มี / กินทุกอย่าง"
+              },
+              {
+                "value": "มังสวิรัติ"
+              },
+              {
+                "value": "เจ"
+              },
+              {
+                "value": "ไม่กินหมู"
+              },
+              {
+                "value": "ไม่กินเนื้อ"
+              },
+              {
+                "value": "แพ้อาหารทะเล"
+              },
+              {
+                "value": "แพ้นม (lactose intolerant)"
+              },
+              {
+                "value": "แพ้กลูเตน"
+              },
+              {
+                "value": "แพ้ถั่ว"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "linkedSheetId": "1fQmT7RUO_YVLyZVQP3e9jowYv5TgotU56XEvFE0LpUQ",
+  "publishSettings": {
+    "publishState": {
+      "isPublished": true,
+      "isAcceptingResponses": true
+    }
+  }
+}

@@ -1,0 +1,673 @@
+RESPONSES http=200
+{
+  "responses": [
+    {
+      "responseId": "ACYDBNh9deBe0Mu5sXCz_GcsbT5dTYXa4_b33H4XyITI6TL7ibjgIugBwhwrvNaX1aYZrfw",
+      "createTime": "2026-06-30T09:09:11.668Z",
+      "lastSubmittedTime": "2026-06-30T09:09:11.668463Z",
+      "answers": {
+        "1f87149d": {
+          "questionId": "1f87149d",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Khonkaen electric technology engineering"
+              }
+            ]
+          }
+        },
+        "1d93ff41": {
+          "questionId": "1d93ff41",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "มี internal tool ใช้จริง 1+ ตัว"
+              },
+              {
+                "value": "พนักงาน 5+ คนใช้ AI ในงานประจำ"
+              },
+              {
+                "value": "มี prototype 1+ ตัวขึ้น production"
+              },
+              {
+                "value": "มีคนในทีมทำเว็บ deploy เองได้"
+              }
+            ]
+          }
+        },
+        "7b4b9a52": {
+          "questionId": "7b4b9a52",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "Ketthip ,ceo"
+              }
+            ]
+          }
+        },
+        "40cae4b4": {
+          "questionId": "40cae4b4",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "คู่แข่ง/ตลาดเริ่มใช้ AI แล้ว"
+              },
+              {
+                "value": "อยากให้ทีมเรียนรู้สิ่งใหม่ ทันยุค"
+              },
+              {
+                "value": "มีโปรเจกต์/ระบบใหม่ที่จะใช้ AI"
+              }
+            ]
+          }
+        },
+        "698f43e5": {
+          "questionId": "698f43e5",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ติดตั้งเองได้"
+              }
+            ]
+          }
+        },
+        "33b68f36": {
+          "questionId": "33b68f36",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำเองได้จริง"
+              }
+            ]
+          }
+        },
+        "3a717bea": {
+          "questionId": "3a717bea",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "พื้นฐาน Claude (ติดตั้ง สั่งงาน ฟังก์ชัน)"
+              },
+              {
+                "value": "ทำเว็บไซต์ขึ้น production (GitHub · Vercel · Netlify)"
+              },
+              {
+                "value": "ฐานข้อมูล (Supabase · Firebase · MongoDB)"
+              },
+              {
+                "value": "ใช้aiร่วมกับ marketing ได้"
+              }
+            ]
+          }
+        },
+        "3e62f581": {
+          "questionId": "3e62f581",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำเองได้จริง"
+              }
+            ]
+          }
+        },
+        "36a50b62": {
+          "questionId": "36a50b62",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "1 วัน"
+              }
+            ]
+          }
+        },
+        "228d919c": {
+          "questionId": "228d919c",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "฿30,000-50,000 รวม"
+              }
+            ]
+          }
+        },
+        "4c31dde0": {
+          "questionId": "4c31dde0",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "บริษัทออกให้ทั้งหมด"
+              }
+            ]
+          }
+        },
+        "62c096f3": {
+          "questionId": "62c096f3",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทีมใช้ AI ในงานประจำได้คล่อง"
+              },
+              {
+                "value": "มี internal tool ใช้จริง 1+ ตัว"
+              },
+              {
+                "value": "มีคน deploy เว็บไซต์เองได้"
+              },
+              {
+                "value": "ใช้ฐานข้อมูลในงานได้"
+              },
+              {
+                "value": "มี dashboard / automation ใหม่"
+              }
+            ]
+          }
+        },
+        "76bafd08": {
+          "questionId": "76bafd08",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เน้นเท่ากันทุกหัวข้อ"
+              }
+            ]
+          }
+        },
+        "0f2ac615": {
+          "questionId": "0f2ac615",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ทำเองได้จริง"
+              }
+            ]
+          }
+        },
+        "1cd7ae69": {
+          "questionId": "1cd7ae69",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "คนที่จะใช้/ต่อยอดได้จริง"
+              }
+            ]
+          }
+        },
+        "6f704db4": {
+          "questionId": "6f704db4",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "เว็บบริษัท / landing page"
+              },
+              {
+                "value": "ระบบภายใน (internal tool)"
+              },
+              {
+                "value": "Dashboard ดูข้อมูล"
+              }
+            ]
+          }
+        },
+        "69f7ccf1": {
+          "questionId": "69f7ccf1",
+          "textAnswers": {
+            "answers": [
+              {
+                "value": "ระบบไฟ โซลาร์เซลล์"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
+
+=== FORM SCHEMA http=200 ===
+{
+  "formId": "1oEUefpyYqe1MQPpbwyM_lrkzReq02ZaETM50rUf-bvw",
+  "info": {
+    "title": "แบบสอบถามความคาดหวังสำหรับเจ้าของธุรกิจ — Claude AI Workshop (Needs Analysis)",
+    "description": "แบบสอบถามนี้ช่วยให้เราออกแบบหลักสูตรให้ตรงเป้าหมายของบริษัทมากที่สุด ",
+    "documentTitle": "แบบสอบถามเจ้าของธุรกิจ — Claude AI Workshop (Needs Analysis)"
+  },
+  "settings": {
+    "emailCollectionType": "DO_NOT_COLLECT"
+  },
+  "revisionId": "0000059b",
+  "responderUri": "https://docs.google.com/forms/d/e/1FAIpQLSd5MbOlD6K34VBNTGPXq0PMEDd1mYKzpkEp0pi48YcMy9qRBQ/viewform",
+  "items": [
+    {
+      "itemId": "0e000fa9",
+      "textItem": {},
+      "title": "ส่วนที่ 1: ภาพรวมธุรกิจ & เป้าหมาย"
+    },
+    {
+      "itemId": "78b64cb6",
+      "title": "บริษัท",
+      "questionItem": {
+        "question": {
+          "questionId": "1f87149d",
+          "required": true,
+          "textQuestion": {}
+        }
+      }
+    },
+    {
+      "itemId": "0fb8e259",
+      "title": "ชื่อผู้ตอบ, ตำแหน่ง",
+      "questionItem": {
+        "question": {
+          "questionId": "7b4b9a52",
+          "required": true,
+          "textQuestion": {}
+        }
+      }
+    },
+    {
+      "itemId": "0ef82cc6",
+      "title": "ธุรกิจของบริษัททำเกี่ยวกับอะไร (สั้นๆ 1 บรรทัด)",
+      "questionItem": {
+        "question": {
+          "questionId": "69f7ccf1",
+          "required": true,
+          "textQuestion": {}
+        }
+      }
+    },
+    {
+      "itemId": "185af69b",
+      "title": "เหตุผลที่อยากจัดอบรม AI ตอนนี้ (เลือกได้หลายข้อ)",
+      "description": "เลือกที่ตรงกับสิ่งที่ท่านต้องการ",
+      "questionItem": {
+        "question": {
+          "questionId": "40cae4b4",
+          "required": true,
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "คู่แข่ง/ตลาดเริ่มใช้ AI แล้ว"
+              },
+              {
+                "value": "อยากให้ทีมเรียนรู้สิ่งใหม่ ทันยุค"
+              },
+              {
+                "value": "มีโปรเจกต์/ระบบใหม่ที่จะใช้ AI"
+              },
+              {
+                "value": "ลูกค้าเริ่มถามถึง AI"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "53bad0c9",
+      "title": "เป้าหมายหลักหลังอบรม (เลือกได้หลายข้อ)",
+      "questionItem": {
+        "question": {
+          "questionId": "62c096f3",
+          "required": true,
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "ทีมใช้ AI ในงานประจำได้คล่อง"
+              },
+              {
+                "value": "มี internal tool ใช้จริง 1+ ตัว"
+              },
+              {
+                "value": "มีคน deploy เว็บไซต์เองได้"
+              },
+              {
+                "value": "ใช้ฐานข้อมูลในงานได้"
+              },
+              {
+                "value": "มี dashboard / automation ใหม่"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "1f12ab2b",
+      "title": "ตัวชี้วัดความสำเร็จที่ 3 เดือน (เลือก 1-3 ข้อ)",
+      "description": "ใช้วัดผลหลังคลาส",
+      "questionItem": {
+        "question": {
+          "questionId": "1d93ff41",
+          "required": true,
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "มี internal tool ใช้จริง 1+ ตัว"
+              },
+              {
+                "value": "พนักงาน 5+ คนใช้ AI ในงานประจำ"
+              },
+              {
+                "value": "มี prototype 1+ ตัวขึ้น production"
+              },
+              {
+                "value": "มีคนในทีมทำเว็บ deploy เองได้"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "59c35efc",
+      "textItem": {},
+      "title": "ส่วนที่ 2: ขอบเขตหลักสูตร"
+    },
+    {
+      "itemId": "498f463e",
+      "title": "หัวข้อที่ต้องการเรียน (เลือกได้หลายข้อ)",
+      "questionItem": {
+        "question": {
+          "questionId": "3a717bea",
+          "required": true,
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "พื้นฐาน Claude (ติดตั้ง สั่งงาน ฟังก์ชัน)"
+              },
+              {
+                "value": "ทำเว็บไซต์ขึ้น production (GitHub · Vercel · Netlify)"
+              },
+              {
+                "value": "ฐานข้อมูล (Supabase · Firebase · MongoDB)"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "5d9f93a4",
+      "questionGroupItem": {
+        "questions": [
+          {
+            "questionId": "0f2ac615",
+            "required": true,
+            "rowQuestion": {
+              "title": "Claude พื้นฐาน"
+            }
+          },
+          {
+            "questionId": "33b68f36",
+            "required": true,
+            "rowQuestion": {
+              "title": "Deploy เว็บ"
+            }
+          },
+          {
+            "questionId": "3e62f581",
+            "required": true,
+            "rowQuestion": {
+              "title": "ฐานข้อมูล"
+            }
+          }
+        ],
+        "grid": {
+          "columns": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "เข้าใจภาพรวม"
+              },
+              {
+                "value": "ทำตามขั้นตอน"
+              },
+              {
+                "value": "ทำเองได้จริง"
+              }
+            ]
+          }
+        }
+      },
+      "title": "ระดับความคาดหวังในแต่ละหัวข้อ (สำคัญที่สุด — กำหนดความลึก)",
+      "description": "เข้าใจภาพรวม = ฟังบรรยายเข้าใจ · ทำตามขั้นตอน = follow tutorial ได้ · ทำเองได้ = สร้างใหม่ได้ตั้งแต่ต้น"
+    },
+    {
+      "itemId": "78b3968a",
+      "title": "โปรเจกต์/ผลงานที่อยากให้พนักงานทำได้หลังจบ (เลือกได้หลายข้อ)",
+      "questionItem": {
+        "question": {
+          "questionId": "6f704db4",
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "เว็บบริษัท / landing page"
+              },
+              {
+                "value": "ระบบภายใน (internal tool)"
+              },
+              {
+                "value": "Dashboard ดูข้อมูล"
+              },
+              {
+                "value": "Bot / automation งานซ้ำ"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "1174c557",
+      "title": "หัวข้อไหนสำคัญสุด อยากเน้นเป็นพิเศษ",
+      "questionItem": {
+        "question": {
+          "questionId": "76bafd08",
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "Claude พื้นฐาน"
+              },
+              {
+                "value": "ทำเว็บ deploy"
+              },
+              {
+                "value": "ฐานข้อมูล"
+              },
+              {
+                "value": "เน้นเท่ากันทุกหัวข้อ"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "509f4c33",
+      "textItem": {},
+      "title": "ส่วนที่ 3: กลุ่มผู้เรียน",
+      "description": "ผู้เรียนคละแผนก (บัญชี/การตลาด/วิศวกร/ช่าง) หัวข้อ deploy เว็บ/DB/GitHub เน้นสายเทคนิค"
+    },
+    {
+      "itemId": "09c0c35c",
+      "title": "เหตุผลที่เลือกผู้เรียนกลุ่มนี้มาเข้าอบรม",
+      "questionItem": {
+        "question": {
+          "questionId": "1cd7ae69",
+          "choiceQuestion": {
+            "type": "CHECKBOX",
+            "options": [
+              {
+                "value": "หัวหน้าแต่ละแผนกคัดเลือกให้"
+              },
+              {
+                "value": "คนที่สนใจสมัครเข้ามาเอง"
+              },
+              {
+                "value": "คนที่มีพื้นฐานคอมพิวเตอร์อยู่แล้ว"
+              },
+              {
+                "value": "คนที่ทำงานเกี่ยวกับ pain point ที่อยากแก้"
+              },
+              {
+                "value": "คนที่จะใช้/ต่อยอดได้จริง"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "0474d250",
+      "textItem": {},
+      "title": "ส่วนที่ 4: เครื่องมือ & งบประมาณ"
+    },
+    {
+      "itemId": "6e680534",
+      "title": "ใครออกค่าเครื่องมือ (Claude/GitHub/Vercel/DB)",
+      "description": "ค่าใช้จ่ายโดยประมาณ: Claude ~฿3400/เดือน · GitHub ฟรี · Vercel/Netlify มี free tier · Supabase/Firebase มี free tier",
+      "questionItem": {
+        "question": {
+          "questionId": "4c31dde0",
+          "required": true,
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "บริษัทออกให้ทั้งหมด"
+              },
+              {
+                "value": "ผู้เรียนใช้ฟรี-tier ของตัวเอง"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "46367f66",
+      "title": "งบประมาณโดยประมาณ",
+      "description": "ใช้กำหนด scope ของคอร์ส — ระบุคร่าวๆ ได้ จะปรับให้ลงตัว",
+      "questionItem": {
+        "question": {
+          "questionId": "228d919c",
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "น้อยกว่า ฿30,000 รวม"
+              },
+              {
+                "value": "฿30,000-50,000 รวม"
+              },
+              {
+                "value": "฿50,000-100,000 รวม"
+              },
+              {
+                "value": "฿100,000-200,000 รวม"
+              },
+              {
+                "value": "มากกว่า ฿200,000 รวม"
+              },
+              {
+                "value": "ยังไม่มีกรอบ ขอผู้สอนเสนอ option"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "4a61c073",
+      "textItem": {},
+      "title": "ส่วนที่ 5: โลจิสติกส์ & หลังอบรม"
+    },
+    {
+      "itemId": "4d15114a",
+      "title": "จำนวนวัน + ช่วงเวลาที่คาดหวัง",
+      "questionItem": {
+        "question": {
+          "questionId": "36a50b62",
+          "required": true,
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "ครึ่งวัน"
+              },
+              {
+                "value": "1 วัน"
+              },
+              {
+                "value": "2 วัน"
+              },
+              {
+                "value": "มากกว่า 2 วัน"
+              },
+              {
+                "isOther": true
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "6c090a2d",
+      "title": "ผู้เรียนติดตั้งโปรแกรมเองได้หรือไม่",
+      "description": "จำเป็นมาก สำหรับ Claude/Git/Node — ถ้าไม่มีสิทธิ์ ต้องมี IT ช่วยล่วงหน้า",
+      "questionItem": {
+        "question": {
+          "questionId": "698f43e5",
+          "choiceQuestion": {
+            "type": "RADIO",
+            "options": [
+              {
+                "value": "ติดตั้งเองได้"
+              },
+              {
+                "value": "ต้องการให้ทีมวิทยากรติดตั้งให้"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "itemId": "7bdd05a2",
+      "textItem": {},
+      "title": "ส่วนที่ 6: ผลลัพธ์แบบ Tiered (สำคัญต่อการออกแบบหลักสูตร)",
+      "description": "ผู้เรียนคละแผนกที่ความต่างระดับสูง การยอมรับผลลัพธ์ไม่เท่ากันจะช่วยปลดล็อกการออกแบบ pace + ความลึก"
+    }
+  ],
+  "publishSettings": {
+    "publishState": {
+      "isPublished": true,
+      "isAcceptingResponses": true
+    }
+  }
+}

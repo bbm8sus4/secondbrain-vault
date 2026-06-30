@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Organization Structure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1d1d1f; --muted:#8a8a8e; --bg:#ffffff;
+    --blue:#2f6bf6; --green:#3f9d77; --gray:#b6b6be;
+    --empty-line:#d3d3d9; --empty-ink:#b0b0b8;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Sans","IBM Plex Sans Thai",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:44px 24px 64px}
+  h1{font-size:21px; font-weight:600; letter-spacing:-.2px; margin:0 0 4px}
+  .sub{color:var(--muted); font-size:14px; margin:0 0 30px}
+
+  .grid{
+    display:grid; grid-template-columns:repeat(5,1fr); gap:30px 18px;
+  }
+  @media(max-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:440px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+  .member{display:flex; flex-direction:column; align-items:center; text-align:center; min-width:0}
+
+  .ava{position:relative; width:88px; height:88px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:33px; font-weight:600; letter-spacing:.5px; line-height:1;
+    box-shadow:0 1px 2px rgba(0,0,0,.06);}
+  .ava.blue{background:var(--blue)}
+  .ava.green{background:var(--green)}
+
+  .badge{position:absolute; right:-2px; bottom:-2px; width:27px; height:27px; border-radius:50%;
+    background:#fff; display:flex; align-items:center; justify-content:center;}
+  .badge i{width:21px; height:21px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-style:normal; font-size:11px; font-weight:700; color:#fff;}
+  .badge i.t{background:var(--blue)}
+  .badge i.e{background:var(--green)}
+
+  .name{margin-top:14px; font-size:15px; font-weight:700; letter-spacing:.3px; color:var(--ink);
+    max-width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .role{margin-top:3px; font-size:13px; color:var(--muted);
+    max-width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+
+  /* empty slot */
+  .ava.empty{background:transparent; border:2px dashed var(--empty-line); color:var(--empty-ink);
+    font-size:30px; font-weight:400; box-shadow:none}
+  .member.is-empty .name{color:var(--empty-ink); font-weight:600; letter-spacing:1px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Organization Structure</h1>
+  <p class="sub">Marketing &amp; Sales Team</p>
+
+  <div class="grid">
+
+    <div class="member is-empty">
+      <div class="ava empty">+</div>
+      <div class="name">EMPTY</div>
+      <div class="role">&nbsp;</div>
+    </div>
+
+    <div class="member is-empty">
+      <div class="ava empty">+</div>
+      <div class="name">EMPTY</div>
+      <div class="role">&nbsp;</div>
+    </div>
+
+    <div class="member">
+      <div class="ava blue">M<span class="badge"><i class="t">T</i></span></div>
+      <div class="name">MIZTEEN</div>
+      <div class="role" title="Sales">Sales</div>
+    </div>
+
+    <div class="member">
+      <div class="ava blue">J<span class="badge"><i class="t">T</i></span></div>
+      <div class="name">JADI</div>
+      <div class="role" title="Manager Marketing">Manager Marketing</div>
+    </div>
+
+    <div class="member">
+      <div class="ava blue">N<span class="badge"><i class="t">T</i></span></div>
+      <div class="name">NOOK</div>
+      <div class="role" title="Marketing Officer">Marketing Officer</div>
+    </div>
+
+    <div class="member">
+      <div class="ava green">L<span class="badge"><i class="e">E</i></span></div>
+      <div class="name">LEK</div>
+      <div class="role" title="Marketing / Senior">Marketing / Senior</div>
+    </div>
+
+    <div class="member">
+      <div class="ava blue">A<span class="badge"><i class="t">T</i></span></div>
+      <div class="name">AUN</div>
+      <div class="role" title="Marketing Junior">Marketing Junior</div>
+    </div>
+
+    <div class="member is-empty">
+      <div class="ava empty">+</div>
+      <div class="name">EMPTY</div>
+      <div class="role">&nbsp;</div>
+    </div>
+
+    <div class="member is-empty">
+      <div class="ava empty">+</div>
+      <div class="name">EMPTY</div>
+      <div class="role">&nbsp;</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

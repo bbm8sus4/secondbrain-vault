@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — ความต้องการผู้เข้าอบรม | Claude AI Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#eef0f4; --card:#ffffff; --ink:#1d1d1f; --muted:#6e6e73; --line:#e5e5ea;
+    --accent:#3257d6; --accent-soft:#eef1fc;
+    --ok:#1a9e57; --ok-soft:#e6f6ec; --warn:#b5790a; --warn-soft:#fdf3e0;
+    --risk:#cc342b; --risk-soft:#fdeceb; --track:#e9e9ee;
+    --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.05);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Sans","IBM Plex Sans Thai",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; font-kerning:normal;
+    line-height:1.4; letter-spacing:normal;
+  }
+  .app{height:100vh; display:flex; flex-direction:column; gap:12px; padding:16px; overflow:hidden}
+
+  /* topbar */
+  .topbar{display:flex; align-items:center; justify-content:space-between; gap:14px; flex:0 0 auto}
+  .topbar .ttl{display:flex; align-items:baseline; gap:12px; min-width:0}
+  .topbar h1{margin:0; font-size:clamp(16px,1.7vw,21px); font-weight:600; letter-spacing:-.2px; white-space:nowrap}
+  .topbar .eyebrow{font-size:11px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; color:var(--accent); white-space:nowrap}
+  .chips{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
+  .chips .c{background:var(--card); border:1px solid var(--line); border-radius:999px; padding:5px 11px; font-size:12px; color:var(--muted); box-shadow:var(--shadow); white-space:nowrap}
+  .chips .c b{color:var(--ink); font-weight:600}
+
+  /* kpi */
+  .kpi{flex:0 0 auto; display:grid; grid-template-columns:repeat(6,1fr); gap:12px}
+  .k{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:11px 14px; box-shadow:var(--shadow)}
+  .k .n{font-size:clamp(20px,2.4vw,27px); font-weight:600; letter-spacing:-.5px; font-feature-settings:"tnum" 1; line-height:1.1}
+  .k .n.r{color:var(--risk)} .k .n.w{color:var(--warn)} .k .n.g{color:var(--ok)} .k .n.a{color:var(--accent)}
+  .k .l{font-size:11.5px; color:var(--muted); margin-top:3px; line-height:1.3}
+
+  /* main grid */
+  .main{flex:1 1 auto; min-height:0; display:grid; grid-template-columns:1.15fr minmax(0,1fr) minmax(0,1fr); gap:12px; overflow:hidden}
+  .col{display:flex; flex-direction:column; gap:12px; min-height:0}
+  .tile{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:13px 15px; box-shadow:var(--shadow); display:flex; flex-direction:column; min-height:0}
+  .tile h2{margin:0 0 9px; font-size:12.5px; font-weight:600; letter-spacing:.2px; color:var(--muted); display:flex; justify-content:space-between; align-items:center}
+  .tile h2 .badge{font-size:10.5px; font-weight:700; padding:2px 8px; border-radius:999px; background:var(--accent-soft); color:var(--accent)}
+  .chartwrap{position:relative; flex:1 1 auto; min-height:0}
+
+  /* ranking */
+  .rank{display:flex; flex-direction:column; flex:1 1 auto; min-height:0; justify-content:space-between; gap:2px}
+  .rrow{display:grid; grid-template-columns:24px 1fr 86px 30px; align-items:center; gap:9px; padding:4px 0}
+  .rk{width:24px; height:24px; border-radius:7px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; background:var(--accent-soft); color:var(--accent); font-feature-settings:"tnum" 1}
+  .rk.top{background:var(--ok-soft); color:var(--ok)} .rk.crit{background:var(--risk-soft); color:var(--risk)}
+  .rnm{font-size:13px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .rnm em{font-style:normal; font-weight:400; color:var(--muted); font-size:11.5px}
+  .rbar{height:7px; background:var(--track); border-radius:999px; overflow:hidden}
+  .rbar i{display:block; height:100%; border-radius:999px; background:var(--accent)}
+  .rbar i.g{background:var(--ok)} .rbar i.w{background:var(--warn)} .rbar i.r{background:var(--risk)}
+  .rpct{font-size:12px; font-weight:600; color:var(--muted); text-align:right; font-feature-settings:"tnum" 1}
+
+  /* verdict */
+  .vbadge{display:inline-block; font-size:12px; font-weight:700; padding:5px 11px; border-radius:999px; background:var(--warn-soft); color:var(--warn); margin-bottom:8px}
+  .vtext{font-size:12.5px; color:#3a3a40; line-height:1.5}
+  .vtext b{font-weight:600; color:var(--ink)}
+
+  /* recommendations */
+  .reco{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; counter-reset:r}
+  .reco li{position:relative; padding-left:28px; font-size:12.5px; line-height:1.42}
+  .reco li::before{content:counter(r); counter-increment:r; position:absolute; left:0; top:1px; width:19px; height:19px; border-radius:5px; background:var(--accent-soft); color:var(--accent); font-weight:700; font-size:11px; display:flex; align-items:center; justify-content:center}
+  .reco li b{font-weight:600}
+
+  /* topic mini */
+  .topics{display:flex; flex-direction:column; gap:6px}
+  .trow{display:flex; align-items:center; gap:8px; font-size:12px}
+  .dot{width:8px; height:8px; border-radius:50%; flex:0 0 auto}
+  .dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)} .dot.risk{background:var(--risk)}
+  .trow .t{font-weight:500} .trow .s{color:var(--muted); margin-left:auto; font-size:11px}
+
+  .twocharts{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px; flex:1 1 auto; min-height:0}
+  .twocharts .mini{display:flex; flex-direction:column; min-height:0}
+  .twocharts .mini .cap{font-size:11px; color:var(--muted); text-align:center; margin-bottom:4px}
+
+  /* layout hardening (aidebate) — กัน min-content floor + canvas ดัน layout + ไทยแตกทีละคำ */
+  .main, .col, .tile, .tile > *, .twocharts, .chartwrap, .rank, .reco, .reco li, .reco li > *{min-width:0; min-height:0}
+  .chartwrap canvas{position:absolute; inset:0; width:100% !important; height:100% !important; display:block}
+  .reco li, .reco li *{white-space:normal; word-break:normal; overflow-wrap:break-word; line-break:loose; hyphens:none}
+  .nowrap{white-space:nowrap}
+
+  @media(max-width:1180px){
+    .app{height:auto; overflow:visible}
+    .main{grid-template-columns:1fr}
+    .kpi{grid-template-columns:repeat(3,1fr)}
+    .chartwrap{height:240px}
+    .chartwrap canvas{position:absolute}
+  }
+  @media(max-width:620px){.kpi{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="topbar">
+    <div class="ttl">
+      <span class="eyebrow">Claude AI Workshop</span>
+      <h1>ความต้องการ &amp; ความพร้อมของผู้เข้าอบรม</h1>
+    </div>
+    <div class="chips">
+      <span class="c">บ.<b>ขอนแก่นอิเล็คทริค</b></span>
+      <span class="c"><b>8 คน</b> · การตลาด 7 · ช่าง 1</span>
+      <span class="c">หลักสูตร <b>Claude · เว็บ · DB · GitHub</b></span>
+    </div>
+  </div>
+
+  <div class="kpi">
+    <div class="k"><div class="n a">8</div><div class="l">ผู้เข้าอบรม</div></div>
+    <div class="k"><div class="n">7<span style="font-size:14px;color:var(--muted)">/8</span></div><div class="l">สายการตลาด</div></div>
+    <div class="k"><div class="n w">2.6<span style="font-size:14px;color:var(--muted)">/5</span></div><div class="l">ความมั่นใจใช้ AI (เฉลี่ย)</div></div>
+    <div class="k"><div class="n r">5<span style="font-size:14px;color:var(--muted)">/8</span></div><div class="l">ไม่เคยเขียนโค้ด</div></div>
+    <div class="k"><div class="n r">6<span style="font-size:14px;color:var(--muted)">/8</span></div><div class="l">กลัวเรียนไม่ทัน</div></div>
+    <div class="k"><div class="n w">0</div><div class="l">ใช้ Claude เป็นประจำ</div></div>
+  </div>
+
+  <div class="main">
+
+    <!-- COL A: ranking -->
+    <div class="col">
+      <div class="tile" style="flex:1 1 auto">
+        <h2>อันดับความพร้อม — เรียงจากสูงไปต่ำ <span class="badge">8 คน</span></h2>
+        <div class="rank">
+          <div class="rrow"><span class="rk top">1</span><span class="rnm">ต่อ <em>· เขียนเว็บได้ · ติดตั้งเอง · ไม่กังวล</em></span><span class="rbar"><i class="g" style="width:88%"></i></span><span class="rpct">88</span></div>
+          <div class="rrow"><span class="rk top">2</span><span class="rnm">นัท <em>· มั่นใจ AI สูงสุด · เคยใช้ SQL</em></span><span class="rbar"><i class="g" style="width:80%"></i></span><span class="rpct">80</span></div>
+          <div class="rrow"><span class="rk">3</span><span class="rnm">ฟ้า <em>· ดีไซน์ตรง use case · ติดตั้งเอง</em></span><span class="rbar"><i style="width:60%"></i></span><span class="rpct">60</span></div>
+          <div class="rrow"><span class="rk">4</span><span class="rnm">อาร์ม <em>· เห็น HTML · ลองเล่น Claude</em></span><span class="rbar"><i style="width:57%"></i></span><span class="rpct">57</span></div>
+          <div class="rrow"><span class="rk">5</span><span class="rnm">แม็ก <em>· เห็น HTML · ยังไม่ได้ตั้งเป้าชัดเจน</em></span><span class="rbar"><i style="width:55%"></i></span><span class="rpct">55</span></div>
+          <div class="rrow"><span class="rk">6</span><span class="rnm">เมย์ <em>· ยังไม่ค่อยมั่นใจในการใช้ AI · กังวล 3 เรื่อง</em></span><span class="rbar"><i class="w" style="width:40%"></i></span><span class="rpct">40</span></div>
+          <div class="rrow"><span class="rk">7</span><span class="rnm">ขิม <em>· มีข้อกังวลหลายด้าน (4 เรื่อง) · ต้องให้ IT ช่วยติดตั้ง</em></span><span class="rbar"><i class="w" style="width:30%"></i></span><span class="rpct">30</span></div>
+          <div class="rrow"><span class="rk crit">8</span><span class="rnm">มอส <em>· เป็นผู้เริ่มต้นในทุกด้าน · ยังไม่เคยใช้ AI มาก่อน</em></span><span class="rbar"><i class="r" style="width:15%"></i></span><span class="rpct">15</span></div>
+        </div>
+      </div>
+      <div class="tile" style="flex:0 0 auto">
+        <h2>หัวข้อที่ต้องปรับวิธีสอน</h2>
+        <div class="topics">
+          <div class="trow"><span class="dot ok"></span><span class="t">ใช้ AI ในงาน · คอนเทนต์การตลาด</span><span class="s">ความต้องการสูง</span></div>
+          <div class="trow"><span class="dot warn"></span><span class="t">ทำเว็บ / landing page</span><span class="s">ใช้แนว no-code</span></div>
+          <div class="trow"><span class="dot warn"></span><span class="t">Claude · การติดตั้งโปรแกรม</span><span class="s">ปูพื้น + เตรียมก่อน</span></div>
+          <div class="trow"><span class="dot risk"></span><span class="t">ฐานข้อมูล · GitHub</span><span class="s">ลดเป็นภาพรวม + demo</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COL B: charts -->
+    <div class="col">
+      <div class="tile" style="flex:1.25 1 0">
+        <h2>ความพร้อมรายหัวข้อ <span class="badge">0–3</span></h2>
+        <div class="chartwrap"><canvas id="cRadar"></canvas></div>
+      </div>
+      <div class="tile" style="flex:1 1 0">
+        <h2>งานที่อยากให้ AI ช่วย <span class="badge">จาก 8</span></h2>
+        <div class="chartwrap"><canvas id="cWant"></canvas></div>
+      </div>
+    </div>
+
+    <!-- COL C: verdict + donuts + reco -->
+    <div class="col">
+      <div class="tile" style="flex:0 0 auto">
+        <span class="vbadge">ตั้งเป้าสูง แต่พื้นฐานเริ่มต้น</span>
+        <p class="vtext">ผู้เรียนอยากทำเว็บ/เชื่อม AI กับข้อมูลเองได้ (<b>6/8</b> อยาก deploy เว็บ) แต่ <b>5/8 ไม่เคยเขียนโค้ด</b> · ไม่มีใครใช้ Claude · <b>6/8 กลัวเรียนไม่ทัน</b> — ต้องออกแบบแบบ tiered</p>
+      </div>
+      <div class="tile" style="flex:0 0 clamp(170px,21vh,215px)">
+        <h2>โปรไฟล์กลุ่ม</h2>
+        <div class="twocharts">
+          <div class="mini"><div class="cap">แผนก</div><div class="chartwrap"><canvas id="cDept"></canvas></div></div>
+          <div class="mini"><div class="cap">ประสบการณ์โค้ด</div><div class="chartwrap"><canvas id="cCode"></canvas></div></div>
+        </div>
+      </div>
+      <div class="tile" style="flex:1 1 auto">
+        <h2>ข้อเสนอหลัก</h2>
+        <ol class="reco" lang="th">
+          <li><b>แบ่ง tiered:</b> core (ทุกคน) = Claude + คอนเทนต์ + <span class="nowrap">no-code</span> · advanced (ต่อ, นัท) = deploy + DB</li>
+          <li><b>เน้น use case การตลาด</b> เป็นโจทย์จริงตลอดคลาส</li>
+          <li><b>เตรียมก่อนวันงาน:</b> ติดตั้ง + เปิดบัญชี Claude (5/8 ติดปัญหา)</li>
+          <li><b>buddy:</b> ต่อ/นัท ประกบ มอส/ขิม · 1 วันอาจไม่พอ → เพิ่ม follow-up</li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+(function(){
+  if(typeof Chart==='undefined'){return;}
+  Chart.defaults.font.family='IBM Plex Sans, IBM Plex Sans Thai, -apple-system, sans-serif';
+  Chart.defaults.font.size=11;
+  Chart.defaults.color='#6e6e73';
+  var ACC='#3257d6', OK='#1a9e57', WARN='#b5790a', RISK='#cc342b', MUT='#c7c7cc';
+
+  new Chart(document.getElementById('cRadar'),{
+    type:'radar',
+    data:{labels:['Claude','ทำเว็บ','ฐานข้อมูล','GitHub','ใช้ AI'],
+      datasets:[{label:'ความพร้อม',data:[1.2,1.1,0.6,0.4,1.9],borderColor:OK,backgroundColor:'rgba(26,158,87,.16)',borderWidth:2,pointBackgroundColor:OK,pointRadius:3}]},
+    options:{maintainAspectRatio:false,
+      scales:{r:{min:0,max:3,ticks:{stepSize:1,backdropColor:'transparent',font:{size:9}},grid:{color:'#e5e5ea'},angleLines:{color:'#e5e5ea'},pointLabels:{font:{size:11,weight:'600'}}}},
+      plugins:{legend:{display:false}}}});
+
+  new Chart(document.getElementById('cWant'),{
+    type:'bar',
+    data:{labels:['ภาพประกอบ','คอนเทนต์','ทำเว็บ','ค้นหา','แปลภาษา','automation'],
+      datasets:[{data:[8,7,6,5,4,4],backgroundColor:ACC,borderRadius:5,barThickness:16}]},
+    options:{maintainAspectRatio:false,indexAxis:'y',
+      scales:{x:{min:0,max:8,ticks:{stepSize:2,font:{size:10}},grid:{color:'#f0f0f2'}},y:{grid:{display:false},ticks:{font:{size:11}}}},
+      plugins:{legend:{display:false}}}});
+
+  new Chart(document.getElementById('cDept'),{
+    type:'doughnut',
+    data:{labels:['การตลาด','ช่าง'],datasets:[{data:[7,1],backgroundColor:[ACC,WARN],borderWidth:2,borderColor:'#fff'}]},
+    options:{maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'bottom',labels:{boxWidth:8,font:{size:10},padding:8,usePointStyle:true,pointStyle:'circle'}}}}});
+
+  new Chart(document.getElementById('cCode'),{
+    type:'doughnut',
+    data:{labels:['ไม่เคย','เห็น HTML','เขียนได้'],datasets:[{data:[5,2,1],backgroundColor:[RISK,WARN,OK],borderWidth:2,borderColor:'#fff'}]},
+    options:{maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'bottom',labels:{boxWidth:8,font:{size:10},padding:8,usePointStyle:true,pointStyle:'circle'}}}}});
+})();
+
+</script>
+</body>
+</html>

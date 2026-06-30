@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>โครงหลักสูตร AI Workshop — ข้อเสนอเจ้าของธุรกิจ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f5f5f7;--card:#fff;--ink:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#3257d6;--accent-soft:#eef1fc;--ok:#1a9e57;--ok-soft:#e6f6ec;--warn:#b5790a;--warn-soft:#fdf3e0;--shadow:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.05)}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans","IBM Plex Sans Thai",-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-kerning:normal;line-height:1.62}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px 72px}
+  header.hero{max-width:880px;margin:0 auto;padding:48px 24px 8px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent)}
+  h1{font-size:clamp(25px,3.4vw,33px);font-weight:600;letter-spacing:-.3px;line-height:1.25;margin:11px 0 8px;max-width:760px}
+  .sub{font-size:16px;color:var(--muted);margin:0;max-width:680px}
+  .meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+  .meta .pill{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:12.5px;color:var(--muted);box-shadow:var(--shadow)}
+  .meta .pill b{color:var(--ink);font-weight:600}
+
+  section.s{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:var(--shadow);margin-top:16px}
+  .sh{display:flex;align-items:baseline;gap:12px;margin:0 0 14px}
+  .sh .no{flex:0 0 auto;font-size:13px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:9px;width:30px;height:26px;display:flex;align-items:center;justify-content:center;font-feature-settings:"tnum" 1}
+  .sh h2{font-size:19px;font-weight:600;margin:0;letter-spacing:-.2px}
+
+  p.lead{margin:0 0 12px;font-size:15px}
+  ul.o{list-style:none;margin:0;padding:0}
+  ul.o>li{position:relative;padding:7px 0 7px 20px;font-size:14.5px;line-height:1.6}
+  ul.o>li::before{content:"";position:absolute;left:3px;top:15px;width:6px;height:6px;border-radius:2px;background:var(--accent)}
+  ul.o ul{list-style:none;margin:5px 0 2px;padding:0}
+  ul.o ul>li{position:relative;padding:4px 0 4px 18px;font-size:13.5px;color:#44444a;line-height:1.55}
+  ul.o ul>li::before{content:"–";position:absolute;left:2px;top:4px;color:#b6b6be}
+  b{font-weight:600}
+  .why{margin-top:8px;background:#f6f8fc;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:9px 13px;font-size:13px;color:#3a3a40}
+  .why b{color:var(--accent)}
+
+  .track{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  @media(max-width:760px){.track{grid-template-columns:1fr}}
+  .tcard{border:1px solid var(--line);border-radius:13px;padding:16px 18px}
+  .tcard.core{background:var(--ok-soft);border-color:#cdebd9}
+  .tcard.adv{background:var(--accent-soft);border-color:#dbe2fb}
+  .tcard h3{margin:0 0 4px;font-size:15px;font-weight:700}
+  .tcard .who{font-size:12.5px;color:var(--muted);margin-bottom:9px}
+  .tcard.core h3{color:var(--ok)} .tcard.adv h3{color:var(--accent)}
+
+  table.day{width:100%;border-collapse:collapse;margin-top:4px;font-size:13.5px}
+  table.day td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top}
+  table.day tr:first-child td{border-top:0}
+  table.day td.t{white-space:nowrap;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums;width:108px}
+  table.day td.b{font-weight:600;width:34px;text-align:center}
+  .tagband{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
+  .tagband.all{background:#f0f1f5;color:#6e6e73} .tagband.core{background:var(--ok-soft);color:var(--ok)} .tagband.adv{background:var(--accent-soft);color:var(--accent)}
+
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:14px}
+  .kv .k{color:var(--muted)}
+  .note{background:var(--warn-soft);border:1px solid #f0e0bd;border-radius:12px;padding:14px 16px;font-size:14px;margin-top:6px}
+  .note b{color:var(--warn)}
+  footer{margin-top:28px;color:var(--muted);font-size:12.5px;text-align:center}
+  @media print{body{background:#fff}section.s{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">ข้อเสนอหลักสูตร · Claude AI Workshop</div>
+  <h1>หลักสูตร AI สำหรับทีม — ออกแบบจากผลสำรวจผู้เรียนจริง</h1>
+  <p class="sub">โครงหลักสูตรที่ปรับให้ตรงกับระดับพื้นฐานและความต้องการของผู้เข้าอบรม 8 ท่าน เพื่อให้บรรลุเป้าหมายของบริษัทได้จริง</p>
+  <div class="meta">
+    <span class="pill">บริษัท <b>ขอนแก่นอิเล็คทริค</b></span>
+    <span class="pill">ผู้เรียน <b>8 คน</b> · การตลาด 7 · ช่าง 1</span>
+    <span class="pill">งบกรอบ <b>฿30,000–50,000</b></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="s">
+    <div class="sh"><div class="no">1</div><h2>ภาพรวม & หลักการออกแบบ</h2></div>
+    <p class="lead">หลักสูตรนี้ออกแบบจาก<b>คำตอบจริงของผู้เรียนทั้ง 8 คน</b> ไม่ใช่หลักสูตรสำเร็จรูป จึงเน้นให้ “ทำงานจริงได้เอง” ในระดับที่กลุ่มนี้ไปถึงได้จริงภายในเวลาที่มี</p>
+    <ul class="o">
+      <li><b>แบ่งระดับผลลัพธ์ (Tiered)</b> — มี Core track ที่ทุกคนทำได้จริง + Advanced track สำหรับ 2 คนที่พร้อม (ต่อ, นัท)</li>
+      <li><b>โฟกัส use case การตลาด</b> — ใช้งานจริงของผู้เรียนเป็นโจทย์ตลอดคลาส (คอนเทนต์ · ภาพ · landing page)</li>
+      <li><b>No-code / low-code มาก่อน</b> — สอนให้ “สั่ง AI ทำงาน” ได้ก่อน แล้วค่อยขยับสู่การลงมือเขียนสำหรับคนที่พร้อม</li>
+      <li><b>ปูพื้น Claude ตั้งแต่ศูนย์</b> — เพราะยังไม่มีใครใช้ Claude เป็นประจำ</li>
+      <li><b>จัดการความกังวล “เรียนไม่ทัน”</b> — เดินช้า มีจุดพัก ใช้ระบบ buddy ให้แต่ละคนก้าวตามจังหวะของตัวเอง</li>
+    </ul>
+    <div class="why"><b>ที่มาเชิงข้อมูล:</b> 5/8 ไม่เคยเขียนโค้ด · 0/8 ใช้ Claude ประจำ · 6/7 กังวลว่าจะเรียนไม่ทัน · 7/8 เป็นสายการตลาด · ความมั่นใจใช้ AI เฉลี่ย 2.6/5</div>
+  </section>
+
+  <section class="s">
+    <div class="sh"><div class="no">2</div><h2>เป้าหมายการเรียนรู้ (Learning Objectives)</h2></div>
+    <div class="track">
+      <div class="tcard core">
+        <h3>Core — ทุกคนต้องทำได้</h3>
+        <div class="who">ผู้เรียนทั้ง 8 คน</div>
+        <ul class="o">
+          <li>ใช้ Claude ช่วยงานประจำได้คล่อง (เขียน · สรุป · แปล · ค้นหา)</li>
+          <li>สร้างคอนเทนต์ + ภาพประกอบสำหรับการตลาดด้วย AI</li>
+          <li>ทำหน้า landing page โปรโมชันแบบ no-code และเผยแพร่ได้</li>
+          <li>สร้าง “prompt ที่ใช้ซ้ำได้” สำหรับงานของตัวเอง</li>
+        </ul>
+      </div>
+      <div class="tcard adv">
+        <h3>Advanced — สำหรับคนพร้อม</h3>
+        <div class="who">ต่อ, นัท (และผู้สนใจ)</div>
+        <ul class="o">
+          <li>ทำเว็บไซต์จริงขึ้น production (GitHub · Vercel/Netlify)</li>
+          <li>ต่อฐานข้อมูลเบื้องต้น (Supabase) เก็บ/ดึงข้อมูล</li>
+          <li>ทำ internal tool / dashboard ต้นแบบ 1 ตัว</li>
+          <li>เป็น “พี่เลี้ยง” ช่วยเพื่อนในคลาสและหลังจบ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="why"><b>ที่มาเชิงข้อมูล:</b> เป้าหมายของบริษัท (ใช้ AI คล่อง · มี internal tool · deploy เว็บได้ · ใช้ฐานข้อมูล) ถูกแบ่งให้ “ทุกคนได้พื้นฐาน + คนพร้อมไปถึงปลายทาง” แทนการบังคับทุกคนเท่ากัน</div>
+  </section>
+
+  <section class="s">
+    <div class="sh"><div class="no">3</div><h2>ก่อนวันอบรม (เตรียมความพร้อม ~3 วันล่วงหน้า)</h2></div>
+    <ul class="o">
+      <li><b>เตรียมเครื่อง + ติดตั้งโปรแกรมล่วงหน้า</b> (ประสานทีม IT)
+        <ul><li>ลง Claude / เบราว์เซอร์ / เครื่องมือจำเป็น ให้ครบทุกเครื่องก่อนวันงาน</li></ul></li>
+      <li><b>เปิดบัญชี Claude + บัญชีที่เกี่ยวข้องให้ครบ</b> (GitHub/Vercel เฉพาะกลุ่ม Advanced)</li>
+      <li><b>Pre-task เบาๆ ~30 นาที</b> — ลองเปิด Claude พิมพ์คุย 1 งานจริง (เป็น baseline + คุ้นเครื่องมือ)</li>
+      <li><b>แจก cheat sheet</b> — ศัพท์อังกฤษ/ข้อความ error ที่เจอบ่อย + วิธีถาม AI ให้ช่วยแปล</li>
+    </ul>
+    <div class="why"><b>ที่มาเชิงข้อมูล:</b> มีเพียง 3/8 ที่ติดตั้งโปรแกรมเองได้ (อีก 5 คนต้องให้ IT/ไม่แน่ใจ) · 4/7 กังวลภาษาอังกฤษ — จึงต้องเคลียร์เรื่องนี้ “ก่อน” ไม่ใช่เสียเวลาในห้อง</div>
+  </section>
+
+  <section class="s">
+    <div class="sh"><div class="no">4</div><h2>โครงสร้างวันอบรม (1 วันเต็ม)</h2></div>
+    <table class="day">
+      <tr><td class="t">09:00–09:30</td><td class="b"></td><td>เปิดคลาส · ปรับความเข้าใจ · ตั้งเป้ารายคน · ลดความกังวล<span class="tagband all">ทุกคน</span></td></tr>
+      <tr><td class="t">09:30–10:45</td><td class="b"></td><td>พื้นฐาน Claude — ติดตั้ง/ใช้งาน · วิธีสั่งงาน · หลักการเขียน prompt ที่ดี (ลงมือทำงานจริงเล็กๆ)<span class="tagband all">ทุกคน</span></td></tr>
+      <tr><td class="t">10:45–11:00</td><td class="b"></td><td>พักเบรก</td></tr>
+      <tr><td class="t">11:00–12:15</td><td class="b"></td><td>AI กับงานการตลาด — สร้างคอนเทนต์โซเชียล + ภาพประกอบ (ใช้โจทย์จริงของแต่ละคน) · เริ่มทำ prompt library<span class="tagband all">ทุกคน</span></td></tr>
+      <tr><td class="t">12:15–13:15</td><td class="b"></td><td>พักกลางวัน</td></tr>
+      <tr><td class="t">13:15–13:30</td><td class="b"></td><td>แยกกลุ่มตามความพร้อม (Core / Advanced)</td></tr>
+      <tr><td class="t">13:30–15:00</td><td class="b"></td><td>
+        <b>Core:</b> ทำ landing page โปรโมชันด้วย AI/no-code + เผยแพร่ลิงก์จริง<span class="tagband core">Core</span><br>
+        <b>Advanced:</b> GitHub + deploy เว็บขึ้น Vercel + ต่อฐานข้อมูล Supabase เบื้องต้น<span class="tagband adv">Advanced</span></td></tr>
+      <tr><td class="t">15:00–15:15</td><td class="b"></td><td>พักเบรก</td></tr>
+      <tr><td class="t">15:15–16:00</td><td class="b"></td><td>ต่อชิ้นงาน + คลินิกแก้ปัญหา · buddy (ต่อ/นัท) ช่วยเพื่อน<span class="tagband all">ทุกคน</span></td></tr>
+      <tr><td class="t">16:00–16:45</td><td class="b"></td><td>นำเสนอผลงานคนละ 1 ชิ้น · วางแผนเอาไปใช้จริง · มอบการบ้าน 30 วัน<span class="tagband all">ทุกคน</span></td></tr>
+      <tr><td class="t">16:45–17:00</td><td class="b"></td><td>ปิดคลาส · ประเมินผล (วัดความมั่นใจซ้ำเทียบ baseline)</td></tr>
+    </table>
+    <div class="why"><b>ที่มาเชิงข้อมูล:</b> ช่วงเช้าเน้นสิ่งที่ผู้เรียนอยากได้สูงสุด — สร้างภาพ (8/8 = 100%), คอนเทนต์ (7/8), ทำเว็บ (6/8); ช่วงบ่ายแยก track ให้คนพร้อมไปไกลโดยไม่ทิ้งคนเริ่มต้น</div>
+  </section>
+
+  <section class="s">
+    <div class="sh"><div class="no">5</div><h2>หลังอบรม (Follow-up ให้เกิดการใช้จริง)</h2></div>
+    <ul class="o">
+      <li><b>Clinic ครึ่งวัน (แนะนำ)</b> ~2–3 สัปดาห์หลังคลาส — มาต่อชิ้นงานจริง แก้ปัญหาที่ติด</li>
+      <li><b>ระบบ buddy</b> — ต่อ/นัท เป็นพี่เลี้ยงในทีม ตอบคำถามระหว่างวันทำงาน</li>
+      <li><b>เช็กผลที่ 30 / 60 วัน</b> — ติดตามว่าแต่ละคนเอาไปใช้จริงไหม เก็บเป็นตัวชี้วัด</li>
+      <li><b>คลัง prompt + คู่มือสั้น (SOP)</b> ของทีม ให้ใช้ซ้ำและสอนคนใหม่ได้</li>
+    </ul>
+  </section>
+
+  <section class="s">
+    <div class="sh"><div class="no">6</div><h2>ผลงานที่จะได้ (Deliverables)</h2></div>
+    <ul class="o">
+      <li><b>ต่อคน:</b> ชิ้นงานจริง 1 ชิ้น (คอนเทนต์/ภาพ/landing page) + ชุด prompt ที่ใช้กับงานตัวเอง</li>
+      <li><b>กลุ่ม Advanced:</b> เว็บไซต์ขึ้น production จริง 1 หน้า + ต้นแบบ internal tool/dashboard</li>
+      <li><b>ทีม:</b> คลัง prompt ส่วนกลาง + คู่มือ SOP การใช้ AI ในงานการตลาด</li>
+    </ul>
+  </section>
+
+  <section class="s">
+    <div class="sh"><div class="no">7</div><h2>ตัวชี้วัดความสำเร็จ (วัดที่ 3 เดือน)</h2></div>
+    <ul class="o">
+      <li>พนักงาน <b>5 คนขึ้นไปใช้ AI ในงานประจำ</b> ได้สม่ำเสมอ</li>
+      <li>มี <b>internal tool / ต้นแบบใช้จริงอย่างน้อย 1 ตัว</b></li>
+      <li>มีคนในทีม <b>deploy เว็บเองได้</b> อย่างน้อย 1–2 คน (จากกลุ่ม Advanced)</li>
+      <li><b>ความมั่นใจในการใช้ AI</b> เพิ่มขึ้นเทียบกับ baseline ก่อนอบรม (วัดซ้ำ)</li>
+      <li>ลดเวลางานซ้ำ เช่น ทำคอนเทนต์/ภาพ ได้เร็วขึ้น (ให้แต่ละคนตั้งเป้าของตัวเอง)</li>
+    </ul>
+    <div class="why"><b>หมายเหตุ:</b> ตัวชี้วัดเหล่านี้อิงตามที่บริษัทระบุไว้ในแบบสอบถาม และปรับให้ “วัดการนำไปใช้จริง” ไม่ใช่แค่ความพึงพอใจ</div>
+  </section>
+
+  <section class="s">
+    <div class="sh"><div class="no">8</div><h2>เครื่องมือ & งบประมาณ</h2></div>
+    <div class="kv">
+      <div class="k">Claude</div><div>~฿700/คน/เดือน (เครื่องมือหลัก)</div>
+      <div class="k">GitHub · Vercel · Netlify</div><div>ใช้ free tier ได้ (สำหรับกลุ่ม Advanced)</div>
+      <div class="k">Supabase / ฐานข้อมูล</div><div>มี free tier</div>
+      <div class="k">Canva / เครื่องมือภาพ</div><div>ผู้เรียนใช้อยู่แล้ว (5/8 ใช้ Photoshop/Canva)</div>
+      <div class="k">งบกรอบ</div><div>฿30,000–50,000 ครอบคลุมค่าอบรม 1 วัน + สื่อ + สมัคร Claude ช่วงเริ่มต้น</div>
+    </div>
+  </section>
+
+  <section class="s">
+    <div class="sh"><div class="no">9</div><h2>การดูแลผู้เรียนเฉพาะกลุ่ม</h2></div>
+    <ul class="o">
+      <li><b>กำลังหลัก — ต่อ, นัท:</b> เข้า Advanced track + เป็น buddy ช่วยเพื่อน</li>
+      <li><b>กลุ่มกลาง — ฟ้า, อาร์ม, แม็ก:</b> Core track ใช้ทักษะเดิม (ดีไซน์/สื่อ) ต่อยอด · ช่วยตั้งโจทย์ให้ชัด</li>
+      <li><b>ต้องการการสนับสนุนเพิ่ม — เมย์, ขิม:</b> ประกบใกล้ · เดินช้า · ขิมต้องเตรียมเครื่องผ่าน IT + อธิบายเรื่องความปลอดภัยข้อมูล</li>
+      <li><b>ประกบใกล้ชิด 1:1 — มอส:</b> เริ่มจากใช้ AI แชทพื้นฐานก่อน ค่อยเป็นค่อยไป ไม่ต้องเร่งถึงขั้น deploy (เป็นผู้เริ่มต้นที่สุด + ไม่เคยใช้ AI)</li>
+    </ul>
+  </section>
+
+  <section class="s">
+    <div class="sh"><div class="no">10</div><h2>ข้อเสนอ & ข้อควรพิจารณาถึงเจ้าของ</h2></div>
+    <div class="note"><b>เรื่อง “1 วัน” กับขอบเขต:</b> การให้ผู้เรียน “ทุกคน deploy เว็บ + ใช้ฐานข้อมูลได้เองจริง” ภายใน 1 วัน เป็นไปได้ยากสำหรับกลุ่มที่ส่วนใหญ่เป็นผู้เริ่มต้น แนะนำ 2 ทางเลือก:</div>
+    <ul class="o" style="margin-top:10px">
+      <li><b>ทางเลือก A (แนะนำ):</b> 1 วันเต็ม (Core ทุกคน + Advanced สำหรับคนพร้อม) <b>+ Clinic ครึ่งวัน follow-up</b> เพื่อให้ตัวชี้วัด 3 เดือนเป็นจริง</li>
+      <li><b>ทางเลือก B:</b> 1 วันเดียว โดยลดหัวข้อ deploy/ฐานข้อมูลให้เป็น “เข้าใจภาพรวม + ดูสาธิต” สำหรับคนส่วนใหญ่ และทำจริงเฉพาะกลุ่ม Advanced</li>
+    </ul>
+    <p class="lead" style="margin-top:12px"><b>เหตุผลที่ลดน้ำหนัก GitHub/ฐานข้อมูลสำหรับคนส่วนใหญ่:</b> จากผลสำรวจ ไม่มีผู้เรียนคนใดระบุว่าต้องการสองเรื่องนี้ในงานจริง — เป็นเป้าหมายระยะถัดไป ไม่ใช่สิ่งที่ควรเร่งจบใน 1 วัน</p>
+  </section>
+
+  <footer>เอกสารภายในเพื่อใช้เสนอเจ้าของธุรกิจ · ออกแบบจากผลสำรวจผู้เข้าอบรม 8 คน · Claude AI Workshop — บ.ขอนแก่นอิเล็คทริค</footer>
+</div>
+</body>
+</html>

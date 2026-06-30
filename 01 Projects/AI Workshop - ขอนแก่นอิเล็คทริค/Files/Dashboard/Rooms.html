@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rooms — Organization Structure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1d1d1f; --muted:#8a8a8e; --page:#f4f4f5;
+    --blue:#2f6bf6; --green:#3f9d77; --gray:#7c7f87;
+    --empty-line:#d3d3d9; --empty-ink:#b0b0b8;
+    --room-border:#e6ddcf; --label:#a4885f;
+    --cell-w:108px; --cell-min-h:152px; --grid-col-gap:14px; --grid-row-gap:26px;
+    --card-gap:22px; --card-pad:22px 24px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--ink);
+    font-family:"IBM Plex Sans","IBM Plex Sans Thai",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+  .page{padding:30px}
+
+  /* ===== ROOM LAYOUT (จาก aidebate) ===== */
+  .board{display:flex;flex-direction:column;gap:var(--card-gap)}
+  .board__row{display:flex;align-items:stretch;gap:var(--card-gap);flex-wrap:wrap}
+  .room{flex:0 0 auto;display:flex;flex-direction:column;min-width:0;
+    padding:var(--card-pad);border:1px solid var(--room-border);border-radius:14px;background:#fff}
+  .room__head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;column-gap:12px;margin-bottom:16px}
+  .room__titlewrap{min-width:0}
+  .room__label{font-size:11px;font-weight:600;letter-spacing:1px;color:var(--label);line-height:1.2}
+  .room__title{margin-top:3px;font-weight:700;font-size:18px;letter-spacing:.2px;line-height:1.2;color:#2b2b2b;
+    min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .room__title .edit{font-size:12px;font-weight:400;color:#a9a9af;text-decoration:none;letter-spacing:0}
+  .room__count{align-self:start;white-space:nowrap;font-size:14px;font-weight:500;color:var(--muted);font-variant-numeric:tabular-nums}
+  .room__grid{display:grid;grid-template-columns:repeat(var(--cols),var(--cell-w));
+    grid-auto-rows:minmax(var(--cell-min-h),auto);column-gap:var(--grid-col-gap);row-gap:var(--grid-row-gap);
+    justify-items:center;align-items:start;justify-content:start;align-content:start}
+
+  /* ===== AVATAR / MEMBER (ห้ามเปลี่ยน — คงสไตล์เดิม) ===== */
+  .member{display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0;width:var(--cell-w)}
+  .ava{position:relative;width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:33px;font-weight:600;letter-spacing:.5px;line-height:1;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+  .ava.blue{background:var(--blue)} .ava.green{background:var(--green)} .ava.gray{background:var(--gray)}
+  .badge{position:absolute;right:-2px;bottom:-2px;width:27px;height:27px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+  .badge i{width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:11px;font-weight:700;color:#fff}
+  .badge i.t{background:var(--blue)} .badge i.e{background:var(--green)} .badge i.o{background:var(--gray)}
+  .name{margin-top:13px;font-size:14px;font-weight:700;letter-spacing:.3px;color:var(--ink);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .role{margin-top:3px;font-size:12px;color:var(--muted);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ava.empty{background:transparent;border:2px dashed var(--empty-line);color:var(--empty-ink);font-size:30px;font-weight:400;box-shadow:none}
+  .member.is-empty .name{color:var(--empty-ink);font-weight:600;letter-spacing:1px}
+
+  /* ===== responsive (aidebate) ===== */
+  @media(max-width:900px){
+    .room{flex:1 1 100%}
+    .room__grid{grid-template-columns:repeat(auto-fill,var(--cell-w))}
+  }
+  @media(max-width:520px){.room__grid{overflow-x:auto}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="board">
+    <div class="board__row">
+      <article class="room" style="--cols:3">
+        <div class="room__head">
+          <div class="room__titlewrap">
+            <div class="room__label">ROOM 209</div>
+            <div class="room__title">JETDER ROOM <a class="edit" href="#">edit</a></div>
+          </div>
+          <div class="room__count">2/6</div>
+        </div>
+        <div class="room__grid">
+        <div class="member"><div class="ava blue">B<span class="badge"><i class="t">T</i></span></div><div class="name">BOB</div><div class="role" title="COO">COO</div></div>
+        <div class="member"><div class="ava green">B<span class="badge"><i class="e">E</i></span></div><div class="name">BOMB</div><div class="role" title="Lead Product">Lead Product</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        </div>
+      </article>
+      <article class="room" style="--cols:5">
+        <div class="room__head">
+          <div class="room__titlewrap">
+            <div class="room__label">ROOM 207</div>
+            <div class="room__title">MARKETING EASYSLIP ROOM <a class="edit" href="#">edit</a></div>
+          </div>
+          <div class="room__count">0/9</div>
+        </div>
+        <div class="room__grid">
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        </div>
+      </article>
+      <article class="room" style="--cols:5">
+        <div class="room__head">
+          <div class="room__titlewrap">
+            <div class="room__label">ROOM 206</div>
+            <div class="room__title">MARKETING ROOM <a class="edit" href="#">edit</a></div>
+          </div>
+          <div class="room__count">5/9</div>
+        </div>
+        <div class="room__grid">
+        <div class="member"><div class="ava blue">M<span class="badge"><i class="t">T</i></span></div><div class="name">MIZTEEN</div><div class="role" title="Sales">Sales</div></div>
+        <div class="member"><div class="ava blue">J<span class="badge"><i class="t">T</i></span></div><div class="name">JADI</div><div class="role" title="Manager Marketing">Manager Marketing</div></div>
+        <div class="member"><div class="ava blue">N<span class="badge"><i class="t">T</i></span></div><div class="name">NOOK</div><div class="role" title="Marketing Officer">Marketing Officer</div></div>
+        <div class="member"><div class="ava green">L<span class="badge"><i class="e">E</i></span></div><div class="name">LEK</div><div class="role" title="Marketing / Senior">Marketing / Senior</div></div>
+        <div class="member"><div class="ava blue">A<span class="badge"><i class="t">T</i></span></div><div class="name">AUN</div><div class="role" title="Marketing Junior">Marketing Junior</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        </div>
+      </article>
+    </div>
+    <div class="board__row">
+      <article class="room" style="--cols:5">
+        <div class="room__head">
+          <div class="room__titlewrap">
+            <div class="room__label">ROOM 204</div>
+            <div class="room__title">DEVELOP TEAM ROOM <a class="edit" href="#">edit</a></div>
+          </div>
+          <div class="room__count">5/9</div>
+        </div>
+        <div class="room__grid">
+        <div class="member"><div class="ava blue">B<span class="badge"><i class="t">T</i></span></div><div class="name">BANK</div><div class="role" title="Project Manager">Project Manager</div></div>
+        <div class="member"><div class="ava blue">T<span class="badge"><i class="t">T</i></span></div><div class="name">TAN</div><div class="role" title="Tech Lead">Tech Lead</div></div>
+        <div class="member"><div class="ava blue">P<span class="badge"><i class="t">T</i></span></div><div class="name">POOM NOI</div><div class="role" title="Product Owner">Product Owner</div></div>
+        <div class="member"><div class="ava blue">M<span class="badge"><i class="t">T</i></span></div><div class="name">MEW</div><div class="role" title="UX/UI">UX/UI</div></div>
+        <div class="member"><div class="ava gray">K<span class="badge"><i class="o">O</i></span></div><div class="name">KENG</div><div class="role" title="Other">Other</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        </div>
+      </article>
+      <article class="room" style="--cols:8">
+        <div class="room__head">
+          <div class="room__titlewrap">
+            <div class="room__label">ROOM 203</div>
+            <div class="room__title">THUNDER ROOM <a class="edit" href="#">edit</a></div>
+          </div>
+          <div class="room__count">12/16</div>
+        </div>
+        <div class="room__grid">
+        <div class="member"><div class="ava blue">M<span class="badge"><i class="t">T</i></span></div><div class="name">MIND</div><div class="role" title="Accounting Officer">Accounting Officer</div></div>
+        <div class="member"><div class="ava green">B<span class="badge"><i class="e">E</i></span></div><div class="name">BEER</div><div class="role" title="Accounting Officer">Accounting Officer</div></div>
+        <div class="member"><div class="ava blue">B<span class="badge"><i class="t">T</i></span></div><div class="name">BOAT</div><div class="role" title="Marketing / Executive">Marketing / Executive</div></div>
+        <div class="member"><div class="ava blue">N<span class="badge"><i class="t">T</i></span></div><div class="name">NING</div><div class="role" title="Customer Service">Customer Service</div></div>
+        <div class="member"><div class="ava blue">P<span class="badge"><i class="t">T</i></span></div><div class="name">POP</div><div class="role" title="HR Manager">HR Manager</div></div>
+        <div class="member"><div class="ava blue">G<span class="badge"><i class="t">T</i></span></div><div class="name">GUITAR</div><div class="role" title="HR">HR</div></div>
+        <div class="member"><div class="ava green">B<span class="badge"><i class="e">E</i></span></div><div class="name">BEAM</div><div class="role" title="Customer Service">Customer Service</div></div>
+        <div class="member"><div class="ava blue">A<span class="badge"><i class="t">T</i></span></div><div class="name">ARM</div><div class="role" title="Marketing / Graphic">Marketing / Graphic</div></div>
+        <div class="member"><div class="ava green">D<span class="badge"><i class="e">E</i></span></div><div class="name">DOE</div><div class="role" title="Head of Customer Service">Head of Customer Service</div></div>
+        <div class="member"><div class="ava blue">N<span class="badge"><i class="t">T</i></span></div><div class="name">NOP</div><div class="role" title="Customer Service">Customer Service</div></div>
+        <div class="member"><div class="ava blue">N<span class="badge"><i class="t">T</i></span></div><div class="name">NONG</div><div class="role" title="Customer Service">Customer Service</div></div>
+        <div class="member"><div class="ava blue">N<span class="badge"><i class="t">T</i></span></div><div class="name">NOEY</div><div class="role" title="Customer Service">Customer Service</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        <div class="member is-empty"><div class="ava empty">+</div><div class="name">EMPTY</div><div class="role">&nbsp;</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+</body>
+</html>

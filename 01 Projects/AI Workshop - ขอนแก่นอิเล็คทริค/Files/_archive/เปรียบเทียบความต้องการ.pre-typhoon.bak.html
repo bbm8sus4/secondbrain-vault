@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เปรียบเทียบความต้องการ — เจ้าของธุรกิจ vs ผู้เข้าอบรม | Claude AI Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f5f7; --card:#ffffff; --ink:#1d1d1f; --muted:#6e6e73; --line:#e5e5ea;
+    --accent:#3257d6; --accent-soft:#eef1fc;
+    --ok:#1a9e57; --ok-soft:#e6f6ec;
+    --warn:#b5790a; --warn-soft:#fdf3e0;
+    --risk:#cc342b; --risk-soft:#fdeceb;
+    --track:#ececf0;
+    --shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.05);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Noto Sans Thai",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    line-height:1.6; font-weight:400; letter-spacing:.1px;
+  }
+  .wrap{max-width:1040px; margin:0 auto; padding:0 22px 80px}
+  header.hero{padding:56px 22px 40px; max-width:1040px; margin:0 auto}
+  .kicker{font-size:13px; font-weight:600; letter-spacing:1.4px; text-transform:uppercase; color:var(--accent)}
+  h1{font-size:34px; line-height:1.18; font-weight:700; margin:10px 0 8px; letter-spacing:-.3px}
+  .sub{font-size:17px; color:var(--muted); margin:0; max-width:680px}
+  .meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px}
+  .meta .pill{background:var(--card); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:13px; color:var(--muted); box-shadow:var(--shadow)}
+  .meta .pill b{color:var(--ink); font-weight:600}
+
+  section{margin-top:40px}
+  .sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:16px}
+  .sec-head h2{font-size:22px; font-weight:700; margin:0; letter-spacing:-.2px}
+  .sec-head .n{font-size:13px; font-weight:600; color:var(--accent); background:var(--accent-soft); border-radius:8px; padding:3px 9px}
+
+  .card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; box-shadow:var(--shadow)}
+  .card + .card{margin-top:16px}
+
+  /* verdict */
+  .verdict{display:grid; grid-template-columns:1fr; gap:0}
+  .verdict .top{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+  .vbadge{font-size:14px; font-weight:700; padding:8px 16px; border-radius:999px}
+  .vbadge.partial{background:var(--warn-soft); color:var(--warn)}
+  .verdict p{margin:14px 0 0; font-size:16px; color:#33333a}
+  .verdict .lead{font-size:18px; font-weight:600; color:var(--ink); margin-top:16px}
+
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+
+  .ptitle{font-size:13px; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:var(--muted); margin:0 0 14px}
+  .who{display:flex; align-items:center; gap:12px; margin-bottom:6px}
+  .who .ava{width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:15px; color:#fff}
+  .who.owner .ava{background:linear-gradient(135deg,#3257d6,#5b7bf0)}
+  .who.learner .ava{background:linear-gradient(135deg,#1a9e57,#3fc07d)}
+  .who h3{margin:0; font-size:17px; font-weight:700}
+  .who span{font-size:13px; color:var(--muted)}
+
+  ul.clean{list-style:none; margin:14px 0 0; padding:0}
+  ul.clean li{position:relative; padding:7px 0 7px 22px; font-size:15px; border-top:1px solid var(--line)}
+  ul.clean li:first-child{border-top:0}
+  ul.clean li::before{content:""; position:absolute; left:2px; top:15px; width:7px; height:7px; border-radius:2px; background:var(--accent)}
+  ul.clean.green li::before{background:var(--ok)}
+  ul.clean li b{font-weight:600}
+
+  /* stat bars */
+  .stat{margin-top:18px}
+  .stat:first-child{margin-top:4px}
+  .stat .row{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px}
+  .stat .lbl{font-size:14px; font-weight:500}
+  .stat .val{font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums}
+  .bar{height:9px; background:var(--track); border-radius:999px; overflow:hidden}
+  .bar > i{display:block; height:100%; border-radius:999px; background:var(--accent)}
+  .bar.g > i{background:var(--ok)} .bar.w > i{background:var(--warn)} .bar.r > i{background:var(--risk)}
+
+  .scorewrap{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:6px}
+  .score{text-align:center; background:var(--bg); border-radius:14px; padding:18px 12px; border:1px solid var(--line)}
+  .score .big{font-size:34px; font-weight:700; letter-spacing:-1px}
+  .score .of{font-size:15px; color:var(--muted); font-weight:500}
+  .score .cap{font-size:13px; color:var(--muted); margin-top:4px}
+
+  /* comparison table */
+  table.cmp{width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:18px; overflow:hidden; box-shadow:var(--shadow)}
+  table.cmp th, table.cmp td{padding:14px 16px; text-align:left; vertical-align:top; font-size:14.5px; border-top:1px solid var(--line)}
+  table.cmp thead th{background:#fafafc; font-size:12px; font-weight:600; letter-spacing:.5px; text-transform:uppercase; color:var(--muted); border-top:0}
+  table.cmp td.dim{font-weight:600; width:20%}
+  table.cmp td .small{color:var(--muted); font-size:13px}
+  .tag{display:inline-block; font-size:12px; font-weight:700; padding:5px 11px; border-radius:999px; white-space:nowrap}
+  .tag.ok{background:var(--ok-soft); color:var(--ok)}
+  .tag.warn{background:var(--warn-soft); color:var(--warn)}
+  .tag.risk{background:var(--risk-soft); color:var(--risk)}
+  @media(max-width:760px){
+    table.cmp, table.cmp thead, table.cmp tbody, table.cmp tr, table.cmp td{display:block}
+    table.cmp thead{display:none}
+    table.cmp tr{border-top:1px solid var(--line); padding:8px 0}
+    table.cmp td{border-top:0; padding:6px 16px}
+    table.cmp td.dim{padding-top:14px; font-size:16px}
+  }
+
+  /* roster */
+  table.roster{width:100%; border-collapse:collapse; font-size:14px}
+  table.roster th, table.roster td{padding:11px 12px; text-align:left; border-top:1px solid var(--line)}
+  table.roster thead th{font-size:12px; text-transform:uppercase; letter-spacing:.5px; color:var(--muted); border-top:0}
+  table.roster td.name{font-weight:600}
+  .lvl{display:inline-block; width:54px; text-align:center; font-size:12px; font-weight:700; padding:3px 0; border-radius:7px}
+  .lvl.l1{background:var(--risk-soft); color:var(--risk)}
+  .lvl.l2{background:var(--warn-soft); color:var(--warn)}
+  .lvl.l3{background:var(--ok-soft); color:var(--ok)}
+  .scroll{overflow-x:auto; border:1px solid var(--line); border-radius:18px; background:var(--card); box-shadow:var(--shadow)}
+  .scroll table.roster{min-width:640px}
+  .scroll table.roster thead th{background:#fafafc}
+  .scroll td, .scroll th{padding-left:16px; padding-right:16px}
+
+  /* reco */
+  ol.reco{counter-reset:r; list-style:none; margin:0; padding:0}
+  ol.reco li{counter-increment:r; position:relative; padding:16px 16px 16px 58px; border-top:1px solid var(--line)}
+  ol.reco li:first-child{border-top:0}
+  ol.reco li::before{content:counter(r); position:absolute; left:16px; top:16px; width:28px; height:28px; border-radius:8px; background:var(--accent-soft); color:var(--accent); font-weight:700; font-size:14px; display:flex; align-items:center; justify-content:center}
+  ol.reco li b{font-weight:600}
+  ol.reco li .small{display:block; color:var(--muted); font-size:13.5px; margin-top:3px}
+
+  footer{margin-top:48px; padding-top:24px; border-top:1px solid var(--line); color:var(--muted); font-size:13px}
+  .legend{display:flex; gap:16px; flex-wrap:wrap; margin-top:10px}
+  .legend span{display:inline-flex; align-items:center; gap:7px; font-size:13px}
+  .legend i{width:11px; height:11px; border-radius:3px; display:inline-block}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">Claude AI Workshop · Needs Analysis</div>
+  <h1>เจ้าของธุรกิจต้องการอะไร เทียบกับสิ่งที่ผู้เข้าอบรมต้องการ — สอดคล้องกันแค่ไหน</h1>
+  <p class="sub">สรุปจากแบบสำรวจจริง เปรียบเทียบ “มุมเจ้าของ/ผู้ว่าจ้าง” กับ “มุมพนักงานผู้เข้าอบรม” เพื่อใช้ออกแบบหลักสูตรให้ตรงทั้งสองฝ่าย</p>
+  <div class="meta">
+    <span class="pill">บริษัท <b>ขอนแก่นอิเล็คทริค (ระบบไฟ · โซลาร์เซลล์)</b></span>
+    <span class="pill">ผู้ว่าจ้าง <b>Ketthip · CEO</b></span>
+    <span class="pill">ผู้เข้าอบรม <b>8 คน</b> (การตลาด 7 · ช่าง 1)</span>
+    <span class="pill">งบ <b>฿30,000–50,000</b> · <b>1 วัน</b></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- VERDICT -->
+  <section>
+    <div class="sec-head"><h2>บทสรุปผู้บริหาร</h2></div>
+    <div class="card verdict">
+      <div class="top">
+        <span class="vbadge partial">สอดคล้องบางส่วน — เป้าหมายตรง แต่มี gap วิกฤต</span>
+      </div>
+      <p class="lead">“ความอยาก” ของทั้งสองฝ่ายตรงกันมาก แต่ “ความพร้อม + เวลา” ยังเป็นช่องว่างที่ต้องจัดการก่อนวันอบรม</p>
+      <p>เจ้าของอยากให้ทีม <b>ทำเองได้จริง</b> ทั้งใช้ AI · ทำเว็บขึ้น production · ใช้ฐานข้อมูล ภายใน <b>1 วัน</b> — และที่น่ายินดีคือ <b>ผู้เรียนเองก็ตั้งเป้าสูงตรงกัน</b> (6 ใน 8 คนอยากทำเว็บ deploy เองได้, 5 คนอยากเชื่อม AI กับ Excel/ฐานข้อมูล)</p>
+      <p>แต่ความเป็นจริงคือผู้เรียนส่วนใหญ่เป็น <b>ผู้เริ่มต้น</b>: 5 ใน 8 ไม่เคยเขียนโค้ดเลย · ไม่มีใครใช้ Claude เป็นประจำ · ความมั่นใจใช้ AI เฉลี่ย 2.6/5 · และ <b>6 ใน 8 “กลัวเรียนไม่ทัน”</b> หากดันให้ทุกคน “ทำเว็บ + ฐานข้อมูลเองได้จริง” ใน 1 วัน มีความเสี่ยงสูงที่กลุ่มผู้เริ่มต้นจะตามไม่ทันและหลุดกลางทาง</p>
+      <p>ทางออก: คงเป้าหมายร่วม แต่ <b>แบ่งระดับผลลัพธ์ (tiered)</b> + <b>โฟกัส use case การตลาด</b> ซึ่งเป็นจุดที่ทั้งสองฝ่ายตรงกันที่สุด</p>
+    </div>
+  </section>
+
+  <!-- TWO PERSPECTIVES -->
+  <section>
+    <div class="sec-head"><h2>สองมุมมอง</h2></div>
+    <div class="grid2">
+      <div class="card">
+        <div class="who owner"><div class="ava">จ</div><div><h3>มุมเจ้าของ / ผู้ว่าจ้าง</h3><span>Ketthip · CEO · ขอนแก่นอิเล็คทริค</span></div></div>
+        <p class="ptitle" style="margin-top:18px">ต้องการให้เกิดอะไร</p>
+        <ul class="clean">
+          <li><b>ทำไมตอนนี้:</b> คู่แข่งเริ่มใช้ AI · อยากให้ทีมทันยุค · มีระบบใหม่ที่จะใช้ AI</li>
+          <li><b>เป้าหมาย:</b> ทีมใช้ AI คล่อง · มี internal tool ใช้จริง · deploy เว็บเองได้ · ใช้ฐานข้อมูลได้ · มี dashboard/automation</li>
+          <li><b>วัดผล 3 เดือน:</b> มี internal tool 1+ ตัว · พนักงาน 5+ คนใช้ AI ประจำ · prototype ขึ้น production · มีคน deploy เว็บเองได้</li>
+          <li><b>หัวข้อ:</b> Claude · ทำเว็บ production · ฐานข้อมูล · AI กับการตลาด (เน้นเท่ากันทุกหัวข้อ)</li>
+          <li><b>ระดับที่คาดหวัง:</b> “ทำเองได้จริง” ทุกหัวข้อ (ระดับสูงสุด)</li>
+          <li><b>กรอบ:</b> บริษัทออกค่าเครื่องมือทั้งหมด · งบ ฿30–50k · 1 วัน</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="who learner"><div class="ava">ผ</div><div><h3>มุมพนักงานผู้เข้าอบรม</h3><span>8 คน · การตลาด 7 · ช่าง/เทคนิค 1</span></div></div>
+        <p class="ptitle" style="margin-top:18px">อยากได้อะไรจากการอบรม</p>
+        <ul class="clean green">
+          <li><b>งานที่อยากให้ AI ช่วยสุด:</b> สร้างภาพประกอบ (8/8) · คอนเทนต์โซเชียล (7/8) · ทำเว็บ/landing page (6/8) · ค้นหา/แปลภาษา · automation</li>
+          <li><b>เป้าหลังอบรม:</b> ใช้ AI คล่อง + สร้าง prompt ซ้ำได้ (เกือบทุกคน) · ทำเว็บ deploy เองได้ (6/8) · เชื่อม AI กับ Excel/DB (5/8)</li>
+          <li><b>งานจริงที่กินเวลา:</b> ทำรายงาน/สรุปข้อมูล · ตอบลูกค้า · คอนเทนต์ · กรอกข้อมูลซ้ำๆ</li>
+          <li><b>เครื่องมือที่ใช้:</b> Canva/Photoshop · Facebook/IG · Office · LINE OA (สาย marketing ชัดเจน)</li>
+          <li><b>ความกังวลเด่น:</b> กลัวเรียนไม่ทัน (6/8) · ภาษาอังกฤษ (4/8) · ไม่เคยใช้ command line (3/8)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- READINESS -->
+  <section>
+    <div class="sec-head"><h2>ความพร้อมจริงของผู้เรียน</h2><span class="n">n = 8</span></div>
+    <div class="grid2">
+      <div class="card">
+        <p class="ptitle">พื้นฐาน &amp; ประสบการณ์</p>
+        <div class="stat"><div class="row"><span class="lbl">ไม่เคยเขียนโค้ดเลย</span><span class="val">5/8 · 63%</span></div><div class="bar r"><i style="width:63%"></i></div></div>
+        <div class="stat"><div class="row"><span class="lbl">เคยเห็น HTML/CSS นิดหน่อย</span><span class="val">2/8 · 25%</span></div><div class="bar w"><i style="width:25%"></i></div></div>
+        <div class="stat"><div class="row"><span class="lbl">เขียนโปรแกรม/ทำเว็บได้</span><span class="val">1/8 · 13%</span></div><div class="bar g"><i style="width:13%"></i></div></div>
+        <div class="stat"><div class="row"><span class="lbl">ไม่เคยใช้ Claude มาก่อน</span><span class="val">6/8 · 75%</span></div><div class="bar w"><i style="width:75%"></i></div></div>
+      </div>
+      <div class="card">
+        <p class="ptitle">ความกังวลที่ต้องจัดการ</p>
+        <div class="stat"><div class="row"><span class="lbl">กลัวเรียนไม่ทัน</span><span class="val">6/8 · 75%</span></div><div class="bar r"><i style="width:75%"></i></div></div>
+        <div class="stat"><div class="row"><span class="lbl">กังวลภาษาอังกฤษ</span><span class="val">4/8 · 50%</span></div><div class="bar w"><i style="width:50%"></i></div></div>
+        <div class="stat"><div class="row"><span class="lbl">ไม่เคยใช้ command line</span><span class="val">3/8 · 38%</span></div><div class="bar w"><i style="width:38%"></i></div></div>
+        <div class="stat"><div class="row"><span class="lbl">กลัวข้อมูลรั่วไหล</span><span class="val">1/8 · 13%</span></div><div class="bar"><i style="width:13%"></i></div></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <p class="ptitle">คะแนนเฉลี่ย (ประเมินตัวเอง 1–5)</p>
+      <div class="scorewrap">
+        <div class="score"><div class="big">2.75<span class="of">/5</span></div><div class="cap">ความคล่องคอมพิวเตอร์</div></div>
+        <div class="score"><div class="big">2.63<span class="of">/5</span></div><div class="cap">ความมั่นใจใช้ AI ช่วยงาน</div></div>
+      </div>
+      <p style="margin:16px 0 0; color:var(--muted); font-size:14px">หมายเหตุ: สิทธิ์ติดตั้งโปรแกรมเองมีเพียง 3/8 คน — อีก 5 คนต้องให้ IT ลงให้หรือยังไม่แน่ใจ ต้องเคลียร์ก่อนวันงาน (จำเป็นต่อการลง Claude/Git/Node)</p>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section>
+    <div class="sec-head"><h2>ตารางเทียบความสอดคล้อง</h2></div>
+    <table class="cmp">
+      <thead><tr><th>ประเด็น</th><th>เจ้าของต้องการ</th><th>สถานะจริงของผู้เรียน</th><th>ความสอดคล้อง</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="dim">ใช้ AI ในงานประจำ</td>
+          <td>ทีมใช้ AI คล่อง ลดงานซ้ำ</td>
+          <td>อยากได้มาก — ภาพ/คอนเทนต์/ค้นหา/แปล <span class="small">เป็นความต้องการอันดับต้น</span></td>
+          <td><span class="tag ok">สอดคล้องสูง</span></td>
+        </tr>
+        <tr>
+          <td class="dim">โฟกัสการตลาด</td>
+          <td>เพิ่มหัวข้อ “AI กับการตลาด”</td>
+          <td>7 ใน 8 เป็นสายการตลาด <span class="small">use case ตรงกันเอง</span></td>
+          <td><span class="tag ok">สอดคล้องสูง</span></td>
+        </tr>
+        <tr>
+          <td class="dim">ทำเว็บ / landing page</td>
+          <td>deploy ขึ้น production เองได้จริง</td>
+          <td>6/8 อยากทำได้ <span class="small">แต่ 5/8 ไม่เคยเขียนโค้ด — อยากแต่ทักษะยังไม่ถึง</span></td>
+          <td><span class="tag warn">ตรงเป้า แต่ทักษะไม่ถึง</span></td>
+        </tr>
+        <tr>
+          <td class="dim">เครื่องมือ Claude</td>
+          <td>ใช้ Claude เป็นหลัก</td>
+          <td>ไม่มีใครใช้ Claude (ใช้ ChatGPT/Gemini) <span class="small">ต้อง onboard ตั้งแต่ต้น</span></td>
+          <td><span class="tag warn">ต้องปูพื้นก่อน</span></td>
+        </tr>
+        <tr>
+          <td class="dim">การติดตั้งโปรแกรม</td>
+          <td>ผู้เรียนติดตั้งเองได้</td>
+          <td>5/8 ติดตั้งเองไม่ได้ / ไม่แน่ใจ <span class="small">ปัญหา logistics วันงาน</span></td>
+          <td><span class="tag warn">ต้องเคลียร์ก่อน</span></td>
+        </tr>
+        <tr>
+          <td class="dim">ระดับ “ทำเองได้จริง” ทุกหัวข้อ</td>
+          <td>คาดหวังระดับสูงสุดทุกหัวข้อ</td>
+          <td>ผู้เริ่มต้นเป็นส่วนใหญ่ · 6/8 กลัวเรียนไม่ทัน <span class="small">ความคาดหวังสูงกว่าความพร้อมมาก</span></td>
+          <td><span class="tag risk">gap วิกฤต</span></td>
+        </tr>
+        <tr>
+          <td class="dim">ฐานข้อมูล (Supabase/Firebase)</td>
+          <td>ใช้ฐานข้อมูลในงานได้</td>
+          <td>ไม่มีใครระบุ DB เป็นงานจริง · 5/8 ไม่เคยโค้ด <span class="small">เป็น owner-push ไม่ใช่ learner-pull</span></td>
+          <td><span class="tag risk">เสี่ยงไม่ตรงความต้องการ</span></td>
+        </tr>
+        <tr>
+          <td class="dim">GitHub / เวอร์ชันคอนโทรล</td>
+          <td>อยากให้เรียนรู้</td>
+          <td>ไม่มีใครพูดถึง / สนใจ <span class="small">นามธรรมเกินไปสำหรับสายการตลาด</span></td>
+          <td><span class="tag risk">เสี่ยงไม่ตรงความต้องการ</span></td>
+        </tr>
+        <tr>
+          <td class="dim">เวลา 1 วัน vs ขอบเขต</td>
+          <td>4+ หัวข้อ ภายใน 1 วัน</td>
+          <td>กลุ่มผู้เริ่มต้น ต้อง pacing ช้า <span class="small">เนื้อหาแน่นเกินเวลา</span></td>
+          <td><span class="tag risk">เสี่ยงทำไม่ครบ</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="legend">
+      <span><i style="background:var(--ok)"></i> สอดคล้อง — เดินหน้าได้เลย</span>
+      <span><i style="background:var(--warn)"></i> ต้องปรับ/เตรียมก่อน</span>
+      <span><i style="background:var(--risk)"></i> เสี่ยง — ต้องตัดสินใจกับเจ้าของ</span>
+    </div>
+  </section>
+
+  <!-- ROSTER -->
+  <section>
+    <div class="sec-head"><h2>รายชื่อผู้เข้าอบรม &amp; ระดับพื้นฐาน</h2><span class="n">8 คน</span></div>
+    <div class="scroll">
+      <table class="roster">
+        <thead><tr><th>ชื่อ</th><th>เล่น</th><th>แผนก / หน้าที่</th><th>โค้ด</th><th>คอม</th><th>มั่นใจ AI</th><th>ระดับ</th></tr></thead>
+        <tbody>
+          <tr><td class="name">จิรวัฒน์ ยิ่งยืน</td><td>ต่อ</td><td>การตลาดออนไลน์</td><td>เขียนได้</td><td>3</td><td>3</td><td><span class="lvl l3">สูง</span></td></tr>
+          <tr><td class="name">ณัฐพงศ์ ดอกจันทร์</td><td>นัท</td><td>ช่าง / เทคนิค</td><td>ไม่เคย*</td><td>3</td><td>4</td><td><span class="lvl l3">สูง</span></td></tr>
+          <tr><td class="name">กานต์รวี เกตุแก้ว</td><td>ฟ้า</td><td>กราฟิกดีไซน์</td><td>ไม่เคย</td><td>3</td><td>3</td><td><span class="lvl l2">กลาง</span></td></tr>
+          <tr><td class="name">อัจฉราพรรณ คำองค์</td><td>อาร์ม</td><td>การตลาด</td><td>เห็น HTML</td><td>3</td><td>3</td><td><span class="lvl l2">กลาง</span></td></tr>
+          <tr><td class="name">อิทธิพล</td><td>แม็ก</td><td>ทำสื่อโฆษณา</td><td>เห็น HTML</td><td>3</td><td>3</td><td><span class="lvl l2">กลาง</span></td></tr>
+          <tr><td class="name">ภัทร์ธมนต์ ภิรมย์วัชรดี</td><td>เมย์</td><td>การตลาด</td><td>ไม่เคย</td><td>3</td><td>2</td><td><span class="lvl l2">กลาง</span></td></tr>
+          <tr><td class="name">ขวัญนรินทร์พร ศรีหานนท์</td><td>ขิม</td><td>Selling</td><td>ไม่เคย</td><td>3</td><td>2</td><td><span class="lvl l2">กลาง</span></td></tr>
+          <tr><td class="name">ศุภณัฐ จันทร์ทา</td><td>มอส</td><td>พนักงานขาย</td><td>ไม่เคย</td><td>1</td><td>1</td><td><span class="lvl l1">เริ่มต้น</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin:12px 2px 0; color:var(--muted); font-size:13px">* นัท ไม่เคยเขียนโค้ดแต่เคยใช้ฐานข้อมูล SQL และติดตั้งโปรแกรมเองได้ + มั่นใจ AI สูงสุด — เหมาะเป็นผู้ช่วย (buddy) ร่วมกับ ต่อ</p>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section>
+    <div class="sec-head"><h2>ข้อเสนอเพื่อปิด gap</h2></div>
+    <div class="card">
+      <ol class="reco">
+        <li><b>แบ่งระดับผลลัพธ์ (tiered) แทนการบังคับทุกคนเท่ากัน</b><span class="small">Core track (ทุกคนทำได้จริง) = ใช้ Claude + คอนเทนต์ + landing page แบบ no-/low-code · Advanced track (ต่อ, นัท) = deploy จริง + ฐานข้อมูล + GitHub</span></li>
+        <li><b>โฟกัส use case การตลาด เป็นแกนหลัก</b><span class="small">คอนเทนต์ · ภาพประกอบ · landing page โปรโมชัน — จุดที่เจ้าของและผู้เรียน 7/8 ตรงกันที่สุด ใช้เป็นโจทย์จริงตลอดคลาส</span></li>
+        <li><b>ลดฐานข้อมูล + GitHub เป็น “เข้าใจภาพรวม + ดู demo”</b><span class="small">สำหรับคนส่วนใหญ่ ไม่ใช่ทำเอง — คุยกับเจ้าของว่าทักษะนี้เป็นเป้าระยะถัดไป ไม่ใช่จบใน 1 วัน</span></li>
+        <li><b>เตรียมก่อนวันงาน (สำคัญ)</b><span class="small">ติดตั้ง Claude/Git/Node ล่วงหน้า (5/8 ติดปัญหาสิทธิ์) · เปิดบัญชี Claude ให้ครบ · แจก cheat sheet ศัพท์อังกฤษ/error</span></li>
+        <li><b>จัดการความกังวล “เรียนไม่ทัน” (6/8)</b><span class="small">เดินช้า มีจุดพัก · จับคู่ buddy (ต่อ/นัท ช่วยเพื่อน) · ตั้งผลลัพธ์เป็นขั้น ไม่กดดันให้ทุกคนถึงปลายทางพร้อมกัน</span></li>
+        <li><b>เสนอเจ้าของ: 1 วันอาจไม่พอสำหรับ “deploy + DB ทำเองได้จริงทุกคน”</b><span class="small">ทางเลือก — ลด scope ลงให้ลึกเฉพาะที่ใช้จริง หรือเพิ่ม follow-up clinic 1 รอบหลังอบรม เพื่อให้ตัวชี้วัด 3 เดือนเป็นจริง</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    ที่มาข้อมูล: แบบสำรวจผู้เข้าอบรม (8 คำตอบ) + แบบสอบถามเจ้าของธุรกิจ (1 คำตอบ) · กู้คืนเมื่อ 30 มิ.ย. 2026 ·
+    เอกสารภายในเพื่อใช้ออกแบบหลักสูตร Claude AI Workshop — บ.ขอนแก่นอิเล็คทริค
+  </footer>
+
+</div>
+</body>
+</html>

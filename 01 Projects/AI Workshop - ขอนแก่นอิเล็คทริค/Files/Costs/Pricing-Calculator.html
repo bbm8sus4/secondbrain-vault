@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing Calculator — AI Workshop ขอนแก่น</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F8FAFC;
+  --panel: #FFFFFF;
+  --border: #E2E8F0;
+  --text: #0F172A;
+  --muted: #64748B;
+  --primary: #4338CA;
+  --primary-light: #EEF2FF;
+  --green: #16A34A;
+  --green-bg: #DCFCE7;
+  --yellow: #B45309;
+  --yellow-bg: #FEF3C7;
+  --red: #DC2626;
+  --red-bg: #FEE2E2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { font-family: 'IBM Plex Sans Thai', 'IBM Plex Sans', system-ui, -apple-system, sans-serif; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+header { margin-bottom: 18px; }
+h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { color: var(--muted); margin-top: 4px; font-size: 13px; }
+
+.layout { display: grid; grid-template-columns: 400px 1fr; gap: 18px; }
+@media (max-width: 980px) { .layout { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+}
+.panel + .panel { margin-top: 14px; }
+.panel h2 { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: baseline; }
+.panel h2 small { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--text); font-size: 13px; }
+
+.presets { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.preset {
+  background: white; border: 1px solid var(--border); padding: 7px 13px; border-radius: 7px;
+  font-family: inherit; font-size: 12px; cursor: pointer; color: var(--text); font-weight: 500;
+  transition: all 0.15s;
+}
+.preset:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+.preset.active { background: var(--primary); border-color: var(--primary); color: white; }
+
+.field { margin-bottom: 12px; }
+.field:last-child { margin-bottom: 0; }
+.field-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; color: var(--muted); margin-bottom: 5px; }
+.field-label .unit { font-size: 11px; }
+.row { display: flex; align-items: center; gap: 10px; }
+.row input[type="number"] {
+  width: 100px; border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px;
+  font-family: inherit; font-size: 13px; font-weight: 600; background: white; color: var(--text);
+  text-align: right;
+}
+.row input[type="number"]:focus { outline: none; border-color: var(--primary); }
+.row input[type="range"] {
+  flex: 1; height: 4px; background: var(--border); border-radius: 2px; -webkit-appearance: none; appearance: none;
+}
+.row input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 16px; height: 16px; border-radius: 50%; background: var(--primary); cursor: pointer; border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.row input[type="range"]::-moz-range-thumb {
+  width: 16px; height: 16px; border-radius: 50%; background: var(--primary); cursor: pointer; border: 2px solid white;
+}
+
+.outputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.kpi {
+  background: white; border: 1px solid var(--border); border-radius: 10px; padding: 14px;
+  transition: border-color 0.2s;
+}
+.kpi .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 500; }
+.kpi .value { font-size: 22px; font-weight: 700; margin-top: 6px; letter-spacing: -0.01em; }
+.kpi .sub { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+.kpi.profit .value { color: var(--green); }
+.kpi.profit { border-color: #BBF7D0; background: #F0FDF4; }
+.kpi.loss .value { color: var(--red); }
+.kpi.loss { border-color: #FECACA; background: #FEF2F2; }
+.kpi.neutral .value { color: var(--yellow); }
+.kpi.neutral { border-color: #FDE68A; background: #FFFBEB; }
+
+.status-bar {
+  background: var(--green-bg); color: var(--green); padding: 12px 16px; border-radius: 8px;
+  font-weight: 500; margin-top: 14px; font-size: 13px; line-height: 1.5;
+}
+.status-bar.warn { background: var(--yellow-bg); color: var(--yellow); }
+.status-bar.bad { background: var(--red-bg); color: var(--red); }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 9px 10px; text-align: right; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+th:first-child, td:first-child { text-align: left; }
+tr.current { background: var(--primary-light); }
+tr.current td { font-weight: 700; }
+tbody tr:last-child td { border-bottom: none; }
+
+.compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 4px; }
+@media (max-width: 980px) { .compare { grid-template-columns: 1fr; } }
+.compare-card { padding: 14px; border-radius: 10px; border: 1px solid transparent; }
+.compare-card .title { font-size: 12px; font-weight: 600; opacity: 0.9; }
+.compare-card .num { font-size: 20px; font-weight: 700; margin-top: 4px; letter-spacing: -0.01em; }
+.compare-card .note { font-size: 11px; margin-top: 6px; opacity: 0.95; line-height: 1.5; }
+.compare-card.good { background: var(--green-bg); color: var(--green); border-color: #BBF7D0; }
+.compare-card.mid { background: var(--yellow-bg); color: var(--yellow); border-color: #FDE68A; }
+.compare-card.bad { background: var(--red-bg); color: var(--red); border-color: #FECACA; }
+
+.sell-input-block {
+  background: var(--primary-light); border: 1px solid #C7D2FE; border-radius: 10px; padding: 14px; margin-bottom: 14px;
+}
+.sell-input-block .row { gap: 8px; }
+.sell-input-block input[type="number"] { width: 130px; font-size: 16px; font-weight: 700; color: var(--primary); }
+.suggested {
+  font-size: 11px; color: var(--muted); margin-top: 8px;
+}
+.suggested a {
+  color: var(--primary); cursor: pointer; text-decoration: underline; margin-left: 6px;
+}
+
+.notes ul { padding-left: 18px; font-size: 12px; color: var(--muted); }
+.notes li { margin: 4px 0; line-height: 1.55; }
+.notes strong { color: var(--text); font-weight: 600; }
+
+.footer { text-align: center; color: var(--muted); font-size: 11px; margin-top: 24px; padding: 16px; }
+
+@media print {
+  body { background: white; }
+  .presets, .sell-input-block .row input[type="range"] { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>เครื่องคำนวณต้นทุน &amp; กำไร — AI Workshop ขอนแก่น</h1>
+  <div class="subtitle">ปรับ slider หรือพิมพ์ตัวเลขทางซ้าย ดูผลคำนวณทางขวาทันที · เริ่มจาก preset แล้วปรับต่อได้</div>
+</header>
+
+<div class="presets" id="presets">
+  <button class="preset" data-preset="xlsx">ค่าตามไฟล์ xlsx (อาหาร ฿290)</button>
+  <button class="preset" data-preset="real-menu">เมนูจริง SHIFT (฿428)</button>
+  <button class="preset" data-preset="lean">วิทยากร 1 + TA</button>
+  <button class="preset" data-preset="full">วิทยากร 3 ท่าน</button>
+  <button class="preset" data-preset="budget45k">ขายในงบเจ้าของ ฿45k</button>
+</div>
+
+<div class="layout">
+
+<div>
+  <div class="panel" data-panel="1">
+    <h2>1. ผู้เรียน</h2>
+  </div>
+  <div class="panel" data-panel="2">
+    <h2>2. ต้นทุนคงที่ <small>ต่อรุ่น</small></h2>
+  </div>
+  <div class="panel" data-panel="3">
+    <h2>3. ต้นทุนผันแปร <small>ต่อหัว</small></h2>
+  </div>
+  <div class="panel" data-panel="4">
+    <h2>4. เปอร์เซ็นต์</h2>
+  </div>
+</div>
+
+<div>
+
+  <div class="panel">
+    <h2>สรุปต้นทุน <small id="seats-label">(11 คน)</small></h2>
+    <div class="outputs">
+      <div class="kpi">
+        <div class="label">ต้นทุนคงที่/รุ่น</div>
+        <div class="value" id="o-fixed">฿0</div>
+        <div class="sub" id="o-fixed-sub">ห้อง + วิทยากร + เดินทาง</div>
+      </div>
+      <div class="kpi">
+        <div class="label">ต้นทุน/หัว</div>
+        <div class="value" id="o-cph">฿0</div>
+        <div class="sub" id="o-cph-breakdown">—</div>
+      </div>
+      <div class="kpi">
+        <div class="label">ต้นทุนรวม/รุ่น</div>
+        <div class="value" id="o-total">฿0</div>
+        <div class="sub" id="o-total-sub">รวมทั้งรุ่น</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>ราคาขาย &amp; กำไร</h2>
+    <div class="sell-input-block">
+      <div class="field-label"><span>ราคาขาย/หัว (กรอกหรือเลื่อนเพื่อดูกำไรจริง)</span><span class="unit">บาท</span></div>
+      <div class="row">
+        <input type="range" id="i-sell" min="0" max="20000" step="50">
+        <input type="number" id="i-sell-n" min="0" step="50">
+      </div>
+      <div class="suggested">
+        ราคาที่ margin เป้า: <strong id="suggested-price">฿0</strong>
+        <a id="use-suggested">ใช้ราคานี้</a>
+      </div>
+    </div>
+    <div class="outputs">
+      <div class="kpi" id="kpi-pph">
+        <div class="label">กำไร/หัว</div>
+        <div class="value" id="o-pph">฿0</div>
+        <div class="sub" id="o-margin">margin —</div>
+      </div>
+      <div class="kpi" id="kpi-rev">
+        <div class="label">รายได้รวม</div>
+        <div class="value" id="o-rev">฿0</div>
+        <div class="sub" id="o-rev-sub">ทั้งรุ่น</div>
+      </div>
+      <div class="kpi" id="kpi-pt">
+        <div class="label">กำไรรวม</div>
+        <div class="value" id="o-pt">฿0</div>
+        <div class="sub" id="o-be">break-even ที่ —</div>
+      </div>
+    </div>
+    <div class="status-bar" id="status-bar">—</div>
+  </div>
+
+  <div class="panel">
+    <h2>เทียบกับ benchmark</h2>
+    <div class="compare">
+      <div class="compare-card" id="cmp-tc">
+        <div class="title">หน้าเว็บ trycloudflare</div>
+        <div class="num">฿2,790/คน</div>
+        <div class="note" id="cmp-tc-note">—</div>
+      </div>
+      <div class="compare-card" id="cmp-cohort">
+        <div class="title">Cohort เหมา</div>
+        <div class="num">฿38,000/รุ่น</div>
+        <div class="note" id="cmp-cohort-note">—</div>
+      </div>
+      <div class="compare-card" id="cmp-budget">
+        <div class="title">งบเจ้าของ Ketthip</div>
+        <div class="num">฿30,000–50,000</div>
+        <div class="note" id="cmp-budget-note">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>ตารางความไว <small>เมื่อจำนวนคนเปลี่ยน · ค่าอื่นคงเดิม</small></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>คน</th>
+          <th>ต้นทุน/หัว</th>
+          <th>ราคา @ margin เป้า</th>
+          <th>กำไร/หัว @ ราคาขายปัจจุบัน</th>
+          <th>กำไรรวม</th>
+        </tr>
+      </thead>
+      <tbody id="sensitivity-body"></tbody>
+    </table>
+  </div>
+
+</div>
+
+</div>
+
+<div class="panel" style="margin-top: 14px;">
+  <h2>หมายเหตุ &amp; ข้อมูลอ้างอิง</h2>
+  <div class="notes">
+    <ul>
+      <li><strong>ค่าห้อง ฿3,745</strong> (รวม VAT) คงที่/งาน — ยืนยันจากไฟล์ต้นทุนเดิม</li>
+      <li><strong>ค่าอาหารตามเมนู SHIFT จริง = ฿428/หัว</strong> (อาหารกลางวัน 190 + เครื่องดื่มเบรค 70×2 + Break Set 49×2) — ไฟล์ xlsx ตั้งไว้ ฿290 = undercount</li>
+      <li><strong>ค่าวิทยากร</strong> ในไฟล์ xlsx ตั้ง 0 (ยังไม่ใส่จริง) — preset "lean" สมมติ 1 หัว ฿15k + TA ฿8k · "full" สมมติ 3 ท่าน × ฿15k</li>
+      <li><strong>VAT</strong> ปิดอยู่ตามไฟล์ต้นฉบับ</li>
+      <li><strong>ผู้เรียนจริง</strong> 11 คน 9/11 สายการตลาด · มั่นใจเฉลี่ย 2.7/5 — รายละเอียดใน Dashboard/AI-Workshop-รวม.html</li>
+      <li><strong>เจ้าของกรอกงบ</strong> "฿30,000-50,000 รวม" 1 วัน · บริษัทออกค่าเครื่องมือเอง · "เน้นเท่ากันทุกหัวข้อ" + "ทำเองได้จริง" × 3</li>
+      <li><strong>หน้าขาย trycloudflare</strong> ฿2,790/คน (เรตรุ่นใหญ่ ≥8 คน) · cohort เหมา ฿38,000/วัน · มัดจำ 50% · VAT 7% ปิด</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">AI Workshop · บ.ขอนแก่นอิเล็คทริค · อัปเดต 2026-07-01</div>
+
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const fmt = n => '฿' + Math.round(n).toLocaleString('th-TH');
+const fmtSign = n => (n < 0 ? '-' : '') + '฿' + Math.abs(Math.round(n)).toLocaleString('th-TH');
+
+const FIELDS = {
+  seats:    { panel: 1, min: 6,  max: 30,    step: 1,   label: 'จำนวนผู้เรียน',         unit: 'คน' },
+  venue:    { panel: 2, min: 0,  max: 20000, step: 100, label: 'ค่าห้องประชุม (รวม VAT)', unit: 'บาท/รุ่น' },
+  trainer1: { panel: 2, min: 0,  max: 50000, step: 500, label: 'ค่าวิทยากร 1',           unit: 'บาท/วัน' },
+  trainer2: { panel: 2, min: 0,  max: 50000, step: 500, label: 'ค่าวิทยากร 2',           unit: 'บาท/วัน' },
+  trainer3: { panel: 2, min: 0,  max: 50000, step: 500, label: 'ค่าวิทยากร 3',           unit: 'บาท/วัน' },
+  ta:       { panel: 2, min: 0,  max: 30000, step: 500, label: 'ผู้ช่วย / TA',           unit: 'บาท/วัน' },
+  travel:   { panel: 2, min: 0,  max: 30000, step: 500, label: 'เดินทาง / ที่พัก',       unit: 'บาท/รุ่น' },
+  food:     { panel: 3, min: 0,  max: 1500,  step: 10,  label: 'อาหาร + เบรค',           unit: 'บาท/หัว' },
+  docs:     { panel: 3, min: 0,  max: 2000,  step: 50,  label: 'เอกสาร / workbook',     unit: 'บาท/หัว' },
+  cert:     { panel: 3, min: 0,  max: 1000,  step: 10,  label: 'ใบประกาศ',               unit: 'บาท/หัว' },
+  cont:     { panel: 4, min: 0,  max: 30,    step: 1,   label: 'Contingency',           unit: '%' },
+  margin:   { panel: 4, min: 0,  max: 80,    step: 1,   label: 'Margin เป้า',           unit: '%' }
+};
+
+const PRESETS = {
+  xlsx:        { seats: 15, venue: 3745, trainer1: 0,     trainer2: 0,     trainer3: 0, ta: 0,    travel: 0, food: 290, docs: 0,   cert: 0,   cont: 0,  margin: 40, sell: null },
+  'real-menu': { seats: 11, venue: 3745, trainer1: 0,     trainer2: 0,     trainer3: 0, ta: 0,    travel: 0, food: 428, docs: 0,   cert: 0,   cont: 0,  margin: 40, sell: null },
+  lean:        { seats: 11, venue: 3745, trainer1: 15000, trainer2: 0,     trainer3: 0, ta: 8000, travel: 0, food: 428, docs: 200, cert: 50,  cont: 10, margin: 30, sell: null },
+  full:        { seats: 11, venue: 3745, trainer1: 15000, trainer2: 15000, trainer3: 15000, ta: 0, travel: 0, food: 428, docs: 300, cert: 100, cont: 10, margin: 30, sell: null },
+  budget45k:   { seats: 11, venue: 3745, trainer1: 12000, trainer2: 0,     trainer3: 0, ta: 5000, travel: 0, food: 428, docs: 0,   cert: 0,   cont: 5,  margin: 20, sell: 4090 }
+};
+
+function buildFields() {
+  Object.keys(FIELDS).forEach(key => {
+    const cfg = FIELDS[key];
+    const panel = document.querySelector('[data-panel="' + cfg.panel + '"]');
+    const div = document.createElement('div');
+    div.className = 'field';
+    div.innerHTML =
+      '<div class="field-label"><span>' + cfg.label + '</span><span class="unit">' + cfg.unit + '</span></div>' +
+      '<div class="row">' +
+        '<input type="range" id="r-' + key + '" min="' + cfg.min + '" max="' + cfg.max + '" step="' + cfg.step + '">' +
+        '<input type="number" id="n-' + key + '" min="' + cfg.min + '" max="' + cfg.max + '" step="' + cfg.step + '">' +
+      '</div>';
+    panel.appendChild(div);
+    const r = div.querySelector('#r-' + key);
+    const n = div.querySelector('#n-' + key);
+    r.addEventListener('input', () => { n.value = r.value; compute(); });
+    n.addEventListener('input', () => {
+      let v = +n.value;
+      if (isNaN(v)) v = cfg.min;
+      r.value = Math.min(Math.max(v, cfg.min), cfg.max);
+      compute();
+    });
+  });
+}
+
+function getVals() {
+  const v = {};
+  Object.keys(FIELDS).forEach(key => { v[key] = +$('n-' + key).value || 0; });
+  v.sell = +$('i-sell-n').value || 0;
+  return v;
+}
+
+function setVals(p) {
+  Object.keys(FIELDS).forEach(key => {
+    if (p[key] !== undefined) {
+      $('r-' + key).value = p[key];
+      $('n-' + key).value = p[key];
+    }
+  });
+  if (p.sell != null) {
+    $('i-sell').value = p.sell;
+    $('i-sell-n').value = p.sell;
+  }
+}
+
+function calc(v, seats) {
+  const fixedCost = v.venue + v.trainer1 + v.trainer2 + v.trainer3 + v.ta + v.travel;
+  const varPerHead = v.food + v.docs + v.cert;
+  const contMult = 1 + (v.cont / 100);
+  const costPerHead = (fixedCost / seats + varPerHead) * contMult;
+  const totalCost = costPerHead * seats;
+  const suggestedPrice = v.margin >= 100 ? 0 : costPerHead / (1 - v.margin / 100);
+  return { fixedCost, varPerHead, costPerHead, totalCost, suggestedPrice, contMult };
+}
+
+function compute() {
+  const v = getVals();
+  const seats = v.seats || 1;
+  const c = calc(v, seats);
+
+  $('seats-label').textContent = '(' + seats + ' คน)';
+  $('o-fixed').textContent = fmt(c.fixedCost);
+  $('o-cph').textContent = fmt(c.costPerHead);
+  $('o-cph-breakdown').textContent =
+    fmt(c.fixedCost / seats) + ' คงที่ + ' + fmt(c.varPerHead) + ' ผันแปร' +
+    (v.cont > 0 ? ' + ' + v.cont + '% เผื่อ' : '');
+  $('o-total').textContent = fmt(c.totalCost);
+
+  $('suggested-price').textContent = fmt(c.suggestedPrice);
+  const sellMax = Math.max(20000, Math.ceil(c.suggestedPrice * 1.5 / 100) * 100);
+  $('i-sell').max = sellMax;
+  $('i-sell-n').max = sellMax;
+
+  const sell = v.sell;
+  const profitPerHead = sell - c.costPerHead;
+  const revenue = sell * seats;
+  const totalProfit = profitPerHead * seats;
+  const realMargin = sell > 0 ? (profitPerHead / sell) * 100 : 0;
+  const varAfterCont = (v.food + v.docs + v.cert) * c.contMult;
+  const fixedAfterCont = c.fixedCost * c.contMult;
+  const beSeats = sell > varAfterCont ? Math.ceil(fixedAfterCont / (sell - varAfterCont)) : Infinity;
+
+  $('o-pph').textContent = fmtSign(profitPerHead);
+  $('o-margin').textContent = 'margin ' + realMargin.toFixed(1) + '%';
+  $('o-rev').textContent = fmt(revenue);
+  $('o-pt').textContent = fmtSign(totalProfit);
+  $('o-be').textContent = isFinite(beSeats)
+    ? 'break-even ที่ ' + beSeats + ' คน'
+    : 'ราคาขายต่ำกว่าต้นทุนผันแปร';
+
+  [['kpi-pph', profitPerHead], ['kpi-pt', totalProfit]].forEach(([id, val]) => {
+    const el = $(id);
+    el.classList.remove('profit', 'loss', 'neutral');
+    if (val > 0 && realMargin >= 25) el.classList.add('profit');
+    else if (val > 0) el.classList.add('neutral');
+    else if (val < 0) el.classList.add('loss');
+  });
+
+  const sb = $('status-bar');
+  sb.classList.remove('warn', 'bad');
+  if (profitPerHead < 0) {
+    sb.classList.add('bad');
+    sb.textContent = 'ขาดทุน ' + fmt(-profitPerHead) + '/หัว · ขาดทุนรวม ' + fmt(-totalProfit) +
+      ' · ต้องขึ้นราคา ' + fmt(c.suggestedPrice - sell) + ' หรือเพิ่มจำนวนคนถึง break-even ' +
+      (isFinite(beSeats) ? beSeats + ' คน' : 'ไม่ถึงเลย');
+  } else if (realMargin < 20) {
+    sb.classList.add('warn');
+    sb.textContent = 'กำไรบาง margin ' + realMargin.toFixed(1) + '% (เป้า ' + v.margin + '%) · กำไรรวม ' +
+      fmt(totalProfit) + ' · break-even ' + (isFinite(beSeats) ? beSeats + ' คน' : '—');
+  } else {
+    sb.textContent = 'กำไรปกติ margin ' + realMargin.toFixed(1) + '% · กำไรรวม ' + fmt(totalProfit) +
+      ' · break-even ' + (isFinite(beSeats) ? beSeats + ' คน' : '—');
+  }
+
+  const tcRev = 2790 * seats;
+  const tcProfit = tcRev - c.totalCost;
+  const tcMargin = tcRev > 0 ? (tcProfit / tcRev) * 100 : 0;
+  const tcCard = $('cmp-tc');
+  tcCard.classList.remove('good', 'mid', 'bad');
+  tcCard.classList.add(tcMargin >= 25 ? 'good' : tcProfit > 0 ? 'mid' : 'bad');
+  $('cmp-tc-note').textContent = seats + ' คน × ฿2,790 = ' + fmt(tcRev) + ' · ' +
+    (tcProfit >= 0 ? 'กำไร ' : 'ขาดทุน ') + fmt(Math.abs(tcProfit)) +
+    ' (margin ' + tcMargin.toFixed(0) + '%)';
+
+  const coRev = 38000;
+  const coProfit = coRev - c.totalCost;
+  const coMargin = (coProfit / coRev) * 100;
+  const coCard = $('cmp-cohort');
+  coCard.classList.remove('good', 'mid', 'bad');
+  coCard.classList.add(coMargin >= 25 ? 'good' : coProfit > 0 ? 'mid' : 'bad');
+  $('cmp-cohort-note').textContent = 'เหมา ฿38,000 · ' +
+    (coProfit >= 0 ? 'กำไร ' : 'ขาดทุน ') + fmt(Math.abs(coProfit)) +
+    ' · เทียบเท่า ' + fmt(coRev / seats) + '/หัว';
+
+  const budLow = 30000, budMid = 40000, budHigh = 50000;
+  const budCard = $('cmp-budget');
+  budCard.classList.remove('good', 'mid', 'bad');
+  let budNote = '';
+  if (c.totalCost > budHigh) {
+    budCard.classList.add('bad');
+    budNote = 'ต้นทุน ' + fmt(c.totalCost) + ' เกินงบสูงสุด ฿' + budHigh.toLocaleString() + ' · ขาด ' + fmt(c.totalCost - budHigh);
+  } else if (c.totalCost > budMid) {
+    budCard.classList.add('mid');
+    budNote = 'ต้นทุน ' + fmt(c.totalCost) + ' อยู่ระหว่าง mid-high · margin ที่ ฿' + budHigh.toLocaleString() + ' = ' +
+      ((budHigh - c.totalCost) / budHigh * 100).toFixed(0) + '%';
+  } else if (c.totalCost > budLow) {
+    budCard.classList.add('mid');
+    budNote = 'ต้นทุน ' + fmt(c.totalCost) + ' อยู่ระหว่าง low-mid · ขายในงบได้ margin ' +
+      ((budMid - c.totalCost) / budMid * 100).toFixed(0) + '% (mid) ถึง ' +
+      ((budHigh - c.totalCost) / budHigh * 100).toFixed(0) + '% (high)';
+  } else {
+    budCard.classList.add('good');
+    budNote = 'ต้นทุน ' + fmt(c.totalCost) + ' ต่ำกว่า low · ขายในงบได้ margin ' +
+      ((budLow - c.totalCost) / budLow * 100).toFixed(0) + '%–' +
+      ((budHigh - c.totalCost) / budHigh * 100).toFixed(0) + '%';
+  }
+  $('cmp-budget-note').textContent = budNote;
+
+  const sensSeats = [6, 8, 11, 15, 17, 20, 25, 30];
+  const tbody = $('sensitivity-body');
+  tbody.innerHTML = '';
+  sensSeats.forEach(s => {
+    const cc = calc(v, s);
+    const pph = sell - cc.costPerHead;
+    const pt = pph * s;
+    const tr = document.createElement('tr');
+    if (s === seats) tr.classList.add('current');
+    const pphColor = pph >= 0 ? 'var(--green)' : 'var(--red)';
+    const ptColor = pt >= 0 ? 'var(--green)' : 'var(--red)';
+    tr.innerHTML =
+      '<td>' + s + '</td>' +
+      '<td>' + fmt(cc.costPerHead) + '</td>' +
+      '<td>' + fmt(cc.suggestedPrice) + '</td>' +
+      '<td style="color:' + pphColor + '">' + fmtSign(pph) + '</td>' +
+      '<td style="color:' + ptColor + '">' + fmtSign(pt) + '</td>';
+    tbody.appendChild(tr);
+  });
+}
+
+function applyPreset(name) {
+  const p = PRESETS[name];
+  if (!p) return;
+  setVals(p);
+  if (p.sell == null) {
+    const v = getVals();
+    const c = calc(v, v.seats);
+    const sp = Math.round(c.suggestedPrice);
+    $('i-sell').value = sp;
+    $('i-sell-n').value = sp;
+  }
+  document.querySelectorAll('.preset').forEach(b => b.classList.toggle('active', b.dataset.preset === name));
+  compute();
+}
+
+document.querySelectorAll('.preset').forEach(b => {
+  b.addEventListener('click', () => applyPreset(b.dataset.preset));
+});
+$('i-sell').addEventListener('input', () => { $('i-sell-n').value = $('i-sell').value; compute(); });
+$('i-sell-n').addEventListener('input', () => {
+  const v = +$('i-sell-n').value;
+  $('i-sell').value = isNaN(v) ? 0 : Math.min(v, +$('i-sell').max);
+  compute();
+});
+$('use-suggested').addEventListener('click', e => {
+  e.preventDefault();
+  const v = getVals();
+  const c = calc(v, v.seats);
+  const sp = Math.round(c.suggestedPrice);
+  $('i-sell').value = sp;
+  $('i-sell-n').value = sp;
+  compute();
+});
+
+buildFields();
+applyPreset('real-menu');
+</script>
+</body>
+</html>
