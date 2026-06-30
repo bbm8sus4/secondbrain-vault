@@ -14,16 +14,15 @@ metadata:
 **Why:** โปรเจกต์ใหม่ 2026-06-30 ใช้แบบสำรวจ Pre-training คัดระดับ + กำหนดความลึก ก่อนวันงาน
 
 **How to apply:**
-- Path: `~/Documents/Claude/Projects/AI Workshop Management/`
-- ไฟล์: `1_แบบสอบถามเจ้าของธุรกิจ_NeedsAnalysis.md`, `2_แบบสำรวจผู้เรียน_AI_Workshop.md`, `3_สร้างGoogleForm_AppsScript.gs`, `BeforeAfter_Typhoon.md`, `4_Aidebate_Gaps_แบบสำรวจ.md`, `FORM_URLS.md`
-- Apps Script project: `clasp-deploy/` (clasp standalone, deploy เป็น Web App, doGet สร้าง/อัปเดต 3 ฟอร์ม)
-- 3 Form IDs (hard-coded ใน Code.gs):
-  - Owner (Needs Analysis): `1oEUefpyYqe1MQPpbwyM_lrkzReq02ZaETM50rUf-bvw`
-  - Learner (Pre-training): `1ekrJsyjnlVluHixcDwyJy0AcTnwO9vuYYfzfkw81G7o`
-  - Manager (รายแผนก): เก็บใน `PropertiesService.getScriptProperties().MANAGER_FORM_ID`
-- เนื้อหาฟอร์มผ่าน Typhoon polish แล้ว (61/121 strings เปลี่ยน) + เพิ่ม 3 insight จาก aidebate (tiered outcome / Excel-automation proxy + pre-task / ฟอร์มหัวหน้าแผนก)
-- ใช้ bobbysomporn@gmail.com (ไม่ใช่ 9bomqu) ในการรันทุก script
-- Workshop Company 7 ทีม (ของ marketing training อีกอันหนึ่ง) คนละโปรเจกต์ — ดู [[AI Workshop — 7 ทีมการตลาด|project-ai-workshop-7teams]]
+- **KB ใน Obsidian:** `~/SecondBrain/01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/` — ดูรายละเอียดทั้งหมด (forms setup, content, gaps, menu) ที่นั่น
+- **Working dir:** `~/Documents/Claude/Projects/AI Workshop Management/` (markdown + Apps Script + outputs)
+- **Apps Script:** `clasp-deploy/Code.gs` — clasp standalone, deploy เป็น Web App, doGet rebuild 2 ฟอร์ม
+- **Form IDs:**
+  - Owner: `1oEUefpyYqe1MQPpbwyM_lrkzReq02ZaETM50rUf-bvw` (29 items)
+  - Learner: `1ekrJsyjnlVluHixcDwyJy0AcTnwO9vuYYfzfkw81G7o` (35 items, รวม section 7 เมนูอาหาร/เครื่องดื่ม/ขนม)
+  - ~~Manager~~: trashed 2026-06-30 (user ไม่เอา)
+- ใช้ **bobbysomporn@gmail.com** (ไม่ใช่ 9bomqu) ในการรันทุก script
+- Workshop Company 7 ทีม (ของ marketing training) คนละโปรเจกต์ — ดู [[AI Workshop — 7 ทีมการตลาด|project_ai_workshop_7teams]]
 
 **Reference workflows ที่ใช้:**
-- [[clasp Apps Script + Web App workaround|reference-clasp-apps-script-webapp]] — วิธี deploy Apps Script ผ่าน clasp + Web App workaround
+- [[clasp Apps Script + Web App workaround|reference_clasp_apps_script_webapp]] — วิธี deploy Apps Script ผ่าน clasp + Web App workaround
