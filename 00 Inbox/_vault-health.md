@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-06-29 09:00:00 · ไฟล์ .md ทั้งหมด 268
+> สแกนอัตโนมัติ · 2026-06-30 09:00:00 · ไฟล์ .md ทั้งหมด 274
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -9,12 +9,12 @@
 | รายการ | ผล |
 |---|---|
 | 🔗 ลิงก์เสีย (dead links) | 81 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 52 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 53 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 55 ↔ 55 — ตรงกัน ✅ |
+| 🔄 memory source ↔ mirror | 57 ↔ 57 — ตรงกัน ✅ |
 | ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W24 (17 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (16 วันที่แล้ว) |
+| 📰 Friday weekly recap ล่าสุด | 2026-W26 (21 ชม.ที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (17 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -152,6 +152,7 @@
 - `Friday/Monthly Recaps/2026-06 มิถุนายน.md`
 - `Friday/Monthly Recaps/Friday-Monthly-Recap-May-2026.md`
 - `Friday/Weekly Recaps/2026-W24.md`
+- `Friday/Weekly Recaps/2026-W26.md`
 - `Friday/_scripts/recap_prompts.md`
 - `Thunder Solution/Documents/API Gen QR — 2025-10 planning notes.md`
 
