@@ -143,6 +143,8 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 **ไตรมาสนี้:** deploy DB จริง → lease-alert+snapshot history → presence/attendance → booking → financial/chargeback.
 **Litmus test ขอบเขต:** "ถ้า localStorage ถูกล้างคืนนี้ มีใครเดือดร้อนไหม?" ถ้าใช่ → อย่าให้ tool นี้เป็นเจ้าของข้อมูล (เป็น planning layer ไม่ใช่ HRIS). Transcript: ~/ai-debate/debates/20260701-030136.md
 
+**ลงมือแล้ว — Batch 1: Org Handover Risk (2026-07-01):** เพิ่มในเมนูผังองค์กร: ฟิลด์ **key-person (critical)** + **ตัวสำรอง (backupId)** ใน edit modal · ปุ่ม **"ดูความเสี่ยง"** (toggle) → ไฮไลต์ critical-ไม่มีสำรอง (กรอบแดง + ป้าย "ไม่มีสำรอง"), critical-มีสำรอง (ป้าย KEY), span-of-control "คุม N" ทุกหัวหน้า (เกิน 6 = ส้ม overload) · **Export/Import ผังองค์กร** (กลไกส่งมอบ COO ใหม่, แยกตามบริษัท). คำนวณจาก reports-to (`p`) ที่เก็บเป็น data อยู่แล้ว. **ยังเหลือ (this-week):** Onboarding readiness (seating), capacity/breach, Easy Space Money Map.
+
 ## เครื่องมือ — Interactive Seating Planner (HTML)
 
 ไฟล์: `~/Desktop/office-seating-planner.html` (single-file, เปิดด้วยเบราว์เซอร์, ไม่ต้องต่อเน็ต)
