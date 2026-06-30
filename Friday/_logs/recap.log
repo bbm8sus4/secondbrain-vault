@@ -221,3 +221,69 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2099-W01.md — 87 chars, 
 - **Growth assets:** BoostSMS Sale Page เข้า main, LineOA BoostSMS invite แล้ว, Thunder Sale Page รองรับ Safari/iOS, AIS SMS 2 ปีเดินหน้า, CRM quota 18,000 slips/year ถูกเลือก, pipeline ใหม่จาก Alphamind/Rusty/Kinzu/Adam&eve/Mango/Plus-Connect/BNI/Ingram ครับ
 [2026-06-30 14:33:44] MONTHLY: ✅ wrote    23994 chars → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
 [2026-06-30 14:33:44] DONE: auto
+[2026-06-30 15:02:36] AUTO: DOW=2 DOM=30 TOMORROW=01
+[2026-06-30 15:02:36] CATCHUP: scanning past 14 days for missed runs
+[2026-06-30 15:02:36] CATCHUP: missed weekly 2026-W26 (date 2026-06-25) — generating
+[2026-06-30 15:02:36] WEEKLY: 2026-06-19 → 2026-06-25 (label: 2026-W26)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W26.md — 43,564 chars, 35 weekly, 82 daily
+[2026-06-30 15:02:41] WEEKLY: source size =    75248 chars
+[2026-06-30 15:02:41] WEEKLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W26.md
+- 22 มิ.ย. ตำแหน่ง Tester: Bank แจ้งประกาศรับสมัครแล้ว คัด Resume เช้านี้ และ HR เรียกสัมภาษณ์
+
+## SHIFT+Bob
+- 19 มิ.ย. Bobsanchezz ขอไฟล์ใหม่ 06:01 น. และส่งไฟล์ PDF 09:xx
+- 20 มิ.ย. Bobsanchezz ส่งคำขอแล้ว, Watcharin อนุมัติแล้ว; Watcharin เปิดคลาส AI Transformation 21
+- 21 มิ.ย. Bobsanchezz โหลดไฟล์สำเร็จหลัง Watcharin กดให้ และ feedback ว่าเนื้อหาดี เหมาะผู้บริหาร/CSM อิน AI
+- 22 มิ.ย. โด้ไป BNI แทนพี่ทีน โดย Bobsanchezz จัดการ; ส่งสรุปประชุม PDF ช่วงเย็น
+- 24 มิ.ย. Bobsanchezz แจ้งดีไซน์ใกล้เคียง 70-80% ให้เช็ก Layout ก่อน; พี่แบงค์แจ้งเสร็จค่ำนี้ อาจมี OT เก็บรายละเอียด
+- SHIFT ฝากเงินสด: 19 มิ.ย. 1,105 บาท, 20 มิ.ย. 1,963 บาท, 21 มิ.ย. 1,626 บาท, 22 มิ.ย. 1,270 บาท
+
+## ⚠️ Watch list
+- Mr.Wagyuu: ลูกค้าแนบใบเสร็จ 4 รายการไม่เข้าระบบหลังบ้าน แต่ Bank ระบุ 21 มิ.ย. ว่า Portal แนบใบเสร็จทำงานปกติ ต้องแยกเคส Line OA/Portal ให้ชัด
+- EasyCRM Sale Page ยังอยู่ระหว่าง Bank แก้ตามคอมเมนต์ Khunjadi และใช้ mockup portal ตัวใหม่
+- Ingram/Techsauce 2026 ต้องยืนยันเข้าร่วมบูธภายใน 26 มิ.ย. 69
+- Bay Krungsri เสนอ 0.15 บ./รายการ สำหรับ 1-3 ล้านรายการ แต่ Poom ยังลืมถามว่าจะใช้ Easy หรือ Thunder ดำเนินการ
+- Thunder API ลูกค้า ID 2309, 2289 เจอปัญหาโควต้าเกิน/อายุแพ็กเกจ TEST ผิด
+- รายการถอนเงินรออนุมัติปลายสัปดาห์: noey777 10,000.7฿ วันที่ 24 มิ.ย. และ smk7889 1,164 บาท วันที่ 25 มิ.ย.
+
+## ✅ Highlights
+- CRM Portal รอบใหญ่ขึ้นแล้ว: merge 140 commits เข้า `main/day-hotel`
+- OTP LINE OA ของ Mr.Wagyuu ถูกตัดออกจากระบบแล้ว 20 มิ.ย. ลด friction การเพิ่มแต้ม
+- คูปองอัตโนมัติ EasyCRM แก้และ Deploy สำเร็จ ใช้งานได้ก่อน Kinzu Demo
+- Thunder/Easy finance เคลียร์อนุมัติหลายรายการใหญ่: 1.2M KAPI/กู้ตึก, 56,490 บาท คอมเซิร์ฟเวอร์, 10,000 บาทมัดจำคอมเซิร์ฟเวอร์
+- เว็บ Thunder deploy ไม่มีปัญหา และ Sale Page video รองรับ Safari/IOS แล้ว
+- SHIFT มีเงินสดฝากต่อเนื่อง 19-22 มิ.ย. รวม 5,964 บาทครับ
+[2026-06-30 15:03:37] WEEKLY: ✅ wrote    10218 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W26.md
+[2026-06-30 15:03:37] AUTO: Last day of month → monthly
+[2026-06-30 15:03:37] MONTHLY: 2026-06-01 → 2026-06-30 (label: 2026-06 มิถุนายน)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/monthly_2026-06.md — 139,681 chars, 120 weekly, 356 daily
+[2026-06-30 15:03:39] SIZE GUARD: source   257500 > 80000 → truncating to top 80000 bytes
+[2026-06-30 15:03:39] MONTHLY: source size =    80067 chars
+[2026-06-30 15:03:39] MONTHLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+- Withdrawal pending: `Tanachaibos` 1,477.31, `noey777` 10,000.7, `smk7889` 1,164, สุวรรณ 1,091.25 ยังถูก flag ว่ารออนุมัติใน source
+- Thunder API/Bot: Clicx ยังมีเคสบอทไม่ตรวจสลิป, API ID 2309/2289 โควต้า/อายุแพ็กเกจ TEST ผิด, และธีม LINE Desktop แสดงไม่ครบ
+- Billing: `INV-202606-942` ขึ้นชำระทั้งที่ลูกค้ายังไม่จ่าย, ยอด invoice 447 แสดงเป็น 298, ข้อมูลเดือน 5 หาย/รหัสหาย ต้องตาม root cause
+- Accounting/P&L: Bob ยังต้องได้ชีทรายรับรายจ่าย Thunder/EasySlip ที่ครบและหาเจอง่าย; เคสค่าจ้าง “ต่อ” และ VAT ค้าง 42,000 ต้องปิดกับ Pop
+- AIS/BAY banking integration: AIS SMS 2 ปี/4M บาท และ BAY 0.15 บาท/รายการ ยังต้องปิดเอกสาร, entity ที่ใช้, และ commercial terms
+- Ingram / Techsauce 2026: ต้องยืนยันสถานะเข้าร่วมบูธ 50,000 บาท หลัง deadline 26 มิ.ย.
+- HR: ปัญหา Ning, Head of CS, ฝ้าย, ใบเตือน dev, timeline ปัญหาเสียง ยังเป็น people issue ที่ต้อง follow-up
+- กฎหมาย PVD/กองทุนสงเคราะห์ลูกจ้าง มีผล 1 ต.ค. 2569 ต้องเตรียม policy/finance impact
+- QA/Tester/PO hiring: Tester เริ่มคัด resume, PO Pongsathorn สัมภาษณ์แล้ว ต้องตัดสินใจ next step
+
+### ✅ Highlights สำเร็จ
+- EasyCRM มี release ใหญ่: PR 59 ไฟล์, merge Portal/Theme/Coupon/Cron/Flex/RFM/Analytics, และ 19 มิ.ย. รวม 140 commits เข้า `main/day-hotel`
+- Portal phone-first OTP Boost SMS (`CRM-407`) เข้า `main/day-hotel` แล้ว
+- Day Hotel auto reply root cause เจอที่ `line-webhook/route.ts` และแก้ PR #18 เข้า `main/day-hotel`
+- TTB QR Code / เงื่อนไขตรวจสอบสลิป / Flex ตอบกลับ ถูก deploy ขึ้นระบบลูกค้าแล้ว
+- Mr.Wagyuu Go Live และย้ายข้อมูลสมาชิก 1,800 คนเริ่มเดินต่อได้; เชื่อม Line แล้ว, Flex Theme Slip/แต้มเสร็จ, Portal ใช้งานได้
+- คูปองอัตโนมัติแก้เสร็จและ deploy ทัน Kinzu demo 24 มิ.ย.
+- BoostSMS/AIS เดินหน้า: Watcharin อนุมัติแพ็ก AIS 2 ปี, ดีล SMS 4M บาท 0.12 บาท/SMS ถูกหยิบมาคุยจริง
+- Admin SOP บัญชี Thunder/EasySlip พร้อมตรวจสอบ: ใบเสนอราคา, ใบกำกับภาษี, หัก ณ ที่จ่าย
+- ภาษีสำคัญจ่ายแล้ว: EasySlip พ.ค. 97,889.25, Thunder สปส. 271,747.75, VAT ภพ.30 พ.ค. 152,540.07
+- รายการโอนใหญ่หลายรายการอนุมัติแล้ว: RAM 101,200.60, I Have CPU 56,490, KAPI/กู้ตึก 1.2M, ค่า API EasySlip 2.117M
+- EasyBOT เริ่มมี process ชัดขึ้น: ทำล่วงหน้า, ใช้ ChatGPT, review งาน, ปรับภาษา AI ให้ธรรมชาติขึ้น
+- CRM sales pipeline ขยาย: รำไพเพ็ญศรี, ชัยสวัสดิ์มอเตอร์, Mr.Wagyuu, Rusty, Kinzu, Adam&eve Cafe, Mango Consultant, Plus-Connect
+- SHIFT ops มีการเก็บยอดฝากเงินต่อเนื่องและเริ่มงาน graphic/โปรโมชัน LINE OA เป็นระบบขึ้น
+- Bob/Watcharin ปรับรูปแบบ monthly meeting ให้เน้น trend/problem แทนการโชว์ตัวเลข และเปิดหัวข้อ people management ที่ต้องแก้จริงในทีมครับ
+[2026-06-30 15:09:37] MONTHLY: ✅ wrote    51156 chars → /Users/aexgee/SecondBrain/Friday/Monthly Recaps/2026-06 มิถุนายน.md
+[2026-06-30 15:09:37] DONE: auto
