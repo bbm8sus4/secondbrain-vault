@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-06-30 09:00:00 · ไฟล์ .md ทั้งหมด 274
+> สแกนอัตโนมัติ · 2026-07-01 09:00:01 · ไฟล์ .md ทั้งหมด 300
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,16 +8,18 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 81 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 53 |
+| 🔗 ลิงก์เสีย (dead links) | 87 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 61 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 57 ↔ 57 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W26 (21 ชม.ที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | Friday-Monthly-Recap-May-2026 (17 วันที่แล้ว) |
+| 🔄 memory source ↔ mirror | 62 ↔ 62 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 3 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W26 (17 ชม.ที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (9 ชม.ที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
+- `00 Inbox/อบรม AI - ขอนแก่นอิเล็คทริค.md` → `[[EasySlip]]` (ไม่พบ)
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/01-Forms-Setup.md` → `[[reference_clasp_apps_script_webapp]]` (ไม่พบ)
 - `01 Projects/HUG COMPANY/SRS v0.0.2 — ERP System.md` → `[[HUG COMPANY-1-ad256a76b9.png]]` (ไม่พบ)
 - `01 Projects/HUG COMPANY/SRS v0.0.2 — ERP System.md` → `[[HUG COMPANY-10-5c9db47be0.png]]` (ไม่พบ)
 - `01 Projects/HUG COMPANY/SRS v0.0.2 — ERP System.md` → `[[HUG COMPANY-11-8e865b15c6.png]]` (ไม่พบ)
@@ -72,6 +74,10 @@
 - `01 Projects/KuanGolf/Strategic Analysis.md` → `[[project_thunder_solution]]` (ไม่พบ)
 - `03 Resources/Clippings/ChatGPT Images 2.0 เก่งขนาดนี้ แทนกราฟิก ได้หรือยัง – พูดคุยความเห็น.md` → `[[iMoD Official]]` (ไม่พบ)
 - `03 Resources/Clippings/Go with the Four EP.0 — COO Takeaways.md` → `[[ไม่เปลี่ยนคือตาย! \"วู้ดดี้-หนุ่ย-วิทย์-CK\" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0]]` (ไม่พบ)
+- `03 Resources/Clippings/Lead Gen Man — Claude Code Carousel (FB).md` → `[[slide-1-cover.jpg]]` (ไม่พบ)
+- `03 Resources/Clippings/Lead Gen Man — Claude Code Carousel (FB).md` → `[[slide-3-commands.jpg]]` (ไม่พบ)
+- `03 Resources/Clippings/Lead Gen Man — Claude Code Carousel (FB).md` → `[[slide-7-8skills.jpg]]` (ไม่พบ)
+- `03 Resources/Clippings/Lead Gen Man — Claude Code Carousel (FB).md` → `[[slide-9-cta.jpg]]` (ไม่พบ)
 - `03 Resources/Clippings/คนยุคโบราณ ทำแผนที่ยังไง?  8 Minute History EP.398.md` → `[[THE STANDARD PODCAST]]` (ไม่พบ)
 - `03 Resources/Clippings/วิธีสร้างภาพให้สวย อัปเดต AI ตัวใหม่ … ผลลัพธ์เกินคาด!!! สวย ง่าย เร็ว  ChatGPT Images 2.0.md` → `[[Readyplanet]]` (ไม่พบ)
 - `03 Resources/Clippings/หยุดไล่ล่าชีวิตและเวลาที่สมบูรณ์แบบ สรุปหนังสือ Four Thousand Weeks  Mission To The Moon EP.2684.md` → `[[Mission To The Moon]]` (ไม่พบ)
@@ -102,11 +108,18 @@
 
 ## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
 
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Curriculum/4_แบบประเมินหลังอบรม_AI_Workshop.md`
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Curriculum/BeforeAfter_Typhoon.md`
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/1_แบบสอบถามเจ้าของธุรกิจ_NeedsAnalysis.md`
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/2_แบบสำรวจผู้เรียน_AI_Workshop.md`
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/4_Aidebate_Gaps_แบบสำรวจ.md`
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/FORM_URLS.md`
 - `03 Resources/Accounting/accounting_sop_template.md`
 - `03 Resources/COO/COO-DELIVERABLES.md`
 - `03 Resources/COO/coo-speech-script.md`
 - `03 Resources/Clippings/CSM-SME Manager — AI Co-worker Setup Lab v4.md`
 - `03 Resources/Clippings/ChatGPT Images 2.0 เก่งขนาดนี้ แทนกราฟิก ได้หรือยัง – พูดคุยความเห็น.md`
+- `03 Resources/Clippings/Lead Gen Man — Claude Code Carousel (FB).md`
 - `03 Resources/Clippings/คนยุคโบราณ ทำแผนที่ยังไง?  8 Minute History EP.398.md`
 - `03 Resources/Clippings/วิธีสร้างภาพให้สวย อัปเดต AI ตัวใหม่ … ผลลัพธ์เกินคาด!!! สวย ง่าย เร็ว  ChatGPT Images 2.0.md`
 - `03 Resources/Clippings/หยุดไล่ล่าชีวิตและเวลาที่สมบูรณ์แบบ สรุปหนังสือ Four Thousand Weeks  Mission To The Moon EP.2684.md`
@@ -152,6 +165,7 @@
 - `Friday/Monthly Recaps/2026-06 มิถุนายน.md`
 - `Friday/Monthly Recaps/Friday-Monthly-Recap-May-2026.md`
 - `Friday/Weekly Recaps/2026-W24.md`
+- `Friday/Weekly Recaps/2026-W25.md`
 - `Friday/Weekly Recaps/2026-W26.md`
 - `Friday/_scripts/recap_prompts.md`
 - `Thunder Solution/Documents/API Gen QR — 2025-10 planning notes.md`
