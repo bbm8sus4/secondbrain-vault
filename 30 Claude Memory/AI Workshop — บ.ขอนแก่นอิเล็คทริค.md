@@ -11,7 +11,9 @@ metadata:
 **ผู้เรียน:** เชิญ 15 คน · ตอบแบบสำรวจจริง **11 คน** (9/11 สายการตลาด · มั่นใจเฉลี่ย 2.7/5 · 1 คนใช้ Claude ประจำ = เบนซ์) คละแผนกหนัก ความต่างระดับสูงมาก
 **ความท้าทายหลัก:** เจ้าของอยากให้ทุกคนทำเว็บ+DB ได้จริง แต่ครึ่งกลุ่มเป็น non-tech → ต้อง tiered outcome หรือลดเพดาน
 **ส่งมอบแล้ว:** dashboard รวมไฟล์เดียว 3 แท็บ `AI-Workshop-รวม.html` (เจ้าของ / ผู้เรียน 11 คน + กราฟ / ความสอดคล้องเจ้าของ↔ผู้เรียน) — รายละเอียด+ผลวิเคราะห์ใน Obsidian `06-Dashboard-Summary.md`
-**Live (Cloudflare Pages):** https://khonkaen-ai-workshop.pages.dev — ส่งวิทยากรดูแล้ว · project `khonkaen-ai-workshop` (branch main) ลิงก์ stable แก้แล้ว deploy ทับได้
+**Live (Cloudflare Pages) — 2 ลิงก์ stable:**
+- **3 แท็บ (ครบ):** https://khonkaen-ai-workshop.pages.dev · project `khonkaen-ai-workshop`
+- **2 แท็บ (ผู้เรียน + ความสอดคล้อง, ตัดหน้าเจ้าของ):** https://khonkaen-workshop-learner.pages.dev · project `khonkaen-workshop-learner` · mobile-tuned + typography ปรับใหม่ 2026-07-01 · สร้างจากตัวเต็มด้วย Python patch (ตัด `#tab-owner` DOM + สลับ default active)
 **Generators (ถาวร):** `RECOVERY/_generators/gen_combined.py` (+ `gen_dash.py`) — เผื่อ /tmp หาย · มีข้อมูลเพิ่ม → แก้ generator แล้ว regen + redeploy (วิธีเต็มใน Obsidian `06-Dashboard-Summary.md` § Deploy)
 
 **Why:** โปรเจกต์ใหม่ 2026-06-30 ใช้แบบสำรวจ Pre-training คัดระดับ + กำหนดความลึก ก่อนวันงาน

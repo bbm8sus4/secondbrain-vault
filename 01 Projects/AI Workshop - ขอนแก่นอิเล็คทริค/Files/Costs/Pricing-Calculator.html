@@ -284,6 +284,15 @@ tbody tr:last-child td { border-bottom: none; }
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(-4px); }
 
+@media (max-width: 768px) {
+  input[type="number"], input[type="text"], select { font-size: max(16px, 1em); }
+  .icon-btn, .add-item, .ws-select, .item-remove { min-height: 40px; }
+  .item-remove { min-width: 40px; }
+}
+input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-visible {
+  outline: 2px solid var(--primary); outline-offset: 2px;
+}
+
 @media print {
   body { background: white; }
   .workspace-bar, .icon-btn, .add-item, .item-remove, .modal, .toast { display: none; }
@@ -535,6 +544,12 @@ tbody tr:last-child td { border-bottom: none; }
       </div>
     </div>
 
+    <div class="modal-section" id="restore-section" style="display:none;">
+      <h4>Built-in ที่ซ่อนไว้ <span id="hidden-count" style="color:var(--muted);font-weight:400;"></span></h4>
+      <div id="hidden-list" style="display:flex;flex-direction:column;gap:6px;"></div>
+      <button class="btn" id="restore-all" style="margin-top:8px;width:100%;">กู้คืน built-in ทั้งหมด</button>
+    </div>
+
     <div class="modal-actions">
       <button class="btn btn-link" id="set-reset">รีเซ็ตเป็นค่าเริ่มต้น</button>
       <button class="btn" id="set-cancel">ยกเลิก</button>
@@ -577,11 +592,11 @@ const DEFAULT_SETTINGS = {
 };
 
 const BUILTIN_LABELS = {
-  'xlsx': 'ค่าตามไฟล์ xlsx (฿290)',
-  'real-menu': 'เมนูจริง SHIFT (฿428)',
-  'lean': 'วิทยากร 1 + TA',
-  'full': 'วิทยากร 3 ท่าน',
-  'budget45k': 'ขายในงบเจ้าของ ฿45k'
+  'xlsx': 'แผน A · Baseline (ตามไฟล์ต้นทุนต้นฉบับ)',
+  'real-menu': 'แผน B · ต้นทุนอาหารจริง (SHIFT ฿428/หัว)',
+  'lean': 'แผน C · ทีมย่อ (วิทยากร 1 + TA)',
+  'full': 'แผน D · ทีมเต็ม (วิทยากร 3 ท่าน)',
+  'budget45k': 'แผน E · ล็อกงบเจ้าของ ฿45,000'
 };
 
 const BUILTIN_PRESETS = {
@@ -638,12 +653,24 @@ const BUILTIN_PRESETS = {
 const LS_SETTINGS = 'pricing-calc-settings';
 const LS_WORKSPACES = 'pricing-calc-workspaces';
 const LS_CURRENT_WS = 'pricing-calc-current-ws';
+const LS_HIDDEN_BUILTINS = 'pricing-calc-hidden-builtins';
 
 let state = clonePreset(BUILTIN_PRESETS['real-menu']);
 let settings = loadSettings();
 let customWs = loadCustomWs();
+let hiddenBuiltins = loadHiddenBuiltins();
 let currentWs = loadCurrentWs();
 let wsModalMode = 'new';
+
+function loadHiddenBuiltins() {
+  try { return JSON.parse(localStorage.getItem(LS_HIDDEN_BUILTINS) || '[]'); }
+  catch (e) { return []; }
+}
+function persistHiddenBuiltins() {
+  try { localStorage.setItem(LS_HIDDEN_BUILTINS, JSON.stringify(hiddenBuiltins)); return true; }
+  catch (e) { toast(persistError(e)); return false; }
+}
+function isBuiltinHidden(key) { return hiddenBuiltins.indexOf(key) !== -1; }
 
 function clonePreset(p) { return JSON.parse(JSON.stringify(p)); }
 
@@ -653,15 +680,22 @@ function loadSettings() {
     return Object.assign({}, DEFAULT_SETTINGS, saved);
   } catch (e) { return Object.assign({}, DEFAULT_SETTINGS); }
 }
+function persistError(e) {
+  return 'บันทึกไม่สำเร็จ: ' + (e && e.name === 'QuotaExceededError'
+    ? 'พื้นที่ localStorage เต็ม (~5MB) — ลบ workspace เก่าออกก่อน'
+    : 'browser ปิด localStorage (private mode?) — ค่าจะหายเมื่อปิดหน้า');
+}
 function persistSettings() {
-  try { localStorage.setItem(LS_SETTINGS, JSON.stringify(settings)); } catch (e) {}
+  try { localStorage.setItem(LS_SETTINGS, JSON.stringify(settings)); return true; }
+  catch (e) { toast(persistError(e)); return false; }
 }
 function loadCustomWs() {
   try { return JSON.parse(localStorage.getItem(LS_WORKSPACES) || '{}'); }
   catch (e) { return {}; }
 }
 function persistCustomWs() {
-  try { localStorage.setItem(LS_WORKSPACES, JSON.stringify(customWs)); } catch (e) {}
+  try { localStorage.setItem(LS_WORKSPACES, JSON.stringify(customWs)); return true; }
+  catch (e) { toast(persistError(e)); return false; }
 }
 function loadCurrentWs() {
   const v = localStorage.getItem(LS_CURRENT_WS) || 'builtin:real-menu';
@@ -671,7 +705,8 @@ function loadCurrentWs() {
   return 'builtin:real-menu';
 }
 function persistCurrentWs() {
-  try { localStorage.setItem(LS_CURRENT_WS, currentWs); } catch (e) {}
+  try { localStorage.setItem(LS_CURRENT_WS, currentWs); return true; }
+  catch (e) { return false; }
 }
 
 function wsParts(v) { const i = v.indexOf(':'); return [v.slice(0, i), v.slice(i + 1)]; }
@@ -688,16 +723,19 @@ function toast(msg) {
 function renderDropdown() {
   const sel = $('ws-dropdown');
   sel.innerHTML = '';
-  const g1 = document.createElement('optgroup');
-  g1.label = 'ค่าเริ่มต้น (built-in)';
-  Object.keys(BUILTIN_PRESETS).forEach(k => {
-    const o = document.createElement('option');
-    o.value = 'builtin:' + k;
-    o.textContent = BUILTIN_LABELS[k] || k;
-    g1.appendChild(o);
-  });
-  sel.appendChild(g1);
-  const names = Object.keys(customWs);
+  const visibleBuiltins = Object.keys(BUILTIN_PRESETS).filter(k => !isBuiltinHidden(k));
+  if (visibleBuiltins.length > 0) {
+    const g1 = document.createElement('optgroup');
+    g1.label = 'ค่าเริ่มต้น (built-in)';
+    visibleBuiltins.forEach(k => {
+      const o = document.createElement('option');
+      o.value = 'builtin:' + k;
+      o.textContent = BUILTIN_LABELS[k] || k;
+      g1.appendChild(o);
+    });
+    sel.appendChild(g1);
+  }
+  const names = Object.keys(customWs).sort((a, b) => a.localeCompare(b, 'th'));
   if (names.length > 0) {
     const g2 = document.createElement('optgroup');
     g2.label = 'ที่คุณบันทึกไว้';
@@ -717,7 +755,8 @@ function updateWsButtons() {
   const b = isBuiltinWs();
   $('ws-update').disabled = b;
   $('ws-rename').disabled = b;
-  $('ws-delete').disabled = b;
+  $('ws-delete').disabled = false;
+  $('ws-delete').title = b ? 'ซ่อนแผนนี้ (กู้คืนได้จาก ตั้งค่า)' : 'ลบ workspace ถาวร';
 }
 
 function getPresetByWs(v) {
@@ -979,7 +1018,35 @@ function openSettings() {
   $('set-bud-high').value = settings.budgetHigh;
   $('set-vat-rate').value = settings.vatRate;
   $('set-vat-toggle').classList.toggle('on', settings.vatEnabled);
+  renderHiddenBuiltins();
   $('settings-modal').classList.remove('hidden');
+}
+
+function renderHiddenBuiltins() {
+  const sec = $('restore-section');
+  const list = $('hidden-list');
+  list.innerHTML = '';
+  if (hiddenBuiltins.length === 0) { sec.style.display = 'none'; return; }
+  sec.style.display = '';
+  $('hidden-count').textContent = '(' + hiddenBuiltins.length + ')';
+  hiddenBuiltins.slice().forEach(key => {
+    const row = document.createElement('div');
+    row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:6px 10px;background:var(--bg);border-radius:6px;font-size:12px;';
+    row.innerHTML = '<span>' + (BUILTIN_LABELS[key] || key) + '</span>';
+    const btn = document.createElement('button');
+    btn.className = 'btn';
+    btn.style.cssText = 'padding:4px 10px;font-size:11px;';
+    btn.textContent = 'กู้คืน';
+    btn.addEventListener('click', () => {
+      hiddenBuiltins = hiddenBuiltins.filter(k => k !== key);
+      persistHiddenBuiltins();
+      renderHiddenBuiltins();
+      renderDropdown();
+      toast('กู้คืน "' + (BUILTIN_LABELS[key] || key) + '" แล้ว');
+    });
+    row.appendChild(btn);
+    list.appendChild(row);
+  });
 }
 function closeSettings() { $('settings-modal').classList.add('hidden'); }
 function saveSettings() {
@@ -1052,14 +1119,33 @@ function updateWs() {
   toast('อัปเดต "' + name + '" แล้ว');
 }
 function deleteWs() {
-  if (isBuiltinWs()) return;
-  const [, name] = wsParts(currentWs);
-  if (!confirm('ลบ workspace "' + name + '" ?')) return;
-  delete customWs[name];
-  persistCustomWs();
-  applyWorkspace('builtin:real-menu');
+  const [kind, name] = wsParts(currentWs);
+  const display = kind === 'builtin' ? (BUILTIN_LABELS[name] || name) : name;
+  const verb = kind === 'builtin' ? 'ซ่อน' : 'ลบ';
+  if (!confirm(verb + ' "' + display + '" ?' + (kind === 'builtin' ? '\n(กู้คืนได้จากปุ่ม "ตั้งค่า")' : ''))) return;
+  if (kind === 'builtin') {
+    if (!isBuiltinHidden(name)) hiddenBuiltins.push(name);
+    persistHiddenBuiltins();
+  } else {
+    delete customWs[name];
+    persistCustomWs();
+  }
+  const remainingBuiltin = Object.keys(BUILTIN_PRESETS).filter(k => !isBuiltinHidden(k));
+  const remainingCustom = Object.keys(customWs);
+  let fallback;
+  if (remainingBuiltin.length > 0) fallback = 'builtin:' + remainingBuiltin[0];
+  else if (remainingCustom.length > 0) fallback = 'custom:' + remainingCustom[0];
+  else {
+    hiddenBuiltins = [];
+    persistHiddenBuiltins();
+    fallback = 'builtin:real-menu';
+    toast('workspace หมด — กู้คืน built-in ทั้งหมดแล้ว');
+  }
+  applyWorkspace(fallback);
   renderDropdown();
-  toast('ลบ "' + name + '" แล้ว');
+  if (fallback !== 'builtin:real-menu' || Object.keys(customWs).length + Object.keys(BUILTIN_PRESETS).length - hiddenBuiltins.length > 1) {
+    toast(verb + ' "' + display + '" แล้ว');
+  }
 }
 
 $('ws-dropdown').addEventListener('change', e => applyWorkspace(e.target.value));
@@ -1071,6 +1157,11 @@ $('ws-cancel').addEventListener('click', closeWsModal);
 $('ws-backdrop').addEventListener('click', closeWsModal);
 $('ws-confirm').addEventListener('click', confirmWsModal);
 $('ws-name').addEventListener('keydown', e => { if (e.key === 'Enter') confirmWsModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (!$('ws-modal').classList.contains('hidden')) closeWsModal();
+  else if (!$('settings-modal').classList.contains('hidden')) closeSettings();
+});
 
 wireScalar('seats', 'seats');
 wireScalar('cont', 'cont');
@@ -1097,6 +1188,13 @@ $('set-cancel').addEventListener('click', closeSettings);
 $('set-save').addEventListener('click', saveSettings);
 $('set-reset').addEventListener('click', resetSettings);
 $('set-vat-toggle').addEventListener('click', () => $('set-vat-toggle').classList.toggle('on'));
+$('restore-all').addEventListener('click', () => {
+  hiddenBuiltins = [];
+  persistHiddenBuiltins();
+  renderHiddenBuiltins();
+  renderDropdown();
+  toast('กู้คืน built-in ทั้งหมดแล้ว');
+});
 
 renderDropdown();
 applyWorkspace(currentWs);

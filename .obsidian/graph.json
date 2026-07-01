@@ -8,37 +8,65 @@
   "collapse-color-groups": true,
   "colorGroups": [
     {
-      "query": "EasyBOT",
-      "color": {
-        "a": 1,
-        "rgb": 2097065
-      }
-    },
-    {
       "query": "EasyCRM",
       "color": {
         "a": 1,
-        "rgb": 6410495
+        "rgb": 9096447
+      }
+    },
+    {
+      "query": "KuanGolf",
+      "color": {
+        "a": 1,
+        "rgb": 4320349
+      }
+    },
+    {
+      "query": "Thunder",
+      "color": {
+        "a": 1,
+        "rgb": 4093428
       }
     },
     {
       "query": "BoostSMS",
       "color": {
         "a": 1,
-        "rgb": 16772122
+        "rgb": 16762670
+      }
+    },
+    {
+      "query": "Prompt",
+      "color": {
+        "a": 1,
+        "rgb": 16749716
+      }
+    },
+    {
+      "query": "Friday",
+      "color": {
+        "a": 1,
+        "rgb": 16728642
+      }
+    },
+    {
+      "query": "Clippings",
+      "color": {
+        "a": 1,
+        "rgb": 5701826
       }
     }
   ],
   "collapse-display": true,
-  "showArrow": true,
-  "textFadeMultiplier": -0.3,
-  "nodeSizeMultiplier": 0.940911458333333,
-  "lineSizeMultiplier": 0.644657118055556,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
   "collapse-forces": true,
-  "centerStrength": 0.525303819444445,
-  "repelStrength": 9.15711805555556,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
   "linkStrength": 1,
-  "linkDistance": 274,
-  "scale": 0.5037658767258266,
+  "linkDistance": 250,
+  "scale": 0.3370723901869316,
   "close": true
 }

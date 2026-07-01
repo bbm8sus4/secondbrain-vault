@@ -17,17 +17,58 @@
 
 ## 🌐 Deploy (Cloudflare Pages)
 
-- **ลิงก์ stable (ส่งวิทยากร):** https://khonkaen-ai-workshop.pages.dev
-- **Project:** `khonkaen-ai-workshop` (production branch `main`) · ลิงก์ไม่เปลี่ยนแม้ deploy ทับ
-- **Source:** `AI-Workshop-รวม.html` → copy เป็น `index.html` ใน deploy dir
+**2 ลิงก์ stable** (ลิงก์ไม่เปลี่ยนแม้ deploy ทับ):
 
-**ขั้นตอน redeploy เมื่อมีข้อมูลเพิ่ม:**
+| ลิงก์ | เนื้อหา | Project |
+|---|---|---|
+| https://khonkaen-ai-workshop.pages.dev | **ครบ 3 แท็บ** — เจ้าของ / ผู้เรียน / ความสอดคล้อง | `khonkaen-ai-workshop` |
+| https://khonkaen-workshop-learner.pages.dev | **2 แท็บ** — ผู้เรียน (default) + ความสอดคล้อง (ตัดหน้าเจ้าของออก) | `khonkaen-workshop-learner` |
+
+- **Source ตัวเต็ม 3 แท็บ:** `AI-Workshop-รวม.html` → `index.html`
+- **Source ตัว 2 แท็บ:** สร้างจากตัวเต็มด้วย Python patch — ตัด `#tab-owner` DOM + สลับ default active → learner + ปรับ subtitle · เก็บที่ `/tmp/kk-learner-deploy/index.html` (ใน /tmp = หายเมื่อ reboot; regen จาก 3-tab source ได้)
+
+**ขั้นตอน redeploy 3-tab:**
 1. แก้ข้อมูล → รัน `/tmp/gen_combined.py` (regen `AI-Workshop-รวม.html`) — ถ้า /tmp หาย ดู [[#บทเรียนทำ dashboard (technical)]]
 2. `mkdir -p /tmp/kk-deploy && cp "AI-Workshop-รวม.html" /tmp/kk-deploy/index.html`
 3. `wrangler pages deploy /tmp/kk-deploy --project-name=khonkaen-ai-workshop --branch=main --commit-dirty=true`
 4. ลิงก์เดิมอัปเองภายในไม่กี่วินาที (ไม่ต้องแชร์ใหม่)
 
-> ⚠️ `/tmp/gen_combined.py` + `/tmp/kk-deploy` อยู่ใน /tmp = หายเมื่อ reboot — แต่ source HTML จริงอยู่ใน RECOVERY ถาวร ใช้ deploy ตรงได้เลยถ้าไม่ต้อง regen
+**ขั้นตอน redeploy 2-tab (learner-only):**
+1. Regen จาก 3-tab: `cp AI-Workshop-รวม.html /tmp/kk-learner-deploy/index.html` แล้วรัน Python patch ตัด owner tab (ดู [[#Python patch สร้าง 2-tab variant]])
+2. `wrangler pages deploy /tmp/kk-learner-deploy --project-name=khonkaen-workshop-learner --branch=main --commit-dirty=true`
+
+## Mobile balance + typography (2-tab variant, 2026-07-01)
+
+ปรับเฉพาะตัว 2-tab (`khonkaen-workshop-learner`) หลัง user feedback บนมือถือ:
+
+- **Font stack** — `IBM Plex Sans Thai` มาก่อน `IBM Plex Sans` · เพิ่ม `text-rendering:optimizeLegibility` + `font-feature-settings:"kern","liga","calt"` · `line-height:1.55`
+- **H1 mobile 2 บรรทัด** — split เป็น `<span class="hb-main">` + `<span class="hb-tail">` · desktop มี em-dash · mobile ซ่อน em-dash + tail เป็น block สีอ่อนลง
+- **KPI mobile** — 3-col → **2-col** (ตัวเลข 22px, ไม่ล้น)
+- **Alignment table mobile** — ใช้ card layout stacked (thead หาย, td เป็น block · reset `width:22%` ที่ตกค้าง = สาเหตุที่ Thai แตกเป็นตัวๆ)
+- **Global reset** — `word-break:normal; overflow-wrap:normal; line-break:strict` ที่ body · `overflow-x:hidden; max-width:100%` ที่ html/body (safety)
+- **Section tools mobile** — ปุ่ม "เปิดทั้งหมด/ย่อทั้งหมด" ยก order:99 + width:100% เป็นแถวเต็ม (เดิม margin-left:auto ทำให้ลอยขวา)
+- **Radar chart** — เพิ่ม `layout.padding` 24px + `pointLabels` 10.5px บนมือถือ (labels ไม่ถูก clip)
+
+Verified ที่ 320/360/390/414/480/640/700 ผ่าน puppeteer — `scrollWidth === viewport` ทุก breakpoint
+
+### Python patch สร้าง 2-tab variant
+
+```python
+# ตัด owner tab + สลับ default active → learner
+h = h.replace('<button class="tabbtn active" ... data-tab="owner">...</button>\n    <button class="tabbtn" ... data-tab="learner">...</button>',
+              '<button class="tabbtn active" ... data-tab="learner">สรุปผู้เข้าอบรม</button>')
+# ลบ section id="tab-owner" ทั้งก้อน
+pattern = re.compile(r'<div class="tab active" id="tab-owner">.*?</div>\s*(?=<div class="tab" id="tab-learner">)', re.DOTALL)
+h = pattern.sub('', h)
+# ทำ learner active default
+h = h.replace('<div class="tab" id="tab-learner">', '<div class="tab active" id="tab-learner">')
+# แก้ subtitle ให้ตรงกับ 2-tab context
+# แก้ JS default: showTab('learner') แทน showTab('owner')
+```
+
+Full patch script + mobile-balance CSS อยู่ใน git history conversation 2026-07-01 (Claude Code session)
+
+> ⚠️ `/tmp/gen_combined.py` + `/tmp/kk-deploy` + `/tmp/kk-learner-deploy` อยู่ใน /tmp = หายเมื่อ reboot — แต่ source HTML จริงอยู่ใน RECOVERY ถาวร ใช้ deploy ตรงได้เลยถ้าไม่ต้อง regen
 
 ## ข้อมูลจริง: ผู้เรียน 11 คน (8 เดิม + 3 เพิ่ม)
 
