@@ -40,12 +40,36 @@ h1 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
 
 .icon-btn {
   background: white; border: 1px solid var(--border); border-radius: 7px;
-  padding: 7px 12px; font-family: inherit; font-size: 12px; font-weight: 500;
-  cursor: pointer; color: var(--text); display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 11px; font-family: inherit; font-size: 12px; font-weight: 500;
+  cursor: pointer; color: var(--text); display: inline-flex; align-items: center; gap: 5px;
   transition: all 0.15s; white-space: nowrap;
 }
 .icon-btn:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
-.icon-btn svg { width: 14px; height: 14px; }
+.icon-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.icon-btn:disabled:hover { background: white; border-color: var(--border); color: var(--muted); }
+.icon-btn.danger { color: var(--red); border-color: #FECACA; }
+.icon-btn.danger:hover { background: var(--red-bg); border-color: var(--red); color: var(--red); }
+.icon-btn svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+.workspace-bar {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: white; border: 1px solid var(--border); border-radius: 10px;
+  padding: 9px 12px; margin-bottom: 12px;
+}
+.ws-label {
+  font-size: 10px; color: var(--muted); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.ws-select {
+  min-width: 260px; padding: 6px 30px 6px 10px; border: 1px solid var(--border-strong);
+  border-radius: 6px; font-family: inherit; font-size: 13px; font-weight: 500;
+  background: white; color: var(--text); cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+  background-repeat: no-repeat; background-position: right 8px center;
+}
+.ws-select:focus { outline: none; border-color: var(--primary); }
+.ws-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; }
 
 .layout { display: grid; grid-template-columns: 340px 1fr; gap: 14px; }
 @media (max-width: 980px) { .layout { grid-template-columns: 1fr; } }
@@ -66,15 +90,6 @@ h1 { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
   font-weight: 500; text-transform: none; letter-spacing: 0;
   color: var(--text); font-size: 12px;
 }
-
-.presets { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-.preset {
-  background: white; border: 1px solid var(--border); padding: 6px 11px; border-radius: 6px;
-  font-family: inherit; font-size: 11px; cursor: pointer; color: var(--text); font-weight: 500;
-  transition: all 0.15s;
-}
-.preset:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
-.preset.active { background: var(--primary); border-color: var(--primary); color: white; }
 
 .field { margin-bottom: 10px; }
 .field:last-child { margin-bottom: 0; }
@@ -222,12 +237,13 @@ tbody tr:last-child td { border-bottom: none; }
 }
 .modal-field { display: grid; grid-template-columns: 1fr 130px; gap: 10px; align-items: center; margin-bottom: 8px; }
 .modal-field label { font-size: 12px; color: var(--text); }
-.modal-field input[type="number"] {
-  border: 1px solid var(--border); border-radius: 5px; padding: 6px 10px;
-  font-family: inherit; font-size: 12px; font-weight: 600; text-align: right;
+.modal-field input[type="number"], .modal-field input[type="text"] {
+  border: 1px solid var(--border); border-radius: 5px; padding: 7px 10px;
+  font-family: inherit; font-size: 13px; font-weight: 500;
   background: white; color: var(--text);
 }
-.modal-field input[type="number"]:focus { outline: none; border-color: var(--primary); }
+.modal-field input[type="number"] { text-align: right; font-weight: 600; }
+.modal-field input:focus { outline: none; border-color: var(--primary); }
 .toggle-row { display: flex; justify-content: space-between; align-items: center; }
 .toggle {
   position: relative; width: 36px; height: 20px;
@@ -258,9 +274,19 @@ tbody tr:last-child td { border-bottom: none; }
   margin-right: auto; padding-left: 0;
 }
 
+.toast {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  background: var(--text); color: white; padding: 10px 18px; border-radius: 8px;
+  font-size: 13px; font-weight: 500; z-index: 200;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  opacity: 0; transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(-4px); }
+
 @media print {
   body { background: white; }
-  .presets, .icon-btn, .add-item, .item-remove, .modal { display: none; }
+  .workspace-bar, .icon-btn, .add-item, .item-remove, .modal, .toast { display: none; }
 }
 </style>
 </head>
@@ -270,7 +296,7 @@ tbody tr:last-child td { border-bottom: none; }
 <header class="header-row">
   <div>
     <h1>เครื่องคำนวณต้นทุน &amp; กำไร — AI Workshop ขอนแก่น</h1>
-    <div class="subtitle">เพิ่ม/ลด/แก้ชื่อรายการได้เอง · ปรับค่าทางซ้าย ผลคำนวณทางขวา sync ทันที</div>
+    <div class="subtitle">เพิ่ม/ลด/แก้ชื่อรายการได้เอง · บันทึกเป็น workspace ใช้ซ้ำได้</div>
   </div>
   <button class="icon-btn" id="open-settings" title="การตั้งค่า benchmark + VAT">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -281,12 +307,27 @@ tbody tr:last-child td { border-bottom: none; }
   </button>
 </header>
 
-<div class="presets" id="presets">
-  <button class="preset" data-preset="xlsx">ค่าตามไฟล์ xlsx (฿290)</button>
-  <button class="preset" data-preset="real-menu">เมนูจริง SHIFT (฿428)</button>
-  <button class="preset" data-preset="lean">วิทยากร 1 + TA</button>
-  <button class="preset" data-preset="full">วิทยากร 3 ท่าน</button>
-  <button class="preset" data-preset="budget45k">ขายในงบเจ้าของ ฿45k</button>
+<div class="workspace-bar">
+  <div class="ws-label">Workspace</div>
+  <select class="ws-select" id="ws-dropdown"></select>
+  <div class="ws-actions">
+    <button class="icon-btn" id="ws-new" title="บันทึกสถานะปัจจุบันเป็น workspace ใหม่">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      บันทึกใหม่
+    </button>
+    <button class="icon-btn" id="ws-update" title="อัปเดต workspace ปัจจุบันด้วยค่าที่แก้">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+      อัปเดต
+    </button>
+    <button class="icon-btn" id="ws-rename" title="เปลี่ยนชื่อ workspace">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      เปลี่ยนชื่อ
+    </button>
+    <button class="icon-btn danger" id="ws-delete" title="ลบ workspace">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+      ลบ
+    </button>
+  </div>
 </div>
 
 <div class="layout">
@@ -394,7 +435,7 @@ tbody tr:last-child td { border-bottom: none; }
     <h2>เทียบกับ benchmark</h2>
     <div class="compare">
       <div class="compare-card" id="cmp-tc">
-        <div class="title" id="cmp-tc-title">trycloudflare per-seat</div>
+        <div class="title">trycloudflare per-seat</div>
         <div class="num" id="cmp-tc-num">฿2,790</div>
         <div class="note" id="cmp-tc-note">—</div>
       </div>
@@ -432,15 +473,14 @@ tbody tr:last-child td { border-bottom: none; }
 </div>
 
 <div class="panel" style="margin-top: 12px;">
-  <h2>หมายเหตุ &amp; ข้อมูลอ้างอิง</h2>
+  <h2>หมายเหตุ &amp; วิธีใช้</h2>
   <div class="notes">
     <ul>
-      <li><strong>ค่าห้อง ฿3,745</strong> (รวม VAT) คงที่/งาน · <strong>อาหาร SHIFT จริง ฿428/หัว</strong></li>
-      <li><strong>ค่าวิทยากร</strong> preset "lean" สมมติ 1 หัว ฿15k + TA ฿8k · "full" 3 ท่าน × ฿15k</li>
-      <li><strong>ผู้เรียนจริง</strong> 11 คน 9/11 สายการตลาด · มั่นใจ 2.7/5 · เจ้าของกรอกงบ ฿30-50k รวม 1 วัน</li>
-      <li><strong>หน้าขาย trycloudflare</strong> ฿2,790/คน เรตรุ่นใหญ่ ≥8 · cohort เหมา ฿38,000/วัน</li>
-      <li>คลิก <strong>+ เพิ่มรายการ</strong> เพื่อเพิ่มค่าใช้จ่ายเอง · คลิกชื่อรายการเพื่อเปลี่ยนชื่อ · ปุ่ม × เพื่อลบ (ยกเว้นรายการ lock)</li>
-      <li>กดปุ่ม <strong>ตั้งค่า</strong> มุมขวาบน เพื่อปรับ benchmark + VAT (บันทึกใน localStorage)</li>
+      <li><strong>Workspace</strong> เก็บทั้งสถานะ (จำนวนคน, ต้นทุนทุกรายการ, %, ราคาขาย) · เลือกจาก dropdown เพื่อสลับ · built-in 5 อัน ลบ/แก้ไม่ได้</li>
+      <li><strong>บันทึกใหม่</strong> สร้าง workspace ใหม่จากสถานะปัจจุบัน · <strong>อัปเดต</strong> ทับ workspace ที่เลือก · <strong>เปลี่ยนชื่อ</strong> · <strong>ลบ</strong> — ทำได้เฉพาะ workspace ที่คุณสร้างเอง</li>
+      <li>ทุก workspace ที่ save เก็บใน localStorage ของ browser นี้ · ไม่ sync ข้าม device</li>
+      <li>คลิก <strong>+ เพิ่มรายการ</strong> เพิ่มค่าใช้จ่ายในแต่ละหมวด · คลิกชื่อรายการเพื่อแก้ · × เพื่อลบ (ยกเว้นรายการ lock)</li>
+      <li><strong>ค่าห้อง ฿3,745</strong> (รวม VAT) คงที่/งาน · <strong>อาหาร SHIFT จริง ฿428/หัว</strong> · <strong>เจ้าของกรอกงบ ฿30-50k</strong> รวม 1 วัน</li>
     </ul>
   </div>
 </div>
@@ -453,7 +493,7 @@ tbody tr:last-child td { border-bottom: none; }
   <div class="modal-backdrop" id="settings-backdrop"></div>
   <div class="modal-content">
     <h3>การตั้งค่า</h3>
-    <div class="subtitle">benchmark + VAT · บันทึกใน browser นี้ (localStorage)</div>
+    <div class="subtitle">benchmark + VAT · บันทึกใน browser นี้</div>
 
     <div class="modal-section">
       <h4>Benchmark — ราคาขายที่ใช้เทียบ</h4>
@@ -503,6 +543,24 @@ tbody tr:last-child td { border-bottom: none; }
   </div>
 </div>
 
+<div class="modal hidden" id="ws-modal">
+  <div class="modal-backdrop" id="ws-backdrop"></div>
+  <div class="modal-content" style="max-width: 400px;">
+    <h3 id="ws-modal-title">บันทึก workspace ใหม่</h3>
+    <div class="subtitle" id="ws-modal-sub">สถานะปัจจุบันทั้งหมด (จำนวนคน, ต้นทุน, %, ราคาขาย) จะถูกบันทึกไว้</div>
+    <div class="modal-field" style="grid-template-columns: 1fr;">
+      <label>ชื่อ workspace</label>
+      <input type="text" id="ws-name" placeholder="เช่น รุ่นทดลอง 1 · Q3 lean · CEO test">
+    </div>
+    <div class="modal-actions">
+      <button class="btn" id="ws-cancel">ยกเลิก</button>
+      <button class="btn btn-primary" id="ws-confirm">บันทึก</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">—</div>
+
 <script>
 const $ = id => document.getElementById(id);
 const fmt = n => '฿' + Math.round(n).toLocaleString('th-TH');
@@ -518,7 +576,15 @@ const DEFAULT_SETTINGS = {
   vatRate: 7
 };
 
-const PRESETS = {
+const BUILTIN_LABELS = {
+  'xlsx': 'ค่าตามไฟล์ xlsx (฿290)',
+  'real-menu': 'เมนูจริง SHIFT (฿428)',
+  'lean': 'วิทยากร 1 + TA',
+  'full': 'วิทยากร 3 ท่าน',
+  'budget45k': 'ขายในงบเจ้าของ ฿45k'
+};
+
+const BUILTIN_PRESETS = {
   xlsx: {
     seats: 15, cont: 0, margin: 40, sell: null,
     fixed: [{ id: 'venue', label: 'ค่าห้องประชุม', value: 3745, locked: true }],
@@ -569,20 +635,121 @@ const PRESETS = {
   }
 };
 
-let state = clonePreset(PRESETS['real-menu']);
+const LS_SETTINGS = 'pricing-calc-settings';
+const LS_WORKSPACES = 'pricing-calc-workspaces';
+const LS_CURRENT_WS = 'pricing-calc-current-ws';
+
+let state = clonePreset(BUILTIN_PRESETS['real-menu']);
 let settings = loadSettings();
+let customWs = loadCustomWs();
+let currentWs = loadCurrentWs();
+let wsModalMode = 'new';
 
 function clonePreset(p) { return JSON.parse(JSON.stringify(p)); }
 
 function loadSettings() {
   try {
-    const saved = JSON.parse(localStorage.getItem('pricing-calc-settings') || '{}');
+    const saved = JSON.parse(localStorage.getItem(LS_SETTINGS) || '{}');
     return Object.assign({}, DEFAULT_SETTINGS, saved);
   } catch (e) { return Object.assign({}, DEFAULT_SETTINGS); }
 }
-
 function persistSettings() {
-  try { localStorage.setItem('pricing-calc-settings', JSON.stringify(settings)); } catch (e) {}
+  try { localStorage.setItem(LS_SETTINGS, JSON.stringify(settings)); } catch (e) {}
+}
+function loadCustomWs() {
+  try { return JSON.parse(localStorage.getItem(LS_WORKSPACES) || '{}'); }
+  catch (e) { return {}; }
+}
+function persistCustomWs() {
+  try { localStorage.setItem(LS_WORKSPACES, JSON.stringify(customWs)); } catch (e) {}
+}
+function loadCurrentWs() {
+  const v = localStorage.getItem(LS_CURRENT_WS) || 'builtin:real-menu';
+  const [kind, name] = v.split(':');
+  if (kind === 'builtin' && BUILTIN_PRESETS[name]) return v;
+  if (kind === 'custom' && loadCustomWs()[name]) return v;
+  return 'builtin:real-menu';
+}
+function persistCurrentWs() {
+  try { localStorage.setItem(LS_CURRENT_WS, currentWs); } catch (e) {}
+}
+
+function wsParts(v) { const i = v.indexOf(':'); return [v.slice(0, i), v.slice(i + 1)]; }
+function isBuiltinWs() { return wsParts(currentWs)[0] === 'builtin'; }
+
+function toast(msg) {
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+function renderDropdown() {
+  const sel = $('ws-dropdown');
+  sel.innerHTML = '';
+  const g1 = document.createElement('optgroup');
+  g1.label = 'ค่าเริ่มต้น (built-in)';
+  Object.keys(BUILTIN_PRESETS).forEach(k => {
+    const o = document.createElement('option');
+    o.value = 'builtin:' + k;
+    o.textContent = BUILTIN_LABELS[k] || k;
+    g1.appendChild(o);
+  });
+  sel.appendChild(g1);
+  const names = Object.keys(customWs);
+  if (names.length > 0) {
+    const g2 = document.createElement('optgroup');
+    g2.label = 'ที่คุณบันทึกไว้';
+    names.forEach(n => {
+      const o = document.createElement('option');
+      o.value = 'custom:' + n;
+      o.textContent = n;
+      g2.appendChild(o);
+    });
+    sel.appendChild(g2);
+  }
+  sel.value = currentWs;
+  updateWsButtons();
+}
+
+function updateWsButtons() {
+  const b = isBuiltinWs();
+  $('ws-update').disabled = b;
+  $('ws-rename').disabled = b;
+  $('ws-delete').disabled = b;
+}
+
+function getPresetByWs(v) {
+  const [kind, name] = wsParts(v);
+  if (kind === 'builtin') return BUILTIN_PRESETS[name] ? clonePreset(BUILTIN_PRESETS[name]) : null;
+  if (kind === 'custom') return customWs[name] ? clonePreset(customWs[name]) : null;
+  return null;
+}
+
+function applyWorkspace(v) {
+  const p = getPresetByWs(v);
+  if (!p) return;
+  state = p;
+  if (p.sell == null) {
+    const c = calc();
+    state.sell = Math.round(c.suggestedPrice);
+  }
+  $('r-seats').value = state.seats;
+  $('n-seats').value = state.seats;
+  $('r-cont').value = state.cont;
+  $('n-cont').value = state.cont;
+  $('r-margin').value = state.margin;
+  $('n-margin').value = state.margin;
+  $('i-sell').value = state.sell;
+  $('i-sell-n').value = state.sell;
+  renderItems('fixed', 'fixed-list');
+  renderItems('variable', 'var-list');
+  currentWs = v;
+  persistCurrentWs();
+  $('ws-dropdown').value = v;
+  updateWsButtons();
+  compute();
 }
 
 function renderItems(group, mountId) {
@@ -804,28 +971,6 @@ function compute() {
   });
 }
 
-function applyPreset(name) {
-  const p = PRESETS[name];
-  if (!p) return;
-  state = clonePreset(p);
-  if (p.sell == null) {
-    const c = calc();
-    state.sell = Math.round(c.suggestedPrice);
-  }
-  $('r-seats').value = state.seats;
-  $('n-seats').value = state.seats;
-  $('r-cont').value = state.cont;
-  $('n-cont').value = state.cont;
-  $('r-margin').value = state.margin;
-  $('n-margin').value = state.margin;
-  $('i-sell').value = state.sell;
-  $('i-sell-n').value = state.sell;
-  renderItems('fixed', 'fixed-list');
-  renderItems('variable', 'var-list');
-  document.querySelectorAll('.preset').forEach(b => b.classList.toggle('active', b.dataset.preset === name));
-  compute();
-}
-
 function openSettings() {
   $('set-tc').value = settings.tcPrice;
   $('set-cohort').value = settings.cohortPrice;
@@ -836,9 +981,7 @@ function openSettings() {
   $('set-vat-toggle').classList.toggle('on', settings.vatEnabled);
   $('settings-modal').classList.remove('hidden');
 }
-
 function closeSettings() { $('settings-modal').classList.add('hidden'); }
-
 function saveSettings() {
   settings.tcPrice = +$('set-tc').value || 0;
   settings.cohortPrice = +$('set-cohort').value || 0;
@@ -850,17 +993,84 @@ function saveSettings() {
   persistSettings();
   closeSettings();
   compute();
+  toast('บันทึกการตั้งค่าแล้ว');
 }
-
 function resetSettings() {
   settings = Object.assign({}, DEFAULT_SETTINGS);
   persistSettings();
   openSettings();
 }
 
-document.querySelectorAll('.preset').forEach(b => {
-  b.addEventListener('click', () => applyPreset(b.dataset.preset));
-});
+function openWsModal(mode) {
+  wsModalMode = mode;
+  const inp = $('ws-name');
+  if (mode === 'new') {
+    $('ws-modal-title').textContent = 'บันทึก workspace ใหม่';
+    $('ws-modal-sub').textContent = 'สถานะปัจจุบันทั้งหมด (จำนวนคน · ทุกรายการต้นทุน · % · ราคาขาย) จะถูกบันทึกไว้';
+    inp.value = '';
+  } else if (mode === 'rename') {
+    const [, name] = wsParts(currentWs);
+    $('ws-modal-title').textContent = 'เปลี่ยนชื่อ workspace';
+    $('ws-modal-sub').textContent = 'ชื่อเดิม: ' + name;
+    inp.value = name;
+  }
+  $('ws-modal').classList.remove('hidden');
+  setTimeout(() => inp.focus(), 30);
+}
+function closeWsModal() { $('ws-modal').classList.add('hidden'); }
+function confirmWsModal() {
+  const name = $('ws-name').value.trim();
+  if (!name) { $('ws-name').focus(); return; }
+  if (wsModalMode === 'new') {
+    if (customWs[name] && !confirm('มี workspace ชื่อ "' + name + '" อยู่แล้ว จะทับไหม?')) return;
+    customWs[name] = clonePreset(state);
+    persistCustomWs();
+    currentWs = 'custom:' + name;
+    persistCurrentWs();
+    renderDropdown();
+    closeWsModal();
+    toast('บันทึก workspace "' + name + '" แล้ว');
+  } else if (wsModalMode === 'rename') {
+    const [, oldName] = wsParts(currentWs);
+    if (name === oldName) { closeWsModal(); return; }
+    if (customWs[name]) { alert('มี workspace ชื่อ "' + name + '" อยู่แล้ว'); return; }
+    customWs[name] = customWs[oldName];
+    delete customWs[oldName];
+    currentWs = 'custom:' + name;
+    persistCustomWs();
+    persistCurrentWs();
+    renderDropdown();
+    closeWsModal();
+    toast('เปลี่ยนชื่อเป็น "' + name + '"');
+  }
+}
+function updateWs() {
+  if (isBuiltinWs()) return;
+  const [, name] = wsParts(currentWs);
+  customWs[name] = clonePreset(state);
+  persistCustomWs();
+  toast('อัปเดต "' + name + '" แล้ว');
+}
+function deleteWs() {
+  if (isBuiltinWs()) return;
+  const [, name] = wsParts(currentWs);
+  if (!confirm('ลบ workspace "' + name + '" ?')) return;
+  delete customWs[name];
+  persistCustomWs();
+  applyWorkspace('builtin:real-menu');
+  renderDropdown();
+  toast('ลบ "' + name + '" แล้ว');
+}
+
+$('ws-dropdown').addEventListener('change', e => applyWorkspace(e.target.value));
+$('ws-new').addEventListener('click', () => openWsModal('new'));
+$('ws-update').addEventListener('click', updateWs);
+$('ws-rename').addEventListener('click', () => openWsModal('rename'));
+$('ws-delete').addEventListener('click', deleteWs);
+$('ws-cancel').addEventListener('click', closeWsModal);
+$('ws-backdrop').addEventListener('click', closeWsModal);
+$('ws-confirm').addEventListener('click', confirmWsModal);
+$('ws-name').addEventListener('keydown', e => { if (e.key === 'Enter') confirmWsModal(); });
 
 wireScalar('seats', 'seats');
 wireScalar('cont', 'cont');
@@ -888,7 +1098,8 @@ $('set-save').addEventListener('click', saveSettings);
 $('set-reset').addEventListener('click', resetSettings);
 $('set-vat-toggle').addEventListener('click', () => $('set-vat-toggle').classList.toggle('on'));
 
-applyPreset('real-menu');
+renderDropdown();
+applyWorkspace(currentWs);
 </script>
 </body>
 </html>
