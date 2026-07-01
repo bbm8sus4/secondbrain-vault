@@ -7,9 +7,10 @@
 **สถานะ:** กู้ข้อมูลสำรวจสำเร็จ → ส่งมอบ dashboard รวม 3 แท็บแล้ว (`AI-Workshop-รวม.html`)
 **Working dir:** `~/Documents/Claude/Projects/AI Workshop Management/` (Apps Script clasp deploy ใช้ที่นี่)
 **ไฟล์โปรเจกต์ทั้งหมด (รวมแล้ว):** `Files/` ในโฟลเดอร์นี้ — ดู [[#โฟลเดอร์ Files (รวมไฟล์ทั้งหมด)]]
-**Live dashboards (2 links):**
+**Live dashboards (3 links):**
 - 3 แท็บ (ครบ): https://khonkaen-ai-workshop.pages.dev
 - 2 แท็บ (ผู้เรียน + ความสอดคล้อง): https://khonkaen-workshop-learner.pages.dev — mobile-tuned 2026-07-01
+- Pricing Calculator (interactive): https://khonkaen-pricing.pages.dev — deploy 2026-07-01
 
 ## ความท้าทายหลัก
 

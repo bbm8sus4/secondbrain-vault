@@ -550,6 +550,12 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
       <button class="btn" id="restore-all" style="margin-top:8px;width:100%;">กู้คืน built-in ทั้งหมด</button>
     </div>
 
+    <div class="modal-section" id="override-section" style="display:none;">
+      <h4>Built-in ที่แก้ไข <span id="override-count" style="color:var(--muted);font-weight:400;"></span></h4>
+      <div id="override-list" style="display:flex;flex-direction:column;gap:6px;"></div>
+      <button class="btn" id="reset-overrides-all" style="margin-top:8px;width:100%;">รีเซ็ต built-in ทั้งหมดกลับเป็นค่าเริ่มต้น</button>
+    </div>
+
     <div class="modal-actions">
       <button class="btn btn-link" id="set-reset">รีเซ็ตเป็นค่าเริ่มต้น</button>
       <button class="btn" id="set-cancel">ยกเลิก</button>
@@ -654,11 +660,13 @@ const LS_SETTINGS = 'pricing-calc-settings';
 const LS_WORKSPACES = 'pricing-calc-workspaces';
 const LS_CURRENT_WS = 'pricing-calc-current-ws';
 const LS_HIDDEN_BUILTINS = 'pricing-calc-hidden-builtins';
+const LS_BUILTIN_OVERRIDES = 'pricing-calc-builtin-overrides';
 
 let state = clonePreset(BUILTIN_PRESETS['real-menu']);
 let settings = loadSettings();
 let customWs = loadCustomWs();
 let hiddenBuiltins = loadHiddenBuiltins();
+let builtinOverrides = loadBuiltinOverrides();
 let currentWs = loadCurrentWs();
 let wsModalMode = 'new';
 
@@ -671,6 +679,16 @@ function persistHiddenBuiltins() {
   catch (e) { toast(persistError(e)); return false; }
 }
 function isBuiltinHidden(key) { return hiddenBuiltins.indexOf(key) !== -1; }
+
+function loadBuiltinOverrides() {
+  try { return JSON.parse(localStorage.getItem(LS_BUILTIN_OVERRIDES) || '{}'); }
+  catch (e) { return {}; }
+}
+function persistBuiltinOverrides() {
+  try { localStorage.setItem(LS_BUILTIN_OVERRIDES, JSON.stringify(builtinOverrides)); return true; }
+  catch (e) { toast(persistError(e)); return false; }
+}
+function isBuiltinOverridden(key) { return Object.prototype.hasOwnProperty.call(builtinOverrides, key); }
 
 function clonePreset(p) { return JSON.parse(JSON.stringify(p)); }
 
@@ -730,7 +748,7 @@ function renderDropdown() {
     visibleBuiltins.forEach(k => {
       const o = document.createElement('option');
       o.value = 'builtin:' + k;
-      o.textContent = BUILTIN_LABELS[k] || k;
+      o.textContent = (BUILTIN_LABELS[k] || k) + (isBuiltinOverridden(k) ? '  (แก้ไข)' : '');
       g1.appendChild(o);
     });
     sel.appendChild(g1);
@@ -753,15 +771,19 @@ function renderDropdown() {
 
 function updateWsButtons() {
   const b = isBuiltinWs();
-  $('ws-update').disabled = b;
+  $('ws-update').disabled = false;
   $('ws-rename').disabled = b;
   $('ws-delete').disabled = false;
+  $('ws-update').title = b ? 'บันทึกทับแผนนี้ (รีเซ็ตกลับ default ได้จาก ตั้งค่า)' : 'อัปเดต workspace ปัจจุบันด้วยค่าที่แก้';
   $('ws-delete').title = b ? 'ซ่อนแผนนี้ (กู้คืนได้จาก ตั้งค่า)' : 'ลบ workspace ถาวร';
 }
 
 function getPresetByWs(v) {
   const [kind, name] = wsParts(v);
-  if (kind === 'builtin') return BUILTIN_PRESETS[name] ? clonePreset(BUILTIN_PRESETS[name]) : null;
+  if (kind === 'builtin') {
+    if (BUILTIN_PRESETS[name] == null) return null;
+    return clonePreset(builtinOverrides[name] || BUILTIN_PRESETS[name]);
+  }
   if (kind === 'custom') return customWs[name] ? clonePreset(customWs[name]) : null;
   return null;
 }
@@ -1019,7 +1041,37 @@ function openSettings() {
   $('set-vat-rate').value = settings.vatRate;
   $('set-vat-toggle').classList.toggle('on', settings.vatEnabled);
   renderHiddenBuiltins();
+  renderBuiltinOverrides();
   $('settings-modal').classList.remove('hidden');
+}
+
+function renderBuiltinOverrides() {
+  const sec = $('override-section');
+  const list = $('override-list');
+  list.innerHTML = '';
+  const keys = Object.keys(builtinOverrides);
+  if (keys.length === 0) { sec.style.display = 'none'; return; }
+  sec.style.display = '';
+  $('override-count').textContent = '(' + keys.length + ')';
+  keys.forEach(key => {
+    const row = document.createElement('div');
+    row.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:6px 10px;background:var(--bg);border-radius:6px;font-size:12px;';
+    row.innerHTML = '<span>' + (BUILTIN_LABELS[key] || key) + '</span>';
+    const btn = document.createElement('button');
+    btn.className = 'btn';
+    btn.style.cssText = 'padding:4px 10px;font-size:11px;';
+    btn.textContent = 'รีเซ็ต';
+    btn.addEventListener('click', () => {
+      delete builtinOverrides[key];
+      persistBuiltinOverrides();
+      renderBuiltinOverrides();
+      renderDropdown();
+      if (currentWs === 'builtin:' + key) applyWorkspace(currentWs);
+      toast('รีเซ็ต "' + (BUILTIN_LABELS[key] || key) + '" กลับเป็นค่าเริ่มต้น');
+    });
+    row.appendChild(btn);
+    list.appendChild(row);
+  });
 }
 
 function renderHiddenBuiltins() {
@@ -1112,11 +1164,17 @@ function confirmWsModal() {
   }
 }
 function updateWs() {
-  if (isBuiltinWs()) return;
-  const [, name] = wsParts(currentWs);
-  customWs[name] = clonePreset(state);
-  persistCustomWs();
-  toast('อัปเดต "' + name + '" แล้ว');
+  const [kind, name] = wsParts(currentWs);
+  const display = kind === 'builtin' ? (BUILTIN_LABELS[name] || name) : name;
+  if (kind === 'builtin') {
+    builtinOverrides[name] = clonePreset(state);
+    persistBuiltinOverrides();
+    renderDropdown();
+  } else {
+    customWs[name] = clonePreset(state);
+    persistCustomWs();
+  }
+  toast('บันทึกทับ "' + display + '" แล้ว');
 }
 function deleteWs() {
   const [kind, name] = wsParts(currentWs);
@@ -1194,6 +1252,14 @@ $('restore-all').addEventListener('click', () => {
   renderHiddenBuiltins();
   renderDropdown();
   toast('กู้คืน built-in ทั้งหมดแล้ว');
+});
+$('reset-overrides-all').addEventListener('click', () => {
+  builtinOverrides = {};
+  persistBuiltinOverrides();
+  renderBuiltinOverrides();
+  renderDropdown();
+  if (isBuiltinWs()) applyWorkspace(currentWs);
+  toast('รีเซ็ต built-in ทุกอันกลับเป็นค่าเริ่มต้นแล้ว');
 });
 
 renderDropdown();
