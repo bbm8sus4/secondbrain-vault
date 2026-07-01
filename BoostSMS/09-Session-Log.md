@@ -61,7 +61,8 @@
 | 2026-05-29 06:03 → agent-a1/ac/af/ad/a9/a2 | **Apple Newsroom/Keynote/Health-style HTML report** — 3 candidate designs + judge + improve + QA (รอบใหญ่ที่สุดในกระบวนการ design) |
 | 2026-06-05 07:01–07:26 | Thunder Group revenue Jan–May 2026 report (BoostSMS ถูกอ้างเป็น sub-product) |
 | 2026-06-04 15:32 → b64db310 | "หาไฟล์สมัคร chat gpt" — incidental BoostSMS reference |
-| 2026-06-11 10:16 → 87cbf48f | **(session ปัจจุบัน)** ย้าย BoostSMS เข้า Obsidian vault |
+| 2026-06-11 10:16 → 87cbf48f | ย้าย BoostSMS เข้า Obsidian vault |
+| 2026-07-01 | Meeting | **AIS Provider Transition** — เปลี่ยน provider ก.ค. 2569, LeanFlow back-office + CSV/Excel/PDF export, 2 ท่อส่ง + AIS/Dtac failover, ต้นทุน 0.29฿/SMS, action: บอมทำแบบฟอร์มกรอกข้อมูลลูกค้า → [[Meetings/2026-07-01-AIS-Provider-Transition]] |
 
 ## Theme summary
 
