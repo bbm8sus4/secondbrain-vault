@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-01 09:00:01 · ไฟล์ .md ทั้งหมด 300
+> สแกนอัตโนมัติ · 2026-07-02 09:00:01 · ไฟล์ .md ทั้งหมด 317
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,13 +8,13 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 87 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 61 |
+| 🔗 ลิงก์เสีย (dead links) | 89 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 62 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 62 ↔ 62 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 3 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W26 (17 ชม.ที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (9 ชม.ที่แล้ว) |
+| 🔄 memory source ↔ mirror | 67 ↔ 67 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W26 (1 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (1 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -72,6 +72,8 @@
 - `01 Projects/KuanGolf/README.md` → `[[marketing]]` (ไม่พบ)
 - `01 Projects/KuanGolf/README.md` → `[[marketing\]]` (ไม่พบ)
 - `01 Projects/KuanGolf/Strategic Analysis.md` → `[[project_thunder_solution]]` (ไม่พบ)
+- `02 Areas/My Prompting Style/skills-built.md` → `[[feedback_vibe_hacker_mode]]` (ไม่พบ)
+- `03 Resources/Clippings/5 วิธีฝึก Critical Thinking ลับความคิดให้เฉียบคม  5 Minutes Podcast EP.2119.md` → `[[Mission To The Moon]]` (ไม่พบ)
 - `03 Resources/Clippings/ChatGPT Images 2.0 เก่งขนาดนี้ แทนกราฟิก ได้หรือยัง – พูดคุยความเห็น.md` → `[[iMoD Official]]` (ไม่พบ)
 - `03 Resources/Clippings/Go with the Four EP.0 — COO Takeaways.md` → `[[ไม่เปลี่ยนคือตาย! \"วู้ดดี้-หนุ่ย-วิทย์-CK\" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0]]` (ไม่พบ)
 - `03 Resources/Clippings/Lead Gen Man — Claude Code Carousel (FB).md` → `[[slide-1-cover.jpg]]` (ไม่พบ)
@@ -117,6 +119,7 @@
 - `03 Resources/Accounting/accounting_sop_template.md`
 - `03 Resources/COO/COO-DELIVERABLES.md`
 - `03 Resources/COO/coo-speech-script.md`
+- `03 Resources/Clippings/5 วิธีฝึก Critical Thinking ลับความคิดให้เฉียบคม  5 Minutes Podcast EP.2119.md`
 - `03 Resources/Clippings/CSM-SME Manager — AI Co-worker Setup Lab v4.md`
 - `03 Resources/Clippings/ChatGPT Images 2.0 เก่งขนาดนี้ แทนกราฟิก ได้หรือยัง – พูดคุยความเห็น.md`
 - `03 Resources/Clippings/Lead Gen Man — Claude Code Carousel (FB).md`

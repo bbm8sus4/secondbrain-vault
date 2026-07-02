@@ -331,3 +331,37 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/monthly_2026-06.md — 141,544 ch
 [2026-07-01 23:55:04] AUTO: DOW=3 DOM=01 TOMORROW=02
 [2026-07-01 23:55:04] CATCHUP: scanning past 14 days for missed runs
 [2026-07-01 23:55:04] DONE: auto
+[2026-07-02 09:00:01] AUTO: DOW=4 DOM=02 TOMORROW=03
+[2026-07-02 09:00:01] CATCHUP: scanning past 14 days for missed runs
+[2026-07-02 09:00:01] AUTO: Thursday detected → weekly
+[2026-07-02 09:00:01] WEEKLY: 2026-06-26 → 2026-07-02 (label: 2026-W27)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W27.md — 32,441 chars, 26 weekly, 58 daily
+[2026-07-02 09:00:06] WEEKLY: source size =    57245 chars
+[2026-07-02 09:00:06] WEEKLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W27.md
+- 2026-07-01 คู่มือ EasyCRM อัปเดต 30/6/69 ครอบคลุม Portal, คะแนน, คูปอง, Flex Message
+- HR: Guitar นัดสัมภาษณ์ Executive Assistant 1-3 ก.ค. รวม 4 คน และสรุปคิวสัมภาษณ์ QA วันที่ 1, 3 ก.ค. 2569 รวม 4 คน
+
+## SHIFT+Bob
+- 2026-06-29 มีปิดน้ำชั่วคราวซ่อมบำรุงถึง 16:00 น. และแจ้งงดจอดรถข้างตึก 30 มิ.ย. 09:00-18:00 เพราะติดโซล่าเซลล์
+- รถจอดที่ห้ามจอด 2 คัน ค่าปรับรวม 400 บาท
+- Mr.Wagyuu นัดวันพุธ 18:30 มีชื่ออย่างน้อย 5 คน แต่ภูมิไม่ว่างวันพุธและเสนอหารค่าอาหาร
+- Bob/Watcharin follow งานเอกสาร EasySpace และ notebook ให้บัญชี EasySpace; Aun ใช้งานแล้วแต่ยังใช้ต่อได้
+- 2026-06-30 Bobsanchezz ขอคอม Windows 1 เครื่องด่วนสำหรับงานเอกสารทั่วไป และฝากโบ๊ท reset เครื่องพร้อมใช้
+
+## ⚠️ Watch list ค้างปลายสัปดาห์
+- EasyCRM: ต้องตามผลหลังปรับ server และหลังปรับปรุงระบบ 2026-06-30 23:30 น.; ยังมี risk เรื่องสิทธิ์ผู้จัดการร้าน/ลูกค้าส่งคำขอคะแนน
+- Thunder Customer Service: ต้องย้อนเช็กสลิป manual ที่อัปวันที่ 2026-06-30 และบันทึกรายเคส
+- Finance: Pop ยังมีรายการรอชำระฝั่ง Thunder/EasySlip หลายรายการ รวมถึงค่าเบอร์พื้นฐาน เยล คอม 3,266.02 บาท
+- HR: รอ CF ผู้สมัคร QA อีก 1 คน และต้องปิดตำแหน่ง Sale/Marketing Easyslip อย่างละ 1
+- Ingram/Jetder: ต้องตามงาน Google Search และ Product Overview หลังส่ง format ให้ Ingram
+- PM คนใหม่: Watcharin ยังไม่คุย HR, Bank เริ่มร่าง JD แล้วแต่ยังไม่ปิด process
+
+## ✅ Highlights สำเร็จ
+- Rukcom แก้ malware ใน database สำเร็จ และ Watcharin ยืนยันระบบเรียบร้อย
+- Bank ยืนยัน SMS ปกติถึงปลายทางทั้งหมด
+- Bank แก้เคส Arunjai ใช้งานเกิน quota แล้ว
+- EasyCRM คู่มือใหม่ออกแล้ว ครอบคลุม Portal, คะแนน, คูปอง, Flex Message
+- ป๊อบขอโอน 1.7M บาท เข้า SCB 468-118694-8 เสร็จแล้ว
+- Content Shifu ปล่อย Social Post/Website วันที่ 2026-06-30 แล้ว
+[2026-07-02 09:00:53] WEEKLY: ✅ wrote     8157 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W27.md
+[2026-07-02 09:00:53] DONE: auto
