@@ -25,6 +25,7 @@ tags: [resource, prompt-library, ai, index]
 
 ## รากฐาน (อ่านก่อน)
 - [[UNIVERSAL MASTER PROMPT]] ⭐ — pattern กลางสำหรับทุกงาน
+- [[คลัง Prompt Repos ดัง (GitHub)]] — repo พรอมป์/prompt engineering ดังบน GitHub (awesome-chatgpt-prompts, dair-ai guide, system prompts หลุด ฯลฯ) — ของคนอื่นที่เอาไว้หยิบใช้/เรียนรู้
 
 ## แยกตามบริบท (โฟลเดอร์ย่อย · เพิ่มได้เรื่อยๆ)
 - [[Marketing/_index|Marketing]] — พรอมป์งานการตลาด (KuanGolf GTM plan, …)
