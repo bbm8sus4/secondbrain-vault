@@ -114,7 +114,7 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 
 ## พนักงานใหม่ที่กำลังเข้ามา (ยังไม่ allocate)
 
-> ผู้ใช้แจ้ง 2026-06-30 — ต้อง clarify จำนวนจริง (บอก 5 คน แต่ list 7 ตำแหน่ง) และบริษัทของแต่ละคน
+> อัปเดต 2026-07-02: ผู้ใช้ยืนยัน **เพิ่ม QA + Vibe Code (Dev)** เข้าลิสต์ → รวม **9 ตำแหน่งรอจัดที่**. เพิ่มใน seed + one-time migration (flag `addedQaVibe`) แล้ว จึงโผล่ในแอปที่ใช้อยู่โดยไม่ต้อง Reset. บริษัทของแต่ละคนยังรอ clarify.
 
 | # | ตำแหน่ง | บริษัท | ห้องที่เหมาะ | สถานะ |
 |---|---|---|---|---|
@@ -125,10 +125,12 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 | 5 | PO (Product Owner) | ? | Development | ⏳ pending |
 | 6 | CFO | ? | Jetder | ⏳ pending |
 | 7 | Manager Customer Service | ? | Thunder | ⏳ pending |
+| 8 | QA Engineer | ? | Development | ⏳ pending |
+| 9 | Vibe Coder (Dev) | ? | Development | ⏳ pending |
 
 ### Open Questions
 1. จำนวนคนใหม่จริง 5 หรือ 7?
-2. **Bob ย้ายไปตำแหน่งไหน?** (CEO? ตำแหน่งใหม่อื่น?) — มีผลกับว่าจะนั่ง Jetder ต่อหรือย้าย
+2. **Bob ย้ายไปตำแหน่งไหน?** (CEO? ตำแหน่งใหม่อื่น?) — มีผลกับว่าจะนั่ง Jetder ต่อหรือย้าย · **ตอบ 2026-07-02: ยังไม่สรุป** → Bob คงนั่ง Jetder ไว้ก่อน, COO ใหม่ยังไม่ย้ายเข้า
 3. แต่ละคนสังกัด Thunder Solution หรือ EasySlip?
 
 ---
