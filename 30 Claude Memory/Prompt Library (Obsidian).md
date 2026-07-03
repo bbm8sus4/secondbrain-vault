@@ -15,3 +15,5 @@ Prompt Library อยู่ที่ `~/SecondBrain/03 Resources/Prompt Library/
 **เมื่อผู้ใช้สั่งให้เก็บพรอมป์ใหม่:** วางในโฟลเดอร์บริบทที่ตรงสุด (สร้างใหม่ได้ เช่น Sales/Product/Ops/Finance/Legal) → frontmatter ต้องมี `type: prompt`, `context:`, `use:`, `created:` → เนื้อพรอมป์ใน ``` code fence ``` ให้ copy ทั้งก้อน → อัปเดตลิงก์ใน `_index.md` ของโฟลเดอร์ + บรรทัด "แยกตามบริบท" ใน README.md.
 
 พรอมป์แรกในระบบนี้: `Marketing/KuanGolf — Marketing Plan (SaaS Funnel) Prompt.md` (2026-07-01). ดู [[โปรเจกต์ - Second Brain|project_second_brain]], [[คู่มือ - SecondBrain Resources|reference_secondbrain_resources_hub]], [[KuanGolf — Thunder Solution's golf scoring app|project_kuangolf]].
+
+**GitHub prompt repos ดัง ๆ (ของคนอื่น)** เก็บแยกที่ `คลัง Prompt Repos ดัง (GitHub).md` (added 2026-07-03, linked ใน README) — 4 หมวด: คลังพร้อมใช้ (f/awesome-chatgpt-prompts ★143k), เรียนรู้ (dair-ai/Prompt-Engineering-Guide), system prompts หลุด (x1xhlol, jujumilk3, 0xeb/TheBigPromptLibrary, asgeirtj), index (danielrosehill). แนวเดียวกับ [[Dev Knowledge Library (GitHub repos-gists)|reference_dev_knowledge_library]].
