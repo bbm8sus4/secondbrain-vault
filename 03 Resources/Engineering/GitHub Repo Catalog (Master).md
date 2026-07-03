@@ -64,7 +64,7 @@ note: รวมทุก repo/gist ที่คัดไว้ · ดาว (★
 - [brexhq/prompt-engineering](https://github.com/brexhq/prompt-engineering) — คู่มือ + งานวิจัยจาก Brex
 
 ## B3 · System Prompts / ของหลุดจากเครื่องมือ AI (เรียนลัดจากมืออาชีพ)
-- [x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) ★137k — system prompt จริงของ 28+ ตัว (Cursor, Claude Code, Windsurf, v0, Devin…)
+- [x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) ★137k — system prompt จริงของ 28+ ตัว (Cursor, Claude Code, Windsurf, v0, Devin…) *(เก็บ verbatim แล้ว: Claude Code → [[system-prompts/README|system-prompts/]])*
 - [jujumilk3/leaked-system-prompts](https://github.com/jujumilk3/leaked-system-prompts) — คลัง leaked system prompts
 - [0xeb/TheBigPromptLibrary](https://github.com/0xeb/TheBigPromptLibrary) — system prompts + custom instructions + jailbreak + protection
 - [asgeirtj/system_prompts_leaks](https://github.com/asgeirtj/system_prompts_leaks) — system prompt Claude/ChatGPT/Gemini/Grok อัปเดตเรื่อย ๆ
