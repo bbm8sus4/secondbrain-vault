@@ -62,6 +62,7 @@ note: รวมทุก repo/gist ที่คัดไว้ · ดาว (★
 - [dair-ai/Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) ★55k — คัมภีร์ prompt eng (13 ภาษา) zero-shot ยัน tree-of-thought/RAG/agents
 - [promptslab/Awesome-Prompt-Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering) — resource/เปเปอร์คัดมือ
 - [brexhq/prompt-engineering](https://github.com/brexhq/prompt-engineering) — คู่มือ + งานวิจัยจาก Brex
+- [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) ★~560 — เทคนิค "caveman prompting" ลด token 60-75% (Claude Code skill) *(เก็บ + ติดตั้ง output-style แล้ว: [[Caveman Prompting (ประหยัด token)]])*
 
 ## B3 · System Prompts / ของหลุดจากเครื่องมือ AI (เรียนลัดจากมืออาชีพ)
 - [x1xhlol/system-prompts-and-models-of-ai-tools](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools) ★137k — system prompt จริงของ 28+ ตัว (Cursor, Claude Code, Windsurf, v0, Devin…) *(เก็บ verbatim แล้ว: Claude Code → [[system-prompts/README|system-prompts/]])*
