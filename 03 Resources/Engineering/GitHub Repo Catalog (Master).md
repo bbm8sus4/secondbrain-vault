@@ -18,7 +18,7 @@ note: รวมทุก repo/gist ที่คัดไว้ · ดาว (★
 
 ## A1 · เขียนโค้ดสะอาด / Best Practices
 - [Clean Code Summary — wojteklu](https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29) `gist` — สรุป Clean Code หน้าเดียว *(เก็บ verbatim แล้ว: [[Clean Code (Robert C. Martin) — สรุป]])*
-- [clean-code-javascript — ryanmcdermott](https://github.com/ryanmcdermott/clean-code-javascript) ★94k — Clean Code ฉบับ JS
+- [clean-code-javascript — ryanmcdermott](https://github.com/ryanmcdermott/clean-code-javascript) ★94k — Clean Code ฉบับ JS *(เก็บ verbatim แล้ว: [[clean-code-javascript (ryanmcdermott) — full]])*
 - [nodebestpractices — goldbergyoni](https://github.com/goldbergyoni/nodebestpractices) ★105k — 80+ best practices ของ Node.js
 - [Front-End-Checklist — thedaviddias](https://github.com/thedaviddias/Front-End-Checklist) ★69k — เช็กลิสต์ก่อนขึ้น production
 - [airbnb/javascript](https://github.com/airbnb/javascript) ★146k — JS Style Guide มาตรฐานโลก
