@@ -1,7 +1,7 @@
 ---
 title: Office Seating Plan
 status: ongoing
-last_updated: 2026-06-30
+last_updated: 2026-07-02
 owner: Bob (COO)
 ---
 
@@ -61,7 +61,7 @@ Layout: 3-2-2-2 (4 แถว)
 |---|---|---|---|
 | BANK | ชาญวิทย์ โสภณสุข | Project Manager | Thunder Solution |
 | TAN | ธนพร เสริมปรุงสุข | Tech Lead | Thunder Solution |
-| POOM NOI | ธนิสร บังกร | Product Owner | Thunder Solution |
+| POOM NOI | ธนิสร มังกร | Product Owner | Thunder Solution |
 | MEW | จีรนันท์ รุ่งศรี | UX/UI | Thunder Solution |
 | KENG | — | — | Unknown |
 
@@ -86,7 +86,7 @@ Layout: เกาะกลาง 2 แถว × 8 ที่นั่ง
 
 | ชื่อเล่น | ชื่อจริง | ตำแหน่ง | บริษัท |
 |---|---|---|---|
-| NONG | อรัญใจ งานคูณ | Customer Service | Thunder Solution |
+| NONG | อรัญใจ งามคูณ | Customer Service | Thunder Solution |
 | NOEY | ชนัญชิตา โยระพล | Customer Service | Thunder Solution |
 | DOE | จิรภัทร ภูครองหิน | Head of Customer Service | Easy Slip |
 | NOP | นพรัตน์ ภูบุญลาภ | Customer Service | Thunder Solution |
@@ -160,9 +160,9 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 - Capacity banner เตือนเมื่อที่นั่งไม่พอรับคนใหม่
 
 > ข้อมูลใน tool sync กับ doc นี้ ณ 2026-06-30 (7 ห้อง / 62 ที่นั่ง / 23 นั่งแล้ว / 7 รอจัด)
-> **ขั้นต่อไปที่ยังไม่ทำ:** deploy ขึ้น Cloudflare Pages (URL ถาวรให้ทีมเข้าดู) — รออนุมัติ
+> **Deploy:** เคยขึ้น Cloudflare Pages (`office-seating-plan.pages.dev`) แบบ public โดยไม่ได้ตั้งใจ (ค้างอยู่ ~23 ชม. พร้อม PII พนักงาน + ผังองค์กร 2 บริษัท + แผน succession "COO ใหม่แทน Bob") — **ถอนลงแล้ว 2026-07-02** (ลบ CF Pages project ทั้งหมด, URL ตายแล้ว). ถ้าจะให้ทีมดูจริง ต้องใส่ **Cloudflare Access (จำกัดอีเมลบริษัท)** ก่อน — ห้าม public เด็ดขาด.
 
-**`~/Desktop/office-seating-overview.html` (v2.3 — แอปหลักตอนนี้):** **ผังอาคารจริง (architectural floor plan)** — ห้องเป็นกล่องต่อกันตามสัดส่วน 2 แถว (เลขห้อง 203-209) + เฟอร์นิเจอร์โซนรับรอง + ที่นั่งเป็น **จุดสี: แดง=มีคนนั่ง / เขียว=ว่าง / เหลือง=จอง** (ตาม blueprint ที่ผู้ใช้ส่งมา). เอาเมาส์ชี้จุด=ดูชื่อ/ตำแหน่ง/บริษัท. ยังมี toolbar เต็ม + sidebar (Onboarding Tray/Lenses/Utilization) + ลากวาง/แก้ไข/persist/undo ครบ. SVG เดียว scale ได้ พิมพ์ A3 ได้. แชร์ localStorage `osp.v2`. **`office-seating-planner.html` (dashboard เดิม) = backup, sync ผ่าน localStorage.**
+**`~/Desktop/office-seating-overview.html` (v2.3 — แอปหลักตอนนี้):** **ผังอาคารจริง (architectural floor plan)** — ห้องเป็นกล่องต่อกันตามสัดส่วน 2 แถว (เลขห้อง 203-209) + เฟอร์นิเจอร์โซนรับรอง + ที่นั่งเป็น **จุดสี: แดง=มีคนนั่ง / เขียว=ว่าง / เหลือง=จอง** (ตาม blueprint ที่ผู้ใช้ส่งมา). เอาเมาส์ชี้จุด=ดูชื่อ/ตำแหน่ง/บริษัท. ยังมี toolbar เต็ม + sidebar (Onboarding Tray/Lenses/Utilization) + ลากวาง/แก้ไข/persist/undo ครบ. SVG เดียว scale ได้ พิมพ์ A3 ได้. แชร์ localStorage `osp.v2`. **`office-seating-planner.html` = ARCHIVED (2026-07-02):** ทำหมันคีย์ (`osp.v2`→`osp.v2.legacy`, IDB `osp-backups`→`osp-backups-legacy`) แล้วย้ายไป `~/Desktop/_archive/office-seating-planner-v2.0-LEGACY.html`. เหตุผล: ตัวเก่าเขียน `osp.v2` เดียวกับแอปหลัก **แบบไม่มี version guard + ปุ่ม Reset seed ข้อมูลเก่า 7 ห้อง** → เปิดค้างไว้แล้วแตะอะไร = rollback ข้อมูลใหม่ (รูป/product/task) เงียบๆ + ดัน IDB backup ring ของตัวใหม่หลุด. **ห้ามนำกลับมาใช้** — overview ครอบทุกฟีเจอร์แล้ว.
 **ดีไซน์สุดท้าย (v2.5):** **ผังอาคารจริง** (กล่องห้องต่อกัน 2 แถว สัดส่วนตามจำนวนที่นั่ง 203 กว้างสุด + เฟอร์นิเจอร์โซนรับรองซ้ายมือ) + **ที่นั่งเป็น avatar** (วงกลมสีบริษัท + อักษรย่อ + badge T/E + ชื่อ + ตำแหน่ง · ที่ว่าง = วงประ EMPTY) + **จัดพอดีหน้าเดียว** (avatar เล็ก + chrome compact + `fitPlan()` auto-scale ถ้าจอเตี้ย, คงสัดส่วน). เห็นทั้งออฟฟิศในจอเดียวไม่ต้อง scroll.
 **บทเรียน:** ผู้ใช้ทดลองหลายแบบ — สรุปชอบ **ผังอาคารจริง + avatar seats**. เคยลองจุดแดง/เขียว แต่เปลี่ยนมาเป็น avatar. ทุกครั้งที่แก้ดีไซน์ใหญ่: backup ก่อน + screenshot ยืนยัน + ยึด reference จริงของผู้ใช้.
 
@@ -183,3 +183,16 @@ Layout: 3-2-2-2 (เหมือน Marketing Room)
 - **2026-06-30** — ลอง UX/UI redesign v2.1 (poster + SVG floor plan) แต่ผู้ใช้ไม่ชอบ → **revert กลับ v2.0 dashboard**. บทเรียน: เก็บ backup ทุกเวอร์ชันที่ `~/Desktop/.seating-backups/` ก่อนแก้ใหญ่ทุกครั้ง
 - **2026-07-01** — ไฟล์จริงคือ `~/Desktop/office-seating-overview.html` (ของเก่า `office-seating-planner.html` เลิกใช้). 3 งานตามที่ผู้ใช้สั่ง: **(1)** ย้าย Dashboard ออกจากหน้า Seating → แท็บ "แดชบอร์ด · Dashboard" แยก (stat chips ใหญ่ + บาร์ใช้พื้นที่รายห้อง + แยกตามบริษัท + legend). **(2)** Room modal แก้ละเอียดขึ้น: เพิ่มฟิลด์ เลขห้อง(num) + แถว(บน/ล่าง) + live seat-count preview + CRUD แม่น (ลดที่นั่งแล้ว evict คนไปรอจัดที่ + ปลดจอง + confirm ก่อนทำ, validate layout). **(3)** Seating sizing = proportional (flex-grow ตามจำนวนที่นั่ง) ตามรูป 22 — ห้อง 9 ที่เท่ากัน, Thunder island ไม่แตะ. Verified ด้วย headless Chrome ทั้ง 3 หน้า, JS ผ่าน `node -c`
 - **2026-07-01 (HR revamp v2.3.0)** — รอบใหญ่ ใช้ multi-agent research workflow วิจัย/วางแผนก่อน แล้วทำ: **(1) ธีม light/dark** — tokenize สีทั้งชุดเข้า CSS var (`:root` + `[data-theme="dark"]`), no-flash IIFE ใน head, ปุ่มไอคอน sun/moon, persist `osp.theme`, เคารพ prefers-color-scheme. **(2) Easy Slip เขียว→ชมพู** `--easyslip:#db2777` (dark `#f472b6`), `companyColor()` คืน `var()` (canvas ใช้ `companyColorHex()` resolve ทีหลัง). **(3) i18n ไทยล้วน/อังกฤษล้วน** — `I18N{th,en}` + `t(key,vars)` + `applyLang()` + `data-i18n` attrs + ปุ่ม TH|EN, persist `osp.lang` (แท็บ/toolbar/hero/dashboard/lenses ครบ; **ยังเหลือ:** label ใน modal person/room/roster/template + org toolbar + toast บางส่วนยังไทย). **(4) HR Dashboard** — `computeHR()` 14 metrics, hero KPI 6 ตัว, insight อัตโนมัติ 3-4 บรรทัด (เสี่ยงโต๊ะ/ความจุ/ข้อมูลไม่ครบ), onboarding readiness split-bar + รายชื่อ, donut สถานะ+บริษัท (conic-gradient+mask), team bars, tenure (เทาถ้า startDate coverage <50%), brand-per-room stacked. **(5) ไอคอน** 22 inline SVG (Feather-style) — Undo/Redo/Print/Lock/Present/Theme = icon ล้วน, ที่เหลือ icon+text; edit ห้องเป็นดินสอ. **(6) ฟิลเตอร์ LENSES ละเอียด** — เพิ่มกรอง room+placement, นับจำนวนต่อ chip, ปุ่มล้างทั้งหมด, ลบ `activeStatFilter` dead code. **(7) อัปโหลดรูปจริง** — field `photo` (96px center-crop JPEG@0.82 ผ่าน canvas), เก็บ dataURL ใน person, แสดงใน .av + tray (มี letter fallback), quota warn >4MB. APP_VERSION 2.3.0. Verified headless ทั้ง light/dark + th/en + photo end-to-end, JS ผ่าน `node -c`. Backup `office-seating-overview.HRrevamp-DONE.*`
+- **2026-07-02 (Security + bugfix v2.4.0)** — deep audit ทั้งโปรเจ็กต์ (2 subagent อ่านครบทุกบรรทัด) แล้วลงมือ 24 จุดในไฟล์เดียว:
+  - ⚠️ **ถอน deploy public** — พบ overview ถูก deploy จริงที่ `office-seating-plan.pages.dev` (public, ไม่มี auth) → **ลบ CF Pages project** ตามที่ผู้ใช้สั่ง (เลือก "ถอนลง" ไม่เลือก Access/ปล่อยต่อ)
+  - **บั๊ก 1** import layout เพี้ยนไม่ทำแอปพัง: `validateState` reject layout ที่ไม่ใช่ "island"/array-of-positive-int + `seatCount` กันพัง (null/non-array คืน 0)
+  - **บั๊ก 3** ลากผังองค์กรลงระดับล่างสุดคนไม่หาย: cap `Math.min(4,…)` → `Math.min(orgLevels().length-1,…)` (รองรับ Thunder 4 ระดับ / EasySlip 5 ระดับ)
+  - **บั๊ก 4** เซฟเทมเพลต/ผังองค์กรพลาดจะเตือนจริง: `saveOrg`/`saveTpls` คืน boolean + toast error, `saveOrgNode`/`saveCurrentTpl` gate success toast (ไม่หลอกว่า "บันทึกแล้ว")
+  - **บั๊ก 5** Lock mode ครบทุก mutation: guard undo/redo/openAddPerson/openAddRoom/importJSON/resetAll/resetOrg/importOrgJSON/openAddOrg/onOrgPointerDown/loadTpl
+  - **เพิ่ม backup ผังองค์กร** (ที่ขาดมาตลอด): org LKG ใน localStorage (`<key>.lkg`) + IndexedDB v2 store `org-snapshots` (ring 15) + `loadOrgState` fallback ต้นทาง→lkg→seed (กัน silent-wipe ตอน parse fail). Templates: surface fail toast (ไม่ทำ LKG เพราะ template มีรูป = เปลือง quota)
+  - **แก้ชื่อ seed ให้ตรง PDF/org array**: POOM NOI ธนิสร **มังกร** (เดิมพิมพ์ บังกร), NONG อรัญใจ **งามคูณ** (เดิม งานคูณ)
+  - **Archive planner เก่า** (ดู section เครื่องมือด้านบน)
+  - แถม: แก้ CSS แถบเตือน quota (`var(--card)beb`→`var(--warn-bg)`), bump `APP_VERSION` 2.4.0
+  - Verify: `node -c` ผ่าน, backup ก่อนแก้ที่ `.seating-backups/office-seating-overview.pre-bugfix-v2.4.2026-07-02T11-51-36.html`. **adversarial-verify workflow (5 reviewer) ไม่จบ — subagent ชน session limit (reset 15:30) → ยังไม่ได้ verdict อัตโนมัติ (self-check จุดเสี่ยงหลักผ่าน)**
+  - **ยังไม่แก้ (flag ไว้):** XSS ผ่าน import JSON (`id`/team name ไม่ escape ใน HTML attribute/onclick) — ลดความเร่งด่วนเพราะแอป local-only แล้ว แต่ยังจริงถ้า import ไฟล์จากคนอื่น · i18n EN แปล ~40% (modal/toast/org/roster ยังไทย) · dashboard "Active" นับไม่ตรง 2 จุด (chip รวม new-hire, donut ไม่รวม) · dead code `drawOrgLinks`/`renderUtilization`
+  - **Open questions ยังค้าง:** คนใหม่จริง 5 หรือ 7? · Bob ย้ายไปตำแหน่งไหน (มีผลกับที่นั่ง Jetder)? · แต่ละคนสังกัด Thunder หรือ EasySlip?
