@@ -2,7 +2,36 @@
 tags: [project, tool, single-file-html, seating]
 project: Office Seating Plan
 created: 2026-07-02
-version: 2.8.4
+version: 3.8.0
+---
+
+## v3.7.0–3.8.0 · audit fixes (2026-07-03)
+Two-round exhaustive multi-agent adversarial review (Workflow, 7 dimensions, 40 confirmed findings) → fixed 24 in v3.7.0 (11) + v3.8.0 (13). Backup pre-fix: `~/Desktop/_archive/office-seating-overview-v3.6.4-pre-audit-fix-*.html`. Every fix Chrome-MCP-verified on live tab (session on port 12306).
+
+**Fixed (security/data-loss/a11y/perf):**
+- Stored XSS via imported `person.photo` — 2 sinks (dashboard onboarding L1664, org node L2498) missed the `_photoBg()` escape helper. Added `_photoBg(photo,col)` canonical escaper.
+- H2: `switchOrgCompany`/`loadTpl`(org)/`importOrgJSON` never cleared `orgUndoStack/orgRedoStack` → one Undo wrote one company's chart over the other silently. Clear stacks on company change.
+- `promptSaveView` + `reserveSeat` still used `window.prompt` (Chrome silently suppresses) → converted to `openInputModal`.
+- `render()` rebuilt all 5 views every mutation → gated to visible view; `setView` now calls `render()` after class toggle so switching re-renders target fresh. Added `_activeView()`.
+- `renderSettings` re-parsed both org localStorage blobs O(4N)/call → hoisted to one Map build. `settingsSearch` debounced 140ms.
+- Ghost cells `+ เพิ่ม`/`+ เพิ่มเลน` were `<div onclick>` → `<button>` (keyboard/touch). `.prow-ctl` lane controls hover-only → added `@media(hover:none){opacity:1}`. Org node boxes: added Enter/Space → `editOrgNode`.
+- `savePerson` assigned `product` without reconciling `lane` → invisible member of laneless product. Now reconciles lane + `fillProductSelect` filters out laneless products.
+- `deletePerson` left dangling org `personId` links (stale baked name) → `_unlinkPersonFromAllOrg`.
+- `toastUndo` button called generic view-aware `undo()` → could hit org stack. Now `_toastUndoAction` forces seating stack.
+- `importOrgJSON` overwrote current company silently → reads `__company`, confirms, switches if needed.
+- **Export ทั้งหมด / Import ทั้งหมด (bundle)**: `exportAll`/`importAll` package state+both org charts+templates+`osp.views.v1` in one file — fixes "machine move" (views had NO export path before). Quota banner now points to it.
+- `migrate` toasts when it kicks laneless-product people. `validateState` checks products/lanes shape. Search (top-nav + Manage) now matches product/lane names.
+- Removed dead `toggleOrgRisk`/`orgRiskOn`, `renderUtilization` (no #utilization target). `HISTORY_CAP` 50→20. `onResize` rAF-throttled. Quota % cached (invalidated per save).
+
+**Consciously deferred (cosmetic / nil-impact / needs-decision):**
+- Full EN-mode localization (many hardcoded Thai in prefs/lane/modal — large, EN is secondary).
+- Dead i18n keys (~22×2), orphaned CSS blocks, `renderSavedLine` no-op stub, `.risk-on` CSS remnants (harmless; keeps risk badges hidden).
+- Avatar markup dedup (6 divergent builders — refactor risk; buggy photo part already unified via `_photoBg`).
+- Terminology drift โปรเจกต์/โปรดักส์/`.pj-*` (cosmetic).
+- `_withSaveRollback` pushUndo-before-mutate phantom-undo on throw (rare); undo/redo ignore save() return; merge-import dup-by-id; presentation cross-tab org sync (LOW edges).
+- Dashboard project/lane analytics, template-load lane-revert warning (feature requests).
+- computeHR 2×/render, dashboard O(seats×people), photo-pool for undo snapshots (nil impact at 30 people; photo-in-localStorage deferred by owner earlier).
+- **resetAll restores 7 hardcoded fake NEW-hire people** — needs owner decision (open 5-vs-7 question).
 ---
 
 # Office Seating Plan
