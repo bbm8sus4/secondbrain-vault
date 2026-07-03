@@ -55,6 +55,13 @@
         "a": 1,
         "rgb": 5701826
       }
+    },
+    {
+      "query": "Repo",
+      "color": {
+        "a": 1,
+        "rgb": 16449791
+      }
     }
   ],
   "collapse-display": true,
@@ -67,6 +74,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.29341970371415355,
+  "scale": 0.3097506828694843,
   "close": true
 }
