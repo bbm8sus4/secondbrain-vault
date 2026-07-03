@@ -9,9 +9,10 @@ type: private (edge-auth gated)
 
 ## 🔗 URL + Login
 - **URL:** https://seatmap-bb85fd28.pages.dev
-- **User:** `thunder`
-- **Password:** `KlagCABGACgejgR0`
-- เข้าครั้งแรก browser จะเด้ง popup ให้กรอก user/password (HTTP Basic Auth)
+- **Password:** `thunder2026`
+- **Username:** เว้นว่าง หรือพิมพ์อะไรก็ได้ (worker เช็คแค่รหัสผ่าน) — ปุ่ม/ช่อง username ไม่ต้องสนใจ
+- เข้าครั้งแรก browser เด้ง popup: ช่องบน (user) ปล่อยว่าง/พิมพ์อะไรก็ได้ · ช่องล่าง (password) = `thunder2026`
+- (2026-07-03 เปลี่ยนจากรหัสยาก → รหัสง่าย + ไม่ต้องใส่ username; worker = password-only gate ยังปลอดภัย server-side เหมือนเดิม)
 
 ## ทำไมปลอดภัย (กันข้อมูลหลุดแบบครั้งก่อน)
 ไฟล์นี้ฝังชื่อพนักงานจริง 54 ชื่อใน source โดยตรง → password แบบ JS (client-side) ไร้ประโยชน์เพราะ view-source อ่านได้.
