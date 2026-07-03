@@ -15,3 +15,5 @@ metadata:
 - Debug log: `~/gearshift.log` (logs raw cmux JSON head when 0 surfaces found).
 - Known issue 2026-07-03: cmux socket gives Broken pipe when app process is a stale build running across a brew upgrade — restart cmux.app fixes it. Related: [[คู่มือ - Cmux|reference-cmux]]
 - cmux CLI facts: key name is lowercase `enter`; global flags go before the command (`cmux --json tree --all`); `cmux version` works without socket.
+- **Effort bank added 2026-07-03**: row of 5 drive-mode buttons (LOW/MED/HIGH/XHI/MAX) between LCD and shifter — sends `/effort <low|medium|high|xhigh|max>` to the selected session via the same send path as `/model`. Window grew 530→564px (both main.js BrowserWindow and #chrome CSS must match). Last-sent level persists in localStorage `gearshift-settings.effort`. Tach sweeps with effort level (max ≈ redline).
+- Claude Code CLI fact: `/effort <low|medium|high|xhigh|max>` is a real slash command (verified via strings on the 2.1.185 binary); xhigh/max availability depends on model.
