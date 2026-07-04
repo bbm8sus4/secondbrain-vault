@@ -44,7 +44,7 @@ codesign --force --deep --sign - "/Applications/Model Shift.app"   # ad-hoc (Dev
 **อาการ:** กด `/model` เลือก Fable 5 (เกียร์ 5) แต่ restart แล้วเด้งกลับ Sonnet · แต่ละเทอร์มินัลได้คนละโมเดล
 
 **ต้นตอ 2 ชั้น:**
-1. **Fable 5 ถูกปิดทั่วโลก (ทุกบัญชี)** — Anthropic suspend Fable 5 + Mythos 5 สำหรับลูกค้า **ทุกคน** ตั้งแต่ **12 มิ.ย. 2026** (ไม่ใช่เฉพาะบัญชีเรา — ยืนยันจากหน้า `anthropic.com/news/fable-mythos-access`). เลือก Fable → **fallback เงียบ ๆ เป็น Opus 4.8** · แก้ที่ config ไม่ได้ ต้องรอ Anthropic เปิดคืน
+1. **~~Fable 5 ปิด~~ → แก้ 2026-07-04: Fable 5 ใช้ได้จริง** — `/model` picker โชว์ Fable (ข้อ 3) เลือกได้ปกติ. **อย่าเชื่อ `disabled:True` ใน `~/.claude.json` cache — มัน stale.** ให้เชื่อ live picker. (ก่อนหน้าวินิจฉัยพลาดว่าปิด เพราะเชื่อ cache → ตั้ง opus ผิด)
 2. **`model` pin ใน settings.json ไม่ตรงกัน 4 config dir** → ตัวที่พินไว้ทับค่าที่ `/model` ตั้ง ตอน restart:
    - `.claude`=sonnet · `.claude-warp`=claude-fable-5[1m] · `.claude-ghostty`=(ไม่มี) · `.claude-cmux`=**claude-opus-4-6 (id ผิด ไม่มีจริง)**
 
