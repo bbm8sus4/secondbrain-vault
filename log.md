@@ -15,6 +15,10 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-07-04 19:20] auto-ingest | inbox sweep (1 file(s))
+- routed `สอนใช้ Claude AI สำหรับผู้เริ่มต้น (2026) – วิธีใช้งาน Claude AI ทีละขั้นตอน` → `03 Resources/Clippings/สอนใช้ Claude AI สำหรับผู้เริ่มต้น (2026) – วิธีใช้งาน Claude AI ทีละขั้นตอน.md` (rule: clippings)
+- agent: `~/bin/inbox-auto-ingest.py` (rule-based, no AI)
+
 ## [2026-07-03 01:46] auto-ingest | inbox sweep (1 file(s))
 - routed `Full Course วิธีการใช้ AI Agent เพื่อขยายทีม` → `03 Resources/Clippings/Full Course วิธีการใช้ AI Agent เพื่อขยายทีม.md` (rule: clippings)
 - agent: `~/bin/inbox-auto-ingest.py` (rule-based, no AI)
