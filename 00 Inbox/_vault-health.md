@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-03 09:00:00 · ไฟล์ .md ทั้งหมด 336
+> สแกนอัตโนมัติ · 2026-07-04 09:00:00 · ไฟล์ .md ทั้งหมด 351
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -9,12 +9,12 @@
 | รายการ | ผล |
 |---|---|
 | 🔗 ลิงก์เสีย (dead links) | 94 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 65 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 66 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 69 ↔ 69 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 6 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W26 (2 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (2 วันที่แล้ว) |
+| 🔄 memory source ↔ mirror | 73 ↔ 73 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 9 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W26 (3 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (3 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -122,6 +122,8 @@
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/4_Aidebate_Gaps_แบบสำรวจ.md`
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/FORM_URLS.md`
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part1-Claude-Basics.md`
+- `01 Projects/Office Seating Plan/DEPLOY.md`
+- `01 Projects/Office Seating Plan/HANDOFF.md`
 - `03 Resources/Accounting/accounting_sop_template.md`
 - `03 Resources/COO/COO-DELIVERABLES.md`
 - `03 Resources/COO/coo-speech-script.md`
@@ -170,7 +172,6 @@
 - `BoostSMS/Materials/ChatGPT_Slides_Prompt.md`
 - `BoostSMS/Materials/PROJECT_BRIEF.md`
 - `BoostSMS/Materials/SALES_COMMISSION.md`
-- `CRM หวย/เงื่อนไขกรอง - ลูกค้าขาดฝาก.md`
 - `EasyBOT/Legal/easybot_partner_agreement_formal.md`
 - `EasySlip/Revenue/EasySlip API - วิเคราะห์ลูกค้า Top-up 6 เดือน.md`
 - `Friday/Monthly Recaps/2026-06 มิถุนายน.md`
