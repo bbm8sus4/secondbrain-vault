@@ -11,6 +11,7 @@ note: รวมทุก repo/gist ที่คัดไว้ · ดาว (★
 คลังกลางรวม **ทุก repo/gist ที่คัดไว้** จัด 2 โดเมนใหญ่ (Dev / AI-Prompt) แยกหมวดย่อยให้เรียกใช้ง่าย
 ไฟล์นี้คือ "แหล่งเรียกใช้หลัก" — hook จะดึงไฟล์นี้มาให้อัตโนมัติเวลา prompt เกี่ยวกับ repo/prompt
 รายละเอียดเต็มดูที่ [[คลังความรู้ GitHub สำหรับนักพัฒนา (Dev Knowledge Library)]] และ [[คลัง Prompt Repos ดัง (GitHub)]]
+**ตัวที่พี่เลือกจาก 10k ecosystem → [[Shortlist — Bob's picks (จาก 10k ecosystem)]]** (obsidian-skills, LangBot, serena, codebase-memory-mcp, mattpocock/skills)
 
 ---
 
