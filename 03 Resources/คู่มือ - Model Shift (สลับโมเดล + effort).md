@@ -39,4 +39,17 @@ codesign --force --deep --sign - "/Applications/Model Shift.app"   # ad-hoc (Dev
 - cmux CLI: key name เป็นตัวเล็ก `enter` · global flag ต้องมาก่อน command (`cmux --json tree --all`) · `cmux version` ใช้ได้โดยไม่ต้องมี socket
 - debug log: `~/gearshift.log`
 
+## Troubleshooting — model ไม่ยอมเปลี่ยน / เด้งกลับ (2026-07-04)
+
+**อาการ:** กด `/model` เลือก Fable 5 (เกียร์ 5) แต่ restart แล้วเด้งกลับ Sonnet · แต่ละเทอร์มินัลได้คนละโมเดล
+
+**ต้นตอ 2 ชั้น:**
+1. **Fable 5 ถูก gate/disabled บนบัญชีนี้** — `~/.claude.json` → `additionalModelOptionsCache` มี `claude-fable-5[1m]` `disabled:True` "Claude Fable 5 is currently unavailable" (ลิงก์ `anthropic.com/news/fable-mythos-access`). เลือก Fable → **fallback เงียบ ๆ เป็น Opus 4.8** แก้ที่ config ไม่ได้ (เป็น account-level access ต้องรอ Anthropic เปิด)
+2. **`model` pin ใน settings.json ไม่ตรงกัน 4 config dir** → ตัวที่พินไว้ทับค่าที่ `/model` ตั้ง ตอน restart:
+   - `.claude`=sonnet · `.claude-warp`=claude-fable-5[1m] · `.claude-ghostty`=(ไม่มี) · `.claude-cmux`=**claude-opus-4-6 (id ผิด ไม่มีจริง)**
+
+**ที่แก้:** set `"model": "opus"` (alias → Opus 4.8 ล่าสุด, auto-upgrade) ครบทั้ง 4 dir · backup `settings.json.bak-modelfix` ทุก dir · มีผลตอน session ใหม่
+
+**เมื่อ Fable 5 เปิดให้ใช้:** เปลี่ยน `model` เป็น `claude-fable-5[1m]` ทั้ง 4 dir (หรือกดเกียร์ 5) · **อยากให้ `/model` คุมล้วน ๆ ไม่ให้ settings ทับ** → ลบ key `model` ออกทุก dir
+
 เกี่ยวข้อง: [[คู่มือ - Cmux]]
