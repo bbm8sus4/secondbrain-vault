@@ -410,3 +410,33 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W27.md — 35,507 cha
 [2026-07-05 08:01:00] CATCHUP: scanning past 14 days for missed runs
 [2026-07-05 08:01:00] CATCHUP: missed weekly 2026-W27 (date 2026-07-02) — generating
 [2026-07-05 08:01:00] WEEKLY: 2026-06-26 → 2026-07-02 (label: 2026-W27)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W27.md — 38,189 chars, 26 weekly, 87 daily
+[2026-07-05 08:01:14] WEEKLY: source size =    67451 chars
+[2026-07-05 08:01:14] WEEKLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W27.md
+
+## SHIFT + Bob
+- 29-30 มิ.ย. Office ops: ปิดน้ำชั่วคราวซ่อมบำรุงถึง 16.00 น. 29 มิ.ย., งดจอดรถข้างตึก 30 มิ.ย. 09.00-18.00 ติดโซล่าเซลล์
+- 30 มิ.ย. Bobsanchezz ขอคอม Windows 1 เครื่องด่วนสำหรับงานเอกสาร, Pop ยืนยันมีเครื่องเหลือ, ฝากโบ๊ทรีเซ็ตให้พร้อมใช้
+- 1 ก.ค. Watcharin เร่งระบบเปิดตัว Golf, Ou รับทำระบบเปิดตัว Golf
+- 2 ก.ค. Watcharin ขอ framework Obsidian จาก Bob, Bob ส่งลิงก์ให้ 11:11
+- 2 ก.ค. Watcharin ทำ Discourse เสร็จและเสนอให้ภูมิ, Bob ขอรับงาน Discourse ต่อ
+- 2 ก.ค. Watcharin ชี้แจง Hermess ใช้แยก ไม่ใช่คู่กับงานใหม่
+
+## ⚠️ Watch list ค้างปลายสัปดาห์
+- EasyCRM: Bank นัดมีทหารือรีวิวระบบกับ Darwin และต้องส่ง CRM prototype ให้ Darwin รีวิวฟี
+- BoostSMS: ต้องปิดต้นทุน AIS 0.29฿/SMS + Margin, แก้ Callback คืนเครดิต + Log System, ปรับ Policy ให้สอดคล้อง กสทช.
+- Sales: DEMETER ยังต้องติดตามตรวจสลิป Clicx Virtual Bank กับพี่ Bank
+- Support X DEV: ระบบซื้อธีม 1 ปี ยังมีค้าง, Bank ประสานเน; อีกเคสบอทตรวจรูปผิดดึง QR Code อื่น
+- HR: รอ CF ผู้สมัคร QA อีก 1 คน และมีสัมภาษณ์ QA ต่อวันที่ 3 ก.ค.
+- BNI: คุณเก่งถามราคา 5, 10 ปี ยังเป็น follow-up ของบอม, SEK, C Ning
+- Finance: หลายรายการยังเป็น “รอชำระ” โดยเฉพาะ EasySlip 168,535.28 บาท และค่าเบอร์พื้นฐาน 5 คู่สาย 3,266.02 บาท
+
+## ✅ Highlights สำเร็จ
+- Rukcom แก้ malware ใน database สำเร็จ และ Watcharin ยืนยันระบบเรียบร้อย
+- Bank แก้เคส Arunjai ใช้งานเกินโควต้าแล้ว
+- SMS ถูกตรวจสอบแล้วว่าส่งถึงปลายทางปกติทั้งหมด
+- BoostSMS มีแผนปรับระบบชัดเจนทั้ง AIS, LeanFlow, Progress Bar, Failover และเครดิตคืน
+- EasyCRM อัปเดตคู่มือ 30/6/69 และแจ้งลูกค้า 4 กลุ่มแล้ว
+- Watcharin อนุมัติหนังสือกรุงศรีให้ Poom เดินต่อได้เลย
+[2026-07-05 08:02:07] WEEKLY: ✅ wrote     9154 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W27.md
+[2026-07-05 08:02:07] DONE: auto
