@@ -406,3 +406,7 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W27.md — 33,771 cha
 Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W27.md — 35,507 chars, 26 weekly, 73 daily
 [2026-07-02 23:55:03] WEEKLY: source size =    62857 chars
 [2026-07-02 23:55:03] WEEKLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W27.md
+[2026-07-05 08:00:59] AUTO: DOW=7 DOM=05 TOMORROW=06
+[2026-07-05 08:01:00] CATCHUP: scanning past 14 days for missed runs
+[2026-07-05 08:01:00] CATCHUP: missed weekly 2026-W27 (date 2026-07-02) — generating
+[2026-07-05 08:01:00] WEEKLY: 2026-06-26 → 2026-07-02 (label: 2026-W27)
