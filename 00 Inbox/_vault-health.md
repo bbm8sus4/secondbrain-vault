@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-04 09:00:00 · ไฟล์ .md ทั้งหมด 351
+> สแกนอัตโนมัติ · 2026-07-05 09:00:02 · ไฟล์ .md ทั้งหมด 355
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,13 +8,13 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 94 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 66 |
+| 🔗 ลิงก์เสีย (dead links) | 95 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 68 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 73 ↔ 73 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 9 ชม.ที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W26 (3 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (3 วันที่แล้ว) |
+| 🔄 memory source ↔ mirror | 74 ↔ 74 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 28 นาทีที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W27 (57 นาทีที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (4 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -85,6 +85,7 @@
 - `03 Resources/Clippings/คนยุคโบราณ ทำแผนที่ยังไง?  8 Minute History EP.398.md` → `[[THE STANDARD PODCAST]]` (ไม่พบ)
 - `03 Resources/Clippings/วิธีสร้างภาพให้สวย อัปเดต AI ตัวใหม่ … ผลลัพธ์เกินคาด!!! สวย ง่าย เร็ว  ChatGPT Images 2.0.md` → `[[Readyplanet]]` (ไม่พบ)
 - `03 Resources/Clippings/สอน Claude Code ช่วยเขียนโค้ด 99%  borntodev.md` → `[[BorntoDev]]` (ไม่พบ)
+- `03 Resources/Clippings/สอนใช้ Claude AI สำหรับผู้เริ่มต้น (2026) – วิธีใช้งาน Claude AI ทีละขั้นตอน.md` → `[[Darrel Wilson ภาษาไทย]]` (ไม่พบ)
 - `03 Resources/Clippings/หยุดไล่ล่าชีวิตและเวลาที่สมบูรณ์แบบ สรุปหนังสือ Four Thousand Weeks  Mission To The Moon EP.2684.md` → `[[Mission To The Moon]]` (ไม่พบ)
 - `03 Resources/Clippings/เปิดคลังแจก 10+ วิธีใช้ ChatGPT Image 2.0 ฟรี!!!.md` → `[[KEM LIFE]]` (ไม่พบ)
 - `03 Resources/Clippings/ไม่เปลี่ยนคือตาย! "วู้ดดี้-หนุ่ย-วิทย์-CK" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0.md` → `[[WoodyWorld]]` (ไม่พบ)
@@ -135,6 +136,7 @@
 - `03 Resources/Clippings/คนยุคโบราณ ทำแผนที่ยังไง?  8 Minute History EP.398.md`
 - `03 Resources/Clippings/วิธีสร้างภาพให้สวย อัปเดต AI ตัวใหม่ … ผลลัพธ์เกินคาด!!! สวย ง่าย เร็ว  ChatGPT Images 2.0.md`
 - `03 Resources/Clippings/สอน Claude Code ช่วยเขียนโค้ด 99%  borntodev.md`
+- `03 Resources/Clippings/สอนใช้ Claude AI สำหรับผู้เริ่มต้น (2026) – วิธีใช้งาน Claude AI ทีละขั้นตอน.md`
 - `03 Resources/Clippings/หยุดไล่ล่าชีวิตและเวลาที่สมบูรณ์แบบ สรุปหนังสือ Four Thousand Weeks  Mission To The Moon EP.2684.md`
 - `03 Resources/Clippings/เปิดคลังแจก 10+ วิธีใช้ ChatGPT Image 2.0 ฟรี!!!.md`
 - `03 Resources/Compliance/Scanned Documents.md`
@@ -179,6 +181,7 @@
 - `Friday/Weekly Recaps/2026-W24.md`
 - `Friday/Weekly Recaps/2026-W25.md`
 - `Friday/Weekly Recaps/2026-W26.md`
+- `Friday/Weekly Recaps/2026-W27.md`
 - `Friday/_scripts/recap_prompts.md`
 - `Thunder Solution/Documents/API Gen QR — 2025-10 planning notes.md`
 
