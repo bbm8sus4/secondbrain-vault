@@ -15,6 +15,11 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-07-06 22:25] query | สร้าง SecondBrain Blueprint สำหรับ vault เพื่อน
+- filed_back: [[03 Resources/SecondBrain Blueprint — สำหรับ vault เพื่อน|SecondBrain Blueprint]] — โครงสร้าง+กฎ+automation ทั้งระบบเป็น .md ให้ AI ปลายทาง (mark-ai) ทำตาม
+- ออกแบบ additive-only ให้เข้ากับ red-lines ฝั่งนั้น (ไม่ลบ/ไม่ย้ายของเดิม, commit ทุก Phase, mapping แทน restructure)
+- agent: Claude Code (session 2026-07-06)
+
 ## [2026-07-06 22:00] query | ratchet clippings (5 หน้า synthesis)
 - read: clippings 5 ไฟล์ (ChatGPT Images 2.0 ×2, Four Thousand Weeks, แผนที่โลก 8MH, สอนใช้ Claude AI)
 - filed_back: [[03 Resources/Clippings/Synthesis/ChatGPT Images 2.0 สร้างภาพการตลาด — Takeaways|ChatGPT Images 2.0 สร้างภาพการตลาด — Takeaways]]
