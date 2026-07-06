@@ -20,6 +20,12 @@ version-checkpoint: seatArh_v.1.0.0 (ก่อน QA) → v1.0.1 (8 bug fix) →
 7. **Sync race — poll ทับ local edit ที่ยังไม่ push** — pullShared bail เพิ่มเงื่อนไข `_sharedPushT` (มี push ค้าง) + _applyShared เคลียร์ timer ก่อน adopt server state (กัน edit หาย + กัน stale push ตีกลับ)
 8. **Empty states + Present/Lock + ปุ่ม modal + prod/org buttons + stats + WFH zone + roster hint** — ผูก i18n (t()/data-i18n) สลับ TH/EN ได้ · ปุ่ม modal มาตรฐาน (common.save/cancel/delete/close) 13 ปุ่ม
 
+## ✅ UI fix — กล่อง "+ เพิ่ม" ในเลนโปรดักส์ (2026-07-06, หลัง v1.0.2)
+Bob ทัก [Image]: กล่อง `+ เพิ่ม` กับการ์ดคนในเลนไม่เท่ากัน → สั่งยึดขนาดการ์ดคน
+- **สาเหตุ:** การ์ดคนถูกล็อกกว้าง 210px จาก `.pbox{width:210px}` (บรรทัด ~518, rule เก่าสำหรับ layout flex) แต่กล่องเพิ่ม `.prow-add` กางเต็มช่อง grid (249px) + `min-height:56px` (การ์ดคนสูง 51px) → กว้าง+สูงไม่ตรง
+- **แก้:** เพิ่ม rule `.prow-body .prow-add{width:210px;flex:0 0 auto;min-height:51px;padding:8px 10px;}` (scoped เฉพาะในเลนโปรดักส์)
+- **verify Chrome MCP:** การ์ดคน = กล่องเพิ่ม = **210×51 เป๊ะ** ทั้งคู่ · 49 คนไม่แตะ · deploy แล้ว
+
 ## ✅ i18n เชิงลึก — ทำครบแล้ว (v1.0.2, deploy + verify)
 สลับ TH/EN ได้ **ทุกจุดที่มองเห็น** แล้ว:
 - **Form labels** person/room/org/linkOrg → `data-i18n` (18 label + 2 ตัวที่มี `*` ครอบ span คง `*` ไว้)
