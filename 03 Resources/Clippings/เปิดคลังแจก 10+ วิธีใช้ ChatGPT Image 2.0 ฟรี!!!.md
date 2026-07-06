@@ -2,7 +2,7 @@
 title: "เปิดคลังแจก 10+ วิธีใช้ ChatGPT Image 2.0 ฟรี!!!"
 source: "https://www.youtube.com/watch?v=ISr4crVHoVs"
 author:
-  - "[[KEM LIFE]]"
+  - "KEM LIFE"
 published: 2026-05-02
 created: 2026-06-25
 description: "โหลด 10+ วิธีใช้ ChatGPT Image 2.0 ฟรี!!!  ที่นี่ https://www.facebook.com/share/p/1B3QSu2J7y/ช่องรีวิวสินค้า https://www.tiktok.com/@kemlifeติดต่องาน nattawatkem@gmail.comLine @kemlife"

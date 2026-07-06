@@ -2,7 +2,7 @@
 title: "ChatGPT Images 2.0 เก่งขนาดนี้ แทนกราฟิก ได้หรือยัง – พูดคุยความเห็น"
 source: "https://www.youtube.com/watch?v=A1fyxNij208"
 author:
-  - "[[iMoD Official]]"
+  - "iMoD Official"
 published: 2026-04-29
 created: 2026-06-25
 description: "หลังจาก OpenAI เปิดให้ใช้ ChatGPT Images 2.0 ที่ทำงานได้ดีมาก ๆ ทั้งสร้างภาพ, Infographic ได้ดี คำถามต่อมาก็คือเวอร์ชันนี้สามารถทำงานแทนกราฟิกดีไซน์ได้แล้วหรือไม่ และมุมมองของคอนเทนต์สายกราฟิกเป็นอย่า"

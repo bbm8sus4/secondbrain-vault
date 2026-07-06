@@ -167,5 +167,5 @@ Fixed 50 confirmed regressions from 5-agent adversarial verify workflow:
 
 ## Related notes
 
-- [[feedback_secondbrain_vs_work_folder]] — SecondBrain vs Work folder split convention
+- `feedback_secondbrain_vs_work_folder` — SecondBrain vs Work folder split convention (memory ใน harness dir อื่น ไม่มี mirror ใน vault)
 - Adversarial verify workflow output: `/private/tmp/claude-501/-Users-aexgee/27a1612c-22b0-4899-8090-0137499b2074/tasks/w0j656k27.output`

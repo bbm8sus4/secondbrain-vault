@@ -2,7 +2,7 @@
 title: "[Full Course] วิธีการใช้ AI Agent เพื่อขยายทีม"
 source: "https://www.youtube.com/watch?v=D08_yAWn5wI"
 author:
-  - "[[Jedi Trinupab]]"
+  - "Jedi Trinupab"
 published: 2026-07-01
 created: 2026-07-03
 description: "ทดลอง Higgsfield https://higgsfield.ai/s/higgsfield-mcp-2-0-yt-jeditrinupab-RyUzMDเข้าร่วม Live Workshop https://lin.ee/4v2Xsumโปรแกรม Shortcut to AI Expert สำหรับมือใหม่เริ่มต้น:https://www.youtu"

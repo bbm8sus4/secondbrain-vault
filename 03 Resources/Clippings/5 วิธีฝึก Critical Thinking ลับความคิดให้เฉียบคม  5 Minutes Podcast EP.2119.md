@@ -2,7 +2,7 @@
 title: "5 วิธีฝึก Critical Thinking ลับความคิดให้เฉียบคม | 5 Minutes Podcast EP.2119"
 source: "https://www.youtube.com/watch?v=QsXZC0ccPIs"
 author:
-  - "[[Mission To The Moon]]"
+  - "Mission To The Moon"
 published: 2025-04-21
 created: 2026-07-01
 description: "ทักษะการคิดเชิงวิพากษ์ หรือ Critical Thinkingเรียกได้ว่าเป็นอีกหนึ่งทักษะแห่งยุค AI หลังจากที่ผู้คนต่างก็วุ่นวายกับความรวดเร็วรอบตัวการมีทักษะ Critical Thinking จะช่วยให้เราคิดและมองสถานการณ์ที่ซั"

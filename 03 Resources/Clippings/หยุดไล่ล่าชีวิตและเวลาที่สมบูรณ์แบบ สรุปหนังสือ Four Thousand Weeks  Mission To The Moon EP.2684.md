@@ -2,7 +2,7 @@
 title: "หยุดไล่ล่าชีวิตและเวลาที่สมบูรณ์แบบ #สรุปหนังสือ Four Thousand Weeks | Mission To The Moon EP.2684"
 source: "https://www.youtube.com/watch?v=-_XacQ56Lbw"
 author:
-  - "[[Mission To The Moon]]"
+  - "Mission To The Moon"
 published: 2026-06-06
 created: 2026-06-27
 description: "ถ้าลองคำนวณว่ามนุษย์เรามีอายุเฉลี่ยประมาณ 80 ปีนั่นหมายความว่าเรามีเวลาอยู่บนโลกนี้แค่ราวๆ \"4,000 สัปดาห์\" เท่านั้นแล้วทุกวันนี้คุณกำลังใช้เวลาที่มีอยู่อย่างจำกัดนี้ ไปกับการนั่งตอบอีเมลตลอดยี่สิบส"

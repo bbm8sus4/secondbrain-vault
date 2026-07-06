@@ -1,17 +1,17 @@
 ---
 title: "Go with the Four EP.0 — COO Takeaways"
 type: synthesis
-source: "[[ไม่เปลี่ยนคือตาย! \"วู้ดดี้-หนุ่ย-วิทย์-CK\" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0]]"
+source: '[[ไม่เปลี่ยนคือตาย! "วู้ดดี้-หนุ่ย-วิทย์-CK" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0|Go with the Four EP.0 (raw)]]'
 source_url: "https://www.youtube.com/watch?v=DJqhivt67pg"
 source_date: 2026-03-13
 imported: 2026-06-21
-last_verified: 2026-06-21
+last_verified: 2026-07-06
 status: live
 duration: "1h37m"
 hosts: ["Woody", "หนุ่ย พงศ์สุข (beartai)", "เฮียวิทย์", "CK Cheong"]
 tags: [synthesis, clipping, podcast, coo, business, thailand, macro, live-commerce, ai, demographics]
 related:
-  - "[[03 Resources/Clippings/ไม่เปลี่ยนคือตาย! \"วู้ดดี้-หนุ่ย-วิทย์-CK\" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0|raw transcript]]"
+  - '[[ไม่เปลี่ยนคือตาย! "วู้ดดี้-หนุ่ย-วิทย์-CK" ถอดรหัสอนาคต 10 ปีของไทย  Go with the Four EP.0|raw transcript]]'
   - "[[BoostSMS/_knowledge/K05-Segmentation-Targeting|BoostSMS K05]]"
   - "[[Thunder Solution/หน้าหลัก]]"
 ---

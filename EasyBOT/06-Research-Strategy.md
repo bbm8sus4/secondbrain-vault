@@ -1,3 +1,14 @@
+---
+title: "06 — Research & Strategy"
+type: entity
+source: "~/Desktop/Business/EasyBOT/ via _source symlink (brand KB session 2026-06)"
+source_date: 2026-06-13
+imported: 2026-06-13T22:49:35
+last_verified: 2026-07-06
+status: live
+tags: [easybot, brand]
+---
+
 # 06 — Research & Strategy
 
 > Market research 19 พ.ค. 2026 + LINE OA Roadmap + 9bomb affiliate research

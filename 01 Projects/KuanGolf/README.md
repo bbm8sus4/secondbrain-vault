@@ -1,9 +1,15 @@
 ---
+title: KuanGolf — ก๊วนกอล์ฟไทย (Scoring + Side Game)
+type: project
 project: KuanGolf
 url: https://kuangolf.com
 built_by: Thunder Solution
-status: live
+source: https://kuangolf.com + ~/Work/KuanGolf/ (ศึกษาจากเว็บ live และไฟล์งานในเครื่อง)
+source_date: 2026-06-21
+imported: 2026-06-21
 last_studied: 2026-06-21
+last_verified: 2026-07-06
+status: live
 tags: [project, kuangolf, thunder-solution, golf, line-app]
 ---
 
@@ -50,15 +56,15 @@ tags: [project, kuangolf, thunder-solution, golf, line-app]
 
 ## Working files (นอก vault)
 ทุกอย่างที่ไม่ใช่ `.md` รวมที่ [~/Work/KuanGolf/](file:///Users/aexgee/Work/KuanGolf/) (จัดระเบียบ 2026-06-23)
-ใน Obsidian เปิดผ่าน [[_files]] (symlink ใน vault) ก็ได้
+ใน Obsidian เข้าถึงผ่านโฟลเดอร์ `_files/` (symlink ใน vault) ก็ได้ — Obsidian ลิงก์ไปโฟลเดอร์ตรง ๆ ไม่ได้ ให้เปิดจาก file explorer ด้านซ้าย
 
 | โฟลเดอร์ | เปิดใน Finder | เปิดใน Obsidian | มีอะไร |
 |---|---|---|---|
-| brand/ | [↗](file:///Users/aexgee/Work/KuanGolf/brand/) | [[_files/brand\|brand]] | Logo · Mascot 3D · covers (FB · Line OA · Rich Menu) |
-| assets/ | [↗](file:///Users/aexgee/Work/KuanGolf/assets/) | [[_files/assets\|assets]] | qr/ (2D barcodes) · misc/ |
-| content/ | [↗](file:///Users/aexgee/Work/KuanGolf/content/) | [[_files/content\|content]] | content drops พร้อมโพสต์ |
-| marketing/ | [↗](file:///Users/aexgee/Work/KuanGolf/marketing/) | [[_files/marketing\|marketing]] | specs (01-07) · briefs-html (60Day_*) · briefs-md · Marketing Manager Roadmap.docx |
-| archive/ | [↗](file:///Users/aexgee/Work/KuanGolf/archive/) | [[_files/archive\|archive]] | brand kit เก่า · logo-lockups · mascot-poses · app-icons · patterns |
+| brand/ | [↗](file:///Users/aexgee/Work/KuanGolf/brand/) | `_files/brand/` | Logo · Mascot 3D · covers (FB · Line OA · Rich Menu) |
+| assets/ | [↗](file:///Users/aexgee/Work/KuanGolf/assets/) | `_files/assets/` | qr/ (2D barcodes) · misc/ |
+| content/ | [↗](file:///Users/aexgee/Work/KuanGolf/content/) | `_files/content/` | content drops พร้อมโพสต์ |
+| marketing/ | [↗](file:///Users/aexgee/Work/KuanGolf/marketing/) | `_files/marketing/` | specs (01-07) · briefs-html (60Day_*) · briefs-md · Marketing Manager Roadmap.docx |
+| archive/ | [↗](file:///Users/aexgee/Work/KuanGolf/archive/) | `_files/archive/` | brand kit เก่า · logo-lockups · mascot-poses · app-icons · patterns |
 
 **กฎ:** SecondBrain เก็บแค่ `.md` (สมอง) · `~/Work/KuanGolf/` เก็บไฟล์งานจริง (โกดัง) · `_files` symlink เชื่อมสองที่
 

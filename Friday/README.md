@@ -3,7 +3,7 @@ tags: [friday, ai-bot, memory, knowledge-base]
 type: index
 project: Friday AI Bot
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-07-06
 ---
 
 # 🧠 Friday — Knowledge Base / Bot Memory
@@ -18,9 +18,18 @@ updated: 2026-06-12
 
 ## 📂 โครงสร้าง
 
+### Weekly Recaps/
+สรุปสัปดาห์ (auto ทุกพฤหัส 23:55 ผ่าน launchd — ดู [[#🤖 Auto-recap (launchd schedule)]])
+- [[Weekly Recaps/2026-W24|2026-W24]]
+- [[Weekly Recaps/2026-W25|2026-W25]]
+- [[Weekly Recaps/2026-W26|2026-W26]]
+- [[Weekly Recaps/2026-W27|2026-W27]]
+
 ### Monthly Recaps/
 สรุปเดือนรวมจากทุกกลุ่มแชท — ใช้ AI สังเคราะห์จาก weekly + daily summaries
 - [[Monthly Recaps/2026-05 พฤษภาคม|May 2026]] — เดือนแรกที่บันทึก (151 weekly + 426 daily)
+- [[Monthly Recaps/Friday-Monthly-Recap-May-2026|Friday-Monthly-Recap-May-2026]] — รายงานเต็มเดือน พ.ค. (คู่กับไฟล์ HTML สำหรับ print/share)
+- [[Monthly Recaps/2026-06 มิถุนายน|June 2026]]
 
 ### Themes/
 รายงานละเอียดแยกตามหมวด business — ใช้เป็น context สำหรับงานเฉพาะหัวข้อ
@@ -160,6 +169,7 @@ cd ~/my-ai-bot && npx wrangler d1 execute my-ai-bot-db --remote \
 ใช้:
 - `_scripts/friday_recap.sh` — main dispatcher
 - `_scripts/pull_summaries.py` — pull D1 → source markdown
+- [[_scripts/recap_prompts|recap_prompts]] — prompt templates ที่ Claude CLI ใช้สังเคราะห์ weekly/monthly
 - Claude CLI headless (`-p --permission-mode acceptEdits`) — synthesize
 - launchd job `com.friday.recap` (~/Library/LaunchAgents/com.friday.recap.plist)
 - Log → `_logs/recap.log`

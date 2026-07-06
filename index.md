@@ -2,7 +2,7 @@
 title: SecondBrain — Vault Index
 type: index
 status: live
-last_verified: 2026-06-21
+last_verified: 2026-07-06
 maintained_by: agent (per [[WIKI]])
 tags: [index, vault, catalog]
 ---
@@ -22,6 +22,7 @@ tags: [index, vault, catalog]
 - [[WIKI - Query Playbook]] — วิธีตอบ + ratchet · last_verified: 2026-06-21
 - [[WIKI - Lint Playbook]] — health check checklist · last_verified: 2026-06-21
 - [[WIKI - Page Templates]] — frontmatter + template · last_verified: 2026-06-21
+- [[Automation Setup]] — ติดตั้ง automation 4 ตัวบนเครื่องใหม่ (สำเนาสคริปต์ใน `20 Rules/_automation/`) · last_verified: 2026-07-06
 - [[กติกาการทำงาน]] — กติกาเก่า (ยังใช้ได้)
 - [[คู่มือ vault]] — คู่มือ vault เก่า
 
@@ -51,10 +52,10 @@ tags: [index, vault, catalog]
 - [[03 Resources/คู่มือ - ภาษาไทยสไลด์ผู้บริหาร|คู่มือ - ภาษาไทยสไลด์ผู้บริหาร]]
 - [[03 Resources/คู่มือ - สไลด์ HTML ปิดบังตัวเลข|คู่มือ - สไลด์ HTML ปิดบังตัวเลข]]
 - **[[03 Resources/Prompt Library/README|Prompt Library]]** ⭐ — 31 prompts ไทย 30+ หมวด · imported 2026-06-21
-- **[[03 Resources/People/Job Descriptions/README|Job Descriptions]]** — 5 JD (CS / Dev / HR / Sale-API / Sale-BOT)
-- `03 Resources/People/บ๊อบ.md` — profile placeholder
+- **[[03 Resources/People/README|People]]** — hub รวมคน (ใหม่ 2026-07-06) → [[03 Resources/People/Job Descriptions/README|Job Descriptions]] 5 JD + profiles
+- **[[03 Resources/COO/README|COO]]** — deliverables + speech scripts (ใหม่ 2026-07-06)
 - `03 Resources/Compliance/` — PDPA · Scanned Documents
-- `03 Resources/Clippings/` — Web clippings (auto-router target) · ดู [[WIKI]] §3.5
+- `03 Resources/Clippings/` — Web clippings (auto-router target) · ดู [[WIKI]] §3.5 · catalog: [[03 Resources/Clippings/README|Clippings README]] (ใหม่ 2026-07-06)
   - [[03 Resources/Clippings/Go with the Four EP.0 — COO Takeaways|Go with the Four EP.0 — COO Takeaways]] ⭐ — Live Commerce / demographics / AI doom-loop / leverage
   - CSM-SME Manager — AI Co-worker Setup Lab v4 (atom-csm.github.io)
   - คนยุคโบราณทำแผนที่ EP.398
@@ -65,6 +66,7 @@ tags: [index, vault, catalog]
 - `03 Resources/Tools/`
 
 ## 04 Archive
+- [[04 Archive/README|Archive README]] — manifest รวมทุกไฟล์ (ใหม่ 2026-07-06)
 - `04 Archive/Old Job Logs/` — 17 daily/weekly logs จากที่ทำงานเดิม
 - `04 Archive/Old Job POS/` — 5 POS notes (10.10.10.15) จากที่ทำงานเดิม
 - `04 Archive/Old Snippets/` — 3 code/shell snippets
@@ -75,18 +77,21 @@ tags: [index, vault, catalog]
 ## Brand KBs (per-brand knowledge base)
 
 ### Thunder Solution
-- [[Thunder Solution/หน้าหลัก]] — slip verification + LINE chatbot · เป้าปี ฿125M
+- [[Thunder Solution/หน้าหลัก]] — slip verification + LINE chatbot · เป้าปี ฿125M · last_verified: 2026-07-06
+- [[Thunder Solution/01-Overview|01-Overview]] · [[Thunder Solution/02-Products-Services|02-Products-Services]] · [[Thunder Solution/03-Revenue-Commission|03-Revenue-Commission]] — ใหม่ 2026-07-06
 - `Thunder Solution/Reports/` · `Documents/` · `Marketing/`
 
 ### EasySlip
-- [[EasySlip/หน้าหลัก]] — slip verification API
-- `EasySlip/Documents/`
+- [[EasySlip/หน้าหลัก]] — slip verification API · last_verified: 2026-07-06
+- [[EasySlip/01-Overview|01-Overview]] · [[EasySlip/02-API-Pricing-Packages|02-API-Pricing-Packages]] · [[EasySlip/03-Contracts-Revenue|03-Contracts-Revenue]] — ใหม่ 2026-07-06
+- `EasySlip/Contracts/` · `Documents/` · `Revenue/`
 
 ### EasyCRM
 - [[EasyCRM/หน้าหลัก]] · 9 detail pages 01-09 · LINE OA + Loyalty/CRM
 
 ### BoostSMS
 - [[BoostSMS/หน้าหลัก]] · 9 detail pages 01-09 · SMS marketing platform
+- `_knowledge/` K01–K15 ครบชุดแล้ว (K13-Deliverability · K14-Compliance · K15-AB-Testing เพิ่ม 2026-07-06)
 
 ### EasyBOT
 - [[EasyBOT/หน้าหลัก]] · 8 detail pages 01-08 · AI product + finance webapp
@@ -103,15 +108,14 @@ tags: [index, vault, catalog]
 - 40 images (Apple Notes extraction) — wiki-link `[[_attachments/<name>.png]]` ใช้ได้ทุกหน้า
 
 ## 10 Daily
-- [[10 Daily/...|Daily notes]] (auto)
-- `2026-06-21.md` (root, อาจย้ายเข้า 10 Daily)
+- ยังไม่ได้ใช้งาน — โฟลเดอร์ว่าง (เก็บโครงไว้ ถ้าเริ่มใช้ daily note ค่อยเปิด section นี้)
 
 ## 30 Claude Memory (auto-mirror, read-only)
 - `30 Claude Memory/MEMORY.md` — index ทุก memory pointer
 - ห้ามแก้ที่นี่ — แก้ที่ต้นทาง `~/.claude-warp/projects/-Users-aexgee/memory/`
 
 ## 40 Meeting Notes (auto-sync, read-only)
-- จาก repo `bbm8sus4/meeting-notes` · sync ทุก 30 นาที
+- จาก repo `bbm8sus4/meeting-notes` · sync ทุก 30 นาที · ยังมีตัวอย่างเดียว (pipeline พร้อม รอประชุมเข้าระบบ)
 
 ---
 

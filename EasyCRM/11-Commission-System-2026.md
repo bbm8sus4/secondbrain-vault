@@ -1,3 +1,14 @@
+---
+title: "ระบบค่าคอมมิชชั่น EasyCRM 2026"
+type: entity
+source: "EasyCRM/_assets/EasyCRM_Commission_Update_Summary_For_Secretary_Marketing.pdf + Google Sheet Final_EasyCRM_Commission"
+source_date: 2026-06-24
+imported: 2026-06-24T22:48:26
+last_verified: 2026-07-06
+status: live
+tags: [easycrm, brand]
+---
+
 # ระบบค่าคอมมิชชั่น EasyCRM 2026
 
 > สรุประบบคำนวณค่าคอมทีมขาย EasyCRM · อัปเดต 2026-06-24

@@ -38,7 +38,7 @@ URL params:
 - **Google Forms publish cache** — แก้ฟอร์มแล้วต้อง refresh หรือเปิดแท็บใหม่ (browser แท็บเก่าจะค้าง draft)
 - **Form title (in body) ≠ file name (Drive)** — user สามารถ rename title ใน Form editor ไม่กระทบ file name
 - **Duplicate forms รอบแรก** — `1hLEg4...` (learner-dup) + `1mLALx...` (owner-dup) — ยังไม่ถูกลบ (clasp token ไม่มีสิทธิ์), user ต้องลบเองที่ drive.google.com
-- **clasp run ใช้ไม่ได้** ต้องใช้ Web App + doGet workaround → ดู [[reference_clasp_apps_script_webapp]] ในหลัก memory
+- **clasp run ใช้ไม่ได้** ต้องใช้ Web App + doGet workaround → ดู [[clasp Apps Script + Web App workaround]] ในหลัก memory
 
 ## Reference workflow
 

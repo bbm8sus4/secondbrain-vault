@@ -1,3 +1,14 @@
+---
+title: "05 · Workflow & Onboarding"
+type: entity
+source: "EasyCRM/_assets/EasyCRM-Guide.html (brand KB session 2026-06)"
+source_date: 2026-06-13
+imported: 2026-06-13T22:49:35
+last_verified: 2026-07-06
+status: live
+tags: [easycrm, brand]
+---
+
 # 05 · Workflow & Onboarding
 
 ## Flow ลงทะเบียนลูกค้าใหม่ (ครบวงจร)

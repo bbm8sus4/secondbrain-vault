@@ -15,6 +15,27 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-07-06 21:45] lint | vault cleanup sprint — ปิด dead links + orphans ทั้งชุด
+- แก้ `~/bin/vault-health.py`: resolve ไฟล์แนบทุกชนิด (png/pdf/xlsx/html) + escaped pipe → false positive หายไป 56 จุด (96→40)
+- ปิด dead links จริง: KuanGolf README (folder links), Clippings author links ×11, memory-slug links ×4, `00 Inbox/อบรม AI` ลิงก์ `EasySlip`, escaped-quote link ใน Go with the Four Takeaways, memory ต้นทาง reference_cs_announcement_framework ×3
+- ลด orphans: สร้าง `04 Archive/README`, `03 Resources/Clippings/README`, `03 Resources/COO/README`, `03 Resources/People/README` + ลิงก์เพิ่มใน `Friday/README`, `AI Workshop/README`, `แผนที่ - คู่มือ`, หน้าหลักแบรนด์
+- retrofit frontmatter 30 ไฟล์ (EasyCRM/EasyBOT/BoostSMS ทุกหน้า + KuanGolf README) — additive only
+- rename: snippet `sed -i 's_^PasswordAuthentication…'` → `04 Archive/Old Snippets/SSH เปิด PasswordAuthentication (sed snippet).md` (ตัว `^` ในชื่อทำ wikilink พัง)
+- delete: `_files/brand.md` (ไฟล์ 0 byte ไม่มีใครอ้างถึง)
+- agent: Claude Code (session 2026-07-06)
+
+## [2026-07-06 21:45] ingest | Thunder Solution + EasySlip KB (6 หน้าใหม่)
+- Thunder: 01-Overview · 02-Products-Services · 03-Revenue-Commission / EasySlip: 01-Overview · 02-API-Pricing-Packages · 03-Contracts-Revenue
+- source: 30 Claude Memory (โปรเจกต์/MOU/pricing) + เอกสารใน Reports/Documents/Contracts/Revenue · หน้าหลักทั้ง 2 แบรนด์ได้ frontmatter + ลิงก์ครบ
+- ⚠️ ต้อง verify: สถานะ Gen QR ปัจจุบัน · สัดส่วนรายได้ EasySlip (60% vs 54.3%) · สถานะทวง KBank ~884K
+
+## [2026-07-06 21:45] ingest | BoostSMS K13-K15 (_knowledge ครบชุด)
+- K13-Deliverability-DLR · K14-Compliance-AntiSpam · K15-AB-Testing-SMS — ปิด dead links 14 จุด · agent synthesis (ความรู้ทั่วไป ไม่มีตัวเลขแต่ง)
+
+## [2026-07-06 21:45] decision | version automation เข้า vault (พ้น single-machine)
+- สคริปต์ 5 ตัว + launchd plist 4 ตัว → `20 Rules/_automation/` + คู่มือติดตั้ง [[Automation Setup]]
+- อัพเดต หน้าหลัก/index: 10 Daily = ยังไม่ใช้งาน · 40 Meeting Notes = pipeline พร้อมแต่ของยังน้อย
+
 ## [2026-07-04 19:20] auto-ingest | inbox sweep (1 file(s))
 - routed `สอนใช้ Claude AI สำหรับผู้เริ่มต้น (2026) – วิธีใช้งาน Claude AI ทีละขั้นตอน` → `03 Resources/Clippings/สอนใช้ Claude AI สำหรับผู้เริ่มต้น (2026) – วิธีใช้งาน Claude AI ทีละขั้นตอน.md` (rule: clippings)
 - agent: `~/bin/inbox-auto-ingest.py` (rule-based, no AI)

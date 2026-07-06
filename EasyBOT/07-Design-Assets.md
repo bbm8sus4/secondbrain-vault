@@ -1,3 +1,14 @@
+---
+title: "07 — Design & Assets"
+type: entity
+source: "~/Desktop/Business/EasyBOT/ via _source symlink (brand KB session 2026-06)"
+source_date: 2026-06-13
+imported: 2026-06-13T22:49:35
+last_verified: 2026-07-06
+status: live
+tags: [easybot, brand]
+---
+
 # 07 — Design & Assets
 
 > Logo · FB cover · Graphic Brief 30 วัน · ChatGPT prompts

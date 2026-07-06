@@ -2,7 +2,7 @@
 title: "สอนใช้ Claude AI สำหรับผู้เริ่มต้น (2026) – วิธีใช้งาน Claude AI ทีละขั้นตอน"
 source: "https://www.youtube.com/watch?v=XlNp51J2ho8"
 author:
-  - "[[Darrel Wilson ภาษาไทย]]"
+  - "Darrel Wilson ภาษาไทย"
 published: 2026-06-03
 created: 2026-07-04
 description: "ในบทเรียน Claude AI นี้ ผมจะแสดงให้คุณเห็นวิธีใช้งาน Claude AI แบบทีละขั้นตอน แม้ว่าคุณจะเป็นมือใหม่ก็ตาม Claude จาก Anthropic เป็นหนึ่งในเครื่องมือ AI ที่ดีที่สุดในปัจจุบัน แต่หลายคนยังไม่รู้จักมันเล"

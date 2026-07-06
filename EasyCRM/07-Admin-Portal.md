@@ -1,3 +1,14 @@
+---
+title: "07 · Admin Portal (ระบบหลังบ้าน)"
+type: entity
+source: "EasyCRM/_assets/EasyCRM-Guide.html (brand KB session 2026-06)"
+source_date: 2026-06-13
+imported: 2026-06-13T22:49:35
+last_verified: 2026-07-06
+status: live
+tags: [easycrm, brand]
+---
+
 # 07 · Admin Portal (ระบบหลังบ้าน)
 
 > **URL หลัก:** https://easycrm-two.vercel.app/login

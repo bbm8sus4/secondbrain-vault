@@ -1,3 +1,14 @@
+---
+title: "04 — Funnel Marketing Plan (7 วัน)"
+type: entity
+source: "BoostSMS/_assets/ source files (brand KB session 2026-06)"
+source_date: 2026-06-13
+imported: 2026-06-13T22:49:35
+last_verified: 2026-07-06
+status: live
+tags: [boostsms, brand]
+---
+
 # 04 — Funnel Marketing Plan (7 วัน)
 
 **Core Message:** เปลี่ยนฐานเบอร์ลูกค้าเก่า ให้กลับมาเป็นยอดขาย ด้วย SMS ที่ส่งไว วัดผลได้ และใช้งานง่าย

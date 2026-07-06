@@ -2,7 +2,7 @@
 title: "สอน Claude Code ช่วยเขียนโค้ด 99% | borntodev"
 source: "https://www.youtube.com/watch?v=bcWBYh3hz4U"
 author:
-  - "[[BorntoDev]]"
+  - "BorntoDev"
 published: 2026-06-25
 created: 2026-07-02
 description: "😍 สำหรับใครที่ไม่มีพื้นฐาน Programing มาก่อน เป็นเพียงคนทั่วไปที่อยากเอา Claude Code มาช่วยทำงาน ห้ามพลาดคลิปนี้ เพราะแอดเปรมจะพาทุกคนมาทำความรู้จัก และปูพื้นฐานการใช้งาน Claude Code ตั้งแต่เลเวล 0 พ"

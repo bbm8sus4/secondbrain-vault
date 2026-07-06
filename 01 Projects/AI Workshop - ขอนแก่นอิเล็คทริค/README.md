@@ -1,3 +1,11 @@
+---
+title: "AI Workshop — บ.ขอนแก่นอิเล็คทริค"
+type: project
+status: live
+last_verified: 2026-07-06
+tags: [project, ai-workshop, khonkaen, index]
+---
+
 # AI Workshop — บ.ขอนแก่นอิเล็คทริค
 
 **ผู้ว่าจ้าง:** คุณป๊อบ (เจ้าของบริษัท)
@@ -44,6 +52,21 @@
 | `Files/Dashboard/` | `AI-Workshop-รวม.html` (3 แท็บ — main) + Dashboard / OrgStructure / Rooms.html | ส่งวิทยากร · source ของ `khonkaen-ai-workshop.pages.dev` |
 | `Files/Forms/` | `1_แบบสอบถามเจ้าของ.md` · `2_แบบสำรวจผู้เรียน.md` · `3_สร้างGoogleForm_AppsScript.gs` · `4_Aidebate_Gaps.md` · `FORM_URLS.md` + `clasp-deploy/` | เนื้อหาฟอร์ม + Apps Script (clasp deploy ตัวจริงยังอยู่ working dir) |
 | `Files/_archive/` | `*.pre-*.bak.html` · `learner_recovered.8.bak.csv` | ก่อน-หลัง Typhoon/collapse + CSV รุ่น 8 คน (ก่อน recover เพิ่ม 3 คน) |
+
+## ไฟล์ .md ใน Files/ (ลิงก์ตรง เปิดใน vault ได้เลย)
+
+**Curriculum:**
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Curriculum/4_แบบประเมินหลังอบรม_AI_Workshop|4_แบบประเมินหลังอบรม]] — ฟอร์มประเมินหลังจบ workshop
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Curriculum/BeforeAfter_Typhoon|BeforeAfter_Typhoon]] — before→after เกลาภาษาไทยด้วย Typhoon (61/121 strings)
+
+**Forms:**
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/1_แบบสอบถามเจ้าของธุรกิจ_NeedsAnalysis|1_แบบสอบถามเจ้าของธุรกิจ (Needs Analysis)]]
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/2_แบบสำรวจผู้เรียน_AI_Workshop|2_แบบสำรวจผู้เรียน]]
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/4_Aidebate_Gaps_แบบสำรวจ|4_Aidebate Gaps แบบสำรวจ]] — gaps จากรอบ aidebate
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/FORM_URLS|FORM_URLS]] — ลิงก์ Google Form ตัวจริงทั้งหมด
+
+**Slides:**
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part1-Claude-Basics|Part1-Claude-Basics]] — สไลด์พาร์ทแรก พื้นฐาน Claude
 
 ## Pipeline ที่ใช้ทำ project นี้
 

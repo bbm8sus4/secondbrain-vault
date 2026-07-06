@@ -1,3 +1,14 @@
+---
+title: "03 — Sales Commission Structure"
+type: entity
+source: "BoostSMS/_assets/ source files (brand KB session 2026-06)"
+source_date: 2026-06-13
+imported: 2026-06-13T22:49:35
+last_verified: 2026-07-06
+status: live
+tags: [boostsms, brand]
+---
+
 # 03 — Sales Commission Structure
 
 ## 1. เงินเดือนฐาน

@@ -2,7 +2,7 @@
 title: "วิธีสร้างภาพให้สวย อัปเดต AI ตัวใหม่ … ผลลัพธ์เกินคาด!!! สวย ง่าย เร็ว | ChatGPT Images 2.0"
 source: "https://www.youtube.com/watch?v=nAwlwSgedwQ"
 author:
-  - "[[Readyplanet]]"
+  - "Readyplanet"
 published: 2026-05-08
 created: 2026-06-25
 description: "ลองสร้างภาพ Ads, Thumbnail, Infographic และงาน Visual ด้วย ChatGPT Images 2.0 จาก OpenAI ภายในเวลาไม่ถึง 2 นาที ได้ทั้งภาพ ข้อความ และ Layout ที่พร้อมนำไปใช้งานจริงในคลิปนี้ Readyplanet Shift จะพาไป"

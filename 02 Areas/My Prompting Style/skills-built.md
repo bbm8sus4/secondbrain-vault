@@ -110,7 +110,7 @@ export WHISPER_LANG=en
 - Thinking mode เปิดตลอด (คิดก่อนตอบ)
 - Effort สูงสุด (ไม่ประหยัด token)
 
-**คู่กับ feedback memory:** [[feedback_vibe_hacker_mode]] Standing Order #8 "Take initiative, don't wait" — Claude ทำต่อโดยไม่หยุดถาม เว้นแต่งานเสี่ยงจริง ๆ
+**คู่กับ feedback memory:** [[กติกา - โหมดแฮกเกอร์|feedback_vibe_hacker_mode]] Standing Order #8 "Take initiative, don't wait" — Claude ทำต่อโดยไม่หยุดถาม เว้นแต่งานเสี่ยงจริง ๆ
 
 ---
 

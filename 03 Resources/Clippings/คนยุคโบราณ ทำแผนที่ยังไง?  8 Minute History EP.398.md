@@ -2,7 +2,7 @@
 title: "คนยุคโบราณ ทำแผนที่ยังไง? | 8 Minute History EP.398"
 source: "https://www.youtube.com/watch?v=NMW_9OwOSsY"
 author:
-  - "[[THE STANDARD PODCAST]]"
+  - "THE STANDARD PODCAST"
 published: 2026-05-08
 created: 2026-06-21
 description: "แผนที่โลกไม่ได้ถูกสร้างขึ้นในวันเดียว แต่มันคือการสะสมทั้ง 'ความรู้' และ 'ความกล้า' ของมนุษย์มานับพันปี8 Minute History เอพิโสดนี้ ขอพาทุกคนย้อนเวลากลับไปศึกษาว่า ในวันที่โลกเรายังไม่มีเครื่องบิน ไม"

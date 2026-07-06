@@ -1,3 +1,14 @@
+---
+title: "01 — EasyBOT Overview"
+type: entity
+source: "~/Desktop/Business/EasyBOT/ via _source symlink (brand KB session 2026-06)"
+source_date: 2026-06-13
+imported: 2026-06-13T22:49:35
+last_verified: 2026-07-06
+status: live
+tags: [easybot, brand]
+---
+
 # 01 — EasyBOT Overview
 
 > บอทป้องกันกลุ่ม LINE — **13 ระบบ + 3 ชั้น Member Control** — เริ่ม ฿149/เดือน

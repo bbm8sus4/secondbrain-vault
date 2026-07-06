@@ -138,4 +138,4 @@ tags: [kuangolf, strategy, analysis, decision-memo]
 - [[README]] — overview ของ project นี้
 - [[Product]] — ฟีเจอร์ + ราคา (สำหรับอ้างอิงตัวเลข)
 - [[Marketing]] — 30-day brief ที่ยังไม่ได้รัน
-- [[project_thunder_solution]] — บริษัทแม่
+- [[โปรเจกต์ - Thunder Solution]] — บริษัทแม่

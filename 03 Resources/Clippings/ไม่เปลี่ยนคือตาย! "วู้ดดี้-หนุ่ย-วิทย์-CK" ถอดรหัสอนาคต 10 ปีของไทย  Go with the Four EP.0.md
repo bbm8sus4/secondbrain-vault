@@ -2,7 +2,7 @@
 title: "ไม่เปลี่ยนคือตาย! \"วู้ดดี้-หนุ่ย-วิทย์-CK\" ถอดรหัสอนาคต 10 ปีของไทย | Go with the Four EP.0"
 source: "https://www.youtube.com/watch?v=DJqhivt67pg"
 author:
-  - "[[WoodyWorld]]"
+  - "WoodyWorld"
 published: 2026-03-13
 created: 2026-06-21
 description: "โลกใบใหม่ ไร้ความปรานี! Go with the Four EP.0 เปิดโต๊ะต้อนรับการรวมตัวครั้งสำคัญของ \"วู้ดดี้ - หนุ่ย - วิทย์ - CK\" 4 คน 4 วงการ ที่แม้จะต่างเจเนอเรชัน แต่มีเป้าหมายเดียวกันคือการชวนทุกคนมา \"ตั้งคำ"
