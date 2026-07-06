@@ -15,6 +15,26 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-07-06 22:00] query | ratchet clippings (5 หน้า synthesis)
+- read: clippings 5 ไฟล์ (ChatGPT Images 2.0 ×2, Four Thousand Weeks, แผนที่โลก 8MH, สอนใช้ Claude AI)
+- filed_back: [[03 Resources/Clippings/Synthesis/ChatGPT Images 2.0 สร้างภาพการตลาด — Takeaways|ChatGPT Images 2.0 สร้างภาพการตลาด — Takeaways]]
+- filed_back: [[03 Resources/Clippings/Synthesis/10+ Prompts ChatGPT Image 2.0 (KEM LIFE) — Takeaways|10+ Prompts ChatGPT Image 2.0 (KEM LIFE) — Takeaways]]
+- filed_back: [[03 Resources/Clippings/Synthesis/สอนใช้ Claude AI มือใหม่ (Darrel Wilson) — Takeaways|สอนใช้ Claude AI มือใหม่ (Darrel Wilson) — Takeaways]]
+- filed_back: [[03 Resources/Clippings/Synthesis/Four Thousand Weeks (MTM EP.2684) — Takeaways|Four Thousand Weeks (MTM EP.2684) — Takeaways]]
+- filed_back: [[03 Resources/Clippings/Synthesis/ประวัติแผนที่โลก (8MH EP.398) — Takeaways|ประวัติแผนที่โลก (8MH EP.398) — Takeaways]] (ไม่มีประเด็น COO — จดเหตุผลไว้)
+- อัพเดต [[03 Resources/Clippings/README]] เพิ่ม section Synthesis ลิงก์ครบทุกหน้า
+- agent: Claude Code (session 2026-07-06)
+
+## [2026-07-06 22:10] decision | upgrade รอบ 2 — ระบบดูแลตัวเอง (10 ข้อ)
+- **sync**: เพิ่ม pull --rebase + push (พบ push fail เงียบมาตั้งแต่บ่าย — origin ค้าง) · รวม memory จาก 4 harness (warp/claude/cmux/ghostty) 74→81 ไฟล์ dedup ตาม mtime · ดัชนีความจำต่อท้าย section "จาก harness อื่น" อัตโนมัติ
+- **auto-router**: ถอด wikilink ใน frontmatter clippings — ปิดต้นตอ dead link จาก Web Clipper ถาวร
+- **vault-health v2**: เช็คเพิ่ม frontmatter ขาด / หน้าเก่า >90 วัน / คิว `ต้อง verify` / launchd ตาย / push ค้าง + แจ้ง Telegram เมื่อมีปัญหา (ผ่านบอท ccgram, ทดสอบส่งจริงแล้ว HTTP 200)
+- **ratchet loop ใหม่**: `com.aexgee.ratchet-clippings` อาทิตย์ 19:00 — claude headless สรุป clippings เป็น Takeaways สูงสุด 5 ชิ้น/รอบ ลง `Clippings/Synthesis/`
+- **Obsidian**: browse.base เป็น dashboard จริง 4 views · templates 5 ตัวใน `20 Rules/_templates` + ตั้ง core plugin · graph colorGroups 12 กลุ่มแบบ path: + เปิด tags
+- **triage inbox เกลี้ยง**: อบรมขอนแก่น → `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/` · โครงคอร์ส Claude → `03 Resources/AI Workshops/`
+- ⚠️ พบว่า vault-capture bot ไม่เคยทำงานจริง (token ว่าง) — บันทึกใน [[Automation Setup]] รอพี่สร้างบอท
+- agent: Claude Code (session 2026-07-06)
+
 ## [2026-07-06 21:45] lint | vault cleanup sprint — ปิด dead links + orphans ทั้งชุด
 - แก้ `~/bin/vault-health.py`: resolve ไฟล์แนบทุกชนิด (png/pdf/xlsx/html) + escaped pipe → false positive หายไป 56 จุด (96→40)
 - ปิด dead links จริง: KuanGolf README (folder links), Clippings author links ×11, memory-slug links ×4, `00 Inbox/อบรม AI` ลิงก์ `EasySlip`, escaped-quote link ใน Go with the Four Takeaways, memory ต้นทาง reference_cs_announcement_framework ×3

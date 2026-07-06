@@ -55,7 +55,18 @@ if [[ -d "$VAULT/.git" ]]; then
 
   # 4) push to off-machine backup (private GitHub). Pushes any unpushed commits, so
   #    a commit stranded by an earlier offline run gets flushed on the next sync.
+  #    Rebase first: origin can move ahead (other machine / web edit) and a plain
+  #    push then fails non-fast-forward forever — that stall is exactly what we hit 2026-07-06.
   if /usr/bin/git -C "$VAULT" remote get-url origin >/dev/null 2>&1; then
+    /usr/bin/git -C "$VAULT" fetch --quiet origin 2>>"$LOG" || log "WARN: fetch failed (offline?)"
+    if [[ -n "$(/usr/bin/git -C "$VAULT" log 'HEAD..@{u}' --oneline 2>/dev/null)" ]]; then
+      if /usr/bin/git -C "$VAULT" pull --rebase --autostash --quiet 2>>"$LOG"; then
+        log "rebased onto origin (remote had new commits)"
+      else
+        /usr/bin/git -C "$VAULT" rebase --abort 2>/dev/null
+        log "ERROR: rebase onto origin failed — manual merge needed, not pushing"
+      fi
+    fi
     if [[ -n "$(/usr/bin/git -C "$VAULT" log '@{u}..HEAD' --oneline 2>/dev/null)" ]]; then
       if /usr/bin/git -C "$VAULT" push --quiet origin HEAD 2>>"$LOG"; then
         log "pushed to origin"

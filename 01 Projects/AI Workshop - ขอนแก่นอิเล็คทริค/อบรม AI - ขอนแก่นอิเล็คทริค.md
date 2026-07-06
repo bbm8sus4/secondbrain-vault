@@ -4,6 +4,8 @@ date: 2026-06-30
 tags: [อบรม, AI-workshop, Claude, needs-analysis, ขอนแก่นอิเล็คทริค]
 status: กำลังเตรียม / รอข้อมูลลูกค้า
 type: project
+source: 00 Inbox capture 2026-06-30 (triage 2026-07-06)
+last_verified: 2026-07-06
 ---
 
 # อบรม AI — บ.ขอนแก่นอิเล็คทริค

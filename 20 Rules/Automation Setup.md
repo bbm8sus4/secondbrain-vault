@@ -6,7 +6,7 @@ source_date: 2026-07-06
 imported: 2026-07-06T21:30:00
 last_verified: 2026-07-06
 status: live
-tags: [schema, automation, launchd, setup, portability]
+tags: [schema, automation, launchd, setup, portability, alerts]
 related:
   - "[[WIKI]]"
   - "[[คู่มือ vault]]"
@@ -22,10 +22,11 @@ related:
 
 | Job (launchd label) | สคริปต์ | ความถี่ | ทำอะไร |
 |---|---|---|---|
-| `com.aexgee.memory-vault-sync` | `sync-memory-to-vault.py` | ทุก 30 นาที | mirror memory จาก `~/.claude-warp/projects/-Users-aexgee/memory/` → `30 Claude Memory/` (แปลชื่อเป็นไทย) + git pull/rsync meeting-notes → `40 Meeting Notes/` + git auto-commit vault |
-| `com.aexgee.inbox-auto-ingest` | `inbox-auto-ingest.py` | ทุก 3 นาที | route ไฟล์ใน `00 Inbox/` ตาม frontmatter tag (เช่น `clippings` → `03 Resources/Clippings/`) + append `log.md` |
-| `com.aexgee.vault-capture` | `telegram-vault-capture.py` | ต่อเนื่อง | รับข้อความ/รูปจากบอท Telegram → `00 Inbox/Telegram <วันที่>.md` ภายใน 1 นาที |
-| `com.aexgee.vault-health` | `vault-health.py` | ทุกวัน 09:00 | สแกน dead links / orphans / mirror drift → เขียน `00 Inbox/_vault-health.md` |
+| `com.aexgee.memory-vault-sync` | `sync-memory-to-vault.py` (ผ่าน `.sh`) | ทุก 30 นาที | รวม memory จาก **ทุก harness** (`.claude-warp` หลัก + `.claude` / `.claude-cmux` / `.claude-ghostty`, slug ซ้ำเอาไฟล์ใหม่สุด) → `30 Claude Memory/` (ชื่อไทย) + rsync meeting-notes → `40 Meeting Notes/` + git commit + **pull --rebase + push** ขึ้น GitHub ทุกรอบ |
+| `com.aexgee.inbox-auto-ingest` | `inbox-auto-ingest.py` | ทุก 3 นาที | route ไฟล์ใน `00 Inbox/` ตาม frontmatter tag + ถอด wikilink ใน frontmatter ของ clippings (กัน dead link จาก Web Clipper) + append `log.md` |
+| `com.aexgee.vault-capture` | `telegram-vault-capture.py` | ต่อเนื่อง | รับข้อความ/รูปจากบอท Telegram → `00 Inbox/` — **⚠️ ยังไม่ทำงานจริง: `TELEGRAM_BOT_TOKEN` ใน `~/.vault-capture.env` ว่าง** ต้องสร้างบอทแยก (ห้ามใช้ token ของ ccgram — จะแย่ง getUpdates กัน) |
+| `com.aexgee.vault-health` | `vault-health.py` | ทุกวัน 09:00 | v2: dead links / orphans / mirror drift (นับทุก harness) / frontmatter ขาด / หน้าเก่า >90 วัน / คิว `ต้อง verify` / launchd ตาย / push ค้าง → เขียน `00 Inbox/_vault-health.md` + **แจ้ง Telegram เมื่อมีปัญหา** (ส่งผ่านบอท ccgram อ่าน token จาก `~/.ccgram/.env` แบบ send-only) |
+| `com.aexgee.ratchet-clippings` | `ratchet-clippings.sh` | อาทิตย์ 19:00 | รัน claude headless สรุป clippings ใหม่ (สูงสุด 5 ชิ้น/รอบ) เป็นหน้า Takeaways ใน `Clippings/Synthesis/` · state ที่ `Clippings/.ratchet-done.txt` |
 
 ## ติดตั้งบนเครื่องใหม่ (5 ขั้น)
 
@@ -46,7 +47,7 @@ EOF
 
 # 4. ลง launchd jobs
 cp ~/SecondBrain/20\ Rules/_automation/com.aexgee.*.plist ~/Library/LaunchAgents/
-for j in inbox-auto-ingest memory-vault-sync vault-capture vault-health; do
+for j in inbox-auto-ingest memory-vault-sync vault-capture vault-health ratchet-clippings; do
   launchctl load ~/Library/LaunchAgents/com.aexgee.$j.plist
 done
 

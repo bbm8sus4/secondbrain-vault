@@ -27,6 +27,7 @@ tags: [project, ai-workshop, khonkaen, index]
 
 ## โครงสร้างไฟล์
 
+- [[อบรม AI - ขอนแก่นอิเล็คทริค|Brief + ต้นทุน (triage จาก Inbox 2026-06-30)]] — ภาพรวมลูกค้า, หลักสูตรที่เจ้าของขอ, ต้นทุนห้อง/อาหาร/Claude Max แชร์แอค
 - [[05-INCIDENT-ข้อมูลหาย-กู้คืน]] — ⚠️ บทเรียน clearAllItems ทับฟอร์มมี response + วิธีกู้ผ่าน Forms REST API (สำคัญ อ่านก่อนแก้ฟอร์ม)
 - [[01-Forms-Setup]] — Apps Script + Form IDs + Web App deployment
 - [[02-Survey-Content]] — เนื้อหาฟอร์มทั้ง 2 (เจ้าของ + ผู้เรียน)

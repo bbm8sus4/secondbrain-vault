@@ -74,6 +74,20 @@ def update_last_verified(path: Path):
     path.write_text(text, encoding="utf-8")
 
 
+def strip_frontmatter_wikilinks(path: Path):
+    """Web Clipper writes `author: "[[Channel]]"` — a wikilink to a page that will
+    never exist, so every clip ships a fresh dead link. Flatten [[X]] / [[X|Y]] to
+    plain text inside the frontmatter block only (body links are left alone)."""
+    text = path.read_text(encoding="utf-8")
+    m = re.match(r"^(---\n)(.*?)(\n---)", text, re.DOTALL)
+    if not m:
+        return
+    fm = m.group(2)
+    new_fm = re.sub(r"\[\[([^\]|]+?)(?:\|[^\]]+)?\]\]", r"\1", fm)
+    if new_fm != fm:
+        path.write_text(text[: m.start(2)] + new_fm + text[m.end(2):], encoding="utf-8")
+
+
 def append_log(now: datetime, moves):
     """Insert log entry after the YAML header, before existing entries."""
     if not moves:
@@ -130,6 +144,12 @@ def main():
         except Exception as e:
             print(f"warn: could not update last_verified for {dest.name}: {e}",
                   file=sys.stderr)
+        if route_name == "clippings":
+            try:
+                strip_frontmatter_wikilinks(dest)
+            except Exception as e:
+                print(f"warn: could not strip fm wikilinks for {dest.name}: {e}",
+                      file=sys.stderr)
         rel_dest = str(dest.relative_to(VAULT))
         moves.append((path.stem, route_name, rel_dest))
         print(f"[{now:%H:%M:%S}] routed: {path.name} -> {rel_dest}")

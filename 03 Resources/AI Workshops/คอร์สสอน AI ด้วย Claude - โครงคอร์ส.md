@@ -1,5 +1,8 @@
 ---
+title: คอร์สสอน AI ด้วย Claude — โครงคอร์ส
 created: 2026-06-30
+source: 00 Inbox capture 2026-06-30 (triage 2026-07-06)
+last_verified: 2026-07-06
 type: course-plan
 status: draft
 tags: [คอร์ส, AI, claude, การสอน]

@@ -38,5 +38,13 @@ tags: [resource, clippings, index]
 
 ---
 
-**หน้าสังเคราะห์ (synthesis) ที่มีแล้ว:**
-- [[03 Resources/Clippings/Go with the Four EP.0 — COO Takeaways|Go with the Four EP.0 — COO Takeaways]] ครอบ raw transcript ของ WoodyWorld แล้ว — อ่านหน้าสรุปก่อน ค่อยเปิด transcript ถ้าต้องการรายละเอียด
+## Synthesis
+
+> หน้าสังเคราะห์ (ratchet) จาก clipping — อ่านหน้าสรุปก่อน ค่อยเปิด raw transcript ถ้าต้องการรายละเอียด
+
+- [[03 Resources/Clippings/Go with the Four EP.0 — COO Takeaways|Go with the Four EP.0 — COO Takeaways]] — ครอบ raw transcript ของ WoodyWorld
+- [[03 Resources/Clippings/Synthesis/ChatGPT Images 2.0 สร้างภาพการตลาด — Takeaways|ChatGPT Images 2.0 สร้างภาพการตลาด — Takeaways]] — ครอบคลิป Readyplanet: สูตร prompt มีโครงสร้าง + มุมบริหาร "ความเร็วในการลองไอเดีย"
+- [[03 Resources/Clippings/Synthesis/10+ Prompts ChatGPT Image 2.0 (KEM LIFE) — Takeaways|10+ Prompts ChatGPT Image 2.0 (KEM LIFE) — Takeaways]] — ครอบคลิป KEM LIFE: URL→ad/infographic ใน prompt เดียว, คุมสีแบรนด์ด้วย hex
+- [[03 Resources/Clippings/Synthesis/สอนใช้ Claude AI มือใหม่ (Darrel Wilson) — Takeaways|สอนใช้ Claude AI มือใหม่ (Darrel Wilson) — Takeaways]] — ครอบ tutorial Claude มือใหม่: meta-prompting, Projects/Skills/Connectors, เหมาะเป็นสื่ออบรมทีม
+- [[03 Resources/Clippings/Synthesis/Four Thousand Weeks (MTM EP.2684) — Takeaways|Four Thousand Weeks (MTM EP.2684) — Takeaways]] — ครอบ podcast MTM: Efficiency Trap, limit WIP ≤3, strategic failure สำหรับผู้บริหาร
+- [[03 Resources/Clippings/Synthesis/ประวัติแผนที่โลก (8MH EP.398) — Takeaways|ประวัติแผนที่โลก (8MH EP.398) — Takeaways]] — ไม่มีประเด็นสำหรับ COO (ประวัติศาสตร์ล้วน)

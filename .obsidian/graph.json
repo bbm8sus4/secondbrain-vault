@@ -1,66 +1,94 @@
 {
   "collapse-filter": false,
   "search": "",
-  "showTags": false,
+  "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "EasyCRM",
+      "query": "path:\"Thunder Solution\"",
       "color": {
         "a": 1,
-        "rgb": 9096447
+        "rgb": 3900150
       }
     },
     {
-      "query": "KuanGolf",
+      "query": "path:\"EasySlip\"",
       "color": {
         "a": 1,
-        "rgb": 4320349
+        "rgb": 15485081
       }
     },
     {
-      "query": "Thunder",
+      "query": "path:\"EasyCRM\"",
       "color": {
         "a": 1,
-        "rgb": 4093428
+        "rgb": 9133302
       }
     },
     {
-      "query": "BoostSMS",
+      "query": "path:\"EasyBOT\"",
       "color": {
         "a": 1,
-        "rgb": 16762670
+        "rgb": 16096779
       }
     },
     {
-      "query": "Prompt",
+      "query": "path:\"BoostSMS\"",
       "color": {
         "a": 1,
-        "rgb": 16749716
+        "rgb": 16347926
       }
     },
     {
-      "query": "Friday",
+      "query": "path:\"Friday\"",
       "color": {
         "a": 1,
-        "rgb": 16728642
+        "rgb": 1096065
       }
     },
     {
-      "query": "Clippings",
+      "query": "path:\"01 Projects/KuanGolf\"",
       "color": {
         "a": 1,
-        "rgb": 5701826
+        "rgb": 1357990
       }
     },
     {
-      "query": "Repo",
+      "query": "path:\"01 Projects\"",
       "color": {
         "a": 1,
-        "rgb": 16449791
+        "rgb": 10741301
+      }
+    },
+    {
+      "query": "path:\"30 Claude Memory\"",
+      "color": {
+        "a": 1,
+        "rgb": 2282478
+      }
+    },
+    {
+      "query": "path:\"20 Rules\"",
+      "color": {
+        "a": 1,
+        "rgb": 15680580
+      }
+    },
+    {
+      "query": "path:\"03 Resources/Clippings\"",
+      "color": {
+        "a": 1,
+        "rgb": 9741240
+      }
+    },
+    {
+      "query": "path:\"03 Resources\"",
+      "color": {
+        "a": 1,
+        "rgb": 15235577
       }
     }
   ],

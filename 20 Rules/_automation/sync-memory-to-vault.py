@@ -10,8 +10,14 @@ Thai node name is resolved in this order:
 So a brand-new memory is never "broken": it shows up with its index title until
 someone (optionally) gives it a prettier Thai name in the sidecar.
 
-Source of truth stays English at ~/.claude-warp/.../memory/ — edit there, never in the vault.
+Source of truth stays English in the harness memory dirs — edit there, never in the vault.
 The vault copy is disposable: this script wipes and rewrites "30 Claude Memory" each run.
+
+Multi-harness: Claude Code runs under several config dirs on this machine
+(warp / ghostty / cmux / plain .claude), each with its own memory store. All of
+them are merged into the one mirror; when the same slug exists in several dirs,
+the newest mtime wins (logged). The canonical MEMORY.md index comes from SRC
+(warp) — secondary dirs' MEMORY.md files only contribute display-name titles.
 """
 import json
 import re
@@ -20,7 +26,12 @@ import traceback
 from datetime import datetime
 from pathlib import Path
 
-SRC = Path.home() / ".claude-warp/projects/-Users-aexgee/memory"
+SRC = Path.home() / ".claude-warp/projects/-Users-aexgee/memory"   # primary (canonical index + sidecar)
+EXTRA_SRCS = [                                                     # merged in, newest-mtime wins on clash
+    Path.home() / ".claude/projects/-Users-aexgee/memory",
+    Path.home() / ".claude-cmux/projects/-Users-aexgee/memory",
+    Path.home() / ".claude-ghostty/projects/-Users-aexgee/memory",
+]
 DST = Path.home() / "SecondBrain/30 Claude Memory"
 SIDECAR = SRC / ".display-names.json"
 LOG = Path.home() / "Library/Logs/secondbrain-sync.log"
@@ -73,6 +84,27 @@ def memory_md_titles(src_dir: Path) -> dict:
     return titles
 
 
+def merged_memory_files():
+    """One .md per unique stem across all harness memory dirs; newest mtime wins.
+    MEMORY.md (the index) is always taken from the primary SRC only."""
+    chosen = {}
+    for d in [SRC] + EXTRA_SRCS:
+        if not d.is_dir():
+            continue
+        for p in d.glob("*.md"):
+            if not p.is_file():
+                continue
+            if p.name == INDEX_SRC and d != SRC:
+                continue  # secondary indexes only feed display-name titles
+            prev = chosen.get(p.stem)
+            if prev is None:
+                chosen[p.stem] = p
+            elif p.stat().st_mtime > prev.stat().st_mtime:
+                log(f"merge: '{p.stem}' — {p.parent.parts[-4]} newer than {prev.parent.parts[-4]}, using it")
+                chosen[p.stem] = p
+    return sorted(chosen.values(), key=lambda p: p.stem)
+
+
 def build_resolver(src_dir: Path):
     """Return (resolve_fn, fallback_list). resolve_fn: stem -> Thai display name."""
     curated = {}
@@ -82,7 +114,11 @@ def build_resolver(src_dir: Path):
                        if not k.startswith("_")}
         except Exception as e:
             log(f"WARN: could not parse {SIDECAR.name}: {e}")
-    titles = memory_md_titles(src_dir)
+    titles = {}
+    for d in EXTRA_SRCS:                 # secondary titles first …
+        if d.is_dir():
+            titles.update(memory_md_titles(d))
+    titles.update(memory_md_titles(src_dir))  # … primary wins on clash
     fallbacks = []
 
     def resolve(stem: str) -> str:
@@ -107,7 +143,7 @@ def main() -> int:
     DST.mkdir(parents=True, exist_ok=True)
 
     resolve, _ = build_resolver(SRC)
-    md_files = sorted(p for p in SRC.glob("*.md") if p.is_file())
+    md_files = merged_memory_files()
 
     # full stem -> "Display.md" map, used to rewrite the index links
     name_map = {p.stem: f"{resolve(p.stem)}.md" for p in md_files}
@@ -160,6 +196,21 @@ def main() -> int:
         content = fix_wikilinks(content)
         (DST / name_map[src_file.stem]).write_text(content, encoding="utf-8")
         written += 1
+
+    # keep merged-in memories reachable: any file the (warp) index doesn't link
+    # gets appended to the mirrored index so nothing is orphaned in the graph
+    idx_path = DST / f"{INDEX_DST}.md"
+    if idx_path.is_file():
+        content = idx_path.read_text(encoding="utf-8")
+        extra = sorted(f"- [[{disp[:-3]}|{stem}]]"
+                       for stem, disp in name_map.items()
+                       if stem != "MEMORY" and f"[[{disp[:-3]}" not in content)
+        if extra:
+            content += ("\n## Memory จาก harness อื่น (รวมอัตโนมัติ)\n"
+                        "<!-- เขียนโดย sync-memory-to-vault.py — ห้ามแก้มือ -->\n"
+                        + "\n".join(extra) + "\n")
+            idx_path.write_text(content, encoding="utf-8")
+            log(f"index: appended {len(extra)} merged-in memories from other harnesses")
 
     # surface English-stem leftovers (those with neither sidecar nor index title)
     _, fallbacks = build_resolver(SRC)
