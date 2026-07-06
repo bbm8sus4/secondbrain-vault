@@ -38,6 +38,7 @@ EXPECTED_JOBS = [
     "com.aexgee.inbox-auto-ingest",
     "com.aexgee.vault-capture",
     "com.aexgee.vault-health",
+    "com.aexgee.ratchet-clippings",
 ]
 
 # folders that hold machine state / binaries, not notes to graph-check

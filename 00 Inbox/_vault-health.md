@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-06 21:56:19 · ไฟล์ .md ทั้งหมด 379
+> สแกนอัตโนมัติ · 2026-07-06 22:07:03 · ไฟล์ .md ทั้งหมด 384
 
 **สถานะรวม: 🟢 แข็งแรง**
 
@@ -12,18 +12,19 @@
 | 🏝️ โน้ตโดดเดี่ยว (orphans) | 0 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
 | 🔄 memory source ↔ mirror | 81 ↔ 81 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 19 นาทีที่แล้ว |
+| ⏱️ sync ล่าสุด (vault commit) | 0 นาทีที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
-| ⚙️ launchd jobs | ครบ 4 ✅ |
+| ⚙️ launchd jobs | ครบ 5 ✅ |
 | 📋 frontmatter ขาด (backlog) | 143 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
-| ❓ คิวรอ verify | 5 |
+| ❓ คิวรอ verify | 6 |
 | 📰 Friday weekly recap ล่าสุด | 2026-W27 (1 วันที่แล้ว) |
 | 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (5 วันที่แล้ว) |
 
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
 
 - `01 Projects/HUG COMPANY/README.md:41` — ⚠ Open questions (ต้อง verify)
+- `20 Rules/Automation Setup.md:28` — | `com.aexgee.vault-health` | `vault-health.py` | ทุกวัน 09:00 | v2: dead links / orphans / mirror drift (นับท
 - `EasySlip/01-Overview.md:39` — (memory snapshot 8 พ.ค. ระบุ "60% ของ group revenue" — ตัวเลขต่างกันตามวิธีวัด/ช่วงเวลา ⚠️ ต้อง verify ถ้าจะใช
 - `Thunder Solution/02-Products-Services.md:53` — ⚠️ ต้อง verify — โน้ตนี้เก่าตั้งแต่ ต.ค. 2568 สถานะปัจจุบัน (เก็บเงินหรือยัง / deploy แล้วหรือยัง) ไม่มีในแหล่
 - `Thunder Solution/03-Revenue-Commission.md:74` — 4. ⚠️ ต้อง verify — ขอราคาใหม่ effective ย้อนหลังถึง ธ.ค. 2568 เพื่อทวง ~884K (สถานะการทวงล่าสุดไม่มีในแหล่งข้
