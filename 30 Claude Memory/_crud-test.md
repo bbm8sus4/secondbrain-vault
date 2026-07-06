@@ -5,4 +5,4 @@ type: test
 
 # CRUD Test
 - created by project-bob CEO
-- step: CREATE
+- step: UPDATED ✏️ (แก้ไขสำเร็จ)
