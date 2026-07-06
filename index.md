@@ -44,6 +44,8 @@ tags: [index, vault, catalog]
 - [[02 Areas/COO Daily Log|COO Daily Log]] — Auto-managed by Morning Briefing artifact · last_verified 2026-06-21
 
 ## 03 Resources
+- **[[03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร|สรุป Vault Overhaul 2026-07-06]]** ⭐ — milestone: health 🟢, automation 5 ตัว, ratchet loop, blueprint ส่งเพื่อน · last_verified: 2026-07-06
+- [[03 Resources/SecondBrain Blueprint — สำหรับ vault เพื่อน|SecondBrain Blueprint]] — export โครงสร้าง vault ให้ AI เครื่องอื่น · last_verified: 2026-07-06
 - [[03 Resources/แผนที่ - โปรเจกต์|แผนที่ - โปรเจกต์]] — index project ทั้งหมด
 - [[03 Resources/แผนที่ - กติกา|แผนที่ - กติกา]]
 - [[03 Resources/แผนที่ - คู่มือ|แผนที่ - คู่มือ]]

@@ -1,31 +1,36 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-06 22:17:38 · ไฟล์ .md ทั้งหมด 385
+> สแกนอัตโนมัติ · 2026-07-06 22:24:12 · ไฟล์ .md ทั้งหมด 387
 
-**สถานะรวม: 🟢 แข็งแรง**
+**สถานะรวม: 🟡 มีจุดต้องดู**
 
 ## สรุป
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 0 |
+| 🔗 ลิงก์เสีย (dead links) | 1 |
 | 🏝️ โน้ตโดดเดี่ยว (orphans) | 0 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 81 ↔ 81 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 10 นาทีที่แล้ว |
+| 🔄 memory source ↔ mirror | 82 ↔ 82 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 6 นาทีที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
 | 📋 frontmatter ขาด (backlog) | 143 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
-| ❓ คิวรอ verify | 8 |
+| ❓ คิวรอ verify | 9 |
 | 📰 Friday weekly recap ล่าสุด | 2026-W27 (1 วันที่แล้ว) |
 | 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (5 วันที่แล้ว) |
+
+## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
+
+- `30 Claude Memory/SecondBrain vault system.md` → `[[wikilink]]` (ไม่พบ)
 
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
 
 - `01 Projects/HUG COMPANY/README.md:41` — ⚠ Open questions (ต้อง verify)
 - `03 Resources/SecondBrain Blueprint — สำหรับ vault เพื่อน.md:141` — ข้อเท็จจริงที่ยังไม่ชัวร์ → เขียน `⚠️ ต้อง verify` ในหน้า (health scan จะรวบเป็นคิวทวงมนุษย์ทุกวัน)
 - `03 Resources/SecondBrain Blueprint — สำหรับ vault เพื่อน.md:175` — frontmatter ขาด `type`/`last_verified` (backlog) · หน้า `last_verified` เก่าเกิน 90 วัน · **คิว `ต้อง verify`*
+- `03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร.md:35` — 4. **vault-health v2** — เช็คเพิ่ม: frontmatter ขาด (backlog 143) · หน้าเก่า >90 วัน · **คิว `ต้อง verify`** (
 - `20 Rules/Automation Setup.md:28` — | `com.aexgee.vault-health` | `vault-health.py` | ทุกวัน 09:00 | v2: dead links / orphans / mirror drift (นับท
 - `EasySlip/01-Overview.md:39` — (memory snapshot 8 พ.ค. ระบุ "60% ของ group revenue" — ตัวเลขต่างกันตามวิธีวัด/ช่วงเวลา ⚠️ ต้อง verify ถ้าจะใช
 - `Thunder Solution/02-Products-Services.md:53` — ⚠️ ต้อง verify — โน้ตนี้เก่าตั้งแต่ ต.ค. 2568 สถานะปัจจุบัน (เก็บเงินหรือยัง / deploy แล้วหรือยัง) ไม่มีในแหล่

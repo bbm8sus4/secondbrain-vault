@@ -15,6 +15,11 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-07-06 22:40] query | file back สรุป session ทั้งวัน
+- filed_back: [[03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร|สรุป Vault Overhaul]] — cleanup sprint + upgrade 10 ข้อ + blueprint + งานค้าง รวมหน้าเดียว
+- อัพเดต memory (ghostty harness — จะ sync เข้า 30 Claude Memory เองใน 30 นาที)
+- agent: Claude Code (session 2026-07-06)
+
 ## [2026-07-06 22:25] query | สร้าง SecondBrain Blueprint สำหรับ vault เพื่อน
 - filed_back: [[03 Resources/SecondBrain Blueprint — สำหรับ vault เพื่อน|SecondBrain Blueprint]] — โครงสร้าง+กฎ+automation ทั้งระบบเป็น .md ให้ AI ปลายทาง (mark-ai) ทำตาม
 - ออกแบบ additive-only ให้เข้ากับ red-lines ฝั่งนั้น (ไม่ลบ/ไม่ย้ายของเดิม, commit ทุก Phase, mapping แทน restructure)
