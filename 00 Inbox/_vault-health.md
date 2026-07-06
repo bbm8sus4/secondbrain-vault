@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-05 09:00:02 · ไฟล์ .md ทั้งหมด 355
+> สแกนอัตโนมัติ · 2026-07-06 09:00:01 · ไฟล์ .md ทั้งหมด 357
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,13 +8,13 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 95 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 68 |
+| 🔗 ลิงก์เสีย (dead links) | 96 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 66 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
 | 🔄 memory source ↔ mirror | 74 ↔ 74 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 28 นาทีที่แล้ว |
-| 📰 Friday weekly recap ล่าสุด | 2026-W27 (57 นาทีที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (4 วันที่แล้ว) |
+| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
+| 📰 Friday weekly recap ล่าสุด | 2026-W27 (1 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (5 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -72,6 +72,7 @@
 - `01 Projects/KuanGolf/README.md` → `[[marketing]]` (ไม่พบ)
 - `01 Projects/KuanGolf/README.md` → `[[marketing\]]` (ไม่พบ)
 - `01 Projects/KuanGolf/Strategic Analysis.md` → `[[project_thunder_solution]]` (ไม่พบ)
+- `01 Projects/Office Seating Plan/2026-07-05 Session — สั่งงาน + วิธีทำงาน.md` → `[[SeatMap-PO-Analysis]]` (ไม่พบ)
 - `01 Projects/Office Seating Plan/README.md` → `[[feedback_secondbrain_vs_work_folder]]` (ไม่พบ)
 - `02 Areas/My Prompting Style/skills-built.md` → `[[feedback_vibe_hacker_mode]]` (ไม่พบ)
 - `03 Resources/Clippings/5 วิธีฝึก Critical Thinking ลับความคิดให้เฉียบคม  5 Minutes Podcast EP.2119.md` → `[[Mission To The Moon]]` (ไม่พบ)
@@ -123,8 +124,6 @@
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/4_Aidebate_Gaps_แบบสำรวจ.md`
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/FORM_URLS.md`
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part1-Claude-Basics.md`
-- `01 Projects/Office Seating Plan/DEPLOY.md`
-- `01 Projects/Office Seating Plan/HANDOFF.md`
 - `03 Resources/Accounting/accounting_sop_template.md`
 - `03 Resources/COO/COO-DELIVERABLES.md`
 - `03 Resources/COO/coo-speech-script.md`

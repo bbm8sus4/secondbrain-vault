@@ -2,7 +2,7 @@
 tags: [seatmap, qa, feedback, session-log]
 project: Office Seating Plan (SeatMap)
 date: 2026-07-06
-version-checkpoint: seatArh_v.1.0.0 (snapshot ก่อน QA อยู่ที่ ~/Work/office-seating-deploy/versions/)
+version-checkpoint: seatArh_v.1.0.0 (ก่อน QA) → v1.0.1 (8 bug fix) → v1.0.2 (i18n ครบ) · ~/Work/office-seating-deploy/versions/
 ---
 
 # SeatMap — QA รอบ "ผู้ใช้จริง" + แก้ตาม feedback (2026-07-06)
@@ -20,14 +20,17 @@ version-checkpoint: seatArh_v.1.0.0 (snapshot ก่อน QA อยู่ที
 7. **Sync race — poll ทับ local edit ที่ยังไม่ push** — pullShared bail เพิ่มเงื่อนไข `_sharedPushT` (มี push ค้าง) + _applyShared เคลียร์ timer ก่อน adopt server state (กัน edit หาย + กัน stale push ตีกลับ)
 8. **Empty states + Present/Lock + ปุ่ม modal + prod/org buttons + stats + WFH zone + roster hint** — ผูก i18n (t()/data-i18n) สลับ TH/EN ได้ · ปุ่ม modal มาตรฐาน (common.save/cancel/delete/close) 13 ปุ่ม
 
-## ⏳ ยังเหลือ (i18n เชิงลึก — งานใหญ่ ~150+ strings)
-สลับ EN แล้ว **modal/ฟอร์มเชิงลึกยังเป็นไทย** — ยังไม่ได้ทำ:
-- **ทุก field label ในฟอร์มพนักงาน** (บริษัท/ทีม/สถานะ/วันเริ่มงาน/เบอร์/อีเมล/ฉุกเฉิน/สุขภาพ/เงินเดือน...) — บาง label bilingual "ไทย · English" อยู่แล้ว
-- **Blueprint rows** (เบอร์โทร/วันเกิด/กรุ๊ปเลือด/อายุงาน...) — bilingual บางส่วน
-- **หน้า Prefs/ตั้งค่า** ทั้งหน้า
-- **confirm() 26 จุด + alert() 14 จุด + toast ส่วนใหญ่** hardcode ไทย
-- Roster CSV modal, Quick-assign "จองที่นั่ง (Reserve)" ปนภาษาในปุ่มเดียว
-→ ควรทำเป็น i18n pass รอบใหญ่แยกต่างหาก (route ทุกอย่างผ่าน t())
+## ✅ i18n เชิงลึก — ทำครบแล้ว (v1.0.2, deploy + verify)
+สลับ TH/EN ได้ **ทุกจุดที่มองเห็น** แล้ว:
+- **Form labels** person/room/org/linkOrg → `data-i18n` (18 label + 2 ตัวที่มี `*` ครอบ span คง `*` ไว้)
+- **Modal titles** dynamic → `t()` (`mt.*`, 6 จุด: เพิ่ม/แก้พนักงาน·ห้อง·ผังองค์กร)
+- **หน้า Prefs/ตั้งค่า** ทั้งหน้า → `pf.*` (~30 string) + `renderPrefs` ปุ่มล็อก/quota ผ่าน `t()`/`L()`; `applyLang` re-render Prefs ถ้าเปิดอยู่
+- **Runtime messages** confirm(22)+alert(13)+toast(79) = **163 จุด (143 literal ไม่ซ้ำ)** → helper `L(th,en)` (ปลอดภัยกว่าเพิ่ม key ทีละตัว, รองรับ concatenation)
+- I18N.en keys รวม **254**
+- **verify (Chrome MCP, EN mode):** เหลือแค่ปุ่ม "ไทย" (สลับภาษา — ตั้งใจโชว์ชื่อภาษา) · 49 คน / 5 ห้อง / 2 owner ไม่แตะ
+- Snapshot: `versions/seatArh_v.1.0.2_*`
+
+**หมายเหตุ:** Blueprint rows (เบอร์/วันเกิด/กรุ๊ปเลือด...) เป็น label **สองภาษาในตัว** ("ที่อยู่ · Address") อยู่แล้ว — EN เห็นอังกฤษครบ เลยไม่แตะ (ตั้งใจ)
 
 ## 🟡 feedback ที่ "ไม่แก้" เพราะ Bob สั่งไว้เอง (ไม่ใช่ bug)
 - **HR Dashboard ซ่อน** (agent flag P0) — Bob สั่งซ่อน 2026-07-03 (code ยังครบ)
