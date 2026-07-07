@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>Outline — Cowork + Claude Code บน Warp</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans Thai", "Sarabun", -apple-system, "Helvetica Neue", sans-serif;
+    color: #1a1a1a;
+    font-size: 12pt;
+    line-height: 1.55;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  code {
+    font-family: "SF Mono", ui-monospace, Menlo, monospace;
+    background: #eef1f6;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.85em;
+    color: #0b3d91;
+  }
+
+  /* header */
+  .doc-title { font-size: 22pt; font-weight: 700; color: #0b3d91; margin: 0 0 2px; letter-spacing: -0.2px; }
+  .doc-sub   { font-size: 11pt; color: #5a6472; margin: 0 0 22px; }
+  .rule      { height: 3px; background: #0b3d91; border: none; margin: 0 0 26px; width: 54px; border-radius: 2px; }
+
+  /* section */
+  section { margin: 0 0 22px; page-break-inside: avoid; }
+  .sec-head { display: flex; align-items: baseline; gap: 10px; margin: 0 0 3px; }
+  .sec-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 26px; height: 26px; padding: 0 7px;
+    background: #0b3d91; color: #fff; border-radius: 6px;
+    font-size: 12pt; font-weight: 700;
+  }
+  .sec-title { font-size: 15pt; font-weight: 700; color: #0b3d91; margin: 0; }
+  .sec-note  { font-size: 10pt; color: #7a8494; font-style: italic; margin: 0 0 10px 36px; }
+
+  ul { list-style: none; margin: 0 0 0 36px; padding: 0; }
+  li { position: relative; padding: 4px 0 4px 16px; }
+  li::before { content: ""; position: absolute; left: 0; top: 12px; width: 5px; height: 5px; background: #0b3d91; border-radius: 50%; }
+  .term { font-weight: 700; color: #16233a; }
+  .desc { color: #333; }
+
+  .foot {
+    margin-top: 26px; padding: 12px 16px;
+    background: #fff8ee; border-left: 4px solid #e08a00;
+    font-size: 10pt; color: #5a4a2a; border-radius: 4px;
+    page-break-inside: avoid;
+  }
+  .foot b { color: #8a5a00; }
+</style>
+</head>
+<body>
+
+  <div class="doc-title">Cowork + Claude Code บน Warp</div>
+  <div class="doc-sub">Outline การสอน · หัวข้อ → ปุ่ม/ส่วนใน UI → หน้าที่ · AI Workshop ขอนแก่นอิเล็คทริค</div>
+  <hr class="rule">
+
+  <section>
+    <div class="sec-head"><span class="sec-num">1</span><h2 class="sec-title">หน้า UI Claude (Chat — เว็บ/แอป)</h2></div>
+    <p class="sec-note">หน้าที่ทุกคนเจอก่อน — พื้นฐานที่สุด</p>
+    <ul>
+      <li><span class="term">กล่องพิมพ์ (ล่างสุด)</span> <span class="desc">— พิมพ์คำถาม/คำสั่ง · <code>Enter</code> ส่ง · <code>Shift+Enter</code> ขึ้นบรรทัดใหม่</span></li>
+      <li><span class="term">ปุ่มคลิปหนีบ (แนบไฟล์)</span> <span class="desc">— อัปโหลด PDF · รูป · Excel · Word ให้ Claude อ่าน</span></li>
+      <li><span class="term">ตัวเลือกโมเดล</span> <span class="desc">— สลับ Opus (เก่งสุด) / Sonnet (สมดุล) / Haiku (เร็ว-ประหยัด)</span></li>
+      <li><span class="term">ปุ่ม New chat</span> <span class="desc">— เริ่มเรื่องใหม่ (งานคนละเรื่อง = แชทคนละอัน)</span></li>
+      <li><span class="term">แถบซ้าย — Recents</span> <span class="desc">— ประวัติแชทเก่า · ค้นหาย้อนดูงานเดิมได้</span></li>
+      <li><span class="term">Projects</span> <span class="desc">— โฟลเดอร์เก็บ context ถาวร ใส่ไฟล์+บรีฟครั้งเดียว ไม่ต้องเล่าซ้ำ</span></li>
+      <li><span class="term">แผง Artifacts (ขวา)</span> <span class="desc">— โชว์ผลงาน (เอกสาร/เว็บ/ตาราง) แบบ live · มีปุ่ม copy · download · publish</span></li>
+      <li><span class="term">ปุ่มใต้คำตอบ</span> <span class="desc">— copy · retry (ตอบใหม่) · edit (แก้คำถามเรา) · ให้คะแนน (ดี/ไม่ดี)</span></li>
+      <li><span class="term">เมนูโปรไฟล์ (มุมล่างซ้าย)</span> <span class="desc">— ตั้งค่าภาษา · ธีมสว่าง/มืด · บัญชี</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">2</span><h2 class="sec-title">Claude Cowork</h2></div>
+    <p class="sec-note">ให้ Claude ทำงานกับไฟล์ในเครื่อง — ผ่านแอป กดปุ่มเอา ไม่ต้องพิมพ์คำสั่ง</p>
+    <ul>
+      <li><span class="term">เข้าโหมด Cowork</span> <span class="desc">— เลือกจากแอปเดสก์ท็อป (ไม่ใช่หน้าเว็บ)</span></li>
+      <li><span class="term">เลือกโฟลเดอร์งาน (workspace)</span> <span class="desc">— ชี้ว่าจะให้ทำงานกับไฟล์ชุดไหน</span></li>
+      <li><span class="term">กล่องสั่งงาน</span> <span class="desc">— พิมพ์งานเป็นภาษาคน เหมือนบอกลูกน้อง</span></li>
+      <li><span class="term">แผงขั้นตอน (step-by-step)</span> <span class="desc">— เห็น Claude ทำทีละสเต็ป โปร่งใส ตรวจได้</span></li>
+      <li><span class="term">ปุ่ม Allow / Deny</span> <span class="desc">— อนุมัติก่อน Claude แตะไฟล์ทุกครั้ง</span></li>
+      <li><span class="term">มุมมองไฟล์ที่เปลี่ยน (preview/diff)</span> <span class="desc">— ดูก่อน–หลัง ก่อนกดยอมรับ</span></li>
+      <li><span class="term">ปุ่ม Stop / แทรก</span> <span class="desc">— หยุดกลางคัน หรือสั่งเพิ่มระหว่างทำ</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">3</span><h2 class="sec-title">Claude Code (โหมด Code ในแอป — GUI)</h2></div>
+    <p class="sec-note">พลังเท่า terminal แต่ยังเป็นหน้าต่างกดปุ่ม สำหรับคนไม่อยากพิมพ์คำสั่ง</p>
+    <ul>
+      <li><span class="term">เปิดโปรเจกต์/โฟลเดอร์</span> <span class="desc">— ให้ Claude เห็นทั้งโปรเจกต์ ไม่ใช่ทีละไฟล์</span></li>
+      <li><span class="term">หน้าต่างสนทนา + รายการไฟล์</span> <span class="desc">— สั่งงานด้านหนึ่ง เห็นไฟล์อีกด้าน</span></li>
+      <li><span class="term">Permission prompt</span> <span class="desc">— ขออนุญาตก่อนแก้ไฟล์/รันคำสั่ง</span></li>
+      <li><span class="term">มุมมอง diff</span> <span class="desc">— เทียบโค้ดเก่า-ใหม่ ก่อน apply</span></li>
+      <li><span class="term">ปุ่ม Accept / Reject</span> <span class="desc">— ยอมรับหรือย้อนการเปลี่ยนแปลงทีละจุด</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">4</span><h2 class="sec-title">Claude Code บน terminal Warp</h2></div>
+    <p class="sec-note">ปลายทาง power user — automation + deploy เว็บจริง</p>
+    <ul>
+      <li><span class="term">เปิด Warp ในโฟลเดอร์โปรเจกต์</span> <span class="desc">— พิมพ์ <code>claude</code> เพื่อเริ่ม session</span></li>
+      <li><span class="term">กล่องพิมพ์คำสั่ง</span> <span class="desc">— สั่งเป็นภาษาคน ("ทำเว็บโปรฯ แล้ว deploy")</span></li>
+      <li><span class="term">Permission mode (<code>Shift+Tab</code>)</span> <span class="desc">— ถามก่อนทำ / ทำเองอัตโนมัติ / โหมดวางแผน</span></li>
+      <li><span class="term">อนุมัติ y/n</span> <span class="desc">— ตอบยอมให้แก้ไฟล์หรือรันคำสั่ง</span></li>
+      <li><span class="term">มุมมอง diff</span> <span class="desc">— เห็นสิ่งที่จะเปลี่ยนก่อนตกลง</span></li>
+      <li><span class="term"><code>@</code> แท็กไฟล์</span> <span class="desc">— ชี้ไฟล์เฉพาะให้ Claude โฟกัส</span></li>
+      <li><span class="term">Slash commands</span> <span class="desc">— <code>/model</code> เลือกโมเดล · <code>/clear</code> ล้างบริบท · <code>/init</code> อ่านโปรเจกต์ · <code>/help</code></span></li>
+      <li><span class="term">Skills</span> <span class="desc">— คำสั่งสำเร็จรูปที่ทีมสร้างเอง เรียกด้วย <code>/ชื่อ</code></span></li>
+      <li><span class="term"><code>Esc</code> หยุด · resume/<code>--continue</code></span> <span class="desc">— เบรกกลางคัน · ทำงานเดิมต่อจากที่ค้าง</span></li>
+    </ul>
+  </section>
+
+  <div class="foot">
+    <b>หมายเหตุ:</b> ส่วน terminal Warp (4) แม่นยำ เพราะเป็นตัวเดียวกับที่ใช้งานจริง ·
+    ส่วนหน้าเว็บ/แอป + Cowork (1–3) ปุ่มอาจขยับตามเวอร์ชัน — แนะนำเช็คหน้าจอจริงตอนซ้อมก่อนสอน
+  </div>
+
+</body>
+</html>
