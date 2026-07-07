@@ -60,7 +60,7 @@
       "query": "path:\"01 Projects\"",
       "color": {
         "a": 1,
-        "rgb": 10741301
+        "rgb": 14935603
       }
     },
     {
@@ -102,6 +102,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.9704220843400104,
-  "close": true
+  "scale": 0.2576933830273572,
+  "close": false
 }
