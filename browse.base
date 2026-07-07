@@ -6,18 +6,18 @@ views:
     name: ทุกหน้า (ล่าสุดก่อน)
     order:
       - file.name
-      - note.type
-      - note.status
-      - note.last_verified
+      - type
+      - status
+      - last_verified
       - file.folder
     sort:
-      - property: note.last_verified
+      - property: last_verified
         direction: DESC
   - type: table
     name: ยังไม่มี type (schema debt)
     filters:
       and:
-        - '!note.type'
+        - "!note.type"
         - '!file.path.startsWith("04 Archive")'
         - '!file.path.startsWith("40 Meeting Notes")'
         - '!file.path.startsWith("00 Inbox")'
@@ -36,10 +36,10 @@ views:
         - note.type == "project"
     order:
       - file.name
-      - note.status
-      - note.last_verified
+      - status
+      - last_verified
     sort:
-      - property: note.last_verified
+      - property: last_verified
         direction: DESC
   - type: table
     name: คิวรอ verify / draft
@@ -49,9 +49,9 @@ views:
         - note.type
     order:
       - file.name
-      - note.type
-      - note.status
-      - note.last_verified
+      - type
+      - status
+      - last_verified
     sort:
-      - property: note.last_verified
+      - property: last_verified
         direction: ASC
