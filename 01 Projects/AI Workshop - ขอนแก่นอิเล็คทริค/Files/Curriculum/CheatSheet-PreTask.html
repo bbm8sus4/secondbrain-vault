@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<title>Cheat Sheet + Pre-task — AI Workshop ขอนแก่นอิเล็คทริค</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans Thai", "Sarabun", -apple-system, "Helvetica Neue", sans-serif;
+    color: #1a1a1a; font-size: 11.5pt; line-height: 1.5; margin: 0;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  code {
+    font-family: "SF Mono", ui-monospace, Menlo, monospace;
+    background: #eef1f6; border-radius: 4px; padding: 1px 6px; font-size: 0.85em; color: #0b3d91;
+  }
+  .doc-title { font-size: 21pt; font-weight: 700; color: #0b3d91; margin: 0 0 2px; }
+  .doc-sub   { font-size: 10.5pt; color: #5a6472; margin: 0 0 18px; }
+  .rule      { height: 3px; width: 54px; background: #0b3d91; border: none; margin: 0 0 22px; border-radius: 2px; }
+
+  section { margin: 0 0 20px; page-break-inside: avoid; }
+  .sec-head { display: flex; align-items: baseline; gap: 10px; margin: 0 0 10px; }
+  .sec-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 26px; height: 26px; padding: 0 7px; background: #0b3d91; color: #fff;
+    border-radius: 6px; font-size: 12pt; font-weight: 700;
+  }
+  .sec-title { font-size: 15pt; font-weight: 700; color: #0b3d91; margin: 0; }
+
+  ul { list-style: none; margin: 0 0 0 36px; padding: 0; }
+  li { position: relative; padding: 4px 0 4px 16px; }
+  li::before { content: ""; position: absolute; left: 0; top: 11px; width: 5px; height: 5px; background: #0b3d91; border-radius: 50%; }
+  .term { font-weight: 700; color: #16233a; }
+
+  table { border-collapse: collapse; width: 100%; margin: 4px 0 0 0; font-size: 10.5pt; }
+  th, td { border: 1px solid #d8dee8; padding: 7px 10px; text-align: left; vertical-align: top; }
+  th { background: #eef3fb; color: #0b3d91; font-weight: 700; }
+  td.en { font-family: "SF Mono", ui-monospace, Menlo, monospace; color: #0b3d91; white-space: nowrap; }
+
+  .box { border-radius: 6px; padding: 12px 16px; margin: 6px 0 0; }
+  .ok   { background: #eaf7ee; border-left: 4px solid #2e7d32; }
+  .warn { background: #fff4e5; border-left: 4px solid #e08a00; }
+  .cols { display: flex; gap: 14px; }
+  .cols > div { flex: 1; }
+  .cols h4 { margin: 0 0 4px; font-size: 11pt; }
+  .ok h4   { color: #2e7d32; }
+  .warn h4 { color: #b26a00; }
+  .cols ul { margin-left: 18px; }
+  .foot { margin-top: 20px; font-size: 9.5pt; color: #8a94a4; text-align: center; }
+</style>
+</head>
+<body>
+
+  <div class="doc-title">Cheat Sheet + การบ้านก่อนอบรม</div>
+  <div class="doc-sub">แจกผู้เรียนล่วงหน้า ~3 วัน · AI Workshop บริษัทขอนแก่นอิเล็คทริค · เก็บติดตัวใช้ได้ทั้งวัน</div>
+  <hr class="rule">
+
+  <section>
+    <div class="sec-head"><span class="sec-num">1</span><h2 class="sec-title">การบ้านก่อนวันอบรม (~30 นาที)</h2></div>
+    <ul>
+      <li><span class="term">เปิดบัญชี Claude</span> — เข้า <code>claude.ai</code> กด "Continue with Google" ด้วย<b>อีเมลบริษัท</b> (อย่าใช้อีเมลส่วนตัว)</li>
+      <li><span class="term">ลองพิมพ์คุย 1 งานจริง</span> — เช่น "ช่วยร่างอีเมลตอบลูกค้า…" ดูว่า Claude ตอบไทยได้ · ถามกลับได้</li>
+      <li><span class="term">เตรียมโจทย์งานตัวเอง 1 อย่าง</span> — โปรโมชัน/สินค้า/งานที่ทำซ้ำบ่อย เอามาใช้เป็นแบบฝึกในคลาส</li>
+      <li><span class="term">เครื่อง + เน็ตพร้อม</span> — โน้ตบุ๊ก + เบราว์เซอร์ (ถ้าลงโปรแกรมเองไม่ได้ แจ้ง IT ล่วงหน้า)</li>
+    </ul>
+    <div class="box ok"><b>ทำแค่นี้พอ</b> — ไม่ต้องอ่านล่วงหน้า ไม่ต้องเก่งมาก่อน มาเรียนด้วยกันในวันงาน</div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">2</span><h2 class="sec-title">ศัพท์อังกฤษที่จะเจอ — แปลไว้ให้แล้ว</h2></div>
+    <table>
+      <tr><th>คำที่เจอ</th><th>แปลว่า / คืออะไร</th></tr>
+      <tr><td class="en">Prompt</td><td>คำสั่ง/คำถามที่เราพิมพ์ให้ AI</td></tr>
+      <tr><td class="en">New chat</td><td>เริ่มบทสนทนาใหม่ (งานคนละเรื่อง = แชทใหม่)</td></tr>
+      <tr><td class="en">Model</td><td>รุ่นของ AI — Opus เก่งสุด · Haiku เร็วสุด</td></tr>
+      <tr><td class="en">Artifacts</td><td>หน้าต่างขวาที่โชว์ผลงาน (เว็บ/เอกสาร) แบบเห็นสดๆ</td></tr>
+      <tr><td class="en">Projects</td><td>โฟลเดอร์เก็บงาน+ไฟล์ถาวร ไม่ต้องเล่าซ้ำ</td></tr>
+      <tr><td class="en">Publish / Share</td><td>เผยแพร่ผลงานให้ได้ลิงก์ที่คนอื่นเปิดได้</td></tr>
+      <tr><td class="en">CTA (Call to Action)</td><td>ปุ่ม/ข้อความที่อยากให้ลูกค้ากด เช่น "ทัก LINE"</td></tr>
+      <tr><td class="en">Deploy</td><td>เอาเว็บ/งานขึ้นออนไลน์ให้ใช้งานจริง</td></tr>
+      <tr><td class="en">Terminal / Warp</td><td>โปรแกรมพิมพ์สั่งงานเครื่อง (Advanced) — Warp = แบบที่ใช้ง่าย</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">3</span><h2 class="sec-title">เจอ error / ติดปัญหา — ทำไง</h2></div>
+    <ul>
+      <li><span class="term">อย่าตกใจ อย่าปิดหนี</span> — copy ข้อความ error ทั้งบรรทัด แล้ววางถาม Claude ได้เลย</li>
+      <li><span class="term">ถามเป็นภาษาไทยได้</span> — "อันนี้ error อะไร แก้ยังไง อธิบายแบบคนไม่โค้ด"</li>
+      <li><span class="term">ยกมือเรียกพี่เลี้ยง</span> — ต่อ / นัท เดินช่วยทั้งวัน ติดตรงไหนเรียกได้เลย</li>
+      <li><span class="term">งานหาย?</span> — Claude เก็บแชทเก่าใน Recents (แถบซ้าย) กดกลับไปดูได้</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">4</span><h2 class="sec-title">กฎทอง — ทำ / ห้ามทำ</h2></div>
+    <div class="cols">
+      <div class="box ok">
+        <h4>ทำ</h4>
+        <ul>
+          <li>สั่งให้ชัด + ใส่ตัวอย่าง</li>
+          <li>บอกบทบาท ("คุณคือ copywriter…")</li>
+          <li>ตรวจคำตอบก่อนใช้จริงเสมอ</li>
+          <li>เก็บ prompt ที่เวิร์กไว้ใช้ซ้ำ</li>
+          <li>1 เรื่อง = 1 แชท</li>
+        </ul>
+      </div>
+      <div class="box warn">
+        <h4>ห้าม</h4>
+        <ul>
+          <li>วางข้อมูลลับ/ลูกค้า · เลขบัตร ปชช. · พาสเวิร์ด</li>
+          <li>เชื่อตัวเลข/ราคาที่ AI ตอบโดยไม่ตรวจ</li>
+          <li>ให้ AI ตัดสินใจสำคัญแทนเรา</li>
+          <li>ปนหลายเรื่องในแชทเดียว</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">ถือแผ่นนี้ไว้ข้างตัวได้ทั้งวัน · มีคำถามอื่นถามพี่เลี้ยงในห้องได้ตลอด</div>
+
+</body>
+</html>
