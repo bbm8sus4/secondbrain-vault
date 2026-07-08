@@ -434,10 +434,11 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
 
   <div class="panel">
     <h2>ราคาขาย &amp; กำไร</h2>
-    <div class="bmode-sublabel">ผู้ออกบิล (คุม VAT)</div>
+    <div class="bmode-sublabel">คู่ค้า · ผู้ขาย → ผู้จ่าย (คุม VAT + หัก ณ ที่จ่าย)</div>
     <div class="billing-modes" id="billing-modes">
-      <button class="bmode-btn" data-mode="corp">🏢 นิติบุคคล → นิติบุคคล</button>
-      <button class="bmode-btn" data-mode="personal">👤 บุคคลธรรมดา → นิติบุคคล</button>
+      <button class="bmode-btn" data-mode="corp2corp">🏢 นิติ→นิติ</button>
+      <button class="bmode-btn" data-mode="person2corp">👤 บุคคล→นิติ</button>
+      <button class="bmode-btn" data-mode="person2person">👤 บุคคล→บุคคล</button>
     </div>
     <div class="bmode-hint" id="bmode-hint">—</div>
     <div class="bmode-sublabel">ประเภทเงินได้ (คุมหัก ณ ที่จ่าย)</div>
@@ -528,8 +529,8 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
       <li>ทุก workspace ที่ save เก็บใน localStorage ของ browser นี้ · ไม่ sync ข้าม device</li>
       <li>คลิก <strong>+ เพิ่มรายการ</strong> เพิ่มค่าใช้จ่ายในแต่ละหมวด · คลิกชื่อรายการเพื่อแก้ · × เพื่อลบ (ยกเว้นรายการ lock)</li>
       <li><strong>ค่าห้อง ฿3,745</strong> (รวม VAT) คงที่/งาน · <strong>อาหาร SHIFT จริง ฿428/หัว</strong> · <strong>เจ้าของกรอกงบ ฿30-50k</strong> รวม 1 วัน</li>
-      <li><strong>ผู้ออกบิล</strong> คุมแค่ VAT — <strong>นิติบุคคล</strong>: บวก VAT ได้ (เปิดใน ตั้งค่า) · <strong>บุคคลธรรมดา</strong>: ปกติไม่จด VAT จึงไม่บวก</li>
-      <li><strong>หัก ณ ที่จ่าย คิดตามประเภทเงินได้ ไม่ใช่ตามผู้ออกบิล</strong> — <strong>3%</strong> = ค่าบริการ/จ้างทำของ/วิทยากร-อบรม/ฟรีแลนซ์/ที่ปรึกษา · <strong>5%</strong> = ค่าเช่าห้อง/พื้นที่/ทรัพย์สิน (กรมสรรพากร: service &amp; professional fees 3% · rents 5%). งาน AI Workshop = ค่าบริการอบรม → <strong>หัก 3%</strong> ทั้งนิติและบุคคล</li>
+      <li><strong>คู่ค้า 3 โหมด</strong> — <strong>VAT ดูที่ผู้ขาย</strong> (นิติจด VAT บวก 7% ได้ · บุคคลไม่จด → ไม่บวก) · <strong>หัก ณ ที่จ่าย ดูที่ผู้จ่าย</strong> (ม.3 เตรส หักเฉพาะผู้จ่ายที่เป็นนิติบุคคล). <strong>นิติ→นิติ</strong>: VAT ได้ + หัก · <strong>บุคคล→นิติ</strong>: ไม่มี VAT + หัก · <strong>บุคคล→บุคคล</strong>: ไม่มี VAT + ไม่มีหัก ณ ที่จ่าย</li>
+      <li><strong>อัตราหัก ณ ที่จ่าย คิดตามประเภทเงินได้</strong> — <strong>3%</strong> = ค่าบริการ/จ้างทำของ/วิทยากร-อบรม/ฟรีแลนซ์/ที่ปรึกษา · <strong>5%</strong> = ค่าเช่าห้อง/พื้นที่/ทรัพย์สิน (กรมสรรพากร: service &amp; professional fees 3% · rents 5%). งาน AI Workshop = ค่าบริการอบรม → <strong>หัก 3%</strong></li>
       <li>VAT กับ หัก ณ ที่จ่าย <strong>ไม่กระทบกำไรทางบัญชี</strong> (VAT นำส่งสรรพากร · หัก ณ ที่จ่าย เป็นเครดิตภาษีได้คืนตอนยื่น) — มีผลแค่ <strong>เงินโอนเข้าจริง</strong> · โหมดบุคคลธรรมดายังไม่รวมภาษีเงินได้บุคคลธรรมดา</li>
     </ul>
   </div>
@@ -850,10 +851,10 @@ function applyWorkspace(v) {
   const p = getPresetByWs(v);
   if (!p) return;
   state = p;
-  if (!state.billingMode) state.billingMode = 'corp';
+  if (!state.billingMode) state.billingMode = 'corp2corp';
   if (!state.whtType) state.whtType = 'service';
-  setBillingModeUI(state.billingMode);
   setWhtTypeUI(state.whtType);
+  setBillingModeUI(state.billingMode);
   if (p.sell == null) {
     const c = calc();
     state.sell = Math.round(c.suggestedPrice);
@@ -965,21 +966,53 @@ function calcAtSeats(seats) {
   return { costPerHead, totalCost, suggestedPrice };
 }
 
-function billingParams() {
-  const mode = state.billingMode || 'corp';
-  const whtType = state.whtType || 'service';
-  const vatRate = (mode === 'corp' && settings.vatEnabled) ? settings.vatRate : 0;
-  const whtRate = whtType === 'rent' ? settings.whtRent : settings.whtService;
-  return { mode, whtType, vatRate, whtRate };
+// backward-compat: โหมดเดิม 2 ค่า ('corp'/'personal') → map เป็น 3 ค่าใหม่
+function normBillingMode(m) {
+  if (m === 'corp') return 'corp2corp';
+  if (m === 'personal') return 'person2corp';
+  if (m === 'corp2corp' || m === 'person2corp' || m === 'person2person') return m;
+  return 'corp2corp';
 }
 
-function setBillingModeUI(mode) {
+function billingParams() {
+  const mode = normBillingMode(state.billingMode);
+  const whtType = state.whtType || 'service';
+  const sellerIsCorp = mode === 'corp2corp';                      // VAT ดูที่ผู้ขาย
+  const payerIsCorp = mode === 'corp2corp' || mode === 'person2corp'; // หัก ณ ที่จ่าย ดูที่ผู้จ่าย
+  const vatRate = (sellerIsCorp && settings.vatEnabled) ? settings.vatRate : 0;
+  const whtRate = payerIsCorp ? (whtType === 'rent' ? settings.whtRent : settings.whtService) : 0;
+  return { mode, whtType, sellerIsCorp, payerIsCorp, vatRate, whtRate };
+}
+
+function setBillingModeUI(rawMode) {
+  const mode = normBillingMode(rawMode);
   document.querySelectorAll('.bmode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
   const hint = $('bmode-hint');
-  if (!hint) return;
-  hint.textContent = mode === 'personal'
-    ? 'บุคคลธรรมดา (ปกติไม่จด VAT) → ไม่บวก VAT'
-    : (settings.vatEnabled ? 'นิติบุคคล → บวก VAT ' + settings.vatRate + '%' : 'นิติบุคคล → ยังไม่บวก VAT (เปิดใน ตั้งค่า)');
+  if (hint) {
+    if (mode === 'corp2corp') {
+      hint.textContent = settings.vatEnabled
+        ? 'ผู้ขายนิติบุคคล → บวก VAT ' + settings.vatRate + '%'
+        : 'ผู้ขายนิติบุคคล → ยังไม่บวก VAT (เปิดใน ตั้งค่า)';
+    } else {
+      hint.textContent = 'ผู้ขายบุคคลธรรมดา (ปกติไม่จด VAT) → ไม่บวก VAT';
+    }
+  }
+  updateWhtSelectorState(mode);
+}
+
+// เมื่อผู้จ่ายเป็นบุคคลธรรมดา → ไม่มีหน้าที่หัก ณ ที่จ่าย → ปิดตัวเลือกประเภทเงินได้
+function updateWhtSelectorState(rawMode) {
+  const mode = normBillingMode(rawMode);
+  const payerIsCorp = mode === 'corp2corp' || mode === 'person2corp';
+  document.querySelectorAll('.wht-btn').forEach(b => {
+    b.disabled = !payerIsCorp;
+    b.style.opacity = payerIsCorp ? '' : '0.4';
+    b.style.cursor = payerIsCorp ? '' : 'not-allowed';
+  });
+  const whtHint = $('wht-hint');
+  if (!whtHint) return;
+  if (payerIsCorp) setWhtTypeUI(state.whtType || 'service');
+  else whtHint.textContent = 'ผู้จ่ายเป็นบุคคลธรรมดา — ไม่มีหน้าที่หัก ณ ที่จ่าย (0%)';
 }
 
 function setWhtTypeUI(type) {
@@ -1007,12 +1040,18 @@ function renderCashflow(revenue, vatAmt, whtAmt, netCash, bp) {
   rows += '<div class="cashflow-row total"><span class="cf-label">เงินโอนเข้าจริง</span>' +
     '<span class="cf-val">' + fmt(netCash) + '</span></div>';
   const whtTypeText = bp.whtType === 'rent' ? 'ค่าเช่า' : 'ค่าบริการอบรม';
-  const payerText = bp.mode === 'personal' ? 'บุคคลธรรมดาออกบิลเก็บบริษัท' : 'นิติบุคคลออกบิลเก็บนิติบุคคล';
-  const vatText = bp.vatRate > 0 ? 'บวก VAT ' + bp.vatRate + '% (นำส่งสรรพากร ไม่ใช่รายได้)' : 'ไม่บวก VAT';
-  let note = payerText + ' — ' + vatText +
-    ' · รายการเป็น "' + whtTypeText + '" → หัก ณ ที่จ่าย ' + bp.whtRate + '% (เครดิตภาษี ได้คืนตอนยื่น)';
-  note += '<br>กรมสรรพากร: service &amp; professional fees = 3% · rents = 5% — งานอบรม/เวิร์กช็อปเป็นค่าบริการ จึงหัก 3% ไม่ใช่ 5%';
-  if (bp.mode === 'personal') note += ' · ยังไม่รวมภาษีเงินได้บุคคลธรรมดา';
+  const modeLabel = { corp2corp: 'นิติบุคคล → นิติบุคคล', person2corp: 'บุคคลธรรมดา → นิติบุคคล', person2person: 'บุคคลธรรมดา → บุคคลธรรมดา' }[bp.mode] || bp.mode;
+  const vatText = bp.vatRate > 0
+    ? 'บวก VAT ' + bp.vatRate + '% (นำส่งสรรพากร ไม่ใช่รายได้)'
+    : (bp.sellerIsCorp ? 'ไม่บวก VAT (ปิดใน ตั้งค่า)' : 'ผู้ขายบุคคลธรรมดา ไม่จด VAT → ไม่บวก VAT');
+  let note = modeLabel + ' — ' + vatText;
+  if (bp.whtRate > 0) {
+    note += ' · รายการเป็น "' + whtTypeText + '" → หัก ณ ที่จ่าย ' + bp.whtRate + '% (เครดิตภาษี ได้คืนตอนยื่น)';
+    note += '<br>กรมสรรพากร: service &amp; professional fees = 3% · rents = 5% — งานอบรมเป็นค่าบริการ จึงหัก 3% ไม่ใช่ 5%';
+  } else {
+    note += ' · ผู้จ่ายเป็นบุคคลธรรมดา ไม่มีหน้าที่หัก ณ ที่จ่าย (ม.3 เตรส หักเฉพาะผู้จ่ายที่เป็นนิติบุคคล)';
+  }
+  if (!bp.sellerIsCorp) note += ' · ยังไม่รวมภาษีเงินได้บุคคลธรรมดาของผู้ขาย';
   note += '<br>กำไรด้านบนคือกำไรทางบัญชี ไม่กระทบจาก VAT/หัก ณ ที่จ่าย';
   rows += '<div class="cashflow-note">' + note + '</div>';
   el.innerHTML = rows;
@@ -1230,8 +1269,8 @@ function saveSettings() {
   settings.whtRent = +$('set-wht-rent').value || 0;
   persistSettings();
   closeSettings();
-  setBillingModeUI(state.billingMode || 'corp');
   setWhtTypeUI(state.whtType || 'service');
+  setBillingModeUI(state.billingMode || 'corp2corp');
   compute();
   toast('บันทึกการตั้งค่าแล้ว');
 }
