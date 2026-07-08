@@ -294,14 +294,15 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
 }
 
 .billing-modes { display: flex; gap: 6px; margin-bottom: 6px; }
-.bmode-btn {
+.bmode-btn, .wht-btn {
   flex: 1; padding: 8px 10px; border: 1px solid var(--border); border-radius: 7px;
   background: white; font-family: inherit; font-size: 12px; font-weight: 500;
   color: var(--muted); cursor: pointer; transition: all 0.15s; text-align: center; line-height: 1.3;
 }
-.bmode-btn:hover { border-color: var(--primary); color: var(--primary); }
-.bmode-btn.active { background: var(--primary-light); border-color: var(--primary); color: var(--primary); font-weight: 600; }
+.bmode-btn:hover, .wht-btn:hover { border-color: var(--primary); color: var(--primary); }
+.bmode-btn.active, .wht-btn.active { background: var(--primary-light); border-color: var(--primary); color: var(--primary); font-weight: 600; }
 .bmode-hint { font-size: 10px; color: var(--muted); margin-bottom: 10px; text-align: center; }
+.bmode-sublabel { font-size: 10px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; margin: 4px 0 4px; }
 
 .cashflow { margin-top: 10px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
 .cashflow-row {
@@ -433,11 +434,18 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
 
   <div class="panel">
     <h2>ราคาขาย &amp; กำไร</h2>
+    <div class="bmode-sublabel">ผู้ออกบิล (คุม VAT)</div>
     <div class="billing-modes" id="billing-modes">
       <button class="bmode-btn" data-mode="corp">🏢 นิติบุคคล → นิติบุคคล</button>
       <button class="bmode-btn" data-mode="personal">👤 บุคคลธรรมดา → นิติบุคคล</button>
     </div>
     <div class="bmode-hint" id="bmode-hint">—</div>
+    <div class="bmode-sublabel">ประเภทเงินได้ (คุมหัก ณ ที่จ่าย)</div>
+    <div class="billing-modes" id="wht-types">
+      <button class="wht-btn" data-wht="service">ค่าบริการ / อบรม · 3%</button>
+      <button class="wht-btn" data-wht="rent">ค่าเช่าห้อง / พื้นที่ · 5%</button>
+    </div>
+    <div class="bmode-hint" id="wht-hint">—</div>
     <div class="sell-block">
       <div class="field-label"><span>ราคาขาย/หัว</span><span class="unit">บาท</span></div>
       <div class="row">
@@ -520,8 +528,9 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
       <li>ทุก workspace ที่ save เก็บใน localStorage ของ browser นี้ · ไม่ sync ข้าม device</li>
       <li>คลิก <strong>+ เพิ่มรายการ</strong> เพิ่มค่าใช้จ่ายในแต่ละหมวด · คลิกชื่อรายการเพื่อแก้ · × เพื่อลบ (ยกเว้นรายการ lock)</li>
       <li><strong>ค่าห้อง ฿3,745</strong> (รวม VAT) คงที่/งาน · <strong>อาหาร SHIFT จริง ฿428/หัว</strong> · <strong>เจ้าของกรอกงบ ฿30-50k</strong> รวม 1 วัน</li>
-      <li><strong>โหมดออกบิล</strong> — <strong>นิติบุคคล→นิติบุคคล</strong>: บวก VAT ได้ (เปิดใน ตั้งค่า) · โดนหัก ณ ที่จ่าย 3% · <strong>บุคคลธรรมดา→นิติบุคคล</strong>: ไม่มี VAT · โดนหัก ณ ที่จ่าย 5%</li>
-      <li>VAT กับ หัก ณ ที่จ่าย <strong>ไม่กระทบกำไรทางบัญชี</strong> (VAT นำส่งสรรพากร · หัก ณ ที่จ่าย เป็นเครดิตภาษีได้คืน) — มีผลแค่ <strong>เงินโอนเข้าจริง</strong> เท่านั้น · โหมดบุคคลธรรมดายังไม่รวมภาษีเงินได้บุคคลธรรมดา</li>
+      <li><strong>ผู้ออกบิล</strong> คุมแค่ VAT — <strong>นิติบุคคล</strong>: บวก VAT ได้ (เปิดใน ตั้งค่า) · <strong>บุคคลธรรมดา</strong>: ปกติไม่จด VAT จึงไม่บวก</li>
+      <li><strong>หัก ณ ที่จ่าย คิดตามประเภทเงินได้ ไม่ใช่ตามผู้ออกบิล</strong> — <strong>3%</strong> = ค่าบริการ/จ้างทำของ/วิทยากร-อบรม/ฟรีแลนซ์/ที่ปรึกษา · <strong>5%</strong> = ค่าเช่าห้อง/พื้นที่/ทรัพย์สิน (กรมสรรพากร: service &amp; professional fees 3% · rents 5%). งาน AI Workshop = ค่าบริการอบรม → <strong>หัก 3%</strong> ทั้งนิติและบุคคล</li>
+      <li>VAT กับ หัก ณ ที่จ่าย <strong>ไม่กระทบกำไรทางบัญชี</strong> (VAT นำส่งสรรพากร · หัก ณ ที่จ่าย เป็นเครดิตภาษีได้คืนตอนยื่น) — มีผลแค่ <strong>เงินโอนเข้าจริง</strong> · โหมดบุคคลธรรมดายังไม่รวมภาษีเงินได้บุคคลธรรมดา</li>
     </ul>
   </div>
 </div>
@@ -577,14 +586,17 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
     </div>
 
     <div class="modal-section">
-      <h4>หัก ณ ที่จ่าย (WHT) — บริษัทลูกค้าหักตอนจ่าย</h4>
+      <h4>หัก ณ ที่จ่าย (WHT) — ตามประเภทเงินได้</h4>
       <div class="modal-field">
-        <label>โหมดนิติบุคคล → นิติบุคคล (%)</label>
-        <input type="number" id="set-wht-corp" step="0.5" min="0" max="30">
+        <label>ค่าบริการ / อบรม / วิชาชีพ (%)</label>
+        <input type="number" id="set-wht-service" step="0.5" min="0" max="30">
       </div>
       <div class="modal-field">
-        <label>โหมดบุคคลธรรมดา → นิติบุคคล (%)</label>
-        <input type="number" id="set-wht-personal" step="0.5" min="0" max="30">
+        <label>ค่าเช่า ห้อง / พื้นที่ / ทรัพย์สิน (%)</label>
+        <input type="number" id="set-wht-rent" step="0.5" min="0" max="30">
+      </div>
+      <div style="font-size:10px;color:var(--muted);line-height:1.4;margin-top:2px;">
+        กรมสรรพากร: service &amp; professional fees = 3% · rents = 5% · งานอบรม/เวิร์กช็อป = ค่าบริการ → หัก 3%
       </div>
     </div>
 
@@ -639,8 +651,8 @@ const DEFAULT_SETTINGS = {
   budgetHigh: 50000,
   vatEnabled: false,
   vatRate: 7,
-  whtCorp: 3,
-  whtPersonal: 5
+  whtService: 3,
+  whtRent: 5
 };
 
 const BUILTIN_LABELS = {
@@ -839,7 +851,9 @@ function applyWorkspace(v) {
   if (!p) return;
   state = p;
   if (!state.billingMode) state.billingMode = 'corp';
+  if (!state.whtType) state.whtType = 'service';
   setBillingModeUI(state.billingMode);
+  setWhtTypeUI(state.whtType);
   if (p.sell == null) {
     const c = calc();
     state.sell = Math.round(c.suggestedPrice);
@@ -953,21 +967,28 @@ function calcAtSeats(seats) {
 
 function billingParams() {
   const mode = state.billingMode || 'corp';
+  const whtType = state.whtType || 'service';
   const vatRate = (mode === 'corp' && settings.vatEnabled) ? settings.vatRate : 0;
-  const whtRate = mode === 'personal' ? settings.whtPersonal : settings.whtCorp;
-  return { mode, vatRate, whtRate };
+  const whtRate = whtType === 'rent' ? settings.whtRent : settings.whtService;
+  return { mode, whtType, vatRate, whtRate };
 }
 
 function setBillingModeUI(mode) {
   document.querySelectorAll('.bmode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
   const hint = $('bmode-hint');
   if (!hint) return;
-  if (mode === 'personal') {
-    hint.textContent = 'ไม่มี VAT · โดนหัก ณ ที่จ่าย ' + settings.whtPersonal + '%';
-  } else {
-    hint.textContent = (settings.vatEnabled ? 'VAT ' + settings.vatRate + '%' : 'ไม่บวก VAT') +
-      ' · โดนหัก ณ ที่จ่าย ' + settings.whtCorp + '%';
-  }
+  hint.textContent = mode === 'personal'
+    ? 'บุคคลธรรมดา (ปกติไม่จด VAT) → ไม่บวก VAT'
+    : (settings.vatEnabled ? 'นิติบุคคล → บวก VAT ' + settings.vatRate + '%' : 'นิติบุคคล → ยังไม่บวก VAT (เปิดใน ตั้งค่า)');
+}
+
+function setWhtTypeUI(type) {
+  document.querySelectorAll('.wht-btn').forEach(b => b.classList.toggle('active', b.dataset.wht === type));
+  const hint = $('wht-hint');
+  if (!hint) return;
+  hint.textContent = type === 'rent'
+    ? 'ค่าเช่า → หัก ณ ที่จ่าย ' + settings.whtRent + '% (rents)'
+    : 'ค่าบริการ/อบรม/วิชาชีพ → หัก ณ ที่จ่าย ' + settings.whtService + '% (service & professional fees)';
 }
 
 function renderCashflow(revenue, vatAmt, whtAmt, netCash, bp) {
@@ -985,15 +1006,15 @@ function renderCashflow(revenue, vatAmt, whtAmt, netCash, bp) {
   }
   rows += '<div class="cashflow-row total"><span class="cf-label">เงินโอนเข้าจริง</span>' +
     '<span class="cf-val">' + fmt(netCash) + '</span></div>';
-  let note;
-  if (bp.mode === 'personal') {
-    note = 'บุคคลธรรมดาออกบิลเก็บบริษัท — ไม่มี VAT · ถูกหัก ณ ที่จ่าย ' + bp.whtRate +
-      '% (ได้คืน/เครดิตตอนยื่นภาษี) · ยังไม่รวมภาษีเงินได้บุคคลธรรมดา';
-  } else {
-    note = 'นิติบุคคลออกบิลเก็บนิติบุคคล — ' + (bp.vatRate > 0 ? 'บวก VAT ' + bp.vatRate + '% (นำส่งสรรพากร ไม่ใช่รายได้)' : 'ไม่บวก VAT') +
-      ' · ถูกหัก ณ ที่จ่าย ' + bp.whtRate + '% (เครดิตภาษี)';
-  }
-  rows += '<div class="cashflow-note">' + note + ' · กำไรด้านบนคือกำไรทางบัญชี ไม่กระทบจาก VAT/หัก ณ ที่จ่าย</div>';
+  const whtTypeText = bp.whtType === 'rent' ? 'ค่าเช่า' : 'ค่าบริการอบรม';
+  const payerText = bp.mode === 'personal' ? 'บุคคลธรรมดาออกบิลเก็บบริษัท' : 'นิติบุคคลออกบิลเก็บนิติบุคคล';
+  const vatText = bp.vatRate > 0 ? 'บวก VAT ' + bp.vatRate + '% (นำส่งสรรพากร ไม่ใช่รายได้)' : 'ไม่บวก VAT';
+  let note = payerText + ' — ' + vatText +
+    ' · รายการเป็น "' + whtTypeText + '" → หัก ณ ที่จ่าย ' + bp.whtRate + '% (เครดิตภาษี ได้คืนตอนยื่น)';
+  note += '<br>กรมสรรพากร: service &amp; professional fees = 3% · rents = 5% — งานอบรม/เวิร์กช็อปเป็นค่าบริการ จึงหัก 3% ไม่ใช่ 5%';
+  if (bp.mode === 'personal') note += ' · ยังไม่รวมภาษีเงินได้บุคคลธรรมดา';
+  note += '<br>กำไรด้านบนคือกำไรทางบัญชี ไม่กระทบจาก VAT/หัก ณ ที่จ่าย';
+  rows += '<div class="cashflow-note">' + note + '</div>';
   el.innerHTML = rows;
 }
 
@@ -1134,8 +1155,8 @@ function openSettings() {
   $('set-bud-high').value = settings.budgetHigh;
   $('set-vat-rate').value = settings.vatRate;
   $('set-vat-toggle').classList.toggle('on', settings.vatEnabled);
-  $('set-wht-corp').value = settings.whtCorp;
-  $('set-wht-personal').value = settings.whtPersonal;
+  $('set-wht-service').value = settings.whtService;
+  $('set-wht-rent').value = settings.whtRent;
   renderHiddenBuiltins();
   renderBuiltinOverrides();
   $('settings-modal').classList.remove('hidden');
@@ -1205,11 +1226,12 @@ function saveSettings() {
   settings.budgetHigh = +$('set-bud-high').value || 0;
   settings.vatRate = +$('set-vat-rate').value || 0;
   settings.vatEnabled = $('set-vat-toggle').classList.contains('on');
-  settings.whtCorp = +$('set-wht-corp').value || 0;
-  settings.whtPersonal = +$('set-wht-personal').value || 0;
+  settings.whtService = +$('set-wht-service').value || 0;
+  settings.whtRent = +$('set-wht-rent').value || 0;
   persistSettings();
   closeSettings();
   setBillingModeUI(state.billingMode || 'corp');
+  setWhtTypeUI(state.whtType || 'service');
   compute();
   toast('บันทึกการตั้งค่าแล้ว');
 }
@@ -1343,6 +1365,13 @@ document.querySelectorAll('.bmode-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     state.billingMode = btn.dataset.mode;
     setBillingModeUI(state.billingMode);
+    compute();
+  });
+});
+document.querySelectorAll('.wht-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    state.whtType = btn.dataset.wht;
+    setWhtTypeUI(state.whtType);
     compute();
   });
 });

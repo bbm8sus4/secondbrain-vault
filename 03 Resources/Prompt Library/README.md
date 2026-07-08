@@ -31,6 +31,7 @@ tags: [resource, prompt-library, ai, index]
 ## แยกตามบริบท (โฟลเดอร์ย่อย · เพิ่มได้เรื่อยๆ)
 - [[Marketing/_index|Marketing]] — พรอมป์งานการตลาด (KuanGolf GTM plan, …)
 - [[HR/_index|HR]] — พรอมป์งาน HR / คน / องค์กร _(ว่าง พร้อมเติม)_
+- [[Design/_index|Design]] — พรอมป์งานออกแบบ (Senior Design Director role, …)
 - _เพิ่มบริบทใหม่: สร้างโฟลเดอร์ + `_index.md` + ลิงก์บรรทัดนี้ (เช่น Sales, Product, Ops, Finance, Legal)_
 
 ### กติกาการตั้งชื่อ/จัดไฟล์ (สำหรับพรอมป์บริบทใหม่)
