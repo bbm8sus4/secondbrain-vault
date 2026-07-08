@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-07 09:00:00 · ไฟล์ .md ทั้งหมด 387
+> สแกนอัตโนมัติ · 2026-07-08 09:00:01 · ไฟล์ .md ทั้งหมด 390
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -9,7 +9,7 @@
 | รายการ | ผล |
 |---|---|
 | 🔗 ลิงก์เสีย (dead links) | 4 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 0 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 3 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
 | 🔄 memory source ↔ mirror | 82 ↔ 82 — ตรงกัน ✅ |
 | ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
@@ -18,8 +18,8 @@
 | 📋 frontmatter ขาด (backlog) | 143 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
 | ❓ คิวรอ verify | 9 |
-| 📰 Friday weekly recap ล่าสุด | 2026-W27 (2 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (6 วันที่แล้ว) |
+| 📰 Friday weekly recap ล่าสุด | 2026-W27 (3 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (7 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -27,6 +27,12 @@
 - `03 Resources/แผนที่ - คู่มือ.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
 - `index.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
 - `log.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
+
+## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
+
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part2-AI-Marketing.md`
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part3-Landing-Page-NoCode.md`
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part4-Cowork-and-ClaudeCode-Warp.md`
 
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
 
