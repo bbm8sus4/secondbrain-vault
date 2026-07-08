@@ -293,30 +293,6 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
   outline: 2px solid var(--primary); outline-offset: 2px;
 }
 
-.billing-modes { display: flex; gap: 6px; margin-bottom: 6px; }
-.bmode-btn {
-  flex: 1; padding: 8px 10px; border: 1px solid var(--border); border-radius: 7px;
-  background: white; font-family: inherit; font-size: 12px; font-weight: 500;
-  color: var(--muted); cursor: pointer; transition: all 0.15s; text-align: center; line-height: 1.3;
-}
-.bmode-btn:hover { border-color: var(--primary); color: var(--primary); }
-.bmode-btn.active { background: var(--primary-light); border-color: var(--primary); color: var(--primary); font-weight: 600; }
-.bmode-hint { font-size: 10px; color: var(--muted); margin-bottom: 10px; text-align: center; }
-
-.cashflow { margin-top: 10px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-.cashflow-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 7px 12px; font-size: 12px; border-bottom: 1px solid var(--border);
-}
-.cashflow-row:last-child { border-bottom: none; }
-.cashflow-row .cf-label { color: var(--muted); }
-.cashflow-row .cf-val { font-weight: 600; }
-.cashflow-row.total { background: var(--primary-light); }
-.cashflow-row.total .cf-label { color: var(--text); font-weight: 600; }
-.cashflow-row.total .cf-val { color: var(--primary); font-weight: 700; font-size: 13px; }
-.cashflow-row.neg .cf-val { color: var(--red); }
-.cashflow-note { font-size: 10px; color: var(--muted); padding: 6px 12px; background: var(--bg); line-height: 1.4; }
-
 @media print {
   body { background: white; }
   .workspace-bar, .icon-btn, .add-item, .item-remove, .modal, .toast { display: none; }
@@ -433,11 +409,6 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
 
   <div class="panel">
     <h2>ราคาขาย &amp; กำไร</h2>
-    <div class="billing-modes" id="billing-modes">
-      <button class="bmode-btn" data-mode="corp">🏢 นิติบุคคล → นิติบุคคล</button>
-      <button class="bmode-btn" data-mode="personal">👤 บุคคลธรรมดา → นิติบุคคล</button>
-    </div>
-    <div class="bmode-hint" id="bmode-hint">—</div>
     <div class="sell-block">
       <div class="field-label"><span>ราคาขาย/หัว</span><span class="unit">บาท</span></div>
       <div class="row">
@@ -467,7 +438,6 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
       </div>
     </div>
     <div class="status-bar" id="status-bar">—</div>
-    <div class="cashflow" id="cashflow"></div>
   </div>
 
   <div class="panel">
@@ -520,13 +490,11 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
       <li>ทุก workspace ที่ save เก็บใน localStorage ของ browser นี้ · ไม่ sync ข้าม device</li>
       <li>คลิก <strong>+ เพิ่มรายการ</strong> เพิ่มค่าใช้จ่ายในแต่ละหมวด · คลิกชื่อรายการเพื่อแก้ · × เพื่อลบ (ยกเว้นรายการ lock)</li>
       <li><strong>ค่าห้อง ฿3,745</strong> (รวม VAT) คงที่/งาน · <strong>อาหาร SHIFT จริง ฿428/หัว</strong> · <strong>เจ้าของกรอกงบ ฿30-50k</strong> รวม 1 วัน</li>
-      <li><strong>โหมดออกบิล</strong> — <strong>นิติบุคคล→นิติบุคคล</strong>: บวก VAT ได้ (เปิดใน ตั้งค่า) · โดนหัก ณ ที่จ่าย 3% · <strong>บุคคลธรรมดา→นิติบุคคล</strong>: ไม่มี VAT · โดนหัก ณ ที่จ่าย 5%</li>
-      <li>VAT กับ หัก ณ ที่จ่าย <strong>ไม่กระทบกำไรทางบัญชี</strong> (VAT นำส่งสรรพากร · หัก ณ ที่จ่าย เป็นเครดิตภาษีได้คืน) — มีผลแค่ <strong>เงินโอนเข้าจริง</strong> เท่านั้น · โหมดบุคคลธรรมดายังไม่รวมภาษีเงินได้บุคคลธรรมดา</li>
     </ul>
   </div>
 </div>
 
-<div class="footer">AI Workshop · บ.ขอนแก่นอิเล็คทริค · อัปเดต 2026-07-08</div>
+<div class="footer">AI Workshop · บ.ขอนแก่นอิเล็คทริค · อัปเดต 2026-07-01</div>
 
 </div>
 
@@ -565,7 +533,7 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
     </div>
 
     <div class="modal-section">
-      <h4>VAT <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0;">(เฉพาะโหมดนิติบุคคล)</span></h4>
+      <h4>VAT</h4>
       <div class="modal-field toggle-row" style="grid-template-columns: 1fr auto;">
         <label>เปิดคำนวณ VAT (บวกเพิ่มจากราคาขาย)</label>
         <div class="toggle" id="set-vat-toggle"></div>
@@ -573,18 +541,6 @@ input:focus-visible, select:focus-visible, button:focus-visible, .toggle:focus-v
       <div class="modal-field">
         <label>VAT rate</label>
         <input type="number" id="set-vat-rate" step="0.1" min="0" max="20">
-      </div>
-    </div>
-
-    <div class="modal-section">
-      <h4>หัก ณ ที่จ่าย (WHT) — บริษัทลูกค้าหักตอนจ่าย</h4>
-      <div class="modal-field">
-        <label>โหมดนิติบุคคล → นิติบุคคล (%)</label>
-        <input type="number" id="set-wht-corp" step="0.5" min="0" max="30">
-      </div>
-      <div class="modal-field">
-        <label>โหมดบุคคลธรรมดา → นิติบุคคล (%)</label>
-        <input type="number" id="set-wht-personal" step="0.5" min="0" max="30">
       </div>
     </div>
 
@@ -638,9 +594,7 @@ const DEFAULT_SETTINGS = {
   budgetMid: 40000,
   budgetHigh: 50000,
   vatEnabled: false,
-  vatRate: 7,
-  whtCorp: 3,
-  whtPersonal: 5
+  vatRate: 7
 };
 
 const BUILTIN_LABELS = {
@@ -838,8 +792,6 @@ function applyWorkspace(v) {
   const p = getPresetByWs(v);
   if (!p) return;
   state = p;
-  if (!state.billingMode) state.billingMode = 'corp';
-  setBillingModeUI(state.billingMode);
   if (p.sell == null) {
     const c = calc();
     state.sell = Math.round(c.suggestedPrice);
@@ -951,52 +903,6 @@ function calcAtSeats(seats) {
   return { costPerHead, totalCost, suggestedPrice };
 }
 
-function billingParams() {
-  const mode = state.billingMode || 'corp';
-  const vatRate = (mode === 'corp' && settings.vatEnabled) ? settings.vatRate : 0;
-  const whtRate = mode === 'personal' ? settings.whtPersonal : settings.whtCorp;
-  return { mode, vatRate, whtRate };
-}
-
-function setBillingModeUI(mode) {
-  document.querySelectorAll('.bmode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
-  const hint = $('bmode-hint');
-  if (!hint) return;
-  if (mode === 'personal') {
-    hint.textContent = 'ไม่มี VAT · โดนหัก ณ ที่จ่าย ' + settings.whtPersonal + '%';
-  } else {
-    hint.textContent = (settings.vatEnabled ? 'VAT ' + settings.vatRate + '%' : 'ไม่บวก VAT') +
-      ' · โดนหัก ณ ที่จ่าย ' + settings.whtCorp + '%';
-  }
-}
-
-function renderCashflow(revenue, vatAmt, whtAmt, netCash, bp) {
-  const el = $('cashflow');
-  if (!el) return;
-  let rows = '<div class="cashflow-row"><span class="cf-label">รายได้ (ก่อนภาษี)</span>' +
-    '<span class="cf-val">' + fmt(revenue) + '</span></div>';
-  if (bp.vatRate > 0) {
-    rows += '<div class="cashflow-row"><span class="cf-label">+ VAT ' + bp.vatRate + '% (บริษัทเก็บแทนสรรพากร)</span>' +
-      '<span class="cf-val">' + fmt(vatAmt) + '</span></div>';
-  }
-  if (bp.whtRate > 0) {
-    rows += '<div class="cashflow-row neg"><span class="cf-label">− หัก ณ ที่จ่าย ' + bp.whtRate + '% (ลูกค้าหักไว้)</span>' +
-      '<span class="cf-val">-' + fmt(whtAmt) + '</span></div>';
-  }
-  rows += '<div class="cashflow-row total"><span class="cf-label">เงินโอนเข้าจริง</span>' +
-    '<span class="cf-val">' + fmt(netCash) + '</span></div>';
-  let note;
-  if (bp.mode === 'personal') {
-    note = 'บุคคลธรรมดาออกบิลเก็บบริษัท — ไม่มี VAT · ถูกหัก ณ ที่จ่าย ' + bp.whtRate +
-      '% (ได้คืน/เครดิตตอนยื่นภาษี) · ยังไม่รวมภาษีเงินได้บุคคลธรรมดา';
-  } else {
-    note = 'นิติบุคคลออกบิลเก็บนิติบุคคล — ' + (bp.vatRate > 0 ? 'บวก VAT ' + bp.vatRate + '% (นำส่งสรรพากร ไม่ใช่รายได้)' : 'ไม่บวก VAT') +
-      ' · ถูกหัก ณ ที่จ่าย ' + bp.whtRate + '% (เครดิตภาษี)';
-  }
-  rows += '<div class="cashflow-note">' + note + ' · กำไรด้านบนคือกำไรทางบัญชี ไม่กระทบจาก VAT/หัก ณ ที่จ่าย</div>';
-  el.innerHTML = rows;
-}
-
 function compute() {
   const c = calc();
   const seats = c.seats;
@@ -1031,12 +937,12 @@ function compute() {
   $('o-pt').textContent = fmtSign(totalProfit);
   $('o-be').textContent = isFinite(beSeats) ? 'break-even ที่ ' + beSeats + ' คน' : 'ราคา < ต้นทุนผันแปร';
 
-  const bp = billingParams();
-  const vatAmt = revenue * (bp.vatRate / 100);
-  const whtAmt = revenue * (bp.whtRate / 100);
-  const netCash = revenue + vatAmt - whtAmt;
-  $('o-rev-sub').textContent = 'เงินโอนจริง ' + fmt(netCash);
-  renderCashflow(revenue, vatAmt, whtAmt, netCash, bp);
+  if (settings.vatEnabled) {
+    const vat = revenue * (settings.vatRate / 100);
+    $('o-rev-sub').textContent = 'รวม VAT ' + settings.vatRate + '% = ' + fmt(revenue + vat);
+  } else {
+    $('o-rev-sub').textContent = 'ทั้งรุ่น';
+  }
 
   [['kpi-pph', profitPerHead, realMargin], ['kpi-pt', totalProfit, realMargin]].forEach(([id, val, m]) => {
     const el = $(id);
@@ -1134,8 +1040,6 @@ function openSettings() {
   $('set-bud-high').value = settings.budgetHigh;
   $('set-vat-rate').value = settings.vatRate;
   $('set-vat-toggle').classList.toggle('on', settings.vatEnabled);
-  $('set-wht-corp').value = settings.whtCorp;
-  $('set-wht-personal').value = settings.whtPersonal;
   renderHiddenBuiltins();
   renderBuiltinOverrides();
   $('settings-modal').classList.remove('hidden');
@@ -1205,11 +1109,8 @@ function saveSettings() {
   settings.budgetHigh = +$('set-bud-high').value || 0;
   settings.vatRate = +$('set-vat-rate').value || 0;
   settings.vatEnabled = $('set-vat-toggle').classList.contains('on');
-  settings.whtCorp = +$('set-wht-corp').value || 0;
-  settings.whtPersonal = +$('set-wht-personal').value || 0;
   persistSettings();
   closeSettings();
-  setBillingModeUI(state.billingMode || 'corp');
   compute();
   toast('บันทึกการตั้งค่าแล้ว');
 }
@@ -1337,14 +1238,6 @@ $('use-suggested').addEventListener('click', e => {
   $('i-sell').value = sp;
   $('i-sell-n').value = sp;
   compute();
-});
-
-document.querySelectorAll('.bmode-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    state.billingMode = btn.dataset.mode;
-    setBillingModeUI(state.billingMode);
-    compute();
-  });
 });
 
 $('open-settings').addEventListener('click', openSettings);
