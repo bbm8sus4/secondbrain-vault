@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Setup — AI Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Noto+Sans+Thai:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  @page{ size:1280px 720px; margin:0; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ width:1280px; height:720px; }
+  body{
+    font-family:'Nunito','Noto Sans Thai',sans-serif;
+    color:#111; background:#fff; padding:32px 56px 26px;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+    position:relative;
+  }
+  h1{ font-size:40px; font-weight:800; letter-spacing:.5px; margin-bottom:8px; }
+  .legend{ position:absolute; top:44px; right:56px; font-size:15px; }
+  .legend b{ font-weight:700; }
+  .dot{ display:inline-block; width:11px; height:11px; border-radius:3px; margin:0 5px 0 14px; vertical-align:middle; }
+  .dot.k{ background:#111; } .dot.a{ background:#1f7ae0; }
+
+  .cols{ display:flex; gap:34px; }
+  .col{ flex:1; }
+  ul{ list-style:none; }
+
+  .l1{ font-size:21px; font-weight:800; margin-top:11px; display:flex; gap:7px; line-height:1.25; }
+  .l1:first-child{ margin-top:0; }
+  .l1::before{ content:"●"; font-size:13px; line-height:1.6; }
+  .l2{ font-size:18px; font-weight:600; margin-left:30px; margin-top:3px; line-height:1.25; }
+  .l3{ font-size:16.5px; margin-left:56px; margin-top:1px; color:#222; line-height:1.25; }
+  .add{ color:#1f7ae0; }
+  .grp{ margin-bottom:5px; }
+</style>
+</head>
+<body>
+  <h1>Setup</h1>
+  <div class="legend"><span class="dot k"></span><b>ของเดิม</b><span class="dot a"></span><b class="add">ผมเพิ่ม</b></div>
+
+  <div class="cols">
+    <!-- ================= COLUMN 1 ================= -->
+    <div class="col">
+
+      <div class="grp">
+        <div class="l1">Account Claude AI</div>
+        <div class="l2 add">สมัคร / เข้าสู่ระบบ (Google, Email)</div>
+        <div class="l2 add">เลือกแพลน: Free / Pro / Max</div>
+        <div class="l2">Setting</div>
+        <div class="l3">Billing</div>
+        <div class="l3">Usage</div>
+        <div class="l3 add">Limit &amp; Reset — โควตาหมดเมื่อไหร่</div>
+        <div class="l3 add">ภาษา / โปรไฟล์</div>
+      </div>
+
+      <div class="grp">
+        <div class="l1">Claude Chat</div>
+        <div class="l2 add">New chat / ประวัติแชท</div>
+        <div class="l2">Model</div>
+        <div class="l3">Haiku <span class="add">— เร็ว งานเบา</span></div>
+        <div class="l3">Sonnet <span class="add">— สมดุล</span></div>
+        <div class="l3">Opus <span class="add">— ฉลาดสุด งานยาก</span></div>
+        <div class="l3">Fable <span class="add">— รุ่นใหม่ล่าสุด</span></div>
+        <div class="l2 add">เขียน Prompt เบื้องต้น</div>
+        <div class="l2 add">แนบไฟล์ / รูป / PDF</div>
+        <div class="l2 add">Artifacts (สร้างชิ้นงาน)</div>
+        <div class="l2 add">Extended thinking · ค้นเว็บ</div>
+        <div class="l2 add">Projects (คลังความรู้) · Styles</div>
+      </div>
+
+      <div class="grp">
+        <div class="l1">Claude Co work</div>
+        <div class="l2">Project</div>
+        <div class="l2">Model</div>
+        <div class="l2">Skill</div>
+        <div class="l2 add">Connectors (MCP)</div>
+        <div class="l2 add">แนบไฟล์ &amp; สิทธิ์เข้าถึง</div>
+      </div>
+
+    </div>
+
+    <!-- ================= COLUMN 2 ================= -->
+    <div class="col">
+
+      <div class="grp">
+        <div class="l1">Terminal warp x Claude CLI</div>
+        <div class="l2">Terminal 101</div>
+        <div class="l3 add">ทำไมต้อง terminal (สร้างความมั่นใจ)</div>
+        <div class="l3 add">ติดตั้ง Warp + Claude CLI</div>
+        <div class="l3 add">คำสั่งพื้นฐาน ls / cd / pwd</div>
+        <div class="l3">Login / logout</div>
+        <div class="l3">Mode / bypass permission / Plan mode</div>
+        <div class="l3">Session tab</div>
+        <div class="l3">Command line</div>
+        <div class="l3">/Model select</div>
+        <div class="l3">/Effort</div>
+        <div class="l3">/cd folder</div>
+        <div class="l3">Rename pane</div>
+        <div class="l3">Usecase</div>
+      </div>
+
+      <div class="grp">
+        <div class="l1 add">Claude CLI ต่อยอด</div>
+        <div class="l3 add">/init + CLAUDE.md (สอน Claude เรื่องงานเรา)</div>
+        <div class="l3 add">/clear · /resume · /help</div>
+        <div class="l3 add">Permission &amp; allowlist</div>
+        <div class="l3 add">Skill ใน CLI · MCP เชื่อมเครื่องมือ</div>
+      </div>
+
+      <div class="grp">
+        <div class="l1 add">ความปลอดภัย</div>
+        <div class="l3 add">ไม่ใส่ข้อมูลลับ / รหัสผ่านจริง</div>
+        <div class="l3 add">ระวังคำสั่งลบ/เขียนทับไฟล์</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

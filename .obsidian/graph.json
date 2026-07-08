@@ -1,97 +1,12 @@
 {
   "collapse-filter": false,
   "search": "",
-  "showTags": true,
+  "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
   "collapse-color-groups": false,
-  "colorGroups": [
-    {
-      "query": "path:\"Thunder Solution\"",
-      "color": {
-        "a": 1,
-        "rgb": 3900150
-      }
-    },
-    {
-      "query": "path:\"EasySlip\"",
-      "color": {
-        "a": 1,
-        "rgb": 15485081
-      }
-    },
-    {
-      "query": "path:\"EasyCRM\"",
-      "color": {
-        "a": 1,
-        "rgb": 9133302
-      }
-    },
-    {
-      "query": "path:\"EasyBOT\"",
-      "color": {
-        "a": 1,
-        "rgb": 16096779
-      }
-    },
-    {
-      "query": "path:\"BoostSMS\"",
-      "color": {
-        "a": 1,
-        "rgb": 16347926
-      }
-    },
-    {
-      "query": "path:\"Friday\"",
-      "color": {
-        "a": 1,
-        "rgb": 1096065
-      }
-    },
-    {
-      "query": "path:\"01 Projects/KuanGolf\"",
-      "color": {
-        "a": 1,
-        "rgb": 1357990
-      }
-    },
-    {
-      "query": "path:\"01 Projects\"",
-      "color": {
-        "a": 1,
-        "rgb": 14935603
-      }
-    },
-    {
-      "query": "path:\"30 Claude Memory\"",
-      "color": {
-        "a": 1,
-        "rgb": 2282478
-      }
-    },
-    {
-      "query": "path:\"20 Rules\"",
-      "color": {
-        "a": 1,
-        "rgb": 15680580
-      }
-    },
-    {
-      "query": "path:\"03 Resources/Clippings\"",
-      "color": {
-        "a": 1,
-        "rgb": 9741240
-      }
-    },
-    {
-      "query": "path:\"03 Resources\"",
-      "color": {
-        "a": 1,
-        "rgb": 15235577
-      }
-    }
-  ],
+  "colorGroups": [],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
@@ -102,6 +17,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.45320151577089934,
+  "scale": 0.21472184783411896,
   "close": false
 }
