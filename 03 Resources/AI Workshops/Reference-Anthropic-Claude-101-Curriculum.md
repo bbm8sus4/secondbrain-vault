@@ -62,4 +62,4 @@ tags: [ai-workshop, claude, curriculum, reference, anthropic]
 - **Projects** เขาสอนเป็นบทเต็มในโมดูล 2 — ที่ workshop 7 Groups ใช้แนวคิดนี้แล้ว (ChatGPT Projects) แต่ขอนแก่นยังไม่มี
 - คอร์สของเขาใช้เวลา 2-3 ชม. → workshop 1 วันของเราเทียบได้กับ 101 + Marketing use-case + hands-on deploy
 
-เกี่ยวข้อง: [[../01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/README]] · [[../01 Projects/AI Workshop - Team 7 Groups/index]]
+เกี่ยวข้อง: [[../01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/README]] · [[../01 Projects/AI Workshop - Team 7 Groups/index]]

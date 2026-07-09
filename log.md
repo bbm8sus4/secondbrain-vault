@@ -53,7 +53,7 @@ tags: [log, vault, timeline]
 - **vault-health v2**: เช็คเพิ่ม frontmatter ขาด / หน้าเก่า >90 วัน / คิว `ต้อง verify` / launchd ตาย / push ค้าง + แจ้ง Telegram เมื่อมีปัญหา (ผ่านบอท ccgram, ทดสอบส่งจริงแล้ว HTTP 200)
 - **ratchet loop ใหม่**: `com.aexgee.ratchet-clippings` อาทิตย์ 19:00 — claude headless สรุป clippings เป็น Takeaways สูงสุด 5 ชิ้น/รอบ ลง `Clippings/Synthesis/`
 - **Obsidian**: browse.base เป็น dashboard จริง 4 views · templates 5 ตัวใน `20 Rules/_templates` + ตั้ง core plugin · graph colorGroups 12 กลุ่มแบบ path: + เปิด tags
-- **triage inbox เกลี้ยง**: อบรมขอนแก่น → `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/` · โครงคอร์ส Claude → `03 Resources/AI Workshops/`
+- **triage inbox เกลี้ยง**: อบรมขอนแก่น → `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/` · โครงคอร์ส Claude → `03 Resources/AI Workshops/`
 - ⚠️ พบว่า vault-capture bot ไม่เคยทำงานจริง (token ว่าง) — บันทึกใน [[Automation Setup]] รอพี่สร้างบอท
 - agent: Claude Code (session 2026-07-06)
 
@@ -186,10 +186,18 @@ tags: [log, vault, timeline]
 - note: pandoc HTML→md, base64 images extracted, categorized by title patterns
 
 ## [2026-07-09] done | AI Workshop — ขอนแก่นอิเล็คทริค
-- updated: [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/README]] (status: live → done, completed 2026-07-09)
+- updated: [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/README]] (status: live → done, completed 2026-07-09)
 - delivered: ใบเสนอราคา PDF 5 หน้า + Word (.docx) แบบ Cotactic — `Files/Costs/AI-Workshop-Quotation-Full.*` (2,499/คน × 15 = 40,108.95 รวม VAT)
 - delivered: Google Form อาหาร (เบรก+กลางวัน) deploy จริงผ่าน clasp + Forms — `Files/Forms/5_แบบฟอร์มอาหาร_Catering_AppsScript.gs` · [[FORM_URLS]]
 - moved: 4 ไฟล์จาก Desktop เข้าโปรเจกต์ (zip pack, quotation, PROJECT-CONTEXT)
 - touched: 3 pages
 - source: chat 2026-07-08/09
 - note: quotation .docx สร้างด้วย python-docx (pandoc/LibreOffice-HTML แปลงตารางพัง) — วิธีจดใน memory [[Thai doc generation|reference_thai_doc_generation]]
+
+## [2026-07-09] rename | AI Workshop → AI-101 for บ.ขอนแก่นอิเล็คทริค
+- renamed: `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/` → `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/`
+- updated: 12 ไฟล์ที่อ้าง path เดิม (log, _vault-health, 3× Claude Memory, สรุป vault overhaul, Reference-Claude-101, README, PROJECT-CONTEXT + memory source 3 ไฟล์)
+- updated: [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/README]] title→AI-101, status active/phase slides, alias เดิมไว้
+- reason: user รวมทุกอย่างของขอนแก่นอิเล็คไว้โฟลเดอร์เดียว เตรียมทำสไลด์
+- touched: 13 pages
+- note: ทุกอย่างอยู่ในโฟลเดอร์นี้แล้ว · ไฟล์สไลด์ทำต่อที่ Files/Slides/

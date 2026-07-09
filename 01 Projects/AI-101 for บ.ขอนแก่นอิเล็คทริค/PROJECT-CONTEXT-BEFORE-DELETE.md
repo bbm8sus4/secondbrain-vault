@@ -216,7 +216,7 @@ Workspace เดิม: `/home/thunder-management/workspaces/seatmap`
 
 - `secondbrain-vault/`
 - `office-seating-plan/`
-- `.tmp-ai-workshop/AI Workshop - ขอนแก่นอิเล็คทริค/`
+- `.tmp-ai-workshop/AI-101 for บ.ขอนแก่นอิเล็คทริค/`
 
 ## Uploaded Inputs ที่ใช้
 

@@ -40,7 +40,7 @@ related:
 7. **browse.base เป็น dashboard จริง** — 4 views: ทุกหน้าตาม last_verified · schema debt · Projects · draft
 8. **Templates ใช้จริง** — 5 แบบใน `20 Rules/_templates/` + ตั้ง core plugin
 9. **Graph colorGroups 12 กลุ่ม** แบบ `path:` + เปิด tags (ของเดิม query คำลอย ๆ จับไม่ติด)
-10. **Inbox เกลี้ยง** — อบรมขอนแก่น → `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/` · โครงคอร์ส Claude → `03 Resources/AI Workshops/`
+10. **Inbox เกลี้ยง** — อบรมขอนแก่น → `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/` · โครงคอร์ส Claude → `03 Resources/AI Workshops/`
 
 ## Blueprint ส่งเพื่อน
 

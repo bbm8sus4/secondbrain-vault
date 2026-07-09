@@ -39,13 +39,13 @@
 - `01 Projects/AI Workshop - Team 7 Groups/Project Instructions.md` — ขาด last_verified
 - `01 Projects/AI Workshop - Team 7 Groups/Terminology.md` — ขาด last_verified
 - `01 Projects/AI Workshop - Team 7 Groups/index.md` — ขาด last_verified
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/01-Forms-Setup.md` — ขาด type, last_verified
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/02-Survey-Content.md` — ขาด type, last_verified
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/03-Gaps-Analysis.md` — ขาด type, last_verified
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/04-Menu-Catering.md` — ขาด type, last_verified
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/05-INCIDENT-ข้อมูลหาย-กู้คืน.md` — ขาด type, last_verified
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/06-Dashboard-Summary.md` — ขาด type, last_verified
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/PROJECT-CONTEXT-BEFORE-DELETE.md` — ขาด type, last_verified
+- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/01-Forms-Setup.md` — ขาด type, last_verified
+- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/02-Survey-Content.md` — ขาด type, last_verified
+- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/03-Gaps-Analysis.md` — ขาด type, last_verified
+- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/04-Menu-Catering.md` — ขาด type, last_verified
+- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/05-INCIDENT-ข้อมูลหาย-กู้คืน.md` — ขาด type, last_verified
+- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/06-Dashboard-Summary.md` — ขาด type, last_verified
+- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/PROJECT-CONTEXT-BEFORE-DELETE.md` — ขาด type, last_verified
 - `01 Projects/HUG COMPANY/SRS v0.0.2 — ERP System.md` — ขาด type, last_verified
 - `01 Projects/KuanGolf/FAQ — Live.md` — ขาด last_verified
 - `01 Projects/KuanGolf/KuanGolf — Master Reference.md` — ขาด type, last_verified

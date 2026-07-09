@@ -1,15 +1,21 @@
 ---
-title: "AI Workshop — บ.ขอนแก่นอิเล็คทริค"
+title: "AI-101 for บ.ขอนแก่นอิเล็คทริค"
 type: project
-status: done
-completed: 2026-07-09
+status: active
+phase: slides
+completed_prep: 2026-07-09
 last_verified: 2026-07-09
-tags: [project, ai-workshop, khonkaen, index]
+aliases: ["AI Workshop — บ.ขอนแก่นอิเล็คทริค", "AI Workshop ขอนแก่นอิเล็ค"]
+tags: [project, ai-workshop, ai-101, khonkaen, index]
 ---
 
-# AI Workshop — บ.ขอนแก่นอิเล็คทริค
+# AI-101 for บ.ขอนแก่นอิเล็คทริค
 
-> ✅ **เสร็จสมบูรณ์ 2026-07-09** — ส่งมอบครบ: หลักสูตร/สไลด์/lab/dashboard, ใบเสนอราคา (PDF 5 หน้า + Word · 2,499/คน × 15 = 40,108.95 รวม VAT), แบบฟอร์มอาหาร Google Form deploy จริงแล้ว (ดู [[FORM_URLS]]). งานเตรียมทั้งหมด QA PASS · เหลือรันคลาสหน้างาน
+> 📁 **โฟลเดอร์รวมทุกอย่างของ บ.ขอนแก่นอิเล็คทริค** (rename จาก "AI Workshop - ขอนแก่นอิเล็คทริค" 2026-07-09)
+>
+> ✅ **งานเตรียมเสร็จ (2026-07-09):** หลักสูตร/lab/dashboard, ใบเสนอราคา (PDF 5 หน้า + Word · 2,499/คน × 15 = 40,108.95 รวม VAT), แบบฟอร์มอาหาร Google Form deploy จริง (ดู [[FORM_URLS]]) · QA PASS
+>
+> 🎬 **กำลังทำ: สไลด์** → ไฟล์สไลด์อยู่ที่ `Files/Slides/` (Part1–4 + Setup-Outline-slide)
 
 **ผู้ว่าจ้าง:** คุณป๊อบ (เจ้าของบริษัท)
 **ผู้เรียน:** 15 คน คละแผนก — บัญชี/การเงิน · การตลาด · วิศวกร · ช่าง/เทคนิค
@@ -60,24 +66,24 @@ tags: [project, ai-workshop, khonkaen, index]
 ## ไฟล์ .md ใน Files/ (ลิงก์ตรง เปิดใน vault ได้เลย)
 
 **Curriculum:**
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Curriculum/4_แบบประเมินหลังอบรม_AI_Workshop|4_แบบประเมินหลังอบรม]] — ฟอร์มประเมินหลังจบ workshop
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Curriculum/BeforeAfter_Typhoon|BeforeAfter_Typhoon]] — before→after เกลาภาษาไทยด้วย Typhoon (61/121 strings)
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Curriculum/4_แบบประเมินหลังอบรม_AI_Workshop|4_แบบประเมินหลังอบรม]] — ฟอร์มประเมินหลังจบ workshop
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Curriculum/BeforeAfter_Typhoon|BeforeAfter_Typhoon]] — before→after เกลาภาษาไทยด้วย Typhoon (61/121 strings)
 
 **Forms:**
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/1_แบบสอบถามเจ้าของธุรกิจ_NeedsAnalysis|1_แบบสอบถามเจ้าของธุรกิจ (Needs Analysis)]]
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/2_แบบสำรวจผู้เรียน_AI_Workshop|2_แบบสำรวจผู้เรียน]]
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/4_Aidebate_Gaps_แบบสำรวจ|4_Aidebate Gaps แบบสำรวจ]] — gaps จากรอบ aidebate
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/FORM_URLS|FORM_URLS]] — ลิงก์ Google Form ตัวจริงทั้งหมด
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Forms/1_แบบสอบถามเจ้าของธุรกิจ_NeedsAnalysis|1_แบบสอบถามเจ้าของธุรกิจ (Needs Analysis)]]
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Forms/2_แบบสำรวจผู้เรียน_AI_Workshop|2_แบบสำรวจผู้เรียน]]
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Forms/4_Aidebate_Gaps_แบบสำรวจ|4_Aidebate Gaps แบบสำรวจ]] — gaps จากรอบ aidebate
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Forms/FORM_URLS|FORM_URLS]] — ลิงก์ Google Form ตัวจริงทั้งหมด
 
 **Slides:**
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part1-Claude-Basics|Part1-Claude-Basics]] — สไลด์พาร์ทแรก พื้นฐาน Claude
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part2-AI-Marketing|Part2-AI-Marketing]]
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part3-Landing-Page-NoCode|Part3-Landing-Page-NoCode]]
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part4-Cowork-and-ClaudeCode-Warp|Part4-Cowork-and-ClaudeCode-Warp]]
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Slides/Part1-Claude-Basics|Part1-Claude-Basics]] — สไลด์พาร์ทแรก พื้นฐาน Claude
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Slides/Part2-AI-Marketing|Part2-AI-Marketing]]
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Slides/Part3-Landing-Page-NoCode|Part3-Landing-Page-NoCode]]
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Slides/Part4-Cowork-and-ClaudeCode-Warp|Part4-Cowork-and-ClaudeCode-Warp]]
 
 **อื่น ๆ:**
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/catering-form-deploy/DEPLOY_NOTES|DEPLOY_NOTES (catering form)]]
-- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/PROJECT-CONTEXT-BEFORE-DELETE|PROJECT-CONTEXT-BEFORE-DELETE]] — snapshot บริบทก่อนล้าง working dir
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Forms/catering-form-deploy/DEPLOY_NOTES|DEPLOY_NOTES (catering form)]]
+- [[01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/PROJECT-CONTEXT-BEFORE-DELETE|PROJECT-CONTEXT-BEFORE-DELETE]] — snapshot บริบทก่อนล้าง working dir
 
 ## Pipeline ที่ใช้ทำ project นี้
 
