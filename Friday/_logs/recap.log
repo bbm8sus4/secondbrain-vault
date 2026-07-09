@@ -545,3 +545,37 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W28.md — 33,166 cha
 - Line Bot บางเคสแก้เบื้องต้นด้วย QR Code สำเร็จ และเคสที่ C ตามต่อแจ้งว่าได้รับการแก้ไขแล้ว
 [2026-07-09 13:01:04] WEEKLY: ✅ wrote     9882 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W28.md
 [2026-07-09 13:01:04] DONE: auto
+[2026-07-09 23:58:11] AUTO: DOW=4 DOM=09 TOMORROW=10
+[2026-07-09 23:58:11] CATCHUP: scanning past 14 days for missed runs
+[2026-07-09 23:58:11] AUTO: Thursday detected → weekly
+[2026-07-09 23:58:11] WEEKLY: 2026-07-03 → 2026-07-09 (label: 2026-W28)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W28.md — 34,782 chars, 28 weekly, 72 daily
+[2026-07-09 23:58:16] WEEKLY: source size =    60105 chars
+[2026-07-09 23:58:16] WEEKLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W28.md
+- HR: 2026-07-06 Bobscanchez ไม่รับ อริศา ตำแหน่ง PM/การตลาด; 2026-07-07 Rawin QA รอบ 2 นัด ศ. 10 ก.ค. 11:00 น. ออนไลน์; 2026-07-08 Bobsanchezz ขอใบเตือน Guitar กรณีหาย 1 ชม.
+
+## SHIFT + Bob
+- 2026-07-06 SHIFT: Bobsanchezz ยกเลิกแผนเพื่อให้ชัวร์รอบหน้า และ emus_chan สำรองยอดนี้
+- 2026-07-06 Talk to Bob: จี๋มีปัญหา Mindset ทำงานร่วมกับบ๊อบ แต่สรุปว่างานเรียบร้อย
+- 2026-07-07 watcharin1004 flag ว่า product/PO ข้อมูลไม่ละเอียด; Bobsanchezz ขอ repo บริหารลูกเทรน
+- 2026-07-08 Watcharin ให้ Bob สร้างห้องใหม่ดึงทุกคนในบริษัท สำหรับ Discord แชร์ปัญหา/use case; Bob ถามยืนยันว่าจะใช้ Discord หรือ Telegram
+- 2026-07-08 watcharin1004 ชวน Cning เข้า Discord ให้ลองใช้ AI; Cning เข้าร่วมแล้ว แต่ T3NotFound พบปัญหา AI
+
+## ⚠️ Watch list ค้างปลายสัปดาห์
+- Triple P Ev ยังรอคอนเฟิร์มนัดนำเสนอผู้บริหาร
+- ThunderAPI ยังมีลูกค้ารายงานว่ายังไม่ปกติ แม้ logs ระบบปกติ
+- บอทไม่ตรวจสอบสลิปตั้งแต่ 19:50 วันที่ 2026-07-08 จาก Ambatukam
+- EasyCRM สมัครไม่ได้จาก OTP ล้มเหลว / BoostSMS มีปัญหา กระทบ Kintsu 2 ราย
+- Poom รออนุมัติชื่อผู้ส่ง 5 วันแล้ว
+- Finance ยังมี PDF/รายการรอชำระหลายก้อน รวมถึง Meta Verified เดือน 06/2569 และกรรมการภูมิชนะสำรองจ่าย เดือน 06/2026 รอเบิกคืน
+- พนักงานก่อน 1 พ.ค. 69 ต้องกรอกฟอร์ม Outing 2026 ก่อน 10 ก.ค. 69
+
+## ✅ Highlights สำเร็จ
+- Beyond Food Expo 2026 ได้ lead ใหม่ และยืนยันสัญญาณสนใจจากบ.เทลแลนด์เรื่องระบบสะสมแต้ม
+- Thunder Solution มิ.ย. 2026 มีตัวเลขบริการชัด: BOT 5,153 รายการ, API 86 รายการ ไม่มีซ้ำ
+- EasyCRM deploy รอบ 2026-07-07 ขึ้น main และ day-hotel ครบ 8 รายการ
+- La serre เริ่มเข้า workflow ลูกค้าใหม่ EasyCRM แล้ว
+- ใบเสนอราคาโปรเจกต์ถูกปรับชัดเป็น 120,000 บาท + MA 67,500 บาท
+- Graphic EasyBot งานภาพเรทอัตราจ่ายผ่านอนุมัติจาก Ann แล้วครับ
+[2026-07-10 00:01:04] WEEKLY: ✅ wrote     8956 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W28.md
+[2026-07-10 00:01:04] DONE: auto
