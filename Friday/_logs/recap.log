@@ -511,3 +511,37 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W28.md — 32,044 cha
 - Bob ตัดสินใจไม่รับอริศา PM/การตลาด และนัด Rawin QA รอบ 2 วันที่ 10 ก.ค. 11:00 น.
 [2026-07-09 09:13:31] WEEKLY: ✅ wrote     8568 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W28.md
 [2026-07-09 09:13:31] DONE: auto
+[2026-07-09 13:00:04] AUTO: DOW=4 DOM=09 TOMORROW=10
+[2026-07-09 13:00:04] CATCHUP: scanning past 14 days for missed runs
+[2026-07-09 13:00:04] AUTO: Thursday detected → weekly
+[2026-07-09 13:00:04] WEEKLY: 2026-07-03 → 2026-07-09 (label: 2026-W28)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W28.md — 33,166 chars, 28 weekly, 62 daily
+[2026-07-09 13:00:09] WEEKLY: source size =    57207 chars
+[2026-07-09 13:00:09] WEEKLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W28.md
+## SHIFT + Bob
+
+- 2026-07-06 ใน S H I F T: Bobsanchezz ยกเลิกแผนเพื่อให้ชัวร์รอบหน้า และ emus_chan สำรองยอดนี้
+- Talk to Bob: 2026-07-06 มีประเด็นจี๋มีปัญหา Mindset ทำงานร่วมกับบ๊อบ แต่สรุปว่างานเรียบร้อย
+- 2026-07-07 watcharin1004 flag ว่า product/PO ข้อมูลไม่ละเอียด; Bobsanchezz ขอ repo บริหารลูกเทรน
+- 2026-07-08 Watcharin ให้ Bob สร้างห้องใหม่ ดึงทุกคนในบริษัท สำหรับ Discord แชร์ปัญหาและ use case; Bob ถามยืนยันว่าจะใช้ Discord หรือ Telegram
+
+## ⚠️ Watch list
+
+- Triple P Ev ยังรอคอนเฟิร์มนัดนำเสนอผู้บริหาร
+- BOT ต่อซ้ำ: Bank ต้องตรวจโค้ดเคสระบบต่ออัตโนมัติ/ลูกค้ากดซ้ำ หลังมี BOT 5,153 รายการและต้องแก้ไข 28 รายการ
+- Thunder Line Bot/Verified Slip: ต้องตาม root cause ก่อนแก้ manual โดยเฉพาะเคส hondaprasit RW2 10 สาขา
+- Finance: รายการรอชำระยังค้างหลายชุด รวม Pop PDF 7 ก.ค., ค่าเช่าบ้านธันเดอร์ ก.ค. 69, สุวรรณ 1,419 บาท, อังคณา 1,200 บาท
+- EasySlip accounting: SEK ยังไม่ได้อัปเดตค่าเงินบาทรายการตัดบัตร ณ 2026-07-07
+- Product/PO: watcharin1004 flag ว่าข้อมูลไม่ละเอียด ต้องล็อก owner/format ให้ชัด
+- HR: Rawin QA รอบ 2 นัด 2026-07-10 11:00 น. ออนไลน์; Outing 2026 ต้องกรอกก่อน 2026-07-10
+
+## ✅ Highlights
+
+- Beyond Food Expo ได้ lead ใหม่จาก บ.เดอะสมาร์ทดีเวลลอปเม้นท์, Eights a day และ บ.เทลแลนด์ (Buddy Budder, Dog Day)
+- EasyCRM deploy รอบใหญ่ 8 รายการขึ้น main และ day-hotel คืน 2026-07-07
+- EasyCRM onboard ลูกค้าใหม่ La serre เริ่มสร้างร้านค้า โลโก้ และ CI แล้ว
+- Thunder Solution มีตัวเลข service ชัด: BOT 5,153 รายการ, API 86 รายการ ไม่มีซ้ำ
+- โปรเจกต์ลูกค้าปรับ commercial ชัดขึ้น: ค่าโปรเจกต์ 120,000 บาท, ค่า MA 67,500 บาท, Aiven ให้ลูกค้าจ่ายแยก
+- Line Bot บางเคสแก้เบื้องต้นด้วย QR Code สำเร็จ และเคสที่ C ตามต่อแจ้งว่าได้รับการแก้ไขแล้ว
+[2026-07-09 13:01:04] WEEKLY: ✅ wrote     9882 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W28.md
+[2026-07-09 13:01:04] DONE: auto
