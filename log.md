@@ -15,6 +15,10 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-07-10 04:42] auto-ingest | inbox sweep (1 file(s))
+- routed `(196) เจาะ 3 งาน ที่ Claude Cowork ช่วยคุณ automate ได้จริงมากที่สุด step by step` → `03 Resources/Clippings/(196) เจาะ 3 งาน ที่ Claude Cowork ช่วยคุณ automate ได้จริงมากที่สุด step by step.md` (rule: clippings)
+- agent: `~/bin/inbox-auto-ingest.py` (rule-based, no AI)
+
 ## [2026-07-09] decision | ปิดโปรเจกต์ Team Setup (เชื่อมทีม AI เข้า GitHub) ✅
 - created: [[03 Resources/สรุป 2026-07-06 — Team Setup (เชื่อมทีม AI เข้า GitHub)|สรุป Team Setup]] — ตารางสิทธิ์ทั้งหมด (mark-ai write ×2 repo, Thunder deploy key RO, Athena PAT RO) + วิธี revoke + บทเรียน least-privilege
 - decision: Bob ยืนยันปิดโปรเจกต์ · repo ที่เกิดจากงานนี้: `easyslip-pricing-calculator` (private, deploy ผ่าน Cloudflare Pages)

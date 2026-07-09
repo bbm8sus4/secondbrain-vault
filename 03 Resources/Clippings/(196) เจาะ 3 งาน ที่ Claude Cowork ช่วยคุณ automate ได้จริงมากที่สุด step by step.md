@@ -2,12 +2,13 @@
 title: "(196) เจาะ 3 งาน ที่ Claude Cowork ช่วยคุณ automate ได้จริงมากที่สุด step by step"
 source: "https://www.youtube.com/watch?v=JSm6mZAW9A0"
 author:
-  - "[[The Rise of Intelligence]]"
+  - "The Rise of Intelligence"
 published:
 created: 2026-07-10
 description: "เพลิดเพลินไปกับวิดีโอและเพลงที่คุณชอบ อัปโหลดเนื้อหาต้นฉบับ และแชร์เนื้อหาทั้งหมดกับเพื่อน ครอบครัว และผู้คนทั่วโลกบน YouTube"
 tags:
   - "clippings"
+last_verified: 2026-07-10
 ---
 ![](https://www.youtube.com/watch?v=JSm6mZAW9A0)
 
