@@ -476,3 +476,38 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W27.md — 38,189 cha
 [2026-07-08 23:56:37] AUTO: DOW=3 DOM=08 TOMORROW=09
 [2026-07-08 23:56:37] CATCHUP: scanning past 14 days for missed runs
 [2026-07-08 23:56:37] DONE: auto
+[2026-07-09 09:00:02] AUTO: DOW=4 DOM=09 TOMORROW=10
+[2026-07-09 09:00:02] CATCHUP: scanning past 14 days for missed runs
+[2026-07-09 09:00:02] AUTO: Thursday detected → weekly
+[2026-07-09 09:00:02] WEEKLY: 2026-07-03 → 2026-07-09 (label: 2026-W28)
+D1 attempt 1/3 failed: exit=1
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W28.md — 32,044 chars, 28 weekly, 56 daily
+[2026-07-09 09:11:13] WEEKLY: source size =    55137 chars
+[2026-07-09 09:11:13] WEEKLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W28.md
+- 7 ก.ค. Bank deploy เริ่ม 23:41 น. เสร็จประมาณ 00:30 น. ฝากเช็ก deploy ไม่พัง
+- ลูกค้าใหม่ EasyCRM: La serre ให้ Bank เตรียมระบบ สร้างร้านค้า โลโก้ และ CI; Day Hotel ขอปรับประเภทลูกค้าเป็น tag และจำกัดตัวอักษรชื่อ
+- HR: 6 ก.ค. Bobscanchez ไม่รับ อริศา ตำแหน่ง PM/การตลาด; 7 ก.ค. Guitar อัปเดตสัมภาษณ์ QA รอบ 2: Rawin ศ. 10 ก.ค. 11:00 น. ออนไลน์
+
+## SHIFT+Bob
+- 6 ก.ค. S H I F T: Bobsanchezz ส่ง PDF 2 ไฟล์ เมนชั่น emus_chan แล้วยกเลิกแผน “เพื่อให้ชัวร์รอบหน้า”; emus_chan สำรองยอดนี้
+- 6 ก.ค. Talk to Bob: บ๊อบใช้เวลาเกิน 1 ชม., ส่งลิงก์ Discord, มีประเด็นจี๋เรื่อง Mindset ทำงานร่วมกับบ๊อบ แต่สรุปว่างานเรียบร้อย
+- 7 ก.ค. Watcharin flag ว่า product/PO ข้อมูลไม่ละเอียด; Bobsanchezz ขอ repo บริหารลูกเทรน
+- 7 ก.ค. Bobsanchezz ปรับ Master Dashboard และคุยพูมน้อยเรื่อง PO
+
+## ⚠️ Watch list ค้างปลายสัปดาห์
+- Triple P Ev: รอคอนเฟิร์มนัดนำเสนอผู้บริหาร
+- Line Bot / Verified Slip: ยังต้องสรุป root cause ก่อนแก้ manual โดยเฉพาะเคส hondaprasit RW2 10 สาขา และเคสที่ C ถามว่าแก้วันที่ 2 แล้วใช่ไหม
+- Poom รออนุมัติชื่อผู้ส่ง 5 วันแล้ว
+- รายการรอชำระ 7 ก.ค. จาก Pop ฝั่ง EasySlip/Thunder และค่าเช่าบ้านธันเดอร์ ก.ค. 69
+- mind ยังรออัปเดตค่าเงินบาทรายการตัดบัตรจาก SEK
+- Outing 2026: พนักงานก่อน 1 พ.ค. 69 ต้องกรอกฟอร์มก่อน 10 ก.ค. 69
+
+## ✅ Highlights สำเร็จ
+- Beyond Food Expo ได้ lead และ insight ชัดเจน ทั้ง CRM/สะสมแต้ม/โอกาสจากงาน Pet
+- Thunder Solution มีตัวเลข service มิ.ย. 2026 ชัด: BOT 5,153, API 86 และมี action ให้ Bank ไล่เคสต่อซ้ำ
+- EasyCRM deploy รอบใหญ่ 8 รายการขึ้น main และ day-hotel คืน 7 ก.ค.
+- La serre เข้า pipeline ลูกค้าใหม่ EasyCRM พร้อมเตรียมร้านค้า โลโก้ และ CI
+- Thunder API เพิ่มรองรับถุงเงิน/Clicx bank
+- Bob ตัดสินใจไม่รับอริศา PM/การตลาด และนัด Rawin QA รอบ 2 วันที่ 10 ก.ค. 11:00 น.
+[2026-07-09 09:13:31] WEEKLY: ✅ wrote     8568 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W28.md
+[2026-07-09 09:13:31] DONE: auto

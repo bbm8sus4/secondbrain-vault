@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-08 09:00:01 · ไฟล์ .md ทั้งหมด 390
+> สแกนอัตโนมัติ · 2026-07-09 09:00:03 · ไฟล์ .md ทั้งหมด 395
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,21 +8,22 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 4 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 3 |
+| 🔗 ลิงก์เสีย (dead links) | 5 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 6 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 82 ↔ 82 — ตรงกัน ✅ |
+| 🔄 memory source ↔ mirror | 83 ↔ 83 — ตรงกัน ✅ |
 | ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
-| 📋 frontmatter ขาด (backlog) | 143 |
+| 📋 frontmatter ขาด (backlog) | 146 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
 | ❓ คิวรอ verify | 9 |
-| 📰 Friday weekly recap ล่าสุด | 2026-W27 (3 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (7 วันที่แล้ว) |
+| 📰 Friday weekly recap ล่าสุด | 2026-W27 (4 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (8 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
+- `03 Resources/Prompt Library/Design/_index.md` → `[[Senior Design Director — วิจารณ์งาน + คิด Direction (UXUI × Graphic)]]` (ไม่พบ)
 - `03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
 - `03 Resources/แผนที่ - คู่มือ.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
 - `index.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
@@ -30,9 +31,12 @@
 
 ## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
 
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/catering-form-deploy/DEPLOY_NOTES.md`
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part2-AI-Marketing.md`
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part3-Landing-Page-NoCode.md`
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part4-Cowork-and-ClaudeCode-Warp.md`
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/PROJECT-CONTEXT-BEFORE-DELETE.md`
+- `03 Resources/Prompt Library/Design/Senior Design Director_Role.md`
 
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
 
@@ -58,6 +62,7 @@
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/04-Menu-Catering.md` — ขาด type, last_verified
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/05-INCIDENT-ข้อมูลหาย-กู้คืน.md` — ขาด type, last_verified
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/06-Dashboard-Summary.md` — ขาด type, last_verified
+- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/PROJECT-CONTEXT-BEFORE-DELETE.md` — ขาด type, last_verified
 - `01 Projects/HUG COMPANY/SRS v0.0.2 — ERP System.md` — ขาด type, last_verified
 - `01 Projects/KuanGolf/FAQ — Live.md` — ขาด last_verified
 - `01 Projects/KuanGolf/KuanGolf — Master Reference.md` — ขาด type, last_verified
@@ -72,6 +77,5 @@
 - `01 Projects/Office Seating Plan/2026-07-05 Session — สั่งงาน + วิธีทำงาน.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/2026-07-06 QA รอบผู้ใช้จริง + แก้ตาม feedback.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/DEPLOY.md` — ขาด last_verified
-- `01 Projects/Office Seating Plan/HANDOFF.md` — ขาด type, last_verified
-- …และอีก 118 ไฟล์
+- …และอีก 121 ไฟล์
 
