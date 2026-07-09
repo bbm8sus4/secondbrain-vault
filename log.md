@@ -15,6 +15,12 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-07-09] decision | ปิดโปรเจกต์ Team Setup (เชื่อมทีม AI เข้า GitHub) ✅
+- created: [[03 Resources/สรุป 2026-07-06 — Team Setup (เชื่อมทีม AI เข้า GitHub)|สรุป Team Setup]] — ตารางสิทธิ์ทั้งหมด (mark-ai write ×2 repo, Thunder deploy key RO, Athena PAT RO) + วิธี revoke + บทเรียน least-privilege
+- decision: Bob ยืนยันปิดโปรเจกต์ · repo ที่เกิดจากงานนี้: `easyslip-pricing-calculator` (private, deploy ผ่าน Cloudflare Pages)
+- touched: 2 pages
+- agent: Claude Code (session 2026-07-06→09, Ghostty)
+
 ## [2026-07-09 00:05] decision | ปิดโปรเจกต์ Vault Overhaul + Blueprint ✅
 - blueprint ส่งถึงเพื่อนเรียบร้อย (ไฟล์ถูก rename เป็น `SecondBrain Blueprint Setup.md` ก่อนส่ง — อัพเดตลิงก์ใน index/แผนที่/สรุป/log ตามแล้ว)
 - สถานะปิดงานบันทึกใน [[สรุป 2026-07-06 — Vault Overhaul ครบวงจร]] (`project_status: ✅`) + frontmatter `delivered:` ของ blueprint
