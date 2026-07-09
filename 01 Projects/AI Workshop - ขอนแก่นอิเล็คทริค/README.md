@@ -71,6 +71,13 @@ tags: [project, ai-workshop, khonkaen, index]
 
 **Slides:**
 - [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part1-Claude-Basics|Part1-Claude-Basics]] — สไลด์พาร์ทแรก พื้นฐาน Claude
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part2-AI-Marketing|Part2-AI-Marketing]]
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part3-Landing-Page-NoCode|Part3-Landing-Page-NoCode]]
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part4-Cowork-and-ClaudeCode-Warp|Part4-Cowork-and-ClaudeCode-Warp]]
+
+**อื่น ๆ:**
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/catering-form-deploy/DEPLOY_NOTES|DEPLOY_NOTES (catering form)]]
+- [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/PROJECT-CONTEXT-BEFORE-DELETE|PROJECT-CONTEXT-BEFORE-DELETE]] — snapshot บริบทก่อนล้าง working dir
 
 ## Pipeline ที่ใช้ทำ project นี้
 

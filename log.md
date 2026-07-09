@@ -192,4 +192,4 @@ tags: [log, vault, timeline]
 - moved: 4 ไฟล์จาก Desktop เข้าโปรเจกต์ (zip pack, quotation, PROJECT-CONTEXT)
 - touched: 3 pages
 - source: chat 2026-07-08/09
-- note: quotation .docx สร้างด้วย python-docx (pandoc/LibreOffice-HTML แปลงตารางพัง) — วิธีจดใน memory [[reference_thai_doc_generation]]
+- note: quotation .docx สร้างด้วย python-docx (pandoc/LibreOffice-HTML แปลงตารางพัง) — วิธีจดใน memory [[Thai doc generation|reference_thai_doc_generation]]

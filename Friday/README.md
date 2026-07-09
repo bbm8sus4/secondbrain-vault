@@ -24,6 +24,7 @@ updated: 2026-07-06
 - [[Weekly Recaps/2026-W25|2026-W25]]
 - [[Weekly Recaps/2026-W26|2026-W26]]
 - [[Weekly Recaps/2026-W27|2026-W27]]
+- [[Weekly Recaps/2026-W28|2026-W28]]
 
 ### Monthly Recaps/
 สรุปเดือนรวมจากทุกกลุ่มแชท — ใช้ AI สังเคราะห์จาก weekly + daily summaries

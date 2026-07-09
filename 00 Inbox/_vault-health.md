@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-09 10:29:27 · ไฟล์ .md ทั้งหมด 399
+> สแกนอัตโนมัติ · 2026-07-09 10:30:53 · ไฟล์ .md ทั้งหมด 399
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,11 +8,11 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 2 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 7 |
+| 🔗 ลิงก์เสีย (dead links) | 0 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 0 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 83 ↔ 83 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 1 ชม.ที่แล้ว |
+| 🔄 memory source ↔ mirror | 85 ↔ 83 — ⚠️ ไม่ตรง (85 vs 83) |
+| ⏱️ sync ล่าสุด (vault commit) | 1 นาทีที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
 | 📋 frontmatter ขาด (backlog) | 148 |
@@ -20,21 +20,6 @@
 | ❓ คิวรอ verify | 9 |
 | 📰 Friday weekly recap ล่าสุด | 2026-W28 (1 ชม.ที่แล้ว) |
 | 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (8 วันที่แล้ว) |
-
-## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
-
-- `03 Resources/Prompt Library/Design/_index.md` → `[[Senior Design Director — วิจารณ์งาน + คิด Direction (UXUI × Graphic)]]` (ไม่พบ)
-- `log.md` → `[[reference_thai_doc_generation]]` (ไม่พบ)
-
-## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
-
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Forms/catering-form-deploy/DEPLOY_NOTES.md`
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part2-AI-Marketing.md`
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part3-Landing-Page-NoCode.md`
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part4-Cowork-and-ClaudeCode-Warp.md`
-- `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/PROJECT-CONTEXT-BEFORE-DELETE.md`
-- `03 Resources/Prompt Library/Design/Senior Design Director_Role.md`
-- `Friday/Weekly Recaps/2026-W28.md`
 
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
 
