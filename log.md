@@ -15,13 +15,19 @@ tags: [log, vault, timeline]
 
 ---
 
+## [2026-07-09 00:05] decision | ปิดโปรเจกต์ Vault Overhaul + Blueprint ✅
+- blueprint ส่งถึงเพื่อนเรียบร้อย (ไฟล์ถูก rename เป็น `SecondBrain Blueprint Setup.md` ก่อนส่ง — อัพเดตลิงก์ใน index/แผนที่/สรุป/log ตามแล้ว)
+- สถานะปิดงานบันทึกใน [[สรุป 2026-07-06 — Vault Overhaul ครบวงจร]] (`project_status: ✅`) + frontmatter `delivered:` ของ blueprint
+- งานค้างที่ยังเปิดอยู่ (ไม่ใช่เงื่อนไขปิดงาน): frontmatter backlog 143 · คิว verify · token vault-capture
+- agent: Claude Code (session 2026-07-09)
+
 ## [2026-07-06 22:40] query | file back สรุป session ทั้งวัน
 - filed_back: [[03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร|สรุป Vault Overhaul]] — cleanup sprint + upgrade 10 ข้อ + blueprint + งานค้าง รวมหน้าเดียว
 - อัพเดต memory (ghostty harness — จะ sync เข้า 30 Claude Memory เองใน 30 นาที)
 - agent: Claude Code (session 2026-07-06)
 
 ## [2026-07-06 22:25] query | สร้าง SecondBrain Blueprint สำหรับ vault เพื่อน
-- filed_back: [[03 Resources/SecondBrain Blueprint — สำหรับ vault เพื่อน|SecondBrain Blueprint]] — โครงสร้าง+กฎ+automation ทั้งระบบเป็น .md ให้ AI ปลายทาง (mark-ai) ทำตาม
+- filed_back: [[03 Resources/SecondBrain Blueprint Setup|SecondBrain Blueprint]] — โครงสร้าง+กฎ+automation ทั้งระบบเป็น .md ให้ AI ปลายทาง (mark-ai) ทำตาม *(link แก้ตาม rename 2026-07-09)*
 - ออกแบบ additive-only ให้เข้ากับ red-lines ฝั่งนั้น (ไม่ลบ/ไม่ย้ายของเดิม, commit ทุก Phase, mapping แทน restructure)
 - agent: Claude Code (session 2026-07-06)
 
@@ -172,3 +178,12 @@ tags: [log, vault, timeline]
 - touched: 72 pages
 - source: Apple Notes app (70 notes)
 - note: pandoc HTML→md, base64 images extracted, categorized by title patterns
+
+## [2026-07-09] done | AI Workshop — ขอนแก่นอิเล็คทริค
+- updated: [[01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/README]] (status: live → done, completed 2026-07-09)
+- delivered: ใบเสนอราคา PDF 5 หน้า + Word (.docx) แบบ Cotactic — `Files/Costs/AI-Workshop-Quotation-Full.*` (2,499/คน × 15 = 40,108.95 รวม VAT)
+- delivered: Google Form อาหาร (เบรก+กลางวัน) deploy จริงผ่าน clasp + Forms — `Files/Forms/5_แบบฟอร์มอาหาร_Catering_AppsScript.gs` · [[FORM_URLS]]
+- moved: 4 ไฟล์จาก Desktop เข้าโปรเจกต์ (zip pack, quotation, PROJECT-CONTEXT)
+- touched: 3 pages
+- source: chat 2026-07-08/09
+- note: quotation .docx สร้างด้วย python-docx (pandoc/LibreOffice-HTML แปลงตารางพัง) — วิธีจดใน memory [[reference_thai_doc_generation]]

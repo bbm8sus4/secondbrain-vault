@@ -1,12 +1,15 @@
 ---
 title: "AI Workshop — บ.ขอนแก่นอิเล็คทริค"
 type: project
-status: live
-last_verified: 2026-07-06
+status: done
+completed: 2026-07-09
+last_verified: 2026-07-09
 tags: [project, ai-workshop, khonkaen, index]
 ---
 
 # AI Workshop — บ.ขอนแก่นอิเล็คทริค
+
+> ✅ **เสร็จสมบูรณ์ 2026-07-09** — ส่งมอบครบ: หลักสูตร/สไลด์/lab/dashboard, ใบเสนอราคา (PDF 5 หน้า + Word · 2,499/คน × 15 = 40,108.95 รวม VAT), แบบฟอร์มอาหาร Google Form deploy จริงแล้ว (ดู [[FORM_URLS]]). งานเตรียมทั้งหมด QA PASS · เหลือรันคลาสหน้างาน
 
 **ผู้ว่าจ้าง:** คุณป๊อบ (เจ้าของบริษัท)
 **ผู้เรียน:** 15 คน คละแผนก — บัญชี/การเงิน · การตลาด · วิศวกร · ช่าง/เทคนิค
@@ -18,7 +21,7 @@ tags: [project, ai-workshop, khonkaen, index]
 **Live dashboards (3 links):**
 - 3 แท็บ (ครบ): https://khonkaen-ai-workshop.pages.dev
 - 2 แท็บ (ผู้เรียน + ความสอดคล้อง): https://khonkaen-workshop-learner.pages.dev — mobile-tuned 2026-07-01
-- Pricing Calculator (interactive): https://khonkaen-pricing.pages.dev — deploy 2026-07-01
+- Pricing Calculator (interactive): https://khonkaen-pricing.pages.dev — deploy 2026-07-01 · เพิ่ม 3 โหมดคิดเงิน + VAT/หัก ณ ที่จ่าย 2026-07-09 → ดู [[Pricing-Calculator-README]]
 
 ## ความท้าทายหลัก
 

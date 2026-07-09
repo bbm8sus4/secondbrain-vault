@@ -4,8 +4,9 @@ type: synthesis
 source: Claude Code session 2026-07-06 (Ghostty) — ทำจริงทั้งหมด verify แล้ว
 source_date: 2026-07-06
 imported: 2026-07-06T22:40:00
-last_verified: 2026-07-06
+last_verified: 2026-07-09
 status: live
+project_status: ✅ เสร็จสมบูรณ์ 2026-07-09
 tags: [synthesis, vault, maintenance, automation, milestone]
 related:
   - "[[Automation Setup]]"
@@ -16,6 +17,7 @@ related:
 
 > วันเดียวยกเครื่อง vault จาก "สะอาดแต่ต้องดูแลมือ" → "ดูแลตัวเอง + แจ้งเตือนเอง + ย่อยความรู้เอง"
 > Health: 🟡 (96 dead links / 66 orphans) → **🟢 (0 / 0 / 0)** · ทุกอย่าง commit + push แล้ว
+> **✅ ปิดโปรเจกต์ 2026-07-09** — blueprint ส่งถึงเพื่อนเรียบร้อย งานหลักจบครบ (เหลือเฉพาะงานค้างท้ายไฟล์ซึ่งเป็น backlog ต่อเนื่อง ไม่ใช่เงื่อนไขปิดงาน)
 
 ## รอบ 1 — Cleanup Sprint (ปิดหนี้เก่าทั้งหมด)
 
@@ -42,7 +44,7 @@ related:
 
 ## Blueprint ส่งเพื่อน
 
-[[SecondBrain Blueprint — สำหรับ vault เพื่อน]] — โครงสร้าง+กฎ+automation ทั้งระบบเป็น .md ให้ AI ฝั่งเพื่อน (mark-ai) ทำตาม · ออกแบบ **additive-only** เข้ากับ red-lines ฝั่งนั้น (map ไม่รื้อ, commit ทุก Phase, ไม่มีคำสั่งลบ) · ส่งไฟล์แล้ว 2026-07-06
+[[SecondBrain Blueprint Setup]] (เดิมชื่อ "Blueprint — สำหรับ vault เพื่อน" — พี่ rename ก่อนส่ง) — โครงสร้าง+กฎ+automation ทั้งระบบเป็น .md ให้ AI ฝั่งเพื่อน (mark-ai) ทำตาม · ออกแบบ **additive-only** เข้ากับ red-lines ฝั่งนั้น (map ไม่รื้อ, commit ทุก Phase, ไม่มีคำสั่งลบ) · ส่งไฟล์แล้ว 2026-07-06
 
 ## ของที่เจอระหว่างทาง (สำคัญ)
 

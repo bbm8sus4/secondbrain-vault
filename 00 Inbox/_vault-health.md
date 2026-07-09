@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-09 09:00:03 · ไฟล์ .md ทั้งหมด 395
+> สแกนอัตโนมัติ · 2026-07-09 10:29:27 · ไฟล์ .md ทั้งหมด 399
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,26 +8,23 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 5 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 6 |
+| 🔗 ลิงก์เสีย (dead links) | 2 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 7 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
 | 🔄 memory source ↔ mirror | 83 ↔ 83 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
+| ⏱️ sync ล่าสุด (vault commit) | 1 ชม.ที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
-| 📋 frontmatter ขาด (backlog) | 146 |
+| 📋 frontmatter ขาด (backlog) | 148 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
 | ❓ คิวรอ verify | 9 |
-| 📰 Friday weekly recap ล่าสุด | 2026-W27 (4 วันที่แล้ว) |
+| 📰 Friday weekly recap ล่าสุด | 2026-W28 (1 ชม.ที่แล้ว) |
 | 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (8 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
 - `03 Resources/Prompt Library/Design/_index.md` → `[[Senior Design Director — วิจารณ์งาน + คิด Direction (UXUI × Graphic)]]` (ไม่พบ)
-- `03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
-- `03 Resources/แผนที่ - คู่มือ.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
-- `index.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
-- `log.md` → `[[SecondBrain Blueprint — สำหรับ vault เพื่อน]]` (ไม่พบ)
+- `log.md` → `[[reference_thai_doc_generation]]` (ไม่พบ)
 
 ## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
 
@@ -37,13 +34,14 @@
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/Files/Slides/Part4-Cowork-and-ClaudeCode-Warp.md`
 - `01 Projects/AI Workshop - ขอนแก่นอิเล็คทริค/PROJECT-CONTEXT-BEFORE-DELETE.md`
 - `03 Resources/Prompt Library/Design/Senior Design Director_Role.md`
+- `Friday/Weekly Recaps/2026-W28.md`
 
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
 
 - `01 Projects/HUG COMPANY/README.md:41` — ⚠ Open questions (ต้อง verify)
-- `03 Resources/SecondBrain Blueprint Setup.md:141` — ข้อเท็จจริงที่ยังไม่ชัวร์ → เขียน `⚠️ ต้อง verify` ในหน้า (health scan จะรวบเป็นคิวทวงมนุษย์ทุกวัน)
-- `03 Resources/SecondBrain Blueprint Setup.md:175` — frontmatter ขาด `type`/`last_verified` (backlog) · หน้า `last_verified` เก่าเกิน 90 วัน · **คิว `ต้อง verify`*
-- `03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร.md:35` — 4. **vault-health v2** — เช็คเพิ่ม: frontmatter ขาด (backlog 143) · หน้าเก่า >90 วัน · **คิว `ต้อง verify`** (
+- `03 Resources/SecondBrain Blueprint Setup.md:142` — ข้อเท็จจริงที่ยังไม่ชัวร์ → เขียน `⚠️ ต้อง verify` ในหน้า (health scan จะรวบเป็นคิวทวงมนุษย์ทุกวัน)
+- `03 Resources/SecondBrain Blueprint Setup.md:176` — frontmatter ขาด `type`/`last_verified` (backlog) · หน้า `last_verified` เก่าเกิน 90 วัน · **คิว `ต้อง verify`*
+- `03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร.md:37` — 4. **vault-health v2** — เช็คเพิ่ม: frontmatter ขาด (backlog 143) · หน้าเก่า >90 วัน · **คิว `ต้อง verify`** (
 - `20 Rules/Automation Setup.md:28` — | `com.aexgee.vault-health` | `vault-health.py` | ทุกวัน 09:00 | v2: dead links / orphans / mirror drift (นับท
 - `EasySlip/01-Overview.md:39` — (memory snapshot 8 พ.ค. ระบุ "60% ของ group revenue" — ตัวเลขต่างกันตามวิธีวัด/ช่วงเวลา ⚠️ ต้อง verify ถ้าจะใช
 - `Thunder Solution/02-Products-Services.md:53` — ⚠️ ต้อง verify — โน้ตนี้เก่าตั้งแต่ ต.ค. 2568 สถานะปัจจุบัน (เก็บเงินหรือยัง / deploy แล้วหรือยัง) ไม่มีในแหล่
@@ -77,5 +75,5 @@
 - `01 Projects/Office Seating Plan/2026-07-05 Session — สั่งงาน + วิธีทำงาน.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/2026-07-06 QA รอบผู้ใช้จริง + แก้ตาม feedback.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/DEPLOY.md` — ขาด last_verified
-- …และอีก 121 ไฟล์
+- …และอีก 123 ไฟล์
 

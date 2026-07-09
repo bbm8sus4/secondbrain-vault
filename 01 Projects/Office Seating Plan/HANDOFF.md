@@ -1,12 +1,16 @@
 ---
-tags: [project, handoff, seatmap, single-file-html, agent-context]
+tags: [project, handoff, seatmap, single-file-html, agent-context, done]
 project: Office Seating Plan
 doc: AI/Developer Handoff
-updated: 2026-07-03
-app_version: 3.8.0
+updated: 2026-07-09
+app_version: 3.9.0
+status: completed
+completed: 2026-07-09
 ---
 
 # SeatMap — AI / Developer Handoff
+
+> ✅ **โปรเจกต์เสร็จสมบูรณ์ — ปิดงาน 2026-07-09.** ส่งมอบครบ: แอป deploy บน Cloudflare Pages (gate รหัส), **i18n TH/EN ครบทุกจุด** (APP_VERSION v3.9.0 · checkpoint `seatArh_v.1.0.2`), **public repo** https://github.com/bbm8sus4/office-seating-plan. ประวัติงาน 3 วันสุดท้ายอยู่ที่ [[2026-07-05 Session — สั่งงาน + วิธีทำงาน]] + [[2026-07-06 QA รอบผู้ใช้จริง + แก้ตาม feedback]]. เอกสารด้านล่างเก็บไว้อ้างอิงถ้าเปิดงานใหม่.
 
 > อ่านไฟล์นี้ก่อนเริ่มทำงานต่อ. เขียนไว้ให้ทั้งคนและ AI session อื่นมารับงานได้ทันทีโดยไม่ต้องถามซ้ำ. ภาษาในเอกสารปนไทย/อังกฤษตามที่เจ้าของถนัด.
 

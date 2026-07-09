@@ -1,11 +1,12 @@
 ---
-title: SecondBrain Blueprint — สำหรับ vault เพื่อน
+title: SecondBrain Blueprint Setup
 type: resource
 source: โครงสร้างจริงของ ~/SecondBrain (Bob/aexgee) ณ 2026-07-06 หลัง cleanup sprint + upgrade รอบ 2
 source_date: 2026-07-06
 imported: 2026-07-06T22:20:00
-last_verified: 2026-07-06
+last_verified: 2026-07-09
 status: live
+delivered: ส่งให้เพื่อนแล้ว 2026-07-06 (mark-ai รับไปดำเนินการ) · ปิดโปรเจกต์ 2026-07-09
 tags: [resource, blueprint, obsidian, second-brain, export]
 ---
 

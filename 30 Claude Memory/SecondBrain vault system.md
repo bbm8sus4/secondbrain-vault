@@ -14,4 +14,4 @@ sync ทุก 30 นาที (รวม memory 4 harness: warp หลัก + 
 
 **กติกาต้องรู้:** แตะหน้า wiki → อัพเดต last_verified + ลง log.md (entry ใหม่บนสุด, ops: ingest/query/lint/rename/delete/conflict/decision) · 30 Claude Memory + 40 Meeting Notes + 00 Inbox = read-only mirror แก้ที่ต้นทาง · ห้ามใส่ token ccgram ลง ~/.vault-capture.env (แย่ง getUpdates) · ชื่อไฟล์ห้ามมี ^ | [ ]
 
-รายละเอียดเต็ม: `~/SecondBrain/03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร.md` + `20 Rules/Automation Setup.md` · Blueprint ส่งเพื่อน: `03 Resources/SecondBrain Blueprint — สำหรับ vault เพื่อน.md` · งานค้าง: frontmatter backlog 143 ไฟล์, คิว verify 8 (Gen QR / รายได้ EasySlip / KBank 884K), [[SeatMap app|project-seatmap]]
+รายละเอียดเต็ม: `~/SecondBrain/03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร.md` + `20 Rules/Automation Setup.md` · Blueprint: `03 Resources/SecondBrain Blueprint Setup.md` — **โปรเจกต์ปิดแล้ว 2026-07-09** (ส่งเพื่อนเรียบร้อย) · งานค้าง backlog: frontmatter 143 ไฟล์, คิว verify (Gen QR / รายได้ EasySlip / KBank 884K), token vault-capture, [[SeatMap app|project-seatmap]]

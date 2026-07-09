@@ -1,11 +1,15 @@
 ---
 name: project_seatmap
-description: SeatMap — single-file HTML office seating/org/product app for Thunder+EasySlip. Handoff doc + methodology for resuming work.
+description: SeatMap — single-file HTML office seating/org/product app for Thunder+EasySlip. STATUS DONE (2026-07-09, Bob ปิดโปรเจกต์). Handoff doc + methodology if reopened.
 metadata: 
   node_type: memory
   type: project
+  status: completed
+  completedDate: 2026-07-09
   originSessionId: 27a1612c-22b0-4899-8090-0137499b2074
 ---
+
+> ✅ **โปรเจกต์เสร็จสมบูรณ์ — Bob ปิดงาน 2026-07-09.** ส่งมอบครบ: แอป deploy (Cloudflare Pages, gate), i18n TH/EN ครบทุกจุด (v3.9.0 / checkpoint seatArh_v.1.0.2), public repo https://github.com/bbm8sus4/office-seating-plan. ถ้ามีงานเพิ่มค่อยเปิดใหม่ — รายละเอียด/วิธีทำงานด้านล่างเก็บไว้อ้างอิง.
 
 **SeatMap** = single-file HTML app จัดผังที่นั่ง + ผังองค์กร + product/lane board + HR dashboard + master directory ของ Thunder Solution + Easy Slip (~30 คน). ไม่มี backend, เก็บใน localStorage + IndexedDB.
 
