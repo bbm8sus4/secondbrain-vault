@@ -1,6 +1,6 @@
 ---
 name: reference_model_config_fix
-description: "Fable 5 IS available (trust the /model picker, not the stale disabled flag in ~/.claude.json cache). All 4 config dirs pinned to claude-fable-5[1m]."
+description: "Model pin lives in settings.json across 4 config dirs (settings.json wins over /model picker on restart). Currently pinned claude-opus-4-6[1m] (2026-07-10). /model picker list is app-baked — previous models can't be added as numbered entries."
 metadata: 
   node_type: memory
   type: reference
@@ -16,3 +16,12 @@ metadata:
 **ที่ทำ (สุดท้าย):** set `"model": "claude-fable-5[1m]"` (= Fable 5 ตามที่ user ต้องการ) ครบทั้ง 4 dir. Backup ค่าเดิม: `settings.json.bak-modelfix`. มีผลตอน session ใหม่ · session ปัจจุบันสลับได้เลยด้วย `/model` → กด 3.
 
 **บทเรียน:** อย่าเชื่อ `disabled` flag ใน `additionalModelOptionsCache` — ให้เชื่อ live `/model` picker. อยากคุมด้วย `/model` ล้วน ๆ ไม่ให้ settings ทับ → ลบ key `model` ออกทุก dir. ดู [[Model Shift × cmux patch|project_modelshift_cmux]].
+
+---
+
+**2026-07-10 — เปลี่ยน pin เป็น Opus 4.6 (1M).** User อยากบังคับใช้ Opus 4.6 และ "ให้โผล่ในตัวเลือก /model".
+- **ต้นตอความดื้อ:** กด `/model` set default = Opus 4.8 แต่ `settings.json` ยัง pin fable → **restart ทีไร settings.json ชนะ picker ทุกที** (precedence: managed > `--model` > settings.local > settings project > settings user; picker "set as default" แพ้ settings.json บน restart).
+- **ที่ทำ:** set `"model": "claude-opus-4-6[1m]"` ครบทั้ง 4 dir (`.claude`, `.claude-cmux`, `.claude-warp`, `.claude-ghostty`) ผ่าน python (valid JSON). Backup: `settings.json.bak-opus46` ทุกไฟล์. เช็คแล้วไม่มี `settings.local.json` ตัวไหนมี model key มาทับ.
+- **ยืนยันด้วย headless test:** `claude --model 'claude-opus-4-6' -p ...` → OK · `claude --model 'claude-opus-4-6[1m]' -p ...` → OK. **ทั้ง plain และ 1M ใช้ได้จริง** (แก้ความเข้าใจเดิมที่ว่า opus-4-6 "id ผิด ไม่มีจริง" — ตอนนี้มีแล้ว).
+- **ข้อจำกัดที่บอก user:** `/model` picker เป็น list ตายตัวฝังในแอป (Default/Opus/Fable/Sonnet/Haiku) — **เพิ่ม Opus 4.6 เป็นบรรทัดให้เลือกไม่ได้**. แต่ pin ทำให้ 4.6 คือตัวที่รันจริงทุกครั้งที่เปิด (บรรลุเป้าหมายจริง). สลับ on-demand ด้วย `--model 'claude-opus-4-6[1m]'` หรือ `/model claude-opus-4-6[1m]`.
+- มีผลตอน **restart / session ใหม่** (session ปัจจุบันยังรันโมเดลเดิม).

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คู่มือคำสั่ง Claude Code — ฉบับสอน</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1a1d21; --muted:#6b7280;
+    --line:#e5e7eb; --line2:#eef0f2;
+    --accent:#4f46e5; --accent-soft:#eef0ff;
+    --green:#0f9d58; --green-soft:#e7f6ee;
+    --amber:#c77700; --amber-soft:#fbf1de;
+    --purple:#7c3aed; --purple-soft:#f2ecfd;
+    --red:#d1373a; --red-soft:#fbe9e9;
+    --slate:#475569; --slate-soft:#eef1f5;
+    --mono:"SF Mono",ui-monospace,"JetBrains Mono",Menlo,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Noto Sans Thai","Sarabun","Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:32px 20px 64px}
+  header.top{margin-bottom:28px;border-bottom:2px solid var(--ink);padding-bottom:18px}
+  header.top h1{margin:0 0 6px;font-size:28px;letter-spacing:-.4px}
+  header.top p{margin:0;color:var(--muted);font-size:14.5px}
+  .kbd{font-family:var(--mono);background:#111827;color:#fff;padding:2px 8px;border-radius:6px;font-size:12.5px;white-space:nowrap}
+
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:20px 0;overflow:hidden}
+  .sec-head{display:flex;align-items:baseline;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line2);background:linear-gradient(180deg,#fafbfc,#fff)}
+  .sec-head .no{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:14px}
+  .sec-head h2{margin:0;font-size:18px}
+  .sec-head .sub{margin-left:auto;color:var(--muted);font-size:13px}
+
+  .tbl-scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;min-width:760px}
+  th,td{text-align:left;padding:12px 16px;vertical-align:top;border-bottom:1px solid var(--line2)}
+  thead th{font-size:12px;letter-spacing:.4px;text-transform:uppercase;color:var(--muted);font-weight:600;background:#fcfcfd;position:sticky;top:0}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#fafbff}
+  td.cmd{white-space:nowrap;width:1%}
+  code.cmd{font-family:var(--mono);font-weight:700;color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:7px;font-size:13.5px;display:inline-block}
+  td.what{font-weight:600;width:24%}
+  td.when{color:var(--slate);width:30%}
+  td.ex{color:var(--muted);font-size:13.5px;width:30%}
+  td.ex em{color:var(--ink);font-style:normal;font-weight:600}
+  .alias{display:block;margin-top:5px;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+
+  /* permission modes */
+  .modes{padding:8px 20px 20px}
+  .mode{display:grid;grid-template-columns:190px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line2)}
+  .mode:last-child{border-bottom:none}
+  .mode .tag{align-self:start;font-weight:700;padding:8px 12px;border-radius:9px;font-size:14px;text-align:center}
+  .mode .body p{margin:0 0 6px}
+  .mode .body .use{color:var(--slate);font-size:14px}
+  .mode .body .use b{color:var(--ink)}
+  .t-green{background:var(--green-soft);color:var(--green);border:1px solid #bfe6cd}
+  .t-slate{background:var(--slate-soft);color:var(--slate);border:1px solid #d4dae3}
+  .t-purple{background:var(--purple-soft);color:var(--purple);border:1px solid #ddd0f7}
+  .t-amber{background:var(--amber-soft);color:var(--amber);border:1px solid #efd8a8}
+  .t-red{background:var(--red-soft);color:var(--red);border:1px solid #f0c4c5}
+  .risk{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 8px;border-radius:20px;margin-left:6px;vertical-align:middle}
+
+  .matrix td,.matrix th{text-align:center}
+  .matrix td:first-child,.matrix th:first-child{text-align:left;font-weight:600}
+  .yes{color:var(--green);font-weight:700}
+  .no{color:var(--red);font-weight:700}
+  .ask{color:var(--amber);font-weight:700}
+
+  .callout{background:var(--accent-soft);border:1px solid #d7dbfb;border-radius:12px;padding:14px 18px;margin:20px 0;font-size:14px;color:#3730a3}
+  .callout b{color:#1e1b4b}
+
+  .more{padding:8px 20px 20px;columns:2;column-gap:36px}
+  .more .item{break-inside:avoid;padding:7px 0;border-bottom:1px dashed var(--line2)}
+  .more code{font-family:var(--mono);font-weight:700;color:var(--slate)}
+  .more span{color:var(--muted);font-size:13.5px}
+
+  footer{margin-top:32px;color:var(--muted);font-size:12.5px;text-align:center;line-height:1.7}
+
+  @media (max-width:640px){
+    .more{columns:1}
+    .mode{grid-template-columns:1fr;gap:8px}
+  }
+  @media print{
+    body{background:#fff;font-size:12px}
+    section{break-inside:avoid;box-shadow:none}
+    .wrap{padding:0}
+    tbody tr:hover{background:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <h1>คู่มือคำสั่ง Claude Code — ฉบับสอน</h1>
+    <p>คำสั่ง built-in ที่มากับทุกเครื่อง (ยังไม่ต้องเซตอะไรเพิ่ม) · แตกเป็นหลายมิติ: ทำอะไร → ใช้เมื่อไร → บริบทจริง · รวมโหมด permission (กด <span class="kbd">shift + tab</span> สลับ)</p>
+  </header>
+
+  <div class="callout">
+    <b>อ่านตารางยังไง:</b> ช่อง <b>ใช้เมื่อไร–เป้าหมาย</b> คือ "อยากทำอะไรถึงใช้คำสั่งนี้" · ช่อง <b>ตัวอย่าง</b> คือสถานการณ์จริงที่เจอบ่อย เอาไปเล่าให้ผู้เรียนเห็นภาพได้เลย
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <div class="sec-head"><span class="no">01</span><h2>เริ่มต้น &amp; ขอความช่วยเหลือ</h2><span class="sub">คำสั่งแรกที่ควรสอน</span></div>
+    <div class="tbl-scroll"><table>
+      <thead><tr><th>คำสั่ง</th><th>ทำอะไร</th><th>ใช้เมื่อไร–เป้าหมาย</th><th>ตัวอย่างสถานการณ์</th></tr></thead>
+      <tbody>
+        <tr><td class="cmd"><code class="cmd">/help</code></td><td class="what">ดูคำสั่งทั้งหมด</td><td class="when">นึกคำสั่งไม่ออก อยากเห็นเมนูรวม</td><td class="ex">เพิ่งเปิดใช้ครั้งแรก <em>พิมพ์ /help ดูว่าทำอะไรได้บ้าง</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/status</code></td><td class="what">ดูเวอร์ชัน โมเดล บัญชีที่ล็อกอิน</td><td class="when">อยากเช็คว่ากำลังใช้โมเดลอะไร บัญชีไหน</td><td class="ex">งงว่าทำไมช้า/แพง <em>เช็คว่าใช้ Opus หรือ Sonnet อยู่</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/doctor</code></td><td class="what">ตรวจสุขภาพการติดตั้ง</td><td class="when">มีอะไรพัง อยากหาสาเหตุ</td><td class="ex">MCP ไม่ทำงาน/ต่อเน็ตไม่ได้ <em>รัน /doctor หาจุดเสีย</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/release-notes</code></td><td class="what">ดูของใหม่ที่เพิ่งอัปเดต</td><td class="when">อัปเวอร์ชันแล้วอยากรู้มีอะไรเพิ่ม</td><td class="ex">เห็นปุ่มใหม่ในเมนู <em>เช็คว่าฟีเจอร์อะไรมาใหม่</em></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <div class="sec-head"><span class="no">02</span><h2>จัดการบทสนทนา &amp; context</h2><span class="sub">หัวใจของการใช้ให้คุ้ม</span></div>
+    <div class="tbl-scroll"><table>
+      <thead><tr><th>คำสั่ง</th><th>ทำอะไร</th><th>ใช้เมื่อไร–เป้าหมาย</th><th>ตัวอย่างสถานการณ์</th></tr></thead>
+      <tbody>
+        <tr><td class="cmd"><code class="cmd">/clear</code><span class="alias">= /new /reset</span></td><td class="what">ล้างแชท เริ่มใหม่หมด</td><td class="when">เปลี่ยนเรื่องคุย ไม่อยากให้เรื่องเก่ามากวน/เปลืองโทเคน</td><td class="ex">คุยงาน A เสร็จ จะเริ่มงาน B <em>/clear ก่อน กันมันจำเรื่องเก่าผิดๆ</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/compact</code></td><td class="what">บีบอัดบทสนทนาให้สั้น (เก็บใจความ)</td><td class="when">คุยยาวมาก context ใกล้เต็ม แต่ยังอยากทำงานต่อ</td><td class="ex">แก้โค้ดมาเป็นชั่วโมง เริ่มช้า <em>/compact ให้มันสรุปแล้วไปต่อ</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/context</code></td><td class="what">ดูว่าใช้ context ไปเท่าไหร่แล้ว</td><td class="when">อยากรู้ว่าเหลือที่ให้คุยอีกแค่ไหน</td><td class="ex">รู้สึกมันเริ่มลืม <em>เช็คว่าเต็มหรือยัง จะได้ /compact ทัน</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/resume</code><span class="alias">= /continue</span></td><td class="what">กลับไปทำงานที่คุยค้างไว้</td><td class="when">ปิดไปแล้ว อยากสานต่อของเดิม</td><td class="ex">เมื่อวานแก้บั๊กค้าง <em>/resume เลือกแชทเดิมมาทำต่อ</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/rewind</code><span class="alias">= /undo /checkpoint</span></td><td class="what">ย้อนกลับไปจุดก่อนหน้า</td><td class="when">มันทำพลาด อยากถอยกลับก่อนพัง</td><td class="ex">Claude แก้ผิดไฟล์ <em>/rewind ย้อนกลับจุดที่ยังดีอยู่</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/export</code></td><td class="what">บันทึกบทสนทนาเป็นไฟล์</td><td class="when">อยากเก็บบันทึก/ส่งต่อให้คนอื่นดู</td><td class="ex">คุยได้คำตอบดีๆ <em>/export เก็บไว้เป็นเอกสาร</em></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <div class="sec-head"><span class="no">03</span><h2>โมเดล &amp; การตั้งค่า</h2><span class="sub">คุมพลัง คุมความปลอดภัย</span></div>
+    <div class="tbl-scroll"><table>
+      <thead><tr><th>คำสั่ง</th><th>ทำอะไร</th><th>ใช้เมื่อไร–เป้าหมาย</th><th>ตัวอย่างสถานการณ์</th></tr></thead>
+      <tbody>
+        <tr><td class="cmd"><code class="cmd">/model</code></td><td class="what">สลับโมเดล AI</td><td class="when">อยากได้ฉลาดขึ้น (Opus) หรือเร็ว/ประหยัดขึ้น (Sonnet/Haiku)</td><td class="ex">งานคิดหนัก <em>สลับเป็น Opus</em> · งานง่ายๆ <em>ใช้ Haiku ประหยัด</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/config</code></td><td class="what">เปิดหน้าตั้งค่า (ธีม โมเดล ฯลฯ)</td><td class="when">อยากปรับหน้าตา/ค่าเริ่มต้น</td><td class="ex">อยากเปลี่ยนธีมมืด-สว่าง <em>เข้า /config ปรับ</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/permissions</code><span class="alias">= /allowed-tools</span></td><td class="what">ตั้งกฎว่าให้รันอะไรได้บ้าง</td><td class="when">อยากลดการถาม yes/no ซ้ำๆ กับคำสั่งที่ไว้ใจ</td><td class="ex">มันถาม npm ทุกครั้ง <em>/permissions อนุญาต npm ถาวร</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/vim</code></td><td class="what">เปิดโหมดพิมพ์แบบ vim</td><td class="when">ถนัด vim อยากใช้คีย์ลัดแบบเดิม</td><td class="ex">คนคุ้น vim <em>เปิดไว้พิมพ์เร็วขึ้น</em></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <div class="sec-head"><span class="no">04</span><h2>โปรเจกต์ &amp; ความจำ</h2><span class="sub">ทำให้ Claude เข้าใจงานเรา</span></div>
+    <div class="tbl-scroll"><table>
+      <thead><tr><th>คำสั่ง</th><th>ทำอะไร</th><th>ใช้เมื่อไร–เป้าหมาย</th><th>ตัวอย่างสถานการณ์</th></tr></thead>
+      <tbody>
+        <tr><td class="cmd"><code class="cmd">/init</code></td><td class="what">สร้างไฟล์ CLAUDE.md อธิบายโปรเจกต์</td><td class="when">เริ่มใช้ Claude กับ repo ใหม่ อยากให้มันรู้จักโครงสร้าง</td><td class="ex">โคลนโปรเจกต์มา <em>/init ให้มันสแกนแล้วเขียนคู่มือให้ตัวเอง</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/memory</code></td><td class="what">แก้ไฟล์ความจำถาวร</td><td class="when">อยากให้มันจำสไตล์/กฎของเรา ข้ามแชท</td><td class="ex">อยากให้ตอบไทยเสมอ <em>/memory เพิ่มกฎลงไป</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/add-dir</code></td><td class="what">เพิ่มโฟลเดอร์ให้เข้าถึงไฟล์</td><td class="when">ต้องใช้ไฟล์ที่อยู่นอกโฟลเดอร์ปัจจุบัน</td><td class="ex">โค้ดอยู่คนละที่กับ config <em>/add-dir เพิ่มอีกโฟลเดอร์</em></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <div class="sec-head"><span class="no">05</span><h2>งานโค้ด &amp; รีวิว</h2><span class="sub">สายพัฒนาใช้บ่อย</span></div>
+    <div class="tbl-scroll"><table>
+      <thead><tr><th>คำสั่ง</th><th>ทำอะไร</th><th>ใช้เมื่อไร–เป้าหมาย</th><th>ตัวอย่างสถานการณ์</th></tr></thead>
+      <tbody>
+        <tr><td class="cmd"><code class="cmd">/plan</code></td><td class="what">เข้าโหมดวางแผนก่อนลงมือ</td><td class="when">งานใหญ่/ซับซ้อน อยากเห็นแผนก่อนให้มันแก้จริง</td><td class="ex">จะรื้อฟีเจอร์ใหญ่ <em>/plan ให้มันเสนอแผนก่อนอนุมัติ</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/code-review</code></td><td class="what">รีวิวโค้ดที่เพิ่งแก้ หาบั๊ก</td><td class="when">แก้เสร็จ อยากให้ช่วยตรวจก่อน commit</td><td class="ex">เขียนฟังก์ชันใหม่ <em>/code-review เช็ค edge case ที่ลืม</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/security-review</code></td><td class="what">ตรวจช่องโหว่ความปลอดภัย</td><td class="when">ก่อนขึ้น production อยากกันเรื่องความปลอดภัย</td><td class="ex">มีฟอร์มรับข้อมูลผู้ใช้ <em>/security-review หา injection/รั่ว</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/review</code></td><td class="what">รีวิว Pull Request บน GitHub</td><td class="when">มี PR รอ อยากให้ช่วยดูก่อน merge</td><td class="ex">เพื่อนส่ง PR มา <em>/review ดูว่าปลอดภัยที่จะ merge ไหม</em></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <div class="sec-head"><span class="no">06</span><h2>เครื่องมือ &amp; การเชื่อมต่อ</h2><span class="sub">ต่อยอด ขยายความสามารถ</span></div>
+    <div class="tbl-scroll"><table>
+      <thead><tr><th>คำสั่ง</th><th>ทำอะไร</th><th>ใช้เมื่อไร–เป้าหมาย</th><th>ตัวอย่างสถานการณ์</th></tr></thead>
+      <tbody>
+        <tr><td class="cmd"><code class="cmd">/mcp</code></td><td class="what">จัดการ MCP server (เครื่องมือเสริม)</td><td class="when">อยากต่อ Claude เข้ากับ Chrome/Google Drive/DB ฯลฯ</td><td class="ex">จะให้คุมเบราว์เซอร์ <em>/mcp เช็ค/รีคอนเนกต์ Chrome MCP</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/agents</code></td><td class="what">จัดการ subagent (ผู้ช่วยย่อย)</td><td class="when">อยากให้มีผู้ช่วยเฉพาะทางแยกงาน</td><td class="ex">งานหลายด้านพร้อมกัน <em>/agents ตั้งผู้ช่วยเฉพาะเรื่อง</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/hooks</code></td><td class="what">ดู/ตั้ง automation อัตโนมัติ</td><td class="when">อยากให้ทำอะไรเองทุกครั้งที่เกิดเหตุการณ์ X</td><td class="ex">อยากให้เปิดไฟล์ผลลัพธ์อัตโนมัติ <em>/hooks ตั้ง Stop hook</em></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <div class="sec-head"><span class="no">07</span><h2>บัญชี &amp; ค่าใช้จ่าย</h2></div>
+    <div class="tbl-scroll"><table>
+      <thead><tr><th>คำสั่ง</th><th>ทำอะไร</th><th>ใช้เมื่อไร–เป้าหมาย</th><th>ตัวอย่างสถานการณ์</th></tr></thead>
+      <tbody>
+        <tr><td class="cmd"><code class="cmd">/usage</code><span class="alias">= /cost /stats</span></td><td class="what">ดูยอดใช้งาน/ค่าใช้จ่าย</td><td class="when">อยากรู้ว่าใช้ไปเท่าไหร่ เหลือโควตาแค่ไหน</td><td class="ex">ใกล้สิ้นเดือน <em>/usage เช็คว่าใช้ไปกี่ % ของแพ็ก</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/login</code> / <code class="cmd">/logout</code></td><td class="what">เข้า/ออกจากบัญชี</td><td class="when">สลับบัญชี หรือเครื่องใหม่</td><td class="ex">เปลี่ยนไปใช้บัญชีบริษัท <em>/logout แล้ว /login ใหม่</em></td></tr>
+        <tr><td class="cmd"><code class="cmd">/feedback</code><span class="alias">= /bug</span></td><td class="what">รายงานปัญหา/ส่งความเห็น</td><td class="when">เจอบั๊ก อยากแจ้งทีม Anthropic</td><td class="ex">คำสั่งทำงานเพี้ยน <em>/bug ส่ง log ให้ทีมดู</em></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- Permission modes -->
+  <section>
+    <div class="sec-head"><span class="no">08</span><h2>โหมด Permission — กด <span class="kbd" style="margin-left:4px">shift + tab</span> วนสลับ</h2><span class="sub">คุมว่ามันต้องขออนุญาตแค่ไหน</span></div>
+    <div class="modes">
+
+      <div class="mode">
+        <div class="tag t-green">⏸ Plan mode</div>
+        <div class="body">
+          <p><b>อ่าน/วิเคราะห์อย่างเดียว — ไม่แก้ไฟล์ ไม่รันอะไรที่เปลี่ยนแปลง</b> จะเสนอแผนมาให้ดูก่อน รออนุมัติค่อยลงมือ</p>
+          <p class="use"><b>ใช้เมื่อ:</b> งานใหญ่/สำคัญ/production · อยากให้คิดก่อนทำ กันพลาด · เหมาะกับมือใหม่ <span class="risk t-green">เสี่ยงต่ำสุด</span></p>
+        </div>
+      </div>
+
+      <div class="mode">
+        <div class="tag t-slate">Default</div>
+        <div class="body">
+          <p><b>โหมดปกติ — ถามทุกครั้งก่อนแก้ไฟล์หรือรันคำสั่ง</b> คุณกด yes/no เอง</p>
+          <p class="use"><b>ใช้เมื่อ:</b> อยากคุมทุกก้าว · งานทั่วไปที่ยังไม่ไว้ใจ <span class="risk t-slate">เสี่ยงต่ำ</span></p>
+        </div>
+      </div>
+
+      <div class="mode">
+        <div class="tag t-purple">accept edits</div>
+        <div class="body">
+          <p><b>อนุมัติการแก้ไฟล์ให้อัตโนมัติ</b> (ไม่ต้องกด yes ทุกครั้ง) — แต่ยัง<b>ถาม</b>ก่อนรันคำสั่ง shell ที่เสี่ยง</p>
+          <p class="use"><b>ใช้เมื่อ:</b> งานแก้โค้ดเยอะๆ ที่ไว้ใจได้ อยากให้ไหลลื่น แต่ยังคุมคำสั่งอันตราย <span class="risk t-purple">เสี่ยงกลาง</span></p>
+        </div>
+      </div>
+
+      <div class="mode">
+        <div class="tag t-amber">auto mode</div>
+        <div class="body">
+          <p><b>อนุมัติเกือบทุกอย่างเอง</b> รวมถึงรันคำสั่งด้วย — ทำงานต่อเนื่อง ไม่ค่อยหยุดถาม</p>
+          <p class="use"><b>ใช้เมื่อ:</b> งานที่ไหลยาว อยากให้เดินเองจนจบ · เชื่อมือแล้ว <span class="risk t-amber">เสี่ยงสูง</span></p>
+        </div>
+      </div>
+
+      <div class="mode">
+        <div class="tag t-red">bypass permissions</div>
+        <div class="body">
+          <p><b>ไม่ถามอะไรเลย อนุมัติทุกอย่าง</b> รวมคำสั่งลบไฟล์/อันตราย — เร็วสุด แต่มันรันอะไรก็ได้โดยไม่เตือน</p>
+          <p class="use"><b>ใช้เมื่อ:</b> มั่นใจจริงๆ หรืออยู่ใน sandbox/เครื่องแยกเท่านั้น · <b>ไม่แนะนำ</b>กับมือใหม่ หรือเครื่องที่มีของสำคัญ <span class="risk t-red">เสี่ยงสูงสุด</span></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tbl-scroll"><table class="matrix">
+      <thead><tr><th>โหมด</th><th>แก้ไฟล์เอง?</th><th>รันคำสั่งเอง?</th><th>ความเสี่ยง</th></tr></thead>
+      <tbody>
+        <tr><td>Plan</td><td class="no">ไม่</td><td class="no">ไม่</td><td>ต่ำสุด</td></tr>
+        <tr><td>Default</td><td class="ask">ถามก่อน</td><td class="ask">ถามก่อน</td><td>ต่ำ</td></tr>
+        <tr><td>accept edits</td><td class="yes">ใช่</td><td class="ask">ถามก่อน</td><td>กลาง</td></tr>
+        <tr><td>auto</td><td class="yes">ใช่</td><td class="yes">ใช่ (เกือบหมด)</td><td>สูง</td></tr>
+        <tr><td>bypass</td><td class="yes">ใช่</td><td class="yes">ใช่ (ทั้งหมด)</td><td>สูงสุด</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout" style="margin:16px 20px 20px">จำง่ายๆ: <b>สีเขียว = ระวังสุด · สีแดง = ปล่อยสุด</b> — กด <span class="kbd">shift + tab</span> วนไปเรื่อยๆ จนเจอโหมดที่อยากใช้</div>
+  </section>
+
+  <!-- more -->
+  <section>
+    <div class="sec-head"><span class="no">+</span><h2>คำสั่ง built-in อื่นๆ ที่ควรรู้</h2><span class="sub">ยังมีอีก รวมทั้งหมด ~45 คำสั่ง</span></div>
+    <div class="more">
+      <div class="item"><code>/effort</code> <span>— ตั้งระดับความคิดหนัก (low→max)</span></div>
+      <div class="item"><code>/rewind</code> <span>— ย้อน checkpoint</span></div>
+      <div class="item"><code>/copy</code> <span>— คัดลอกคำตอบล่าสุด</span></div>
+      <div class="item"><code>/cd</code> <span>— ย้ายโฟลเดอร์ทำงาน</span></div>
+      <div class="item"><code>/diff</code> <span>— ดูความต่างของโค้ด</span></div>
+      <div class="item"><code>/skills</code> <span>— ดู skill ที่มี</span></div>
+      <div class="item"><code>/ide</code> <span>— เชื่อมกับ VS Code / JetBrains</span></div>
+      <div class="item"><code>/terminal-setup</code> <span>— ตั้งคีย์ลัด terminal</span></div>
+      <div class="item"><code>/plugin</code> <span>— จัดการปลั๊กอิน</span></div>
+      <div class="item"><code>/loop</code> <span>— รันคำสั่งซ้ำเป็นรอบ</span></div>
+      <div class="item"><code>/background</code> <span>— แยกงานไปรันเบื้องหลัง</span></div>
+      <div class="item"><code>/powerup</code> <span>— บทเรียนฟีเจอร์แบบโต้ตอบ</span></div>
+    </div>
+  </section>
+
+  <footer>
+    คู่มือคำสั่ง Claude Code (ฉบับสอน) · เฉพาะคำสั่ง built-in ที่มากับทุกเครื่อง<br>
+    คำสั่งอย่าง <code style="font-family:var(--mono)">/Chrome-MCP-Owly</code> · <code style="font-family:var(--mono)">/CRUD-basic</code> · <code style="font-family:var(--mono)">/codex:*</code> เป็นของที่ผู้ใช้เซตเพิ่มเอง (custom skill / plugin) ไม่ได้ติดมากับพื้นฐาน<br>
+    อ้างอิงทางการ: code.claude.com/docs/en/commands
+  </footer>
+
+</div>
+</body>
+</html>
