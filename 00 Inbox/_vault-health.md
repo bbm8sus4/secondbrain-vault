@@ -1,25 +1,35 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-09 10:31:06 · ไฟล์ .md ทั้งหมด 401
+> สแกนอัตโนมัติ · 2026-07-10 09:00:01 · ไฟล์ .md ทั้งหมด 403
 
-**สถานะรวม: 🟢 แข็งแรง**
+**สถานะรวม: 🟡 มีจุดต้องดู**
 
 ## สรุป
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 0 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 0 |
+| 🔗 ลิงก์เสีย (dead links) | 2 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 2 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
 | 🔄 memory source ↔ mirror | 85 ↔ 85 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 0 นาทีที่แล้ว |
+| ⏱️ sync ล่าสุด (vault commit) | 3 ชม.ที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
 | 📋 frontmatter ขาด (backlog) | 148 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
 | ❓ คิวรอ verify | 9 |
-| 📰 Friday weekly recap ล่าสุด | 2026-W28 (1 ชม.ที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (8 วันที่แล้ว) |
+| 📰 Friday weekly recap ล่าสุด | 2026-W28 (8 ชม.ที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (9 วันที่แล้ว) |
+
+## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
+
+- `Thunder Solution/02-Products-Services.md` → `[[API Gen QR — 2025-10 planning notes]]` (ไม่พบ)
+- `Thunder Solution/หน้าหลัก.md` → `[[API Gen QR — 2025-10 planning notes]]` (ไม่พบ)
+
+## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
+
+- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Curriculum/UseCases-Basic-การใช้งาน.md`
+- `03 Resources/Clippings/(196) เจาะ 3 งาน ที่ Claude Cowork ช่วยคุณ automate ได้จริงมากที่สุด step by step.md`
 
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
 
