@@ -1,0 +1,1115 @@
+<title>Git Mastery Guide — 10,000 Level</title>
+<style>
+  @font-face {
+    font-family: 'Charter';
+    src: local('Charter'), local('Georgia');
+  }
+
+  :root {
+    --ground: #faf8f5;
+    --ink: #1c1e21;
+    --ink-secondary: #5a5d63;
+    --ink-faint: #8c8f94;
+    --accent-red: #c44536;
+    --accent-green: #2b7a3e;
+    --accent-blue: #3b5bdb;
+    --accent-amber: #c27b1a;
+    --code-bg: #edeae4;
+    --code-border: #d8d4cc;
+    --callout-danger: #fdf0ee;
+    --callout-danger-border: #e8a99a;
+    --callout-safe: #edf7ef;
+    --callout-safe-border: #92c9a0;
+    --callout-info: #eef1fb;
+    --callout-info-border: #9faee0;
+    --callout-warn: #fdf6ea;
+    --callout-warn-border: #dbb670;
+    --divider: #ddd8d0;
+    --section-num: #b0aba3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--ground);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 6rem;
+  }
+
+  /* --- Header --- */
+  .page-header {
+    margin-bottom: 3.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .page-header h1 {
+    font-family: Charter, Georgia, 'Times New Roman', serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.6rem;
+    text-wrap: balance;
+  }
+
+  .page-header .subtitle {
+    font-size: 1.05rem;
+    color: var(--ink-secondary);
+    max-width: 580px;
+  }
+
+  .page-header .meta {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  /* --- TOC --- */
+  .toc {
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .toc-title {
+    font-family: Charter, Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 2rem;
+  }
+
+  .toc li {
+    counter-increment: toc;
+    font-size: 0.92rem;
+  }
+
+  .toc li::before {
+    content: counter(toc, decimal-leading-zero) " ";
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .toc a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+
+  .toc a:hover { border-bottom-color: var(--ink-secondary); }
+
+  /* --- Sections --- */
+  .section {
+    margin-bottom: 3.5rem;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--section-num);
+    margin-bottom: 0.3rem;
+  }
+
+  .section h2 {
+    font-family: Charter, Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 0.8rem;
+    text-wrap: balance;
+    letter-spacing: -0.01em;
+  }
+
+  .section h3 {
+    font-family: Charter, Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .section p {
+    margin-bottom: 0.9rem;
+    max-width: 65ch;
+  }
+
+  .section ul, .section ol {
+    padding-left: 1.3rem;
+    margin-bottom: 0.9rem;
+    max-width: 65ch;
+  }
+
+  .section li { margin-bottom: 0.3rem; }
+
+  /* --- Code blocks --- */
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    tab-size: 2;
+  }
+
+  code {
+    font-family: 'SF Mono', Menlo, Monaco, 'Cascadia Code', monospace;
+    font-size: 0.88em;
+  }
+
+  p code, li code {
+    background: var(--code-bg);
+    padding: 0.12em 0.4em;
+    border: 1px solid var(--code-border);
+  }
+
+  pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1em;
+  }
+
+  .cmd { color: var(--accent-blue); font-weight: 600; }
+  .comment { color: var(--ink-faint); }
+  .output { color: var(--ink-secondary); }
+  .danger { color: var(--accent-red); font-weight: 600; }
+  .safe { color: var(--accent-green); font-weight: 600; }
+
+  /* --- Callouts --- */
+  .callout {
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid;
+    font-size: 0.93rem;
+  }
+
+  .callout p:last-child { margin-bottom: 0; }
+
+  .callout-danger {
+    background: var(--callout-danger);
+    border-color: var(--accent-red);
+  }
+
+  .callout-safe {
+    background: var(--callout-safe);
+    border-color: var(--accent-green);
+  }
+
+  .callout-info {
+    background: var(--callout-info);
+    border-color: var(--accent-blue);
+  }
+
+  .callout-warn {
+    background: var(--callout-warn);
+    border-color: var(--accent-amber);
+  }
+
+  .callout-label {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .callout-danger .callout-label { color: var(--accent-red); }
+  .callout-safe .callout-label { color: var(--accent-green); }
+  .callout-info .callout-label { color: var(--accent-blue); }
+  .callout-warn .callout-label { color: var(--accent-amber); }
+
+  /* --- Diagram --- */
+  .diagram {
+    background: #fff;
+    border: 1px solid var(--code-border);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    overflow-x: auto;
+  }
+
+  .diagram pre {
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+    margin: 0;
+  }
+
+  /* --- Table --- */
+  .table-wrap {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  th {
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-secondary);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 2px solid var(--ink);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  /* --- Collapsible --- */
+  details {
+    margin-bottom: 0.8rem;
+  }
+
+  details summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.93rem;
+    color: var(--accent-blue);
+    padding: 0.3rem 0;
+    user-select: none;
+  }
+
+  details summary:hover { color: var(--ink); }
+
+  details[open] summary { margin-bottom: 0.5rem; }
+
+  details .inner {
+    padding-left: 1rem;
+    border-left: 2px solid var(--divider);
+  }
+
+  /* --- Separator --- */
+  .sep {
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 3rem 0;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 640px) {
+    .page { padding: 2rem 1rem 4rem; }
+    .page-header h1 { font-size: 1.9rem; }
+    .section h2 { font-size: 1.35rem; }
+    .toc ol { grid-template-columns: 1fr; }
+    pre { font-size: 0.82rem; padding: 0.8rem; }
+  }
+</style>
+
+<div class="page">
+
+<header class="page-header">
+  <h1>Git Mastery Guide</h1>
+  <p class="subtitle">ทุกเรื่องที่ต้องรู้เพื่อใช้ Git ได้อย่างมั่นใจ ตั้งแต่ internal model ไปจนถึง recovery, forensics, และ workflow ขั้นสูง</p>
+  <p class="meta">Teaching Reference &middot; 12 Chapters</p>
+</header>
+
+<nav class="toc">
+  <div class="toc-title">Chapters</div>
+  <ol>
+    <li><a href="#ch01">Git Object Model</a></li>
+    <li><a href="#ch02">Three Trees</a></li>
+    <li><a href="#ch03">Reflog &mdash; The Safety Net</a></li>
+    <li><a href="#ch04">Reset Demystified</a></li>
+    <li><a href="#ch05">Interactive Rebase</a></li>
+    <li><a href="#ch06">Cherry-pick &amp; Revert</a></li>
+    <li><a href="#ch07">Bisect &mdash; Binary Search</a></li>
+    <li><a href="#ch08">Stash ขั้นสูง</a></li>
+    <li><a href="#ch09">Log Forensics</a></li>
+    <li><a href="#ch10">Recovery Recipes</a></li>
+    <li><a href="#ch11">Hooks &amp; Automation</a></li>
+    <li><a href="#ch12">Worktrees &amp; Performance</a></li>
+  </ol>
+</nav>
+
+<!-- ============================================================ -->
+<section class="section" id="ch01">
+  <div class="section-label">Chapter 01</div>
+  <h2>Git Object Model &mdash; ทุกอย่างเริ่มจากตรงนี้</h2>
+
+  <p>คนส่วนใหญ่ใช้ Git แบบจำคำสั่ง ไม่เข้าใจว่าข้างในเก็บข้อมูลยังไง พอเจอปัญหาก็แก้ไม่ได้ เข้าใจ object model แล้วทุกอย่างจะ click</p>
+
+  <h3>4 Object Types</h3>
+  <p>Git เก็บทุกอย่างเป็น object ใน <code>.git/objects/</code> แต่ละ object มี SHA-1 hash เป็น address</p>
+
+  <div class="diagram">
+    <pre><code>  <span class="cmd">commit</span> ──references──▶ <span class="cmd">tree</span> ──references──▶ <span class="cmd">blob</span>
+    │                      │
+    │ parent               │ subtree
+    ▼                      ▼
+  <span class="cmd">commit</span>               <span class="cmd">tree</span> ──▶ <span class="cmd">blob</span>
+
+  <span class="comment">+ tag (optional: annotated tag pointing to a commit)</span></code></pre>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Object</th><th>เก็บอะไร</th><th>Key Insight</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>blob</code></td><td>เนื้อหาไฟล์ (ไม่มีชื่อไฟล์)</td><td>ไฟล์ที่เนื้อหาเหมือนกัน = blob เดียวกัน ไม่ว่าชื่อจะต่างกัน</td></tr>
+        <tr><td><code>tree</code></td><td>directory listing (ชื่อ + mode + pointer ไป blob/tree)</td><td>ทำให้ Git track directory structure ได้</td></tr>
+        <tr><td><code>commit</code></td><td>tree pointer + parent(s) + author + message</td><td>commit ไม่ได้เก็บ diff เก็บ snapshot ทั้งก้อน</td></tr>
+        <tr><td><code>tag</code></td><td>pointer ไป commit + tagger + message</td><td>annotated tag เท่านั้นที่เป็น object (lightweight tag เป็นแค่ ref)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>ลองดูของจริง</h3>
+<pre><code><span class="comment"># ดู object ทุกตัวใน repo</span>
+<span class="cmd">git rev-list --all --objects</span>
+
+<span class="comment"># ดูประเภทของ object</span>
+<span class="cmd">git cat-file -t HEAD</span>
+<span class="output">commit</span>
+
+<span class="comment"># ดูเนื้อหาของ commit object</span>
+<span class="cmd">git cat-file -p HEAD</span>
+<span class="output">tree 4b825dc642cb6eb9a060e54bf899d8e5f2..
+parent a1b2c3d4e5f6...
+author John &lt;john@x.com&gt; 1720000000 +0700
+committer John &lt;john@x.com&gt; 1720000000 +0700
+
+Fix payment validation</span>
+
+<span class="comment"># ดูเนื้อหาของ tree</span>
+<span class="cmd">git cat-file -p HEAD^{tree}</span>
+<span class="output">100644 blob a1b2c3...  README.md
+040000 tree d4e5f6...  src</span>
+
+<span class="comment"># ดูเนื้อหาของ blob</span>
+<span class="cmd">git cat-file -p a1b2c3</span>
+<span class="output">(contents of README.md)</span></code></pre>
+
+  <div class="callout callout-info">
+    <div class="callout-label">Teaching Point</div>
+    <p>Git ไม่ได้เก็บ diff ระหว่าง version อย่างที่หลายคนเข้าใจ ทุก commit เก็บ snapshot ของไฟล์ทั้งหมด แต่ถ้าไฟล์ไม่เปลี่ยน มันก็ point ไปที่ blob เดิม ไม่ copy ซ้ำ (content-addressable storage)</p>
+  </div>
+
+  <h3>Refs &mdash; ชื่อเรียก commit</h3>
+  <p>Branch, tag, HEAD ทั้งหมดเป็นแค่ text file ที่เก็บ SHA</p>
+<pre><code><span class="cmd">cat .git/refs/heads/main</span>
+<span class="output">a1b2c3d4e5f6789...</span>     <span class="comment"># main = pointer ไปที่ commit นี้</span>
+
+<span class="cmd">cat .git/HEAD</span>
+<span class="output">ref: refs/heads/main</span>  <span class="comment"># HEAD = pointer ไปที่ branch ไหน</span></code></pre>
+
+  <div class="callout callout-safe">
+    <div class="callout-label">Key Insight</div>
+    <p>Branch ไม่ใช่ "สำเนาของโค้ด" แต่เป็นแค่ pointer ไปที่ commit ตัวเดียว สร้าง branch = สร้างไฟล์ 41 bytes ไม่ copy อะไรเลย นี่คือเหตุผลที่ Git branching ถูกมาก</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch02">
+  <div class="section-label">Chapter 02</div>
+  <h2>Three Trees &mdash; สามที่ที่โค้ดอยู่</h2>
+
+  <p>ทุกปัญหาเรื่อง staging, reset, checkout จะเคลียร์ถ้าเข้าใจว่า Git มี "tree" สามตัวที่โค้ดวิ่งไปมา</p>
+
+  <div class="diagram">
+    <pre><code>  ┌─────────────────┐    git add    ┌─────────────────┐   git commit   ┌─────────────────┐
+  │  Working Dir     │ ───────────▶ │  Staging Area    │ ────────────▶ │  HEAD (commit)   │
+  │  (ไฟล์ที่เห็นจริง)  │              │  (Index/.git/index)│               │  (snapshot ล่าสุด) │
+  └─────────────────┘              └─────────────────┘               └─────────────────┘
+         ▲                                                                     │
+         └──────────────── git checkout / git restore ─────────────────────────┘</code></pre>
+  </div>
+
+  <h3>ดูสถานะทั้ง 3 ที่พร้อมกัน</h3>
+<pre><code><span class="comment"># ดูว่า staging กับ HEAD ต่างกันยังไง (สิ่งที่จะ commit)</span>
+<span class="cmd">git diff --cached</span>
+
+<span class="comment"># ดูว่า working dir กับ staging ต่างกันยังไง (สิ่งที่ยังไม่ add)</span>
+<span class="cmd">git diff</span>
+
+<span class="comment"># ดูว่า working dir กับ HEAD ต่างกันยังไง (ทุกอย่างที่เปลี่ยน)</span>
+<span class="cmd">git diff HEAD</span>
+
+<span class="comment"># ดูว่าแต่ละไฟล์ อยู่ใน tree ไหนบ้าง</span>
+<span class="cmd">git status -s</span>
+<span class="output"> M file.js</span>   <span class="comment"># M ด้านขวา = modified ใน working dir (ยังไม่ add)</span>
+<span class="output">M  file.js</span>   <span class="comment"># M ด้านซ้าย = modified ใน staging (add แล้ว)</span>
+<span class="output">MM file.js</span>   <span class="comment"># ทั้งสองที่ = add แล้วบางส่วน แก้ต่อหลัง add</span></code></pre>
+
+  <h3>Partial Staging &mdash; add เฉพาะบางบรรทัด</h3>
+<pre><code><span class="comment"># เลือก add ทีละ hunk (ส่วน) ของไฟล์</span>
+<span class="cmd">git add -p file.js</span>
+<span class="output">Stage this hunk [y,n,s,e,q,?]?</span>
+
+<span class="comment"># y = stage hunk นี้, n = ข้าม, s = split เล็กลง, e = edit hunk เอง</span></code></pre>
+
+  <div class="callout callout-warn">
+    <div class="callout-label">Workshop Tip</div>
+    <p><code>git add -p</code> เป็น skill ที่แยกมือใหม่กับมือโปรชัดเจน ทำให้ commit สะอาด แต่ละ commit เป็นเรื่องเดียว ไม่ใช่ "แก้ทุกอย่างแล้ว add . ยิง commit ทีเดียว"</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch03">
+  <div class="section-label">Chapter 03</div>
+  <h2>Reflog &mdash; ตาข่ายนิรภัย</h2>
+
+  <p>Reflog บันทึกทุกการเคลื่อนไหวของ HEAD และ branch ในเครื่องเรา เหมือน undo history ของ Git เอง เก็บ 90 วันโดยค่าเริ่มต้น</p>
+
+<pre><code><span class="cmd">git reflog</span>
+<span class="output">a1b2c3d HEAD@{0}: commit: Fix payment validation
+f4e5d6c HEAD@{1}: rebase (finish): returning to refs/heads/main
+8a9b0c1 HEAD@{2}: rebase (pick): Add user auth
+d2e3f4a HEAD@{3}: reset: moving to HEAD~3
+7b8c9d0 HEAD@{4}: commit: Add dashboard charts</span>
+
+<span class="comment"># reflog ของ branch เฉพาะ</span>
+<span class="cmd">git reflog show feature/payment</span>
+
+<span class="comment"># reflog พร้อมเวลา</span>
+<span class="cmd">git reflog --date=relative</span></code></pre>
+
+  <h3>กู้ commit ที่ "หายไป"</h3>
+  <p>ใน Git ไม่มีอะไรหายจริง (จนกว่า garbage collection จะลบ ซึ่งปกติ 90 วัน)</p>
+
+<pre><code><span class="comment"># เผลอ reset --hard ไปแล้ว อยากกลับมา</span>
+<span class="cmd">git reflog</span>
+<span class="comment"># หา SHA ของ commit ที่อยากกลับไป</span>
+<span class="cmd">git reset --hard HEAD@{4}</span>
+
+<span class="comment"># ลบ branch ไปแล้ว อยากกู้</span>
+<span class="cmd">git reflog</span>
+<span class="comment"># หา SHA ที่ branch เคยชี้อยู่</span>
+<span class="cmd">git branch recovered-branch HEAD@{7}</span></code></pre>
+
+  <div class="callout callout-safe">
+    <div class="callout-label">Rule of Thumb</div>
+    <p>เผลอทำอะไรพัง ให้หยุดหายใจลึก แล้ว <code>git reflog</code> ก่อน 99% ของกรณีกู้ได้ ห้ามรีบ <code>git clone</code> ใหม่</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch04">
+  <div class="section-label">Chapter 04</div>
+  <h2>Reset Demystified &mdash; สาม mode ที่ต้องแยกให้ออก</h2>
+
+  <p><code>git reset</code> คือคำสั่งที่คนกลัวมากที่สุด เพราะไม่เข้าใจว่ามันมีสาม mode ที่ทำต่างกันมาก</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Mode</th><th>HEAD</th><th>Staging</th><th>Working Dir</th><th>ใช้เมื่อ</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>--soft</code></td>
+          <td style="color:var(--accent-red)">เลื่อน</td>
+          <td style="color:var(--accent-green)">ไม่แตะ</td>
+          <td style="color:var(--accent-green)">ไม่แตะ</td>
+          <td>อยากรวม commit หลายตัวเป็นตัวเดียว (squash แบบง่าย)</td>
+        </tr>
+        <tr>
+          <td><code>--mixed</code> (default)</td>
+          <td style="color:var(--accent-red)">เลื่อน</td>
+          <td style="color:var(--accent-red)">reset</td>
+          <td style="color:var(--accent-green)">ไม่แตะ</td>
+          <td>ถอน staging กลับมาเป็น unstaged (undo git add)</td>
+        </tr>
+        <tr>
+          <td><code>--hard</code></td>
+          <td style="color:var(--accent-red)">เลื่อน</td>
+          <td style="color:var(--accent-red)">reset</td>
+          <td style="color:var(--accent-red)">reset</td>
+          <td>ทิ้งทุกอย่างกลับไปที่ commit นั้น</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<pre><code><span class="comment"># Squash 3 commits สุดท้ายเป็นตัวเดียว (soft reset → commit ใหม่)</span>
+<span class="cmd">git reset --soft HEAD~3</span>
+<span class="cmd">git commit -m "Feature: complete payment flow"</span>
+
+<span class="comment"># ถอน staging (undo git add) ไม่เสียงาน</span>
+<span class="cmd">git reset HEAD file.js</span>
+<span class="comment"># หรือแบบใหม่ที่ชัดกว่า:</span>
+<span class="cmd">git restore --staged file.js</span>
+
+<span class="comment"># ทิ้งทุกอย่าง กลับไปที่ commit ล่าสุด</span>
+<span class="danger">git reset --hard HEAD</span></code></pre>
+
+  <div class="callout callout-danger">
+    <div class="callout-label">Danger Zone</div>
+    <p><code>--hard</code> เป็น mode เดียวที่ทำให้งานหาย uncommitted changes ที่ถูก reset --hard ไป reflog ช่วยไม่ได้ (เพราะมันไม่เคยเป็น commit) ให้ <code>git stash</code> ก่อนเสมอถ้าไม่แน่ใจ</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch05">
+  <div class="section-label">Chapter 05</div>
+  <h2>Interactive Rebase &mdash; แก้ไขประวัติศาสตร์</h2>
+
+  <p>Interactive rebase เป็นเครื่องมือที่ทรงพลังที่สุดของ Git ใช้จัดเรียง, รวม, แก้, ลบ commit ก่อน push</p>
+
+<pre><code><span class="comment"># จัดการ 5 commits สุดท้าย</span>
+<span class="cmd">git rebase -i HEAD~5</span>
+
+<span class="comment"># editor จะเปิดมาแบบนี้:</span>
+<span class="output">pick a1b2c3d Add login page
+pick d4e5f6a Fix typo in login
+pick 7b8c9d0 Add payment form
+pick e1f2a3b WIP: debugging payment
+pick c4d5e6f Complete payment validation</span>
+
+<span class="comment"># เปลี่ยน command หน้า commit ที่ต้องการ:</span></code></pre>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Command</th><th>Short</th><th>ทำอะไร</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>pick</code></td><td><code>p</code></td><td>เก็บ commit นี้ไว้ (ค่าเริ่มต้น)</td></tr>
+        <tr><td><code>reword</code></td><td><code>r</code></td><td>เก็บ commit แต่แก้ message</td></tr>
+        <tr><td><code>edit</code></td><td><code>e</code></td><td>หยุดที่ commit นี้ให้แก้ไข (amend ได้)</td></tr>
+        <tr><td><code>squash</code></td><td><code>s</code></td><td>รวมเข้ากับ commit ก่อนหน้า (รวม message ด้วย)</td></tr>
+        <tr><td><code>fixup</code></td><td><code>f</code></td><td>รวมเข้า commit ก่อนหน้า (ทิ้ง message)</td></tr>
+        <tr><td><code>drop</code></td><td><code>d</code></td><td>ลบ commit นี้ทิ้ง</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>ตัวอย่าง: Clean up ก่อน push</h3>
+<pre><code><span class="comment"># เปลี่ยนจาก:</span>
+pick a1b2c3d Add login page
+pick d4e5f6a Fix typo in login          <span class="comment">← รวมเข้า login</span>
+pick 7b8c9d0 Add payment form
+pick e1f2a3b WIP: debugging payment     <span class="comment">← ลบ</span>
+pick c4d5e6f Complete payment validation <span class="comment">← รวมเข้า payment</span>
+
+<span class="comment"># เป็น:</span>
+pick a1b2c3d Add login page
+<span class="safe">fixup d4e5f6a Fix typo in login</span>
+pick 7b8c9d0 Add payment form
+<span class="danger">drop e1f2a3b WIP: debugging payment</span>
+<span class="safe">fixup c4d5e6f Complete payment validation</span>
+
+<span class="comment"># ผลลัพธ์: 2 commits สะอาด แทนที่ 5 commits รก</span></code></pre>
+
+  <h3>Autosquash &mdash; ทำ fixup อัตโนมัติ</h3>
+<pre><code><span class="comment"># commit ที่ตั้งใจจะ fixup เข้า commit เก่า</span>
+<span class="cmd">git commit --fixup=a1b2c3d</span>
+
+<span class="comment"># แล้วพอ rebase มันจะเรียงให้อัตโนมัติ</span>
+<span class="cmd">git rebase -i --autosquash HEAD~5</span>
+
+<span class="comment"># ตั้งค่าให้ autosquash เป็นค่าเริ่มต้น</span>
+<span class="cmd">git config --global rebase.autosquash true</span></code></pre>
+
+  <div class="callout callout-danger">
+    <div class="callout-label">Golden Rule</div>
+    <p>ห้าม rebase commit ที่ push ไปแล้วและมีคนอื่นใช้อยู่ Rebase เปลี่ยน SHA ทุกตัว = history ของคนอื่นจะพัง ใช้ได้เฉพาะกับ local commits หรือ branch ส่วนตัว</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch06">
+  <div class="section-label">Chapter 06</div>
+  <h2>Cherry-pick &amp; Revert &mdash; ศัลยกรรม commit</h2>
+
+  <h3>Cherry-pick: หยิบ commit จาก branch อื่น</h3>
+<pre><code><span class="comment"># หยิบ commit เดียว</span>
+<span class="cmd">git cherry-pick abc1234</span>
+
+<span class="comment"># หยิบหลาย commits (ทำ commit ใหม่ทีละตัว)</span>
+<span class="cmd">git cherry-pick abc1234 def5678 ghi9012</span>
+
+<span class="comment"># หยิบ range (ไม่รวมตัวแรก, รวมตัวสุดท้าย)</span>
+<span class="cmd">git cherry-pick abc1234..ghi9012</span>
+
+<span class="comment"># หยิบมาแต่ไม่ commit (เอามาวางใน staging)</span>
+<span class="cmd">git cherry-pick --no-commit abc1234</span></code></pre>
+
+  <h3>Revert: ย้อน commit อย่างปลอดภัย</h3>
+  <p>ต่างจาก reset ตรงที่ revert สร้าง commit ใหม่ที่เป็น "ตรงข้าม" ปลอดภัยบน shared branch</p>
+
+<pre><code><span class="comment"># ย้อน commit เดียว</span>
+<span class="cmd">git revert abc1234</span>
+
+<span class="comment"># ย้อนหลาย commits (ย้อนทีละตัว, commit ล่าสุดก่อน)</span>
+<span class="cmd">git revert abc1234..def5678</span>
+
+<span class="comment"># ย้อน merge commit (ต้องบอกว่าเอา parent ฝั่งไหน)</span>
+<span class="cmd">git revert -m 1 abc1234</span>
+<span class="comment"># -m 1 = เก็บฝั่ง mainline (parent แรก), ย้อนฝั่ง feature</span></code></pre>
+
+  <div class="callout callout-info">
+    <div class="callout-label">เมื่อไหร่ใช้อะไร</div>
+    <p><strong>Cherry-pick</strong> = ต้องการบาง commit จาก branch อื่น (hotfix ที่ต้องไปหลาย branch)<br>
+    <strong>Revert</strong> = ต้องการถอน commit บน shared branch (ปลอดภัย ไม่ rewrite history)<br>
+    <strong>Reset</strong> = ต้องการลบ commit จาก local branch ของตัวเอง (rewrite history)</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch07">
+  <div class="section-label">Chapter 07</div>
+  <h2>Bisect &mdash; หา commit ที่ทำพัง ด้วย Binary Search</h2>
+
+  <p>มีบั๊กแต่ไม่รู้ว่า commit ไหนทำพัง bisect ใช้ binary search หาให้ใน O(log n) — 1000 commits ใช้แค่ ~10 steps</p>
+
+<pre><code><span class="comment"># เริ่ม bisect</span>
+<span class="cmd">git bisect start</span>
+
+<span class="comment"># บอกว่า commit ปัจจุบันพัง</span>
+<span class="cmd">git bisect bad</span>
+
+<span class="comment"># บอกว่า commit เก่าที่ยังดีอยู่</span>
+<span class="cmd">git bisect good v2.0.0</span>
+<span class="output">Bisecting: 512 revisions left to test after this (roughly 9 steps)</span>
+
+<span class="comment"># Git จะ checkout commit กลาง — ทดสอบ แล้วบอก</span>
+<span class="cmd">git bisect good</span>  <span class="comment"># ถ้า commit นี้ยังดี</span>
+<span class="cmd">git bisect bad</span>   <span class="comment"># ถ้า commit นี้พัง</span>
+
+<span class="comment"># ทำซ้ำจนเจอ → Git จะบอกว่า commit ไหนเป็นตัวแรกที่พัง</span>
+<span class="output">abc1234 is the first bad commit
+Author: John &lt;john@x.com&gt;
+Date: ...
+    Refactor payment handler</span>
+
+<span class="comment"># เสร็จแล้ว กลับมาที่เดิม</span>
+<span class="cmd">git bisect reset</span></code></pre>
+
+  <h3>Bisect อัตโนมัติด้วย script</h3>
+<pre><code><span class="comment"># ให้ script ทดสอบแทน (exit 0 = good, exit 1 = bad)</span>
+<span class="cmd">git bisect start HEAD v2.0.0</span>
+<span class="cmd">git bisect run npm test</span>
+<span class="comment"># หรือ custom script:</span>
+<span class="cmd">git bisect run ./test-payment.sh</span>
+
+<span class="comment"># Git จะทำ binary search + run script ให้จนเจอ commit ที่ผิด</span></code></pre>
+
+  <div class="callout callout-safe">
+    <div class="callout-label">Pro Move</div>
+    <p>Bisect + automated test = superpower ตัวจริง เขียน test ที่ reproduce บั๊กก่อน แล้วให้ <code>bisect run</code> หา commit ที่ทำพังให้อัตโนมัติ เหมาะมากตอนสอน "ทำไม test สำคัญ"</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch08">
+  <div class="section-label">Chapter 08</div>
+  <h2>Stash ขั้นสูง</h2>
+
+  <p>คนส่วนใหญ่ใช้แค่ <code>git stash</code> กับ <code>git stash pop</code> แต่ stash ทำได้อีกเยอะ</p>
+
+<pre><code><span class="comment"># stash พร้อมข้อความ (หาง่ายกว่า)</span>
+<span class="cmd">git stash push -m "WIP: payment refactor"</span>
+
+<span class="comment"># stash เฉพาะบางไฟล์</span>
+<span class="cmd">git stash push -m "config changes" -- config.js .env</span>
+
+<span class="comment"># stash เฉพาะบาง hunk (เหมือน add -p)</span>
+<span class="cmd">git stash push -p</span>
+
+<span class="comment"># stash รวม untracked files ด้วย</span>
+<span class="cmd">git stash push -u -m "including new files"</span>
+
+<span class="comment"># ดูรายการ stash ทั้งหมด</span>
+<span class="cmd">git stash list</span>
+<span class="output">stash@{0}: On main: WIP: payment refactor
+stash@{1}: On feature: config changes</span>
+
+<span class="comment"># ดูว่า stash นี้เปลี่ยนอะไร</span>
+<span class="cmd">git stash show -p stash@{1}</span>
+
+<span class="comment"># apply โดยไม่ลบออกจาก stash list (ปลอดภัยกว่า pop)</span>
+<span class="cmd">git stash apply stash@{1}</span>
+
+<span class="comment"># สร้าง branch จาก stash (เอา stash ไปทำต่อใน branch ใหม่)</span>
+<span class="cmd">git stash branch new-feature stash@{0}</span></code></pre>
+
+  <div class="callout callout-warn">
+    <div class="callout-label">Tip</div>
+    <p>ใช้ <code>apply</code> แทน <code>pop</code> เป็นค่าเริ่มต้น ถ้า apply แล้ว conflict หรือมีปัญหา stash ยังอยู่ ค่อย <code>git stash drop</code> ทีหลัง</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch09">
+  <div class="section-label">Chapter 09</div>
+  <h2>Log Forensics &mdash; สืบค้นประวัติ</h2>
+
+  <p>Git log ไม่ใช่แค่ดู commit ล่าสุด มันเป็นเครื่องมือสืบสวนที่ทรงพลังมาก</p>
+
+  <h3>git log ขั้นเทพ</h3>
+<pre><code><span class="comment"># Log สวย มีกราฟ ดู branching</span>
+<span class="cmd">git log --oneline --graph --all --decorate</span>
+
+<span class="comment"># หา commit ที่แก้ไฟล์นี้</span>
+<span class="cmd">git log --oneline -- src/payment.js</span>
+
+<span class="comment"># หา commit ที่มีคำนี้ใน message</span>
+<span class="cmd">git log --oneline --grep="payment"</span>
+
+<span class="comment"># หา commit ที่มีคำนี้ใน code (pickaxe search)</span>
+<span class="cmd">git log -S "calculateTotal" --oneline</span>
+
+<span class="comment"># หา commit ที่มี regex นี้ใน code change</span>
+<span class="cmd">git log -G "TODO|FIXME|HACK" --oneline</span>
+
+<span class="comment"># หา commit ของคนนี้ ในช่วงเวลานี้</span>
+<span class="cmd">git log --author="John" --since="2024-01-01" --until="2024-06-30" --oneline</span>
+
+<span class="comment"># แสดง diff ด้วย (ดูว่าแต่ละ commit เปลี่ยนอะไร)</span>
+<span class="cmd">git log -p -- src/payment.js</span>
+
+<span class="comment"># แสดงแค่สถิติ (กี่ไฟล์ กี่บรรทัด)</span>
+<span class="cmd">git log --stat --oneline</span></code></pre>
+
+  <h3>git blame &mdash; ใครแก้บรรทัดนี้</h3>
+<pre><code><span class="comment"># ดูว่าแต่ละบรรทัดใครแก้ เมื่อไหร่</span>
+<span class="cmd">git blame src/payment.js</span>
+
+<span class="comment"># ดูเฉพาะบรรทัดที่ 50-70</span>
+<span class="cmd">git blame -L 50,70 src/payment.js</span>
+
+<span class="comment"># ข้ามพวก whitespace change / bulk rename</span>
+<span class="cmd">git blame -w -M src/payment.js</span>
+
+<span class="comment"># ข้ามพวก code move ข้ามไฟล์</span>
+<span class="cmd">git blame -w -C -C src/payment.js</span></code></pre>
+
+  <h3>git shortlog &mdash; สรุปผลงาน</h3>
+<pre><code><span class="comment"># สรุปจำนวน commit ของแต่ละคน</span>
+<span class="cmd">git shortlog -sn --all</span>
+<span class="output">   847  John
+   623  Jane
+   201  Bob</span>
+
+<span class="comment"># เฉพาะช่วงเวลา</span>
+<span class="cmd">git shortlog -sn --since="2024-01-01"</span></code></pre>
+
+  <div class="callout callout-info">
+    <div class="callout-label">Power Combo</div>
+    <p><code>git log -S "functionName"</code> (pickaxe) คือเครื่องมือที่ถูก undervalue มากที่สุด หาได้ว่า function นี้ถูกเพิ่ม/ลบใน commit ไหน เหมาะกับคำถามว่า "ทำไมถึงลบ function นี้ออก?"</p>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch10">
+  <div class="section-label">Chapter 10</div>
+  <h2>Recovery Recipes &mdash; กู้ทุกสถานการณ์</h2>
+
+  <p>รวม recipe สำหรับสถานการณ์ที่พบบ่อย เรียงจากง่ายไปยาก</p>
+
+  <details>
+    <summary>ย้อน commit ล่าสุด (ยังไม่ push)</summary>
+    <div class="inner">
+<pre><code><span class="comment"># เก็บ changes ไว้ใน staging</span>
+<span class="cmd">git reset --soft HEAD~1</span>
+
+<span class="comment"># เก็บ changes ไว้ใน working dir</span>
+<span class="cmd">git reset HEAD~1</span>
+
+<span class="comment"># ทิ้ง changes เลย</span>
+<span class="danger">git reset --hard HEAD~1</span></code></pre>
+    </div>
+  </details>
+
+  <details>
+    <summary>ย้อน commit ที่ push ไปแล้ว</summary>
+    <div class="inner">
+<pre><code><span class="comment"># สร้าง commit ตรงข้าม (safe for shared branches)</span>
+<span class="cmd">git revert abc1234</span>
+<span class="cmd">git push</span></code></pre>
+    </div>
+  </details>
+
+  <details>
+    <summary>เผลอ commit ไปผิด branch</summary>
+    <div class="inner">
+<pre><code><span class="comment"># อยู่ main แต่เผลอ commit ที่ควรไป feature</span>
+
+<span class="comment"># 1) สร้าง branch ใหม่ที่ commit ปัจจุบัน (เก็บงานไว้)</span>
+<span class="cmd">git branch feature/my-work</span>
+
+<span class="comment"># 2) ย้อน main กลับไปก่อน commit</span>
+<span class="cmd">git reset --hard HEAD~1</span>
+
+<span class="comment"># 3) ไปทำงานต่อที่ branch ใหม่</span>
+<span class="cmd">git checkout feature/my-work</span></code></pre>
+    </div>
+  </details>
+
+  <details>
+    <summary>เผลอ <code>git reset --hard</code> ไป</summary>
+    <div class="inner">
+<pre><code><span class="comment"># reflog จะช่วยได้ (ถ้าเคย commit ไว้)</span>
+<span class="cmd">git reflog</span>
+<span class="comment"># หา SHA ที่ต้องการ</span>
+<span class="cmd">git reset --hard HEAD@{2}</span>
+
+<span class="comment"># ถ้ายังไม่เคย commit → ไม่มีทาง reflog ช่วยไม่ได้</span>
+<span class="comment"># บทเรียน: commit บ่อยๆ, stash ก่อน reset</span></code></pre>
+    </div>
+  </details>
+
+  <details>
+    <summary>ลบ branch ไปแล้ว อยากกู้</summary>
+    <div class="inner">
+<pre><code><span class="cmd">git reflog</span>
+<span class="comment"># หา SHA ที่ branch เคยชี้</span>
+<span class="cmd">git branch recovered abc1234</span></code></pre>
+    </div>
+  </details>
+
+  <details>
+    <summary>Rebase conflict เยอะ อยากยกเลิก</summary>
+    <div class="inner">
+<pre><code><span class="cmd">git rebase --abort</span>
+<span class="comment"># กลับไปสถานะก่อน rebase ทันที ไม่เสียอะไร</span></code></pre>
+    </div>
+  </details>
+
+  <details>
+    <summary>Merge conflict เยอะ อยากยกเลิก</summary>
+    <div class="inner">
+<pre><code><span class="cmd">git merge --abort</span>
+<span class="comment"># กลับไปสถานะก่อน merge</span></code></pre>
+    </div>
+  </details>
+
+  <details>
+    <summary>เผลอ push secret/credential ขึ้นไป</summary>
+    <div class="inner">
+      <div class="callout callout-danger">
+        <div class="callout-label">Critical</div>
+        <p>ถ้า push ไป public repo แล้ว ให้ถือว่า secret โดน compromise → revoke + rotate ทันที การลบ commit ไม่พอ (GitHub/caches อาจเก็บไว้แล้ว)</p>
+      </div>
+<pre><code><span class="comment"># ลบไฟล์ออกจากทุก commit ใน history</span>
+<span class="cmd">git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch secrets.env" \
+  --prune-empty --tag-name-filter cat -- --all</span>
+
+<span class="comment"># หรือใช้ BFG Repo-Cleaner (เร็วกว่ามาก)</span>
+<span class="cmd">bfg --delete-files secrets.env</span>
+<span class="cmd">git reflog expire --expire=now --all</span>
+<span class="cmd">git gc --prune=now --aggressive</span></code></pre>
+    </div>
+  </details>
+
+  <details>
+    <summary>กู้ไฟล์ที่ถูกลบใน commit เก่า</summary>
+    <div class="inner">
+<pre><code><span class="comment"># หา commit ที่ลบไฟล์</span>
+<span class="cmd">git log --diff-filter=D --summary -- path/to/file.js</span>
+
+<span class="comment"># กู้ไฟล์จาก commit ก่อนที่จะถูกลบ (parent commit)</span>
+<span class="cmd">git checkout abc1234^ -- path/to/file.js</span></code></pre>
+    </div>
+  </details>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch11">
+  <div class="section-label">Chapter 11</div>
+  <h2>Hooks &amp; Automation</h2>
+
+  <p>Git hooks คือ script ที่รันอัตโนมัติเมื่อเกิด event ใน Git อยู่ใน <code>.git/hooks/</code> หรือ share ผ่าน <code>.githooks/</code></p>
+
+  <h3>Hooks ที่ใช้บ่อย</h3>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Hook</th><th>เมื่อไหร่</th><th>ใช้ทำอะไร</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>pre-commit</code></td><td>ก่อน commit</td><td>Lint, format, ตรวจ secrets</td></tr>
+        <tr><td><code>commit-msg</code></td><td>หลังเขียน message</td><td>ตรวจ format ของ commit message</td></tr>
+        <tr><td><code>pre-push</code></td><td>ก่อน push</td><td>รัน test, ตรวจ branch protection</td></tr>
+        <tr><td><code>prepare-commit-msg</code></td><td>ก่อนเปิด editor</td><td>ใส่ template / ticket number อัตโนมัติ</td></tr>
+        <tr><td><code>post-merge</code></td><td>หลัง merge/pull</td><td>รัน npm install ถ้า package.json เปลี่ยน</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>ตัวอย่าง: ตรวจ secrets ก่อน commit</h3>
+<pre><code><span class="comment"># .git/hooks/pre-commit (ต้อง chmod +x)</span>
+<span class="cmd">#!/bin/sh</span>
+
+<span class="comment"># หา pattern ที่คล้าย secret ในไฟล์ที่กำลังจะ commit</span>
+if git diff --cached --diff-filter=ACM | \
+   grep -iE '(password|secret|api_key|token)\s*[:=]' ; then
+  echo "Possible secret detected. Commit blocked."
+  exit 1
+fi</code></pre>
+
+  <h3>Share hooks กับทีม</h3>
+<pre><code><span class="comment"># เก็บ hooks ใน repo (share ได้)</span>
+mkdir .githooks
+<span class="comment"># สร้าง hook files ใน .githooks/</span>
+
+<span class="comment"># ตั้งค่าให้ git ใช้จาก folder นี้</span>
+<span class="cmd">git config core.hooksPath .githooks</span>
+
+<span class="comment"># หรือใช้ tools อย่าง husky / lefthook ที่จัดการให้</span></code></pre>
+
+  <h3>Aliases &mdash; shortcut ที่ต้องมี</h3>
+<pre><code><span class="comment"># ตั้ง alias ที่ใช้บ่อย</span>
+<span class="cmd">git config --global alias.co checkout</span>
+<span class="cmd">git config --global alias.br branch</span>
+<span class="cmd">git config --global alias.ci commit</span>
+<span class="cmd">git config --global alias.st status</span>
+
+<span class="comment"># alias ที่เป็น shell command (ขึ้นต้นด้วย !)</span>
+<span class="cmd">git config --global alias.unstage 'reset HEAD --'</span>
+<span class="cmd">git config --global alias.last 'log -1 HEAD'</span>
+<span class="cmd">git config --global alias.visual '!gitk --all &'</span>
+
+<span class="comment"># alias สำหรับ log สวยๆ</span>
+<span class="cmd">git config --global alias.lg "log --oneline --graph --all --decorate"</span></code></pre>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section" id="ch12">
+  <div class="section-label">Chapter 12</div>
+  <h2>Worktrees &amp; Performance</h2>
+
+  <h3>Worktrees &mdash; ทำงานหลาย branch พร้อมกัน</h3>
+  <p>ปกติ checkout branch ใหม่ต้องเก็บงานก่อน (stash/commit) Worktree ให้ทำงานหลาย branch พร้อมกันโดยแต่ละ branch อยู่คนละ folder</p>
+
+<pre><code><span class="comment"># สร้าง worktree สำหรับ branch hotfix (folder ใหม่)</span>
+<span class="cmd">git worktree add ../hotfix-payment hotfix/payment</span>
+
+<span class="comment"># ทำงานใน folder นั้นเลย ไม่กระทบ working dir หลัก</span>
+<span class="cmd">cd ../hotfix-payment</span>
+<span class="comment"># แก้ไข, commit, push ได้อิสระ</span>
+
+<span class="comment"># ดูรายการ worktree ทั้งหมด</span>
+<span class="cmd">git worktree list</span>
+
+<span class="comment"># ลบ worktree เมื่อเสร็จ</span>
+<span class="cmd">git worktree remove ../hotfix-payment</span></code></pre>
+
+  <h3>Performance สำหรับ Large Repos</h3>
+
+<pre><code><span class="comment"># Sparse checkout — clone เฉพาะ folder ที่ต้องการ</span>
+<span class="cmd">git clone --filter=blob:none --sparse https://github.com/big/repo.git</span>
+<span class="cmd">cd repo</span>
+<span class="cmd">git sparse-checkout set src/frontend</span>
+<span class="comment"># ได้เฉพาะ src/frontend, folder อื่นจะ download เมื่อเข้าถึง</span>
+
+<span class="comment"># Shallow clone — เอาแค่ history ล่าสุด</span>
+<span class="cmd">git clone --depth=1 https://github.com/big/repo.git</span>
+<span class="comment"># ต้องการ history เพิ่มทีหลัง:</span>
+<span class="cmd">git fetch --deepen=50</span>
+
+<span class="comment"># Maintenance — optimize repo ใหญ่</span>
+<span class="cmd">git maintenance start</span>
+<span class="comment"># จัด background tasks: gc, commit-graph, prefetch</span>
+
+<span class="comment"># File System Monitor — เร็วขึ้นสำหรับ repo ใหญ่</span>
+<span class="cmd">git config core.fsmonitor true</span>
+<span class="cmd">git config core.untrackedcache true</span></code></pre>
+
+  <h3>Partial Clone &amp; Bundle</h3>
+<pre><code><span class="comment"># Bundle — สร้างไฟล์ส่ง Git repo ให้คนอื่นโดยไม่ต้องมี server</span>
+<span class="cmd">git bundle create repo.bundle --all</span>
+<span class="comment"># อีกเครื่อง:</span>
+<span class="cmd">git clone repo.bundle</span>
+
+<span class="comment"># Bundle เฉพาะ commits ใหม่</span>
+<span class="cmd">git bundle create update.bundle main~10..main</span></code></pre>
+</section>
+
+<hr class="sep">
+
+<!-- ============================================================ -->
+<section class="section">
+  <div class="section-label">Cheat Sheet</div>
+  <h2>คำสั่งที่คนส่วนใหญ่ไม่รู้ว่ามี</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Command</th><th>ทำอะไร</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>git diff --word-diff</code></td><td>แสดง diff ระดับคำ ไม่ใช่ระดับบรรทัด</td></tr>
+        <tr><td><code>git log --all --oneline -- file.js</code></td><td>หาไฟล์ในทุก branch (รวมที่ถูกลบ)</td></tr>
+        <tr><td><code>git clean -fd</code></td><td>ลบ untracked files + folders ทั้งหมด</td></tr>
+        <tr><td><code>git commit --allow-empty -m "trigger CI"</code></td><td>Commit เปล่า (ใช้ trigger CI/CD)</td></tr>
+        <tr><td><code>git rev-list --count HEAD</code></td><td>นับจำนวน commit ทั้งหมด</td></tr>
+        <tr><td><code>git diff --name-only main..HEAD</code></td><td>แสดงแค่ชื่อไฟล์ที่เปลี่ยนเทียบกับ main</td></tr>
+        <tr><td><code>git log --follow -- old-name.js</code></td><td>ติดตาม history แม้ไฟล์ถูก rename</td></tr>
+        <tr><td><code>git grep "pattern"</code></td><td>grep เฉพาะ tracked files (เร็วกว่า grep ปกติ)</td></tr>
+        <tr><td><code>git log --left-right main...feature</code></td><td>แสดง commits ที่ต่างกันระหว่าง 2 branches</td></tr>
+        <tr><td><code>git rerere</code></td><td>จำวิธีแก้ conflict → แก้ให้อัตโนมัติรอบหน้า</td></tr>
+        <tr><td><code>git notes add -m "note" HEAD</code></td><td>แปะโน้ตใส่ commit โดยไม่แก้ commit</td></tr>
+        <tr><td><code>git archive --format=zip HEAD -o code.zip</code></td><td>Export repo เป็น zip ไม่มี .git</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div>
