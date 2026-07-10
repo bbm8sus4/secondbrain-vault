@@ -1,16 +1,23 @@
 ---
-title: Claude Code — คำสั่ง built-in (ฉบับสอน)
+title: Claude Code — คู่มือสอนครบชุด (คำสั่ง + โหมด + pin โมเดล + status line)
 type: reference
-tags: [ai-workshops, claude-code, teaching, cheatsheet, slash-commands]
+tags: [ai-workshops, claude-code, teaching, cheatsheet, slash-commands, settings, statusline, model-config]
 saved: 2026-07-10
+updated: 2026-07-10
 related: [[Reference-Anthropic-Claude-101-Curriculum]], [[คอร์สสอน AI ด้วย Claude - โครงคอร์ส]]
 html: claude-code-commands-guide.html
+installer: claude-statusline-installer.sh
 ---
 
-# Claude Code — คำสั่ง built-in (ฉบับสอน)
+# Claude Code — คู่มือสอนครบชุด
 
-คำสั่ง slash ที่ **มากับ Claude Code ทุกเครื่อง** (ยังไม่ต้องเซตอะไรเพิ่ม) — แตกเป็นหลายมิติ: ทำอะไร → ใช้เมื่อไร/เป้าหมาย → บริบทจริง สำหรับเอาไปสอน
-ชีตหน้าเดียวพร้อมปรินต์/ฉาย: `claude-code-commands-guide.html` (โฟลเดอร์เดียวกัน)
+รวมทุกอย่างสำหรับสอน Claude Code ในไฟล์เดียว:
+1. **คำสั่ง slash built-in** (มากับทุกเครื่อง) — แตกหลายมิติ ทำอะไร/ใช้เมื่อไร/บริบท
+2. **โหมด permission** (shift+tab) — Plan → bypass
+3. **วิธี pin โมเดล** (เช่น Opus 4.6) ให้ติดถาวรทุกเครื่อง
+4. **วิธีตั้ง status line** หลายแถว (โมเดล + usage + git) พร้อม installer
+
+ไฟล์ประกอบในโฟลเดอร์เดียวกัน: `claude-code-commands-guide.html` (ชีตปรินต์/ฉาย) · `claude-statusline-installer.sh` (installer status line)
 
 > [!note] แยกให้ออก
 > คำสั่งอย่าง `/Chrome-MCP-Owly` · `/CRUD-basic` · `/codex:*` เป็นของที่ **ผู้ใช้เซตเพิ่มเอง** (custom skill / plugin) ไม่ได้ติดมากับพื้นฐาน · built-in มีทั้งหมด **~45 คำสั่ง**
@@ -106,4 +113,95 @@ html: claude-code-commands-guide.html
 
 ---
 
-อ้างอิงทางการ: `code.claude.com/docs/en/commands`
+## 09 · วิธี pin โมเดลให้ติดถาวร (เช่น Opus 4.6)
+
+**หลักการ:** `/model` เลือกได้ก็จริง แต่ **ค่าใน `settings.json` ชนะทุกครั้งตอน restart** — ถ้า pin ผิดที่ จะรู้สึกว่า "มันดื้อ ไม่ยอมเปลี่ยน" · precedence: managed > `--model` (flag) > `settings.local.json` > `settings.json` (project) > `settings.json` (user)
+
+> [!warning] ข้อจำกัด
+> เมนู `/model` เป็นลิสต์ตายตัวฝังในแอป (Default/Opus/Fable/Sonnet/Haiku) — **เพิ่มโมเดลรุ่นเก่าเป็นบรรทัดให้เลือกไม่ได้** แต่ pin ทำให้มันเป็นตัวที่รันจริงทุกครั้ง (บรรลุเป้าหมาย) สลับ on-demand ด้วย `/model claude-opus-4-6[1m]` หรือ `--model`
+
+**แบบ A — Prompt (วางในแชท Claude Code เครื่องไหนก็ได้):**
+```
+ช่วยตั้งค่าให้ Claude Code ใช้โมเดล Opus 4.6 (1M context) เป็นค่าเริ่มต้นถาวร ทำตามนี้เป๊ะ ห้ามแก้ไฟล์อื่น ห้ามลบอะไร:
+1. สำรอง ~/.claude/settings.json เป็น settings.json.bak ก่อน (ถ้ายังไม่มีไฟล์ ให้สร้างใหม่เป็น {})
+2. ตั้ง key "model" = "claude-opus-4-6[1m]" — มีแล้วแก้ค่า ยังไม่มีให้เพิ่ม คง key อื่นไว้ (JSON ถูก syntax)
+3. เช็คว่าไม่มี ~/.claude/settings.local.json ที่มี key "model" มาทับ ถ้ามีให้ลบเฉพาะ key นั้น
+4. ทดสอบว่ายิงติด: claude --model 'claude-opus-4-6[1m]' -p "reply OK"
+5. สรุปว่าตั้งที่ไฟล์ไหน ค่าเก่าคืออะไร และบอกให้ restart
+ถ้าเทส error ว่าไม่มีโมเดลนี้ ให้เปลี่ยนเป็น "claude-opus-4-6" (ไม่มี [1m]) แล้วลองใหม่
+```
+
+**แบบ B — คำสั่งเดียว (Terminal ตรงๆ ไม่ต้องพึ่ง AI):**
+```bash
+python3 - <<'PY'
+import json, os, shutil
+f = os.path.expanduser("~/.claude/settings.json")
+os.makedirs(os.path.dirname(f), exist_ok=True)
+data = {}
+if os.path.isfile(f):
+    shutil.copy2(f, f + ".bak")           # สำรองก่อน
+    try: data = json.load(open(f))
+    except: data = {}
+old = data.get("model", "(ยังไม่มี)")
+data["model"] = "claude-opus-4-6[1m]"     # <-- เปลี่ยนโมเดลตรงนี้
+json.dump(data, open(f, "w"), indent=2, ensure_ascii=False)
+print(f"pinned {f}\n  model: {old} -> {data['model']}\n  backup: {f}.bak")
+PY
+claude --model 'claude-opus-4-6[1m]' -p "reply OK"   # ทดสอบว่ายิงติด
+```
+
+**หลังตั้ง:** ต้อง **restart** · เช็คด้วย `/status` · ถอยกลับ `cp ~/.claude/settings.json.bak ~/.claude/settings.json`
+**ไม่มีแพ็ก 1M?** ตัด `[1m]` เหลือ `claude-opus-4-6` เฉยๆ
+**หมายเหตุ:** เครื่องที่ต่อหลาย terminal อาจมีหลาย config dir (`~/.claude`, `~/.claude-cmux`, …) ต้อง pin ให้ครบทุกอันที่ใช้จริง
+
+---
+
+## 10 · วิธีตั้ง Status line หลายแถว
+
+**หลักการ:** ตั้ง `statusLine` แบบ `type: "command"` → Claude Code **ป้อน JSON ข้อมูล session เข้า stdin** ของสคริปต์ (โมเดล, context, usage, git) → เอา**ข้อความที่สคริปต์ print**ไปแสดง แต่ละบรรทัด = 1 แถว
+
+ผลลัพธ์ (ตรงกับที่ใช้จริง):
+```
+Opus 4.6 (1M context)  ███░░░░░░░░░░░░░░░░░  15% | 150k/1.0m
+Current  ███░░░░░░░░░░░░░░░░░  15% | Jul 10, 6:10 PM
+Weekly   ███░░░░░░░░░░░░░░░░░  14% | Jul 12, 8:00 PM
+📁 aexgee  ⎇ main*
+```
+
+**วิธี 1 — Installer ไฟล์เดียว (แนะนำ):** ก็อป `claude-statusline-installer.sh` ไปเครื่องอื่นแล้วรัน
+```bash
+bash claude-statusline-installer.sh
+```
+มันจะ: ลง `jq` อัตโนมัติ → เขียน `~/.claude/statusline.sh` → ต่อเข้า `settings.json` → สำรอง `.bak` ครบในตัว
+
+**วิธี 2 — Prompt (ให้ AI ติดตั้งให้):**
+```
+ช่วยตั้ง status line หลายแถวให้ Claude Code ห้ามแตะไฟล์อื่น:
+1. เช็ค/ลง jq ถ้ายังไม่มี
+2. สร้าง ~/.claude/statusline.sh อ่าน JSON จาก stdin แล้ว print 4 แถว:
+   - แถว1: ชื่อโมเดล + ขนาด context + progress bar + % + tokens (.model.display_name, .context_window)
+   - แถว2: "Current" = usage 5 ชม. + เวลารีเซ็ต (.rate_limits.five_hour)
+   - แถว3: "Weekly" = usage 7 วัน (.rate_limits.seven_day)
+   - แถว4: 📁 โฟลเดอร์ + ⎇ git branch + * ถ้ามีไฟล์ค้าง (.workspace.current_dir)
+   ใช้ jq ดึงค่า, bar ใช้ █/░ กว้าง 20, รองรับ date ทั้ง macOS (-r) และ Linux (-d)
+3. chmod +x
+4. เพิ่ม key statusLine ใน ~/.claude/settings.json = {"type":"command","command":"bash ~/.claude/statusline.sh","padding":0} สำรองไฟล์เดิมก่อน คง key อื่นไว้
+5. บอกให้ restart
+```
+
+**วิธี 3 — Manual (3 ขั้น):**
+1. ลง jq — `brew install jq` (Mac) / `sudo apt install jq` (Linux)
+2. วางสคริปต์ที่ `~/.claude/statusline.sh` แล้ว `chmod +x`
+3. ต่อ config ใน `~/.claude/settings.json`:
+```json
+{ "statusLine": { "type": "command", "command": "bash ~/.claude/statusline.sh", "padding": 0 } }
+```
+
+**เตือนผู้เรียน:**
+- ต้อง **restart** ถึงเห็นผล · ต้องมี `jq` (เช็ค `jq --version`) ไม่งั้นแถวว่าง
+- แถว Current/Weekly โผล่เฉพาะแพ็กที่มี rate limit (Max/Team) — ไม่มี field สคริปต์ซ่อนแถวให้เอง
+- แถว "✎ N files" ต้องมี hook แยก (track-file-writes) — ไม่มีก็ข้ามเงียบๆ
+
+---
+
+อ้างอิงทางการ: `code.claude.com/docs/en/commands` · `code.claude.com/docs/en/statusline` · `code.claude.com/docs/en/model-config`
