@@ -20,5 +20,5 @@ metadata:
 - Margin paradox: Enterprise = 68% ของ MRR แต่ margin ต่ำสุด → SME อุ้ม Enterprise
 
 ## Related
-- [[Kbank API pricing + Easy×Thunder cross-billing|reference_kbank_api_pricing]] — ฝั่ง cost + Thunder cross-billing
+- [[Kbank API pricing + cross-billing|reference_kbank_api_pricing]] — ฝั่ง cost + Thunder cross-billing
 - [[โปรเจกต์ - EasyBOT Finance|project_easybot_finance]] — งบ EasyBOT

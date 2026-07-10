@@ -27,4 +27,4 @@ metadata:
 - ห้ามตอบจากความจำ memory เพราะถ้อยคำในสัญญาต้องเป๊ะตามต้นฉบับ
 - ถ้ามีสัญญาใหม่ ให้ทำตามรูปแบบเดิม: verbatim md + เก็บ PDF ต้นฉบับ + อัปเดต INDEX.md + อัปเดตรายการในไฟล์นี้
 
-ที่เกี่ยวข้อง: [[โปรเจกต์ - Thunder Solution|project_thunder_solution]] · [[EasySlip API pricing + margin matrix|reference_easyslip_api_pricing]]
+ที่เกี่ยวข้อง: [[โปรเจกต์ - Thunder Solution|project_thunder_solution]] · [[EasySlip API pricing + margin|reference_easyslip_api_pricing]]

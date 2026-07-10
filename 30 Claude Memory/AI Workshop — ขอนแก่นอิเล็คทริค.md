@@ -30,4 +30,4 @@ metadata:
 - Workshop Company 7 ทีม (ของ marketing training) คนละโปรเจกต์ — ดู [[AI Workshop — 7 ทีมการตลาด|project_ai_workshop_7teams]]
 
 **Reference workflows ที่ใช้:**
-- [[clasp Apps Script + Web App workaround|reference_clasp_apps_script_webapp]] — วิธี deploy Apps Script ผ่าน clasp + Web App workaround
+- [[clasp Apps Script + Web App|reference_clasp_apps_script_webapp]] — วิธี deploy Apps Script ผ่าน clasp + Web App workaround

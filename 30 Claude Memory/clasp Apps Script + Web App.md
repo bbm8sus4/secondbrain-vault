@@ -65,4 +65,4 @@ function doGet() {
 
 ## Reference paths
 - Project ตัวอย่าง: `~/Documents/Claude/Projects/AI Workshop Management/clasp-deploy/`
-- Related: [[AI Workshop — บ.ขอนแก่นอิเล็คทริค|project-ai-workshop-khonkaen]]
+- Related: [[AI Workshop — ขอนแก่นอิเล็คทริค|project-ai-workshop-khonkaen]]

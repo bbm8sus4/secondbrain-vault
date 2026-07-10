@@ -25,4 +25,4 @@ metadata:
 - gcloud `auth application-default login --scopes=...forms...` **โดน Google บล็อก** (sensitive scope, generic client) — ใช้ไม่ได้ ต้องไปทาง Apps Script token
 - Recovery files: `~/Documents/Claude/Projects/AI Workshop Management/RECOVERY/`
 
-related: [[AI Workshop — บ.ขอนแก่นอิเล็คทริค|project_ai_workshop_khonkaen]] [[clasp Apps Script + Web App workaround|reference_clasp_apps_script_webapp]]
+related: [[AI Workshop — ขอนแก่นอิเล็คทริค|project_ai_workshop_khonkaen]] [[clasp Apps Script + Web App|reference_clasp_apps_script_webapp]]

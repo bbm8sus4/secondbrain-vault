@@ -44,4 +44,4 @@ Skills installed 2026-07-01 เพื่อลด typing repetition:
 
 **If hooks misbehave:** revert with `cp <backup> <target>` + restart Claude Code.
 
-related: [[My Prompting Style (Obsidian)|reference_my_prompting_style]] [[กติกา - โหมดแฮกเกอร์|feedback_vibe_hacker_mode]]
+related: [[My Prompting Style|reference_my_prompting_style]] [[กติกา - โหมดแฮกเกอร์|feedback_vibe_hacker_mode]]

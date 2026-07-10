@@ -16,4 +16,4 @@ metadata:
 - **นิยาม churn = เงียบ >60 วัน** (จาก cadence จริง median 11 วัน, 98% เติมซ้ำใน 60 วัน). RFM 7 กลุ่ม · Gini 0.888 · บัญชี #1 = 31% ของรายได้ · รายชื่อลูกค้า CSV ที่ `~/Desktop/topup_customer_lists/`.
 - **PII 1,250 ชื่อ+อีเมล ฝังใน HTML → ห้าม deploy public โดยไม่มี auth** (Desktop gitignored แล้ว).
 
-**KB เต็ม (Obsidian):** `~/SecondBrain/EasySlip/Revenue/EasySlip API - วิเคราะห์ลูกค้า Top-up 6 เดือน.md`. เนื้อหา EasySlip อื่นๆ ดู [[EasySlip API pricing + margin matrix|reference_easyslip_api_pricing]] · [[โปรเจกต์ - Thunder Solution|project_thunder_solution]]. แก้เนื้อหาที่ Obsidian ไม่ใช่ memory.
+**KB เต็ม (Obsidian):** `~/SecondBrain/EasySlip/Revenue/EasySlip API - วิเคราะห์ลูกค้า Top-up 6 เดือน.md`. เนื้อหา EasySlip อื่นๆ ดู [[EasySlip API pricing + margin|reference_easyslip_api_pricing]] · [[โปรเจกต์ - Thunder Solution|project_thunder_solution]]. แก้เนื้อหาที่ Obsidian ไม่ใช่ memory.

@@ -24,4 +24,4 @@ Anthropic Academy's Claude 101 (free, ~2-3 hrs) — 5 modules:
 
 Learning paths after 101: → AI Fluency (beginner), Building with Claude API (dev), AI Fluency for Educators.
 
-Applies to: [[AI Workshop — บ.ขอนแก่นอิเล็คทริค|project_ai_workshop_khonkaen]], [[AI Workshop — 7 ทีมการตลาด|project_ai_workshop_7teams]], any future Claude intro material.
+Applies to: [[AI Workshop — ขอนแก่นอิเล็คทริค|project_ai_workshop_khonkaen]], [[AI Workshop — 7 ทีมการตลาด|project_ai_workshop_7teams]], any future Claude intro material.

@@ -11,7 +11,7 @@ metadata:
 
 ข้อมูลเต็มอยู่ใน Obsidian: `~/SecondBrain/EasySlip/Documents/bot-verify-slip-packages.md`
 
-คนละสินค้ากับ [[EasySlip API pricing + margin matrix|EasySlip API]] — BOT มี UI + จัดการสาขา + บอทตรวจสลิปอัตโนมัติ ทุกแพ็กรองรับ 10 สาขา
+คนละสินค้ากับ [[EasySlip API pricing + margin|EasySlip API]] — BOT มี UI + จัดการสาขา + บอทตรวจสลิปอัตโนมัติ ทุกแพ็กรองรับ 10 สาขา
 
 ## What's there
 - **11 แพ็กเกจ** (Start → Premium-4): ฿99–฿14,000/เดือน, ฿/สลิป 0.247 → 0.093
@@ -44,6 +44,6 @@ metadata:
 - API = tiered 5/7/12/15% ตาม GP% (เหมือน Thunder API)
 
 ## Related
-- [[EasySlip API pricing + margin matrix|reference_easyslip_api_pricing]] — สินค้าหลัก API (คนละ pricing structure)
-- [[Kbank API pricing + Easy×Thunder cross-billing|reference_kbank_api_pricing]] — ฝั่ง cost ที่ใช้คำนวณ margin
+- [[EasySlip API pricing + margin|reference_easyslip_api_pricing]] — สินค้าหลัก API (คนละ pricing structure)
+- [[Kbank API pricing + cross-billing|reference_kbank_api_pricing]] — ฝั่ง cost ที่ใช้คำนวณ margin
 - [[Thunder Corporate API commission (MOU)|reference_thunder_corporate_commission]] — Thunder Corporate API commission model

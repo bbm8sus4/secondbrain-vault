@@ -27,5 +27,5 @@ Full doc + Excel in Obsidian: `~/SecondBrain/Thunder Solution/Reports/`
 ใช้ Scenario B ต้อง **lock traffic mix K-src ≥ 30% ใน MOU** ไม่งั้น cost ทะลุ 0.077 = margin หาย
 
 ## Related
-- [[EasySlip API pricing + margin matrix|reference_easyslip_api_pricing]] — Web tier pricing + margin matrix
-- [[Kbank API pricing + Easy×Thunder cross-billing|reference_kbank_api_pricing]] — KBank cost (raw) + Thunder cross-billing
+- [[EasySlip API pricing + margin|reference_easyslip_api_pricing]] — Web tier pricing + margin matrix
+- [[Kbank API pricing + cross-billing|reference_kbank_api_pricing]] — KBank cost (raw) + Thunder cross-billing

@@ -12,7 +12,7 @@ Behavioral study ของ prompting style ของ user เก็บใน Obs
 - `หน้าหลัก.md` — index + key stats
 - `behavioral-profile.md` — persona, tone escalation, cognitive style
 - `prompt-patterns.md` — 10 recurring patterns พร้อมตัวอย่างจริง
-- `skills-built.md` — 5 skills สร้าง 2026-07-01 (auto-open, voice, statusline, pathdrop, autonomous) — ดู [[Typing-reduction skills (2026-07-01)|reference_typing_reduction_skills]]
+- `skills-built.md` — 5 skills สร้าง 2026-07-01 (auto-open, voice, statusline, pathdrop, autonomous) — ดู [[Typing-reduction skills|reference_typing_reduction_skills]]
 - `_all-prompts-raw.md` — dump ทั้ง 901 prompts เรียง chronological
 
 **Extracted 2026-07-01** จาก JSONL sessions ใน `~/.claude-warp/projects/-Users-aexgee/*.jsonl` (126 files).
