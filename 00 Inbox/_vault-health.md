@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-10 09:00:01 · ไฟล์ .md ทั้งหมด 403
+> สแกนอัตโนมัติ · 2026-07-11 09:00:01 · ไฟล์ .md ทั้งหมด 419
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,27 +8,33 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 2 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 2 |
+| 🔗 ลิงก์เสีย (dead links) | 6 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 4 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 85 ↔ 85 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 3 ชม.ที่แล้ว |
+| 🔄 memory source ↔ mirror | 93 ↔ 93 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 1 ชม.ที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
-| 📋 frontmatter ขาด (backlog) | 148 |
+| 📋 frontmatter ขาด (backlog) | 156 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
 | ❓ คิวรอ verify | 9 |
-| 📰 Friday weekly recap ล่าสุด | 2026-W28 (8 ชม.ที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (9 วันที่แล้ว) |
+| 📰 Friday weekly recap ล่าสุด | 2026-W28 (1 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (10 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
+- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/01-Forms-Setup.md` → `[[clasp Apps Script + Web App workaround]]` (ไม่พบ)
+- `01 Projects/KuanGolf/Brand Strategy Brain.md` → `[[KuanGolf — Thunder Solution's golf scoring app]]` (ไม่พบ)
+- `03 Resources/AI Workshops/Claude Code — Model × Effort อธิบายแบบเปรียบเทียบ.md` → `[[Claude Code — Multi-Agent Workflow Guide]]` (ไม่พบ)
+- `30 Claude Memory/Claude Code — Multi-Agent Guide.md` → `[[feedback-no-cmux]]` (ไม่พบ)
 - `Thunder Solution/02-Products-Services.md` → `[[API Gen QR — 2025-10 planning notes]]` (ไม่พบ)
 - `Thunder Solution/หน้าหลัก.md` → `[[API Gen QR — 2025-10 planning notes]]` (ไม่พบ)
 
 ## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
 
 - `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Curriculum/UseCases-Basic-การใช้งาน.md`
+- `03 Resources/AI Workshops/Claude Code Multi-Agent Workflow Guide.md`
+- `03 Resources/AI Workshops/Git Mastery Guide — 10,000 Level.md`
 - `03 Resources/Clippings/(196) เจาะ 3 งาน ที่ Claude Cowork ช่วยคุณ automate ได้จริงมากที่สุด step by step.md`
 
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
@@ -70,5 +76,5 @@
 - `01 Projects/Office Seating Plan/2026-07-05 Session — สั่งงาน + วิธีทำงาน.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/2026-07-06 QA รอบผู้ใช้จริง + แก้ตาม feedback.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/DEPLOY.md` — ขาด last_verified
-- …และอีก 123 ไฟล์
+- …และอีก 131 ไฟล์
 
