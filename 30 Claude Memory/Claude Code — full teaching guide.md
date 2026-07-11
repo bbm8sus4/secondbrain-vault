@@ -16,6 +16,11 @@ Single all-in-one **Claude Code teaching guide** built for COO's AI workshops. C
 **Files (all in `~/SecondBrain/03 Resources/AI Workshops/`):**
 - `Reference — Claude Code คำสั่ง built-in (ฉบับสอน).md` — the master .md (recall surface)
 - `claude-code-commands-guide.html` — printable one-page cheat sheet (also at `~/claude-code-commands-guide.html`)
+- `คู่มือ Claude Code (ฉบับสอน).pdf` — 9-page PDF handout (Chrome headless from the HTML; also on ~/Desktop)
 - `claude-statusline-installer.sh` — self-contained status line installer (also at `~/claude-statusline-installer.sh`)
+- `claude-code-setup-pack.html` — install+config pack, both OSes, **tabs + per-block คัดลอก (copy) buttons** (also at `~/claude-code-setup-pack.html`). Native installers: mac `curl .../install.sh|bash`, Win PowerShell `irm .../install.ps1|iex` (Windows native, no WSL). Verified 2026-07-11. (`.md` version also exists.)
+- `Prompt สอน — Use Case ง่ายๆ (ผู้เริ่มต้น).md` — beginner copy-paste prompt library, see [[Teaching prompts — easy use cases|reference_teaching_prompts_usecases]]. **TODO: HTML-with-copy-buttons version not built yet.**
+
+**FORMAT PREFERENCE (important):** teaching/workshop deliverables should be **HTML** (unified light design, no emoji, per-block copy buttons for command/prompt packs) — NOT raw .md. User expects HTML for these. Convert .md packs to HTML.
 
 Key teaching point: distinguish built-in commands from custom skills/plugins (`/Chrome-MCP-Owly`, `/CRUD-basic`, `/codex:*` are NOT built-in). Complements [[Anthropic Claude 101 curriculum|reference_anthropic_claude_101]]. Vault not auto-pushed — `git push` secondbrain-vault manually if sharing.
