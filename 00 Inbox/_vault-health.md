@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-14 09:00:03 · ไฟล์ .md ทั้งหมด 419
+> สแกนอัตโนมัติ · 2026-07-15 09:00:01 · ไฟล์ .md ทั้งหมด 424
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -9,17 +9,17 @@
 | รายการ | ผล |
 |---|---|
 | 🔗 ลิงก์เสีย (dead links) | 6 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 4 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 5 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 93 ↔ 93 — ตรงกัน ✅ |
+| 🔄 memory source ↔ mirror | 97 ↔ 97 — ตรงกัน ✅ |
 | ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
-| 📋 frontmatter ขาด (backlog) | 156 |
+| 📋 frontmatter ขาด (backlog) | 157 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
 | ❓ คิวรอ verify | 9 |
-| 📰 Friday weekly recap ล่าสุด | 2026-W28 (4 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (13 วันที่แล้ว) |
+| 📰 Friday weekly recap ล่าสุด | 2026-W28 (5 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (14 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -36,6 +36,7 @@
 - `03 Resources/AI Workshops/Claude Code Multi-Agent Workflow Guide.md`
 - `03 Resources/AI Workshops/Git Mastery Guide — 10,000 Level.md`
 - `03 Resources/Clippings/(196) เจาะ 3 งาน ที่ Claude Cowork ช่วยคุณ automate ได้จริงมากที่สุด step by step.md`
+- `EasyCRM/Meeting-Agenda-EasyCRM-2026-07.md`
 
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
 
@@ -76,5 +77,5 @@
 - `01 Projects/Office Seating Plan/2026-07-05 Session — สั่งงาน + วิธีทำงาน.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/2026-07-06 QA รอบผู้ใช้จริง + แก้ตาม feedback.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/DEPLOY.md` — ขาด last_verified
-- …และอีก 131 ไฟล์
+- …และอีก 132 ไฟล์
 
