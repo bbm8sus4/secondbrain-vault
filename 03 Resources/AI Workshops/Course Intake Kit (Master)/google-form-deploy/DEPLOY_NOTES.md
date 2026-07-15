@@ -7,17 +7,17 @@
 - **Editor:** https://script.google.com/d/1DBchyJRg8Qr8S8TnrVRsSH9R_puICnJqODrc00JYE9Y-MlGRWAv6MWvB/edit
 - **ฟังก์ชันหลัก:** `createAllForms` — สร้างฟอร์ม MASTER ทั้ง 4 ตัว + log URLs
 
-## ขั้นตอนสุดท้าย (ต้องคลิกเอง 1 ครั้ง — Google บังคับ authorize)
+## สถานะ: รันแล้ว 2026-07-15 — ฟอร์ม MASTER ทั้ง 4 สร้างเสร็จ
 
-1. เปิด Editor (ลิงก์ข้างบน)
-2. เลือกฟังก์ชัน `createAllForms` → กด **Run**
-3. Authorize: เลือกบัญชี bobbysomporn → Advanced → Go to project → Allow (สิทธิ์ Forms/Drive)
-4. ดูลิงก์ฟอร์มทั้ง 4 ที่ **Execution log** (มีทั้ง editUrl + publishedUrl)
-5. เอาลิงก์มาใส่ `FORM_URLS.md` ในโฟลเดอร์ kit
+ลิงก์ทั้งหมดอยู่ที่ `../FORM_URLS.md`
+- **Deployment (Web App):** `AKfycbyMFn1cAHuZmNd6676eiCbp8_siNUkeZvAvDGsFZYAHMzz-17uwU-9Jj-srsuW2qAgb` (@2)
+- เปิด exec URL = โชว์ลิงก์ฟอร์ม (ไม่สร้างซ้ำ) · `?action=cleanup` = trash duplicate ชุด 2026-07-15
 
-## กันสร้างซ้ำ (แก้บั๊ก duplicate ของรอบขอนแก่น)
+## กันสร้างซ้ำ
 
-- `createAllForms` มี **property lock** — รันซ้ำ/doGet ยิงซ้ำ จะคืน URL เดิม ไม่สร้างฟอร์มใหม่
+- `createAllForms` ใช้ **LockService + ScriptProperties** — property check เดี่ยวๆ ไม่พอ
+  (บทเรียน 2026-07-15: doGet โดน trigger ซ้อน 3 รอบพร้อมกัน ก่อน property ถูกเขียน → ได้ 12 ฟอร์ม
+  ต้อง trash ไป 8 · LockService ทำให้ check-then-create เป็น atomic แล้ว)
 - ถ้าตั้งใจจะสร้างชุดใหม่จริงๆ → รัน `createAllFormsForce` (ชุดเก่าไม่ถูกลบ ต้องไปลบเองใน Drive)
 
 ## ใช้งานต่อลูกค้า 1 ราย

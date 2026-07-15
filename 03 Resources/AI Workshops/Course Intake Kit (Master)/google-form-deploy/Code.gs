@@ -470,14 +470,62 @@ function createFollowupForm() {
 // ===== entry points =====
 
 function createAllForms() {
-  var props = PropertiesService.getScriptProperties();
-  var existing = props.getProperty(PROP_KEY);
-  if (existing) {
-    Logger.log('ฟอร์มถูกสร้างไปแล้ว — ไม่สร้างซ้ำ (กัน duplicate)');
-    Logger.log(existing);
-    return JSON.parse(existing);
+  // LockService = atomic check-then-create (property check เดี่ยวๆ กัน concurrent doGet ไม่ได้ — พิสูจน์แล้ว 2026-07-15 ได้ 3 ชุดซ้อน)
+  var lock = LockService.getScriptLock();
+  lock.waitLock(120000);
+  try {
+    var props = PropertiesService.getScriptProperties();
+    var existing = props.getProperty(PROP_KEY);
+    if (existing) {
+      Logger.log('ฟอร์มถูกสร้างไปแล้ว — ไม่สร้างซ้ำ (กัน duplicate)');
+      Logger.log(existing);
+      return JSON.parse(existing);
+    }
+    return doCreate_();
+  } finally {
+    lock.releaseLock();
   }
-  return doCreate_();
+}
+
+// duplicate จากเหตุการณ์ doGet ซ้อน 2026-07-15 — trash ผ่าน ?action=cleanup (ย้ายลงถังขยะ กู้คืนได้)
+var DUPLICATE_IDS_20260715 = [
+  '1-LpYW5FVSIfPRXNYCPoeu8gtLcFcG2-BNZQ3IVwWFOc',
+  '1pfF6YJEzo1fYFiNDQxyUXRpl4KwZnXGNFRdw9ajbugE',
+  '1tNNLaeVR5xzbkw3VcLqSp1ufhKr4_0Ekm1_0M-0NRKI',
+  '1qKGv564SOxsbJrbAiB0W2x7AUGBw9-UUmlTLhNIxgsU',
+  '15yENqX5lQD7YBXXYHGO328RaZKMVIxNKXhgm7OSzYl8',
+  '1UOcg1WwoD5GDrewttzEEoIfYQWB7UXpagB5GsegKge4',
+  '1Yk92Qgdpk5xCAJWio7otR9tOwg-VgDXPGbZnnJzp9DQ',
+  '1PWSJXFPJWFhNkUol_lQldlQHV0VlD-h77FzbnHLIkkw'
+];
+
+function cleanupDuplicates() {
+  var keep = {};
+  var stored = PropertiesService.getScriptProperties().getProperty(PROP_KEY);
+  if (stored) {
+    var out = JSON.parse(stored);
+    for (var k in out) {
+      var m = out[k].editUrl.match(/\/d\/([^\/]+)\//);
+      if (m) keep[m[1]] = true;
+    }
+  }
+  var results = [];
+  DUPLICATE_IDS_20260715.forEach(function (id) {
+    if (keep[id]) { results.push(id + ': SKIP (ชุดที่ใช้อยู่)'); return; }
+    try {
+      var file = DriveApp.getFileById(id);
+      if (file.getName().indexOf('[MASTER]') !== 0) {
+        results.push(id + ': SKIP (ชื่อไม่ใช่ [MASTER])');
+        return;
+      }
+      file.setTrashed(true);
+      results.push(id + ': trashed');
+    } catch (e) {
+      results.push(id + ': ERROR ' + e);
+    }
+  });
+  Logger.log(results.join('\n'));
+  return results;
 }
 
 function createAllFormsForce() {
@@ -505,8 +553,12 @@ function doCreate_() {
   return out;
 }
 
-function doGet() {
-  var out = createAllForms(); // property lock ภายในกันสร้างซ้ำเมื่อ doGet ถูก trigger 2 ครั้ง
+function doGet(e) {
+  if (e && e.parameter && e.parameter.action === 'cleanup') {
+    var res = cleanupDuplicates();
+    return HtmlService.createHtmlOutput('<h2>Cleanup</h2><pre>' + res.join('\n') + '</pre>');
+  }
+  var out = createAllForms(); // LockService + property กันสร้างซ้ำเมื่อ doGet ถูก trigger ซ้อน
   var html = '<h2>Course Intake Kit — MASTER Forms</h2><ol>';
   for (var k in out) {
     html += '<li><b>' + out[k].title + '</b><br>' +
