@@ -18,4 +18,4 @@ Thunder เป็นผู้ให้บริการ (ราคา 2,499/ค
 - `Files/Forms/` — Apps Script สร้าง Google Form; ฟอร์มอาหาร (เบรก+กลางวัน) deploy จริงแล้ว ดู `FORM_URLS.md` + `catering-form-deploy/DEPLOY_NOTES.md`
 - `Files/Curriculum` `Files/Slides` `Files/Dashboard` — หลักสูตร/สไลด์/dashboard
 
-⚠️ Google Form ที่มี response แล้ว **ห้าม clearAllItems/rebuild** (เคยมี incident ข้อมูลหาย). งานเตรียม QA PASS หมด เหลือรันคลาสหน้างาน. วิธีทำเอกสาร: [[Thai doc generation|reference_thai_doc_generation]].
+⚠️ Google Form ที่มี response แล้ว **ห้าม clearAllItems/rebuild** (เคยมี incident ข้อมูลหาย). งานเตรียม QA PASS หมด เหลือรันคลาสหน้างาน. วิธีทำเอกสาร: [[reference_thai_doc_generation]].

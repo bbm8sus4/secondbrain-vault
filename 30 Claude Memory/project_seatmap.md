@@ -70,4 +70,4 @@ person: phone,email,lineId,birthdate,address,emgName,emgRelation,emgPhone,bloodT
 
 **Public GitHub repo (2026-07-06):** https://github.com/bbm8sus4/office-seating-plan (public, remote ชื่อ `smorigin` ใน `~/Work/office-seating-deploy`). ⚠️ **โฟลเดอร์นี้เดิมไม่ใช่ repo ตัวเอง** — git root คือ home (`/Users/aexgee` = repo `ollama-api-chat`) เลย `git init` แยกใหม่. **Bob ตัดสินใจ public ทั้งชื่อจริง 47 คน** (รับความเสี่ยง PII เอง หลังเตือน git history ลบไม่ออก; เงินเดือน/สุขภาพ = null ไม่หลุด). **กฎ push ครั้งหน้า: `.gitignore` ต้องกัน `_worker.js` + `*_worker.js` + `wrangler.toml` + `.wrangler/` (รหัส gate `thunder2026` อยู่ใน worker) — verify `git diff --cached | grep thunder2026` = 0 ก่อน push ทุกครั้ง**. deploy จริง (Cloudflare) ยัง gate ด้วยรหัสเหมือนเดิม worker ไม่ขึ้น public.
 
-ดู [[SecondBrain vs Work folder split|feedback_secondbrain_vs_work_folder]] — แอปนี้อยู่ Desktop (ยกเว้น convention).
+ดู [[feedback_secondbrain_vs_work_folder]] — แอปนี้อยู่ Desktop (ยกเว้น convention).

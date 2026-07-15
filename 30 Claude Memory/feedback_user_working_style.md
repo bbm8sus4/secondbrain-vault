@@ -18,4 +18,4 @@ metadata:
 - **ตอบไทยสั้น กระชับ ลงท้ายครับ** — อ่านรวดเดียวบนมือถือ. ผลลัพธ์ก่อน รายละเอียดทีหลัง.
 - **บันทึกลง Obsidian เมื่อสั่ง** — "จำลง Ob" / "จดลง SecondBrain" = เขียนโน้ต markdown ใน `~/SecondBrain/01 Projects/<โปรเจกต์>/` เก็บ**ทั้งรายการสั่งงาน (requests) + วิธีทำงาน (working method)** ไม่ใช่แค่ auto-memory. (SeatMap: session log อยู่ที่ `Office Seating Plan/2026-*.md`)
 
-ดู [[SeatMap app|project_seatmap]] · [[SecondBrain vs Work folder split|feedback_secondbrain_vs_work_folder]] — งานหลักที่เจอพฤติกรรมนี้คือ SeatMap.
+ดู [[project_seatmap]] · [[feedback_secondbrain_vs_work_folder]] — งานหลักที่เจอพฤติกรรมนี้คือ SeatMap.
