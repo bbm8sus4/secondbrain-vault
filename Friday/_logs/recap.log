@@ -636,3 +636,37 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W28.md — 34,782 cha
 [2026-07-15 23:55:05] AUTO: DOW=3 DOM=15 TOMORROW=16
 [2026-07-15 23:55:05] CATCHUP: scanning past 14 days for missed runs
 [2026-07-15 23:55:05] DONE: auto
+[2026-07-16 09:00:00] AUTO: DOW=4 DOM=16 TOMORROW=17
+[2026-07-16 09:00:00] CATCHUP: scanning past 14 days for missed runs
+[2026-07-16 09:00:00] AUTO: Thursday detected → weekly
+[2026-07-16 09:00:00] WEEKLY: 2026-07-10 → 2026-07-16 (label: 2026-W29)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W29.md — 34,708 chars, 25 weekly, 52 daily
+[2026-07-16 09:00:05] WEEKLY: source size =    58563 chars
+[2026-07-16 09:00:05] WEEKLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W29.md
+- Bob เปิดลิงก์ `thunder-webapp` และแจ้งรหัสเข้า `paypers.ai`
+- Bob สรุปแนวทางเรื่องบทบาทผู้นำ การบริหารเวลา และเป้าหมายองค์กร
+- Watcharin ฝาก Bob ทำเป้าหมายบน Dashboard
+
+## ⚠️ Watch list
+
+- Thunder API แพ็กเกจ TEST ของ service 2422 ได้เพียง 8 วัน ไม่ครบ 15 วัน
+- Bank ยังเช็ก Log การปิด Flex Theme ของ Kintsu
+- เนยังต้อง Deploy EasyCRM Salepage จาก PR #22
+- Olivesterr ยังต้องส่งรายละเอียดแพ็กเกจ EasyCRM ให้ Asado
+- API ยังต้องหาวิธีแก้นอกจาก match ชื่อ; T3NotFound รับเรื่องตีความ
+- `affiliate.9bomb.dev/login` ยังเข้าไม่ได้
+- Meta Verified เดือน 06/2569 ยังมีรายการทวงบิลค้างจาก mind
+- Discord ยังทำงานไม่สม่ำเสมอ และยังไม่มี channel สำหรับพัฒนา Super Admin
+- เป้าหมายบน Dashboard ที่ Watcharin ฝาก Bob ยังไม่ปิดงาน
+
+## ✅ Highlights
+
+- ตัดรายงาน routine รายวัน ลดงานซ้ำ และเปลี่ยนเป็นดึงข้อมูลเฉพาะตอนประชุม
+- Thunder Bot กลับมาสมัครสมาชิกได้ตามปกติหลัง Bank แก้ไข
+- TPS รองรับได้ 60 TPS และแตะ 98 TPS ในช่วง 17:00–21:00 น.
+- Pablo Escobar แก้ EasyCRM หน้าลูกค้าเข้าไม่ได้ภายในวันที่ 14 ก.ค.
+- อนุมัติโยกเงิน 400,000 บาทเรียบร้อย
+- ต่อ OhoChat 6 เดือนด้วยส่วนลด 5% ยอด 13,930.80 บาท
+- กำไรสุทธิ 19,928 บาทถูกจัดสรรให้พนักงานตามการตัดสินใจของ Watcharin1004
+[2026-07-16 09:01:03] WEEKLY: ✅ wrote     8629 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W29.md
+[2026-07-16 09:01:03] DONE: auto

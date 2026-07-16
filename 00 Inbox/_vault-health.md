@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-15 09:00:01 · ไฟล์ .md ทั้งหมด 424
+> สแกนอัตโนมัติ · 2026-07-16 09:00:00 · ไฟล์ .md ทั้งหมด 458
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,18 +8,18 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 6 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 5 |
+| 🔗 ลิงก์เสีย (dead links) | 7 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 15 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 97 ↔ 97 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
+| 🔄 memory source ↔ mirror | 105 ↔ 105 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 7 ชม.ที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
-| 📋 frontmatter ขาด (backlog) | 157 |
+| 📋 frontmatter ขาด (backlog) | 183 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
-| ❓ คิวรอ verify | 9 |
-| 📰 Friday weekly recap ล่าสุด | 2026-W28 (5 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (14 วันที่แล้ว) |
+| ❓ คิวรอ verify | 10 |
+| 📰 Friday weekly recap ล่าสุด | 2026-W28 (6 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (15 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
@@ -29,11 +29,22 @@
 - `30 Claude Memory/Claude Code — Multi-Agent Guide.md` → `[[feedback-no-cmux]]` (ไม่พบ)
 - `Thunder Solution/02-Products-Services.md` → `[[API Gen QR — 2025-10 planning notes]]` (ไม่พบ)
 - `Thunder Solution/หน้าหลัก.md` → `[[API Gen QR — 2025-10 planning notes]]` (ไม่พบ)
+- `log.md` → `[[Thai doc generation]]` (ไม่พบ)
 
 ## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
 
 - `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/Files/Curriculum/UseCases-Basic-การใช้งาน.md`
+- `01 Projects/Thunder FB SlipVerify/เอกสารต้นฉบับ/BRIEF-คุยกับทีม.md`
+- `01 Projects/Thunder FB SlipVerify/เอกสารต้นฉบับ/FLOW-howto-succeed.md`
+- `01 Projects/Thunder FB SlipVerify/เอกสารต้นฉบับ/PLAN-phaseA-messenger-mvp.md`
+- `01 Projects/Thunder FB SlipVerify/เอกสารต้นฉบับ/RESEARCH-facebook-slip-verify.md`
 - `03 Resources/AI Workshops/Claude Code Multi-Agent Workflow Guide.md`
+- `03 Resources/AI Workshops/Course Intake Kit (Master)/0-README-วิธีใช้.md`
+- `03 Resources/AI Workshops/Course Intake Kit (Master)/1-แบบสอบถามผู้ว่าจ้าง (Needs Analysis).md`
+- `03 Resources/AI Workshops/Course Intake Kit (Master)/2-แบบสำรวจผู้เรียน (Pre-training).md`
+- `03 Resources/AI Workshops/Course Intake Kit (Master)/3-แบบประเมินหลังอบรม (Post-training).md`
+- `03 Resources/AI Workshops/Course Intake Kit (Master)/4-แบบติดตามผล 30-60 วัน (Follow-up).md`
+- `03 Resources/AI Workshops/Course Intake Kit (Master)/LOG - สร้างฟอร์ม MASTER + บทเรียน (2026-07-15).md`
 - `03 Resources/AI Workshops/Git Mastery Guide — 10,000 Level.md`
 - `03 Resources/Clippings/(196) เจาะ 3 งาน ที่ Claude Cowork ช่วยคุณ automate ได้จริงมากที่สุด step by step.md`
 - `EasyCRM/Meeting-Agenda-EasyCRM-2026-07.md`
@@ -41,6 +52,7 @@
 ## ❓ คิวรอ verify — ระบบจะทวงทุกวันจนกว่าจะเคลียร์
 
 - `01 Projects/HUG COMPANY/README.md:41` — ⚠ Open questions (ต้อง verify)
+- `01 Projects/Thunder FB SlipVerify/13 แหล่งข้อมูลและความเชื่อมั่น.md:37` — คำถามเปิดที่ยังต้อง verify
 - `03 Resources/SecondBrain Blueprint Setup.md:142` — ข้อเท็จจริงที่ยังไม่ชัวร์ → เขียน `⚠️ ต้อง verify` ในหน้า (health scan จะรวบเป็นคิวทวงมนุษย์ทุกวัน)
 - `03 Resources/SecondBrain Blueprint Setup.md:176` — frontmatter ขาด `type`/`last_verified` (backlog) · หน้า `last_verified` เก่าเกิน 90 วัน · **คิว `ต้อง verify`*
 - `03 Resources/สรุป 2026-07-06 — Vault Overhaul ครบวงจร.md:37` — 4. **vault-health v2** — เช็คเพิ่ม: frontmatter ขาด (backlog 143) · หน้าเก่า >90 วัน · **คิว `ต้อง verify`** (
@@ -77,5 +89,5 @@
 - `01 Projects/Office Seating Plan/2026-07-05 Session — สั่งงาน + วิธีทำงาน.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/2026-07-06 QA รอบผู้ใช้จริง + แก้ตาม feedback.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/DEPLOY.md` — ขาด last_verified
-- …และอีก 132 ไฟล์
+- …และอีก 158 ไฟล์
 
