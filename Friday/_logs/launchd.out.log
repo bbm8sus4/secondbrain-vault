@@ -528,3 +528,37 @@ Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W29.md — 34,708 cha
 - กำไรสุทธิ 19,928 บาทถูกจัดสรรให้พนักงานตามการตัดสินใจของ Watcharin1004
 [2026-07-16 09:01:03] WEEKLY: ✅ wrote     8629 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W29.md
 [2026-07-16 09:01:03] DONE: auto
+[2026-07-16 13:00:00] AUTO: DOW=4 DOM=16 TOMORROW=17
+[2026-07-16 13:00:00] CATCHUP: scanning past 14 days for missed runs
+[2026-07-16 13:00:01] AUTO: Thursday detected → weekly
+[2026-07-16 13:00:01] WEEKLY: 2026-07-10 → 2026-07-16 (label: 2026-W29)
+Wrote /Users/aexgee/SecondBrain/Friday/_source/weekly_2026-W29.md — 38,902 chars, 25 weekly, 60 daily
+[2026-07-16 13:00:08] WEEKLY: source size =    65593 chars
+[2026-07-16 13:00:08] WEEKLY: codex attempt 1/3 → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W29.md
+- Discord มีอาการใช้งานได้บ้างไม่ได้บ้าง และเน็ตของเนมีปัญหาเกินขอบเขตที่แก้เองได้
+- Watcharin ให้ทีมสมัคร Facebook เพิ่มด้วย 2 ซิม เพื่อรองรับงานการตลาด
+- Bobsanchezz ตั้งโจทย์พัฒนา ThunderBOT ไอเดียใหม่ และแผนเทรนด์ “พี่น้อง” ระยะ 2 สัปดาห์
+
+## ⚠️ Watch list
+
+- Thunder API แพ็กเกจ TEST ยังไม่ครบ 15 วัน และต้องติดตามการแก้ไขจาก Bank
+- Krungsri ยังต้องยืนยัน TPS; ข้อจำกัดสูงสุด 300k/สลิป/เดือนยังไม่สอดคล้อง และ BBL ตรวจสอบช้า โดยคาดอัปเดตใน 2 สัปดาห์
+- รอเน Deploy EasyCRM Salepage จาก PR #22
+- EasyCRM ยังต้องปิดประเด็นข้อมูล “ซื้อล่าสุด 1 วันที่แล้ว” ไม่ตรง และตรวจ Log การปิด Flex ของ Kintsu
+- Olivesterr ต้องส่งรายละเอียดแพ็กเกจ EasyCRM ให้ Asado
+- Port ยิงแอด Facebook Kuangolf และงานยิง Ads วันละ 300 บาทยังไม่เริ่ม
+- `affiliate.9bomb.dev/login` ยังเข้าไม่ได้
+- รอใบเสร็จค่าน้ำมันและค่าบำรุงรักษารถเดือน ก.ค. 2569 จากวัชรินทร์และภูมิชนะ
+- งานสอน Obsidian ทีมการตลาดและโจทย์ ThunderBOT ใหม่ยังค้าง
+
+## ✅ Highlights
+
+- ปรับวิธีทำงาน ลดรายงาน routine รายวัน และดึงข้อมูลเฉพาะตอนประชุม
+- TPS ทำได้ 60 TPS และขึ้นถึง 98 TPS ในช่วง 17:00–21:00 น.
+- แก้ Thunder Bot สมัครสมาชิกและ EasyCRM หน้าลูกค้าเข้าไม่ได้กลับมาปกติ
+- ปิดงาน Flex Theme และ Rich menu ของ La Serre
+- Krungsri สนใจ Option 4 ราคา 1.05m/0.11
+- อนุมัติโยกเงิน 400,000 บาท และชำระ Oho Chat 13,930.80 บาทเรียบร้อย
+- Watcharin สละส่วนแบ่งกำไรสุทธิ 19,928 บาทให้พนักงานครับ
+[2026-07-16 13:00:59] WEEKLY: ✅ wrote     9505 chars → /Users/aexgee/SecondBrain/Friday/Weekly Recaps/2026-W29.md
+[2026-07-16 13:00:59] DONE: auto
