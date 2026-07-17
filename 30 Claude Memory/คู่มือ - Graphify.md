@@ -8,9 +8,12 @@ originSessionId: 7be13753-0760-437b-8848-7dfe6cb9ca55
 
 **Trigger:** `/graphify <path>` (+ `--wiki --obsidian --update --mode deep`), `query "<question>"`, `path "A" "B"`, `explain "X"`, `graphify merge-graphs` (รวมกราฟข้าม KB), `graphify export obsidian|html|wiki|svg`. ใหม่ใน 0.9.x: graph health check, shrink-guard (#479), query fast-path, FalkorDB.
 
-**SecondBrain graphs (workspace นอก vault กัน auto-sync):** `~/Code/secondbrain-graphs/<kb>/graphify-out/`
-- **easyslip** — built 2026-07-17 จาก `~/SecondBrain/EasySlip` (13 ไฟล์ รวม 3 PDF): 66 nodes / 129 edges / 9 communities. God node #1 = สัญญา SCCN MOU. เปิด `graphify-out/obsidian/` เป็น vault แยกใน Obsidian (75 notes + graph.canvas), `wiki/index.md` = agent entry point. มีคำถาม AMBIGUOUS ค้าง: Easyslip Gateway (easy-kbank-lb) เป็นเส้น direct-KBank หรือ Thunder cross-billed?
-- ต่อไป: Thunder Solution, BoostSMS → แล้ว `merge-graphs` หา cross-brand connections.
+**SecondBrain graphs (workspace นอก vault กัน auto-sync):** `~/Code/secondbrain-graphs/<kb>/graphify-out/` — ทุกอันมี graph.html + graph.json + GRAPH_REPORT.md + obsidian/ (เปิดเป็น vault แยก) + wiki/ (ยกเว้น merged ไม่มี wiki). สร้างครบ 3 แบรนด์ + merged เมื่อ 2026-07-17.
+- **easyslip** — 13 ไฟล์ (3 PDF) → 66 nodes / 129 edges / 9 communities. God node #1 = สัญญา SCCN MOU. คำถาม AMBIGUOUS ค้าง: Easyslip Gateway (easy-kbank-lb) เป็นเส้น direct-KBank หรือ Thunder cross-billed?
+- **thunder-solution** — 17 ไฟล์ (HTML reports + 1 PDF MOU) → 84 nodes / 117 edges / 11 communities. God node = Thunder Solution Co./MOU KBank.
+- **boostsms** — dedup แล้ว 45 text + 12 img (จาก 119; ตัด logo/svg + ไฟล์ซ้ำด้วย content-hash) → 237 nodes / 379 edges / 18 communities. หมายเหตุ: รูป BoostSMS-01..08 เป็น logo variant → cluster เป็นเกาะเดี่ยว 8 ก้อน (noise ยอมรับได้).
+- **merged** — custom cross-brand merge (`~/Code/secondbrain-graphs/merge_crossbrand.py`, ไม่ใช่ `graphify merge-graphs` built-in เพราะตัวนั้นแค่ prefix แยกเกาะ ไม่เชื่อม). เติมเส้น `same_entity_as` ข้ามแบรนด์ผ่าน ANCHORS map → 387 nodes / 647 edges / 22 bridges / 12 shared entities. **ผล: community c2 (companies+dashboards) กับ c5 (API pricing+cost) เป็นก้อนผสม 3 แบรนด์.** cross-brand link ทั้งหมดมาจาก bridge ที่ seed เอง (แต่ละ KB extract แยกกัน จึงไม่มี organic cross-edge). แก้ ANCHORS แล้วรัน script ซ้ำเพื่อเพิ่ม/ปรับ bridge.
+- Session limit เคยตัดกลางคัน (2pm) — chunk เขียนลงดิสก์ไปแล้วเช็คก่อน re-dispatch เฉพาะที่ขาด (ประหยัด ไม่รันซ้ำ).
 
 **How to apply:**
 - มีกราฟแล้ว → คำถามเกี่ยวกับ KB นั้นให้ `graphify query` ก่อน ไม่ต้องอ่านไฟล์ดิบ (ต้อง cd เข้า workspace dir ก่อน — graph.json อยู่ relative กับ cwd)
