@@ -1,11 +1,11 @@
 ---
 source_file: "หน้าหลัก.md"
 type: "concept"
-community: "BoostSMS Backoffice Admin"
+community: "Master Dashboard Integration"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Backoffice_Admin
+  - community/Master_Dashboard_Integration
 ---
 
 # EasySlip
@@ -15,4 +15,4 @@ tags:
 - [[Master Dashboard Integration]] - `references` [EXTRACTED]
 - [[Slip Verification (orders pending)]] - `conceptually_related_to` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Backoffice_Admin
+#graphify/concept #graphify/EXTRACTED #community/Master_Dashboard_Integration

@@ -1,11 +1,11 @@
 ---
 source_file: "03-Sales-Commission.md"
 type: "rationale"
-community: "BoostSMS Package Tiers"
+community: "Sales Commission Structure"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/BoostSMS_Package_Tiers
+  - community/Sales_Commission_Structure
 ---
 
 # Recurring Commission 6-month Cutoff (anti-SaaS)
@@ -14,4 +14,4 @@ tags:
 - [[AI Debate Sales Comp Analysis (2026-06-06)]] - `rationale_for` [EXTRACTED]
 - [[Sales Commission Structure]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/BoostSMS_Package_Tiers
+#graphify/rationale #graphify/EXTRACTED #community/Sales_Commission_Structure

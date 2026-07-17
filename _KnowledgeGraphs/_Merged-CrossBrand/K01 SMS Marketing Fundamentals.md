@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K01-SMS-Marketing-Fundamentals.md"
 type: "document"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K01 SMS Marketing Fundamentals
@@ -20,4 +20,4 @@ tags:
 - [[SMS as Guaranteed-Read Channel]] - `references` [EXTRACTED]
 - [[Twilio]] - `cites` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

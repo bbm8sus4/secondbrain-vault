@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/bot-verify-slip-packages.md"
 type: "concept"
-community: "★ Cross-Brand: API Pricing & Cost"
+community: "EasySlip BOT Pricing"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_API_Pricing__Cost
+  - community/EasySlip_BOT_Pricing
 ---
 
 # EasySlip BOT Pricing — 11 แพ็กเกจ × 4 รอบ (Start→Premium-4, ฿99–14,000 · 0.247→0.093/สลิป)
@@ -17,4 +17,4 @@ tags:
 - [[No Long-Round Discount (ราคา × N ทุกรอบ 3612 เดือน — ประหยัด ฿0.00)]] - `conceptually_related_to` [EXTRACTED]
 - [[Quick Cost Rule — ต้นทุน = สลิป × 0.11 (worst case Others 100%)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_API_Pricing__Cost
+#graphify/concept #graphify/EXTRACTED #community/EasySlip_BOT_Pricing

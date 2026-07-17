@@ -1,11 +1,11 @@
 ---
 source_file: "05-App-User-Dashboard.md"
 type: "concept"
-community: "Brand Logo/Design"
+community: "Multi-sender"
 tags:
   - graphify/concept
   - graphify/INFERRED
-  - community/Brand_Logo/Design
+  - community/Multi-sender
 ---
 
 # Sender Names (Thunder-AI / EasySlip / BANKTECH)
@@ -14,4 +14,4 @@ tags:
 - [[App (User Dashboard) app.boost-sms.com]] - `references` [EXTRACTED]
 - [[Multi-sender (Sender Name)]] - `implements` [INFERRED]
 
-#graphify/concept #graphify/INFERRED #community/Brand_Logo/Design
+#graphify/concept #graphify/INFERRED #community/Multi-sender

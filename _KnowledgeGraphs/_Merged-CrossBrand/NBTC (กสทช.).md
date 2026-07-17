@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "Brand Logo/Design"
+community: "Multi-sender"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/Multi-sender
 ---
 
 # NBTC (กสทช.)
@@ -14,4 +14,4 @@ tags:
 - [[Credit Refund + กสทช. Compliance]] - `references` [EXTRACTED]
 - [[NBTC Certified Compliance]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/concept #graphify/EXTRACTED #community/Multi-sender

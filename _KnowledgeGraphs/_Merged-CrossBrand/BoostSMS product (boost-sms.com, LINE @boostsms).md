@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/boostsms_doc_2026-05-18T08-19-11-342Z.png"
 type: "concept"
-community: "BoostSMS 7-Day Content Plan"
+community: "7-Day Content Plan by Funnel Stage"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_7-Day_Content_Plan
+  - community/7-Day_Content_Plan_by_Funnel_Stage
 ---
 
 # BoostSMS product (boost-sms.com, LINE @boostsms)
@@ -14,4 +14,4 @@ tags:
 - [[7-Day Content Plan by Funnel Stage]] - `references` [EXTRACTED]
 - [[Day 1 Awareness Customer phone number base is an asset]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_7-Day_Content_Plan
+#graphify/concept #graphify/EXTRACTED #community/7-Day_Content_Plan_by_Funnel_Stage

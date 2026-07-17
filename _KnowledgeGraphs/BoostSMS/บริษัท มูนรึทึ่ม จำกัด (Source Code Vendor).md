@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/index.html"
 type: "concept"
-community: "Pricing Docs & IP Ownership"
+community: "BoostSMS Platform"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Pricing_Docs__IP_Ownership
+  - community/BoostSMS_Platform
 ---
 
 # บริษัท มูนรึทึ่ม จำกัด (Source Code Vendor)
@@ -14,4 +14,4 @@ tags:
 - [[BoostSMS Platform]] - `conceptually_related_to` [EXTRACTED]
 - [[BoostSMS Project Overview (index.html)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Pricing_Docs__IP_Ownership
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Platform

@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "BoostSMS Package Tiers"
+community: "AIS Provider Transition"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Package_Tiers
+  - community/AIS_Provider_Transition
 ---
 
 # OTP System
@@ -14,4 +14,4 @@ tags:
 - [[BoostSMS]] - `references` [EXTRACTED]
 - [[Dual-lane Dispatcher (2 ท่อส่ง, OTP speed)]] - `rationale_for` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Package_Tiers
+#graphify/concept #graphify/EXTRACTED #community/AIS_Provider_Transition

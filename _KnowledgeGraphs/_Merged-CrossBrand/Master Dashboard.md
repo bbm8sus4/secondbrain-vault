@@ -1,11 +1,11 @@
 ---
 source_file: "08-Master-Dashboard-Integration.md"
 type: "concept"
-community: "BoostSMS Backoffice Admin"
+community: "Master Dashboard Integration"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Backoffice_Admin
+  - community/Master_Dashboard_Integration
 ---
 
 # Master Dashboard
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Master Dashboard Integration]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Backoffice_Admin
+#graphify/concept #graphify/EXTRACTED #community/Master_Dashboard_Integration

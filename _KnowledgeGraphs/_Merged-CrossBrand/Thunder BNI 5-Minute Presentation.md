@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/bni-thunder-5min.html"
 type: "document"
-community: "Thunder KBank Pricing"
+community: "EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Thunder_KBank_Pricing
+  - community/EasySlip
 ---
 
 # Thunder BNI 5-Minute Presentation
@@ -14,4 +14,4 @@ tags:
 - [[EasySlip]] - `references` [EXTRACTED]
 - [[Thunder Solution]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Thunder_KBank_Pricing
+#graphify/document #graphify/EXTRACTED #community/EasySlip

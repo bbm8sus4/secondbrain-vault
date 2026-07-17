@@ -1,13 +1,13 @@
 ---
 source_file: "Reports/thunder-may-2026-summary.html"
 type: "concept"
-community: "Brand Logo/Design"
+community: "Boost SMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/Boost_SMS
 ---
 
 # Boost SMS
 
-#graphify/concept #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/concept #graphify/EXTRACTED #community/Boost_SMS

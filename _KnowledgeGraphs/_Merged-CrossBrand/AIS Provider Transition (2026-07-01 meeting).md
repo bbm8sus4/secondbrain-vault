@@ -1,11 +1,11 @@
 ---
 source_file: "Meetings/2026-07-01-AIS-Provider-Transition.md"
 type: "document"
-community: "BoostSMS Package Tiers"
+community: "AIS Provider Transition"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Package_Tiers
+  - community/AIS_Provider_Transition
 ---
 
 # AIS Provider Transition (2026-07-01 meeting)
@@ -19,4 +19,4 @@ tags:
 - [[Dual-lane Dispatcher (2 ท่อส่ง, OTP speed)]] - `references` [EXTRACTED]
 - [[LeanFlow Back-office + CSVExcelPDF Export]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Package_Tiers
+#graphify/document #graphify/EXTRACTED #community/AIS_Provider_Transition

@@ -1,11 +1,11 @@
 ---
 source_file: "Meetings/2026-07-01-Tasks.md"
 type: "document"
-community: "BoostSMS Package Tiers"
+community: "AIS Provider Transition"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Package_Tiers
+  - community/AIS_Provider_Transition
 ---
 
 # AIS Transition Task List (12 tasks)
@@ -16,4 +16,4 @@ tags:
 - [[Task 1 Lean Customer Onboarding Form (บอม)]] - `references` [EXTRACTED]
 - [[Task 3 Send-status Progress Bar]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Package_Tiers
+#graphify/document #graphify/EXTRACTED #community/AIS_Provider_Transition

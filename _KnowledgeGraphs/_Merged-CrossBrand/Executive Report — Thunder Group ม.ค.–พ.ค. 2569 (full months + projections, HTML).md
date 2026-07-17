@@ -1,11 +1,11 @@
 ---
 source_file: "Revenue/thunder-revenue-jan-may-2026.html"
 type: "document"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # Executive Report — Thunder Group ม.ค.–พ.ค. 2569 (full months + projections, HTML)
@@ -16,4 +16,4 @@ tags:
 - [[Thunder Solution — Revenue Report ม.ค.–พ.ค. 2569]] - `shares_data_with` [INFERRED]
 - [[Thunder Solution — หน้าหลัก (Brand Index)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/document #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

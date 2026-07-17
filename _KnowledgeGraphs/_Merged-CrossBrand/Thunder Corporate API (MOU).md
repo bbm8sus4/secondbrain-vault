@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/thunder-corporate-api-sales-commission.md"
 type: "document"
-community: "Thunder KBank Pricing"
+community: "Thunder Solution"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Thunder_KBank_Pricing
+  - community/Thunder_Solution
 ---
 
 # Thunder Corporate API (MOU)
@@ -17,4 +17,4 @@ tags:
 - [[Kbank Slip Verification API Pricing]] - `cites` [EXTRACTED]
 - [[Thunder API]] - `conceptually_related_to` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Thunder_KBank_Pricing
+#graphify/document #graphify/EXTRACTED #community/Thunder_Solution

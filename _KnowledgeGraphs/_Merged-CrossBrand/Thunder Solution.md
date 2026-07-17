@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/bni-thunder-5min.html"
 type: "concept"
-community: "Thunder KBank Pricing"
+community: "Thunder Solution"
 tags:
   - graphify/concept
   - graphify/INFERRED
-  - community/Thunder_KBank_Pricing
+  - community/Thunder_Solution
 ---
 
 # Thunder Solution
@@ -17,4 +17,4 @@ tags:
 - [[Thunder Bot]] - `conceptually_related_to` [INFERRED]
 - [[Thunder Solution Platform]] - `conceptually_related_to` [INFERRED]
 
-#graphify/concept #graphify/INFERRED #community/Thunder_KBank_Pricing
+#graphify/concept #graphify/INFERRED #community/Thunder_Solution

@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/00-Index.md"
 type: "document"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # BoostSMS Knowledge Base Index
@@ -30,4 +30,4 @@ tags:
 - [[K14 Compliance & Anti-Spam (PDPA, NBTC, Opt-inout)]] - `references` [EXTRACTED]
 - [[K15 AB Testing for SMS Campaigns]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

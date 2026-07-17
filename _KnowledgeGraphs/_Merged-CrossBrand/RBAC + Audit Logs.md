@@ -1,11 +1,11 @@
 ---
 source_file: "06-Backoffice-Admin.md"
 type: "concept"
-community: "BoostSMS Backoffice Admin"
+community: "Master Dashboard Integration"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Backoffice_Admin
+  - community/Master_Dashboard_Integration
 ---
 
 # RBAC + Audit Logs
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Backoffice Admin Panel backoffice.boost-sms.com]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Backoffice_Admin
+#graphify/concept #graphify/EXTRACTED #community/Master_Dashboard_Integration

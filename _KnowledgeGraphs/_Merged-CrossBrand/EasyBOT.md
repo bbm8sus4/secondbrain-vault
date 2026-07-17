@@ -1,11 +1,11 @@
 ---
 source_file: "หน้าหลัก.md"
 type: "concept"
-community: "Brand Logo/Design"
+community: "★ BoostSMS"
 tags:
   - graphify/concept
   - graphify/INFERRED
-  - community/Brand_Logo/Design
+  - community/_BoostSMS
 ---
 
 # EasyBOT
@@ -14,4 +14,4 @@ tags:
 - [[BoostSMS]] - `conceptually_related_to` [EXTRACTED]
 - [[Easy Bot]] - `same_entity_as` [INFERRED]
 
-#graphify/concept #graphify/INFERRED #community/Brand_Logo/Design
+#graphify/concept #graphify/INFERRED #community/_BoostSMS

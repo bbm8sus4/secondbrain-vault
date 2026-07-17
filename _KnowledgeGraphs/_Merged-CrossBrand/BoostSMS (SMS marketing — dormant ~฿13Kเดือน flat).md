@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # BoostSMS (SMS marketing — dormant ~฿13K/เดือน flat)
@@ -18,4 +18,4 @@ tags:
 - [[EasySlip (บริษัท อีซี่สลิป จำกัด — SMB brand, ขอนแก่น)]] - `conceptually_related_to` [EXTRACTED]
 - [[EasySlip — Revenue Report ม.ค.–พ.ค. 2569]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

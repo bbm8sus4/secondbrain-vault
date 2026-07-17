@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "BoostSMS Product Features"
+community: "★ BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Product_Features
+  - community/_BoostSMS
 ---
 
 # Link Shortener + Click Tracking
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[BoostSMS]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Product_Features
+#graphify/concept #graphify/EXTRACTED #community/_BoostSMS

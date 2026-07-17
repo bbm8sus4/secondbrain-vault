@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Multi-sender (Sender Name)
@@ -15,4 +15,4 @@ tags:
 - [[NBTC Certified Compliance]] - `rationale_for` [EXTRACTED]
 - [[Sender Names (Thunder-AI  EasySlip  BANKTECH)]] - `implements` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS

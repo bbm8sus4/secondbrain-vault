@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # EasySlip (บริษัท อีซี่สลิป จำกัด — SMB brand, ขอนแก่น)
@@ -21,4 +21,4 @@ tags:
 - [[Thunder Group (Thunder Solution + EasySlip)]] - `conceptually_related_to` [EXTRACTED]
 - [[นายวัชรินทร์ แก้วม่วง (ผู้ลงนามผู้บริหาร EasySlip)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

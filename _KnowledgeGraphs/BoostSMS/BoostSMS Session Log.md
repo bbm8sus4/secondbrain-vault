@@ -1,11 +1,11 @@
 ---
 source_file: "09-Session-Log.md"
 type: "document"
-community: "Package Tiers & Pricing Gap"
+community: "Prepaid Credit Pricing Model"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Package_Tiers__Pricing_Gap
+  - community/Prepaid_Credit_Pricing_Model
 ---
 
 # BoostSMS Session Log
@@ -16,4 +16,4 @@ tags:
 - [[BoostSMS]] - `references` [EXTRACTED]
 - [[Master Dashboard Integration]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Package_Tiers__Pricing_Gap
+#graphify/document #graphify/EXTRACTED #community/Prepaid_Credit_Pricing_Model

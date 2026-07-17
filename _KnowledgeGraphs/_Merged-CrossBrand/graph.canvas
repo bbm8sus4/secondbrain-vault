@@ -3,7 +3,7 @@
     {
       "id": "g0",
       "type": "group",
-      "label": "BoostSMS Pricing & IP Ownership",
+      "label": "BoostSMS Knowledge Base Index",
       "x": 0,
       "y": 0,
       "width": 1760,
@@ -517,10 +517,10 @@
     {
       "id": "g1",
       "type": "group",
-      "label": "EasySlip Revenue & Products",
+      "label": "SCCN \u00d7 EasySlip",
       "x": 1840,
       "y": 0,
-      "width": 1540,
+      "width": 1760,
       "height": 820,
       "color": "2"
     },
@@ -591,8 +591,8 @@
       "id": "n_easyslip:revenue_easyslip_api_top_up_6_churn_60d",
       "type": "file",
       "file": "Churn Definition \u2014 \u0e40\u0e07\u0e35\u0e22\u0e1a\u0e40\u0e01\u0e34\u0e19 60 \u0e27\u0e31\u0e19 (Active \u226430 \u00b7 Cooling 31\u201345 \u00b7 At-Risk 46\u201360 \u00b7 Churn 60).md",
-      "x": 1860,
-      "y": 160,
+      "x": 3260,
+      "y": 80,
       "width": 180,
       "height": 60
     },
@@ -600,7 +600,7 @@
       "id": "n_easyslip:revenue_easyslip_api_top_up_6_lapsed_vs_onetime",
       "type": "file",
       "file": "Churn Split Lapsed (retention) vs One-time (onboarding).md",
-      "x": 2060,
+      "x": 1860,
       "y": 160,
       "width": 180,
       "height": 60
@@ -609,7 +609,7 @@
       "id": "n_easyslip:documents_easyslip_gateway_summary_token_in_query_string",
       "type": "file",
       "file": "Critical Security Finding Auth Token in Query String.md",
-      "x": 2260,
+      "x": 2060,
       "y": 160,
       "width": 180,
       "height": 60
@@ -618,7 +618,7 @@
       "id": "n_easyslip:01_overview_easyslip",
       "type": "file",
       "file": "EasySlip (\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e2d\u0e35\u0e0b\u0e35\u0e48\u0e2a\u0e25\u0e34\u0e1b \u0e08\u0e33\u0e01\u0e31\u0e14 \u2014 SMB brand, \u0e02\u0e2d\u0e19\u0e41\u0e01\u0e48\u0e19).md",
-      "x": 2460,
+      "x": 2260,
       "y": 160,
       "width": 180,
       "height": 60
@@ -627,6 +627,15 @@
       "id": "n_easyslip:01_overview_easyslip_api",
       "type": "file",
       "file": "EasySlip API (STAR product \u2014 97.5% \u0e02\u0e2d\u0e07\u0e41\u0e1a\u0e23\u0e19\u0e14\u0e4c, 54.3% \u0e02\u0e2d\u0e07\u0e01\u0e25\u0e38\u0e48\u0e21).md",
+      "x": 2460,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_api_pricing_packages_api_pricing_11_packages",
+      "type": "file",
+      "file": "EasySlip API Pricing \u2014 11 \u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08 (Tester\u2192Premium 3, \u0e3f99\u201340,000 \u00b7 0.396\u21920.125\u0e2a\u0e25\u0e34\u0e1b).md",
       "x": 2660,
       "y": 160,
       "width": 180,
@@ -654,8 +663,8 @@
       "id": "n_easyslip:01_overview_easyslip_bot",
       "type": "file",
       "file": "EasySlip BOT  Verify Slip  LINE Bot (\u0e2a\u0e34\u0e19\u0e04\u0e49\u0e32\u0e23\u0e2d\u0e07, 10 \u0e2a\u0e32\u0e02\u0e32\u0e41\u0e1e\u0e47\u0e01).md",
-      "x": 1860,
-      "y": 240,
+      "x": 3260,
+      "y": 160,
       "width": 180,
       "height": 60
     },
@@ -663,7 +672,7 @@
       "id": "n_easyslip:documents_bot_verify_slip_packages_doc",
       "type": "file",
       "file": "EasySlip BOT \u2014 Verify Slip Packages (13612 \u0e40\u0e14\u0e37\u0e2d\u0e19).md",
-      "x": 2060,
+      "x": 1860,
       "y": 240,
       "width": 180,
       "height": 60
@@ -672,7 +681,7 @@
       "id": "n_easyslip:01_overview_concentration_risk",
       "type": "file",
       "file": "EasySlip Revenue Concentration Risk.md",
-      "x": 2260,
+      "x": 2060,
       "y": 240,
       "width": 180,
       "height": 60
@@ -681,7 +690,7 @@
       "id": "n_easyslip:contracts_index_doc",
       "type": "file",
       "file": "EasySlip \u2014 Contracts INDEX.md",
-      "x": 2460,
+      "x": 2260,
       "y": 240,
       "width": 180,
       "height": 60
@@ -690,7 +699,7 @@
       "id": "n_easyslip:revenue_2569_01_to_05_revenue_report_doc",
       "type": "file",
       "file": "EasySlip \u2014 Revenue Report \u0e21.\u0e04.\u2013\u0e1e.\u0e04. 2569.md",
-      "x": 2660,
+      "x": 2460,
       "y": 240,
       "width": 180,
       "height": 60
@@ -699,7 +708,7 @@
       "id": "n_easyslip:home_easyslip_brand_index",
       "type": "file",
       "file": "EasySlip \u2014 \u0e2b\u0e19\u0e49\u0e32\u0e2b\u0e25\u0e31\u0e01 (Brand Index).md",
-      "x": 2860,
+      "x": 2660,
       "y": 240,
       "width": 180,
       "height": 60
@@ -708,7 +717,7 @@
       "id": "n_easyslip:documents_easyslip_gateway_summary_easyslip_gateway",
       "type": "file",
       "file": "Easyslip Gateway (easy-kbank-lb \u2014 rate-limited proxyLB \u0e1a\u0e19 cluster jetder.com).md",
-      "x": 3060,
+      "x": 2860,
       "y": 240,
       "width": 180,
       "height": 60
@@ -717,8 +726,8 @@
       "id": "n_easyslip:documents_easyslip_gateway_summary_doc",
       "type": "file",
       "file": "Easyslip Gateway \u2014 Live Dashboard Summary (PDF, \u0e2a\u0e33\u0e23\u0e27\u0e08 1 \u0e1e.\u0e04. 2026).md",
-      "x": 1860,
-      "y": 320,
+      "x": 3060,
+      "y": 240,
       "width": 180,
       "height": 60
     },
@@ -726,8 +735,8 @@
       "id": "n_easyslip:revenue_easyslip_api_top_up_6_forecast_2569",
       "type": "file",
       "file": "Forecast 2569 \u0e01.\u0e04. \u0e3f6.6\u20137.5M \u00b7 \u0e17\u0e31\u0e49\u0e07\u0e1b\u0e35 \u0e3f75\u201383M.md",
-      "x": 2060,
-      "y": 320,
+      "x": 3260,
+      "y": 240,
       "width": 180,
       "height": 60
     },
@@ -735,7 +744,16 @@
       "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_free_quota_1000",
       "type": "file",
       "file": "Free Quota 1,000 \u0e2a\u0e25\u0e34\u0e1b\u0e23\u0e49\u0e32\u0e19\u0e43\u0e2b\u0e21\u0e48 (\u0e2d\u0e32\u0e22\u0e38 60 \u0e27\u0e31\u0e19).md",
-      "x": 2260,
+      "x": 1860,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_api_pricing_packages_margin_matrix",
+      "type": "file",
+      "file": "Gross Margin Matrix by Traffic Mix (7 mix \u00d7 10 \u0e41\u0e1e\u0e47\u0e01).md",
+      "x": 2060,
       "y": 320,
       "width": 180,
       "height": 60
@@ -744,7 +762,7 @@
       "id": "n_easyslip:revenue_2569_01_to_05_revenue_report_group_target_125m",
       "type": "file",
       "file": "Group Revenue Target \u0e3f125M (\u0e1b\u0e35 2569, YTD 40.8%).md",
-      "x": 2460,
+      "x": 2260,
       "y": 320,
       "width": 180,
       "height": 60
@@ -753,7 +771,25 @@
       "id": "n_easyslip:01_overview_kbank_slip_verification_api",
       "type": "file",
       "file": "KBank Slip Verification API (upstream \u0e15\u0e49\u0e19\u0e17\u0e38\u0e19).md",
+      "x": 2460,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_easyslip_business_overview_2568_final_mrr_tier_structure",
+      "type": "file",
+      "file": "MRR Tier Structure \u2014 Enterprise tiers (Diamond, Premium 1\u20133) = ~\u0e3f1.69M = 68% \u0e02\u0e2d\u0e07 MRR ~\u0e3f2.5M.md",
       "x": 2660,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_api_pricing_packages_margin_paradox",
+      "type": "file",
+      "file": "Margin Paradox \u2014 SME \u0e2d\u0e38\u0e49\u0e21 Enterprise.md",
+      "x": 2860,
       "y": 320,
       "width": 180,
       "height": 60
@@ -762,7 +798,7 @@
       "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch",
       "type": "file",
       "file": "Master\u2013Sub Branch Structure + Branch-level Quota + 2-level API Key.md",
-      "x": 2860,
+      "x": 3060,
       "y": 320,
       "width": 180,
       "height": 60
@@ -771,7 +807,7 @@
       "id": "n_easyslip:revenue_2569_01_to_05_revenue_report_may_spike",
       "type": "file",
       "file": "May 2569 Revenue Spike (+19.0% MoM \u2192 \u0e3f6.42M).md",
-      "x": 3060,
+      "x": 3260,
       "y": 320,
       "width": 180,
       "height": 60
@@ -795,10 +831,19 @@
       "height": 60
     },
     {
+      "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125",
+      "type": "file",
+      "file": "Partner Fee 0.125 \u0e1a.\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23 (incl VAT).md",
+      "x": 2260,
+      "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
       "id": "n_easyslip:revenue_easyslip_api_top_up_6_rfm_segmentation",
       "type": "file",
       "file": "RFM Segmentation 7 \u0e01\u0e25\u0e38\u0e48\u0e21 (VIP 122 \u0e04\u0e19 = 80% \u0e02\u0e2d\u0e07\u0e23\u0e32\u0e22\u0e44\u0e14\u0e49).md",
-      "x": 2260,
+      "x": 2460,
       "y": 400,
       "width": 180,
       "height": 60
@@ -807,7 +852,7 @@
       "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
       "type": "file",
       "file": "SCCN \u00d7 EasySlip \u2014 Slip Verification API MOU (\u0e25\u0e07\u0e19\u0e32\u0e21 31 \u0e21\u0e35.\u0e04. 2569, verbatim).md",
-      "x": 2460,
+      "x": 2660,
       "y": 400,
       "width": 180,
       "height": 60
@@ -816,7 +861,7 @@
       "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_sla_uptime_99_9",
       "type": "file",
       "file": "SLA Uptime 99.9%\u0e40\u0e14\u0e37\u0e2d\u0e19 (High severity \u0e15\u0e2d\u0e1a 15 \u0e19\u0e32\u0e17\u0e35, \u0e41\u0e01\u0e49 4 \u0e0a\u0e21.).md",
-      "x": 2660,
+      "x": 2860,
       "y": 400,
       "width": 180,
       "height": 60
@@ -825,7 +870,7 @@
       "id": "n_easyslip:contracts_index_sccn",
       "type": "file",
       "file": "SUPER COCONUT CO., LTD. (SCCN).md",
-      "x": 2860,
+      "x": 3060,
       "y": 400,
       "width": 180,
       "height": 60
@@ -834,8 +879,17 @@
       "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros",
       "type": "file",
       "file": "Super rOS (\u0e41\u0e1e\u0e25\u0e15\u0e1f\u0e2d\u0e23\u0e4c\u0e21 POS\u0e23\u0e49\u0e32\u0e19\u0e04\u0e49\u0e32\u0e02\u0e2d\u0e07 SCCN).md",
-      "x": 3060,
+      "x": 3260,
       "y": 400,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_api_pricing_packages_sweet_spot_70_30",
+      "type": "file",
+      "file": "Sweet Spot Mix 7030 (KOther).md",
+      "x": 1860,
+      "y": 480,
       "width": 180,
       "height": 60
     },
@@ -843,15 +897,6 @@
       "id": "n_easyslip:01_overview_thunder_group",
       "type": "file",
       "file": "Thunder Group (Thunder Solution + EasySlip).md",
-      "x": 1860,
-      "y": 480,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:01_overview_thunder_solution",
-      "type": "file",
-      "file": "Thunder Solution (enterprise brand).md",
       "x": 2060,
       "y": 480,
       "width": 180,
@@ -906,8 +951,8 @@
       "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_use_first_pay_later",
       "type": "file",
       "file": "Use First, Pay Later Billing (\u0e23\u0e32\u0e22\u0e40\u0e14\u0e37\u0e2d\u0e19\u0e15\u0e32\u0e21\u0e23\u0e2d\u0e1a\u0e1b\u0e0f\u0e34\u0e17\u0e34\u0e19 \u0e40\u0e23\u0e34\u0e48\u0e21 1 \u0e40\u0e21.\u0e22. 2569).md",
-      "x": 1860,
-      "y": 560,
+      "x": 3260,
+      "y": 480,
       "width": 180,
       "height": 60
     },
@@ -915,7 +960,7 @@
       "id": "n_easyslip:revenue_easyslip_api_top_up_6_whale_account_1",
       "type": "file",
       "file": "Whale Account 1 (\u0e3f10.4M = 31% \u0e02\u0e2d\u0e07\u0e22\u0e2d\u0e14\u0e40\u0e15\u0e34\u0e21 6 \u0e40\u0e14\u0e37\u0e2d\u0e19).md",
-      "x": 2060,
+      "x": 1860,
       "y": 560,
       "width": 180,
       "height": 60
@@ -924,7 +969,7 @@
       "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay",
       "type": "file",
       "file": "\u0e19\u0e32\u0e22\u0e08\u0e34\u0e15\u0e15\u0e27\u0e31\u0e12\u0e19\u0e4c \u0e08\u0e34\u0e15\u0e2a\u0e33\u0e23\u0e27\u0e22 (\u0e1c\u0e39\u0e49\u0e25\u0e07\u0e19\u0e32\u0e21 SCCN).md",
-      "x": 2260,
+      "x": 2060,
       "y": 560,
       "width": 180,
       "height": 60
@@ -933,7 +978,7 @@
       "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang",
       "type": "file",
       "file": "\u0e19\u0e32\u0e22\u0e27\u0e31\u0e0a\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c \u0e41\u0e01\u0e49\u0e27\u0e21\u0e48\u0e27\u0e07 (\u0e1c\u0e39\u0e49\u0e25\u0e07\u0e19\u0e32\u0e21\u0e1c\u0e39\u0e49\u0e1a\u0e23\u0e34\u0e2b\u0e32\u0e23 EasySlip).md",
-      "x": 2460,
+      "x": 2260,
       "y": 560,
       "width": 180,
       "height": 60
@@ -942,7 +987,7 @@
       "id": "n_easyslip:contracts_api_sccn_x_easyslip_pdf",
       "type": "file",
       "file": "\u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e02\u0e49\u0e2d\u0e15\u0e01\u0e25\u0e07\u0e01\u0e32\u0e23\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21 API SCCN \u00d7 Easyslip (PDF \u0e15\u0e49\u0e19\u0e09\u0e1a\u0e31\u0e1a 18 \u0e2b\u0e19\u0e49\u0e32).md",
-      "x": 2660,
+      "x": 2460,
       "y": 560,
       "width": 180,
       "height": 60
@@ -951,7 +996,7 @@
       "id": "n_easyslip:documents_easyslip_business_overview_2568_final_doc",
       "type": "file",
       "file": "\u0e23\u0e32\u0e22\u0e07\u0e32\u0e19\u0e2a\u0e23\u0e38\u0e1b\u0e20\u0e32\u0e1e\u0e23\u0e27\u0e21\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e1b\u0e23\u0e30\u0e08\u0e33\u0e1b\u0e35 2568 \u2014 EasySlip (Business Overview PDF, \u0e15\u0e48\u0e2d\u0e1c\u0e39\u0e49\u0e2a\u0e2d\u0e1a\u0e1a\u0e31\u0e0d\u0e0a\u0e35).md",
-      "x": 2860,
+      "x": 2660,
       "y": 560,
       "width": 180,
       "height": 60
@@ -959,18 +1004,27 @@
     {
       "id": "g2",
       "type": "group",
-      "label": "\u2605 Cross-Brand: Companies & Dashboards",
-      "x": 3460,
+      "label": "\u2605 Thunder Solution Co., Ltd.",
+      "x": 3680,
       "y": 0,
       "width": 1540,
       "height": 820,
       "color": "3"
     },
     {
+      "id": "n_easyslip:documents_easyslip_business_overview_2568_final_api_volume_250m",
+      "type": "file",
+      "file": "API Call Volume ~250M \u0e04\u0e23\u0e31\u0e49\u0e07\u0e1b\u0e35 2568 (+215.6% \u0e08\u0e32\u0e01 79M).md",
+      "x": 3700,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
       "id": "n_thunder:documents_api_gen_qr_2025_10_planning_notes_api_gen_qr",
       "type": "file",
       "file": "API Gen QR (payment QR generation feature).md",
-      "x": 3480,
+      "x": 3900,
       "y": 80,
       "width": 180,
       "height": 60
@@ -979,7 +1033,7 @@
       "id": "n_thunder:documents_api_gen_qr_2025_10_planning_notes",
       "type": "file",
       "file": "API Gen QR \u2014 Planning Notes \u0e15.\u0e04. 2568 (stub).md",
-      "x": 3680,
+      "x": 4100,
       "y": 80,
       "width": 180,
       "height": 60
@@ -988,7 +1042,7 @@
       "id": "n_thunder:revenue_2569_01_to_05_revenue_report_bot_to_api_migration_path",
       "type": "file",
       "file": "BOT \u2192 API migration  upsell path.md",
-      "x": 3880,
+      "x": 4300,
       "y": 80,
       "width": 180,
       "height": 60
@@ -997,7 +1051,7 @@
       "id": "n_thunder:revenue_thunder_revenue_apr_may_2026_boostsms",
       "type": "file",
       "file": "BoostSMS (SMS marketing, under EasySlip).md",
-      "x": 4080,
+      "x": 4500,
       "y": 80,
       "width": 180,
       "height": 60
@@ -1006,7 +1060,7 @@
       "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_crm_feature",
       "type": "file",
       "file": "CRM Feature in BoostSMS (EasyCRM overlap Q).md",
-      "x": 4280,
+      "x": 4700,
       "y": 80,
       "width": 180,
       "height": 60
@@ -1015,7 +1069,7 @@
       "id": "n_thunder:documents_thunder_solution_public_context_ai_safe_cs_voice_signature",
       "type": "file",
       "file": "CS voice signature (ThunderEasySlip customer service tone).md",
-      "x": 4480,
+      "x": 4900,
       "y": 80,
       "width": 180,
       "height": 60
@@ -1024,8 +1078,8 @@
       "id": "n_thunder:03_revenue_commission_corporate_api_commission_model",
       "type": "file",
       "file": "Corporate API sales commission model.md",
-      "x": 4680,
-      "y": 80,
+      "x": 3700,
+      "y": 160,
       "width": 180,
       "height": 60
     },
@@ -1033,7 +1087,7 @@
       "id": "n_thunder:03_revenue_commission_cost_scenario_a",
       "type": "file",
       "file": "Cost Scenario A (Other-source 100%, cost 0.110, GP 12%).md",
-      "x": 3480,
+      "x": 3900,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1042,7 +1096,7 @@
       "id": "n_thunder:03_revenue_commission_cost_scenario_b",
       "type": "file",
       "file": "Cost Scenario B (mix blend ~3070, cost 0.077, GP 38.4%).md",
-      "x": 3680,
+      "x": 4100,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1051,7 +1105,7 @@
       "id": "n_boostsms:easycrm",
       "type": "file",
       "file": "EasyCRM.md",
-      "x": 3880,
+      "x": 4300,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1060,7 +1114,7 @@
       "id": "n_easyslip:01_overview_easycrm",
       "type": "file",
       "file": "EasyCRM (LoyaltyCRM \u0e43\u0e15\u0e49\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17\u0e40\u0e14\u0e35\u0e22\u0e27\u0e01\u0e31\u0e19).md",
-      "x": 4080,
+      "x": 4500,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1069,7 +1123,7 @@
       "id": "n_thunder:documents_thunder_solution_public_context_ai_safe_easycrm",
       "type": "file",
       "file": "EasyCRM (loyaltyCRM, sister product).md",
-      "x": 4280,
+      "x": 4700,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1078,7 +1132,7 @@
       "id": "n_thunder:01_overview_easyslip",
       "type": "file",
       "file": "EasySlip (\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e2d\u0e35\u0e0b\u0e35\u0e48\u0e2a\u0e25\u0e34\u0e1b \u0e08\u0e33\u0e01\u0e31\u0e14 \u2014 SMB brand).md",
-      "x": 4480,
+      "x": 4900,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1087,8 +1141,8 @@
       "id": "n_thunder:revenue_thunder_revenue_apr_may_2026_easyslip_api",
       "type": "file",
       "file": "EasySlip API.md",
-      "x": 4680,
-      "y": 160,
+      "x": 3700,
+      "y": 240,
       "width": 180,
       "height": 60
     },
@@ -1096,7 +1150,7 @@
       "id": "n_thunder:revenue_thunder_revenue_jan_may_2026_easyslip_api_concentration_risk",
       "type": "file",
       "file": "EasySlip API concentration risk.md",
-      "x": 3480,
+      "x": 3900,
       "y": 240,
       "width": 180,
       "height": 60
@@ -1105,7 +1159,7 @@
       "id": "n_thunder:revenue_thunder_revenue_jan_may_2026",
       "type": "file",
       "file": "Executive Report \u2014 Thunder Group \u0e21.\u0e04.\u2013\u0e1e.\u0e04. 2569 (full months + projections, HTML).md",
-      "x": 3680,
+      "x": 4100,
       "y": 240,
       "width": 180,
       "height": 60
@@ -1114,7 +1168,7 @@
       "id": "n_thunder:revenue_thunder_revenue_apr_may_2026",
       "type": "file",
       "file": "Executive Report \u2014 Thunder Group \u0e40\u0e21.\u0e22.\u2192\u0e1e.\u0e04. 2569 (MTD, HTML).md",
-      "x": 3880,
+      "x": 4300,
       "y": 240,
       "width": 180,
       "height": 60
@@ -1123,7 +1177,7 @@
       "id": "n_thunder:revenue_2569_01_to_05_revenue_report_flatten_decline_pattern",
       "type": "file",
       "file": "Flatten\u2013decline pattern (Thunder BOT erosion).md",
-      "x": 4080,
+      "x": 4500,
       "y": 240,
       "width": 180,
       "height": 60
@@ -1132,7 +1186,7 @@
       "id": "n_thunder:revenue_thunder_revenue_jan_may_2026_projection_scenarios",
       "type": "file",
       "file": "Full-year 2569 projection scenarios (BearBaseBull).md",
-      "x": 4280,
+      "x": 4700,
       "y": 240,
       "width": 180,
       "height": 60
@@ -1141,8 +1195,35 @@
       "id": "n_thunder:documents_thunder_solution_public_context_ai_safe_itmx",
       "type": "file",
       "file": "ITMX (interbank central switching system).md",
-      "x": 4480,
+      "x": 4900,
       "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_thunder:api_slip_verification_kasikornbank",
+      "type": "file",
+      "file": "KASIKORNBANK (\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e01\u0e2a\u0e34\u0e01\u0e23\u0e44\u0e17\u0e22).md",
+      "x": 3700,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_knowledge_k11_thai_case_studies_kbank",
+      "type": "file",
+      "file": "KBank (K-Plus) SMS Program.md",
+      "x": 3900,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_api_pricing_packages_kbank_mou_cost",
+      "type": "file",
+      "file": "KBank MOU Cost (8 \u0e21.\u0e04. 2568) K-source tiered 0.04\u21920.025 \u00b7 Other-source flat 0.11.md",
+      "x": 4100,
+      "y": 320,
       "width": 180,
       "height": 60
     },
@@ -1150,8 +1231,8 @@
       "id": "n_thunder:api_slip_verification_kbank_pricing_tiers",
       "type": "file",
       "file": "KBank Slip Verification API pricing (tiered, excl. VAT).md",
-      "x": 4680,
-      "y": 240,
+      "x": 4300,
+      "y": 320,
       "width": 180,
       "height": 60
     },
@@ -1159,7 +1240,7 @@
       "id": "n_thunder:api_slip_verification_mou_kbank_easyslip",
       "type": "file",
       "file": "MOU \u2014 \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e02\u0e49\u0e2d\u0e15\u0e01\u0e25\u0e07\u0e01\u0e32\u0e23\u0e43\u0e0a\u0e49\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23 API Slip Verification (KBank \u00d7 \u0e2d\u0e35\u0e0b\u0e35\u0e48\u0e2a\u0e25\u0e34\u0e1b, scanned PDF 39 pp.).md",
-      "x": 3480,
+      "x": 4500,
       "y": 320,
       "width": 180,
       "height": 60
@@ -1168,7 +1249,7 @@
       "id": "n_thunder:01_overview_master_dashboard",
       "type": "file",
       "file": "Master Dashboard \u2014 Thunder Group (master-dashboard-eight-nu.vercel.app).md",
-      "x": 3680,
+      "x": 4700,
       "y": 320,
       "width": 180,
       "height": 60
@@ -1177,7 +1258,7 @@
       "id": "n_thunder:revenue_thunder_revenue_jan_may_2026_may_spike_validation",
       "type": "file",
       "file": "May 2569 spike validation (recurring vs one-off).md",
-      "x": 3880,
+      "x": 4900,
       "y": 320,
       "width": 180,
       "height": 60
@@ -1186,8 +1267,8 @@
       "id": "n_thunder:01_overview_pre_paid_billing_cycle",
       "type": "file",
       "file": "Pre-paid billing cycle.md",
-      "x": 4080,
-      "y": 320,
+      "x": 3700,
+      "y": 400,
       "width": 180,
       "height": 60
     },
@@ -1195,8 +1276,8 @@
       "id": "n_thunder:documents_api_gen_qr_2025_10_planning_notes_promptpay",
       "type": "file",
       "file": "PromptPay.md",
-      "x": 4280,
-      "y": 320,
+      "x": 3900,
+      "y": 400,
       "width": 180,
       "height": 60
     },
@@ -1204,8 +1285,8 @@
       "id": "n_thunder:revenue_2569_01_to_05_revenue_report_s_curve_pmf_signal",
       "type": "file",
       "file": "S-curve PMF signal (Thunder API +326%).md",
-      "x": 4480,
-      "y": 320,
+      "x": 4100,
+      "y": 400,
       "width": 180,
       "height": 60
     },
@@ -1213,8 +1294,8 @@
       "id": "n_thunder:01_overview_slip_verification",
       "type": "file",
       "file": "Slip Verification (\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e2a\u0e25\u0e34\u0e1b\u0e42\u0e2d\u0e19\u0e40\u0e07\u0e34\u0e19).md",
-      "x": 4680,
-      "y": 320,
+      "x": 4300,
+      "y": 400,
       "width": 180,
       "height": 60
     },
@@ -1222,7 +1303,7 @@
       "id": "n_thunder:02_products_services_thunder_api",
       "type": "file",
       "file": "Thunder API (slip verification API service).md",
-      "x": 3480,
+      "x": 4500,
       "y": 400,
       "width": 180,
       "height": 60
@@ -1231,7 +1312,7 @@
       "id": "n_thunder:02_products_services_thunder_bot",
       "type": "file",
       "file": "Thunder BOT (LINE chatbot).md",
-      "x": 3680,
+      "x": 4700,
       "y": 400,
       "width": 180,
       "height": 60
@@ -1240,7 +1321,7 @@
       "id": "n_thunder:02_products_services_thunder_corporate_api",
       "type": "file",
       "file": "Thunder Corporate API (MOU enterprise package, Coperate A\u2013J).md",
-      "x": 3880,
+      "x": 4900,
       "y": 400,
       "width": 180,
       "height": 60
@@ -1249,8 +1330,8 @@
       "id": "n_thunder:02_products_services_thunder_flex",
       "type": "file",
       "file": "Thunder Flex (minor product).md",
-      "x": 4080,
-      "y": 400,
+      "x": 3700,
+      "y": 480,
       "width": 180,
       "height": 60
     },
@@ -1258,8 +1339,26 @@
       "id": "n_thunder:revenue_2569_01_to_05_revenue_report_thunder_group",
       "type": "file",
       "file": "Thunder Group.md",
-      "x": 4280,
-      "y": 400,
+      "x": 3900,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:thunder_solution",
+      "type": "file",
+      "file": "Thunder Solution_1.md",
+      "x": 4100,
+      "y": 480,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:01_overview_thunder_solution",
+      "type": "file",
+      "file": "Thunder Solution (enterprise brand).md",
+      "x": 4300,
+      "y": 480,
       "width": 180,
       "height": 60
     },
@@ -1267,8 +1366,8 @@
       "id": "n_thunder:01_overview_thunder_solution",
       "type": "file",
       "file": "Thunder Solution Co., Ltd. (\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e18\u0e31\u0e19\u0e40\u0e14\u0e2d\u0e23\u0e4c \u0e42\u0e0b\u0e25\u0e39\u0e0a\u0e31\u0e48\u0e19 \u0e08\u0e33\u0e01\u0e31\u0e14).md",
-      "x": 4480,
-      "y": 400,
+      "x": 4500,
+      "y": 480,
       "width": 180,
       "height": 60
     },
@@ -1276,8 +1375,8 @@
       "id": "n_thunder:01_overview",
       "type": "file",
       "file": "Thunder Solution \u2014 Overview (KB doc).md",
-      "x": 4680,
-      "y": 400,
+      "x": 4700,
+      "y": 480,
       "width": 180,
       "height": 60
     },
@@ -1285,7 +1384,7 @@
       "id": "n_thunder:02_products_services",
       "type": "file",
       "file": "Thunder Solution \u2014 Products & Services (KB doc).md",
-      "x": 3480,
+      "x": 4900,
       "y": 480,
       "width": 180,
       "height": 60
@@ -1294,8 +1393,8 @@
       "id": "n_thunder:documents_thunder_solution_public_context_ai_safe",
       "type": "file",
       "file": "Thunder Solution \u2014 Public Business Context (AI-safe).md",
-      "x": 3680,
-      "y": 480,
+      "x": 3700,
+      "y": 560,
       "width": 180,
       "height": 60
     },
@@ -1303,8 +1402,8 @@
       "id": "n_thunder:03_revenue_commission",
       "type": "file",
       "file": "Thunder Solution \u2014 Revenue & Commission (KB doc).md",
-      "x": 3880,
-      "y": 480,
+      "x": 3900,
+      "y": 560,
       "width": 180,
       "height": 60
     },
@@ -1312,8 +1411,8 @@
       "id": "n_thunder:revenue_2569_01_to_05_revenue_report",
       "type": "file",
       "file": "Thunder Solution \u2014 Revenue Report \u0e21.\u0e04.\u2013\u0e1e.\u0e04. 2569.md",
-      "x": 4080,
-      "y": 480,
+      "x": 4100,
+      "y": 560,
       "width": 180,
       "height": 60
     },
@@ -1321,8 +1420,8 @@
       "id": "n_thunder:na_lak",
       "type": "file",
       "file": "Thunder Solution \u2014 \u0e2b\u0e19\u0e49\u0e32\u0e2b\u0e25\u0e31\u0e01 (Brand Index).md",
-      "x": 4280,
-      "y": 480,
+      "x": 4300,
+      "y": 560,
       "width": 180,
       "height": 60
     },
@@ -1330,8 +1429,8 @@
       "id": "n_thunder:03_revenue_commission_cross_billing_thunder_easy",
       "type": "file",
       "file": "Thunder \u2192 Easy cross-billing formula.md",
-      "x": 4480,
-      "y": 480,
+      "x": 4500,
+      "y": 560,
       "width": 180,
       "height": 60
     },
@@ -1339,8 +1438,8 @@
       "id": "n_thunder:api_slip_verification_pdpa_disclosure_agreement",
       "type": "file",
       "file": "\u0e2a\u0e31\u0e0d\u0e0d\u0e32\u0e01\u0e32\u0e23\u0e40\u0e1b\u0e34\u0e14\u0e40\u0e1c\u0e22\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e2a\u0e48\u0e27\u0e19\u0e1a\u0e38\u0e04\u0e04\u0e25 (Personal Data Disclosure Agreement, 8 \u0e21.\u0e04. 2568).md",
-      "x": 4680,
-      "y": 480,
+      "x": 4700,
+      "y": 560,
       "width": 180,
       "height": 60
     },
@@ -1348,7 +1447,7 @@
       "id": "n_thunder:01_overview_revenue_target_125m",
       "type": "file",
       "file": "\u0e40\u0e1b\u0e49\u0e32\u0e23\u0e32\u0e22\u0e44\u0e14\u0e49\u0e01\u0e25\u0e38\u0e48\u0e21 \u0e3f125M \u0e1b\u0e35 2569.md",
-      "x": 3480,
+      "x": 4900,
       "y": 560,
       "width": 180,
       "height": 60
@@ -1356,298 +1455,18 @@
     {
       "id": "g3",
       "type": "group",
-      "label": "BoostSMS Package Tiers",
-      "x": 5080,
-      "y": 0,
-      "width": 1320,
-      "height": 620,
-      "color": "4"
-    },
-    {
-      "id": "n_boostsms:03_sales_commission_8_percent",
-      "type": "file",
-      "file": "8% Package Commission.md",
-      "x": 5100,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:03_sales_commission_ai_debate",
-      "type": "file",
-      "file": "AI Debate Sales Comp Analysis (2026-06-06).md",
+      "label": "Thunder Solution",
       "x": 5300,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:ais",
-      "type": "file",
-      "file": "AIS.md",
-      "x": 5500,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_cost",
-      "type": "file",
-      "file": "AIS Cost 0.29\u0e3fSMS + Margin.md",
-      "x": 5700,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition",
-      "type": "file",
-      "file": "AIS Provider Transition (2026-07-01 meeting).md",
-      "x": 5900,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:meetings_2026_07_01_tasks",
-      "type": "file",
-      "file": "AIS Transition Task List (12 tasks).md",
-      "x": 6100,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:meetings_2026_07_01_tasks_txt",
-      "type": "file",
-      "file": "AIS Transition Tasks (plain text).md",
-      "x": 5100,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_failover",
-      "type": "file",
-      "file": "AIS \u2194 Dtac Failover Redundancy.md",
-      "x": 5300,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:03_sales_commission_base_salary",
-      "type": "file",
-      "file": "Base Salary (\u0e3f15K\u201325K).md",
-      "x": 5500,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_boost_business",
-      "type": "file",
-      "file": "Boost Business (\u0e3f30,000  110,000 credits).md",
-      "x": 5700,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_boost_enterprise",
-      "type": "file",
-      "file": "Boost Enterprise (\u0e3f300,000  1,300,000 credits).md",
-      "x": 5900,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_boost_enterprise_plus",
-      "type": "file",
-      "file": "Boost Enterprise+ (\u0e3f1,200,000  6,000,000 credits).md",
-      "x": 6100,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_boost_grow",
-      "type": "file",
-      "file": "Boost Grow (\u0e3f3,500  9,000 credits).md",
-      "x": 5100,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_boost_pro",
-      "type": "file",
-      "file": "Boost Pro (\u0e3f10,000  30,000 credits).md",
-      "x": 5300,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_boost_scale",
-      "type": "file",
-      "file": "Boost Scale (\u0e3f100,000  400,000 credits).md",
-      "x": 5500,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_boost_shop",
-      "type": "file",
-      "file": "Boost Shop (\u0e3f1,000  2,500 credits).md",
-      "x": 5700,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_boost_spark",
-      "type": "file",
-      "file": "Boost Spark (\u0e3f350  800 credits).md",
-      "x": 5900,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:09_session_log",
-      "type": "file",
-      "file": "BoostSMS Session Log.md",
-      "x": 6100,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_dead_zone",
-      "type": "file",
-      "file": "Dead Zone \u0e3f30K\u2013\u0e3f100K Pricing Gap.md",
-      "x": 5100,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_dual_pipe",
-      "type": "file",
-      "file": "Dual-lane Dispatcher (2 \u0e17\u0e48\u0e2d\u0e2a\u0e48\u0e07, OTP speed).md",
-      "x": 5300,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_free_trial",
-      "type": "file",
-      "file": "Free Trial (100 credits, 7 days).md",
-      "x": 5500,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_leanflow",
-      "type": "file",
-      "file": "LeanFlow Back-office + CSVExcelPDF Export.md",
-      "x": 5700,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:03_sales_commission_monthly_bonus",
-      "type": "file",
-      "file": "Monthly Target Bonus (\u0e3f3K8K15K).md",
-      "x": 5900,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:01_overview_otp_system",
-      "type": "file",
-      "file": "OTP System.md",
-      "x": 6100,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:02_packages_pricing_prepaid_model",
-      "type": "file",
-      "file": "Prepaid Credit Pricing Model (9 packages).md",
-      "x": 5100,
-      "y": 400,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:03_sales_commission_recurring_cutoff",
-      "type": "file",
-      "file": "Recurring Commission 6-month Cutoff (anti-SaaS).md",
-      "x": 5300,
-      "y": 400,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:materials_sales_commission",
-      "type": "file",
-      "file": "SALES_COMMISSION (source).md",
-      "x": 5500,
-      "y": 400,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:03_sales_commission_structure",
-      "type": "file",
-      "file": "Sales Commission Structure.md",
-      "x": 5700,
-      "y": 400,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:meetings_2026_07_01_tasks_lean_form",
-      "type": "file",
-      "file": "Task 1 Lean Customer Onboarding Form (\u0e1a\u0e2d\u0e21).md",
-      "x": 5900,
-      "y": 400,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:meetings_2026_07_01_tasks_progress_bar",
-      "type": "file",
-      "file": "Task 3 Send-status Progress Bar.md",
-      "x": 6100,
-      "y": 400,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g4",
-      "type": "group",
-      "label": "Thunder KBank Pricing",
-      "x": 6480,
       "y": 0,
       "width": 1100,
       "height": 520,
-      "color": "5"
+      "color": "4"
     },
     {
       "id": "n_thunder:reports_thunder_solution_info_bill_payment",
       "type": "file",
       "file": "Bill Payment (PromptPay QR).md",
-      "x": 6500,
+      "x": 5320,
       "y": 80,
       "width": 180,
       "height": 60
@@ -1656,7 +1475,7 @@
       "id": "n_thunder:reports_thunder_corporate_api_sales_commission_coperate_tiers",
       "type": "file",
       "file": "Coperate A-J Tiers.md",
-      "x": 6700,
+      "x": 5520,
       "y": 80,
       "width": 180,
       "height": 60
@@ -1665,7 +1484,7 @@
       "id": "n_thunder:reports_thunder_corporate_api_sales_commission_flat_pricing_0125",
       "type": "file",
       "file": "Corporate Flat Pricing 0.125slip.md",
-      "x": 6900,
+      "x": 5720,
       "y": 80,
       "width": 180,
       "height": 60
@@ -1674,7 +1493,7 @@
       "id": "n_thunder:reports_thunder_corporate_api_sales_commission_sales_playbook",
       "type": "file",
       "file": "Corporate Sales Playbook.md",
-      "x": 7100,
+      "x": 5920,
       "y": 80,
       "width": 180,
       "height": 60
@@ -1683,7 +1502,7 @@
       "id": "n_thunder:reports_thunder_corporate_api_sales_commission_scenario_a_other_source",
       "type": "file",
       "file": "Cost Scenario A (Other-source 100%).md",
-      "x": 7300,
+      "x": 6120,
       "y": 80,
       "width": 180,
       "height": 60
@@ -1692,7 +1511,7 @@
       "id": "n_thunder:reports_thunder_corporate_api_sales_commission_scenario_b_mix_blend",
       "type": "file",
       "file": "Cost Scenario B (Mix blend 3070).md",
-      "x": 6500,
+      "x": 5320,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1701,7 +1520,7 @@
       "id": "n_thunder:reports_thunder_solution_info_developer_api",
       "type": "file",
       "file": "Developer API.md",
-      "x": 6700,
+      "x": 5520,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1710,7 +1529,7 @@
       "id": "n_thunder:reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank",
       "type": "file",
       "file": "KBank.md",
-      "x": 6900,
+      "x": 5720,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1719,7 +1538,7 @@
       "id": "n_thunder:reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_source_tiered_pricing",
       "type": "file",
       "file": "KBank-source Tiered Pricing.md",
-      "x": 7100,
+      "x": 5920,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1728,7 +1547,7 @@
       "id": "n_thunder:reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_slip_verification_api_pricing",
       "type": "file",
       "file": "Kbank Slip Verification API Pricing.md",
-      "x": 7300,
+      "x": 6120,
       "y": 160,
       "width": 180,
       "height": 60
@@ -1737,7 +1556,7 @@
       "id": "n_thunder:reports_thunder_solution_info_letter_document_editor",
       "type": "file",
       "file": "Letter & Document Editor.md",
-      "x": 6500,
+      "x": 5320,
       "y": 240,
       "width": 180,
       "height": 60
@@ -1746,7 +1565,7 @@
       "id": "n_thunder:reports_kbank_api_pricing_and_easy_thunder_crossbilling_others_source_flat_pricing",
       "type": "file",
       "file": "Others-source Flat Pricing.md",
-      "x": 6700,
+      "x": 5520,
       "y": 240,
       "width": 180,
       "height": 60
@@ -1755,7 +1574,7 @@
       "id": "n_thunder:reports_kbank_api_pricing_and_easy_thunder_crossbilling_reduce_others_slip_strategy",
       "type": "file",
       "file": "Reduce Others-slip Cost Strategy.md",
-      "x": 6900,
+      "x": 5720,
       "y": 240,
       "width": 180,
       "height": 60
@@ -1764,7 +1583,7 @@
       "id": "n_thunder:reports_thunder_corporate_api_sales_commission_sales_commission_model",
       "type": "file",
       "file": "Sales Commission Model.md",
-      "x": 7100,
+      "x": 5920,
       "y": 240,
       "width": 180,
       "height": 60
@@ -1773,17 +1592,8 @@
       "id": "n_thunder:reports_thunder_may_2026_summary_thunder_api",
       "type": "file",
       "file": "Thunder API.md",
-      "x": 7300,
+      "x": 6120,
       "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_thunder:reports_bni_thunder_5min_bni_presentation",
-      "type": "file",
-      "file": "Thunder BNI 5-Minute Presentation.md",
-      "x": 6500,
-      "y": 320,
       "width": 180,
       "height": 60
     },
@@ -1791,7 +1601,7 @@
       "id": "n_thunder:reports_thunder_may_2026_summary_thunder_bot",
       "type": "file",
       "file": "Thunder Bot.md",
-      "x": 6700,
+      "x": 5320,
       "y": 320,
       "width": 180,
       "height": 60
@@ -1800,7 +1610,7 @@
       "id": "n_thunder:reports_thunder_corporate_api_sales_commission_thunder_corporate_api",
       "type": "file",
       "file": "Thunder Corporate API (MOU).md",
-      "x": 6900,
+      "x": 5520,
       "y": 320,
       "width": 180,
       "height": 60
@@ -1809,7 +1619,7 @@
       "id": "n_thunder:reports_bni_thunder_5min_thunder_solution",
       "type": "file",
       "file": "Thunder Solution.md",
-      "x": 7100,
+      "x": 5720,
       "y": 320,
       "width": 180,
       "height": 60
@@ -1818,208 +1628,27 @@
       "id": "n_thunder:reports_thunder_solution_info_thunder_solution_platform",
       "type": "file",
       "file": "Thunder Solution Platform.md",
-      "x": 7300,
+      "x": 5920,
       "y": 320,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g5",
+      "id": "g4",
       "type": "group",
-      "label": "\u2605 Cross-Brand: API Pricing & Cost",
-      "x": 7660,
+      "label": "EasySlip",
+      "x": 6480,
       "y": 0,
-      "width": 1100,
-      "height": 520,
-      "color": "6"
-    },
-    {
-      "id": "n_easyslip:documents_easyslip_business_overview_2568_final_api_volume_250m",
-      "type": "file",
-      "file": "API Call Volume ~250M \u0e04\u0e23\u0e31\u0e49\u0e07\u0e1b\u0e35 2568 (+215.6% \u0e08\u0e32\u0e01 79M).md",
-      "x": 7680,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_api_pricing_packages_commission_cost_analysis",
-      "type": "file",
-      "file": "API Commission Cost Analysis (Thunder Corporate style \u2014 cost scenarios 0.11  0.077, \u0e40\u0e23\u0e17 2\u20135% \u0e15\u0e32\u0e21 margin).md",
-      "x": 7880,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_api_pricing_packages_risk_zone_diamond",
-      "type": "file",
-      "file": "API Risk Zone \u2014 Diamond+ @ Others 100% \u0e02\u0e32\u0e14\u0e17\u0e38\u0e19 6\u201318%.md",
-      "x": 8080,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_bot_verify_slip_packages_premium_loss_risk",
-      "type": "file",
-      "file": "BOT Premium-2..4 Loss Risk @ Others 100% (\u0e2a\u0e39\u0e07\u0e2a\u0e38\u0e14 \u2212\u0e3f30,000 \u0e17\u0e35\u0e48 Premium-4 \u0e23\u0e2d\u0e1a 12 \u0e40\u0e14\u0e37\u0e2d\u0e19).md",
-      "x": 8280,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_api_pricing_packages_api_pricing_11_packages",
-      "type": "file",
-      "file": "EasySlip API Pricing \u2014 11 \u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08 (Tester\u2192Premium 3, \u0e3f99\u201340,000 \u00b7 0.396\u21920.125\u0e2a\u0e25\u0e34\u0e1b).md",
-      "x": 8480,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_api_pricing_packages_api_sales_commission",
-      "type": "file",
-      "file": "EasySlip API Sales Commission (tiered 571215% \u0e15\u0e32\u0e21 GP%).md",
-      "x": 7680,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_bot_verify_slip_packages_bot_pricing_11_packages",
-      "type": "file",
-      "file": "EasySlip BOT Pricing \u2014 11 \u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08 \u00d7 4 \u0e23\u0e2d\u0e1a (Start\u2192Premium-4, \u0e3f99\u201314,000 \u00b7 0.247\u21920.093\u0e2a\u0e25\u0e34\u0e1b).md",
-      "x": 7880,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_bot_verify_slip_packages_bot_sales_commission",
-      "type": "file",
-      "file": "EasySlip BOT Sales Commission (flat 10% \u0e17\u0e38\u0e01\u0e41\u0e1e\u0e47\u0e01\u0e17\u0e38\u0e01\u0e23\u0e2d\u0e1a).md",
-      "x": 8080,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_api_pricing_packages_margin_matrix",
-      "type": "file",
-      "file": "Gross Margin Matrix by Traffic Mix (7 mix \u00d7 10 \u0e41\u0e1e\u0e47\u0e01).md",
-      "x": 8280,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_bot_verify_slip_packages_k_source_lock_policy",
-      "type": "file",
-      "file": "K-source \u226550% Lock Policy \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a Premium-2+ \u0e23\u0e2d\u0e1a 612 \u0e40\u0e14\u0e37\u0e2d\u0e19.md",
-      "x": 8480,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_thunder:api_slip_verification_kasikornbank",
-      "type": "file",
-      "file": "KASIKORNBANK (\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e01\u0e2a\u0e34\u0e01\u0e23\u0e44\u0e17\u0e22).md",
-      "x": 7680,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_knowledge_k11_thai_case_studies_kbank",
-      "type": "file",
-      "file": "KBank (K-Plus) SMS Program.md",
-      "x": 7880,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_api_pricing_packages_kbank_mou_cost",
-      "type": "file",
-      "file": "KBank MOU Cost (8 \u0e21.\u0e04. 2568) K-source tiered 0.04\u21920.025 \u00b7 Other-source flat 0.11.md",
-      "x": 8080,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_easyslip_business_overview_2568_final_mrr_tier_structure",
-      "type": "file",
-      "file": "MRR Tier Structure \u2014 Enterprise tiers (Diamond, Premium 1\u20133) = ~\u0e3f1.69M = 68% \u0e02\u0e2d\u0e07 MRR ~\u0e3f2.5M.md",
-      "x": 8280,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_api_pricing_packages_margin_paradox",
-      "type": "file",
-      "file": "Margin Paradox \u2014 SME \u0e2d\u0e38\u0e49\u0e21 Enterprise.md",
-      "x": 8480,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_bot_verify_slip_packages_no_long_round_discount",
-      "type": "file",
-      "file": "No Long-Round Discount (\u0e23\u0e32\u0e04\u0e32 \u00d7 N \u0e17\u0e38\u0e01\u0e23\u0e2d\u0e1a 3612 \u0e40\u0e14\u0e37\u0e2d\u0e19 \u2014 \u0e1b\u0e23\u0e30\u0e2b\u0e22\u0e31\u0e14 \u0e3f0.00).md",
-      "x": 7680,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125",
-      "type": "file",
-      "file": "Partner Fee 0.125 \u0e1a.\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23 (incl VAT).md",
-      "x": 7880,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_bot_verify_slip_packages_quick_cost_rule",
-      "type": "file",
-      "file": "Quick Cost Rule \u2014 \u0e15\u0e49\u0e19\u0e17\u0e38\u0e19 = \u0e2a\u0e25\u0e34\u0e1b \u00d7 0.11 (worst case Others 100%).md",
-      "x": 8080,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_easyslip:documents_api_pricing_packages_sweet_spot_70_30",
-      "type": "file",
-      "file": "Sweet Spot Mix 7030 (KOther).md",
-      "x": 8280,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g6",
-      "type": "group",
-      "label": "Thunder\u2013EasySlip Integrations",
-      "x": 0,
-      "y": 900,
       "width": 880,
       "height": 520,
-      "color": "1"
+      "color": "5"
     },
     {
       "id": "n_thunder:reports_thunder_monthly_slides_annual_target_125m",
       "type": "file",
       "file": "Annual Revenue Target 125M.md",
-      "x": 20,
-      "y": 980,
+      "x": 6500,
+      "y": 80,
       "width": 180,
       "height": 60
     },
@@ -2027,8 +1656,8 @@
       "id": "n_thunder:reports_bni_thunder_5min_easyslip",
       "type": "file",
       "file": "EasySlip.md",
-      "x": 220,
-      "y": 980,
+      "x": 6700,
+      "y": 80,
       "width": 180,
       "height": 60
     },
@@ -2036,8 +1665,8 @@
       "id": "n_thunder:reports_bni_thunder_5min_easyslip_api",
       "type": "file",
       "file": "EasySlip API_1.md",
-      "x": 420,
-      "y": 980,
+      "x": 6900,
+      "y": 80,
       "width": 180,
       "height": 60
     },
@@ -2045,8 +1674,8 @@
       "id": "n_thunder:reports_thunder_monthly_slides_easyslip_api_concentration_risk",
       "type": "file",
       "file": "EasySlip API Concentration Risk_1.md",
-      "x": 620,
-      "y": 980,
+      "x": 7100,
+      "y": 80,
       "width": 180,
       "height": 60
     },
@@ -2054,8 +1683,8 @@
       "id": "n_thunder:reports_bni_thunder_5min_slip_pricing_packages",
       "type": "file",
       "file": "EasySlip Slip Pricing Packages.md",
-      "x": 20,
-      "y": 1060,
+      "x": 6500,
+      "y": 160,
       "width": 180,
       "height": 60
     },
@@ -2063,8 +1692,8 @@
       "id": "n_thunder:reports_thunder_easy_expenses_2026_expense_taxonomy",
       "type": "file",
       "file": "Expense Taxonomy (2-level, 7 categories).md",
-      "x": 220,
-      "y": 1060,
+      "x": 6700,
+      "y": 160,
       "width": 180,
       "height": 60
     },
@@ -2072,8 +1701,8 @@
       "id": "n_thunder:reports_bni_thunder_5min_line_chatbot",
       "type": "file",
       "file": "LINE Chatbot.md",
-      "x": 420,
-      "y": 1060,
+      "x": 6900,
+      "y": 160,
       "width": 180,
       "height": 60
     },
@@ -2081,8 +1710,8 @@
       "id": "n_thunder:reports_thunder_monthly_slides_master_dashboard",
       "type": "file",
       "file": "Master Dashboard (Thunder Group).md",
-      "x": 620,
-      "y": 1060,
+      "x": 7100,
+      "y": 160,
       "width": 180,
       "height": 60
     },
@@ -2090,8 +1719,8 @@
       "id": "n_thunder:reports_bni_thunder_5min_qr_bot_verification",
       "type": "file",
       "file": "QR-based BoT Slip Verification.md",
-      "x": 20,
-      "y": 1140,
+      "x": 6500,
+      "y": 240,
       "width": 180,
       "height": 60
     },
@@ -2099,8 +1728,17 @@
       "id": "n_thunder:reports_thunder_easy_expenses_2026_expense_summary",
       "type": "file",
       "file": "Thunder & EasySlip Expense Summary 2026.md",
-      "x": 220,
-      "y": 1140,
+      "x": 6700,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_thunder:reports_bni_thunder_5min_bni_presentation",
+      "type": "file",
+      "file": "Thunder BNI 5-Minute Presentation.md",
+      "x": 6900,
+      "y": 240,
       "width": 180,
       "height": 60
     },
@@ -2108,8 +1746,8 @@
       "id": "n_thunder:reports_thunder_may_2026_summary_thunder_group",
       "type": "file",
       "file": "Thunder Group_1.md",
-      "x": 420,
-      "y": 1140,
+      "x": 7100,
+      "y": 240,
       "width": 180,
       "height": 60
     },
@@ -2117,8 +1755,8 @@
       "id": "n_thunder:reports_thunder_monthly_slides_executive_slides",
       "type": "file",
       "file": "Thunder Group Executive Slides (Jan-May 2026).md",
-      "x": 620,
-      "y": 1140,
+      "x": 6500,
+      "y": 320,
       "width": 180,
       "height": 60
     },
@@ -2126,8 +1764,8 @@
       "id": "n_thunder:reports_thunder_may_2026_summary_may_2026_report",
       "type": "file",
       "file": "Thunder Group May 2026 Executive Report.md",
-      "x": 20,
-      "y": 1220,
+      "x": 6700,
+      "y": 320,
       "width": 180,
       "height": 60
     },
@@ -2135,8 +1773,8 @@
       "id": "n_thunder:reports_bni_thunder_5min_woocommerce_plugin",
       "type": "file",
       "file": "WooCommerce Plugin.md",
-      "x": 220,
-      "y": 1220,
+      "x": 6900,
+      "y": 320,
       "width": 180,
       "height": 60
     },
@@ -2144,26 +1782,26 @@
       "id": "n_thunder:reports_bni_thunder_5min_n8n_automation_node",
       "type": "file",
       "file": "n8n Automation Node.md",
-      "x": 420,
-      "y": 1220,
+      "x": 7100,
+      "y": 320,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g7",
+      "id": "g5",
       "type": "group",
-      "label": "BoostSMS Product Features",
-      "x": 1840,
+      "label": "\u2605 BoostSMS",
+      "x": 0,
       "y": 900,
       "width": 880,
-      "height": 420,
-      "color": "2"
+      "height": 520,
+      "color": "6"
     },
     {
       "id": "n_boostsms:01_overview_api_integration",
       "type": "file",
       "file": "API Integration (SMS API  Auth  OTP).md",
-      "x": 1860,
+      "x": 20,
       "y": 980,
       "width": 180,
       "height": 60
@@ -2172,7 +1810,7 @@
       "id": "n_boostsms:05_app_user_dashboard",
       "type": "file",
       "file": "App (User Dashboard) app.boost-sms.com.md",
-      "x": 2060,
+      "x": 220,
       "y": 980,
       "width": 180,
       "height": 60
@@ -2181,7 +1819,7 @@
       "id": "n_boostsms:boostsms",
       "type": "file",
       "file": "BoostSMS.md",
-      "x": 2260,
+      "x": 420,
       "y": 980,
       "width": 180,
       "height": 60
@@ -2190,225 +1828,7 @@
       "id": "n_boostsms:boostsms_index",
       "type": "file",
       "file": "BoostSMS KB Index (\u0e2b\u0e19\u0e49\u0e32\u0e2b\u0e25\u0e31\u0e01).md",
-      "x": 2460,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:01_overview_link_shortener_tracking",
-      "type": "file",
-      "file": "Link Shortener + Click Tracking.md",
-      "x": 1860,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:05_app_user_dashboard_analytics",
-      "type": "file",
-      "file": "Marketing Analytics Dashboard.md",
-      "x": 2060,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:materials_project_brief",
-      "type": "file",
-      "file": "PROJECT_BRIEF (source overview).md",
-      "x": 2260,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:07_project_history",
-      "type": "file",
-      "file": "Project History & Development Timeline.md",
-      "x": 2460,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:01_overview_realtime_reporting",
-      "type": "file",
-      "file": "Real-time Reporting.md",
-      "x": 1860,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:05_app_user_dashboard_send_sms",
-      "type": "file",
-      "file": "Send SMS Page (credit calc TH70EN160).md",
-      "x": 2060,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:thunder_solution",
-      "type": "file",
-      "file": "Thunder Solution_1.md",
-      "x": 2260,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:01_overview_web_sms",
-      "type": "file",
-      "file": "Web SMS.md",
-      "x": 2460,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g8",
-      "type": "group",
-      "label": "BoostSMS App Dashboard UI",
-      "x": 3460,
-      "y": 900,
-      "width": 880,
-      "height": 420,
-      "color": "3"
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z",
-      "type": "file",
-      "file": "BoostSMS App Dashboard Screenshot (2026-05-19).md",
-      "x": 3480,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_dashboard_overview",
-      "type": "file",
-      "file": "BoostSMS Dashboard Overview Page (\u0e20\u0e32\u0e1e\u0e23\u0e27\u0e21).md",
-      "x": 3680,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_credit_system",
-      "type": "file",
-      "file": "Credit-Based Billing System (\u0e40\u0e04\u0e23\u0e14\u0e34\u0e15 shown in top bar, prepaid message packages).md",
-      "x": 3880,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_dark_theme_design",
-      "type": "file",
-      "file": "Dark Theme UI with Mint-Green Accent (Thai-language SaaS dashboard design).md",
-      "x": 4080,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_sms_api_menu",
-      "type": "file",
-      "file": "Developer API Section (SMS API \u0e04\u0e35\u0e22\u0e4c API, API Logs, \u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23 API, SMS OTP).md",
-      "x": 3480,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_fifo_package_queue",
-      "type": "file",
-      "file": "FIFO Package Queue (\u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08\u0e04\u0e07\u0e40\u0e2b\u0e25\u0e37\u0e2d 5 Trial, For Test x2, Boost Spark, Boost Pro 24,752 \u0e43\u0e0a\u0e49\u0e01\u0e48\u0e2d\u0e19).md",
-      "x": 3680,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_kpi_cards",
-      "type": "file",
-      "file": "KPI Metric Cards (24,752 credits  68 sent today -88%  0% success rate  0 failed).md",
-      "x": 3880,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_message_quota_panel",
-      "type": "file",
-      "file": "Message Quota Panel (\u0e42\u0e04\u0e27\u0e15\u0e49\u0e32\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21 24,752  30,915 = 80%, package Boost Pro exp 10 \u0e1e.\u0e04. 2571).md",
-      "x": 4080,
-      "y": 1060,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_package_expiry_alert",
-      "type": "file",
-      "file": "Package Near-Depletion Alert Banner (Trial 30,915 msgs, 80% used, expires 21 \u0e1e.\u0e04. 2569, 3 days left).md",
-      "x": 3480,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_quick_actions",
-      "type": "file",
-      "file": "Quick Action Buttons (\u0e2a\u0e48\u0e07 SMS  \u0e2a\u0e23\u0e49\u0e32\u0e07\u0e41\u0e04\u0e21\u0e40\u0e1b\u0e0d  \u0e40\u0e1e\u0e34\u0e48\u0e21\u0e23\u0e32\u0e22\u0e0a\u0e37\u0e48\u0e2d  \u0e0b\u0e37\u0e49\u0e2d\u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08).md",
-      "x": 3680,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_sms_volume_chart",
-      "type": "file",
-      "file": "SMS Volume Chart (dayweekmonth toggle, total 614, avgday 307).md",
-      "x": 3880,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_sidebar_navigation",
-      "type": "file",
-      "file": "Sidebar Navigation (4 sections \u0e40\u0e21\u0e19\u0e39\u0e2b\u0e25\u0e31\u0e01  \u0e01\u0e32\u0e23\u0e40\u0e07\u0e34\u0e19  \u0e08\u0e31\u0e14\u0e01\u0e32\u0e23  API).md",
-      "x": 4080,
-      "y": 1140,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g9",
-      "type": "group",
-      "label": "BoostSMS Funnel Plan",
-      "x": 5080,
-      "y": 900,
-      "width": 880,
-      "height": 420,
-      "color": "4"
-    },
-    {
-      "id": "n_boostsms:04_funnel_marketing_plan",
-      "type": "file",
-      "file": "7-Day Funnel Marketing Plan.md",
-      "x": 5100,
-      "y": 980,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:materials_boostsms_graphic_brief_week1",
-      "type": "file",
-      "file": "BoostSMS Graphic Brief Week 1 (7 posts).md",
-      "x": 5300,
+      "x": 620,
       "y": 980,
       "width": 180,
       "height": 60
@@ -2417,8 +1837,8 @@
       "id": "n_boostsms:materials_boostsms_pas_presentation",
       "type": "file",
       "file": "BoostSMS PAS Presentation (Problem-Agitate-Solution).md",
-      "x": 5500,
-      "y": 980,
+      "x": 20,
+      "y": 1060,
       "width": 180,
       "height": 60
     },
@@ -2426,7 +1846,116 @@
       "id": "n_boostsms:materials_boostsms_pitch_salepage",
       "type": "file",
       "file": "BoostSMS Sales Pitch Deck  Sale Page (HTML).md",
-      "x": 5700,
+      "x": 220,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_thunder:reports_thunder_may_2026_summary_easy_bot",
+      "type": "file",
+      "file": "Easy Bot.md",
+      "x": 420,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:easybot",
+      "type": "file",
+      "file": "EasyBOT.md",
+      "x": 620,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:01_overview_link_shortener_tracking",
+      "type": "file",
+      "file": "Link Shortener + Click Tracking.md",
+      "x": 20,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:05_app_user_dashboard_analytics",
+      "type": "file",
+      "file": "Marketing Analytics Dashboard.md",
+      "x": 220,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_project_brief",
+      "type": "file",
+      "file": "PROJECT_BRIEF (source overview).md",
+      "x": 420,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:01_overview_realtime_reporting",
+      "type": "file",
+      "file": "Real-time Reporting.md",
+      "x": 620,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:05_app_user_dashboard_send_sms",
+      "type": "file",
+      "file": "Send SMS Page (credit calc TH70EN160).md",
+      "x": 20,
+      "y": 1220,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:01_overview_web_sms",
+      "type": "file",
+      "file": "Web SMS.md",
+      "x": 220,
+      "y": 1220,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "7-Day Funnel Marketing Plan",
+      "x": 1840,
+      "y": 900,
+      "width": 880,
+      "height": 420,
+      "color": "1"
+    },
+    {
+      "id": "n_boostsms:04_funnel_marketing_plan",
+      "type": "file",
+      "file": "7-Day Funnel Marketing Plan.md",
+      "x": 1860,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_boostsms_graphic_brief_week1",
+      "type": "file",
+      "file": "BoostSMS Graphic Brief Week 1 (7 posts).md",
+      "x": 2060,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_boostsms_overview_fixed",
+      "type": "file",
+      "file": "BoostSMS Week 1 Marketing Plan (Revised).md",
+      "x": 2260,
       "y": 980,
       "width": 180,
       "height": 60
@@ -2435,8 +1964,8 @@
       "id": "n_boostsms:materials_boostsms_graphic_brief_week1_ci",
       "type": "file",
       "file": "Brand CI (Blue 3871FE  3D Inflatable style).md",
-      "x": 5100,
-      "y": 1060,
+      "x": 2460,
+      "y": 980,
       "width": 180,
       "height": 60
     },
@@ -2444,7 +1973,7 @@
       "id": "n_boostsms:materials_chatgpt_slides_prompt",
       "type": "file",
       "file": "ChatGPT Slides Prompt (12 slides).md",
-      "x": 5300,
+      "x": 1860,
       "y": 1060,
       "width": 180,
       "height": 60
@@ -2453,7 +1982,7 @@
       "id": "n_boostsms:04_funnel_marketing_plan_core_message",
       "type": "file",
       "file": "Core Message \u0e40\u0e1b\u0e25\u0e35\u0e48\u0e22\u0e19\u0e10\u0e32\u0e19\u0e40\u0e1a\u0e2d\u0e23\u0e4c\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32\u0e40\u0e01\u0e48\u0e32\u0e43\u0e2b\u0e49\u0e40\u0e1b\u0e47\u0e19\u0e22\u0e2d\u0e14\u0e02\u0e32\u0e22.md",
-      "x": 5500,
+      "x": 2060,
       "y": 1060,
       "width": 180,
       "height": 60
@@ -2462,7 +1991,16 @@
       "id": "n_boostsms:04_funnel_marketing_plan_cross_ai_pipeline",
       "type": "file",
       "file": "Cross-AI Content Pipeline.md",
-      "x": 5700,
+      "x": 2260,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_boostsms_overview_fixed_decision_gate",
+      "type": "file",
+      "file": "Decision Gate (GO  PIVOT  STOP).md",
+      "x": 2460,
       "y": 1060,
       "width": 180,
       "height": 60
@@ -2471,7 +2009,7 @@
       "id": "n_boostsms:04_funnel_marketing_plan_kpi",
       "type": "file",
       "file": "Funnel KPI Targets (1 week).md",
-      "x": 5100,
+      "x": 1860,
       "y": 1140,
       "width": 180,
       "height": 60
@@ -2480,7 +2018,16 @@
       "id": "n_boostsms:materials_boostsms_funnel_marketing_plan_business_marketer",
       "type": "file",
       "file": "Funnel Marketing Plan (full source TXT).md",
-      "x": 5300,
+      "x": 2060,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_boostsms_overview_fixed_pdpa",
+      "type": "file",
+      "file": "PDPA  Legal Compliance for SMS Marketing.md",
+      "x": 2260,
       "y": 1140,
       "width": 180,
       "height": 60
@@ -2489,7 +2036,343 @@
       "id": "n_boostsms:04_funnel_marketing_plan_pilot_industries",
       "type": "file",
       "file": "Pilot Industries (ClinicBeauty first).md",
-      "x": 5500,
+      "x": 2460,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "BoostSMS Dashboard Overview Page",
+      "x": 3680,
+      "y": 900,
+      "width": 880,
+      "height": 420,
+      "color": "2"
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z",
+      "type": "file",
+      "file": "BoostSMS App Dashboard Screenshot (2026-05-19).md",
+      "x": 3700,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_dashboard_overview",
+      "type": "file",
+      "file": "BoostSMS Dashboard Overview Page (\u0e20\u0e32\u0e1e\u0e23\u0e27\u0e21).md",
+      "x": 3900,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_credit_system",
+      "type": "file",
+      "file": "Credit-Based Billing System (\u0e40\u0e04\u0e23\u0e14\u0e34\u0e15 shown in top bar, prepaid message packages).md",
+      "x": 4100,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_dark_theme_design",
+      "type": "file",
+      "file": "Dark Theme UI with Mint-Green Accent (Thai-language SaaS dashboard design).md",
+      "x": 4300,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_sms_api_menu",
+      "type": "file",
+      "file": "Developer API Section (SMS API \u0e04\u0e35\u0e22\u0e4c API, API Logs, \u0e40\u0e2d\u0e01\u0e2a\u0e32\u0e23 API, SMS OTP).md",
+      "x": 3700,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_fifo_package_queue",
+      "type": "file",
+      "file": "FIFO Package Queue (\u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08\u0e04\u0e07\u0e40\u0e2b\u0e25\u0e37\u0e2d 5 Trial, For Test x2, Boost Spark, Boost Pro 24,752 \u0e43\u0e0a\u0e49\u0e01\u0e48\u0e2d\u0e19).md",
+      "x": 3900,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_kpi_cards",
+      "type": "file",
+      "file": "KPI Metric Cards (24,752 credits  68 sent today -88%  0% success rate  0 failed).md",
+      "x": 4100,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_message_quota_panel",
+      "type": "file",
+      "file": "Message Quota Panel (\u0e42\u0e04\u0e27\u0e15\u0e49\u0e32\u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21 24,752  30,915 = 80%, package Boost Pro exp 10 \u0e1e.\u0e04. 2571).md",
+      "x": 4300,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_package_expiry_alert",
+      "type": "file",
+      "file": "Package Near-Depletion Alert Banner (Trial 30,915 msgs, 80% used, expires 21 \u0e1e.\u0e04. 2569, 3 days left).md",
+      "x": 3700,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_quick_actions",
+      "type": "file",
+      "file": "Quick Action Buttons (\u0e2a\u0e48\u0e07 SMS  \u0e2a\u0e23\u0e49\u0e32\u0e07\u0e41\u0e04\u0e21\u0e40\u0e1b\u0e0d  \u0e40\u0e1e\u0e34\u0e48\u0e21\u0e23\u0e32\u0e22\u0e0a\u0e37\u0e48\u0e2d  \u0e0b\u0e37\u0e49\u0e2d\u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08).md",
+      "x": 3900,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_sms_volume_chart",
+      "type": "file",
+      "file": "SMS Volume Chart (dayweekmonth toggle, total 614, avgday 307).md",
+      "x": 4100,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:_assets_screenshots_boostsms_app_dashboard_2026_05_19t04_07_22_088z_sidebar_navigation",
+      "type": "file",
+      "file": "Sidebar Navigation (4 sections \u0e40\u0e21\u0e19\u0e39\u0e2b\u0e25\u0e31\u0e01  \u0e01\u0e32\u0e23\u0e40\u0e07\u0e34\u0e19  \u0e08\u0e31\u0e14\u0e01\u0e32\u0e23  API).md",
+      "x": 4300,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "AIS Provider Transition",
+      "x": 5300,
+      "y": 900,
+      "width": 880,
+      "height": 420,
+      "color": "3"
+    },
+    {
+      "id": "n_boostsms:ais",
+      "type": "file",
+      "file": "AIS.md",
+      "x": 5320,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_cost",
+      "type": "file",
+      "file": "AIS Cost 0.29\u0e3fSMS + Margin.md",
+      "x": 5520,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition",
+      "type": "file",
+      "file": "AIS Provider Transition (2026-07-01 meeting).md",
+      "x": 5720,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:meetings_2026_07_01_tasks",
+      "type": "file",
+      "file": "AIS Transition Task List (12 tasks).md",
+      "x": 5920,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:meetings_2026_07_01_tasks_txt",
+      "type": "file",
+      "file": "AIS Transition Tasks (plain text).md",
+      "x": 5320,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_failover",
+      "type": "file",
+      "file": "AIS \u2194 Dtac Failover Redundancy.md",
+      "x": 5520,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_dual_pipe",
+      "type": "file",
+      "file": "Dual-lane Dispatcher (2 \u0e17\u0e48\u0e2d\u0e2a\u0e48\u0e07, OTP speed).md",
+      "x": 5720,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_leanflow",
+      "type": "file",
+      "file": "LeanFlow Back-office + CSVExcelPDF Export.md",
+      "x": 5920,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:01_overview_otp_system",
+      "type": "file",
+      "file": "OTP System.md",
+      "x": 5320,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:meetings_2026_07_01_tasks_lean_form",
+      "type": "file",
+      "file": "Task 1 Lean Customer Onboarding Form (\u0e1a\u0e2d\u0e21).md",
+      "x": 5520,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:meetings_2026_07_01_tasks_progress_bar",
+      "type": "file",
+      "file": "Task 3 Send-status Progress Bar.md",
+      "x": 5720,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "Prepaid Credit Pricing Model",
+      "x": 6480,
+      "y": 900,
+      "width": 880,
+      "height": 420,
+      "color": "4"
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_boost_business",
+      "type": "file",
+      "file": "Boost Business (\u0e3f30,000  110,000 credits).md",
+      "x": 6500,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_boost_enterprise",
+      "type": "file",
+      "file": "Boost Enterprise (\u0e3f300,000  1,300,000 credits).md",
+      "x": 6700,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_boost_enterprise_plus",
+      "type": "file",
+      "file": "Boost Enterprise+ (\u0e3f1,200,000  6,000,000 credits).md",
+      "x": 6900,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_boost_grow",
+      "type": "file",
+      "file": "Boost Grow (\u0e3f3,500  9,000 credits).md",
+      "x": 7100,
+      "y": 980,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_boost_pro",
+      "type": "file",
+      "file": "Boost Pro (\u0e3f10,000  30,000 credits).md",
+      "x": 6500,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_boost_scale",
+      "type": "file",
+      "file": "Boost Scale (\u0e3f100,000  400,000 credits).md",
+      "x": 6700,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_boost_shop",
+      "type": "file",
+      "file": "Boost Shop (\u0e3f1,000  2,500 credits).md",
+      "x": 6900,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_boost_spark",
+      "type": "file",
+      "file": "Boost Spark (\u0e3f350  800 credits).md",
+      "x": 7100,
+      "y": 1060,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_dead_zone",
+      "type": "file",
+      "file": "Dead Zone \u0e3f30K\u2013\u0e3f100K Pricing Gap.md",
+      "x": 6500,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_free_trial",
+      "type": "file",
+      "file": "Free Trial (100 credits, 7 days).md",
+      "x": 6700,
+      "y": 1140,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:02_packages_pricing_prepaid_model",
+      "type": "file",
+      "file": "Prepaid Credit Pricing Model (9 packages).md",
+      "x": 6900,
       "y": 1140,
       "width": 180,
       "height": 60
@@ -2497,9 +2380,9 @@
     {
       "id": "g10",
       "type": "group",
-      "label": "BoostSMS Sale Page",
-      "x": 6480,
-      "y": 900,
+      "label": "BoostSMS Sale Page Screenshot",
+      "x": 0,
+      "y": 1500,
       "width": 880,
       "height": 420,
       "color": "5"
@@ -2508,8 +2391,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_boostsms_platform",
       "type": "file",
       "file": "BoostSMS (SMS Marketing Platform).md",
-      "x": 6500,
-      "y": 980,
+      "x": 20,
+      "y": 1580,
       "width": 180,
       "height": 60
     },
@@ -2517,8 +2400,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z",
       "type": "file",
       "file": "BoostSMS Sale Page Screenshot (2026-05-19).md",
-      "x": 6700,
-      "y": 980,
+      "x": 220,
+      "y": 1580,
       "width": 180,
       "height": 60
     },
@@ -2526,8 +2409,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_cta_100_free_sms",
       "type": "file",
       "file": "CTA \u0e2a\u0e21\u0e31\u0e04\u0e23\u0e23\u0e31\u0e1a 100 SMS \u0e1f\u0e23\u0e35  \u0e2a\u0e21\u0e31\u0e04\u0e23\u0e1f\u0e23\u0e35.md",
-      "x": 6900,
-      "y": 980,
+      "x": 420,
+      "y": 1580,
       "width": 180,
       "height": 60
     },
@@ -2535,8 +2418,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_hero_value_prop",
       "type": "file",
       "file": "Hero Value Prop \u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e2a\u0e48\u0e07 SMS Marketing \u0e2d\u0e2d\u0e19\u0e44\u0e25\u0e19\u0e4c\u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e43\u0e19\u0e44\u0e17\u0e22.md",
-      "x": 7100,
-      "y": 980,
+      "x": 620,
+      "y": 1580,
       "width": 180,
       "height": 60
     },
@@ -2544,8 +2427,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_key_benefits",
       "type": "file",
       "file": "Key Benefits \u0e44\u0e21\u0e48\u0e21\u0e35\u0e04\u0e48\u0e32\u0e41\u0e23\u0e01\u0e40\u0e02\u0e49\u0e32 \u00b7 \u0e40\u0e23\u0e34\u0e48\u0e21\u0e43\u0e0a\u0e49\u0e44\u0e14\u0e49\u0e17\u0e31\u0e19\u0e17\u0e35 \u00b7 \u0e21\u0e35\u0e17\u0e35\u0e21\u0e14\u0e39\u0e41\u0e25 24 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07.md",
-      "x": 6500,
-      "y": 1060,
+      "x": 20,
+      "y": 1660,
       "width": 180,
       "height": 60
     },
@@ -2553,8 +2436,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_page_navigation",
       "type": "file",
       "file": "Page Navigation \u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e02\u0e2d\u0e07\u0e40\u0e23\u0e32 \u00b7 \u0e23\u0e32\u0e04\u0e32 \u00b7 \u0e40\u0e01\u0e35\u0e48\u0e22\u0e27\u0e01\u0e31\u0e1a\u0e40\u0e23\u0e32 \u00b7 \u0e1a\u0e17\u0e04\u0e27\u0e32\u0e21 \u00b7 \u0e04\u0e39\u0e48\u0e21\u0e37\u0e2d \u00b7 FAQ \u00b7 \u0e15\u0e34\u0e14\u0e15\u0e48\u0e2d\u0e40\u0e23\u0e32 _6b7dbf2a.md",
-      "x": 6700,
-      "y": 1060,
+      "x": 220,
+      "y": 1660,
       "width": 180,
       "height": 60
     },
@@ -2562,8 +2445,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_phone_mockup_usecases",
       "type": "file",
       "file": "Phone Mockup \u0e15\u0e31\u0e27\u0e2d\u0e22\u0e48\u0e32\u0e07 SMS \u0e08\u0e23\u0e34\u0e07 (OTP, Food Delivery, Shopee, Pizza \u0e42\u0e1b\u0e23\u0e42\u0e21\u0e0a\u0e31\u0e48\u0e19, TrueMoney, AIS, \u0e28\u0e39\u0e19\u0e22\u0e4c\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23 AutoCare).md",
-      "x": 6900,
-      "y": 1060,
+      "x": 420,
+      "y": 1660,
       "width": 180,
       "height": 60
     },
@@ -2571,8 +2454,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_pricing_0_2_baht",
       "type": "file",
       "file": "Pricing Offer \u0e40\u0e23\u0e34\u0e48\u0e21\u0e15\u0e49\u0e19\u0e16\u0e39\u0e01\u0e2a\u0e38\u0e14\u0e23\u0e32\u0e04\u0e32 \u0e3f0.2 \u0e02\u0e49\u0e2d\u0e04\u0e27\u0e32\u0e21.md",
-      "x": 7100,
-      "y": 1060,
+      "x": 620,
+      "y": 1660,
       "width": 180,
       "height": 60
     },
@@ -2580,8 +2463,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_sms_service_lineup",
       "type": "file",
       "file": "SMS Service Lineup Web SMS \u00b7 SMS OTP \u00b7 SMS API \u00b7 SMS Report.md",
-      "x": 6500,
-      "y": 1140,
+      "x": 20,
+      "y": 1740,
       "width": 180,
       "height": 60
     },
@@ -2589,8 +2472,8 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_trust_metrics",
       "type": "file",
       "file": "Trust Metrics 1M SMS \u0e2a\u0e48\u0e07\u0e2a\u0e33\u0e40\u0e23\u0e47\u0e08 \u00b7 10 \u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e17\u0e35\u0e48\u0e44\u0e27\u0e49\u0e27\u0e32\u0e07\u0e43\u0e08 \u00b7 99.9% Uptime \u00b7 3s \u0e2a\u0e48\u0e07\u0e16\u0e36\u0e07\u0e1b\u0e25\u0e32\u0e22\u0e17\u0e32\u0e07.md",
-      "x": 6700,
-      "y": 1140,
+      "x": 220,
+      "y": 1740,
       "width": 180,
       "height": 60
     },
@@ -2598,17 +2481,17 @@
       "id": "n_boostsms:_assets_screenshots_boostsms_salepage_2026_05_19t04_06_36_278z_otp_notification_usecases",
       "type": "file",
       "file": "Use Cases \u0e23\u0e2d\u0e07\u0e23\u0e31\u0e1a OTP \u0e41\u0e25\u0e30\u0e01\u0e32\u0e23\u0e41\u0e08\u0e49\u0e07\u0e40\u0e15\u0e37\u0e2d\u0e19\u0e17\u0e38\u0e01\u0e23\u0e39\u0e1b\u0e41\u0e1a\u0e1a \u0e1e\u0e23\u0e49\u0e2d\u0e21\u0e21\u0e32\u0e15\u0e23\u0e10\u0e32\u0e19\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e2d\u0e07\u0e04\u0e4c\u0e01\u0e23.md",
-      "x": 6900,
-      "y": 1140,
+      "x": 420,
+      "y": 1740,
       "width": 180,
       "height": 60
     },
     {
       "id": "g11",
       "type": "group",
-      "label": "BoostSMS 7-Day Content Plan",
-      "x": 7660,
-      "y": 900,
+      "label": "7-Day Content Plan by Funnel Stage",
+      "x": 1840,
+      "y": 1500,
       "width": 880,
       "height": 420,
       "color": "6"
@@ -2617,8 +2500,8 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_content_plan_7_day_funnel",
       "type": "file",
       "file": "7-Day Content Plan by Funnel Stage.md",
-      "x": 7680,
-      "y": 980,
+      "x": 1860,
+      "y": 1580,
       "width": 180,
       "height": 60
     },
@@ -2626,8 +2509,8 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_funnel_marketing_plan_doc_screenshot",
       "type": "file",
       "file": "BoostSMS Funnel Marketing Plan Google Doc (Section 7 screenshot).md",
-      "x": 7880,
-      "y": 980,
+      "x": 2060,
+      "y": 1580,
       "width": 180,
       "height": 60
     },
@@ -2635,8 +2518,8 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_boostsms_product",
       "type": "file",
       "file": "BoostSMS product (boost-sms.com, LINE @boostsms).md",
-      "x": 8080,
-      "y": 980,
+      "x": 2260,
+      "y": 1580,
       "width": 180,
       "height": 60
     },
@@ -2644,8 +2527,8 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_day1_customer_phone_base_asset",
       "type": "file",
       "file": "Day 1 Awareness Customer phone number base is an asset.md",
-      "x": 8280,
-      "y": 980,
+      "x": 2460,
+      "y": 1580,
       "width": 180,
       "height": 60
     },
@@ -2653,8 +2536,8 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_day2_sms_beyond_otp",
       "type": "file",
       "file": "Day 2 Interest SMS is not just OTP, it boosts sales.md",
-      "x": 7680,
-      "y": 1060,
+      "x": 1860,
+      "y": 1660,
       "width": 180,
       "height": 60
     },
@@ -2662,8 +2545,8 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_day3_clinic_beauty_focus",
       "type": "file",
       "file": "Day 3 Interest Clinic  Beauty vertical focus (appointment reminders + promos).md",
-      "x": 7880,
-      "y": 1060,
+      "x": 2060,
+      "y": 1660,
       "width": 180,
       "height": 60
     },
@@ -2671,8 +2554,8 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_day4_web_sms_ease_of_use",
       "type": "file",
       "file": "Day 4 Consideration Web SMS easy to use, Excel number upload, step-by-step demo.md",
-      "x": 8080,
-      "y": 1060,
+      "x": 2260,
+      "y": 1660,
       "width": 180,
       "height": 60
     },
@@ -2680,8 +2563,8 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_marketing_funnel_stages",
       "type": "file",
       "file": "Marketing Funnel 6 Stages (Awareness to RetentionUpsell).md",
-      "x": 8280,
-      "y": 1060,
+      "x": 2460,
+      "y": 1660,
       "width": 180,
       "height": 60
     },
@@ -2689,8 +2572,8 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_gradual_trust_before_selling",
       "type": "file",
       "file": "Rationale Build pain awareness and trust across 7 days before pitching promo.md",
-      "x": 7680,
-      "y": 1140,
+      "x": 1860,
+      "y": 1740,
       "width": 180,
       "height": 60
     },
@@ -2698,26 +2581,199 @@
       "id": "n_boostsms:_assets_boostsms_doc_2026_05_18t08_19_11_342z_target_segments_sme_clinic",
       "type": "file",
       "file": "Target segments business owners, clinicbeautywellness, SME adminmarketing, retarget leads.md",
-      "x": 7880,
-      "y": 1140,
+      "x": 2060,
+      "y": 1740,
       "width": 180,
       "height": 60
     },
     {
       "id": "g12",
       "type": "group",
-      "label": "BoostSMS Backoffice Admin",
-      "x": 0,
+      "label": "EasySlip BOT Pricing",
+      "x": 3680,
       "y": 1500,
       "width": 660,
       "height": 420,
       "color": "1"
     },
     {
+      "id": "n_easyslip:documents_api_pricing_packages_commission_cost_analysis",
+      "type": "file",
+      "file": "API Commission Cost Analysis (Thunder Corporate style \u2014 cost scenarios 0.11  0.077, \u0e40\u0e23\u0e17 2\u20135% \u0e15\u0e32\u0e21 margin).md",
+      "x": 3700,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_api_pricing_packages_risk_zone_diamond",
+      "type": "file",
+      "file": "API Risk Zone \u2014 Diamond+ @ Others 100% \u0e02\u0e32\u0e14\u0e17\u0e38\u0e19 6\u201318%.md",
+      "x": 3900,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_bot_verify_slip_packages_premium_loss_risk",
+      "type": "file",
+      "file": "BOT Premium-2..4 Loss Risk @ Others 100% (\u0e2a\u0e39\u0e07\u0e2a\u0e38\u0e14 \u2212\u0e3f30,000 \u0e17\u0e35\u0e48 Premium-4 \u0e23\u0e2d\u0e1a 12 \u0e40\u0e14\u0e37\u0e2d\u0e19).md",
+      "x": 4100,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_api_pricing_packages_api_sales_commission",
+      "type": "file",
+      "file": "EasySlip API Sales Commission (tiered 571215% \u0e15\u0e32\u0e21 GP%).md",
+      "x": 3700,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_bot_verify_slip_packages_bot_pricing_11_packages",
+      "type": "file",
+      "file": "EasySlip BOT Pricing \u2014 11 \u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08 \u00d7 4 \u0e23\u0e2d\u0e1a (Start\u2192Premium-4, \u0e3f99\u201314,000 \u00b7 0.247\u21920.093\u0e2a\u0e25\u0e34\u0e1b).md",
+      "x": 3900,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_bot_verify_slip_packages_bot_sales_commission",
+      "type": "file",
+      "file": "EasySlip BOT Sales Commission (flat 10% \u0e17\u0e38\u0e01\u0e41\u0e1e\u0e47\u0e01\u0e17\u0e38\u0e01\u0e23\u0e2d\u0e1a).md",
+      "x": 4100,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_bot_verify_slip_packages_k_source_lock_policy",
+      "type": "file",
+      "file": "K-source \u226550% Lock Policy \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a Premium-2+ \u0e23\u0e2d\u0e1a 612 \u0e40\u0e14\u0e37\u0e2d\u0e19.md",
+      "x": 3700,
+      "y": 1740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_bot_verify_slip_packages_no_long_round_discount",
+      "type": "file",
+      "file": "No Long-Round Discount (\u0e23\u0e32\u0e04\u0e32 \u00d7 N \u0e17\u0e38\u0e01\u0e23\u0e2d\u0e1a 3612 \u0e40\u0e14\u0e37\u0e2d\u0e19 \u2014 \u0e1b\u0e23\u0e30\u0e2b\u0e22\u0e31\u0e14 \u0e3f0.00).md",
+      "x": 3900,
+      "y": 1740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_easyslip:documents_bot_verify_slip_packages_quick_cost_rule",
+      "type": "file",
+      "file": "Quick Cost Rule \u2014 \u0e15\u0e49\u0e19\u0e17\u0e38\u0e19 = \u0e2a\u0e25\u0e34\u0e1b \u00d7 0.11 (worst case Others 100%).md",
+      "x": 4100,
+      "y": 1740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g13",
+      "type": "group",
+      "label": "Sales Commission Structure",
+      "x": 5300,
+      "y": 1500,
+      "width": 660,
+      "height": 420,
+      "color": "2"
+    },
+    {
+      "id": "n_boostsms:03_sales_commission_8_percent",
+      "type": "file",
+      "file": "8% Package Commission.md",
+      "x": 5320,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:03_sales_commission_ai_debate",
+      "type": "file",
+      "file": "AI Debate Sales Comp Analysis (2026-06-06).md",
+      "x": 5520,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:03_sales_commission_base_salary",
+      "type": "file",
+      "file": "Base Salary (\u0e3f15K\u201325K).md",
+      "x": 5720,
+      "y": 1580,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:09_session_log",
+      "type": "file",
+      "file": "BoostSMS Session Log.md",
+      "x": 5320,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:03_sales_commission_monthly_bonus",
+      "type": "file",
+      "file": "Monthly Target Bonus (\u0e3f3K8K15K).md",
+      "x": 5520,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:03_sales_commission_recurring_cutoff",
+      "type": "file",
+      "file": "Recurring Commission 6-month Cutoff (anti-SaaS).md",
+      "x": 5720,
+      "y": 1660,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_sales_commission",
+      "type": "file",
+      "file": "SALES_COMMISSION (source).md",
+      "x": 5320,
+      "y": 1740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:03_sales_commission_structure",
+      "type": "file",
+      "file": "Sales Commission Structure.md",
+      "x": 5520,
+      "y": 1740,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g14",
+      "type": "group",
+      "label": "Master Dashboard Integration",
+      "x": 6480,
+      "y": 1500,
+      "width": 660,
+      "height": 420,
+      "color": "3"
+    },
+    {
       "id": "n_boostsms:06_backoffice_admin",
       "type": "file",
       "file": "Backoffice Admin Panel backoffice.boost-sms.com.md",
-      "x": 20,
+      "x": 6500,
       "y": 1580,
       "width": 180,
       "height": 60
@@ -2726,7 +2782,7 @@
       "id": "n_boostsms:08_master_dashboard_integration_placeholder",
       "type": "file",
       "file": "BoostSMS Placeholder Data (not yet live).md",
-      "x": 220,
+      "x": 6700,
       "y": 1580,
       "width": 180,
       "height": 60
@@ -2735,7 +2791,7 @@
       "id": "n_boostsms:08_master_dashboard_integration_date_picker",
       "type": "file",
       "file": "Chrome MCP Date Picker Technique (Base UI).md",
-      "x": 420,
+      "x": 6900,
       "y": 1580,
       "width": 180,
       "height": 60
@@ -2744,7 +2800,7 @@
       "id": "n_boostsms:easyslip",
       "type": "file",
       "file": "EasySlip_1.md",
-      "x": 20,
+      "x": 6500,
       "y": 1660,
       "width": 180,
       "height": 60
@@ -2753,7 +2809,7 @@
       "id": "n_boostsms:master_dashboard",
       "type": "file",
       "file": "Master Dashboard.md",
-      "x": 220,
+      "x": 6700,
       "y": 1660,
       "width": 180,
       "height": 60
@@ -2762,7 +2818,7 @@
       "id": "n_boostsms:08_master_dashboard_integration",
       "type": "file",
       "file": "Master Dashboard Integration.md",
-      "x": 420,
+      "x": 6900,
       "y": 1660,
       "width": 180,
       "height": 60
@@ -2771,7 +2827,7 @@
       "id": "n_boostsms:06_backoffice_admin_rbac",
       "type": "file",
       "file": "RBAC + Audit Logs.md",
-      "x": 20,
+      "x": 6500,
       "y": 1740,
       "width": 180,
       "height": 60
@@ -2780,27 +2836,109 @@
       "id": "n_boostsms:06_backoffice_admin_slip_verification",
       "type": "file",
       "file": "Slip Verification (orders pending).md",
-      "x": 220,
+      "x": 6700,
       "y": 1740,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g13",
+      "id": "g15",
       "type": "group",
-      "label": "BoostSMS Funnel Screenshot",
-      "x": 1840,
-      "y": 1500,
+      "label": "Project History & Development Time",
+      "x": 0,
+      "y": 2000,
       "width": 660,
       "height": 420,
-      "color": "2"
+      "color": "4"
+    },
+    {
+      "id": "n_boostsms:07_project_history_asset_capitalization",
+      "type": "file",
+      "file": "Asset Capitalization (\u0e3f2,031,250 intangible).md",
+      "x": 20,
+      "y": 2080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_asset_cost_memo_pdf",
+      "type": "file",
+      "file": "Asset Cost Memo \u2014 \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e0a\u0e35\u0e49\u0e41\u0e08\u0e07\u0e15\u0e49\u0e19\u0e17\u0e38\u0e19\u0e2a\u0e34\u0e19\u0e17\u0e23\u0e31\u0e1e\u0e22\u0e4c (PDF).md",
+      "x": 220,
+      "y": 2080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_boostsms_full_presentation",
+      "type": "file",
+      "file": "BoostSMS Full Business Presentation (HTML).md",
+      "x": 420,
+      "y": 2080,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:07_project_history_v2_plan",
+      "type": "file",
+      "file": "BoostSMS V.2 Plan (Refactoring + AI).md",
+      "x": 20,
+      "y": 2160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_handover_pdf_2",
+      "type": "file",
+      "file": "Project Handover & UAT Sign-off (PDF copy 2).md",
+      "x": 220,
+      "y": 2160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:materials_handover_pdf",
+      "type": "file",
+      "file": "Project Handover & UAT Sign-off (PDF).md",
+      "x": 420,
+      "y": 2160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:07_project_history",
+      "type": "file",
+      "file": "Project History & Development Timeline.md",
+      "x": 20,
+      "y": 2240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_boostsms:07_project_history_uat",
+      "type": "file",
+      "file": "UAT Results (99.8% delivery, 145ms latency).md",
+      "x": 220,
+      "y": 2240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g16",
+      "type": "group",
+      "label": "7-Day Funnel Content Plan",
+      "x": 1840,
+      "y": 2000,
+      "width": 660,
+      "height": 420,
+      "color": "5"
     },
     {
       "id": "n_boostsms:_assets_boostsms_top_2026_05_18t08_19_40_096z_marketing_funnel_stages",
       "type": "file",
       "file": "6-Stage Marketing Funnel (Awareness, Interest, Consideration, Conversion, Sales Closing, RetentionUpsell).md",
       "x": 1860,
-      "y": 1580,
+      "y": 2080,
       "width": 180,
       "height": 60
     },
@@ -2809,7 +2947,7 @@
       "type": "file",
       "file": "7-Day Funnel Content Plan (Day 1 \u0e10\u0e32\u0e19\u0e40\u0e1a\u0e2d\u0e23\u0e4c\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32 \u2192 Day 7 Retarget & Close).md",
       "x": 2060,
-      "y": 1580,
+      "y": 2080,
       "width": 180,
       "height": 60
     },
@@ -2818,7 +2956,7 @@
       "type": "file",
       "file": "BoostSMS (SMS Marketing product \u2014 Send. Track. Boost.  boost-sms.com).md",
       "x": 2260,
-      "y": 1580,
+      "y": 2080,
       "width": 180,
       "height": 60
     },
@@ -2827,7 +2965,7 @@
       "type": "file",
       "file": "BoostSMS Funnel Marketing Plan (Business Marketer document).md",
       "x": 1860,
-      "y": 1660,
+      "y": 2160,
       "width": 180,
       "height": 60
     },
@@ -2836,7 +2974,7 @@
       "type": "file",
       "file": "Free Trial Offer \u0e2a\u0e21\u0e31\u0e04\u0e23\u0e27\u0e31\u0e19\u0e19\u0e35\u0e49\u0e23\u0e31\u0e1a\u0e1f\u0e23\u0e35 100 \u0e40\u0e04\u0e23\u0e14\u0e34\u0e15 \u0e43\u0e0a\u0e49\u0e07\u0e32\u0e19\u0e44\u0e14\u0e49 7 \u0e27\u0e31\u0e19.md",
       "x": 2060,
-      "y": 1660,
+      "y": 2160,
       "width": 180,
       "height": 60
     },
@@ -2845,7 +2983,7 @@
       "type": "file",
       "file": "Screenshot BoostSMS Funnel Marketing Plan (Google Doc, 7-Day Content Plan section).md",
       "x": 2260,
-      "y": 1660,
+      "y": 2160,
       "width": 180,
       "height": 60
     },
@@ -2854,172 +2992,26 @@
       "type": "file",
       "file": "Target Segments (ClinicBeautyWellness, SMEAdminMarketing, \u0e19\u0e31\u0e01\u0e01\u0e32\u0e23\u0e15\u0e25\u0e32\u0e14\u0e40\u0e08\u0e49\u0e32\u0e02\u0e2d\u0e07\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08).md",
       "x": 1860,
-      "y": 1740,
+      "y": 2240,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g14",
+      "id": "g17",
       "type": "group",
-      "label": "Community 14",
-      "x": 3460,
-      "y": 1500,
-      "width": 660,
-      "height": 420,
-      "color": "3"
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_03_boostsms_brand",
-      "type": "file",
-      "file": "BoostSMS Brand_1.md",
-      "x": 3480,
-      "y": 1580,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_03",
-      "type": "file",
-      "file": "BoostSMS Logo Lockup (Horizontal, Light Background).md",
+      "label": "IP Transfer",
       "x": 3680,
-      "y": 1580,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_03_wordmark",
-      "type": "file",
-      "file": "BoostSMS Wordmark (Two-Tone 'Boost' Blue + 'SMS' Cyan + Yellow Period).md",
-      "x": 3880,
-      "y": 1580,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_03_color_palette",
-      "type": "file",
-      "file": "Brand Color Palette Cyan  Royal Blue  Yellow Accent.md",
-      "x": 3480,
-      "y": 1660,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_03_speed_messaging_rationale",
-      "type": "file",
-      "file": "Design Rationale Lightning + Chat Bubble = Fast, Boosted SMS Delivery.md",
-      "x": 3680,
-      "y": 1660,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_03_chat_bubble_lightning_icon",
-      "type": "file",
-      "file": "Icon Dual Chat Bubbles Forming Lightning Bolt.md",
-      "x": 3880,
-      "y": 1660,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_03_sms_marketing_platform",
-      "type": "file",
-      "file": "SMS Marketing Platform (Product Category)_1.md",
-      "x": 3480,
-      "y": 1740,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g15",
-      "type": "group",
-      "label": "Community 15",
-      "x": 5080,
-      "y": 1500,
-      "width": 660,
-      "height": 420,
-      "color": "4"
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_05_boostsms_brand",
-      "type": "file",
-      "file": "BoostSMS Brand (SMS Marketing Platform)_1.md",
-      "x": 5100,
-      "y": 1580,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_05_logo_lockup",
-      "type": "file",
-      "file": "BoostSMS Vertical Logo Lockup (Icon + Wordmark).md",
-      "x": 5300,
-      "y": 1580,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_05",
-      "type": "file",
-      "file": "BoostSMS-05 Primary Logo Artwork.md",
-      "x": 5500,
-      "y": 1580,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_05_wordmark",
-      "type": "file",
-      "file": "BoostSMS. Wordmark (Two-Tone with Yellow Period).md",
-      "x": 5100,
-      "y": 1660,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_05_brand_palette",
-      "type": "file",
-      "file": "Brand Color Palette (Blue  Cyan  Yellow Accent).md",
-      "x": 5300,
-      "y": 1660,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_05_speed_symbolism",
-      "type": "file",
-      "file": "Lightning Bolt Symbolizes Speed of SMS Delivery.md",
-      "x": 5500,
-      "y": 1660,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_05_lightning_b_monogram",
-      "type": "file",
-      "file": "Lightning-Bolt B Monogram Icon.md",
-      "x": 5100,
-      "y": 1740,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g16",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 6480,
-      "y": 1500,
+      "y": 2000,
       "width": 660,
       "height": 400,
-      "color": "5"
+      "color": "6"
     },
     {
       "id": "n_boostsms:07_project_history_ip_transfer",
       "type": "file",
       "file": "IP Transfer (Moonrithim \u2192 EasySlip).md",
-      "x": 6500,
-      "y": 1580,
+      "x": 3700,
+      "y": 2080,
       "width": 180,
       "height": 60
     },
@@ -3027,8 +3019,8 @@
       "id": "n_boostsms:01_overview_source_code_purchase",
       "type": "file",
       "file": "Source Code Purchase (\u0e3f2,000,000).md",
-      "x": 6700,
-      "y": 1580,
+      "x": 3900,
+      "y": 2080,
       "width": 180,
       "height": 60
     },
@@ -3036,8 +3028,8 @@
       "id": "n_boostsms:moonrithim_co",
       "type": "file",
       "file": "\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e21\u0e39\u0e19\u0e23\u0e36\u0e17\u0e36\u0e48\u0e21 \u0e08\u0e33\u0e01\u0e31\u0e14.md",
-      "x": 6900,
-      "y": 1580,
+      "x": 4100,
+      "y": 2080,
       "width": 180,
       "height": 60
     },
@@ -3045,8 +3037,8 @@
       "id": "n_boostsms:easyslip_co",
       "type": "file",
       "file": "\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e2d\u0e35\u0e0b\u0e35\u0e48\u0e2a\u0e25\u0e34\u0e1b \u0e08\u0e33\u0e01\u0e31\u0e14 (EasySlip Co., Ltd.).md",
-      "x": 6500,
-      "y": 1660,
+      "x": 3700,
+      "y": 2160,
       "width": 180,
       "height": 60
     },
@@ -3054,8 +3046,8 @@
       "id": "n_boostsms:07_project_history_mahasamut",
       "type": "file",
       "file": "\u0e21\u0e2b\u0e32\u0e2a\u0e21\u0e38\u0e17\u0e23 \u0e09\u0e31\u0e15\u0e23\u0e1b\u0e23\u0e32\u0e01\u0e32\u0e23 (DevOps Engineer).md",
-      "x": 6700,
-      "y": 1660,
+      "x": 3900,
+      "y": 2160,
       "width": 180,
       "height": 60
     },
@@ -3063,410 +3055,26 @@
       "id": "n_boostsms:07_project_history_watcharin",
       "type": "file",
       "file": "\u0e27\u0e31\u0e0a\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c \u0e41\u0e01\u0e49\u0e27\u0e21\u0e48\u0e27\u0e07 (CEO, EasySlip).md",
-      "x": 6900,
-      "y": 1660,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g17",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 7660,
-      "y": 1500,
-      "width": 660,
-      "height": 400,
-      "color": "6"
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_01_boostsms_brand",
-      "type": "file",
-      "file": "BoostSMS Brand Wordmark.md",
-      "x": 7680,
-      "y": 1580,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_01",
-      "type": "file",
-      "file": "BoostSMS Primary Logo (Vertical Lockup).md",
-      "x": 7880,
-      "y": 1580,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_01_color_palette",
-      "type": "file",
-      "file": "Brand Color Palette Cyan  Blue  Yellow Accent on White.md",
-      "x": 8080,
-      "y": 1580,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_01_speed_messaging_rationale",
-      "type": "file",
-      "file": "Design Rationale Lightning + Chat Bubbles = Fast SMS Delivery.md",
-      "x": 7680,
-      "y": 1660,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_01_logo_mark",
-      "type": "file",
-      "file": "Logo Mark Dual Speech Bubbles with Lightning Bolt Negative Space.md",
-      "x": 7880,
-      "y": 1660,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_01_sms_marketing_platform",
-      "type": "file",
-      "file": "SMS Marketing Platform (Product Category).md",
-      "x": 8080,
-      "y": 1660,
+      "x": 4100,
+      "y": 2160,
       "width": 180,
       "height": 60
     },
     {
       "id": "g18",
       "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 0,
+      "label": "Multi-sender",
+      "x": 5300,
       "y": 2000,
       "width": 660,
       "height": 400,
       "color": "1"
     },
     {
-      "id": "n_boostsms:_assets_design_boostsms_02_boostsms_brand",
-      "type": "file",
-      "file": "BoostSMS Brand.md",
-      "x": 20,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_02",
-      "type": "file",
-      "file": "BoostSMS Primary Logo Lockup (Vertical, Dark Navy).md",
-      "x": 220,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_02_color_palette",
-      "type": "file",
-      "file": "Brand Color Palette Dark Navy, Bright Blue, Cyan, Yellow Accent.md",
-      "x": 420,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_02_design_rationale",
-      "type": "file",
-      "file": "Design Concept Speed + Messaging (Instant SMS Delivery).md",
-      "x": 20,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_02_logo_mark",
-      "type": "file",
-      "file": "Logo Mark Lightning Bolt Splitting a Speech Bubble.md",
-      "x": 220,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_02_wordmark",
-      "type": "file",
-      "file": "Wordmark 'BoostSMS.' Two-Tone Type with Yellow Period.md",
-      "x": 420,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g19",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 1840,
-      "y": 2000,
-      "width": 660,
-      "height": 400,
-      "color": "2"
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_04_brand_boostsms",
-      "type": "file",
-      "file": "BoostSMS Brand (SMS Marketing Platform).md",
-      "x": 1860,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_04",
-      "type": "file",
-      "file": "BoostSMS Logo Artwork 04 (Horizontal Lockup, Dark Navy).md",
-      "x": 2060,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_04_color_palette",
-      "type": "file",
-      "file": "Brand Color Palette Dark Navy, Cyan, Blue, Yellow Accent.md",
-      "x": 2260,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_04_design_rationale",
-      "type": "file",
-      "file": "Design Rationale Chat Bubbles = SMS Messaging, Lightning = SpeedBoost.md",
-      "x": 1860,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_04_logo_lockup",
-      "type": "file",
-      "file": "Horizontal Logo Lockup Icon + BoostSMS Wordmark with Yellow Period.md",
-      "x": 2060,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_04_icon_chat_lightning",
-      "type": "file",
-      "file": "Icon Dual Chat Bubbles Forming Lightning Bolt in Negative Space.md",
-      "x": 2260,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g20",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 3460,
-      "y": 2000,
-      "width": 660,
-      "height": 400,
-      "color": "3"
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_06_boostsms_brand",
-      "type": "file",
-      "file": "BoostSMS Brand (SMS Marketing Platform)_2.md",
-      "x": 3480,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_06",
-      "type": "file",
-      "file": "BoostSMS Primary Logo Lockup (Dark Navy).md",
-      "x": 3680,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_06_wordmark",
-      "type": "file",
-      "file": "BoostSMS Wordmark (Two-Tone Type + Yellow Period).md",
-      "x": 3880,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_06_color_palette",
-      "type": "file",
-      "file": "Brand Color Palette (Navy, Blue, Cyan, Yellow Accent).md",
-      "x": 3480,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_06_lightning_b_monogram",
-      "type": "file",
-      "file": "Lightning Bolt + Letter B Monogram Mark.md",
-      "x": 3680,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_06_speed_symbolism",
-      "type": "file",
-      "file": "Lightning Symbolism Speed and Instant Message Delivery.md",
-      "x": 3880,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g21",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 5080,
-      "y": 2000,
-      "width": 660,
-      "height": 400,
-      "color": "4"
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_07_boostsms_brand",
-      "type": "file",
-      "file": "BoostSMS Brand Identity.md",
-      "x": 5100,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_07",
-      "type": "file",
-      "file": "BoostSMS Logo \u2014 Primary Horizontal Lockup.md",
-      "x": 5300,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_07_brand_color_palette",
-      "type": "file",
-      "file": "Brand Color Palette (Blue  Cyan  Yellow Accent)_1.md",
-      "x": 5500,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_07_speed_delivery_rationale",
-      "type": "file",
-      "file": "Design Rationale Lightning Bolt Signals Speed of SMS Delivery.md",
-      "x": 5100,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_07_dual_tone_wordmark",
-      "type": "file",
-      "file": "Dual-Tone Wordmark ('Boost' Blue + 'SMS.' Cyan Italic).md",
-      "x": 5300,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_07_lightning_bolt_b_mark",
-      "type": "file",
-      "file": "Lightning-Bolt 'B' Logo Mark.md",
-      "x": 5500,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g22",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 6480,
-      "y": 2000,
-      "width": 660,
-      "height": 400,
-      "color": "5"
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_08_boostsms_brand",
-      "type": "file",
-      "file": "BoostSMS Brand Identity_1.md",
-      "x": 6500,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_08",
-      "type": "file",
-      "file": "BoostSMS Logo Lockup (Design 08, Horizontal on Navy).md",
-      "x": 6700,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_08_color_palette",
-      "type": "file",
-      "file": "Brand Color Palette (Dark Navy  Royal Blue  Cyan  Yellow Accent).md",
-      "x": 6900,
-      "y": 2080,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_08_speed_boost_rationale",
-      "type": "file",
-      "file": "Design Rationale Lightning Bolt Conveys Speed and Instant SMS Delivery.md",
-      "x": 6500,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_08_lightning_b_logomark",
-      "type": "file",
-      "file": "Lightning-Bolt 'B' Logomark.md",
-      "x": 6700,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:_assets_design_boostsms_08_wordmark_typography",
-      "type": "file",
-      "file": "Two-Tone Wordmark Typography (Boost bold + SMS italic + yellow dot).md",
-      "x": 6900,
-      "y": 2160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g23",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 7660,
-      "y": 2000,
-      "width": 660,
-      "height": 400,
-      "color": "6"
-    },
-    {
       "id": "n_boostsms:meetings_2026_07_01_ais_provider_transition_refund_compliance",
       "type": "file",
       "file": "Credit Refund + \u0e01\u0e2a\u0e17\u0e0a. Compliance.md",
-      "x": 7680,
+      "x": 5320,
       "y": 2080,
       "width": 180,
       "height": 60
@@ -3475,7 +3083,7 @@
       "id": "n_boostsms:01_overview_multi_sender",
       "type": "file",
       "file": "Multi-sender (Sender Name).md",
-      "x": 7880,
+      "x": 5520,
       "y": 2080,
       "width": 180,
       "height": 60
@@ -3484,7 +3092,7 @@
       "id": "n_boostsms:nbtc",
       "type": "file",
       "file": "NBTC (\u0e01\u0e2a\u0e17\u0e0a.).md",
-      "x": 8080,
+      "x": 5720,
       "y": 2080,
       "width": 180,
       "height": 60
@@ -3493,7 +3101,7 @@
       "id": "n_boostsms:01_overview_nbtc_certified",
       "type": "file",
       "file": "NBTC Certified Compliance.md",
-      "x": 7680,
+      "x": 5320,
       "y": 2160,
       "width": 180,
       "height": 60
@@ -3502,27 +3110,27 @@
       "id": "n_boostsms:05_app_user_dashboard_sender_names",
       "type": "file",
       "file": "Sender Names (Thunder-AI  EasySlip  BANKTECH).md",
-      "x": 7880,
+      "x": 5520,
       "y": 2160,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g24",
+      "id": "g19",
       "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 0,
-      "y": 2480,
+      "label": "BoostSMS Package Tiers",
+      "x": 6480,
+      "y": 2000,
       "width": 660,
       "height": 400,
-      "color": "1"
+      "color": "2"
     },
     {
       "id": "n_boostsms:_assets_index_boost_packages",
       "type": "file",
       "file": "BoostSMS Package Tiers (Spark \u2192 Enterprise+).md",
-      "x": 20,
-      "y": 2560,
+      "x": 6500,
+      "y": 2080,
       "width": 180,
       "height": 60
     },
@@ -3530,8 +3138,8 @@
       "id": "n_boostsms:_assets_sales_commission",
       "type": "file",
       "file": "BoostSMS Sales Commission v1 (Markdown).md",
-      "x": 220,
-      "y": 2560,
+      "x": 6700,
+      "y": 2080,
       "width": 180,
       "height": 60
     },
@@ -3539,8 +3147,8 @@
       "id": "n_boostsms:_assets_boostsms_sales_commission",
       "type": "file",
       "file": "BoostSMS Sales Commission v2.1 (HTML).md",
-      "x": 420,
-      "y": 2560,
+      "x": 6900,
+      "y": 2080,
       "width": 180,
       "height": 60
     },
@@ -3548,8 +3156,8 @@
       "id": "n_boostsms:_assets_sales_commission_commission_v1",
       "type": "file",
       "file": "Sales Commission v1 (flat 8%).md",
-      "x": 20,
-      "y": 2640,
+      "x": 6500,
+      "y": 2160,
       "width": 180,
       "height": 60
     },
@@ -3557,63 +3165,17 @@
       "id": "n_boostsms:_assets_boostsms_sales_commission_accelerator",
       "type": "file",
       "file": "Tiered Commission Accelerator (81012%).md",
-      "x": 220,
-      "y": 2640,
+      "x": 6700,
+      "y": 2160,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g25",
+      "id": "g20",
       "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 1840,
-      "y": 2480,
-      "width": 600,
-      "height": 400,
-      "color": "2"
-    },
-    {
-      "id": "n_boostsms:materials_boostsms_full_presentation",
-      "type": "file",
-      "file": "BoostSMS Full Business Presentation (HTML).md",
-      "x": 1860,
-      "y": 2560,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:materials_handover_pdf_2",
-      "type": "file",
-      "file": "Project Handover & UAT Sign-off (PDF copy 2).md",
-      "x": 2060,
-      "y": 2560,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:materials_handover_pdf",
-      "type": "file",
-      "file": "Project Handover & UAT Sign-off (PDF).md",
-      "x": 1860,
-      "y": 2640,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:07_project_history_uat",
-      "type": "file",
-      "file": "UAT Results (99.8% delivery, 145ms latency).md",
-      "x": 2060,
-      "y": 2640,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g26",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 3460,
-      "y": 2480,
+      "label": "Thunder\u00d7Easy Cross-billing",
+      "x": 0,
+      "y": 2500,
       "width": 600,
       "height": 400,
       "color": "3"
@@ -3622,8 +3184,8 @@
       "id": "n_thunder:reports_kbank_api_pricing_and_easy_thunder_crossbilling_easy_thunder_dependency",
       "type": "file",
       "file": "Easy Dependency on Thunder Infrastructure.md",
-      "x": 3480,
-      "y": 2560,
+      "x": 20,
+      "y": 2580,
       "width": 180,
       "height": 60
     },
@@ -3631,8 +3193,8 @@
       "id": "n_thunder:reports_kbank_api_pricing_and_easy_thunder_crossbilling_k2k",
       "type": "file",
       "file": "K2K.md",
-      "x": 3680,
-      "y": 2560,
+      "x": 220,
+      "y": 2580,
       "width": 180,
       "height": 60
     },
@@ -3640,8 +3202,8 @@
       "id": "n_thunder:reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_k2k_arbitrage_margin",
       "type": "file",
       "file": "Thunder K2K Arbitrage Margin.md",
-      "x": 3480,
-      "y": 2640,
+      "x": 20,
+      "y": 2660,
       "width": 180,
       "height": 60
     },
@@ -3649,129 +3211,27 @@
       "id": "n_thunder:reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_easy_cross_billing",
       "type": "file",
       "file": "Thunder\u00d7Easy Cross-billing.md",
-      "x": 3680,
-      "y": 2640,
+      "x": 220,
+      "y": 2660,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g27",
+      "id": "g21",
       "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 5080,
-      "y": 2480,
+      "label": "Pre-paid Cycle Negative Gross Marg",
+      "x": 1840,
+      "y": 2500,
       "width": 600,
       "height": 400,
       "color": "4"
     },
     {
-      "id": "n_boostsms:07_project_history_asset_capitalization",
-      "type": "file",
-      "file": "Asset Capitalization (\u0e3f2,031,250 intangible).md",
-      "x": 5100,
-      "y": 2560,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:materials_asset_cost_memo_pdf",
-      "type": "file",
-      "file": "Asset Cost Memo \u2014 \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e0a\u0e35\u0e49\u0e41\u0e08\u0e07\u0e15\u0e49\u0e19\u0e17\u0e38\u0e19\u0e2a\u0e34\u0e19\u0e17\u0e23\u0e31\u0e1e\u0e22\u0e4c (PDF).md",
-      "x": 5300,
-      "y": 2560,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:07_project_history_v2_plan",
-      "type": "file",
-      "file": "BoostSMS V.2 Plan (Refactoring + AI).md",
-      "x": 5100,
-      "y": 2640,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g28",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 6480,
-      "y": 2480,
-      "width": 600,
-      "height": 400,
-      "color": "5"
-    },
-    {
-      "id": "n_boostsms:materials_boostsms_overview_fixed",
-      "type": "file",
-      "file": "BoostSMS Week 1 Marketing Plan (Revised).md",
-      "x": 6500,
-      "y": 2560,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:materials_boostsms_overview_fixed_decision_gate",
-      "type": "file",
-      "file": "Decision Gate (GO  PIVOT  STOP).md",
-      "x": 6700,
-      "y": 2560,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:materials_boostsms_overview_fixed_pdpa",
-      "type": "file",
-      "file": "PDPA  Legal Compliance for SMS Marketing.md",
-      "x": 6500,
-      "y": 2640,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g29",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 7660,
-      "y": 2480,
-      "width": 600,
-      "height": 400,
-      "color": "6"
-    },
-    {
-      "id": "n_thunder:reports_thunder_may_2026_summary_easy_bot",
-      "type": "file",
-      "file": "Easy Bot.md",
-      "x": 7680,
-      "y": 2560,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_boostsms:easybot",
-      "type": "file",
-      "file": "EasyBOT.md",
-      "x": 7880,
-      "y": 2560,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g30",
-      "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 0,
-      "y": 2960,
-      "width": 600,
-      "height": 400,
-      "color": "1"
-    },
-    {
       "id": "n_thunder:reports_thunder_may_2026_summary_prepaid_negative_margin",
       "type": "file",
       "file": "Pre-paid Cycle Negative Gross Margin.md",
-      "x": 20,
-      "y": 3040,
+      "x": 1860,
+      "y": 2580,
       "width": 180,
       "height": 60
     },
@@ -3779,27 +3239,27 @@
       "id": "n_thunder:reports_thunder_may_2026_summary_slip_margin",
       "type": "file",
       "file": "Slip Margin.md",
-      "x": 220,
-      "y": 3040,
+      "x": 2060,
+      "y": 2580,
       "width": 180,
       "height": 60
     },
     {
-      "id": "g31",
+      "id": "g22",
       "type": "group",
-      "label": "Brand Logo/Design",
-      "x": 1840,
-      "y": 2960,
+      "label": "Boost SMS",
+      "x": 3680,
+      "y": 2500,
       "width": 600,
       "height": 400,
-      "color": "2"
+      "color": "5"
     },
     {
       "id": "n_thunder:reports_thunder_may_2026_summary_boost_sms",
       "type": "file",
       "file": "Boost SMS.md",
-      "x": 1860,
-      "y": 3040,
+      "x": 3700,
+      "y": 2580,
       "width": 180,
       "height": 60
     }

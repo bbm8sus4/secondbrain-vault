@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # บริษัท อีซี่สลิป จำกัด (EasySlip Co., Ltd.)
@@ -14,4 +14,4 @@ tags:
 - [[BoostSMS]] - `references` [EXTRACTED]
 - [[IP Transfer (Moonrithim → EasySlip)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS

@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/kbank-api-pricing-and-easy-thunder-crossbilling.md"
 type: "document"
-community: "Thunder KBank Pricing"
+community: "Thunder Solution"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Thunder_KBank_Pricing
+  - community/Thunder_Solution
 ---
 
 # Kbank Slip Verification API Pricing
@@ -15,4 +15,4 @@ tags:
 - [[Others-source Flat Pricing]] - `references` [EXTRACTED]
 - [[Thunder Corporate API (MOU)]] - `cites` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Thunder_KBank_Pricing
+#graphify/document #graphify/EXTRACTED #community/Thunder_Solution

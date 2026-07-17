@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # 01 · EasySlip Overview
@@ -24,4 +24,4 @@ tags:
 - [[Thunder Group (Thunder Solution + EasySlip)]] - `references` [EXTRACTED]
 - [[Thunder×Easy Cross-billing (K2K 0.04 + Others 0.11 + VAT 7%)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

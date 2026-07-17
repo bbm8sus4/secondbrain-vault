@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K04-Campaign-Types.md"
 type: "document"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K04 SMS Campaign Types
@@ -22,4 +22,4 @@ tags:
 - [[K10 Global SMS Case Studies]] - `references` [EXTRACTED]
 - [[Trigger-based SMS Campaigns]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

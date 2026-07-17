@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/thunder-monthly-slides.html"
 type: "document"
-community: "Thunder–EasySlip Integrations"
+community: "EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ThunderEasySlip_Integrations
+  - community/EasySlip
 ---
 
 # Thunder Group Executive Slides (Jan-May 2026)
@@ -16,4 +16,4 @@ tags:
 - [[Master Dashboard (Thunder Group)]] - `cites` [EXTRACTED]
 - [[Thunder Group_1]] - `conceptually_related_to` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/ThunderEasySlip_Integrations
+#graphify/document #graphify/EXTRACTED #community/EasySlip

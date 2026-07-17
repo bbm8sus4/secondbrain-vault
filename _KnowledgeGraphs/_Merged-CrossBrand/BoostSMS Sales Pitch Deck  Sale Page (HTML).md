@@ -1,11 +1,11 @@
 ---
 source_file: "Materials/BoostSMS_Pitch_SalePage.html"
 type: "document"
-community: "BoostSMS Funnel Plan"
+community: "★ BoostSMS"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Funnel_Plan
+  - community/_BoostSMS
 ---
 
 # BoostSMS Sales Pitch Deck / Sale Page (HTML)
@@ -16,4 +16,4 @@ tags:
 - [[BoostSMS PAS Presentation (Problem-Agitate-Solution)]] - `semantically_similar_to` [INFERRED]
 - [[Prepaid Credit Pricing Model (9 packages)]] - `references` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Funnel_Plan
+#graphify/document #graphify/EXTRACTED #community/_BoostSMS

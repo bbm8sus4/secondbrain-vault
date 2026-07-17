@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K11-Thai-Case-Studies.md"
 type: "concept"
-community: "Pricing Docs & IP Ownership"
+community: "BoostSMS Platform"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Pricing_Docs__IP_Ownership
+  - community/BoostSMS_Platform
 ---
 
 # KBank (K-Plus) SMS Program
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[K11 Thai SMS Case Studies]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Pricing_Docs__IP_Ownership
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Platform

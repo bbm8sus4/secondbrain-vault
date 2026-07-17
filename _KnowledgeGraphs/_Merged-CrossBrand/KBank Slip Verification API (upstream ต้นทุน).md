@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # KBank Slip Verification API (upstream ต้นทุน)
@@ -18,4 +18,4 @@ tags:
 - [[KBank Slip Verification API pricing (tiered, excl. VAT)]] - `same_entity_as` [INFERRED]
 - [[Thunder×Easy Cross-billing (K2K 0.04 + Others 0.11 + VAT 7%)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

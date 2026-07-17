@@ -1,11 +1,11 @@
 ---
 source_file: "หน้าหลัก.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # BoostSMS
@@ -38,4 +38,4 @@ tags:
 - [[Web SMS]] - `references` [EXTRACTED]
 - [[บริษัท อีซี่สลิป จำกัด (EasySlip Co., Ltd.)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS

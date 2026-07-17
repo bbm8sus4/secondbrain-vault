@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K01-SMS-Marketing-Fundamentals.md"
 type: "rationale"
-community: "SMS Marketing Knowledge Base"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/SMS_Marketing_Knowledge_Base
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # SMS as Guaranteed-Read Channel
@@ -14,4 +14,4 @@ tags:
 - [[K01 SMS Marketing Fundamentals]] - `references` [EXTRACTED]
 - [[Multi-Channel Orchestration Strategy]] - `conceptually_related_to` [INFERRED]
 
-#graphify/rationale #graphify/EXTRACTED #community/SMS_Marketing_Knowledge_Base
+#graphify/rationale #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

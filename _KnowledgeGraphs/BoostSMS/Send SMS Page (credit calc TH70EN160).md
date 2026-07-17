@@ -1,11 +1,11 @@
 ---
 source_file: "05-App-User-Dashboard.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/INFERRED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Send SMS Page (credit calc TH70/EN160)
@@ -14,4 +14,4 @@ tags:
 - [[App (User Dashboard) app.boost-sms.com]] - `references` [EXTRACTED]
 - [[Web SMS]] - `implements` [INFERRED]
 
-#graphify/concept #graphify/INFERRED #community/Product_Features__Platform
+#graphify/concept #graphify/INFERRED #community/BoostSMS

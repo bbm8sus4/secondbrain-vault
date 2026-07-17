@@ -1,11 +1,11 @@
 ---
 source_file: "05-App-User-Dashboard.md"
 type: "concept"
-community: "BoostSMS Product Features"
+community: "★ BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Product_Features
+  - community/_BoostSMS
 ---
 
 # App (User Dashboard) app.boost-sms.com
@@ -18,4 +18,4 @@ tags:
 - [[Send SMS Page (credit calc TH70EN160)]] - `references` [EXTRACTED]
 - [[Sender Names (Thunder-AI  EasySlip  BANKTECH)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Product_Features
+#graphify/concept #graphify/EXTRACTED #community/_BoostSMS

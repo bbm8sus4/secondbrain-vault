@@ -1,11 +1,11 @@
 ---
 source_file: "Contracts/INDEX.md"
 type: "concept"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # SUPER COCONUT CO., LTD. (SCCN)
@@ -15,4 +15,4 @@ tags:
 - [[Super rOS (แพลตฟอร์ม POSร้านค้าของ SCCN)]] - `conceptually_related_to` [EXTRACTED]
 - [[นายจิตตวัฒน์ จิตสำรวย (ผู้ลงนาม SCCN)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K05-Segmentation-Targeting.md"
 type: "document"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K05 Segmentation & Targeting
@@ -21,4 +21,4 @@ tags:
 - [[Sephora Hyper-Segmented SMS]] - `implements` [INFERRED]
 - [[Suppression List]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

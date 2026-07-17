@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/BoostSMS_Sales_Commission.html"
 type: "document"
-community: "Pricing Docs & IP Ownership"
+community: "BoostSMS Platform"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Pricing_Docs__IP_Ownership
+  - community/BoostSMS_Platform
 ---
 
 # BoostSMS Sales Commission v2.1 (HTML)
@@ -15,4 +15,4 @@ tags:
 - [[BoostSMS Sales Commission v1 (Markdown)]] - `semantically_similar_to` [INFERRED]
 - [[Tiered Commission Accelerator (81012%)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Pricing_Docs__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Platform

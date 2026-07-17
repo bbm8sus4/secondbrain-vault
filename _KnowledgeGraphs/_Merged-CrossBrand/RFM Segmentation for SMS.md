@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K05-Segmentation-Targeting.md"
 type: "concept"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # RFM Segmentation for SMS
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[K05 Segmentation & Targeting]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

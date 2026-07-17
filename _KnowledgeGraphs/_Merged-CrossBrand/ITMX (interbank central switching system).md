@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/Thunder Solution — Public Context (AI-safe).md"
 type: "concept"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # ITMX (interbank central switching system)
@@ -14,4 +14,4 @@ tags:
 - [[PromptPay]] - `conceptually_related_to` [INFERRED]
 - [[Slip Verification (ตรวจสอบสลิปโอนเงิน)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/concept #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

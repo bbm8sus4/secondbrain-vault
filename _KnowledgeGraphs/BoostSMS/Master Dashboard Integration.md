@@ -1,11 +1,11 @@
 ---
 source_file: "08-Master-Dashboard-Integration.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Master Dashboard Integration
@@ -19,4 +19,4 @@ tags:
 - [[K11 Thai SMS Case Studies]] - `references` [EXTRACTED]
 - [[Master Dashboard]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS

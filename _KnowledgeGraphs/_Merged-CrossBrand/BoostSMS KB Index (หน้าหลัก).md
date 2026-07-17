@@ -1,11 +1,11 @@
 ---
 source_file: "หน้าหลัก.md"
 type: "document"
-community: "BoostSMS Product Features"
+community: "★ BoostSMS"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Product_Features
+  - community/_BoostSMS
 ---
 
 # BoostSMS KB Index (หน้าหลัก)
@@ -15,4 +15,4 @@ tags:
 - [[BoostSMS]] - `references` [EXTRACTED]
 - [[Project History & Development Timeline]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Product_Features
+#graphify/document #graphify/EXTRACTED #community/_BoostSMS

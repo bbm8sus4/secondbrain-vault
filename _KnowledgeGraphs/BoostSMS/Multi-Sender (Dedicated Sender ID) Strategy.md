@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K09-Sender-Name-Thailand.md"
 type: "rationale"
-community: "SMS Marketing Knowledge Base"
+community: "BoostSMS Platform"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/SMS_Marketing_Knowledge_Base
+  - community/BoostSMS_Platform
 ---
 
 # Multi-Sender (Dedicated Sender ID) Strategy
@@ -16,4 +16,4 @@ tags:
 - [[K11 Thai SMS Case Studies]] - `shares_data_with` [INFERRED]
 - [[Sender Name  Sender ID]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/SMS_Marketing_Knowledge_Base
+#graphify/rationale #graphify/EXTRACTED #community/BoostSMS_Platform

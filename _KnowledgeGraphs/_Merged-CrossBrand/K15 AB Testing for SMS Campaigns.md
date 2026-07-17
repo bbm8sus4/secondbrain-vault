@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K15-AB-Testing-SMS.md"
 type: "document"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K15 A/B Testing for SMS Campaigns
@@ -20,4 +20,4 @@ tags:
 - [[K14 Compliance & Anti-Spam (PDPA, NBTC, Opt-inout)]] - `references` [EXTRACTED]
 - [[SMS AB Test Sample Size Constraint]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

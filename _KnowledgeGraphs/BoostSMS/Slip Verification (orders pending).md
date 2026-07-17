@@ -1,11 +1,11 @@
 ---
 source_file: "06-Backoffice-Admin.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/INFERRED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Slip Verification (orders pending)
@@ -14,4 +14,4 @@ tags:
 - [[Backoffice Admin Panel backoffice.boost-sms.com]] - `references` [EXTRACTED]
 - [[EasySlip]] - `conceptually_related_to` [INFERRED]
 
-#graphify/concept #graphify/INFERRED #community/Product_Features__Platform
+#graphify/concept #graphify/INFERRED #community/BoostSMS

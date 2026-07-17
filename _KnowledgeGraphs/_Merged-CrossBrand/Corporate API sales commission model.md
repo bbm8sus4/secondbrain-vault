@@ -1,11 +1,11 @@
 ---
 source_file: "03-Revenue-Commission.md"
 type: "rationale"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # Corporate API sales commission model
@@ -15,4 +15,4 @@ tags:
 - [[Cost Scenario B (mix blend ~3070, cost 0.077, GP 38.4%)]] - `rationale_for` [EXTRACTED]
 - [[Thunder Corporate API (MOU enterprise package, Coperate A–J)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/rationale #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

@@ -1,11 +1,11 @@
 ---
 source_file: "03-Sales-Commission.md"
 type: "concept"
-community: "BoostSMS Package Tiers"
+community: "Sales Commission Structure"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Package_Tiers
+  - community/Sales_Commission_Structure
 ---
 
 # Sales Commission Structure
@@ -18,4 +18,4 @@ tags:
 - [[Recurring Commission 6-month Cutoff (anti-SaaS)]] - `rationale_for` [EXTRACTED]
 - [[SALES_COMMISSION (source)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Package_Tiers
+#graphify/concept #graphify/EXTRACTED #community/Sales_Commission_Structure

@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Web SMS
@@ -15,4 +15,4 @@ tags:
 - [[PROJECT_BRIEF (source overview)]] - `cites` [EXTRACTED]
 - [[Send SMS Page (credit calc TH70EN160)]] - `implements` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS

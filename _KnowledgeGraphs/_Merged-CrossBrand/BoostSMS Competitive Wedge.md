@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K12-Competitor-Landscape.md"
 type: "rationale"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # BoostSMS Competitive Wedge
@@ -14,4 +14,4 @@ tags:
 - [[BoostSMS Platform]] - `rationale_for` [EXTRACTED]
 - [[K12 Competitor Landscape (Thai + Global)]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/rationale #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

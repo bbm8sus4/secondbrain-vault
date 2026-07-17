@@ -1,11 +1,11 @@
 ---
 source_file: "09-Session-Log.md"
 type: "document"
-community: "BoostSMS Package Tiers"
+community: "Sales Commission Structure"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Package_Tiers
+  - community/Sales_Commission_Structure
 ---
 
 # BoostSMS Session Log
@@ -16,4 +16,4 @@ tags:
 - [[BoostSMS]] - `references` [EXTRACTED]
 - [[Master Dashboard Integration]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Package_Tiers
+#graphify/document #graphify/EXTRACTED #community/Sales_Commission_Structure

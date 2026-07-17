@@ -1,11 +1,11 @@
 ---
 source_file: "Materials/BoostSMS_PAS_Presentation.html"
 type: "document"
-community: "BoostSMS Funnel Plan"
+community: "★ BoostSMS"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Funnel_Plan
+  - community/_BoostSMS
 ---
 
 # BoostSMS PAS Presentation (Problem-Agitate-Solution)
@@ -15,4 +15,4 @@ tags:
 - [[BoostSMS]] - `references` [EXTRACTED]
 - [[BoostSMS Sales Pitch Deck  Sale Page (HTML)]] - `semantically_similar_to` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Funnel_Plan
+#graphify/document #graphify/EXTRACTED #community/_BoostSMS

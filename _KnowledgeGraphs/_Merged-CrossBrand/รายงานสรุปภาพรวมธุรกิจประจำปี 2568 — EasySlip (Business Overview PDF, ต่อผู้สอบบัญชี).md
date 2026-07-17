@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/easyslip-business-overview-2568-final.pdf"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # รายงานสรุปภาพรวมธุรกิจประจำปี 2568 — EasySlip (Business Overview PDF, ต่อผู้สอบบัญชี)
@@ -22,4 +22,4 @@ tags:
 - [[TrueMoney Wallet Slip Support (6,303 → 261,010 ครั้ง, +41 เท่า ในปี 2568)]] - `references` [EXTRACTED]
 - [[นายวัชรินทร์ แก้วม่วง (ผู้ลงนามผู้บริหาร EasySlip)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

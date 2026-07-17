@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K13-Deliverability-DLR.md"
 type: "document"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K13 Deliverability & DLR
@@ -22,4 +22,4 @@ tags:
 - [[K14 Compliance & Anti-Spam (PDPA, NBTC, Opt-inout)]] - `references` [EXTRACTED]
 - [[Sender Name  Sender ID]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

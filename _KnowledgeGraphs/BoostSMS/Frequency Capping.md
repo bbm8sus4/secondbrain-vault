@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K07-Timing-Frequency.md"
 type: "concept"
-community: "SMS Marketing Knowledge Base"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/SMS_Marketing_Knowledge_Base
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # Frequency Capping
@@ -14,4 +14,4 @@ tags:
 - [[K07 Timing & Frequency Best Practices]] - `references` [EXTRACTED]
 - [[Opt-out Rate (Health Metric)]] - `conceptually_related_to` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/SMS_Marketing_Knowledge_Base
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

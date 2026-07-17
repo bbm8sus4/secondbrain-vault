@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # EasySlip BOT / Verify Slip / LINE Bot (สินค้ารอง, 10 สาขา/แพ็ก)
@@ -18,4 +18,4 @@ tags:
 - [[Master–Sub Branch Structure + Branch-level Quota + 2-level API Key]] - `semantically_similar_to` [INFERRED]
 - [[รายงานสรุปภาพรวมธุรกิจประจำปี 2568 — EasySlip (Business Overview PDF, ต่อผู้สอบบัญชี)]] - `references` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

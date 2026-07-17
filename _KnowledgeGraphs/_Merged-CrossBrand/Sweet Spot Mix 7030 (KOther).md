@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/api-pricing-packages.md"
 type: "rationale"
-community: "★ Cross-Brand: API Pricing & Cost"
+community: "SCCN × EasySlip"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_Cross-Brand_API_Pricing__Cost
+  - community/SCCN__EasySlip
 ---
 
 # Sweet Spot Mix 70/30 (K/Other)
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Gross Margin Matrix by Traffic Mix (7 mix × 10 แพ็ก)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_Cross-Brand_API_Pricing__Cost
+#graphify/rationale #graphify/EXTRACTED #community/SCCN__EasySlip

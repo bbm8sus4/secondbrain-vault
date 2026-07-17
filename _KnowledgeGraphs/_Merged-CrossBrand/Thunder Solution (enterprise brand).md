@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "EasySlip Revenue & Products"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # Thunder Solution (enterprise brand)
@@ -16,4 +16,4 @@ tags:
 - [[Thunder Solution — Overview (KB doc)]] - `same_entity_as` [INFERRED]
 - [[Thunder×Easy Cross-billing (K2K 0.04 + Others 0.11 + VAT 7%)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/concept #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

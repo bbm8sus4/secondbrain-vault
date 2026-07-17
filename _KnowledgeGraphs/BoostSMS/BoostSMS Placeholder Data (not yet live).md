@@ -1,11 +1,11 @@
 ---
 source_file: "08-Master-Dashboard-Integration.md"
 type: "rationale"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # BoostSMS Placeholder Data (not yet live)
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Master Dashboard Integration]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/rationale #graphify/EXTRACTED #community/BoostSMS

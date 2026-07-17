@@ -1,11 +1,11 @@
 ---
 source_file: "07-Project-History.md"
 type: "document"
-community: "Brand Logo/Design"
+community: "Project History & Development Time"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/Project_History__Development_Time
 ---
 
 # Asset Capitalization (฿2,031,250 intangible)
@@ -15,4 +15,4 @@ tags:
 - [[BoostSMS V.2 Plan (Refactoring + AI)]] - `rationale_for` [EXTRACTED]
 - [[Project History & Development Timeline]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/document #graphify/EXTRACTED #community/Project_History__Development_Time

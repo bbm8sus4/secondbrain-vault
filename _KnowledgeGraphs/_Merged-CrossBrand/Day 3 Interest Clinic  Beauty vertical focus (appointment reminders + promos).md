@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/boostsms_doc_2026-05-18T08-19-11-342Z.png"
 type: "concept"
-community: "BoostSMS 7-Day Content Plan"
+community: "7-Day Content Plan by Funnel Stage"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_7-Day_Content_Plan
+  - community/7-Day_Content_Plan_by_Funnel_Stage
 ---
 
 # Day 3 Interest: Clinic / Beauty vertical focus (appointment reminders + promos)
@@ -15,4 +15,4 @@ tags:
 - [[Day 2 Interest SMS is not just OTP, it boosts sales]] - `semantically_similar_to` [INFERRED]
 - [[Target segments business owners, clinicbeautywellness, SME adminmarketing, retarget leads]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_7-Day_Content_Plan
+#graphify/concept #graphify/EXTRACTED #community/7-Day_Content_Plan_by_Funnel_Stage

@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/api-pricing-packages.md"
 type: "rationale"
-community: "★ Cross-Brand: API Pricing & Cost"
+community: "EasySlip BOT Pricing"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_Cross-Brand_API_Pricing__Cost
+  - community/EasySlip_BOT_Pricing
 ---
 
 # API Risk Zone — Diamond+ @ Others 100% ขาดทุน 6–18%
@@ -14,4 +14,4 @@ tags:
 - [[BOT Premium-2..4 Loss Risk @ Others 100% (สูงสุด −฿30,000 ที่ Premium-4 รอบ 12 เดือน)]] - `semantically_similar_to` [INFERRED]
 - [[Gross Margin Matrix by Traffic Mix (7 mix × 10 แพ็ก)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_Cross-Brand_API_Pricing__Cost
+#graphify/rationale #graphify/EXTRACTED #community/EasySlip_BOT_Pricing

@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "rationale"
-community: "Brand Logo/Design"
+community: "Multi-sender"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/Multi-sender
 ---
 
 # NBTC Certified Compliance
@@ -14,4 +14,4 @@ tags:
 - [[Multi-sender (Sender Name)]] - `rationale_for` [EXTRACTED]
 - [[NBTC (กสทช.)]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/rationale #graphify/EXTRACTED #community/Multi-sender

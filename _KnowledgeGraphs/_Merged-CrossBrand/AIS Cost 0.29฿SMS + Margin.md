@@ -1,11 +1,11 @@
 ---
 source_file: "Meetings/2026-07-01-AIS-Provider-Transition.md"
 type: "rationale"
-community: "BoostSMS Package Tiers"
+community: "AIS Provider Transition"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/BoostSMS_Package_Tiers
+  - community/AIS_Provider_Transition
 ---
 
 # AIS Cost 0.29฿/SMS + Margin
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[AIS Provider Transition (2026-07-01 meeting)]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/BoostSMS_Package_Tiers
+#graphify/rationale #graphify/EXTRACTED #community/AIS_Provider_Transition

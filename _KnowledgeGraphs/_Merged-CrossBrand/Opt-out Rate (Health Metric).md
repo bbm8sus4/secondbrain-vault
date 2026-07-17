@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K06-SMS-Metrics-KPIs.md"
 type: "concept"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # Opt-out Rate (Health Metric)
@@ -16,4 +16,4 @@ tags:
 - [[Opt-out Requirement (STOP)]] - `conceptually_related_to` [EXTRACTED]
 - [[Suppression List]] - `semantically_similar_to` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

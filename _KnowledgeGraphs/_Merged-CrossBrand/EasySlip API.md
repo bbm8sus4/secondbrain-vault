@@ -1,11 +1,11 @@
 ---
 source_file: "Revenue/thunder-revenue-apr-may-2026.html"
 type: "concept"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # EasySlip API
@@ -18,4 +18,4 @@ tags:
 - [[May 2569 spike validation (recurring vs one-off)]] - `conceptually_related_to` [EXTRACTED]
 - [[Slip Verification (ตรวจสอบสลิปโอนเงิน)]] - `implements` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/concept #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

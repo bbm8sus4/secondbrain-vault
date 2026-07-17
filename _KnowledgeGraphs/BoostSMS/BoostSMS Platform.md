@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/index.html"
 type: "concept"
-community: "Pricing Docs & IP Ownership"
+community: "BoostSMS Platform"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Pricing_Docs__IP_Ownership
+  - community/BoostSMS_Platform
 ---
 
 # BoostSMS Platform
@@ -25,4 +25,4 @@ tags:
 - [[บริษัท มูนรึทึ่ม จำกัด (Source Code Vendor)]] - `conceptually_related_to` [EXTRACTED]
 - [[บริษัท อีซี่สลิป จำกัด (EasySlip Co.)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Pricing_Docs__IP_Ownership
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Platform

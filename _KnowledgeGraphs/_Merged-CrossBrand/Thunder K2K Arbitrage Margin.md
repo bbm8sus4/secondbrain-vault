@@ -1,12 +1,12 @@
 ---
 source_file: "Reports/kbank-api-pricing-and-easy-thunder-crossbilling.md"
 type: "rationale"
-community: "Brand Logo/Design"
+community: "Thunder×Easy Cross-billing"
 location: "Section 2 Margin"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/ThunderEasy_Cross-billing
 ---
 
 # Thunder K2K Arbitrage Margin
@@ -15,4 +15,4 @@ tags:
 - [[K2K]] - `references` [EXTRACTED]
 - [[Thunder×Easy Cross-billing]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/rationale #graphify/EXTRACTED #community/ThunderEasy_Cross-billing

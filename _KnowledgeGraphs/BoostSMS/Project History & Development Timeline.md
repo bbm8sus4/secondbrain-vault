@@ -1,11 +1,11 @@
 ---
 source_file: "07-Project-History.md"
 type: "document"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Project History & Development Timeline
@@ -17,4 +17,4 @@ tags:
 - [[IP Transfer (Moonrithim → EasySlip)]] - `references` [EXTRACTED]
 - [[UAT Results (99.8% delivery, 145ms latency)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/document #graphify/EXTRACTED #community/BoostSMS

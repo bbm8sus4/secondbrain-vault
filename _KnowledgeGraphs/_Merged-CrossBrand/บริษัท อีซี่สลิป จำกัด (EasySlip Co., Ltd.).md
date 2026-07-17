@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "Brand Logo/Design"
+community: "IP Transfer"
 tags:
   - graphify/concept
   - graphify/INFERRED
-  - community/Brand_Logo/Design
+  - community/IP_Transfer
 ---
 
 # บริษัท อีซี่สลิป จำกัด (EasySlip Co., Ltd.)
@@ -16,4 +16,4 @@ tags:
 - [[EasySlip — Contracts INDEX]] - `same_entity_as` [INFERRED]
 - [[IP Transfer (Moonrithim → EasySlip)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/INFERRED #community/Brand_Logo/Design
+#graphify/concept #graphify/INFERRED #community/IP_Transfer

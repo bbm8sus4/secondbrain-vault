@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/SALES_COMMISSION.md"
 type: "document"
-community: "Brand Logo/Design"
+community: "BoostSMS Package Tiers"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/Brand_Logo/Design
+  - community/BoostSMS_Package_Tiers
 ---
 
 # BoostSMS Sales Commission v1 (Markdown)
@@ -16,4 +16,4 @@ tags:
 - [[BoostSMS Sales Commission v2.1 (HTML)]] - `semantically_similar_to` [INFERRED]
 - [[Sales Commission v1 (flat 8%)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/Brand_Logo/Design
+#graphify/document #graphify/INFERRED #community/BoostSMS_Package_Tiers

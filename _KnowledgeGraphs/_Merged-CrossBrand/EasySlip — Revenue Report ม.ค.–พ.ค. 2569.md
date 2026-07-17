@@ -1,11 +1,11 @@
 ---
 source_file: "Revenue/2569-01-to-05 Revenue Report.md"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # EasySlip — Revenue Report ม.ค.–พ.ค. 2569
@@ -23,4 +23,4 @@ tags:
 - [[May 2569 Revenue Spike (+19.0% MoM → ฿6.42M)]] - `references` [EXTRACTED]
 - [[May Sub-segment Reconciliation Variance +฿53,723 (ยังไม่ reconcile)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

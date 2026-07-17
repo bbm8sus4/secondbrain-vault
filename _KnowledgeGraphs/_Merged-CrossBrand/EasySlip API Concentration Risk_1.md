@@ -1,12 +1,12 @@
 ---
 source_file: "Reports/thunder-monthly-slides.html"
 type: "rationale"
-community: "Thunder–EasySlip Integrations"
+community: "EasySlip"
 location: "Slide 7"
 tags:
   - graphify/rationale
   - graphify/INFERRED
-  - community/ThunderEasySlip_Integrations
+  - community/EasySlip
 ---
 
 # EasySlip API Concentration Risk
@@ -15,4 +15,4 @@ tags:
 - [[EasySlip API_1]] - `rationale_for` [INFERRED]
 - [[Thunder Group Executive Slides (Jan-May 2026)]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/INFERRED #community/ThunderEasySlip_Integrations
+#graphify/rationale #graphify/INFERRED #community/EasySlip

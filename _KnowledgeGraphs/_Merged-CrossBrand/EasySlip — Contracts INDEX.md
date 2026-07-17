@@ -1,11 +1,11 @@
 ---
 source_file: "Contracts/INDEX.md"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # EasySlip — Contracts INDEX
@@ -18,4 +18,4 @@ tags:
 - [[บริษัท อีซี่สลิป จำกัด (EasySlip Co., Ltd.)]] - `same_entity_as` [INFERRED]
 - [[บันทึกข้อตกลงการเชื่อม API SCCN × Easyslip (PDF ต้นฉบับ 18 หน้า)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

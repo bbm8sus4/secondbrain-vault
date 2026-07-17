@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/index.html"
 type: "concept"
-community: "Brand Logo/Design"
+community: "BoostSMS Package Tiers"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/BoostSMS_Package_Tiers
 ---
 
 # BoostSMS Package Tiers (Spark → Enterprise+)
@@ -16,4 +16,4 @@ tags:
 - [[BoostSMS Sales Commission v1 (Markdown)]] - `references` [EXTRACTED]
 - [[BoostSMS Sales Commission v2.1 (HTML)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Package_Tiers

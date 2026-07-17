@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K01-SMS-Marketing-Fundamentals.md"
 type: "document"
-community: "SMS Marketing Knowledge Base"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/SMS_Marketing_Knowledge_Base
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K01 SMS Marketing Fundamentals
@@ -20,4 +20,4 @@ tags:
 - [[SMS as Guaranteed-Read Channel]] - `references` [EXTRACTED]
 - [[Twilio]] - `cites` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SMS_Marketing_Knowledge_Base
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

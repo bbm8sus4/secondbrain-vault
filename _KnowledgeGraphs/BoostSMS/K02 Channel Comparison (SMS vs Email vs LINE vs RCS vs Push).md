@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K02-Channel-Comparison.md"
 type: "document"
-community: "SMS Marketing Knowledge Base"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/SMS_Marketing_Knowledge_Base
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K02 Channel Comparison (SMS vs Email vs LINE vs RCS vs Push)
@@ -19,4 +19,4 @@ tags:
 - [[Multi-Channel Orchestration Strategy]] - `references` [EXTRACTED]
 - [[RCS (Rich Communication Services)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SMS_Marketing_Knowledge_Base
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

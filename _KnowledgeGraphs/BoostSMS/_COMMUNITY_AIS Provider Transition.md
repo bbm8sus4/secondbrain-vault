@@ -30,8 +30,8 @@ SORT file.name ASC
 ```
 
 ## Connections to other communities
-- 1 edge to [[_COMMUNITY_Product Features & Platform]]
-- 1 edge to [[_COMMUNITY_Package Tiers & Pricing Gap]]
+- 1 edge to [[_COMMUNITY_BoostSMS]]
+- 1 edge to [[_COMMUNITY_Prepaid Credit Pricing Model]]
 
 ## Top bridge nodes
 - [[AIS Provider Transition (2026-07-01 meeting)]] - degree 7, connects to 1 community

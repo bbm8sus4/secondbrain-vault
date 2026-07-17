@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K08-Thai-SMS-Market-NBTC.md"
 type: "concept"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # NBTC (กสทช.)
@@ -17,4 +17,4 @@ tags:
 - [[K14 Compliance & Anti-Spam (PDPA, NBTC, Opt-inout)]] - `references` [EXTRACTED]
 - [[PDPA (Thai Personal Data Protection Act)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

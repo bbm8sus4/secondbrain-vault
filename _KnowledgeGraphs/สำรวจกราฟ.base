@@ -1,0 +1,50 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.path.startsWith("_KnowledgeGraphs")
+    - note.type != "community"
+    - note.type != "index"
+views:
+  - type: table
+    name: เหตุผลเบื้องหลัง (rationale / ทำไมถึงตัดสินใจ)
+    filters:
+      and:
+        - note.type == "rationale"
+    order:
+      - file.name
+      - note.community
+      - file.folder
+    sort:
+      - property: file.folder
+        direction: ASC
+  - type: table
+    name: แนวคิด/เอนทิตี (concepts)
+    filters:
+      and:
+        - note.type == "concept"
+    order:
+      - file.name
+      - note.community
+      - file.folder
+    sort:
+      - property: note.community
+        direction: ASC
+  - type: table
+    name: เอกสารต้นทาง (documents)
+    filters:
+      and:
+        - note.type == "document"
+    order:
+      - file.name
+      - note.community
+      - file.folder
+  - type: table
+    name: ทั้งหมด ตามชุมชนความรู้
+    order:
+      - file.name
+      - type
+      - note.community
+      - file.folder
+    sort:
+      - property: note.community
+        direction: ASC

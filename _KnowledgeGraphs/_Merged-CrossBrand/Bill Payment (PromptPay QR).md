@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/thunder_solution_info.html"
 type: "concept"
-community: "Thunder KBank Pricing"
+community: "Thunder Solution"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Thunder_KBank_Pricing
+  - community/Thunder_Solution
 ---
 
 # Bill Payment (PromptPay QR)
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Thunder Solution Platform]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Thunder_KBank_Pricing
+#graphify/concept #graphify/EXTRACTED #community/Thunder_Solution

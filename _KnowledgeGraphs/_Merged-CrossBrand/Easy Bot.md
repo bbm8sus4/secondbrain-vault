@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/thunder-may-2026-summary.html"
 type: "concept"
-community: "Brand Logo/Design"
+community: "★ BoostSMS"
 tags:
   - graphify/concept
   - graphify/INFERRED
-  - community/Brand_Logo/Design
+  - community/_BoostSMS
 ---
 
 # Easy Bot
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[EasyBOT]] - `same_entity_as` [INFERRED]
 
-#graphify/concept #graphify/INFERRED #community/Brand_Logo/Design
+#graphify/concept #graphify/INFERRED #community/_BoostSMS

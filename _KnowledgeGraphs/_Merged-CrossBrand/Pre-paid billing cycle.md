@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "rationale"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # Pre-paid billing cycle
@@ -14,4 +14,4 @@ tags:
 - [[Thunder Solution Co., Ltd. (บริษัท ธันเดอร์ โซลูชั่น จำกัด)]] - `conceptually_related_to` [EXTRACTED]
 - [[Thunder Solution — Public Business Context (AI-safe)]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/rationale #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

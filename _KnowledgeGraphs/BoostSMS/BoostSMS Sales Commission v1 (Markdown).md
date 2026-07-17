@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/SALES_COMMISSION.md"
 type: "document"
-community: "Pricing Docs & IP Ownership"
+community: "BoostSMS Platform"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/Pricing_Docs__IP_Ownership
+  - community/BoostSMS_Platform
 ---
 
 # BoostSMS Sales Commission v1 (Markdown)
@@ -16,4 +16,4 @@ tags:
 - [[BoostSMS Sales Commission v2.1 (HTML)]] - `semantically_similar_to` [INFERRED]
 - [[Sales Commission v1 (flat 8%)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/INFERRED #community/Pricing_Docs__IP_Ownership
+#graphify/document #graphify/INFERRED #community/BoostSMS_Platform

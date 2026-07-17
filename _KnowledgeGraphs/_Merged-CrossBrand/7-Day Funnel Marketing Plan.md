@@ -1,11 +1,11 @@
 ---
 source_file: "04-Funnel-Marketing-Plan.md"
 type: "concept"
-community: "BoostSMS Funnel Plan"
+community: "7-Day Funnel Marketing Plan"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Funnel_Plan
+  - community/7-Day_Funnel_Marketing_Plan
 ---
 
 # 7-Day Funnel Marketing Plan
@@ -28,4 +28,4 @@ tags:
 - [[K12 Competitor Landscape (Thai + Global)]] - `references` [EXTRACTED]
 - [[Pilot Industries (ClinicBeauty first)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Funnel_Plan
+#graphify/concept #graphify/EXTRACTED #community/7-Day_Funnel_Marketing_Plan

@@ -1,11 +1,11 @@
 ---
 source_file: "Materials/BoostSMS_Overview_Fixed.html"
 type: "document"
-community: "Brand Logo/Design"
+community: "7-Day Funnel Marketing Plan"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/7-Day_Funnel_Marketing_Plan
 ---
 
 # BoostSMS Week 1 Marketing Plan (Revised)
@@ -15,4 +15,4 @@ tags:
 - [[Decision Gate (GO  PIVOT  STOP)]] - `references` [EXTRACTED]
 - [[PDPA  Legal Compliance for SMS Marketing]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/document #graphify/EXTRACTED #community/7-Day_Funnel_Marketing_Plan

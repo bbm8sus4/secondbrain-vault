@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "rationale"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # Thunder×Easy Cross-billing (K2K 0.04 + Others 0.11 + VAT 7%)
@@ -18,4 +18,4 @@ tags:
 - [[Thunder Solution (enterprise brand)]] - `conceptually_related_to` [EXTRACTED]
 - [[Thunder → Easy cross-billing formula]] - `same_entity_as` [INFERRED]
 
-#graphify/rationale #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/rationale #graphify/EXTRACTED #community/SCCN__EasySlip

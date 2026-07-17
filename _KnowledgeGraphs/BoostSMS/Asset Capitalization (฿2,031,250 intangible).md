@@ -1,11 +1,11 @@
 ---
 source_file: "07-Project-History.md"
 type: "document"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Asset Capitalization (฿2,031,250 intangible)
@@ -15,4 +15,4 @@ tags:
 - [[BoostSMS V.2 Plan (Refactoring + AI)]] - `rationale_for` [EXTRACTED]
 - [[Project History & Development Timeline]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/document #graphify/EXTRACTED #community/BoostSMS

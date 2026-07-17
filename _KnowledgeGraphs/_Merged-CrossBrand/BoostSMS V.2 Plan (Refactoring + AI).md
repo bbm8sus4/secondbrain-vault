@@ -1,11 +1,11 @@
 ---
 source_file: "07-Project-History.md"
 type: "rationale"
-community: "Brand Logo/Design"
+community: "Project History & Development Time"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/Project_History__Development_Time
 ---
 
 # BoostSMS V.2 Plan (Refactoring + AI)
@@ -14,4 +14,4 @@ tags:
 - [[Asset Capitalization (฿2,031,250 intangible)]] - `rationale_for` [EXTRACTED]
 - [[Asset Cost Memo — บันทึกชี้แจงต้นทุนสินทรัพย์ (PDF)]] - `references` [INFERRED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/rationale #graphify/EXTRACTED #community/Project_History__Development_Time

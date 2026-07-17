@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/easyslip-gateway-summary.pdf"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # Easyslip Gateway — Live Dashboard Summary (PDF, สำรวจ 1 พ.ค. 2026)
@@ -18,4 +18,4 @@ tags:
 - [[Easyslip Gateway (easy-kbank-lb — rate-limited proxyLB บน cluster jetder.com)]] - `references` [EXTRACTED]
 - [[Token Bucket Rate Limiter (sustained 20 reqs, burst 50, window 5s)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

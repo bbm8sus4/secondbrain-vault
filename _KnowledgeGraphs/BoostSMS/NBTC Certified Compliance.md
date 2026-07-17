@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "rationale"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # NBTC Certified Compliance
@@ -14,4 +14,4 @@ tags:
 - [[Multi-sender (Sender Name)]] - `rationale_for` [EXTRACTED]
 - [[NBTC (กสทช.)]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/rationale #graphify/EXTRACTED #community/BoostSMS

@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/index.html"
 type: "concept"
-community: "Pricing Docs & IP Ownership"
+community: "BoostSMS Platform"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Pricing_Docs__IP_Ownership
+  - community/BoostSMS_Platform
 ---
 
 # บริษัท อีซี่สลิป จำกัด (EasySlip Co.)
@@ -17,4 +17,4 @@ tags:
 - [[K11 Thai SMS Case Studies]] - `references` [EXTRACTED]
 - [[Thunder Solution (brand)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Pricing_Docs__IP_Ownership
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Platform

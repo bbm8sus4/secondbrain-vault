@@ -8,6 +8,34 @@
   "collapse-color-groups": false,
   "colorGroups": [
     {
+      "query": "path:\"_KnowledgeGraphs/_Merged-CrossBrand\"",
+      "color": {
+        "a": 1,
+        "rgb": 11104511
+      }
+    },
+    {
+      "query": "path:\"_KnowledgeGraphs/BoostSMS\"",
+      "color": {
+        "a": 1,
+        "rgb": 3699198
+      }
+    },
+    {
+      "query": "path:\"_KnowledgeGraphs/EasySlip\"",
+      "color": {
+        "a": 1,
+        "rgb": 3391359
+      }
+    },
+    {
+      "query": "path:\"_KnowledgeGraphs/Thunder\"",
+      "color": {
+        "a": 1,
+        "rgb": 16755763
+      }
+    },
+    {
       "query": "Friday",
       "color": {
         "a": 1,

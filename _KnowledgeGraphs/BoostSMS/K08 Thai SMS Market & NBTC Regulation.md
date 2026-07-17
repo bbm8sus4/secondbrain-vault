@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K08-Thai-SMS-Market-NBTC.md"
 type: "document"
-community: "SMS Marketing Knowledge Base"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/SMS_Marketing_Knowledge_Base
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K08 Thai SMS Market & NBTC Regulation
@@ -30,4 +30,4 @@ tags:
 - [[Twilio]] - `references` [EXTRACTED]
 - [[dtac (merged with True)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SMS_Marketing_Knowledge_Base
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

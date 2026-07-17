@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/easyslip-gateway-summary.pdf"
 type: "concept"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # Easyslip Gateway (easy-kbank-lb — rate-limited proxy/LB บน cluster jetder.com)
@@ -18,4 +18,4 @@ tags:
 - [[Thunder×Easy Cross-billing (K2K 0.04 + Others 0.11 + VAT 7%)]] - `conceptually_related_to` [AMBIGUOUS]
 - [[Token Bucket Rate Limiter (sustained 20 reqs, burst 50, window 5s)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

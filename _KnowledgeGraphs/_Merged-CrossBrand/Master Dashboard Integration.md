@@ -1,11 +1,11 @@
 ---
 source_file: "08-Master-Dashboard-Integration.md"
 type: "concept"
-community: "BoostSMS Backoffice Admin"
+community: "Master Dashboard Integration"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Backoffice_Admin
+  - community/Master_Dashboard_Integration
 ---
 
 # Master Dashboard Integration
@@ -20,4 +20,4 @@ tags:
 - [[Master Dashboard]] - `references` [EXTRACTED]
 - [[Master Dashboard — Thunder Group (master-dashboard-eight-nu.vercel.app)]] - `same_entity_as` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Backoffice_Admin
+#graphify/concept #graphify/EXTRACTED #community/Master_Dashboard_Integration

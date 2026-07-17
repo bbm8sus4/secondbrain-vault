@@ -1,11 +1,11 @@
 ---
 source_file: "03-Sales-Commission.md"
 type: "concept"
-community: "Package Tiers & Pricing Gap"
+community: "Prepaid Credit Pricing Model"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Package_Tiers__Pricing_Gap
+  - community/Prepaid_Credit_Pricing_Model
 ---
 
 # Base Salary (฿15K–25K)
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Sales Commission Structure]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Package_Tiers__Pricing_Gap
+#graphify/concept #graphify/EXTRACTED #community/Prepaid_Credit_Pricing_Model

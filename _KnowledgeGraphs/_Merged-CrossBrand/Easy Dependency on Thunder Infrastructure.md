@@ -1,12 +1,12 @@
 ---
 source_file: "Reports/kbank-api-pricing-and-easy-thunder-crossbilling.md"
 type: "rationale"
-community: "Brand Logo/Design"
+community: "Thunder×Easy Cross-billing"
 location: "Section 3"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/ThunderEasy_Cross-billing
 ---
 
 # Easy Dependency on Thunder Infrastructure
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Thunder×Easy Cross-billing]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/rationale #graphify/EXTRACTED #community/ThunderEasy_Cross-billing

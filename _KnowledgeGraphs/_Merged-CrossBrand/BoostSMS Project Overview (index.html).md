@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/index.html"
 type: "document"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # BoostSMS Project Overview (index.html)
@@ -21,4 +21,4 @@ tags:
 - [[บริษัท มูนรึทึ่ม จำกัด (Source Code Vendor)]] - `references` [EXTRACTED]
 - [[บริษัท อีซี่สลิป จำกัด (EasySlip Co.)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

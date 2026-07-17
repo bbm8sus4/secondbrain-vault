@@ -1,12 +1,12 @@
 ---
 source_file: "Reports/thunder-corporate-api-sales-commission.md"
 type: "rationale"
-community: "Thunder KBank Pricing"
+community: "Thunder Solution"
 location: "Section 3"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Thunder_KBank_Pricing
+  - community/Thunder_Solution
 ---
 
 # Sales Commission Model
@@ -16,4 +16,4 @@ tags:
 - [[Cost Scenario A (Other-source 100%)]] - `references` [EXTRACTED]
 - [[Cost Scenario B (Mix blend 3070)]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Thunder_KBank_Pricing
+#graphify/rationale #graphify/EXTRACTED #community/Thunder_Solution

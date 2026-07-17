@@ -1,11 +1,11 @@
 ---
 source_file: "07-Project-History.md"
 type: "concept"
-community: "Brand Logo/Design"
+community: "IP Transfer"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/IP_Transfer
 ---
 
 # มหาสมุทร ฉัตรปราการ (DevOps Engineer)
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[IP Transfer (Moonrithim → EasySlip)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/concept #graphify/EXTRACTED #community/IP_Transfer

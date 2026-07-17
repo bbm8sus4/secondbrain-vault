@@ -1,11 +1,11 @@
 ---
 source_file: "08-Master-Dashboard-Integration.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Master Dashboard
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Master Dashboard Integration]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS

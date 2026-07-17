@@ -1,11 +1,11 @@
 ---
 source_file: "06-Backoffice-Admin.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Backoffice Admin Panel backoffice.boost-sms.com
@@ -15,4 +15,4 @@ tags:
 - [[RBAC + Audit Logs]] - `references` [EXTRACTED]
 - [[Slip Verification (orders pending)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS

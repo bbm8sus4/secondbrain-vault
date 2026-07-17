@@ -1,11 +1,11 @@
 ---
 source_file: "หน้าหลัก.md"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # EasySlip — หน้าหลัก (Brand Index)
@@ -22,4 +22,4 @@ tags:
 - [[Easyslip Gateway — Live Dashboard Summary (PDF, สำรวจ 1 พ.ค. 2026)]] - `references` [EXTRACTED]
 - [[รายงานสรุปภาพรวมธุรกิจประจำปี 2568 — EasySlip (Business Overview PDF, ต่อผู้สอบบัญชี)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

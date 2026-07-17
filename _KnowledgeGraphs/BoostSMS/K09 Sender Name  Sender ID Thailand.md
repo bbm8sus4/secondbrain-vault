@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K09-Sender-Name-Thailand.md"
 type: "document"
-community: "SMS Marketing Knowledge Base"
+community: "BoostSMS Platform"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/SMS_Marketing_Knowledge_Base
+  - community/BoostSMS_Platform
 ---
 
 # K09 Sender Name / Sender ID Thailand
@@ -21,4 +21,4 @@ tags:
 - [[Sender Name  Sender ID]] - `references` [EXTRACTED]
 - [[บริษัท อีซี่สลิป จำกัด (EasySlip Co.)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SMS_Marketing_Knowledge_Base
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Platform

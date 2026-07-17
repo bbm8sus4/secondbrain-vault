@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/thunder-may-2026-summary.html"
 type: "document"
-community: "Thunder–EasySlip Integrations"
+community: "EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/ThunderEasySlip_Integrations
+  - community/EasySlip
 ---
 
 # Thunder Group May 2026 Executive Report
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Thunder Group_1]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/ThunderEasySlip_Integrations
+#graphify/document #graphify/EXTRACTED #community/EasySlip

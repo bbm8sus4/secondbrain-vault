@@ -1,11 +1,11 @@
 ---
 source_file: "03-Sales-Commission.md"
 type: "rationale"
-community: "Package Tiers & Pricing Gap"
+community: "Prepaid Credit Pricing Model"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Package_Tiers__Pricing_Gap
+  - community/Prepaid_Credit_Pricing_Model
 ---
 
 # AI Debate Sales Comp Analysis (2026-06-06)
@@ -15,4 +15,4 @@ tags:
 - [[Dead Zone ฿30K–฿100K Pricing Gap]] - `references` [EXTRACTED]
 - [[Recurring Commission 6-month Cutoff (anti-SaaS)]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Package_Tiers__Pricing_Gap
+#graphify/rationale #graphify/EXTRACTED #community/Prepaid_Credit_Pricing_Model

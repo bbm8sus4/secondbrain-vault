@@ -1,12 +1,12 @@
 ---
 source_file: "Reports/bni-thunder-5min.html"
 type: "rationale"
-community: "Thunder–EasySlip Integrations"
+community: "EasySlip"
 location: "Slide 3"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/ThunderEasySlip_Integrations
+  - community/EasySlip
 ---
 
 # QR-based BoT Slip Verification
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[EasySlip]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/ThunderEasySlip_Integrations
+#graphify/rationale #graphify/EXTRACTED #community/EasySlip

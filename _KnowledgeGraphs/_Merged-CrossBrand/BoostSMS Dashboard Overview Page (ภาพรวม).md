@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/screenshots/boostsms_app_dashboard_2026-05-19T04-07-22-088Z.png"
 type: "concept"
-community: "BoostSMS App Dashboard UI"
+community: "BoostSMS Dashboard Overview Page"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_App_Dashboard_UI
+  - community/BoostSMS_Dashboard_Overview_Page
 ---
 
 # BoostSMS Dashboard Overview Page (ภาพรวม)
@@ -21,4 +21,4 @@ tags:
 - [[SMS Volume Chart (dayweekmonth toggle, total 614, avgday 307)]] - `references` [EXTRACTED]
 - [[Sidebar Navigation (4 sections เมนูหลัก  การเงิน  จัดการ  API)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_App_Dashboard_UI
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Dashboard_Overview_Page

@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K10-Global-Case-Studies.md"
 type: "document"
-community: "SMS Marketing Knowledge Base"
+community: "K10 Global SMS Case Studies"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/SMS_Marketing_Knowledge_Base
+  - community/K10_Global_SMS_Case_Studies
 ---
 
 # K10 Global SMS Case Studies
@@ -22,4 +22,4 @@ tags:
 - [[Starbucks SMS + App Loyalty Hybrid]] - `references` [EXTRACTED]
 - [[Walgreens Rx & Appointment SMS]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SMS_Marketing_Knowledge_Base
+#graphify/document #graphify/EXTRACTED #community/K10_Global_SMS_Case_Studies

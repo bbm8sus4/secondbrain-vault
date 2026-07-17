@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K11-Thai-Case-Studies.md"
 type: "document"
-community: "Pricing Docs & IP Ownership"
+community: "BoostSMS Platform"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Pricing_Docs__IP_Ownership
+  - community/BoostSMS_Platform
 ---
 
 # K11 Thai SMS Case Studies
@@ -24,4 +24,4 @@ tags:
 - [[Shopee Thailand SMS]] - `references` [EXTRACTED]
 - [[บริษัท อีซี่สลิป จำกัด (EasySlip Co.)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Pricing_Docs__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Platform

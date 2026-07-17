@@ -1,11 +1,11 @@
 ---
 source_file: "03-Revenue-Commission.md"
 type: "rationale"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # Cost Scenario A (Other-source 100%, cost 0.110, GP 12%)
@@ -14,4 +14,4 @@ tags:
 - [[Corporate API sales commission model]] - `rationale_for` [EXTRACTED]
 - [[KBank Slip Verification API pricing (tiered, excl. VAT)]] - `shares_data_with` [INFERRED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/rationale #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

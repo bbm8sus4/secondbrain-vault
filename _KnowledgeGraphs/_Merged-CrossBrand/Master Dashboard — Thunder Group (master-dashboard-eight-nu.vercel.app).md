@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # Master Dashboard — Thunder Group (master-dashboard-eight-nu.vercel.app)
@@ -16,4 +16,4 @@ tags:
 - [[Master Dashboard Integration]] - `same_entity_as` [INFERRED]
 - [[Thunder Solution — Overview (KB doc)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/concept #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

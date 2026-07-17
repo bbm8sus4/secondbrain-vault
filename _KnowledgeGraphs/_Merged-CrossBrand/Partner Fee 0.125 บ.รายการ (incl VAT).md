@@ -1,11 +1,11 @@
 ---
 source_file: "Contracts/2569-03-31_SCCN_x_Easyslip_Slip-Verification-API.md"
 type: "concept"
-community: "★ Cross-Brand: API Pricing & Cost"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_API_Pricing__Cost
+  - community/SCCN__EasySlip
 ---
 
 # Partner Fee 0.125 บ./รายการ (incl VAT)
@@ -14,4 +14,4 @@ tags:
 - [[EasySlip API Pricing — 11 แพ็กเกจ (Tester→Premium 3, ฿99–40,000 · 0.396→0.125สลิป)]] - `semantically_similar_to` [INFERRED]
 - [[SCCN × EasySlip — Slip Verification API MOU (ลงนาม 31 มี.ค. 2569, verbatim)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_API_Pricing__Cost
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

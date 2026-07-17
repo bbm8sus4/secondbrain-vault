@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "rationale"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # EasySlip Revenue Concentration Risk
@@ -17,4 +17,4 @@ tags:
 - [[Top-up Concentration (Gini 0.888 · Top 1% = 50% · Top 10% = 81%)]] - `conceptually_related_to` [EXTRACTED]
 - [[Whale Account 1 (฿10.4M = 31% ของยอดเติม 6 เดือน)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/rationale #graphify/EXTRACTED #community/SCCN__EasySlip

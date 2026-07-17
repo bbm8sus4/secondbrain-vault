@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/bni-thunder-5min.html"
 type: "concept"
-community: "Thunder–EasySlip Integrations"
+community: "EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/ThunderEasySlip_Integrations
+  - community/EasySlip
 ---
 
 # EasySlip
@@ -20,4 +20,4 @@ tags:
 - [[WooCommerce Plugin]] - `conceptually_related_to` [EXTRACTED]
 - [[n8n Automation Node]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/ThunderEasySlip_Integrations
+#graphify/concept #graphify/EXTRACTED #community/EasySlip

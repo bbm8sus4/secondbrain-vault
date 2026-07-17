@@ -1,11 +1,11 @@
 ---
 source_file: "Meetings/2026-07-01-AIS-Provider-Transition.md"
 type: "concept"
-community: "BoostSMS Package Tiers"
+community: "AIS Provider Transition"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Package_Tiers
+  - community/AIS_Provider_Transition
 ---
 
 # LeanFlow Back-office + CSV/Excel/PDF Export
@@ -14,4 +14,4 @@ tags:
 - [[AIS Provider Transition (2026-07-01 meeting)]] - `references` [EXTRACTED]
 - [[Task 1 Lean Customer Onboarding Form (บอม)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Package_Tiers
+#graphify/concept #graphify/EXTRACTED #community/AIS_Provider_Transition

@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/api-pricing-packages.md"
 type: "concept"
-community: "★ Cross-Brand: API Pricing & Cost"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_API_Pricing__Cost
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # KBank MOU Cost (8 ม.ค. 2568): K-source tiered 0.04→0.025 · Other-source flat 0.11
@@ -18,4 +18,4 @@ tags:
 - [[KBank Slip Verification API (upstream ต้นทุน)]] - `conceptually_related_to` [EXTRACTED]
 - [[Quick Cost Rule — ต้นทุน = สลิป × 0.11 (worst case Others 100%)]] - `shares_data_with` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_API_Pricing__Cost
+#graphify/concept #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

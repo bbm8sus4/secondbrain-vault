@@ -1,12 +1,12 @@
 ---
 source_file: "Reports/thunder-corporate-api-sales-commission.md"
 type: "concept"
-community: "Thunder KBank Pricing"
+community: "Thunder Solution"
 location: "Section 4-5"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Thunder_KBank_Pricing
+  - community/Thunder_Solution
 ---
 
 # Coperate A-J Tiers
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Thunder Corporate API (MOU)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Thunder_KBank_Pricing
+#graphify/concept #graphify/EXTRACTED #community/Thunder_Solution

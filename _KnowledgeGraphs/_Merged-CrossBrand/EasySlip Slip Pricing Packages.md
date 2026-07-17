@@ -1,12 +1,12 @@
 ---
 source_file: "Reports/bni-thunder-5min.html"
 type: "concept"
-community: "Thunder–EasySlip Integrations"
+community: "EasySlip"
 location: "Slide 6"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/ThunderEasySlip_Integrations
+  - community/EasySlip
 ---
 
 # EasySlip Slip Pricing Packages
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[EasySlip]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/ThunderEasySlip_Integrations
+#graphify/concept #graphify/EXTRACTED #community/EasySlip

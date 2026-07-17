@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K04-Campaign-Types.md"
 type: "document"
-community: "SMS Marketing Knowledge Base"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/SMS_Marketing_Knowledge_Base
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K04 SMS Campaign Types
@@ -22,4 +22,4 @@ tags:
 - [[K10 Global SMS Case Studies]] - `references` [EXTRACTED]
 - [[Trigger-based SMS Campaigns]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/SMS_Marketing_Knowledge_Base
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

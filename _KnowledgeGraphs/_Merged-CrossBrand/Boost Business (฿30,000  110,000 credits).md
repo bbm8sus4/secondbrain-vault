@@ -1,11 +1,11 @@
 ---
 source_file: "02-Packages-Pricing.md"
 type: "concept"
-community: "BoostSMS Package Tiers"
+community: "Prepaid Credit Pricing Model"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Package_Tiers
+  - community/Prepaid_Credit_Pricing_Model
 ---
 
 # Boost Business (฿30,000 / 110,000 credits)
@@ -14,4 +14,4 @@ tags:
 - [[Dead Zone ฿30K–฿100K Pricing Gap]] - `rationale_for` [EXTRACTED]
 - [[Prepaid Credit Pricing Model (9 packages)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Package_Tiers
+#graphify/concept #graphify/EXTRACTED #community/Prepaid_Credit_Pricing_Model

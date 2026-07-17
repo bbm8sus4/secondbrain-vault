@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/api-pricing-packages.md"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # EasySlip API — Public Pricing & Margin Analysis
@@ -17,4 +17,4 @@ tags:
 - [[EasySlip — หน้าหลัก (Brand Index)]] - `references` [EXTRACTED]
 - [[รายงานสรุปภาพรวมธุรกิจประจำปี 2568 — EasySlip (Business Overview PDF, ต่อผู้สอบบัญชี)]] - `cites` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

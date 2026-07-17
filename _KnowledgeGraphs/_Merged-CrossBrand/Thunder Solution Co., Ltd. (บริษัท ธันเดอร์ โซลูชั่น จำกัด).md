@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # Thunder Solution Co., Ltd. (บริษัท ธันเดอร์ โซลูชั่น จำกัด)
@@ -23,4 +23,4 @@ tags:
 - [[Thunder Solution — Public Business Context (AI-safe)]] - `references` [EXTRACTED]
 - [[Thunder → Easy cross-billing formula]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/concept #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

@@ -1,11 +1,11 @@
 ---
 source_file: "Materials/SALES_COMMISSION.md"
 type: "document"
-community: "Package Tiers & Pricing Gap"
+community: "Prepaid Credit Pricing Model"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Package_Tiers__Pricing_Gap
+  - community/Prepaid_Credit_Pricing_Model
 ---
 
 # SALES_COMMISSION (source)
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Sales Commission Structure]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Package_Tiers__Pricing_Gap
+#graphify/document #graphify/EXTRACTED #community/Prepaid_Credit_Pricing_Model

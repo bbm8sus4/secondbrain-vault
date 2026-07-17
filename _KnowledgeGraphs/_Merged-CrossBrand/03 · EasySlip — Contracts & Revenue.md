@@ -1,11 +1,11 @@
 ---
 source_file: "03-Contracts-Revenue.md"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # 03 · EasySlip — Contracts & Revenue
@@ -18,4 +18,4 @@ tags:
 - [[EasySlip — หน้าหลัก (Brand Index)]] - `references` [EXTRACTED]
 - [[SCCN × EasySlip — Slip Verification API MOU (ลงนาม 31 มี.ค. 2569, verbatim)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

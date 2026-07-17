@@ -1,11 +1,11 @@
 ---
 source_file: "07-Project-History.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # มหาสมุทร ฉัตรปราการ (DevOps Engineer)
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[IP Transfer (Moonrithim → EasySlip)]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS

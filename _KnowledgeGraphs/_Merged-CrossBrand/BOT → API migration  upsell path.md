@@ -1,11 +1,11 @@
 ---
 source_file: "Revenue/2569-01-to-05 Revenue Report.md"
 type: "rationale"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # BOT → API migration / upsell path
@@ -15,4 +15,4 @@ tags:
 - [[Thunder API (slip verification API service)]] - `conceptually_related_to` [EXTRACTED]
 - [[Thunder BOT (LINE chatbot)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/rationale #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

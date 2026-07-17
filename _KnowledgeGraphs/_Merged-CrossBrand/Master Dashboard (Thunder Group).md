@@ -1,12 +1,12 @@
 ---
 source_file: "Reports/thunder-monthly-slides.html"
 type: "concept"
-community: "Thunder–EasySlip Integrations"
+community: "EasySlip"
 location: "Slide 1"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/ThunderEasySlip_Integrations
+  - community/EasySlip
 ---
 
 # Master Dashboard (Thunder Group)
@@ -14,4 +14,4 @@ tags:
 ## Connections
 - [[Thunder Group Executive Slides (Jan-May 2026)]] - `cites` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/ThunderEasySlip_Integrations
+#graphify/concept #graphify/EXTRACTED #community/EasySlip

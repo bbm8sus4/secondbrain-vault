@@ -1,11 +1,11 @@
 ---
 source_file: "Materials/PROJECT_BRIEF.md"
 type: "document"
-community: "BoostSMS Product Features"
+community: "★ BoostSMS"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Product_Features
+  - community/_BoostSMS
 ---
 
 # PROJECT_BRIEF (source overview)
@@ -14,4 +14,4 @@ tags:
 - [[BoostSMS]] - `references` [EXTRACTED]
 - [[Web SMS]] - `cites` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Product_Features
+#graphify/document #graphify/EXTRACTED #community/_BoostSMS

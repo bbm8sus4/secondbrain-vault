@@ -1,11 +1,11 @@
 ---
 source_file: "Revenue/2569-01-to-05 Revenue Report.md"
 type: "concept"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # Group Revenue Target ฿125M (ปี 2569, YTD 40.8%)
@@ -15,4 +15,4 @@ tags:
 - [[Forecast 2569 ก.ค. ฿6.6–7.5M · ทั้งปี ฿75–83M]] - `conceptually_related_to` [INFERRED]
 - [[Thunder Group (Thunder Solution + EasySlip)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

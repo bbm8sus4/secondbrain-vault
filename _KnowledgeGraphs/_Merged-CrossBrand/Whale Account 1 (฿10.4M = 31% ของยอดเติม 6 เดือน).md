@@ -1,11 +1,11 @@
 ---
 source_file: "Revenue/EasySlip API - วิเคราะห์ลูกค้า Top-up 6 เดือน.md"
 type: "concept"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # Whale Account #1 (฿10.4M = 31% ของยอดเติม 6 เดือน)
@@ -17,4 +17,4 @@ tags:
 - [[Monthly Growth Quality Verdicts (โตจริงโตหลอก ม.ค.–มิ.ย.)]] - `conceptually_related_to` [EXTRACTED]
 - [[Top-up Concentration (Gini 0.888 · Top 1% = 50% · Top 10% = 81%)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

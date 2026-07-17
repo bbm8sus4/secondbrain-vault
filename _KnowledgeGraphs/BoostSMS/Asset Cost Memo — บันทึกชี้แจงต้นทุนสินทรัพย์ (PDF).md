@@ -1,11 +1,11 @@
 ---
 source_file: "Materials/บันทึกชี้แจงรายละเอียดโครงการและสรุปต้นทุนสินทรัพย์_BoostSMS (2).pdf"
 type: "document"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/document
   - graphify/INFERRED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Asset Cost Memo — บันทึกชี้แจงต้นทุนสินทรัพย์ (PDF)
@@ -14,4 +14,4 @@ tags:
 - [[Asset Capitalization (฿2,031,250 intangible)]] - `references` [INFERRED]
 - [[BoostSMS V.2 Plan (Refactoring + AI)]] - `references` [INFERRED]
 
-#graphify/document #graphify/INFERRED #community/Product_Features__Platform
+#graphify/document #graphify/INFERRED #community/BoostSMS

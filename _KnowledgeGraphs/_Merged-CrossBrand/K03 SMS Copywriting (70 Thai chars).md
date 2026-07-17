@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K03-SMS-Copywriting.md"
 type: "document"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # K03 SMS Copywriting (70 Thai chars)
@@ -21,4 +21,4 @@ tags:
 - [[Opt-out Requirement (STOP)]] - `references` [EXTRACTED]
 - [[SMS Encoding GSM-7 vs UCS-2]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/document #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

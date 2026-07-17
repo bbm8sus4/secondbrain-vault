@@ -1,11 +1,11 @@
 ---
 source_file: "Meetings/2026-07-01-AIS-Provider-Transition.md"
 type: "rationale"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Credit Refund + กสทช. Compliance
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[NBTC (กสทช.)]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/rationale #graphify/EXTRACTED #community/BoostSMS

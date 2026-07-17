@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/api-pricing-packages.md"
 type: "concept"
-community: "★ Cross-Brand: API Pricing & Cost"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_API_Pricing__Cost
+  - community/SCCN__EasySlip
 ---
 
 # EasySlip API Pricing — 11 แพ็กเกจ (Tester→Premium 3, ฿99–40,000 · 0.396→0.125/สลิป)
@@ -17,4 +17,4 @@ tags:
 - [[MRR Tier Structure — Enterprise tiers (Diamond, Premium 1–3) = ~฿1.69M = 68% ของ MRR ~฿2.5M]] - `conceptually_related_to` [INFERRED]
 - [[Partner Fee 0.125 บ.รายการ (incl VAT)]] - `semantically_similar_to` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_API_Pricing__Cost
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

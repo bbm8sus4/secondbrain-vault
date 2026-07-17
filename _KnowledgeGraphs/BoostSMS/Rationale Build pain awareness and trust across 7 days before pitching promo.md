@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/boostsms_doc_2026-05-18T08-19-11-342Z.png"
 type: "rationale"
-community: "7-Day Content Plan"
+community: "7-Day Content Plan by Funnel Stage"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/7-Day_Content_Plan
+  - community/7-Day_Content_Plan_by_Funnel_Stage
 ---
 
 # Rationale: Build pain awareness and trust across 7 days before pitching promo
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[7-Day Content Plan by Funnel Stage]] - `rationale_for` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/7-Day_Content_Plan
+#graphify/rationale #graphify/EXTRACTED #community/7-Day_Content_Plan_by_Funnel_Stage

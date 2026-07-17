@@ -1,11 +1,11 @@
 ---
 source_file: "07-Project-History.md"
 type: "rationale"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # BoostSMS V.2 Plan (Refactoring + AI)
@@ -14,4 +14,4 @@ tags:
 - [[Asset Capitalization (฿2,031,250 intangible)]] - `rationale_for` [EXTRACTED]
 - [[Asset Cost Memo — บันทึกชี้แจงต้นทุนสินทรัพย์ (PDF)]] - `references` [INFERRED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/rationale #graphify/EXTRACTED #community/BoostSMS

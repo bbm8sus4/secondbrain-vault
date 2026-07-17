@@ -1,11 +1,11 @@
 ---
 source_file: "01-Overview.md"
 type: "concept"
-community: "Brand Logo/Design"
+community: "Multi-sender"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/Multi-sender
 ---
 
 # Multi-sender (Sender Name)
@@ -15,4 +15,4 @@ tags:
 - [[NBTC Certified Compliance]] - `rationale_for` [EXTRACTED]
 - [[Sender Names (Thunder-AI  EasySlip  BANKTECH)]] - `implements` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/concept #graphify/EXTRACTED #community/Multi-sender

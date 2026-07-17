@@ -1,11 +1,11 @@
 ---
 source_file: "02-Products-Services.md"
 type: "concept"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # Thunder API (slip verification API service)
@@ -18,4 +18,4 @@ tags:
 - [[Slip Verification (ตรวจสอบสลิปโอนเงิน)]] - `implements` [EXTRACTED]
 - [[Thunder Solution Co., Ltd. (บริษัท ธันเดอร์ โซลูชั่น จำกัด)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/concept #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/thunder_solution_info.html"
 type: "document"
-community: "Thunder KBank Pricing"
+community: "Thunder Solution"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Thunder_KBank_Pricing
+  - community/Thunder_Solution
 ---
 
 # Thunder Solution Platform
@@ -16,4 +16,4 @@ tags:
 - [[Letter & Document Editor]] - `references` [EXTRACTED]
 - [[Thunder Solution]] - `conceptually_related_to` [INFERRED]
 
-#graphify/document #graphify/EXTRACTED #community/Thunder_KBank_Pricing
+#graphify/document #graphify/EXTRACTED #community/Thunder_Solution

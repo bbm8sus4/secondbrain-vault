@@ -1,11 +1,11 @@
 ---
 source_file: "_knowledge/K10-Global-Case-Studies.md"
 type: "concept"
-community: "BoostSMS Pricing & IP Ownership"
+community: "BoostSMS Knowledge Base Index"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/BoostSMS_Pricing__IP_Ownership
+  - community/BoostSMS_Knowledge_Base_Index
 ---
 
 # Domino's Pizza SMS Order Tracking
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[K10 Global SMS Case Studies]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Pricing__IP_Ownership
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS_Knowledge_Base_Index

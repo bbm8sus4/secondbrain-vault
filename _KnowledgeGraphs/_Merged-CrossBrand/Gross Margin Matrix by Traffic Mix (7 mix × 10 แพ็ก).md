@@ -1,11 +1,11 @@
 ---
 source_file: "Documents/api-pricing-packages.md"
 type: "concept"
-community: "★ Cross-Brand: API Pricing & Cost"
+community: "SCCN × EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_API_Pricing__Cost
+  - community/SCCN__EasySlip
 ---
 
 # Gross Margin Matrix by Traffic Mix (7 mix × 10 แพ็ก)
@@ -17,4 +17,4 @@ tags:
 - [[Sweet Spot Mix 7030 (KOther)]] - `conceptually_related_to` [EXTRACTED]
 - [[Thunder×Easy Cross-billing (K2K 0.04 + Others 0.11 + VAT 7%)]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_API_Pricing__Cost
+#graphify/concept #graphify/EXTRACTED #community/SCCN__EasySlip

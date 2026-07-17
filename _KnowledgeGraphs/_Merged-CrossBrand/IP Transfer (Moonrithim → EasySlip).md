@@ -1,11 +1,11 @@
 ---
 source_file: "07-Project-History.md"
 type: "document"
-community: "Brand Logo/Design"
+community: "IP Transfer"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/IP_Transfer
 ---
 
 # IP Transfer (Moonrithim → EasySlip)
@@ -17,4 +17,4 @@ tags:
 - [[มหาสมุทร ฉัตรปราการ (DevOps Engineer)]] - `references` [EXTRACTED]
 - [[วัชรินทร์ แก้วม่วง (CEO, EasySlip)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/document #graphify/EXTRACTED #community/IP_Transfer

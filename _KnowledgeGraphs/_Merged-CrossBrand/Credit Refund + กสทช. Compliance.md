@@ -1,11 +1,11 @@
 ---
 source_file: "Meetings/2026-07-01-AIS-Provider-Transition.md"
 type: "rationale"
-community: "Brand Logo/Design"
+community: "Multi-sender"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Brand_Logo/Design
+  - community/Multi-sender
 ---
 
 # Credit Refund + กสทช. Compliance
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[NBTC (กสทช.)]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Brand_Logo/Design
+#graphify/rationale #graphify/EXTRACTED #community/Multi-sender

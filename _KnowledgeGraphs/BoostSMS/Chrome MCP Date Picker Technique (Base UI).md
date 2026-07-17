@@ -1,11 +1,11 @@
 ---
 source_file: "08-Master-Dashboard-Integration.md"
 type: "rationale"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/rationale
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # Chrome MCP Date Picker Technique (Base UI)
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Master Dashboard Integration]] - `references` [EXTRACTED]
 
-#graphify/rationale #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/rationale #graphify/EXTRACTED #community/BoostSMS

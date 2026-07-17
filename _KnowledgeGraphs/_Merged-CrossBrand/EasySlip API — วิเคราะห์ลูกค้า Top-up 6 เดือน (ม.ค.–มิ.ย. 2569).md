@@ -1,11 +1,11 @@
 ---
 source_file: "Revenue/EasySlip API - วิเคราะห์ลูกค้า Top-up 6 เดือน.md"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # EasySlip API — วิเคราะห์ลูกค้า Top-up 6 เดือน (ม.ค.–มิ.ย. 2569)
@@ -23,4 +23,4 @@ tags:
 - [[Top-up Dashboards (4 หน้า single-file HTML + สคริปต์ python 7 ตัว, PII — ห้าม deploy public)]] - `references` [EXTRACTED]
 - [[Whale Account 1 (฿10.4M = 31% ของยอดเติม 6 เดือน)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

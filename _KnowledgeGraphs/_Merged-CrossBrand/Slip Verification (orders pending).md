@@ -1,11 +1,11 @@
 ---
 source_file: "06-Backoffice-Admin.md"
 type: "concept"
-community: "BoostSMS Backoffice Admin"
+community: "Master Dashboard Integration"
 tags:
   - graphify/concept
   - graphify/INFERRED
-  - community/BoostSMS_Backoffice_Admin
+  - community/Master_Dashboard_Integration
 ---
 
 # Slip Verification (orders pending)
@@ -15,4 +15,4 @@ tags:
 - [[EasySlip_1]] - `conceptually_related_to` [INFERRED]
 - [[Slip Verification (ตรวจสอบสลิปโอนเงิน)]] - `same_entity_as` [INFERRED]
 
-#graphify/concept #graphify/INFERRED #community/BoostSMS_Backoffice_Admin
+#graphify/concept #graphify/INFERRED #community/Master_Dashboard_Integration

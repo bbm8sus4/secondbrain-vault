@@ -1,11 +1,11 @@
 ---
 source_file: "หน้าหลัก.md"
 type: "concept"
-community: "Product Features & Platform"
+community: "BoostSMS"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/Product_Features__Platform
+  - community/BoostSMS
 ---
 
 # EasySlip
@@ -15,4 +15,4 @@ tags:
 - [[Master Dashboard Integration]] - `references` [EXTRACTED]
 - [[Slip Verification (orders pending)]] - `conceptually_related_to` [INFERRED]
 
-#graphify/concept #graphify/EXTRACTED #community/Product_Features__Platform
+#graphify/concept #graphify/EXTRACTED #community/BoostSMS

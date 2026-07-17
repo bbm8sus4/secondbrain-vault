@@ -1,11 +1,11 @@
 ---
 source_file: "02-API-Pricing-Packages.md"
 type: "document"
-community: "EasySlip Revenue & Products"
+community: "SCCN × EasySlip"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/EasySlip_Revenue__Products
+  - community/SCCN__EasySlip
 ---
 
 # 02 · EasySlip — Pricing Packages (API + BOT)
@@ -18,4 +18,4 @@ tags:
 - [[Easyslip Gateway — Live Dashboard Summary (PDF, สำรวจ 1 พ.ค. 2026)]] - `references` [EXTRACTED]
 - [[รายงานสรุปภาพรวมธุรกิจประจำปี 2568 — EasySlip (Business Overview PDF, ต่อผู้สอบบัญชี)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/EasySlip_Revenue__Products
+#graphify/document #graphify/EXTRACTED #community/SCCN__EasySlip

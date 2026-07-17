@@ -1,11 +1,11 @@
 ---
 source_file: "_assets/boostsms_top_2026-05-18T08-19-40-096Z.png"
 type: "document"
-community: "BoostSMS Funnel Screenshot"
+community: "7-Day Funnel Content Plan"
 tags:
   - graphify/document
   - graphify/EXTRACTED
-  - community/BoostSMS_Funnel_Screenshot
+  - community/7-Day_Funnel_Content_Plan
 ---
 
 # BoostSMS Funnel Marketing Plan (Business Marketer document)
@@ -16,4 +16,4 @@ tags:
 - [[BoostSMS (SMS Marketing product — Send. Track. Boost.  boost-sms.com)]] - `rationale_for` [INFERRED]
 - [[Screenshot BoostSMS Funnel Marketing Plan (Google Doc, 7-Day Content Plan section)]] - `references` [EXTRACTED]
 
-#graphify/document #graphify/EXTRACTED #community/BoostSMS_Funnel_Screenshot
+#graphify/document #graphify/EXTRACTED #community/7-Day_Funnel_Content_Plan

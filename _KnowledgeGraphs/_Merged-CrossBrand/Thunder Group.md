@@ -1,11 +1,11 @@
 ---
 source_file: "Revenue/2569-01-to-05 Revenue Report.md"
 type: "concept"
-community: "★ Cross-Brand: Companies & Dashboards"
+community: "★ Thunder Solution Co., Ltd."
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/_Cross-Brand_Companies__Dashboards
+  - community/_Thunder_Solution_Co_Ltd
 ---
 
 # Thunder Group
@@ -18,4 +18,4 @@ tags:
 - [[Thunder Solution Co., Ltd. (บริษัท ธันเดอร์ โซลูชั่น จำกัด)]] - `conceptually_related_to` [EXTRACTED]
 - [[เป้ารายได้กลุ่ม ฿125M ปี 2569]] - `conceptually_related_to` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
+#graphify/concept #graphify/EXTRACTED #community/_Thunder_Solution_Co_Ltd

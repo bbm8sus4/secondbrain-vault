@@ -1,11 +1,11 @@
 ---
 source_file: "Reports/thunder-easy-expenses-2026.html"
 type: "concept"
-community: "Thunder–EasySlip Integrations"
+community: "EasySlip"
 tags:
   - graphify/concept
   - graphify/EXTRACTED
-  - community/ThunderEasySlip_Integrations
+  - community/EasySlip
 ---
 
 # Expense Taxonomy (2-level, 7 categories)
@@ -13,4 +13,4 @@ tags:
 ## Connections
 - [[Thunder & EasySlip Expense Summary 2026]] - `references` [EXTRACTED]
 
-#graphify/concept #graphify/EXTRACTED #community/ThunderEasySlip_Integrations
+#graphify/concept #graphify/EXTRACTED #community/EasySlip
