@@ -1,0 +1,1574 @@
+{
+  "nodes": [
+    {
+      "id": "g0",
+      "type": "group",
+      "label": "EasySlip Integrations & Expenses",
+      "x": 0,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "1"
+    },
+    {
+      "id": "n_reports_thunder_monthly_slides_annual_target_125m",
+      "type": "file",
+      "file": "Annual Revenue Target 125M.md",
+      "x": 20,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_bni_thunder_5min_easyslip",
+      "type": "file",
+      "file": "EasySlip.md",
+      "x": 220,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_bni_thunder_5min_easyslip_api",
+      "type": "file",
+      "file": "EasySlip API_1.md",
+      "x": 420,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_monthly_slides_easyslip_api_concentration_risk",
+      "type": "file",
+      "file": "EasySlip API Concentration Risk_1.md",
+      "x": 620,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_bni_thunder_5min_slip_pricing_packages",
+      "type": "file",
+      "file": "EasySlip Slip Pricing Packages.md",
+      "x": 20,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_easy_expenses_2026_expense_taxonomy",
+      "type": "file",
+      "file": "Expense Taxonomy (2-level, 7 categories).md",
+      "x": 220,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_bni_thunder_5min_line_chatbot",
+      "type": "file",
+      "file": "LINE Chatbot.md",
+      "x": 420,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_monthly_slides_master_dashboard",
+      "type": "file",
+      "file": "Master Dashboard (Thunder Group).md",
+      "x": 620,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_bni_thunder_5min_qr_bot_verification",
+      "type": "file",
+      "file": "QR-based BoT Slip Verification.md",
+      "x": 20,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_easy_expenses_2026_expense_summary",
+      "type": "file",
+      "file": "Thunder & EasySlip Expense Summary 2026.md",
+      "x": 220,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_may_2026_summary_thunder_group",
+      "type": "file",
+      "file": "Thunder Group_1.md",
+      "x": 420,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_monthly_slides_executive_slides",
+      "type": "file",
+      "file": "Thunder Group Executive Slides (Jan-May 2026).md",
+      "x": 620,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_may_2026_summary_may_2026_report",
+      "type": "file",
+      "file": "Thunder Group May 2026 Executive Report.md",
+      "x": 20,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_bni_thunder_5min_woocommerce_plugin",
+      "type": "file",
+      "file": "WooCommerce Plugin.md",
+      "x": 220,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_bni_thunder_5min_n8n_automation_node",
+      "type": "file",
+      "file": "n8n Automation Node.md",
+      "x": 420,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g1",
+      "type": "group",
+      "label": "Product PMF & BOT\u2192API Migration",
+      "x": 960,
+      "y": 0,
+      "width": 880,
+      "height": 520,
+      "color": "2"
+    },
+    {
+      "id": "n_documents_api_gen_qr_2025_10_planning_notes_api_gen_qr",
+      "type": "file",
+      "file": "API Gen QR (payment QR generation feature).md",
+      "x": 980,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_2569_01_to_05_revenue_report_bot_to_api_migration_path",
+      "type": "file",
+      "file": "BOT \u2192 API migration  upsell path.md",
+      "x": 1180,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_thunder_revenue_apr_may_2026_easyslip_api",
+      "type": "file",
+      "file": "EasySlip API.md",
+      "x": 1380,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_thunder_revenue_jan_may_2026_easyslip_api_concentration_risk",
+      "type": "file",
+      "file": "EasySlip API concentration risk.md",
+      "x": 1580,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_2569_01_to_05_revenue_report_flatten_decline_pattern",
+      "type": "file",
+      "file": "Flatten\u2013decline pattern (Thunder BOT erosion).md",
+      "x": 980,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_thunder_revenue_jan_may_2026_projection_scenarios",
+      "type": "file",
+      "file": "Full-year 2569 projection scenarios (BearBaseBull).md",
+      "x": 1180,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_documents_thunder_solution_public_context_ai_safe_itmx",
+      "type": "file",
+      "file": "ITMX (interbank central switching system).md",
+      "x": 1380,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_thunder_revenue_jan_may_2026_may_spike_validation",
+      "type": "file",
+      "file": "May 2569 spike validation (recurring vs one-off).md",
+      "x": 1580,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_documents_api_gen_qr_2025_10_planning_notes_promptpay",
+      "type": "file",
+      "file": "PromptPay.md",
+      "x": 980,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_2569_01_to_05_revenue_report_s_curve_pmf_signal",
+      "type": "file",
+      "file": "S-curve PMF signal (Thunder API +326%).md",
+      "x": 1180,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_01_overview_slip_verification",
+      "type": "file",
+      "file": "Slip Verification (\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e2a\u0e25\u0e34\u0e1b\u0e42\u0e2d\u0e19\u0e40\u0e07\u0e34\u0e19).md",
+      "x": 1380,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_02_products_services_thunder_api",
+      "type": "file",
+      "file": "Thunder API (slip verification API service).md",
+      "x": 1580,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_02_products_services_thunder_bot",
+      "type": "file",
+      "file": "Thunder BOT (LINE chatbot).md",
+      "x": 980,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_01_overview_revenue_target_125m",
+      "type": "file",
+      "file": "\u0e40\u0e1b\u0e49\u0e32\u0e23\u0e32\u0e22\u0e44\u0e14\u0e49\u0e01\u0e25\u0e38\u0e48\u0e21 \u0e3f125M \u0e1b\u0e35 2569.md",
+      "x": 1180,
+      "y": 320,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g2",
+      "type": "group",
+      "label": "Corporate API & Cross-billing",
+      "x": 1920,
+      "y": 0,
+      "width": 880,
+      "height": 420,
+      "color": "3"
+    },
+    {
+      "id": "n_documents_thunder_solution_public_context_ai_safe_cs_voice_signature",
+      "type": "file",
+      "file": "CS voice signature (ThunderEasySlip customer service tone).md",
+      "x": 1940,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_03_revenue_commission_corporate_api_commission_model",
+      "type": "file",
+      "file": "Corporate API sales commission model.md",
+      "x": 2140,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_03_revenue_commission_cost_scenario_a",
+      "type": "file",
+      "file": "Cost Scenario A (Other-source 100%, cost 0.110, GP 12%).md",
+      "x": 2340,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_03_revenue_commission_cost_scenario_b",
+      "type": "file",
+      "file": "Cost Scenario B (mix blend ~3070, cost 0.077, GP 38.4%).md",
+      "x": 2540,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_slip_verification_kasikornbank",
+      "type": "file",
+      "file": "KASIKORNBANK (\u0e18\u0e19\u0e32\u0e04\u0e32\u0e23\u0e01\u0e2a\u0e34\u0e01\u0e23\u0e44\u0e17\u0e22).md",
+      "x": 1940,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_slip_verification_kbank_pricing_tiers",
+      "type": "file",
+      "file": "KBank Slip Verification API pricing (tiered, excl. VAT).md",
+      "x": 2140,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_01_overview_pre_paid_billing_cycle",
+      "type": "file",
+      "file": "Pre-paid billing cycle.md",
+      "x": 2340,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_02_products_services_thunder_corporate_api",
+      "type": "file",
+      "file": "Thunder Corporate API (MOU enterprise package, Coperate A\u2013J).md",
+      "x": 2540,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_02_products_services_thunder_flex",
+      "type": "file",
+      "file": "Thunder Flex (minor product).md",
+      "x": 1940,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_01_overview_thunder_solution",
+      "type": "file",
+      "file": "Thunder Solution Co., Ltd. (\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e18\u0e31\u0e19\u0e40\u0e14\u0e2d\u0e23\u0e4c \u0e42\u0e0b\u0e25\u0e39\u0e0a\u0e31\u0e48\u0e19 \u0e08\u0e33\u0e01\u0e31\u0e14).md",
+      "x": 2140,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_documents_thunder_solution_public_context_ai_safe",
+      "type": "file",
+      "file": "Thunder Solution \u2014 Public Business Context (AI-safe).md",
+      "x": 2340,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_03_revenue_commission_cross_billing_thunder_easy",
+      "type": "file",
+      "file": "Thunder \u2192 Easy cross-billing formula.md",
+      "x": 2540,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g3",
+      "type": "group",
+      "label": "KB Docs & Exec Reports",
+      "x": 2880,
+      "y": 0,
+      "width": 880,
+      "height": 420,
+      "color": "4"
+    },
+    {
+      "id": "n_documents_api_gen_qr_2025_10_planning_notes",
+      "type": "file",
+      "file": "API Gen QR \u2014 Planning Notes \u0e15.\u0e04. 2568 (stub).md",
+      "x": 2900,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_thunder_revenue_jan_may_2026",
+      "type": "file",
+      "file": "Executive Report \u2014 Thunder Group \u0e21.\u0e04.\u2013\u0e1e.\u0e04. 2569 (full months + projections, HTML).md",
+      "x": 3100,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_thunder_revenue_apr_may_2026",
+      "type": "file",
+      "file": "Executive Report \u2014 Thunder Group \u0e40\u0e21.\u0e22.\u2192\u0e1e.\u0e04. 2569 (MTD, HTML).md",
+      "x": 3300,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_slip_verification_mou_kbank_easyslip",
+      "type": "file",
+      "file": "MOU \u2014 \u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e02\u0e49\u0e2d\u0e15\u0e01\u0e25\u0e07\u0e01\u0e32\u0e23\u0e43\u0e0a\u0e49\u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23 API Slip Verification (KBank \u00d7 \u0e2d\u0e35\u0e0b\u0e35\u0e48\u0e2a\u0e25\u0e34\u0e1b, scanned PDF 39 pp.).md",
+      "x": 3500,
+      "y": 80,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_01_overview_master_dashboard",
+      "type": "file",
+      "file": "Master Dashboard \u2014 Thunder Group (master-dashboard-eight-nu.vercel.app).md",
+      "x": 2900,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_01_overview",
+      "type": "file",
+      "file": "Thunder Solution \u2014 Overview (KB doc).md",
+      "x": 3100,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_02_products_services",
+      "type": "file",
+      "file": "Thunder Solution \u2014 Products & Services (KB doc).md",
+      "x": 3300,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_03_revenue_commission",
+      "type": "file",
+      "file": "Thunder Solution \u2014 Revenue & Commission (KB doc).md",
+      "x": 3500,
+      "y": 160,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_2569_01_to_05_revenue_report",
+      "type": "file",
+      "file": "Thunder Solution \u2014 Revenue Report \u0e21.\u0e04.\u2013\u0e1e.\u0e04. 2569.md",
+      "x": 2900,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_na_lak",
+      "type": "file",
+      "file": "Thunder Solution \u2014 \u0e2b\u0e19\u0e49\u0e32\u0e2b\u0e25\u0e31\u0e01 (Brand Index).md",
+      "x": 3100,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_api_slip_verification_pdpa_disclosure_agreement",
+      "type": "file",
+      "file": "\u0e2a\u0e31\u0e0d\u0e0d\u0e32\u0e01\u0e32\u0e23\u0e40\u0e1b\u0e34\u0e14\u0e40\u0e1c\u0e22\u0e02\u0e49\u0e2d\u0e21\u0e39\u0e25\u0e2a\u0e48\u0e27\u0e19\u0e1a\u0e38\u0e04\u0e04\u0e25 (Personal Data Disclosure Agreement, 8 \u0e21.\u0e04. 2568).md",
+      "x": 3300,
+      "y": 240,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g4",
+      "type": "group",
+      "label": "BNI Pitch & Platform",
+      "x": 0,
+      "y": 600,
+      "width": 880,
+      "height": 420,
+      "color": "5"
+    },
+    {
+      "id": "n_reports_thunder_solution_info_bill_payment",
+      "type": "file",
+      "file": "Bill Payment (PromptPay QR).md",
+      "x": 20,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_corporate_api_sales_commission_coperate_tiers",
+      "type": "file",
+      "file": "Coperate A-J Tiers.md",
+      "x": 220,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_solution_info_developer_api",
+      "type": "file",
+      "file": "Developer API.md",
+      "x": 420,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_solution_info_letter_document_editor",
+      "type": "file",
+      "file": "Letter & Document Editor.md",
+      "x": 620,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_may_2026_summary_thunder_api",
+      "type": "file",
+      "file": "Thunder API.md",
+      "x": 20,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_bni_thunder_5min_bni_presentation",
+      "type": "file",
+      "file": "Thunder BNI 5-Minute Presentation.md",
+      "x": 220,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_may_2026_summary_thunder_bot",
+      "type": "file",
+      "file": "Thunder Bot.md",
+      "x": 420,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_corporate_api_sales_commission_thunder_corporate_api",
+      "type": "file",
+      "file": "Thunder Corporate API (MOU).md",
+      "x": 620,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_bni_thunder_5min_thunder_solution",
+      "type": "file",
+      "file": "Thunder Solution.md",
+      "x": 20,
+      "y": 840,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_solution_info_thunder_solution_platform",
+      "type": "file",
+      "file": "Thunder Solution Platform.md",
+      "x": 220,
+      "y": 840,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g5",
+      "type": "group",
+      "label": "KBank Pricing & Sales Playbook",
+      "x": 960,
+      "y": 600,
+      "width": 880,
+      "height": 420,
+      "color": "6"
+    },
+    {
+      "id": "n_reports_thunder_corporate_api_sales_commission_flat_pricing_0125",
+      "type": "file",
+      "file": "Corporate Flat Pricing 0.125slip.md",
+      "x": 980,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_corporate_api_sales_commission_sales_playbook",
+      "type": "file",
+      "file": "Corporate Sales Playbook.md",
+      "x": 1180,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_corporate_api_sales_commission_scenario_a_other_source",
+      "type": "file",
+      "file": "Cost Scenario A (Other-source 100%).md",
+      "x": 1380,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_corporate_api_sales_commission_scenario_b_mix_blend",
+      "type": "file",
+      "file": "Cost Scenario B (Mix blend 3070).md",
+      "x": 1580,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank",
+      "type": "file",
+      "file": "KBank.md",
+      "x": 980,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_source_tiered_pricing",
+      "type": "file",
+      "file": "KBank-source Tiered Pricing.md",
+      "x": 1180,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_slip_verification_api_pricing",
+      "type": "file",
+      "file": "Kbank Slip Verification API Pricing.md",
+      "x": 1380,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_others_source_flat_pricing",
+      "type": "file",
+      "file": "Others-source Flat Pricing.md",
+      "x": 1580,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_reduce_others_slip_strategy",
+      "type": "file",
+      "file": "Reduce Others-slip Cost Strategy.md",
+      "x": 980,
+      "y": 840,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_corporate_api_sales_commission_sales_commission_model",
+      "type": "file",
+      "file": "Sales Commission Model.md",
+      "x": 1180,
+      "y": 840,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g6",
+      "type": "group",
+      "label": "Thunder Group Brands",
+      "x": 1920,
+      "y": 600,
+      "width": 600,
+      "height": 400,
+      "color": "1"
+    },
+    {
+      "id": "n_revenue_thunder_revenue_apr_may_2026_boostsms",
+      "type": "file",
+      "file": "BoostSMS (SMS marketing, under EasySlip).md",
+      "x": 1940,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_documents_thunder_solution_public_context_ai_safe_easycrm",
+      "type": "file",
+      "file": "EasyCRM (loyaltyCRM, sister product).md",
+      "x": 2140,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_01_overview_easyslip",
+      "type": "file",
+      "file": "EasySlip (\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e2d\u0e35\u0e0b\u0e35\u0e48\u0e2a\u0e25\u0e34\u0e1b \u0e08\u0e33\u0e01\u0e31\u0e14 \u2014 SMB brand).md",
+      "x": 1940,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_revenue_2569_01_to_05_revenue_report_thunder_group",
+      "type": "file",
+      "file": "Thunder Group.md",
+      "x": 2140,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g7",
+      "type": "group",
+      "label": "Thunder\u00d7Easy Cross-billing",
+      "x": 2880,
+      "y": 600,
+      "width": 600,
+      "height": 400,
+      "color": "2"
+    },
+    {
+      "id": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_easy_thunder_dependency",
+      "type": "file",
+      "file": "Easy Dependency on Thunder Infrastructure.md",
+      "x": 2900,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_k2k",
+      "type": "file",
+      "file": "K2K.md",
+      "x": 3100,
+      "y": 680,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_k2k_arbitrage_margin",
+      "type": "file",
+      "file": "Thunder K2K Arbitrage Margin.md",
+      "x": 2900,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_easy_cross_billing",
+      "type": "file",
+      "file": "Thunder\u00d7Easy Cross-billing.md",
+      "x": 3100,
+      "y": 760,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g8",
+      "type": "group",
+      "label": "Slip Margin (pre-paid)",
+      "x": 0,
+      "y": 1100,
+      "width": 600,
+      "height": 400,
+      "color": "3"
+    },
+    {
+      "id": "n_reports_thunder_may_2026_summary_prepaid_negative_margin",
+      "type": "file",
+      "file": "Pre-paid Cycle Negative Gross Margin.md",
+      "x": 20,
+      "y": 1180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "n_reports_thunder_may_2026_summary_slip_margin",
+      "type": "file",
+      "file": "Slip Margin.md",
+      "x": 220,
+      "y": 1180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g9",
+      "type": "group",
+      "label": "BoostSMS",
+      "x": 960,
+      "y": 1100,
+      "width": 600,
+      "height": 400,
+      "color": "4"
+    },
+    {
+      "id": "n_reports_thunder_may_2026_summary_boost_sms",
+      "type": "file",
+      "file": "Boost SMS.md",
+      "x": 980,
+      "y": 1180,
+      "width": 180,
+      "height": 60
+    },
+    {
+      "id": "g10",
+      "type": "group",
+      "label": "Easy Bot",
+      "x": 1920,
+      "y": 1100,
+      "width": 600,
+      "height": 400,
+      "color": "5"
+    },
+    {
+      "id": "n_reports_thunder_may_2026_summary_easy_bot",
+      "type": "file",
+      "file": "Easy Bot.md",
+      "x": 1940,
+      "y": 1180,
+      "width": 180,
+      "height": 60
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_01_overview_01_overview_master_dashboard",
+      "fromNode": "n_01_overview",
+      "toNode": "n_01_overview_master_dashboard",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_02_products_services",
+      "fromNode": "n_01_overview",
+      "toNode": "n_02_products_services",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_03_revenue_commission",
+      "fromNode": "n_01_overview",
+      "toNode": "n_03_revenue_commission",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_na_lak",
+      "fromNode": "n_01_overview",
+      "toNode": "n_na_lak",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_revenue_2569_01_to_05_revenue_report",
+      "fromNode": "n_01_overview",
+      "toNode": "n_revenue_2569_01_to_05_revenue_report",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_documents_thunder_solution_public_context_ai_safe",
+      "fromNode": "n_01_overview",
+      "toNode": "n_documents_thunder_solution_public_context_ai_safe",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_02_products_services_03_revenue_commission",
+      "fromNode": "n_02_products_services",
+      "toNode": "n_03_revenue_commission",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_api_slip_verification_mou_kbank_easyslip",
+      "fromNode": "n_02_products_services",
+      "toNode": "n_api_slip_verification_mou_kbank_easyslip",
+      "label": "cites [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_documents_api_gen_qr_2025_10_planning_notes",
+      "fromNode": "n_02_products_services",
+      "toNode": "n_documents_api_gen_qr_2025_10_planning_notes",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_na_lak",
+      "fromNode": "n_02_products_services",
+      "toNode": "n_na_lak",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_03_revenue_commission_api_slip_verification_mou_kbank_easyslip",
+      "fromNode": "n_03_revenue_commission",
+      "toNode": "n_api_slip_verification_mou_kbank_easyslip",
+      "label": "shares_data_with [INFERRED]"
+    },
+    {
+      "id": "e_03_revenue_commission_revenue_2569_01_to_05_revenue_report",
+      "fromNode": "n_03_revenue_commission",
+      "toNode": "n_revenue_2569_01_to_05_revenue_report",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_03_revenue_commission_na_lak",
+      "fromNode": "n_03_revenue_commission",
+      "toNode": "n_na_lak",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_na_lak_api_slip_verification_mou_kbank_easyslip",
+      "fromNode": "n_na_lak",
+      "toNode": "n_api_slip_verification_mou_kbank_easyslip",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_na_lak_documents_api_gen_qr_2025_10_planning_notes",
+      "fromNode": "n_na_lak",
+      "toNode": "n_documents_api_gen_qr_2025_10_planning_notes",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_na_lak_documents_thunder_solution_public_context_ai_safe",
+      "fromNode": "n_na_lak",
+      "toNode": "n_documents_thunder_solution_public_context_ai_safe",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_na_lak_revenue_2569_01_to_05_revenue_report",
+      "fromNode": "n_na_lak",
+      "toNode": "n_revenue_2569_01_to_05_revenue_report",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_na_lak_revenue_thunder_revenue_apr_may_2026",
+      "fromNode": "n_na_lak",
+      "toNode": "n_revenue_thunder_revenue_apr_may_2026",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_na_lak_revenue_thunder_revenue_jan_may_2026",
+      "fromNode": "n_na_lak",
+      "toNode": "n_revenue_thunder_revenue_jan_may_2026",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_documents_thunder_solution_public_context_ai_safe_01_overview_pre_paid_billing_cycle",
+      "fromNode": "n_documents_thunder_solution_public_context_ai_safe",
+      "toNode": "n_01_overview_pre_paid_billing_cycle",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_documents_thunder_solution_public_context_ai_safe_01_overview_thunder_solution",
+      "fromNode": "n_documents_thunder_solution_public_context_ai_safe",
+      "toNode": "n_01_overview_thunder_solution",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_2569_01_to_05_revenue_report_01_overview_revenue_target_125m",
+      "fromNode": "n_revenue_2569_01_to_05_revenue_report",
+      "toNode": "n_01_overview_revenue_target_125m",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_2569_01_to_05_revenue_report_revenue_thunder_revenue_jan_may_2026",
+      "fromNode": "n_revenue_2569_01_to_05_revenue_report",
+      "toNode": "n_revenue_thunder_revenue_jan_may_2026",
+      "label": "shares_data_with [INFERRED]"
+    },
+    {
+      "id": "e_revenue_thunder_revenue_apr_may_2026_01_overview_master_dashboard",
+      "fromNode": "n_revenue_thunder_revenue_apr_may_2026",
+      "toNode": "n_01_overview_master_dashboard",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_thunder_revenue_apr_may_2026_revenue_thunder_revenue_jan_may_2026",
+      "fromNode": "n_revenue_thunder_revenue_apr_may_2026",
+      "toNode": "n_revenue_thunder_revenue_jan_may_2026",
+      "label": "shares_data_with [INFERRED]"
+    },
+    {
+      "id": "e_revenue_thunder_revenue_apr_may_2026_revenue_thunder_revenue_jan_may_2026_easyslip_api_concentration_risk",
+      "fromNode": "n_revenue_thunder_revenue_apr_may_2026",
+      "toNode": "n_revenue_thunder_revenue_jan_may_2026_easyslip_api_concentration_risk",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_thunder_revenue_jan_may_2026_01_overview_master_dashboard",
+      "fromNode": "n_revenue_thunder_revenue_jan_may_2026",
+      "toNode": "n_01_overview_master_dashboard",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_api_slip_verification_mou_kbank_easyslip_01_overview_easyslip",
+      "fromNode": "n_api_slip_verification_mou_kbank_easyslip",
+      "toNode": "n_01_overview_easyslip",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_api_slip_verification_mou_kbank_easyslip_01_overview_slip_verification",
+      "fromNode": "n_api_slip_verification_mou_kbank_easyslip",
+      "toNode": "n_01_overview_slip_verification",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_api_slip_verification_mou_kbank_easyslip_api_slip_verification_kasikornbank",
+      "fromNode": "n_api_slip_verification_mou_kbank_easyslip",
+      "toNode": "n_api_slip_verification_kasikornbank",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_api_slip_verification_mou_kbank_easyslip_api_slip_verification_kbank_pricing_tiers",
+      "fromNode": "n_api_slip_verification_mou_kbank_easyslip",
+      "toNode": "n_api_slip_verification_kbank_pricing_tiers",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_api_slip_verification_mou_kbank_easyslip_api_slip_verification_pdpa_disclosure_agreement",
+      "fromNode": "n_api_slip_verification_mou_kbank_easyslip",
+      "toNode": "n_api_slip_verification_pdpa_disclosure_agreement",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_01_overview_pre_paid_billing_cycle",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_01_overview_pre_paid_billing_cycle",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_01_overview_slip_verification",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_01_overview_slip_verification",
+      "label": "implements [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_api_slip_verification_kasikornbank",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_api_slip_verification_kasikornbank",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_revenue_2569_01_to_05_revenue_report_thunder_group",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_revenue_2569_01_to_05_revenue_report_thunder_group",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_02_products_services_thunder_api",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_02_products_services_thunder_api",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_02_products_services_thunder_bot",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_02_products_services_thunder_bot",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_02_products_services_thunder_corporate_api",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_02_products_services_thunder_corporate_api",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_02_products_services_thunder_flex",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_02_products_services_thunder_flex",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_03_revenue_commission_cross_billing_thunder_easy",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_03_revenue_commission_cross_billing_thunder_easy",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_thunder_solution_documents_thunder_solution_public_context_ai_safe_cs_voice_signature",
+      "fromNode": "n_01_overview_thunder_solution",
+      "toNode": "n_documents_thunder_solution_public_context_ai_safe_cs_voice_signature",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_2569_01_to_05_revenue_report_thunder_group_01_overview_easyslip",
+      "fromNode": "n_revenue_2569_01_to_05_revenue_report_thunder_group",
+      "toNode": "n_01_overview_easyslip",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_2569_01_to_05_revenue_report_thunder_group_01_overview_revenue_target_125m",
+      "fromNode": "n_revenue_2569_01_to_05_revenue_report_thunder_group",
+      "toNode": "n_01_overview_revenue_target_125m",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_2569_01_to_05_revenue_report_thunder_group_documents_thunder_solution_public_context_ai_safe_easycrm",
+      "fromNode": "n_revenue_2569_01_to_05_revenue_report_thunder_group",
+      "toNode": "n_documents_thunder_solution_public_context_ai_safe_easycrm",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_2569_01_to_05_revenue_report_thunder_group_revenue_thunder_revenue_apr_may_2026_boostsms",
+      "fromNode": "n_revenue_2569_01_to_05_revenue_report_thunder_group",
+      "toNode": "n_revenue_thunder_revenue_apr_may_2026_boostsms",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_easyslip_03_revenue_commission_cross_billing_thunder_easy",
+      "fromNode": "n_01_overview_easyslip",
+      "toNode": "n_03_revenue_commission_cross_billing_thunder_easy",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_easyslip_revenue_thunder_revenue_apr_may_2026_boostsms",
+      "fromNode": "n_01_overview_easyslip",
+      "toNode": "n_revenue_thunder_revenue_apr_may_2026_boostsms",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_easyslip_revenue_thunder_revenue_apr_may_2026_easyslip_api",
+      "fromNode": "n_01_overview_easyslip",
+      "toNode": "n_revenue_thunder_revenue_apr_may_2026_easyslip_api",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_slip_verification_02_products_services_thunder_api",
+      "fromNode": "n_01_overview_slip_verification",
+      "toNode": "n_02_products_services_thunder_api",
+      "label": "implements [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_slip_verification_documents_thunder_solution_public_context_ai_safe_itmx",
+      "fromNode": "n_01_overview_slip_verification",
+      "toNode": "n_documents_thunder_solution_public_context_ai_safe_itmx",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_01_overview_slip_verification_revenue_thunder_revenue_apr_may_2026_easyslip_api",
+      "fromNode": "n_01_overview_slip_verification",
+      "toNode": "n_revenue_thunder_revenue_apr_may_2026_easyslip_api",
+      "label": "implements [INFERRED]"
+    },
+    {
+      "id": "e_01_overview_revenue_target_125m_revenue_thunder_revenue_jan_may_2026_projection_scenarios",
+      "fromNode": "n_01_overview_revenue_target_125m",
+      "toNode": "n_revenue_thunder_revenue_jan_may_2026_projection_scenarios",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_thunder_bot_revenue_2569_01_to_05_revenue_report_bot_to_api_migration_path",
+      "fromNode": "n_02_products_services_thunder_bot",
+      "toNode": "n_revenue_2569_01_to_05_revenue_report_bot_to_api_migration_path",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_thunder_bot_revenue_2569_01_to_05_revenue_report_flatten_decline_pattern",
+      "fromNode": "n_02_products_services_thunder_bot",
+      "toNode": "n_revenue_2569_01_to_05_revenue_report_flatten_decline_pattern",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_thunder_api_documents_api_gen_qr_2025_10_planning_notes_api_gen_qr",
+      "fromNode": "n_02_products_services_thunder_api",
+      "toNode": "n_documents_api_gen_qr_2025_10_planning_notes_api_gen_qr",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_thunder_api_revenue_2569_01_to_05_revenue_report_bot_to_api_migration_path",
+      "fromNode": "n_02_products_services_thunder_api",
+      "toNode": "n_revenue_2569_01_to_05_revenue_report_bot_to_api_migration_path",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_thunder_api_revenue_2569_01_to_05_revenue_report_s_curve_pmf_signal",
+      "fromNode": "n_02_products_services_thunder_api",
+      "toNode": "n_revenue_2569_01_to_05_revenue_report_s_curve_pmf_signal",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_thunder_api_revenue_thunder_revenue_jan_may_2026_may_spike_validation",
+      "fromNode": "n_02_products_services_thunder_api",
+      "toNode": "n_revenue_thunder_revenue_jan_may_2026_may_spike_validation",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_02_products_services_thunder_corporate_api_03_revenue_commission_corporate_api_commission_model",
+      "fromNode": "n_02_products_services_thunder_corporate_api",
+      "toNode": "n_03_revenue_commission_corporate_api_commission_model",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_03_revenue_commission_corporate_api_commission_model_03_revenue_commission_cost_scenario_a",
+      "fromNode": "n_03_revenue_commission_corporate_api_commission_model",
+      "toNode": "n_03_revenue_commission_cost_scenario_a",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_03_revenue_commission_corporate_api_commission_model_03_revenue_commission_cost_scenario_b",
+      "fromNode": "n_03_revenue_commission_corporate_api_commission_model",
+      "toNode": "n_03_revenue_commission_cost_scenario_b",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_03_revenue_commission_cost_scenario_a_api_slip_verification_kbank_pricing_tiers",
+      "fromNode": "n_03_revenue_commission_cost_scenario_a",
+      "toNode": "n_api_slip_verification_kbank_pricing_tiers",
+      "label": "shares_data_with [INFERRED]"
+    },
+    {
+      "id": "e_03_revenue_commission_cost_scenario_b_03_revenue_commission_cross_billing_thunder_easy",
+      "fromNode": "n_03_revenue_commission_cost_scenario_b",
+      "toNode": "n_03_revenue_commission_cross_billing_thunder_easy",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_03_revenue_commission_cross_billing_thunder_easy_api_slip_verification_kbank_pricing_tiers",
+      "fromNode": "n_03_revenue_commission_cross_billing_thunder_easy",
+      "toNode": "n_api_slip_verification_kbank_pricing_tiers",
+      "label": "shares_data_with [EXTRACTED]"
+    },
+    {
+      "id": "e_api_slip_verification_kasikornbank_api_slip_verification_kbank_pricing_tiers",
+      "fromNode": "n_api_slip_verification_kasikornbank",
+      "toNode": "n_api_slip_verification_kbank_pricing_tiers",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_2569_01_to_05_revenue_report_flatten_decline_pattern_revenue_2569_01_to_05_revenue_report_bot_to_api_migration_path",
+      "fromNode": "n_revenue_2569_01_to_05_revenue_report_flatten_decline_pattern",
+      "toNode": "n_revenue_2569_01_to_05_revenue_report_bot_to_api_migration_path",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_thunder_revenue_apr_may_2026_easyslip_api_documents_api_gen_qr_2025_10_planning_notes_api_gen_qr",
+      "fromNode": "n_revenue_thunder_revenue_apr_may_2026_easyslip_api",
+      "toNode": "n_documents_api_gen_qr_2025_10_planning_notes_api_gen_qr",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_thunder_revenue_apr_may_2026_easyslip_api_revenue_thunder_revenue_jan_may_2026_easyslip_api_concentration_risk",
+      "fromNode": "n_revenue_thunder_revenue_apr_may_2026_easyslip_api",
+      "toNode": "n_revenue_thunder_revenue_jan_may_2026_easyslip_api_concentration_risk",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_thunder_revenue_apr_may_2026_easyslip_api_revenue_thunder_revenue_jan_may_2026_may_spike_validation",
+      "fromNode": "n_revenue_thunder_revenue_apr_may_2026_easyslip_api",
+      "toNode": "n_revenue_thunder_revenue_jan_may_2026_may_spike_validation",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_revenue_thunder_revenue_jan_may_2026_may_spike_validation_revenue_thunder_revenue_jan_may_2026_projection_scenarios",
+      "fromNode": "n_revenue_thunder_revenue_jan_may_2026_may_spike_validation",
+      "toNode": "n_revenue_thunder_revenue_jan_may_2026_projection_scenarios",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_documents_thunder_solution_public_context_ai_safe_itmx_documents_api_gen_qr_2025_10_planning_notes_promptpay",
+      "fromNode": "n_documents_thunder_solution_public_context_ai_safe_itmx",
+      "toNode": "n_documents_api_gen_qr_2025_10_planning_notes_promptpay",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_documents_api_gen_qr_2025_10_planning_notes_api_gen_qr_documents_api_gen_qr_2025_10_planning_notes_promptpay",
+      "fromNode": "n_documents_api_gen_qr_2025_10_planning_notes_api_gen_qr",
+      "toNode": "n_documents_api_gen_qr_2025_10_planning_notes_promptpay",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_slip_verification_api_pricing_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_source_tiered_pricing",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_slip_verification_api_pricing",
+      "toNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_source_tiered_pricing",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_slip_verification_api_pricing_reports_kbank_api_pricing_and_easy_thunder_crossbilling_others_source_flat_pricing",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_slip_verification_api_pricing",
+      "toNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_others_source_flat_pricing",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_slip_verification_api_pricing_reports_thunder_corporate_api_sales_commission_thunder_corporate_api",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_slip_verification_api_pricing",
+      "toNode": "n_reports_thunder_corporate_api_sales_commission_thunder_corporate_api",
+      "label": "cites [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_source_tiered_pricing",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank",
+      "toNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_kbank_source_tiered_pricing",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_others_source_flat_pricing_reports_kbank_api_pricing_and_easy_thunder_crossbilling_reduce_others_slip_strategy",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_others_source_flat_pricing",
+      "toNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_reduce_others_slip_strategy",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_others_source_flat_pricing_reports_thunder_corporate_api_sales_commission_scenario_a_other_source",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_others_source_flat_pricing",
+      "toNode": "n_reports_thunder_corporate_api_sales_commission_scenario_a_other_source",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_easy_cross_billing_reports_kbank_api_pricing_and_easy_thunder_crossbilling_easy_thunder_dependency",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_easy_cross_billing",
+      "toNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_easy_thunder_dependency",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_easy_cross_billing_reports_kbank_api_pricing_and_easy_thunder_crossbilling_k2k",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_easy_cross_billing",
+      "toNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_k2k",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_easy_cross_billing_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_k2k_arbitrage_margin",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_easy_cross_billing",
+      "toNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_k2k_arbitrage_margin",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_kbank_api_pricing_and_easy_thunder_crossbilling_k2k_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_k2k_arbitrage_margin",
+      "fromNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_k2k",
+      "toNode": "n_reports_kbank_api_pricing_and_easy_thunder_crossbilling_thunder_k2k_arbitrage_margin",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_corporate_api_sales_commission_thunder_corporate_api_reports_thunder_corporate_api_sales_commission_coperate_tiers",
+      "fromNode": "n_reports_thunder_corporate_api_sales_commission_thunder_corporate_api",
+      "toNode": "n_reports_thunder_corporate_api_sales_commission_coperate_tiers",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_corporate_api_sales_commission_thunder_corporate_api_reports_thunder_corporate_api_sales_commission_flat_pricing_0125",
+      "fromNode": "n_reports_thunder_corporate_api_sales_commission_thunder_corporate_api",
+      "toNode": "n_reports_thunder_corporate_api_sales_commission_flat_pricing_0125",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_corporate_api_sales_commission_thunder_corporate_api_reports_thunder_may_2026_summary_thunder_api",
+      "fromNode": "n_reports_thunder_corporate_api_sales_commission_thunder_corporate_api",
+      "toNode": "n_reports_thunder_may_2026_summary_thunder_api",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_thunder_corporate_api_sales_commission_thunder_corporate_api_reports_thunder_solution_info_developer_api",
+      "fromNode": "n_reports_thunder_corporate_api_sales_commission_thunder_corporate_api",
+      "toNode": "n_reports_thunder_solution_info_developer_api",
+      "label": "semantically_similar_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_thunder_corporate_api_sales_commission_flat_pricing_0125_reports_thunder_corporate_api_sales_commission_scenario_b_mix_blend",
+      "fromNode": "n_reports_thunder_corporate_api_sales_commission_flat_pricing_0125",
+      "toNode": "n_reports_thunder_corporate_api_sales_commission_scenario_b_mix_blend",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_corporate_api_sales_commission_scenario_a_other_source_reports_thunder_corporate_api_sales_commission_sales_commission_model",
+      "fromNode": "n_reports_thunder_corporate_api_sales_commission_scenario_a_other_source",
+      "toNode": "n_reports_thunder_corporate_api_sales_commission_sales_commission_model",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_corporate_api_sales_commission_scenario_b_mix_blend_reports_thunder_corporate_api_sales_commission_sales_commission_model",
+      "fromNode": "n_reports_thunder_corporate_api_sales_commission_scenario_b_mix_blend",
+      "toNode": "n_reports_thunder_corporate_api_sales_commission_sales_commission_model",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_corporate_api_sales_commission_sales_commission_model_reports_thunder_corporate_api_sales_commission_sales_playbook",
+      "fromNode": "n_reports_thunder_corporate_api_sales_commission_sales_commission_model",
+      "toNode": "n_reports_thunder_corporate_api_sales_commission_sales_playbook",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_thunder_solution_reports_bni_thunder_5min_bni_presentation",
+      "fromNode": "n_reports_bni_thunder_5min_thunder_solution",
+      "toNode": "n_reports_bni_thunder_5min_bni_presentation",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_thunder_solution_reports_thunder_may_2026_summary_thunder_api",
+      "fromNode": "n_reports_bni_thunder_5min_thunder_solution",
+      "toNode": "n_reports_thunder_may_2026_summary_thunder_api",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_thunder_solution_reports_thunder_may_2026_summary_thunder_bot",
+      "fromNode": "n_reports_bni_thunder_5min_thunder_solution",
+      "toNode": "n_reports_thunder_may_2026_summary_thunder_bot",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_thunder_solution_reports_thunder_solution_info_letter_document_editor",
+      "fromNode": "n_reports_bni_thunder_5min_thunder_solution",
+      "toNode": "n_reports_thunder_solution_info_letter_document_editor",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_thunder_solution_reports_thunder_solution_info_thunder_solution_platform",
+      "fromNode": "n_reports_bni_thunder_5min_thunder_solution",
+      "toNode": "n_reports_thunder_solution_info_thunder_solution_platform",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_bni_presentation_reports_bni_thunder_5min_easyslip",
+      "fromNode": "n_reports_bni_thunder_5min_bni_presentation",
+      "toNode": "n_reports_bni_thunder_5min_easyslip",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_easyslip_reports_bni_thunder_5min_easyslip_api",
+      "fromNode": "n_reports_bni_thunder_5min_easyslip",
+      "toNode": "n_reports_bni_thunder_5min_easyslip_api",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_easyslip_reports_bni_thunder_5min_line_chatbot",
+      "fromNode": "n_reports_bni_thunder_5min_easyslip",
+      "toNode": "n_reports_bni_thunder_5min_line_chatbot",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_easyslip_reports_bni_thunder_5min_n8n_automation_node",
+      "fromNode": "n_reports_bni_thunder_5min_easyslip",
+      "toNode": "n_reports_bni_thunder_5min_n8n_automation_node",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_easyslip_reports_bni_thunder_5min_qr_bot_verification",
+      "fromNode": "n_reports_bni_thunder_5min_easyslip",
+      "toNode": "n_reports_bni_thunder_5min_qr_bot_verification",
+      "label": "rationale_for [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_easyslip_reports_bni_thunder_5min_slip_pricing_packages",
+      "fromNode": "n_reports_bni_thunder_5min_easyslip",
+      "toNode": "n_reports_bni_thunder_5min_slip_pricing_packages",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_easyslip_reports_bni_thunder_5min_woocommerce_plugin",
+      "fromNode": "n_reports_bni_thunder_5min_easyslip",
+      "toNode": "n_reports_bni_thunder_5min_woocommerce_plugin",
+      "label": "conceptually_related_to [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_easyslip_reports_thunder_may_2026_summary_thunder_group",
+      "fromNode": "n_reports_bni_thunder_5min_easyslip",
+      "toNode": "n_reports_thunder_may_2026_summary_thunder_group",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_bni_thunder_5min_easyslip_api_reports_thunder_monthly_slides_easyslip_api_concentration_risk",
+      "fromNode": "n_reports_bni_thunder_5min_easyslip_api",
+      "toNode": "n_reports_thunder_monthly_slides_easyslip_api_concentration_risk",
+      "label": "rationale_for [INFERRED]"
+    },
+    {
+      "id": "e_reports_thunder_easy_expenses_2026_expense_summary_reports_thunder_easy_expenses_2026_expense_taxonomy",
+      "fromNode": "n_reports_thunder_easy_expenses_2026_expense_summary",
+      "toNode": "n_reports_thunder_easy_expenses_2026_expense_taxonomy",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_easy_expenses_2026_expense_summary_reports_thunder_may_2026_summary_thunder_group",
+      "fromNode": "n_reports_thunder_easy_expenses_2026_expense_summary",
+      "toNode": "n_reports_thunder_may_2026_summary_thunder_group",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_thunder_may_2026_summary_thunder_group_reports_thunder_may_2026_summary_may_2026_report",
+      "fromNode": "n_reports_thunder_may_2026_summary_thunder_group",
+      "toNode": "n_reports_thunder_may_2026_summary_may_2026_report",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_may_2026_summary_thunder_group_reports_thunder_monthly_slides_annual_target_125m",
+      "fromNode": "n_reports_thunder_may_2026_summary_thunder_group",
+      "toNode": "n_reports_thunder_monthly_slides_annual_target_125m",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_thunder_may_2026_summary_thunder_group_reports_thunder_monthly_slides_executive_slides",
+      "fromNode": "n_reports_thunder_may_2026_summary_thunder_group",
+      "toNode": "n_reports_thunder_monthly_slides_executive_slides",
+      "label": "conceptually_related_to [INFERRED]"
+    },
+    {
+      "id": "e_reports_thunder_may_2026_summary_slip_margin_reports_thunder_may_2026_summary_prepaid_negative_margin",
+      "fromNode": "n_reports_thunder_may_2026_summary_slip_margin",
+      "toNode": "n_reports_thunder_may_2026_summary_prepaid_negative_margin",
+      "label": "rationale_for [INFERRED]"
+    },
+    {
+      "id": "e_reports_thunder_monthly_slides_executive_slides_reports_thunder_monthly_slides_annual_target_125m",
+      "fromNode": "n_reports_thunder_monthly_slides_executive_slides",
+      "toNode": "n_reports_thunder_monthly_slides_annual_target_125m",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_monthly_slides_executive_slides_reports_thunder_monthly_slides_easyslip_api_concentration_risk",
+      "fromNode": "n_reports_thunder_monthly_slides_executive_slides",
+      "toNode": "n_reports_thunder_monthly_slides_easyslip_api_concentration_risk",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_monthly_slides_executive_slides_reports_thunder_monthly_slides_master_dashboard",
+      "fromNode": "n_reports_thunder_monthly_slides_executive_slides",
+      "toNode": "n_reports_thunder_monthly_slides_master_dashboard",
+      "label": "cites [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_solution_info_thunder_solution_platform_reports_thunder_solution_info_bill_payment",
+      "fromNode": "n_reports_thunder_solution_info_thunder_solution_platform",
+      "toNode": "n_reports_thunder_solution_info_bill_payment",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_solution_info_thunder_solution_platform_reports_thunder_solution_info_developer_api",
+      "fromNode": "n_reports_thunder_solution_info_thunder_solution_platform",
+      "toNode": "n_reports_thunder_solution_info_developer_api",
+      "label": "references [EXTRACTED]"
+    },
+    {
+      "id": "e_reports_thunder_solution_info_thunder_solution_platform_reports_thunder_solution_info_letter_document_editor",
+      "fromNode": "n_reports_thunder_solution_info_thunder_solution_platform",
+      "toNode": "n_reports_thunder_solution_info_letter_document_editor",
+      "label": "references [EXTRACTED]"
+    }
+  ]
+}

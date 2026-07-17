@@ -1,0 +1,20 @@
+---
+source_file: "01-Overview.md"
+type: "concept"
+community: "Product PMF & BOT→API Migration"
+tags:
+  - graphify/concept
+  - graphify/EXTRACTED
+  - community/Product_PMF__BOTAPI_Migration
+---
+
+# Slip Verification (ตรวจสอบสลิปโอนเงิน)
+
+## Connections
+- [[EasySlip API]] - `implements` [INFERRED]
+- [[ITMX (interbank central switching system)]] - `conceptually_related_to` [EXTRACTED]
+- [[MOU — บันทึกข้อตกลงการใช้บริการ API Slip Verification (KBank × อีซี่สลิป, scanned PDF 39 pp.)]] - `conceptually_related_to` [EXTRACTED]
+- [[Thunder API (slip verification API service)]] - `implements` [EXTRACTED]
+- [[Thunder Solution Co., Ltd. (บริษัท ธันเดอร์ โซลูชั่น จำกัด)]] - `implements` [EXTRACTED]
+
+#graphify/concept #graphify/EXTRACTED #community/Product_PMF__BOTAPI_Migration

@@ -15,6 +15,8 @@ originSessionId: 7be13753-0760-437b-8848-7dfe6cb9ca55
 - **merged** — custom cross-brand merge (`~/Code/secondbrain-graphs/merge_crossbrand.py`, ไม่ใช่ `graphify merge-graphs` built-in เพราะตัวนั้นแค่ prefix แยกเกาะ ไม่เชื่อม). เติมเส้น `same_entity_as` ข้ามแบรนด์ผ่าน ANCHORS map → 387 nodes / 647 edges / 22 bridges / 12 shared entities. **ผล: community c2 (companies+dashboards) กับ c5 (API pricing+cost) เป็นก้อนผสม 3 แบรนด์.** cross-brand link ทั้งหมดมาจาก bridge ที่ seed เอง (แต่ละ KB extract แยกกัน จึงไม่มี organic cross-edge). แก้ ANCHORS แล้วรัน script ซ้ำเพื่อเพิ่ม/ปรับ bridge.
 - Session limit เคยตัดกลางคัน (2pm) — chunk เขียนลงดิสก์ไปแล้วเช็คก่อน re-dispatch เฉพาะที่ขาด (ประหยัด ไม่รันซ้ำ).
 
+**นำเข้า Obsidian vault แล้ว (2026-07-17):** `~/SecondBrain/_KnowledgeGraphs/{EasySlip,Thunder,BoostSMS,_Merged-CrossBrand}/` — 845 notes + 4 graph.canvas + `หน้าหลัก.md` index. Workspace `~/Code/secondbrain-graphs/` ยังเป็น source of truth. **กติกาสำคัญตอน re-sync เข้า vault: copy แค่ `*.md` + `graph.canvas` — อย่า copy `.obsidian/` ของกราฟเข้ามา (จะทับ setting vault หลักพัง).** โฟลเดอร์ `_` ขึ้นต้น เรียงบนสุด แยกจาก PARA. หมายเหตุ: ตอนนี้ 845 ไฟล์นี้จะเข้า auto-sync + git push ทุกรอบ (ผู้ใช้เลือกเอาเข้า vault เอง แม้ขัดกติกา "graph นอก vault" เดิม).
+
 **How to apply:**
 - มีกราฟแล้ว → คำถามเกี่ยวกับ KB นั้นให้ `graphify query` ก่อน ไม่ต้องอ่านไฟล์ดิบ (ต้อง cd เข้า workspace dir ก่อน — graph.json อยู่ relative กับ cwd)
 - ไฟล์ใน KB เปลี่ยน → `--update` (re-extract เฉพาะไฟล์ที่เปลี่ยน, มี SHA256 cache)

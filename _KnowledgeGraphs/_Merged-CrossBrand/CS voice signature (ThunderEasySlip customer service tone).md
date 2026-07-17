@@ -1,0 +1,16 @@
+---
+source_file: "Documents/Thunder Solution — Public Context (AI-safe).md"
+type: "concept"
+community: "★ Cross-Brand: Companies & Dashboards"
+tags:
+  - graphify/concept
+  - graphify/EXTRACTED
+  - community/_Cross-Brand_Companies__Dashboards
+---
+
+# CS voice signature (Thunder/EasySlip customer service tone)
+
+## Connections
+- [[Thunder Solution Co., Ltd. (บริษัท ธันเดอร์ โซลูชั่น จำกัด)]] - `conceptually_related_to` [EXTRACTED]
+
+#graphify/concept #graphify/EXTRACTED #community/_Cross-Brand_Companies__Dashboards
