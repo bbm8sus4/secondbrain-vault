@@ -12,7 +12,7 @@ Multi-agent workflow guide สำหรับ Claude Code อยู่ที่ 
 ครอบคลุม 5 วิธี:
 1. Warp Split Pane (`claude -p`)
 2. Subagent (Agent tool ภายใน session)
-3. cmux teams (user ไม่ใช้ — ดู [[feedback-no-cmux]])
+3. cmux teams (user ไม่ใช้แล้ว)
 4. maw (`maw --task "..."`)
 5. Workflow (`"use a workflow"` / `"ultracode"`)
 

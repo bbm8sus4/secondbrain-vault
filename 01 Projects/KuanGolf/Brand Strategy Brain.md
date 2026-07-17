@@ -13,7 +13,7 @@ source: "chat 2026-06-21 (Desktop Commander session — Part II expansion)"
 last_verified: 2026-06-21
 tags: [brand-strategy, kuangolf, positioning, persona, usp, pain-point, golf, saas, brand-bible]
 related:
-  - "[[KuanGolf — Thunder Solution's golf scoring app]]"
+  - "[[KuanGolf — Master Reference]]"
   - "[[โปรเจกต์ - Thunder Solution]]"
   - "[[README]]"
 ---

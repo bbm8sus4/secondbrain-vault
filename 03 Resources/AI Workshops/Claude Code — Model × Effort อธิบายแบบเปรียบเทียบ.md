@@ -239,4 +239,4 @@ claude --model claude-opus-4-8
 
 ---
 
-*ดูเพิ่ม: [[Claude Code — Model Reference]] | [[Claude Code — Skills & Commands Reference]] | [[Claude Code — Multi-Agent Workflow Guide]]*
+*ดูเพิ่ม: [[Claude Code — Model Reference]] | [[Claude Code — Skills & Commands Reference]] | [[Claude Code Multi-Agent Workflow Guide]]*
