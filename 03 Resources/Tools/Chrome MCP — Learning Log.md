@@ -27,3 +27,7 @@
     - replay endpoint ด้วย token คนละตัวใน profile เดียว. httpbin echo ยืนยัน server เห็น Authorization ที่ override. recipe A9 เขียนใหม่แล้ว
 - `2026-07-19 01:25` ✅ **win** — master_dashboard auto-detect origin จาก tab
     - detect_origin(): env MD_DASHBOARD_URL > tab ที่ title มี Thunder Group > fallback. URL เปลี่ยนอีกก็หาเจอเอง
+- `2026-07-19 01:40` ⚠️ **gotcha** — shlex.quote ชนกับ shell template ที่ครอบ {r} ด้วย quote อยู่แล้ว
+    - แก้ injection ด้วย metachar guard (skip recipient ที่มี ;$`|&><) แทน quote — ไม่ชน template
+- `2026-07-19 01:40` ⚠️ **gotcha** — JS ที่ return ข้อมูลใหญ่ต้องส่ง maxOutputBytes เสมอ (ไม่ใช่แค่ observe)
+    - master_dashboard js() ฝัง innerText ทั้งหน้า → ถ้าโตเกิน 10KB truncate → false fail. ใส่ maxOutputBytes 500000
