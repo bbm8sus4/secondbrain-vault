@@ -1,0 +1,657 @@
+<style>
+  :root{
+    --ground:#eef1f6; --surface:#ffffff; --surface-2:#f7f9fc;
+    --ink:#151824; --muted:#5c6575; --faint:#8a93a3;
+    --line:#dbe2ec; --line-strong:#c4cede;
+    --accent:#1f47c4; --accent-ink:#16357f; --accent-soft:#e9eefb;
+    --crit:#c22a2a; --crit-bg:#fbecec; --crit-line:#eeb9b9;
+    --warn:#9a5405; --warn-bg:#fbf0e0; --warn-line:#eccf9e;
+    --ok:#0d7148; --ok-bg:#e5f3ec; --ok-line:#a9d6bf;
+    --thunder:#1f47c4; --easyslip:#c2337d;
+    --font: "Sarabun","Noto Sans Thai","Thonburi",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --mono: ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sh-sm:0 1px 2px rgba(21,24,36,.06),0 1px 3px rgba(21,24,36,.05);
+    --sh-md:0 4px 14px rgba(21,24,36,.08);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0}
+  .app{
+    font-family:var(--font); color:var(--ink); background:var(--ground);
+    line-height:1.55; font-size:15px; letter-spacing:.005em;
+    min-height:100vh; padding:0 0 64px;
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding:0 20px}
+  .eyebrow{font-size:11px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; color:var(--faint)}
+  h1,h2,h3,h4{margin:0; text-wrap:balance; font-weight:800; letter-spacing:-.01em}
+  .num{font-variant-numeric:tabular-nums}
+  a{color:var(--accent-ink)}
+
+  /* ---- masthead ---- */
+  .mast{
+    background:linear-gradient(180deg,#0f2f8f 0%,#1f47c4 100%); color:#fff;
+    padding:26px 0 22px; box-shadow:var(--sh-md);
+  }
+  .mast .wrap{display:flex; flex-wrap:wrap; gap:18px 28px; align-items:flex-end; justify-content:space-between}
+  .mast .eyebrow{color:#aebdf0}
+  .mast h1{color:#fff; font-size:26px; line-height:1.15; margin-top:6px}
+  .mast .sub{color:#d3ddf7; font-size:13.5px; margin-top:6px; max-width:56ch}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+  .chip{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700;
+    padding:4px 10px; border-radius:999px; letter-spacing:.02em}
+  .chip-pii{background:rgba(255,255,255,.14); color:#fff; border:1px solid rgba(255,255,255,.35)}
+  .chip-t{background:rgba(255,255,255,.16); color:#eaf0ff}
+  .prog-card{background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.22);
+    border-radius:14px; padding:14px 16px; min-width:210px; backdrop-filter:blur(2px)}
+  .prog-card .lab{font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#bcccf5; font-weight:700}
+  .prog-top{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-top:4px}
+  .prog-top b{font-size:24px; font-weight:800; color:#fff; font-variant-numeric:tabular-nums}
+  .prog-top span{font-size:12px; color:#cdd8f6}
+  .bar{height:7px; border-radius:999px; background:rgba(255,255,255,.22); overflow:hidden; margin-top:9px}
+  .bar > i{display:block; height:100%; width:0; background:linear-gradient(90deg,#7fe1b0,#37c98a); border-radius:999px; transition:width .35s ease}
+
+  /* ---- today banner ---- */
+  .today{position:sticky; top:0; z-index:30; background:var(--ground);
+    border-bottom:1px solid var(--line); padding:16px 0 4px;}
+  .today .head{display:flex; align-items:center; gap:10px; margin-bottom:11px}
+  .today .head .dot{width:9px;height:9px;border-radius:50%;background:var(--crit);box-shadow:0 0 0 4px var(--crit-bg)}
+  .today .head h2{font-size:15px}
+  .today .head .hint{font-size:12px;color:var(--muted);margin-inline-start:auto}
+  .today-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+  .tcard{background:var(--surface); border:1px solid var(--line); border-radius:13px; padding:14px 15px 15px;
+    position:relative; box-shadow:var(--sh-sm); border-inline-start:4px solid var(--warn)}
+  .tcard.is-crit{border-inline-start-color:var(--crit)}
+  .tcard .tag{display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+    padding:3px 8px; border-radius:6px; margin-bottom:9px}
+  .tcard.is-crit .tag{background:var(--crit-bg); color:var(--crit)}
+  .tcard.is-warn .tag{background:var(--warn-bg); color:var(--warn)}
+  .tcard h3{font-size:14.5px; line-height:1.3}
+  .tcard p{margin:7px 0 0; font-size:12.5px; color:var(--muted)}
+  .tcard .own{margin-top:10px; font-size:11.5px; color:var(--faint)}
+  .tcard .own b{color:var(--ink); font-weight:700}
+
+  /* ---- tabs ---- */
+  .tabs{position:sticky; top:0; z-index:20; background:var(--ground); padding:14px 0 0; margin-top:6px}
+  .tabs-inner{display:flex; gap:4px; flex-wrap:wrap; border-bottom:1px solid var(--line)}
+  .tab{appearance:none; border:0; background:transparent; font-family:inherit; cursor:pointer;
+    font-size:13.5px; font-weight:700; color:var(--muted); padding:10px 14px 12px; border-radius:9px 9px 0 0;
+    position:relative; letter-spacing:.01em; display:inline-flex; align-items:center; gap:7px}
+  .tab:hover{color:var(--ink); background:var(--surface-2)}
+  .tab[aria-selected="true"]{color:var(--accent-ink)}
+  .tab[aria-selected="true"]::after{content:""; position:absolute; left:8px; right:8px; bottom:-1px; height:3px;
+    background:var(--accent); border-radius:3px 3px 0 0}
+  .tab .cnt{font-size:11px; font-weight:800; font-variant-numeric:tabular-nums; color:var(--faint);
+    background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:1px 7px}
+  .tab[aria-selected="true"] .cnt{color:var(--accent-ink); border-color:var(--accent-soft); background:var(--accent-soft)}
+
+  /* ---- panels / cards ---- */
+  main{padding-top:22px}
+  [data-panel]{display:none; animation:fade .25s ease}
+  [data-panel].is-active{display:block}
+  @keyframes fade{from{opacity:0; transform:translateY(4px)}to{opacity:1; transform:none}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--sh-sm); margin:0 0 16px}
+  .card > .ch{padding:15px 18px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:11px}
+  .card > .ch h3{font-size:15px}
+  .card > .ch .meta{margin-inline-start:auto; font-size:12px; color:var(--faint); font-variant-numeric:tabular-nums}
+  .card > .cb{padding:16px 18px}
+  .idx{width:26px;height:26px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink);
+    display:grid;place-items:center;font-size:12.5px;font-weight:800;flex:none;font-variant-numeric:tabular-nums}
+
+  .lead{font-size:14px; color:var(--muted); margin:0 0 14px; max-width:74ch}
+  .lead b{color:var(--ink)}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .kv{display:flex; flex-direction:column; gap:3px; padding:12px 14px; background:var(--surface-2);
+    border:1px solid var(--line); border-radius:11px}
+  .kv .k{font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700}
+  .kv .v{font-size:14px; font-weight:600}
+  .kv .v small{font-weight:400; color:var(--muted)}
+
+  ul.clean{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:9px}
+  ul.clean li{position:relative; padding-inline-start:18px; font-size:14px; color:#2a2f3a}
+  ul.clean li::before{content:""; position:absolute; left:2px; top:9px; width:6px; height:6px; border-radius:50%;
+    background:var(--accent)}
+  ul.clean li b{font-weight:700; color:var(--ink)}
+
+  /* checklist */
+  .chk{display:flex; align-items:flex-start; gap:11px; padding:11px 12px; border:1px solid var(--line);
+    border-radius:11px; background:var(--surface); cursor:pointer; transition:border-color .15s, background .15s}
+  .chk:hover{border-color:var(--line-strong); background:var(--surface-2)}
+  .chk + .chk{margin-top:8px}
+  .chk input{position:absolute; opacity:0; width:0; height:0}
+  .box{flex:none; width:21px; height:21px; border-radius:6px; border:2px solid var(--line-strong); margin-top:1px;
+    display:grid; place-items:center; transition:.15s}
+  .box svg{width:12px; height:12px; opacity:0; transform:scale(.5); transition:.15s; stroke:#fff; stroke-width:3.2; fill:none}
+  .chk input:checked ~ .box{background:var(--ok); border-color:var(--ok)}
+  .chk input:checked ~ .box svg{opacity:1; transform:none}
+  .chk input:focus-visible ~ .box{outline:2px solid var(--accent); outline-offset:2px}
+  .chk .body{flex:1; min-width:0}
+  .chk .t{font-size:13.5px; font-weight:600; line-height:1.4}
+  .chk input:checked ~ .body .t{color:var(--faint); text-decoration:line-through}
+  .chk .d{font-size:12px; color:var(--muted); margin-top:3px}
+  .chk .who{font-size:11px; color:var(--faint); margin-top:5px}
+  .chk .who b{color:var(--accent-ink); font-weight:700}
+  .risk-flag{display:inline-block; font-size:10px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--crit); background:var(--crit-bg); border-radius:5px; padding:2px 6px; margin-inline-start:6px; vertical-align:1px}
+
+  /* tables */
+  .twrap{overflow-x:auto; border:1px solid var(--line); border-radius:11px}
+  table{border-collapse:collapse; width:100%; font-size:13px; min-width:520px}
+  th,td{text-align:start; padding:9px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+  thead th{background:var(--surface-2); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:800; white-space:nowrap}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:var(--surface-2)}
+  td b{font-weight:700}
+
+  .badge{display:inline-block; font-size:11px; font-weight:800; letter-spacing:.02em; padding:2px 8px; border-radius:999px; white-space:nowrap}
+  .b-crit{background:var(--crit-bg); color:var(--crit)}
+  .b-warn{background:var(--warn-bg); color:var(--warn)}
+  .b-ok{background:var(--ok-bg); color:var(--ok)}
+  .b-mute{background:#eceff4; color:var(--muted)}
+  .b-t{background:var(--accent-soft); color:var(--accent-ink)}
+  .b-e{background:#fbe6f1; color:var(--easyslip)}
+
+  .callout{border:1px solid var(--warn-line); background:var(--warn-bg); border-radius:11px; padding:12px 14px; font-size:13px; color:#5a3a08; display:flex; gap:10px}
+  .callout.crit{border-color:var(--crit-line); background:var(--crit-bg); color:#6a1a1a}
+  .callout .ci{flex:none; width:20px; height:20px; margin-top:1px}
+  .callout b{font-weight:800}
+
+  /* timeline */
+  .tl{display:flex; flex-direction:column; gap:0}
+  .tl .step{display:grid; grid-template-columns:120px 1fr; gap:16px; padding:0 0 4px}
+  .tl .when{padding:12px 0 0; text-align:end}
+  .tl .when .lab{font-size:12.5px; font-weight:800; color:var(--accent-ink)}
+  .tl .when .sub{font-size:11px; color:var(--faint)}
+  .tl .track{position:relative; padding:12px 0 20px 22px; border-inline-start:2px solid var(--line)}
+  .tl .step:last-child .track{border-color:transparent}
+  .tl .track::before{content:""; position:absolute; left:-7px; top:15px; width:12px; height:12px; border-radius:50%;
+    background:var(--surface); border:3px solid var(--accent)}
+  .tl .track h4{font-size:14px; margin-bottom:6px}
+  .tl .track ul{margin:0; padding-inline-start:16px; font-size:13px; color:var(--muted); display:flex; flex-direction:column; gap:3px}
+
+  /* raci */
+  .raci .who-tag{font-weight:700; color:var(--ink)}
+
+  /* letter blocks */
+  .doc{border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:14px}
+  .doc .dh{display:flex; align-items:center; gap:10px; padding:11px 14px; background:var(--surface-2); border-bottom:1px solid var(--line)}
+  .doc .dh h4{font-size:13.5px}
+  .doc .dh .copy{margin-inline-start:auto; appearance:none; border:1px solid var(--line-strong); background:var(--surface);
+    font-family:inherit; font-size:12px; font-weight:700; color:var(--accent-ink); padding:5px 11px; border-radius:8px; cursor:pointer}
+  .doc .dh .copy:hover{background:var(--accent-soft); border-color:var(--accent-soft)}
+  .doc pre{margin:0; padding:14px 16px; font-family:var(--mono); font-size:12px; line-height:1.65; color:#2b3040;
+    white-space:pre-wrap; overflow-x:auto; background:var(--surface)}
+
+  .toolbar{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:2px 0 18px}
+  .btn{appearance:none; font-family:inherit; font-size:12.5px; font-weight:700; cursor:pointer;
+    border:1px solid var(--line-strong); background:var(--surface); color:var(--ink); padding:8px 13px; border-radius:9px;
+    display:inline-flex; align-items:center; gap:7px}
+  .btn:hover{background:var(--surface-2)}
+  .btn svg{width:14px;height:14px}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+  .btn.primary:hover{background:var(--accent-ink)}
+  .btn.ghost{color:var(--muted); border-color:transparent}
+  .btn.ghost:hover{color:var(--crit)}
+  .spacer{flex:1}
+
+  .foot{margin-top:26px; padding-top:16px; border-top:1px solid var(--line); font-size:11.5px; color:var(--faint); max-width:82ch}
+  .foot b{color:var(--muted)}
+
+  .sec-note{font-size:12.5px; color:var(--muted); margin:-4px 0 14px}
+
+  @media (max-width:760px){
+    .today-grid{grid-template-columns:1fr}
+    .grid2{grid-template-columns:1fr}
+    .tl .step{grid-template-columns:84px 1fr; gap:10px}
+    .mast .wrap{align-items:flex-start}
+  }
+
+  @media print{
+    .app{background:#fff; padding:0}
+    .mast{background:#fff!important; color:#000; box-shadow:none; border-bottom:2px solid #000; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+    .mast .eyebrow,.mast h1,.mast .sub,.mast .prog-card,.mast .chip{color:#000}
+    .prog-card,.chip{border-color:#999}
+    .today{position:static}
+    .tabs{display:none}
+    [data-panel]{display:block!important; animation:none; page-break-inside:auto}
+    .card,.tcard,.doc{page-break-inside:avoid; box-shadow:none}
+    .toolbar,.btn{display:none}
+    .box{border-color:#666}
+    body{font-size:12px}
+    a{color:#000}
+  }
+</style>
+
+<div class="app">
+  <header class="mast">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Thunder Solution · EasySlip — HR Operations</div>
+        <h1>HR Offboarding Console</h1>
+        <div class="sub">แผนรับมือ HR ลาออกครบทุกมิติ — Guitar (ต้า, HR ทดลองงาน) · หัวหน้า POP (ยุพาพร) รับช่วง · ปรับปรุง 18 ก.ค. 2026</div>
+        <div class="chips">
+          <span class="chip chip-pii">เอกสารลับ · มี PII — ห้ามแชร์สาธารณะ</span>
+          <span class="chip chip-t">ที่มา: Obsidian + D1 (ถึง 17 ก.ค.)</span>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="lab">ความคืบหน้ารวม</div>
+        <div class="prog-top"><b id="pgPct">0%</b><span id="pgCnt">0 / 0 รายการ</span></div>
+        <div class="bar"><i id="pgBar"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="today">
+    <div class="wrap">
+      <div class="head">
+        <span class="dot"></span>
+        <h2>ต้องทำวันนี้ (Day 0)</h2>
+        <span class="hint">อย่ารอวันสุดท้าย</span>
+      </div>
+      <div class="today-grid">
+        <article class="tcard is-crit">
+          <span class="tag">เสี่ยงสุด · Access</span>
+          <h3>ย้ายเบอร์ 2FA ออกจาก dev.v002@gmail.com</h3>
+          <p>เบอร์ <b class="num">0855919653</b> ของ Guitar เป็น recovery/2FA ของบัญชี dev — ออกพร้อมเบอร์ = ทีม dev อาจถูกล็อกออกเอง</p>
+          <div class="own">เจ้าของงาน: <b>Bank / บอม</b></div>
+        </article>
+        <article class="tcard is-warn">
+          <span class="tag">งานค้าง</span>
+          <h3>ดึงรายชื่อพนักงาน EasySlip</h3>
+          <p>ค้างส่งตั้งแต่ 15 พ.ค. (ส่งแต่ Thunder 24 คน) — ดึงตอนเธอยังมี access ไม่งั้นต้องทำใหม่หมด</p>
+          <div class="own">เจ้าของงาน: <b>POP</b></div>
+        </article>
+        <article class="tcard is-warn">
+          <span class="tag">สรรหา</span>
+          <h3>ส่ง pipeline สรรหาให้ POP + Bank</h3>
+          <p>QA (Rawin/Kalyarat/Suttipat) · EA 4 คน · PO — ค้างไม่มีผลสรุป อย่าให้ผู้สมัครหลุด</p>
+          <div class="own">เจ้าของงาน: <b>POP + Bank</b></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <nav class="tabs" aria-label="หมวดเอกสาร">
+    <div class="wrap">
+      <div class="tabs-inner" role="tablist">
+        <button class="tab" role="tab" aria-selected="true" data-tab="overview">ภาพรวม</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="access">Access &amp; ความปลอดภัย <span class="cnt" data-cnt="access">0/0</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="work">งานค้าง &amp; สรรหา <span class="cnt" data-cnt="work">0/0</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="assets">คืนทรัพย์สิน <span class="cnt" data-cnt="assets">0/0</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="legal">กฎหมาย &amp; เอกสาร</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <!-- ============ OVERVIEW ============ -->
+      <section data-panel="overview" class="is-active" role="tabpanel">
+        <div class="toolbar">
+          <button class="btn primary" id="btnPrint" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+            พิมพ์ / บันทึก PDF
+          </button>
+          <div class="spacer"></div>
+          <button class="btn ghost" id="btnReset" type="button">ล้างเครื่องหมายทั้งหมด</button>
+        </div>
+
+        <div class="card">
+          <div class="ch"><span class="idx">i</span><h3>สรุปผู้บริหาร</h3></div>
+          <div class="cb">
+            <p class="lead"><b>คนที่ลาออก:</b> Guitar = ต้า = ต้าร์ = น้องต้า — HR ทดลองงาน (คนเดียวกัน) · เบอร์ 0855919653 &nbsp;·&nbsp; <b>คนรับช่วง:</b> POP (ยุพาพร คำสีแก้ว) HR Manager — อยู่ต่อ</p>
+            <div class="grid2">
+              <div class="kv"><span class="k">สถานะการออก</span><span class="v">ยังไม่มีหนังสือลาออกในระบบ <small>— 17 ก.ค. Bob "ขอลิสงานส่งต่อด่วน" = trigger handover</small></span></div>
+              <div class="kv"><span class="k">ระดับความรุนแรง</span><span class="v">ปานกลาง <small>— คนออกระดับปฏิบัติการ ไม่ใช่ Manager ความรู้หลักไม่หายทั้งระบบ</small></span></div>
+            </div>
+            <div class="callout crit" style="margin-top:14px">
+              <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+              <span><b>ก่อนดำเนินการ:</b> ยืนยันว่าเป็นการลาออกโดยสมัครใจจริง หรือตกลงเลิกจ้างร่วมกัน — มีผลกับการจ่ายเงิน/สิทธิ (เธอเพิ่งโดนขอออกใบเตือน หาย 1 ชม. 8 ก.ค. + ลาป่วย 9–10 ก.ค. ATK)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><span class="idx">5</span><h3>5 มิติที่ต้องจัดการ</h3></div>
+          <div class="cb">
+            <ul class="clean">
+              <li><b>1 · Access &amp; ความปลอดภัย</b> — เพิกถอน/ย้ายบัญชีที่ผูกตัวเธอ (เบอร์ = 2FA ของ dev.v002, OTP Claude 20Max)</li>
+              <li><b>2 · งานค้าง &amp; เอกสาร</b> — รายชื่อ EasySlip, โครงสร้างเงินเดือน, ค่าจูงใจ, ใบเตือน 4-tier, รายงานลารายวัน</li>
+              <li><b>3 · Pipeline สรรหา</b> — QA/EA/PO/Sale-Mkt EasySlip ส่งต่อ POP + Bank</li>
+              <li><b>4 · คืนทรัพย์สิน</b> — จับต้องได้ (เอาคืน) + ออนไลน์ (ตัด/ย้ายเจ้าของ/เปลี่ยน 2FA)</li>
+              <li><b>5 · กฎหมาย &amp; Exit</b> — เงินงวดสุดท้าย, วันลา, ประกันสังคม, 50 ทวิ, หนังสือรับรอง, exit interview</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><span class="idx">T</span><h3>Timeline</h3></div>
+          <div class="cb">
+            <div class="tl">
+              <div class="step"><div class="when"><div class="lab">วันนี้</div><div class="sub">Day 0</div></div>
+                <div class="track"><h4>ล็อกความเสี่ยง + รับหนังสือลาออก</h4>
+                  <ul><li>รับหนังสือลาออก + ยืนยันวันสุดท้าย</li><li>ย้ายเบอร์ 2FA ออกจาก dev.v002 + OTP Claude</li><li>แจ้ง POP + ดึงรายชื่อ EasySlip / ลิงก์ไฟล์</li></ul></div></div>
+              <div class="step"><div class="when"><div class="lab">48 ชม.</div><div class="sub">Day 1–2</div></div>
+                <div class="track"><h4>ประชุม handover + ส่งต่องาน</h4>
+                  <ul><li>ประชุม POP + Guitar + Bob ไล่ checklist</li><li>ตั้งเจ้าของ decision สรรหา + ส่ง pipeline</li><li>กำหนดคนทำรายงานลารายวันต่อ</li></ul></div></div>
+              <div class="step"><div class="when"><div class="lab">ช่วง notice</div><div class="sub">ก่อนออก</div></div>
+                <div class="track"><h4>เก็บงานให้ครบ</h4>
+                  <ul><li>ทำ checklist ทุกช่อง + นัดคืนทรัพย์สิน</li><li>ถ่ายทอดงานประจำ (ประชุมเดือน / OT / ตรวจสุขภาพ)</li></ul></div></div>
+              <div class="step"><div class="when"><div class="lab">วันสุดท้าย +</div><div class="sub">หลังออก</div></div>
+                <div class="track"><h4>ปิดให้เรียบร้อยตามกฎหมาย</h4>
+                  <ul><li>เพิกถอน access ทั้งหมด + เก็บทรัพย์สิน</li><li>จ่ายเงินงวดสุดท้าย + วันลาคงเหลือ</li><li>แจ้งประกันสังคม (ในวันที่ 15 เดือนถัดไป) + 50 ทวิ + หนังสือรับรอง + exit interview</li></ul></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><span class="idx">R</span><h3>RACI — ใครทำอะไร</h3></div>
+          <div class="cb">
+            <div class="twrap">
+              <table>
+                <thead><tr><th>งาน</th><th>เจ้าของหลัก</th><th>สนับสนุน</th></tr></thead>
+                <tbody>
+                  <tr><td>รับลาออก + อนุมัติ + decision สรรหา</td><td class="who-tag">Bob (COO)</td><td>Watcharin</td></tr>
+                  <tr><td>รับช่วง HR + handover + coordination สรรหา</td><td class="who-tag">POP (HR Mgr)</td><td>NING</td></tr>
+                  <tr><td>JD / สัมภาษณ์สายเทค</td><td class="who-tag">Bank (PM/BA)</td><td>Poom, พี่วุทธ</td></tr>
+                  <tr><td>เพิกถอน access + ย้ายเบอร์ dev.v002</td><td class="who-tag">Bank / บอม</td><td>POP</td></tr>
+                  <tr><td>จ่ายเงิน + ประกันสังคม + 50 ทวิ</td><td class="who-tag">บัญชี (BEER/MIND)</td><td>POP</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ACCESS ============ -->
+      <section data-panel="access" role="tabpanel">
+        <p class="sec-note">"คืนของ" ไม่พอ — บัญชีออนไลน์ต้อง <b>เพิกถอน / ย้ายเจ้าของ / เปลี่ยน 2FA</b> โดยเฉพาะบัญชีที่ผูกเบอร์/อีเมลส่วนตัวของเธอ</p>
+        <div class="card">
+          <div class="ch"><span class="idx">1</span><h3>Access &amp; Security Checklist</h3><span class="meta" data-meta="access">0 / 5</span></div>
+          <div class="cb">
+            <label class="chk"><input type="checkbox" data-k="acc1"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">ย้ายเบอร์ 2FA/recovery ออกจาก dev.v002@gmail.com <span class="risk-flag">เสี่ยงสุด</span></span><span class="d">เบอร์ 0855919653 เป็น recovery ของบัญชี dev (ย้ายมาหลัง hello easy/thunder โดนแบน) → เปลี่ยนเป็นเบอร์บริษัท</span><span class="who">เจ้าของ: <b>Bank / บอม</b></span></span></label>
+            <label class="chk"><input type="checkbox" data-k="acc2"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">ย้าย OTP Claude AI 20Max ออกจากเบอร์เธอ</span><span class="d">OTP วิ่งเข้า "ป๊อบ/ต้า" — เหลือ POP หรือเบอร์กลาง</span><span class="who">เจ้าของ: <b>Bob / POP</b></span></span></label>
+            <label class="chk"><input type="checkbox" data-k="acc3"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">โอนเจ้าของ Google Form ข้อมูลพนักงาน</span><span class="d">เธอเป็นคนสร้าง — ลบบัญชี = ฟอร์ม + data หาย</span><span class="who">เจ้าของ: <b>POP</b></span></span></label>
+            <label class="chk"><input type="checkbox" data-k="acc4"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">รวมลิงก์ + โอนสิทธิ์ไฟล์ Drive</span><span class="d">โครงสร้างเงินเดือน, ค่าจูงใจ, OT, ใบเสนอราคาตรวจสุขภาพ, ลิงก์เอกสารสัมภาษณ์</span><span class="who">เจ้าของ: <b>POP</b></span></span></label>
+            <label class="chk"><input type="checkbox" data-k="acc5"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">Inventory password/2FA ที่เหลือ (วัน handover)</span><span class="d">LINE OA, จ๊อบบอร์ด, ระบบ HR, กลุ่ม Telegram งาน — ระบุให้ครบ</span><span class="who">เจ้าของ: <b>POP / Bob</b></span></span></label>
+            <div class="callout" style="margin-top:14px">
+              <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></svg>
+              <span><b>อย่าไปยุ่ง:</b> <span class="num">development.v001@gmail.com</span> เป็นบัญชี ChatGPT/ทดสอบของ <b>Ann</b> ไม่ใช่ของ Guitar — คนละบัญชีกับ dev.v002</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WORK + PIPELINE ============ -->
+      <section data-panel="work" role="tabpanel">
+        <div class="card">
+          <div class="ch"><span class="idx">2</span><h3>งานค้าง &amp; เอกสารต้องดึงคืน</h3><span class="meta" data-meta="work">0 / 6</span></div>
+          <div class="cb">
+            <label class="chk"><input type="checkbox" data-k="wk1"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">ดึงรายชื่อพนักงาน EasySlip <span class="risk-flag">ค้าง 15 พ.ค.</span></span><span class="d">ส่งแต่ Thunder 24 คน — EasySlip ยังไม่เคยส่ง ดึงก่อนเธอออก</span></span></label>
+            <label class="chk"><input type="checkbox" data-k="wk2"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">เก็บไฟล์โครงสร้างเงินเดือน + ไฟล์คำตอบพนักงาน</span><span class="d">เธอส่ง 12 พ.ค. แต่ไฟล์ไม่อยู่ใน vault — หาลิงก์จริง</span></span></label>
+            <label class="chk"><input type="checkbox" data-k="wk3"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">เก็บเกณฑ์ค่าจูงใจ + เกณฑ์ปรับเงินเดือนรอบปี</span><span class="d">POP มอบให้เธอทำ — สถานะไม่ชัด เช็คว่าทำถึงไหน</span></span></label>
+            <label class="chk"><input type="checkbox" data-k="wk4"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">ปิด/มอบต่อ: ระบบใบเตือน 4-tier + Memo ปัญหาเสียง</span><span class="d">timeline 4 ตัวละคร ทำไม่เสร็จ</span></span></label>
+            <label class="chk"><input type="checkbox" data-k="wk5"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">กำหนดคนทำ "รายงานการลารายวัน" ต่อ</span><span class="d">เดิม Guitar ทำให้ทั้งบริษัท → มอบ POP / CS ไม่งั้นขาดวันแรกที่เธอออก</span></span></label>
+            <label class="chk"><input type="checkbox" data-k="wk6"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span class="body"><span class="t">ปิดเคสใบเตือนของเธอเอง + โอนประชุมประจำเดือนให้ POP</span><span class="d">เคสใบเตือนอยู่ระหว่างดำเนินการ 8 ก.ค.</span></span></label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><span class="idx">3</span><h3>Pipeline สรรหา — ผู้สมัครในสาย</h3><span class="meta">ค้าง / ไม่มีผลสรุป</span></div>
+          <div class="cb">
+            <p class="sec-note">คนตัดสิน = Bob (กำลังย้ายตำแหน่งเอง) → ตั้งเจ้าของ decision ให้ชัดก่อนเธอออก · Bank คุมสัมภาษณ์สายเทค</p>
+            <div class="twrap">
+              <table>
+                <thead><tr><th>ผู้สมัคร</th><th>ตำแหน่ง</th><th>รอบ / วัน</th><th>สถานะ</th></tr></thead>
+                <tbody>
+                  <tr><td><b>Rawin Sripol</b></td><td>QA</td><td class="num">รอบ 2: 10 ก.ค.</td><td><span class="badge b-warn">รอผล</span></td></tr>
+                  <tr><td><b>Kalyarat Poowong</b></td><td>QA</td><td class="num">1 ก.ค.</td><td><span class="badge b-warn">รอผล</span></td></tr>
+                  <tr><td><b>Suttipat Surisan</b></td><td>QA</td><td class="num">3 ก.ค.</td><td><span class="badge b-warn">รอผล</span></td></tr>
+                  <tr><td>Tanaporn Thanukit</td><td>QA</td><td class="num">1 ก.ค.</td><td><span class="badge b-mute">ยกเลิก</span></td></tr>
+                  <tr><td>เปิดรับ QA รอบใหม่</td><td>QA</td><td class="num">13 ก.ค.</td><td><span class="badge b-warn">กำลังวิ่ง</span></td></tr>
+                  <tr><td><b>Nuttarika</b> + อีก 3</td><td>Executive Assistant</td><td class="num">1 ก.ค. (ชุด 4)</td><td><span class="badge b-warn">รอผล</span></td></tr>
+                  <tr><td><b>Pongsathorn Prombutr</b></td><td>PO</td><td class="num">17 มิ.ย.</td><td><span class="badge b-warn">ไม่ปิด</span></td></tr>
+                  <tr><td>Sale + Marketing EasySlip</td><td><span class="badge b-e">EasySlip</span></td><td>—</td><td><span class="badge b-crit">ยังไม่หา</span></td></tr>
+                  <tr><td>อริศา (Arisa)</td><td>PM / การตลาด</td><td class="num">6 ก.ค.</td><td><span class="badge b-mute">ไม่รับ</span></td></tr>
+                  <tr><td>Keenix sales</td><td>Sales</td><td class="num">27 พ.ค.</td><td><span class="badge b-mute">ค้าง</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="sec-note" style="margin-top:12px"><b>9 ตำแหน่งเปิดรวม (จากผัง):</b> PM · COO ใหม่ (แทน Bob) · Sales · Marketing Exec · PO · CFO · CS Manager · QA · Vibe Coder &nbsp;—&nbsp; CFO ที่จะเข้า = เจ้าของ payroll/ประกันสังคมระยะยาว</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ ASSETS ============ -->
+      <section data-panel="assets" role="tabpanel">
+        <p class="sec-note">หลักคิด: <b>ของจับต้องได้ = "เอาคืน"</b> · <b>ออนไลน์ = "ตัด / ย้ายเจ้าของ / เปลี่ยน 2FA"</b> — เคลียร์ครบก่อนปล่อยจ่ายเงินงวดสุดท้าย</p>
+        <div class="card">
+          <div class="ch"><span class="idx">A</span><h3>ทรัพย์สินจับต้องได้ (Physical)</h3><span class="meta" data-meta="phys">0 / 8</span></div>
+          <div class="cb">
+            <div class="grid2">
+              <label class="chk"><input type="checkbox" data-k="ph1"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">Notebook / MacBook + adapter</span><span class="d">บันทึก S/N</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="ph2"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">เมาส์ / คีย์บอร์ด / อุปกรณ์เสริม</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="ph3"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">คีย์การ์ด / กุญแจห้อง / กุญแจตู้</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="ph4"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">ยูนิฟอร์ม</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="ph5"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">ซิม / โทรศัพท์บริษัท</span><span class="d">ถ้าเป็นของบริษัท</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="ph6"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">บัตรพนักงาน / บัตรจอดรถ</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="ph7"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">แฟ้มกระดาษที่ถือครอง</span><span class="d">แฟ้มประวัติ / สัญญา / ใบเตือน</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="ph8"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">เงินสดย่อย / เงินทดรอง</span><span class="d">ถ้าถือ — ระบุจำนวน</span></span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><span class="idx">B</span><h3>สินทรัพย์ออนไลน์ / ดิจิทัล</h3><span class="meta" data-meta="onl">0 / 10</span></div>
+          <div class="cb">
+            <div class="grid2">
+              <label class="chk"><input type="checkbox" data-k="on1"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">dev.v002@gmail.com — เปลี่ยนเบอร์กู้/2FA <span class="risk-flag">ด่วน</span></span><span class="who">เจ้าของ: <b>Bank / บอม</b></span></span></label>
+              <label class="chk"><input type="checkbox" data-k="on2"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">OTP Claude 20Max — ย้ายออก</span><span class="who">เจ้าของ: <b>POP</b></span></span></label>
+              <label class="chk"><input type="checkbox" data-k="on3"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">Google Form ข้อมูลพนักงาน — โอนเจ้าของ</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="on4"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">Google Drive / ไฟล์งาน — โอน + ถอนสิทธิ์แชร์</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="on5"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">อีเมลบริษัท — forward → POP แล้วปิด</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="on6"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">LINE OA — ถอดสิทธิ์แอดมิน</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="on7"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">กลุ่ม Telegram งาน — ถอดแอดมิน / เอาออก</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="on8"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">จ๊อบบอร์ด / ระบบ HR — เปลี่ยนรหัส / ปิดสิทธิ์</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="on9"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">Cloud อื่น (Canva/Adobe/Figma/ChatGPT แชร์) — ถอดที่นั่ง</span></span></label>
+              <label class="chk"><input type="checkbox" data-k="on10"><span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span class="body"><span class="t">Authenticator บนมือถือส่วนตัว — ปลดออกจากบัญชีบริษัท</span></span></label>
+            </div>
+            <div class="callout crit" style="margin-top:14px">
+              <svg class="ci" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7v6c0 5 4 8 10 9 6-1 10-4 10-9V7z"/></svg>
+              <span><b>PDPA:</b> ลบไฟล์ข้อมูลพนักงานออกจากอุปกรณ์ส่วนตัว · ยืนยันไม่เก็บสำเนา · เซ็นรับทราบ NDA · หมุนรหัสทุกตัวที่เธอเคยเห็น (เธอเป็น HR เข้าถึงข้อมูลอ่อนไหว)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ LEGAL + DOCS ============ -->
+      <section data-panel="legal" role="tabpanel">
+        <div class="card">
+          <div class="ch"><span class="idx">L</span><h3>วิธี Offboarding ที่ถูกต้อง (แรงงานไทย)</h3></div>
+          <div class="cb">
+            <p class="sec-note">พนักงานทดลองงาน = ลูกจ้างเต็มตัวตั้งแต่วันแรก · ตัวเลข/สิทธิจริงยืนยันกับฝ่ายบัญชี/ที่ปรึกษาแรงงานอีกที (ขึ้นกับสัญญา + อายุงาน)</p>
+            <div class="grid2">
+              <div class="kv"><span class="k">ก · เอกสาร</span><span class="v" style="font-size:13px; font-weight:500">หนังสือลาออก + วันสุดท้าย · ยืนยันลาออกเอง (ไม่ต้องจ่ายชดเชย) vs เลิกจ้างร่วมกัน</span></div>
+              <div class="kv"><span class="k">ข · เงิน</span><span class="v" style="font-size:13px; font-weight:500">ค่าจ้างถึงวันสุดท้าย (เลิกจ้างจ่ายใน 3 วัน ม.70) · วันลาพักร้อนคงเหลือตามสัดส่วน</span></div>
+              <div class="kv"><span class="k">ค · ราชการ</span><span class="v" style="font-size:13px; font-weight:500">แจ้งออกประกันสังคม (สปส.6-09) ภายในวันที่ 15 เดือนถัดไป · 50 ทวิ · หนังสือรับรอง</span></div>
+              <div class="kv"><span class="k">ง · ปิด</span><span class="v" style="font-size:13px; font-weight:500">คืนของ + เพิกถอน access + PDPA · Exit interview (สำคัญ — ทดลองงาน + มีเรื่องผลงาน)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><span class="idx">D</span><h3>เอกสาร / จดหมาย (คัดลอกไปใช้)</h3></div>
+          <div class="cb">
+            <div class="doc">
+              <div class="dh"><h4>หนังสือรับรองการทำงาน</h4><button class="copy" type="button" data-copy="d-cert">คัดลอก</button></div>
+              <pre id="d-cert">หนังสือรับรองการทำงาน  เลขที่ [HR-CERT-____]
+
+หนังสือฉบับนี้ให้ไว้เพื่อรับรองว่า [ชื่อ-นามสกุล]
+เลขประจำตัวประชาชน [______] ได้เข้าทำงานกับบริษัทฯ
+ในตำแหน่ง [เจ้าหน้าที่ฝ่ายทรัพยากรบุคคล]
+ตั้งแต่วันที่ [__ ____] ถึงวันที่ [__ ____]
+บริษัทฯ ออกหนังสือฉบับนี้ให้ไว้เพื่อเป็นหลักฐาน
+
+                            ลงชื่อ ______________________
+                            ( [ชื่อผู้มีอำนาจ] )  ตำแหน่ง [COO]
+คู่กัน: 50 ทวิ (ฝ่ายบัญชีออก)</pre>
+            </div>
+            <div class="doc">
+              <div class="dh"><h4>Email แจ้งทีม (ภายใน)</h4><button class="copy" type="button" data-copy="d-mail">คัดลอก</button></div>
+              <pre id="d-mail">หัวข้อ: แจ้งการเปลี่ยนแปลงผู้รับผิดชอบงาน HR
+
+เรียนทีมงานทุกท่าน
+ขอแจ้งว่า คุณ[ต้า] จะปฏิบัติงานวันสุดท้ายในวันที่ [__ ____]
+ขอขอบคุณสำหรับการทำงานที่ผ่านมา
+
+ตั้งแต่วันที่ [__ ____] งานด้าน HR ทั้งหมด (ลา สรรหา สวัสดิการ เอกสาร) ติดต่อ:
+    คุณป๊อบ (ยุพาพร คำสีแก้ว) — HR Manager · ช่องทาง: [___]
+
+หากมีงานค้างกับคุณ[ต้า] กรุณาแจ้งคุณป๊อบภายใน [__ ____]
+ขอบคุณครับ · [Bob / ฝ่ายบริหาร]</pre>
+            </div>
+            <div class="doc">
+              <div class="dh"><h4>หนังสือตอบรับการลาออก</h4><button class="copy" type="button" data-copy="d-ack">คัดลอก</button></div>
+              <pre id="d-ack">ตามที่ท่านยื่นหนังสือลาออกลงวันที่ [__ ____] กำหนดวันสุดท้าย [__ ____]
+บริษัทฯ รับทราบและอนุมัติแล้ว ขอให้ส่งมอบงานตามแบบฟอร์ม
+และคืนทรัพย์สินให้ครบก่อนวันทำงานวันสุดท้าย
+บริษัทฯ จะจ่ายค่าจ้างงวดสุดท้ายและสิทธิประโยชน์คงเหลือตามระเบียบและกฎหมาย
+
+                            ลงชื่อ ____________ ฝ่ายบริหาร / HR</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><span class="idx">G</span><h3>ช่องโหว่ HR ที่ควรอุด (งานของ POP ต่อ)</h3></div>
+          <div class="cb">
+            <ul class="clean">
+              <li>Offboarding SOP · Payroll runbook · ทะเบียนประวัติพนักงาน (personnel master)</li>
+              <li>ทะเบียนวันลาคงเหลือ · บัญชี/รหัสประกันสังคม e-service · คลังสัญญาจ้าง + เทมเพลต</li>
+              <li>Onboarding checklist พนักงาน · ระเบียบข้อบังคับการทำงาน · รายชื่อพนักงาน EasySlip ครบ</li>
+            </ul>
+            <p class="sec-note" style="margin-top:12px">เหตุนี้เปิดโปงว่า HR แทบไม่มี runbook เป็นลายลักษณ์ — ใช้จังหวะนี้ให้ POP สร้าง (CFO ที่จะเข้ามารับ payroll/ประกันสังคมระยะยาว)</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="foot">
+        <b>แหล่งข้อมูล:</b> multi-agent research ใน Obsidian (Friday recaps W24–W29, Monthly พ.ค.–มิ.ย., Office Seating Plan) + query D1 สด ถึง 17 ก.ค. · จัดทำ 18 ก.ค. 2026 · ข้อกฎหมายเป็นแนวปฏิบัติมาตรฐาน ควรยืนยันกับที่ปรึกษาแรงงาน<br>
+        เครื่องหมายถูกบันทึกในเบราว์เซอร์นี้เท่านั้น (localStorage) · เอกสารมี PII — เก็บเป็นความลับ ห้ามแชร์สาธารณะ
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+(function(){
+  var KEY="hr-offb-guitar-v1";
+  var store={};
+  try{ store=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){ store={}; }
+
+  var boxes=Array.prototype.slice.call(document.querySelectorAll('input[type=checkbox][data-k]'));
+  boxes.forEach(function(b){
+    if(store[b.dataset.k]) b.checked=true;
+    b.addEventListener('change',function(){
+      store[b.dataset.k]=b.checked;
+      try{ localStorage.setItem(KEY,JSON.stringify(store)); }catch(e){}
+      recalc();
+    });
+  });
+
+  // panel groups for the small meta counters
+  function countIn(panel){
+    var el=document.querySelector('[data-panel="'+panel+'"]');
+    if(!el) return [0,0];
+    var bs=el.querySelectorAll('input[type=checkbox][data-k]');
+    var done=0; bs.forEach(function(b){ if(b.checked) done++; });
+    return [done,bs.length];
+  }
+
+  function setMeta(name,done,total){
+    document.querySelectorAll('[data-meta="'+name+'"]').forEach(function(m){ m.textContent=done+" / "+total; });
+  }
+
+  function recalc(){
+    // overall
+    var done=0; boxes.forEach(function(b){ if(b.checked) done++; });
+    var total=boxes.length;
+    var pct=total? Math.round(done/total*100):0;
+    document.getElementById('pgPct').textContent=pct+"%";
+    document.getElementById('pgCnt').textContent=done+" / "+total+" รายการ";
+    document.getElementById('pgBar').style.width=pct+"%";
+
+    // per panel tab counters
+    ['access','work','assets'].forEach(function(p){
+      var c=countIn(p);
+      var t=document.querySelector('[data-cnt="'+p+'"]');
+      if(t) t.textContent=c[0]+"/"+c[1];
+    });
+    // section meta counters
+    setMeta('access', countIn('access')[0], countIn('access')[1]);
+    setMeta('work', 6>0? (function(){var d=0;['wk1','wk2','wk3','wk4','wk5','wk6'].forEach(function(k){if(store[k])d++;});return d;})():0, 6);
+    // phys + onl
+    var phDone=0,phT=0,onDone=0,onT=0;
+    boxes.forEach(function(b){
+      if(b.dataset.k.indexOf('ph')===0){ phT++; if(b.checked) phDone++; }
+      if(b.dataset.k.indexOf('on')===0){ onT++; if(b.checked) onDone++; }
+    });
+    setMeta('phys',phDone,phT); setMeta('onl',onDone,onT);
+  }
+
+  // tabs
+  var tabs=Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels=Array.prototype.slice.call(document.querySelectorAll('[data-panel]'));
+  function activate(name){
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.tab===name?'true':'false'); });
+    panels.forEach(function(p){ p.classList.toggle('is-active', p.dataset.panel===name); });
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  tabs.forEach(function(t){ t.addEventListener('click',function(){ activate(t.dataset.tab); }); });
+
+  // print
+  document.getElementById('btnPrint').addEventListener('click',function(){ window.print(); });
+
+  // reset
+  document.getElementById('btnReset').addEventListener('click',function(){
+    if(!confirm('ล้างเครื่องหมายถูกทั้งหมด?')) return;
+    store={}; try{ localStorage.removeItem(KEY); }catch(e){}
+    boxes.forEach(function(b){ b.checked=false; });
+    recalc();
+  });
+
+  // copy buttons
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var el=document.getElementById(btn.dataset.copy);
+      if(!el) return;
+      var txt=el.textContent;
+      var done=function(){ var o=btn.textContent; btn.textContent="คัดลอกแล้ว"; setTimeout(function(){ btn.textContent=o; },1400); };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done,function(){ fallback(txt,done); }); }
+      else fallback(txt,done);
+    });
+  });
+  function fallback(txt,cb){
+    var ta=document.createElement('textarea'); ta.value=txt; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); }catch(e){}
+    document.body.removeChild(ta); cb();
+  }
+
+  recalc();
+})();
+</script>
