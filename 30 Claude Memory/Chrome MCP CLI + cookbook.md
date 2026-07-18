@@ -36,5 +36,15 @@ allow `chrome:*` + curl helper + doctor ครบ 4 harness → zero prompt.
 ขยาย CLI เป็น 28 verbs — เปิด **hidden tools** (callable แต่ไม่โผล่ tools/list): `chrome search` (semantic tab search), `chrome userscript` (ถาวร, ต้องเปิด toggle "Allow user scripts"), `chrome flows`/`flow` (RPA engine), + reliability: `chrome wait <id> <text>` (แทน sleep), `chrome snapshot` (a11y tree+ref), `chrome form` (fill_form batch), `chrome console --buffer`, **`chrome kpi <id> '<js>' --state F --notify CMD`** (change-detect cron-ready, exit 10 = changed → Master Dashboard/churn alert). ทั้งหมด verify แล้ว, ไม่แตะ extension.
 mcp-chrome จริงๆ **มี infra ผู้นำอยู่แล้ว** (a11y snapshot, self-healing selector-engine, record-replay flow engine if/loop/http, in-browser cron via chrome.alarms) แค่ไม่ได้ surface. Roadmap เต็ม (actionability polling, NL act/extract, observe→cache→replay self-heal, cron/webhook) อยู่ Obsidian: `Chrome MCP — capability roadmap (4-agent research 2026-07-18).md`. Phase 2-3 ต้อง rebuild extension.
 
+## v3 (2026-07-19): anti-flaky + NL primitives (CLI-layer, ไม่ rebuild extension)
+`chrome_javascript` await Promise ได้ → ทำ actionability polling ในเรียกเดียว. ของใหม่ (verify แล้วกับ httpbin form + overlay):
+- **`chrome click`/`fill` gate actionability เอง** — รอ visible+stable+enabled+**hit-test** (elementFromPoint กัน overlay) ก่อนคลิก, ถ้าไม่ actionable = abort exit 4 (ไม่คลิกทะลุ). `--no-wait` ข้าม. = Playwright model.
+- `chrome ready <id> <sel> [--secs N]` — poll actionability report state (covered→hit:false ยืนยันแล้ว)
+- `chrome observe <id> [--all] [--limit N]` — numbered inventory (viewport-only default) = Stagehand observe, LLM อ่านแล้วเลือก. **ต้อง maxOutputBytes** เพราะ chrome_javascript ตัด ~10KB (observe ตั้งให้แล้ว)
+- `chrome click-text <id> "<text>"` — NL act ไม่ต้อง LLM: คลิก element ตาม label (exact→startsWith→contains) gated
+- `chrome extract <id> --schema '{"f":"sel"}'` — deterministic field→JSON
+- NL-act loop (Claude เป็น LLM in-session): observe → เลือก → click-text/click. รวม 32 verbs.
+- **จงใจไม่ทำ business jobs อัตโนมัติ** (คำสั่ง user 2026-07-19): Dashboard/churn/LINE/FB ทำเมื่อสั่งเท่านั้น. launchd 2 ตัวที่ตั้งไว้ (masterdashboard 08:00 + churnalert 09:00) — ถามผู้ใช้ก่อนว่า pause ไหม.
+
 ## Upstream
 `git remote add upstream hangwin/mcp-chrome` แล้ว fetch: **0 commit behind** — fork itorz7 ไม่ตกรุ่น (2026-07-18).
