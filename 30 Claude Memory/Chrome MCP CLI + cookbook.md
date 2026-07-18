@@ -32,5 +32,9 @@ Capability layer on top of Chrome MCP (built 2026-07-18, รอบ "ทำให
 ## Permissions
 allow `chrome:*` + curl helper + doctor ครบ 4 harness → zero prompt.
 
+## v2 (4-agent research 2026-07-18): hidden tools + reliability verbs
+ขยาย CLI เป็น 28 verbs — เปิด **hidden tools** (callable แต่ไม่โผล่ tools/list): `chrome search` (semantic tab search), `chrome userscript` (ถาวร, ต้องเปิด toggle "Allow user scripts"), `chrome flows`/`flow` (RPA engine), + reliability: `chrome wait <id> <text>` (แทน sleep), `chrome snapshot` (a11y tree+ref), `chrome form` (fill_form batch), `chrome console --buffer`, **`chrome kpi <id> '<js>' --state F --notify CMD`** (change-detect cron-ready, exit 10 = changed → Master Dashboard/churn alert). ทั้งหมด verify แล้ว, ไม่แตะ extension.
+mcp-chrome จริงๆ **มี infra ผู้นำอยู่แล้ว** (a11y snapshot, self-healing selector-engine, record-replay flow engine if/loop/http, in-browser cron via chrome.alarms) แค่ไม่ได้ surface. Roadmap เต็ม (actionability polling, NL act/extract, observe→cache→replay self-heal, cron/webhook) อยู่ Obsidian: `Chrome MCP — capability roadmap (4-agent research 2026-07-18).md`. Phase 2-3 ต้อง rebuild extension.
+
 ## Upstream
 `git remote add upstream hangwin/mcp-chrome` แล้ว fetch: **0 commit behind** — fork itorz7 ไม่ตกรุ่น (2026-07-18).
