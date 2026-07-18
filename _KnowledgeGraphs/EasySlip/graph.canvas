@@ -1,1464 +1,210 @@
 {
-  "nodes": [
-    {
-      "id": "g0",
-      "type": "group",
-      "label": "Thunder Group & Brands",
-      "x": 0,
-      "y": 0,
-      "width": 880,
-      "height": 520,
-      "color": "1"
-    },
-    {
-      "id": "n_01_overview_doc",
-      "type": "file",
-      "file": "01 \u00b7 EasySlip Overview.md",
-      "x": 20,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_easyslip_business_overview_2568_final_revenue_growth_2568",
-      "type": "file",
-      "file": "2568 Revenue Growth +187.7% (\u0e3f13.2M \u2192 \u0e3f38.0M \u00b7 \u0e25\u0e39\u0e01\u0e04\u0e49\u0e32 3,359 \u2192 7,941 \u0e23\u0e32\u0e22).md",
-      "x": 220,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_boostsms",
-      "type": "file",
-      "file": "BoostSMS (SMS marketing \u2014 dormant ~\u0e3f13K\u0e40\u0e14\u0e37\u0e2d\u0e19 flat).md",
-      "x": 420,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill",
-      "type": "file",
-      "file": "BoostSMS Reprice-or-Kill Decision.md",
-      "x": 620,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_easycrm",
-      "type": "file",
-      "file": "EasyCRM (LoyaltyCRM \u0e43\u0e15\u0e49\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17\u0e40\u0e14\u0e35\u0e22\u0e27\u0e01\u0e31\u0e19).md",
-      "x": 20,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_easyslip",
-      "type": "file",
-      "file": "EasySlip (\u0e1a\u0e23\u0e34\u0e29\u0e31\u0e17 \u0e2d\u0e35\u0e0b\u0e35\u0e48\u0e2a\u0e25\u0e34\u0e1b \u0e08\u0e33\u0e01\u0e31\u0e14 \u2014 SMB brand, \u0e02\u0e2d\u0e19\u0e41\u0e01\u0e48\u0e19).md",
-      "x": 220,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_easyslip_api",
-      "type": "file",
-      "file": "EasySlip API (STAR product \u2014 97.5% \u0e02\u0e2d\u0e07\u0e41\u0e1a\u0e23\u0e19\u0e14\u0e4c, 54.3% \u0e02\u0e2d\u0e07\u0e01\u0e25\u0e38\u0e48\u0e21).md",
-      "x": 420,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_easyslip_bot",
-      "type": "file",
-      "file": "EasySlip BOT  Verify Slip  LINE Bot (\u0e2a\u0e34\u0e19\u0e04\u0e49\u0e32\u0e23\u0e2d\u0e07, 10 \u0e2a\u0e32\u0e02\u0e32\u0e41\u0e1e\u0e47\u0e01).md",
-      "x": 620,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "type": "file",
-      "file": "EasySlip \u2014 Revenue Report \u0e21.\u0e04.\u2013\u0e1e.\u0e04. 2569.md",
-      "x": 20,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_kbank_slip_verification_api",
-      "type": "file",
-      "file": "KBank Slip Verification API (upstream \u0e15\u0e49\u0e19\u0e17\u0e38\u0e19).md",
-      "x": 220,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch",
-      "type": "file",
-      "file": "Master\u2013Sub Branch Structure + Branch-level Quota + 2-level API Key.md",
-      "x": 420,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_2569_01_to_05_revenue_report_reconciliation_variance",
-      "type": "file",
-      "file": "May Sub-segment Reconciliation Variance +\u0e3f53,723 (\u0e22\u0e31\u0e07\u0e44\u0e21\u0e48 reconcile).md",
-      "x": 620,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_thunder_group",
-      "type": "file",
-      "file": "Thunder Group (Thunder Solution + EasySlip).md",
-      "x": 20,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_thunder_solution",
-      "type": "file",
-      "file": "Thunder Solution (enterprise brand).md",
-      "x": 220,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_thunder_cross_billing",
-      "type": "file",
-      "file": "Thunder\u00d7Easy Cross-billing (K2K 0.04 + Others 0.11 + VAT 7%).md",
-      "x": 420,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang",
-      "type": "file",
-      "file": "\u0e19\u0e32\u0e22\u0e27\u0e31\u0e0a\u0e23\u0e34\u0e19\u0e17\u0e23\u0e4c \u0e41\u0e01\u0e49\u0e27\u0e21\u0e48\u0e27\u0e07 (\u0e1c\u0e39\u0e49\u0e25\u0e07\u0e19\u0e32\u0e21\u0e1c\u0e39\u0e49\u0e1a\u0e23\u0e34\u0e2b\u0e32\u0e23 EasySlip).md",
-      "x": 620,
-      "y": 320,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g1",
-      "type": "group",
-      "label": "Top-up & Churn Analytics",
-      "x": 960,
-      "y": 0,
-      "width": 880,
-      "height": 420,
-      "color": "2"
-    },
-    {
-      "id": "n_revenue_easyslip_api_top_up_6_churn_60d",
-      "type": "file",
-      "file": "Churn Definition \u2014 \u0e40\u0e07\u0e35\u0e22\u0e1a\u0e40\u0e01\u0e34\u0e19 60 \u0e27\u0e31\u0e19 (Active \u226430 \u00b7 Cooling 31\u201345 \u00b7 At-Risk 46\u201360 \u00b7 Churn 60).md",
-      "x": 980,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_easyslip_api_top_up_6_lapsed_vs_onetime",
-      "type": "file",
-      "file": "Churn Split Lapsed (retention) vs One-time (onboarding).md",
-      "x": 1180,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_easyslip_api_top_up_6_doc",
-      "type": "file",
-      "file": "EasySlip API \u2014 \u0e27\u0e34\u0e40\u0e04\u0e23\u0e32\u0e30\u0e2b\u0e4c\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32 Top-up 6 \u0e40\u0e14\u0e37\u0e2d\u0e19 (\u0e21.\u0e04.\u2013\u0e21\u0e34.\u0e22. 2569).md",
-      "x": 1380,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_01_overview_concentration_risk",
-      "type": "file",
-      "file": "EasySlip Revenue Concentration Risk.md",
-      "x": 1580,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_easyslip_api_top_up_6_forecast_2569",
-      "type": "file",
-      "file": "Forecast 2569 \u0e01.\u0e04. \u0e3f6.6\u20137.5M \u00b7 \u0e17\u0e31\u0e49\u0e07\u0e1b\u0e35 \u0e3f75\u201383M.md",
-      "x": 980,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_2569_01_to_05_revenue_report_group_target_125m",
-      "type": "file",
-      "file": "Group Revenue Target \u0e3f125M (\u0e1b\u0e35 2569, YTD 40.8%).md",
-      "x": 1180,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_2569_01_to_05_revenue_report_may_spike",
-      "type": "file",
-      "file": "May 2569 Revenue Spike (+19.0% MoM \u2192 \u0e3f6.42M).md",
-      "x": 1380,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_easyslip_api_top_up_6_growth_quality",
-      "type": "file",
-      "file": "Monthly Growth Quality Verdicts (\u0e42\u0e15\u0e08\u0e23\u0e34\u0e07\u0e42\u0e15\u0e2b\u0e25\u0e2d\u0e01 \u0e21.\u0e04.\u2013\u0e21\u0e34.\u0e22.).md",
-      "x": 1580,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_easyslip_api_top_up_6_rfm_segmentation",
-      "type": "file",
-      "file": "RFM Segmentation 7 \u0e01\u0e25\u0e38\u0e48\u0e21 (VIP 122 \u0e04\u0e19 = 80% \u0e02\u0e2d\u0e07\u0e23\u0e32\u0e22\u0e44\u0e14\u0e49).md",
-      "x": 980,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_easyslip_api_top_up_6_gini_concentration",
-      "type": "file",
-      "file": "Top-up Concentration (Gini 0.888 \u00b7 Top 1% = 50% \u00b7 Top 10% = 81%).md",
-      "x": 1180,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_easyslip_api_top_up_6_crm_dashboards",
-      "type": "file",
-      "file": "Top-up Dashboards (4 \u0e2b\u0e19\u0e49\u0e32 single-file HTML + \u0e2a\u0e04\u0e23\u0e34\u0e1b\u0e15\u0e4c python 7 \u0e15\u0e31\u0e27, PII \u2014 \u0e2b\u0e49\u0e32\u0e21 deploy public).md",
-      "x": 1380,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_revenue_easyslip_api_top_up_6_whale_account_1",
-      "type": "file",
-      "file": "Whale Account 1 (\u0e3f10.4M = 31% \u0e02\u0e2d\u0e07\u0e22\u0e2d\u0e14\u0e40\u0e15\u0e34\u0e21 6 \u0e40\u0e14\u0e37\u0e2d\u0e19).md",
-      "x": 1580,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g2",
-      "type": "group",
-      "label": "SCCN Contract (MOU)",
-      "x": 1920,
-      "y": 0,
-      "width": 880,
-      "height": 420,
-      "color": "3"
-    },
-    {
-      "id": "n_03_contracts_revenue_doc",
-      "type": "file",
-      "file": "03 \u00b7 EasySlip \u2014 Contracts & Revenue.md",
-      "x": 1940,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_index_doc",
-      "type": "file",
-      "file": "EasySlip \u2014 Contracts INDEX.md",
-      "x": 2140,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_free_quota_1000",
-      "type": "file",
-      "file": "Free Quota 1,000 \u0e2a\u0e25\u0e34\u0e1b\u0e23\u0e49\u0e32\u0e19\u0e43\u0e2b\u0e21\u0e48 (\u0e2d\u0e32\u0e22\u0e38 60 \u0e27\u0e31\u0e19).md",
-      "x": 2340,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "type": "file",
-      "file": "SCCN \u00d7 EasySlip \u2014 Slip Verification API MOU (\u0e25\u0e07\u0e19\u0e32\u0e21 31 \u0e21\u0e35.\u0e04. 2569, verbatim).md",
-      "x": 2540,
-      "y": 80,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_sla_uptime_99_9",
-      "type": "file",
-      "file": "SLA Uptime 99.9%\u0e40\u0e14\u0e37\u0e2d\u0e19 (High severity \u0e15\u0e2d\u0e1a 15 \u0e19\u0e32\u0e17\u0e35, \u0e41\u0e01\u0e49 4 \u0e0a\u0e21.).md",
-      "x": 1940,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_index_sccn",
-      "type": "file",
-      "file": "SUPER COCONUT CO., LTD. (SCCN).md",
-      "x": 2140,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros",
-      "type": "file",
-      "file": "Super rOS (\u0e41\u0e1e\u0e25\u0e15\u0e1f\u0e2d\u0e23\u0e4c\u0e21 POS\u0e23\u0e49\u0e32\u0e19\u0e04\u0e49\u0e32\u0e02\u0e2d\u0e07 SCCN).md",
-      "x": 2340,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_use_first_pay_later",
-      "type": "file",
-      "file": "Use First, Pay Later Billing (\u0e23\u0e32\u0e22\u0e40\u0e14\u0e37\u0e2d\u0e19\u0e15\u0e32\u0e21\u0e23\u0e2d\u0e1a\u0e1b\u0e0f\u0e34\u0e17\u0e34\u0e19 \u0e40\u0e23\u0e34\u0e48\u0e21 1 \u0e40\u0e21.\u0e22. 2569).md",
-      "x": 2540,
-      "y": 160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay",
-      "type": "file",
-      "file": "\u0e19\u0e32\u0e22\u0e08\u0e34\u0e15\u0e15\u0e27\u0e31\u0e12\u0e19\u0e4c \u0e08\u0e34\u0e15\u0e2a\u0e33\u0e23\u0e27\u0e22 (\u0e1c\u0e39\u0e49\u0e25\u0e07\u0e19\u0e32\u0e21 SCCN).md",
-      "x": 1940,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_api_sccn_x_easyslip_pdf",
-      "type": "file",
-      "file": "\u0e1a\u0e31\u0e19\u0e17\u0e36\u0e01\u0e02\u0e49\u0e2d\u0e15\u0e01\u0e25\u0e07\u0e01\u0e32\u0e23\u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21 API SCCN \u00d7 Easyslip (PDF \u0e15\u0e49\u0e19\u0e09\u0e1a\u0e31\u0e1a 18 \u0e2b\u0e19\u0e49\u0e32).md",
-      "x": 2140,
-      "y": 240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g3",
-      "type": "group",
-      "label": "Business Overview & Docs",
-      "x": 0,
-      "y": 600,
-      "width": 660,
-      "height": 400,
-      "color": "4"
-    },
-    {
-      "id": "n_02_api_pricing_packages_doc",
-      "type": "file",
-      "file": "02 \u00b7 EasySlip \u2014 Pricing Packages (API + BOT).md",
-      "x": 20,
-      "y": 680,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_api_pricing_packages_doc",
-      "type": "file",
-      "file": "EasySlip API \u2014 Public Pricing & Margin Analysis.md",
-      "x": 220,
-      "y": 680,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_bot_verify_slip_packages_doc",
-      "type": "file",
-      "file": "EasySlip BOT \u2014 Verify Slip Packages (13612 \u0e40\u0e14\u0e37\u0e2d\u0e19).md",
-      "x": 420,
-      "y": 680,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_home_easyslip_brand_index",
-      "type": "file",
-      "file": "EasySlip \u2014 \u0e2b\u0e19\u0e49\u0e32\u0e2b\u0e25\u0e31\u0e01 (Brand Index).md",
-      "x": 20,
-      "y": 760,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_easyslip_business_overview_2568_final_truemoney_wallet_support",
-      "type": "file",
-      "file": "TrueMoney Wallet Slip Support (6,303 \u2192 261,010 \u0e04\u0e23\u0e31\u0e49\u0e07, +41 \u0e40\u0e17\u0e48\u0e32 \u0e43\u0e19\u0e1b\u0e35 2568).md",
-      "x": 220,
-      "y": 760,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_easyslip_business_overview_2568_final_doc",
-      "type": "file",
-      "file": "\u0e23\u0e32\u0e22\u0e07\u0e32\u0e19\u0e2a\u0e23\u0e38\u0e1b\u0e20\u0e32\u0e1e\u0e23\u0e27\u0e21\u0e18\u0e38\u0e23\u0e01\u0e34\u0e08\u0e1b\u0e23\u0e30\u0e08\u0e33\u0e1b\u0e35 2568 \u2014 EasySlip (Business Overview PDF, \u0e15\u0e48\u0e2d\u0e1c\u0e39\u0e49\u0e2a\u0e2d\u0e1a\u0e1a\u0e31\u0e0d\u0e0a\u0e35).md",
-      "x": 420,
-      "y": 760,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g4",
-      "type": "group",
-      "label": "Commission & BOT Pricing",
-      "x": 960,
-      "y": 600,
-      "width": 660,
-      "height": 400,
-      "color": "5"
-    },
-    {
-      "id": "n_documents_api_pricing_packages_commission_cost_analysis",
-      "type": "file",
-      "file": "API Commission Cost Analysis (Thunder Corporate style \u2014 cost scenarios 0.11  0.077, \u0e40\u0e23\u0e17 2\u20135% \u0e15\u0e32\u0e21 margin).md",
-      "x": 980,
-      "y": 680,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_api_pricing_packages_api_sales_commission",
-      "type": "file",
-      "file": "EasySlip API Sales Commission (tiered 571215% \u0e15\u0e32\u0e21 GP%).md",
-      "x": 1180,
-      "y": 680,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_bot_verify_slip_packages_bot_pricing_11_packages",
-      "type": "file",
-      "file": "EasySlip BOT Pricing \u2014 11 \u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08 \u00d7 4 \u0e23\u0e2d\u0e1a (Start\u2192Premium-4, \u0e3f99\u201314,000 \u00b7 0.247\u21920.093\u0e2a\u0e25\u0e34\u0e1b).md",
-      "x": 1380,
-      "y": 680,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_bot_verify_slip_packages_bot_sales_commission",
-      "type": "file",
-      "file": "EasySlip BOT Sales Commission (flat 10% \u0e17\u0e38\u0e01\u0e41\u0e1e\u0e47\u0e01\u0e17\u0e38\u0e01\u0e23\u0e2d\u0e1a).md",
-      "x": 980,
-      "y": 760,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_bot_verify_slip_packages_no_long_round_discount",
-      "type": "file",
-      "file": "No Long-Round Discount (\u0e23\u0e32\u0e04\u0e32 \u00d7 N \u0e17\u0e38\u0e01\u0e23\u0e2d\u0e1a 3612 \u0e40\u0e14\u0e37\u0e2d\u0e19 \u2014 \u0e1b\u0e23\u0e30\u0e2b\u0e22\u0e31\u0e14 \u0e3f0.00).md",
-      "x": 1180,
-      "y": 760,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g5",
-      "type": "group",
-      "label": "KBank Cost & Margin",
-      "x": 1920,
-      "y": 600,
-      "width": 660,
-      "height": 400,
-      "color": "6"
-    },
-    {
-      "id": "n_documents_easyslip_business_overview_2568_final_api_volume_250m",
-      "type": "file",
-      "file": "API Call Volume ~250M \u0e04\u0e23\u0e31\u0e49\u0e07\u0e1b\u0e35 2568 (+215.6% \u0e08\u0e32\u0e01 79M).md",
-      "x": 1940,
-      "y": 680,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_api_pricing_packages_margin_matrix",
-      "type": "file",
-      "file": "Gross Margin Matrix by Traffic Mix (7 mix \u00d7 10 \u0e41\u0e1e\u0e47\u0e01).md",
-      "x": 2140,
-      "y": 680,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_api_pricing_packages_kbank_mou_cost",
-      "type": "file",
-      "file": "KBank MOU Cost (8 \u0e21.\u0e04. 2568) K-source tiered 0.04\u21920.025 \u00b7 Other-source flat 0.11.md",
-      "x": 2340,
-      "y": 680,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_bot_verify_slip_packages_quick_cost_rule",
-      "type": "file",
-      "file": "Quick Cost Rule \u2014 \u0e15\u0e49\u0e19\u0e17\u0e38\u0e19 = \u0e2a\u0e25\u0e34\u0e1b \u00d7 0.11 (worst case Others 100%).md",
-      "x": 1940,
-      "y": 760,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_api_pricing_packages_sweet_spot_70_30",
-      "type": "file",
-      "file": "Sweet Spot Mix 7030 (KOther).md",
-      "x": 2140,
-      "y": 760,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g6",
-      "type": "group",
-      "label": "Easyslip Gateway Infra",
-      "x": 0,
-      "y": 1080,
-      "width": 660,
-      "height": 400,
-      "color": "1"
-    },
-    {
-      "id": "n_documents_easyslip_gateway_summary_stats_endpoint",
-      "type": "file",
-      "file": "stats JSON Endpoint (currentgaugeshistorylimiter, refresh 1s).md",
-      "x": 20,
-      "y": 1160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_easyslip_gateway_summary_token_in_query_string",
-      "type": "file",
-      "file": "Critical Security Finding Auth Token in Query String.md",
-      "x": 220,
-      "y": 1160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_easyslip_gateway_summary_easyslip_gateway",
-      "type": "file",
-      "file": "Easyslip Gateway (easy-kbank-lb \u2014 rate-limited proxyLB \u0e1a\u0e19 cluster jetder.com).md",
-      "x": 420,
-      "y": 1160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_easyslip_gateway_summary_doc",
-      "type": "file",
-      "file": "Easyslip Gateway \u2014 Live Dashboard Summary (PDF, \u0e2a\u0e33\u0e23\u0e27\u0e08 1 \u0e1e.\u0e04. 2026).md",
-      "x": 20,
-      "y": 1240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_easyslip_gateway_summary_token_bucket_limiter",
-      "type": "file",
-      "file": "Token Bucket Rate Limiter (sustained 20 reqs, burst 50, window 5s).md",
-      "x": 220,
-      "y": 1240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g7",
-      "type": "group",
-      "label": "API Pricing & MRR",
-      "x": 960,
-      "y": 1080,
-      "width": 600,
-      "height": 400,
-      "color": "2"
-    },
-    {
-      "id": "n_documents_api_pricing_packages_api_pricing_11_packages",
-      "type": "file",
-      "file": "EasySlip API Pricing \u2014 11 \u0e41\u0e1e\u0e47\u0e01\u0e40\u0e01\u0e08 (Tester\u2192Premium 3, \u0e3f99\u201340,000 \u00b7 0.396\u21920.125\u0e2a\u0e25\u0e34\u0e1b).md",
-      "x": 980,
-      "y": 1160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_easyslip_business_overview_2568_final_mrr_tier_structure",
-      "type": "file",
-      "file": "MRR Tier Structure \u2014 Enterprise tiers (Diamond, Premium 1\u20133) = ~\u0e3f1.69M = 68% \u0e02\u0e2d\u0e07 MRR ~\u0e3f2.5M.md",
-      "x": 1180,
-      "y": 1160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_api_pricing_packages_margin_paradox",
-      "type": "file",
-      "file": "Margin Paradox \u2014 SME \u0e2d\u0e38\u0e49\u0e21 Enterprise.md",
-      "x": 980,
-      "y": 1240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125",
-      "type": "file",
-      "file": "Partner Fee 0.125 \u0e1a.\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23 (incl VAT).md",
-      "x": 1180,
-      "y": 1240,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "g8",
-      "type": "group",
-      "label": "Loss Risk & Lock Policy",
-      "x": 1920,
-      "y": 1080,
-      "width": 600,
-      "height": 400,
-      "color": "3"
-    },
-    {
-      "id": "n_documents_api_pricing_packages_risk_zone_diamond",
-      "type": "file",
-      "file": "API Risk Zone \u2014 Diamond+ @ Others 100% \u0e02\u0e32\u0e14\u0e17\u0e38\u0e19 6\u201318%.md",
-      "x": 1940,
-      "y": 1160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_bot_verify_slip_packages_premium_loss_risk",
-      "type": "file",
-      "file": "BOT Premium-2..4 Loss Risk @ Others 100% (\u0e2a\u0e39\u0e07\u0e2a\u0e38\u0e14 \u2212\u0e3f30,000 \u0e17\u0e35\u0e48 Premium-4 \u0e23\u0e2d\u0e1a 12 \u0e40\u0e14\u0e37\u0e2d\u0e19).md",
-      "x": 2140,
-      "y": 1160,
-      "width": 180,
-      "height": 60
-    },
-    {
-      "id": "n_documents_bot_verify_slip_packages_k_source_lock_policy",
-      "type": "file",
-      "file": "K-source \u226550% Lock Policy \u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a Premium-2+ \u0e23\u0e2d\u0e1a 612 \u0e40\u0e14\u0e37\u0e2d\u0e19.md",
-      "x": 1940,
-      "y": 1240,
-      "width": 180,
-      "height": 60
-    }
-  ],
-  "edges": [
-    {
-      "id": "e_01_overview_doc_01_overview_boostsms",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_01_overview_boostsms",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_01_overview_concentration_risk",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_01_overview_concentration_risk",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_01_overview_easyslip",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_01_overview_easyslip",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_01_overview_easyslip_api",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_01_overview_easyslip_api",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_01_overview_easyslip_bot",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_01_overview_easyslip_bot",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_01_overview_kbank_slip_verification_api",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_01_overview_kbank_slip_verification_api",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_01_overview_thunder_cross_billing",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_01_overview_thunder_cross_billing",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_01_overview_thunder_group",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_01_overview_thunder_group",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_02_api_pricing_packages_doc",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_02_api_pricing_packages_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_03_contracts_revenue_doc",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_03_contracts_revenue_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_home_easyslip_brand_index",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_home_easyslip_brand_index",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_doc_revenue_2569_01_to_05_revenue_report_doc",
-      "fromNode": "n_01_overview_doc",
-      "toNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "label": "cites [EXTRACTED]"
-    },
-    {
-      "id": "e_02_api_pricing_packages_doc_documents_api_pricing_packages_doc",
-      "fromNode": "n_02_api_pricing_packages_doc",
-      "toNode": "n_documents_api_pricing_packages_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_02_api_pricing_packages_doc_documents_bot_verify_slip_packages_doc",
-      "fromNode": "n_02_api_pricing_packages_doc",
-      "toNode": "n_documents_bot_verify_slip_packages_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_02_api_pricing_packages_doc_documents_easyslip_business_overview_2568_final_doc",
-      "fromNode": "n_02_api_pricing_packages_doc",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_02_api_pricing_packages_doc_documents_easyslip_gateway_summary_doc",
-      "fromNode": "n_02_api_pricing_packages_doc",
-      "toNode": "n_documents_easyslip_gateway_summary_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_02_api_pricing_packages_doc_home_easyslip_brand_index",
-      "fromNode": "n_02_api_pricing_packages_doc",
-      "toNode": "n_home_easyslip_brand_index",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_03_contracts_revenue_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "fromNode": "n_03_contracts_revenue_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_03_contracts_revenue_doc_contracts_index_doc",
-      "fromNode": "n_03_contracts_revenue_doc",
-      "toNode": "n_contracts_index_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_03_contracts_revenue_doc_revenue_2569_01_to_05_revenue_report_doc",
-      "fromNode": "n_03_contracts_revenue_doc",
-      "toNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_03_contracts_revenue_doc_revenue_easyslip_api_top_up_6_doc",
-      "fromNode": "n_03_contracts_revenue_doc",
-      "toNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_03_contracts_revenue_doc_home_easyslip_brand_index",
-      "fromNode": "n_03_contracts_revenue_doc",
-      "toNode": "n_home_easyslip_brand_index",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_01_overview_easyslip",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_01_overview_easyslip",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_01_overview_easyslip_api",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_01_overview_easyslip_api",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_free_quota_1000",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_free_quota_1000",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_sla_uptime_99_9",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_sla_uptime_99_9",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_use_first_pay_later",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_use_first_pay_later",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_api_sccn_x_easyslip_pdf",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_api_sccn_x_easyslip_pdf",
-      "label": "cites [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_index_sccn",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_index_sccn",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_index_doc",
-      "fromNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc",
-      "toNode": "n_contracts_index_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_index_doc_contracts_api_sccn_x_easyslip_pdf",
-      "fromNode": "n_contracts_index_doc",
-      "toNode": "n_contracts_api_sccn_x_easyslip_pdf",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_index_doc_home_easyslip_brand_index",
-      "fromNode": "n_contracts_index_doc",
-      "toNode": "n_home_easyslip_brand_index",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_doc_documents_bot_verify_slip_packages_doc",
-      "fromNode": "n_documents_api_pricing_packages_doc",
-      "toNode": "n_documents_bot_verify_slip_packages_doc",
-      "label": "cites [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_doc_documents_easyslip_business_overview_2568_final_doc",
-      "fromNode": "n_documents_api_pricing_packages_doc",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "label": "cites [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_doc_home_easyslip_brand_index",
-      "fromNode": "n_documents_api_pricing_packages_doc",
-      "toNode": "n_home_easyslip_brand_index",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_bot_verify_slip_packages_doc_home_easyslip_brand_index",
-      "fromNode": "n_documents_bot_verify_slip_packages_doc",
-      "toNode": "n_home_easyslip_brand_index",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_doc_home_easyslip_brand_index",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "toNode": "n_home_easyslip_brand_index",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_doc_01_overview_boostsms",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "toNode": "n_01_overview_boostsms",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_doc_01_overview_concentration_risk",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "toNode": "n_01_overview_concentration_risk",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_doc_01_overview_easyslip_api",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "toNode": "n_01_overview_easyslip_api",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_doc_01_overview_easyslip_bot",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "toNode": "n_01_overview_easyslip_bot",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_doc_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "toNode": "n_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_doc_revenue_2569_01_to_05_revenue_report_group_target_125m",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "toNode": "n_revenue_2569_01_to_05_revenue_report_group_target_125m",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_doc_revenue_2569_01_to_05_revenue_report_may_spike",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "toNode": "n_revenue_2569_01_to_05_revenue_report_may_spike",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_doc_revenue_2569_01_to_05_revenue_report_reconciliation_variance",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_doc",
-      "toNode": "n_revenue_2569_01_to_05_revenue_report_reconciliation_variance",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_home_easyslip_brand_index",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_home_easyslip_brand_index",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_01_overview_easyslip_api",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_01_overview_easyslip_api",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_churn_60d",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_revenue_easyslip_api_top_up_6_churn_60d",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_crm_dashboards",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_revenue_easyslip_api_top_up_6_crm_dashboards",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_forecast_2569",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_revenue_easyslip_api_top_up_6_forecast_2569",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_gini_concentration",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_revenue_easyslip_api_top_up_6_gini_concentration",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_growth_quality",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_revenue_easyslip_api_top_up_6_growth_quality",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_lapsed_vs_onetime",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_revenue_easyslip_api_top_up_6_lapsed_vs_onetime",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_rfm_segmentation",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_revenue_easyslip_api_top_up_6_rfm_segmentation",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_whale_account_1",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_doc",
-      "toNode": "n_revenue_easyslip_api_top_up_6_whale_account_1",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_home_easyslip_brand_index_documents_easyslip_business_overview_2568_final_doc",
-      "fromNode": "n_home_easyslip_brand_index",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_home_easyslip_brand_index_documents_easyslip_gateway_summary_doc",
-      "fromNode": "n_home_easyslip_brand_index",
-      "toNode": "n_documents_easyslip_gateway_summary_doc",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_business_overview_2568_final_doc_01_overview_easyslip_api",
-      "fromNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "toNode": "n_01_overview_easyslip_api",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_business_overview_2568_final_doc_01_overview_easyslip_bot",
-      "fromNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "toNode": "n_01_overview_easyslip_bot",
-      "label": "references [INFERRED]"
-    },
-    {
-      "id": "e_documents_easyslip_business_overview_2568_final_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang",
-      "fromNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_business_overview_2568_final_doc_documents_easyslip_business_overview_2568_final_api_volume_250m",
-      "fromNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_api_volume_250m",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_business_overview_2568_final_doc_documents_easyslip_business_overview_2568_final_mrr_tier_structure",
-      "fromNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_mrr_tier_structure",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_business_overview_2568_final_doc_documents_easyslip_business_overview_2568_final_revenue_growth_2568",
-      "fromNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_revenue_growth_2568",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_business_overview_2568_final_doc_documents_easyslip_business_overview_2568_final_truemoney_wallet_support",
-      "fromNode": "n_documents_easyslip_business_overview_2568_final_doc",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_truemoney_wallet_support",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_gateway_summary_doc_documents_easyslip_gateway_summary_easyslip_gateway",
-      "fromNode": "n_documents_easyslip_gateway_summary_doc",
-      "toNode": "n_documents_easyslip_gateway_summary_easyslip_gateway",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_gateway_summary_doc_documents_easyslip_gateway_summary_stats_endpoint",
-      "fromNode": "n_documents_easyslip_gateway_summary_doc",
-      "toNode": "n_documents_easyslip_gateway_summary_stats_endpoint",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_gateway_summary_doc_documents_easyslip_gateway_summary_token_bucket_limiter",
-      "fromNode": "n_documents_easyslip_gateway_summary_doc",
-      "toNode": "n_documents_easyslip_gateway_summary_token_bucket_limiter",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_gateway_summary_doc_documents_easyslip_gateway_summary_token_in_query_string",
-      "fromNode": "n_documents_easyslip_gateway_summary_doc",
-      "toNode": "n_documents_easyslip_gateway_summary_token_in_query_string",
-      "label": "references [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_01_overview_boostsms",
-      "fromNode": "n_01_overview_easyslip",
-      "toNode": "n_01_overview_boostsms",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_01_overview_easycrm",
-      "fromNode": "n_01_overview_easyslip",
-      "toNode": "n_01_overview_easycrm",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_01_overview_thunder_group",
-      "fromNode": "n_01_overview_easyslip",
-      "toNode": "n_01_overview_thunder_group",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_01_overview_easyslip_api",
-      "fromNode": "n_01_overview_easyslip",
-      "toNode": "n_01_overview_easyslip_api",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_01_overview_easyslip_bot",
-      "fromNode": "n_01_overview_easyslip",
-      "toNode": "n_01_overview_easyslip_bot",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang",
-      "fromNode": "n_01_overview_easyslip",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_documents_easyslip_business_overview_2568_final_revenue_growth_2568",
-      "fromNode": "n_01_overview_easyslip",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_revenue_growth_2568",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_api_01_overview_concentration_risk",
-      "fromNode": "n_01_overview_easyslip_api",
-      "toNode": "n_01_overview_concentration_risk",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_api_01_overview_kbank_slip_verification_api",
-      "fromNode": "n_01_overview_easyslip_api",
-      "toNode": "n_01_overview_kbank_slip_verification_api",
-      "label": "shares_data_with [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_api_documents_api_pricing_packages_api_pricing_11_packages",
-      "fromNode": "n_01_overview_easyslip_api",
-      "toNode": "n_documents_api_pricing_packages_api_pricing_11_packages",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_api_documents_easyslip_business_overview_2568_final_truemoney_wallet_support",
-      "fromNode": "n_01_overview_easyslip_api",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_truemoney_wallet_support",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_api_documents_easyslip_gateway_summary_easyslip_gateway",
-      "fromNode": "n_01_overview_easyslip_api",
-      "toNode": "n_documents_easyslip_gateway_summary_easyslip_gateway",
-      "label": "conceptually_related_to [INFERRED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_api_revenue_2569_01_to_05_revenue_report_may_spike",
-      "fromNode": "n_01_overview_easyslip_api",
-      "toNode": "n_revenue_2569_01_to_05_revenue_report_may_spike",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_bot_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch",
-      "fromNode": "n_01_overview_easyslip_bot",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch",
-      "label": "semantically_similar_to [INFERRED]"
-    },
-    {
-      "id": "e_01_overview_easyslip_bot_documents_bot_verify_slip_packages_bot_pricing_11_packages",
-      "fromNode": "n_01_overview_easyslip_bot",
-      "toNode": "n_documents_bot_verify_slip_packages_bot_pricing_11_packages",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_boostsms_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill",
-      "fromNode": "n_01_overview_boostsms",
-      "toNode": "n_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_thunder_group_01_overview_thunder_solution",
-      "fromNode": "n_01_overview_thunder_group",
-      "toNode": "n_01_overview_thunder_solution",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_thunder_group_revenue_2569_01_to_05_revenue_report_group_target_125m",
-      "fromNode": "n_01_overview_thunder_group",
-      "toNode": "n_revenue_2569_01_to_05_revenue_report_group_target_125m",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_thunder_solution_01_overview_thunder_cross_billing",
-      "fromNode": "n_01_overview_thunder_solution",
-      "toNode": "n_01_overview_thunder_cross_billing",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_kbank_slip_verification_api_01_overview_thunder_cross_billing",
-      "fromNode": "n_01_overview_kbank_slip_verification_api",
-      "toNode": "n_01_overview_thunder_cross_billing",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_kbank_slip_verification_api_documents_api_pricing_packages_kbank_mou_cost",
-      "fromNode": "n_01_overview_kbank_slip_verification_api",
-      "toNode": "n_documents_api_pricing_packages_kbank_mou_cost",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_kbank_slip_verification_api_documents_easyslip_gateway_summary_easyslip_gateway",
-      "fromNode": "n_01_overview_kbank_slip_verification_api",
-      "toNode": "n_documents_easyslip_gateway_summary_easyslip_gateway",
-      "label": "shares_data_with [INFERRED]"
-    },
-    {
-      "id": "e_01_overview_thunder_cross_billing_documents_api_pricing_packages_margin_matrix",
-      "fromNode": "n_01_overview_thunder_cross_billing",
-      "toNode": "n_documents_api_pricing_packages_margin_matrix",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_thunder_cross_billing_documents_easyslip_gateway_summary_easyslip_gateway",
-      "fromNode": "n_01_overview_thunder_cross_billing",
-      "toNode": "n_documents_easyslip_gateway_summary_easyslip_gateway",
-      "label": "conceptually_related_to [AMBIGUOUS]"
-    },
-    {
-      "id": "e_01_overview_concentration_risk_revenue_easyslip_api_top_up_6_whale_account_1",
-      "fromNode": "n_01_overview_concentration_risk",
-      "toNode": "n_revenue_easyslip_api_top_up_6_whale_account_1",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_01_overview_concentration_risk_revenue_easyslip_api_top_up_6_gini_concentration",
-      "fromNode": "n_01_overview_concentration_risk",
-      "toNode": "n_revenue_easyslip_api_top_up_6_gini_concentration",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_api_pricing_11_packages_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125",
-      "fromNode": "n_documents_api_pricing_packages_api_pricing_11_packages",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125",
-      "label": "semantically_similar_to [INFERRED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_api_pricing_11_packages_documents_api_pricing_packages_api_sales_commission",
-      "fromNode": "n_documents_api_pricing_packages_api_pricing_11_packages",
-      "toNode": "n_documents_api_pricing_packages_api_sales_commission",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_api_pricing_11_packages_documents_api_pricing_packages_margin_matrix",
-      "fromNode": "n_documents_api_pricing_packages_api_pricing_11_packages",
-      "toNode": "n_documents_api_pricing_packages_margin_matrix",
-      "label": "shares_data_with [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_api_pricing_11_packages_documents_easyslip_business_overview_2568_final_mrr_tier_structure",
-      "fromNode": "n_documents_api_pricing_packages_api_pricing_11_packages",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_mrr_tier_structure",
-      "label": "conceptually_related_to [INFERRED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_kbank_mou_cost_documents_api_pricing_packages_margin_matrix",
-      "fromNode": "n_documents_api_pricing_packages_kbank_mou_cost",
-      "toNode": "n_documents_api_pricing_packages_margin_matrix",
-      "label": "shares_data_with [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_kbank_mou_cost_documents_bot_verify_slip_packages_quick_cost_rule",
-      "fromNode": "n_documents_api_pricing_packages_kbank_mou_cost",
-      "toNode": "n_documents_bot_verify_slip_packages_quick_cost_rule",
-      "label": "shares_data_with [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_kbank_mou_cost_documents_easyslip_business_overview_2568_final_api_volume_250m",
-      "fromNode": "n_documents_api_pricing_packages_kbank_mou_cost",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_api_volume_250m",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_margin_matrix_documents_api_pricing_packages_risk_zone_diamond",
-      "fromNode": "n_documents_api_pricing_packages_margin_matrix",
-      "toNode": "n_documents_api_pricing_packages_risk_zone_diamond",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_margin_matrix_documents_api_pricing_packages_sweet_spot_70_30",
-      "fromNode": "n_documents_api_pricing_packages_margin_matrix",
-      "toNode": "n_documents_api_pricing_packages_sweet_spot_70_30",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_risk_zone_diamond_documents_bot_verify_slip_packages_premium_loss_risk",
-      "fromNode": "n_documents_api_pricing_packages_risk_zone_diamond",
-      "toNode": "n_documents_bot_verify_slip_packages_premium_loss_risk",
-      "label": "semantically_similar_to [INFERRED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_margin_paradox_documents_easyslip_business_overview_2568_final_mrr_tier_structure",
-      "fromNode": "n_documents_api_pricing_packages_margin_paradox",
-      "toNode": "n_documents_easyslip_business_overview_2568_final_mrr_tier_structure",
-      "label": "cites [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_api_sales_commission_documents_api_pricing_packages_commission_cost_analysis",
-      "fromNode": "n_documents_api_pricing_packages_api_sales_commission",
-      "toNode": "n_documents_api_pricing_packages_commission_cost_analysis",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_api_pricing_packages_api_sales_commission_documents_bot_verify_slip_packages_bot_sales_commission",
-      "fromNode": "n_documents_api_pricing_packages_api_sales_commission",
-      "toNode": "n_documents_bot_verify_slip_packages_bot_sales_commission",
-      "label": "semantically_similar_to [INFERRED]"
-    },
-    {
-      "id": "e_documents_bot_verify_slip_packages_bot_pricing_11_packages_documents_bot_verify_slip_packages_bot_sales_commission",
-      "fromNode": "n_documents_bot_verify_slip_packages_bot_pricing_11_packages",
-      "toNode": "n_documents_bot_verify_slip_packages_bot_sales_commission",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_bot_verify_slip_packages_bot_pricing_11_packages_documents_bot_verify_slip_packages_no_long_round_discount",
-      "fromNode": "n_documents_bot_verify_slip_packages_bot_pricing_11_packages",
-      "toNode": "n_documents_bot_verify_slip_packages_no_long_round_discount",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_bot_verify_slip_packages_bot_pricing_11_packages_documents_bot_verify_slip_packages_premium_loss_risk",
-      "fromNode": "n_documents_bot_verify_slip_packages_bot_pricing_11_packages",
-      "toNode": "n_documents_bot_verify_slip_packages_premium_loss_risk",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_bot_verify_slip_packages_bot_pricing_11_packages_documents_bot_verify_slip_packages_quick_cost_rule",
-      "fromNode": "n_documents_bot_verify_slip_packages_bot_pricing_11_packages",
-      "toNode": "n_documents_bot_verify_slip_packages_quick_cost_rule",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_bot_verify_slip_packages_premium_loss_risk_documents_bot_verify_slip_packages_k_source_lock_policy",
-      "fromNode": "n_documents_bot_verify_slip_packages_premium_loss_risk",
-      "toNode": "n_documents_bot_verify_slip_packages_k_source_lock_policy",
-      "label": "rationale_for [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_index_sccn_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay",
-      "fromNode": "n_contracts_index_sccn",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_contracts_index_sccn_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros",
-      "fromNode": "n_contracts_index_sccn",
-      "toNode": "n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_may_spike_revenue_easyslip_api_top_up_6_growth_quality",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_may_spike",
-      "toNode": "n_revenue_easyslip_api_top_up_6_growth_quality",
-      "label": "semantically_similar_to [INFERRED]"
-    },
-    {
-      "id": "e_revenue_2569_01_to_05_revenue_report_group_target_125m_revenue_easyslip_api_top_up_6_forecast_2569",
-      "fromNode": "n_revenue_2569_01_to_05_revenue_report_group_target_125m",
-      "toNode": "n_revenue_easyslip_api_top_up_6_forecast_2569",
-      "label": "conceptually_related_to [INFERRED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_churn_60d_revenue_easyslip_api_top_up_6_lapsed_vs_onetime",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_churn_60d",
-      "toNode": "n_revenue_easyslip_api_top_up_6_lapsed_vs_onetime",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_churn_60d_revenue_easyslip_api_top_up_6_rfm_segmentation",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_churn_60d",
-      "toNode": "n_revenue_easyslip_api_top_up_6_rfm_segmentation",
-      "label": "rationale_for [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_gini_concentration_revenue_easyslip_api_top_up_6_whale_account_1",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_gini_concentration",
-      "toNode": "n_revenue_easyslip_api_top_up_6_whale_account_1",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_whale_account_1_revenue_easyslip_api_top_up_6_forecast_2569",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_whale_account_1",
-      "toNode": "n_revenue_easyslip_api_top_up_6_forecast_2569",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_revenue_easyslip_api_top_up_6_whale_account_1_revenue_easyslip_api_top_up_6_growth_quality",
-      "fromNode": "n_revenue_easyslip_api_top_up_6_whale_account_1",
-      "toNode": "n_revenue_easyslip_api_top_up_6_growth_quality",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_gateway_summary_easyslip_gateway_documents_easyslip_gateway_summary_stats_endpoint",
-      "fromNode": "n_documents_easyslip_gateway_summary_easyslip_gateway",
-      "toNode": "n_documents_easyslip_gateway_summary_stats_endpoint",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_gateway_summary_easyslip_gateway_documents_easyslip_gateway_summary_token_bucket_limiter",
-      "fromNode": "n_documents_easyslip_gateway_summary_easyslip_gateway",
-      "toNode": "n_documents_easyslip_gateway_summary_token_bucket_limiter",
-      "label": "conceptually_related_to [EXTRACTED]"
-    },
-    {
-      "id": "e_documents_easyslip_gateway_summary_stats_endpoint_documents_easyslip_gateway_summary_token_in_query_string",
-      "fromNode": "n_documents_easyslip_gateway_summary_stats_endpoint",
-      "toNode": "n_documents_easyslip_gateway_summary_token_in_query_string",
-      "label": "conceptually_related_to [EXTRACTED]"
-    }
-  ]
+	"nodes":[
+		{"id":"g0","type":"group","label":"Thunder Group & Brands","x":0,"y":0,"width":880,"height":520,"color":"1"},
+		{"id":"n_01_overview_doc","type":"file","file":"01 · EasySlip Overview.md","x":20,"y":80,"width":180,"height":60},
+		{"id":"n_documents_easyslip_business_overview_2568_final_revenue_growth_2568","type":"file","file":"2568 Revenue Growth +187.7% (฿13.2M → ฿38.0M · ลูกค้า 3,359 → 7,941 ราย).md","x":220,"y":80,"width":180,"height":60},
+		{"id":"n_01_overview_boostsms","type":"file","file":"BoostSMS (SMS marketing — dormant ~฿13Kเดือน flat).md","x":420,"y":80,"width":180,"height":60},
+		{"id":"n_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill","type":"file","file":"BoostSMS Reprice-or-Kill Decision.md","x":620,"y":80,"width":180,"height":60},
+		{"id":"n_01_overview_easycrm","type":"file","file":"EasyCRM (LoyaltyCRM ใต้บริษัทเดียวกัน).md","x":20,"y":160,"width":180,"height":60},
+		{"id":"n_01_overview_easyslip","type":"file","file":"EasySlip (บริษัท อีซี่สลิป จำกัด — SMB brand, ขอนแก่น).md","x":220,"y":160,"width":180,"height":60},
+		{"id":"n_01_overview_easyslip_api","type":"file","file":"EasySlip API (STAR product — 97.5% ของแบรนด์, 54.3% ของกลุ่ม).md","x":420,"y":160,"width":180,"height":60},
+		{"id":"n_01_overview_easyslip_bot","type":"file","file":"EasySlip BOT  Verify Slip  LINE Bot (สินค้ารอง, 10 สาขาแพ็ก).md","x":620,"y":160,"width":180,"height":60},
+		{"id":"n_revenue_2569_01_to_05_revenue_report_doc","type":"file","file":"EasySlip — Revenue Report ม.ค.–พ.ค. 2569.md","x":20,"y":240,"width":180,"height":60},
+		{"id":"n_01_overview_kbank_slip_verification_api","type":"file","file":"KBank Slip Verification API (upstream ต้นทุน).md","x":220,"y":240,"width":180,"height":60},
+		{"id":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch","type":"file","file":"Master–Sub Branch Structure + Branch-level Quota + 2-level API Key.md","x":420,"y":240,"width":180,"height":60},
+		{"id":"n_revenue_2569_01_to_05_revenue_report_reconciliation_variance","type":"file","file":"May Sub-segment Reconciliation Variance +฿53,723 (ยังไม่ reconcile).md","x":620,"y":240,"width":180,"height":60},
+		{"id":"n_01_overview_thunder_group","type":"file","file":"Thunder Group (Thunder Solution + EasySlip).md","x":20,"y":320,"width":180,"height":60},
+		{"id":"n_01_overview_thunder_solution","type":"file","file":"Thunder Solution (enterprise brand).md","x":220,"y":320,"width":180,"height":60},
+		{"id":"n_01_overview_thunder_cross_billing","type":"file","file":"Thunder×Easy Cross-billing (K2K 0.04 + Others 0.11 + VAT 7%).md","x":420,"y":320,"width":180,"height":60},
+		{"id":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang","type":"file","file":"นายวัชรินทร์ แก้วม่วง (ผู้ลงนามผู้บริหาร EasySlip).md","x":620,"y":320,"width":180,"height":60},
+		{"id":"g1","type":"group","label":"Top-up & Churn Analytics","x":960,"y":0,"width":880,"height":420,"color":"2"},
+		{"id":"n_revenue_easyslip_api_top_up_6_churn_60d","type":"file","file":"Churn Definition — เงียบเกิน 60 วัน (Active ≤30 · Cooling 31–45 · At-Risk 46–60 · Churn 60).md","x":980,"y":80,"width":180,"height":60},
+		{"id":"n_revenue_easyslip_api_top_up_6_lapsed_vs_onetime","type":"file","file":"Churn Split Lapsed (retention) vs One-time (onboarding).md","x":1180,"y":80,"width":180,"height":60},
+		{"id":"n_revenue_easyslip_api_top_up_6_doc","type":"file","file":"EasySlip API — วิเคราะห์ลูกค้า Top-up 6 เดือน (ม.ค.–มิ.ย. 2569).md","x":1380,"y":80,"width":180,"height":60},
+		{"id":"n_01_overview_concentration_risk","type":"file","file":"EasySlip Revenue Concentration Risk.md","x":1580,"y":80,"width":180,"height":60},
+		{"id":"n_revenue_easyslip_api_top_up_6_forecast_2569","type":"file","file":"Forecast 2569 ก.ค. ฿6.6–7.5M · ทั้งปี ฿75–83M.md","x":980,"y":160,"width":180,"height":60},
+		{"id":"n_revenue_2569_01_to_05_revenue_report_group_target_125m","type":"file","file":"Group Revenue Target ฿125M (ปี 2569, YTD 40.8%).md","x":1180,"y":160,"width":180,"height":60},
+		{"id":"n_revenue_2569_01_to_05_revenue_report_may_spike","type":"file","file":"May 2569 Revenue Spike (+19.0% MoM → ฿6.42M).md","x":1380,"y":160,"width":180,"height":60},
+		{"id":"n_revenue_easyslip_api_top_up_6_growth_quality","type":"file","file":"Monthly Growth Quality Verdicts (โตจริงโตหลอก ม.ค.–มิ.ย.).md","x":1580,"y":160,"width":180,"height":60},
+		{"id":"n_revenue_easyslip_api_top_up_6_rfm_segmentation","type":"file","file":"RFM Segmentation 7 กลุ่ม (VIP 122 คน = 80% ของรายได้).md","x":980,"y":240,"width":180,"height":60},
+		{"id":"n_revenue_easyslip_api_top_up_6_gini_concentration","type":"file","file":"Top-up Concentration (Gini 0.888 · Top 1% = 50% · Top 10% = 81%).md","x":1180,"y":240,"width":180,"height":60},
+		{"id":"n_revenue_easyslip_api_top_up_6_crm_dashboards","type":"file","file":"Top-up Dashboards (4 หน้า single-file HTML + สคริปต์ python 7 ตัว, PII — ห้าม deploy public).md","x":1380,"y":240,"width":180,"height":60},
+		{"id":"n_revenue_easyslip_api_top_up_6_whale_account_1","type":"file","file":"Whale Account 1 (฿10.4M = 31% ของยอดเติม 6 เดือน).md","x":1580,"y":240,"width":180,"height":60},
+		{"id":"g2","type":"group","label":"SCCN Contract (MOU)","x":1920,"y":0,"width":880,"height":420,"color":"3"},
+		{"id":"n_03_contracts_revenue_doc","type":"file","file":"03 · EasySlip — Contracts & Revenue.md","x":1940,"y":80,"width":180,"height":60},
+		{"id":"n_contracts_index_doc","type":"file","file":"EasySlip — Contracts INDEX.md","x":2140,"y":80,"width":180,"height":60},
+		{"id":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_free_quota_1000","type":"file","file":"Free Quota 1,000 สลิปร้านใหม่ (อายุ 60 วัน).md","x":2340,"y":80,"width":180,"height":60},
+		{"id":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","type":"file","file":"SCCN × EasySlip — Slip Verification API MOU (ลงนาม 31 มี.ค. 2569, verbatim).md","x":2540,"y":80,"width":180,"height":60},
+		{"id":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_sla_uptime_99_9","type":"file","file":"SLA Uptime 99.9%เดือน (High severity ตอบ 15 นาที, แก้ 4 ชม.).md","x":1940,"y":160,"width":180,"height":60},
+		{"id":"n_contracts_index_sccn","type":"file","file":"SUPER COCONUT CO., LTD. (SCCN).md","x":2140,"y":160,"width":180,"height":60},
+		{"id":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros","type":"file","file":"Super rOS (แพลตฟอร์ม POSร้านค้าของ SCCN).md","x":2340,"y":160,"width":180,"height":60},
+		{"id":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_use_first_pay_later","type":"file","file":"Use First, Pay Later Billing (รายเดือนตามรอบปฏิทิน เริ่ม 1 เม.ย. 2569).md","x":2540,"y":160,"width":180,"height":60},
+		{"id":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay","type":"file","file":"นายจิตตวัฒน์ จิตสำรวย (ผู้ลงนาม SCCN).md","x":1940,"y":240,"width":180,"height":60},
+		{"id":"n_contracts_api_sccn_x_easyslip_pdf","type":"file","file":"บันทึกข้อตกลงการเชื่อม API SCCN × Easyslip (PDF ต้นฉบับ 18 หน้า).md","x":2140,"y":240,"width":180,"height":60},
+		{"id":"g3","type":"group","label":"Business Overview & Docs","x":0,"y":600,"width":660,"height":400,"color":"4"},
+		{"id":"n_02_api_pricing_packages_doc","type":"file","file":"02 · EasySlip — Pricing Packages (API + BOT).md","x":20,"y":680,"width":180,"height":60},
+		{"id":"n_documents_api_pricing_packages_doc","type":"file","file":"EasySlip API — Public Pricing & Margin Analysis.md","x":220,"y":680,"width":180,"height":60},
+		{"id":"n_documents_bot_verify_slip_packages_doc","type":"file","file":"EasySlip BOT — Verify Slip Packages (13612 เดือน).md","x":420,"y":680,"width":180,"height":60},
+		{"id":"n_home_easyslip_brand_index","type":"file","file":"EasySlip — หน้าหลัก (Brand Index).md","x":20,"y":760,"width":180,"height":60},
+		{"id":"n_documents_easyslip_business_overview_2568_final_truemoney_wallet_support","type":"file","file":"TrueMoney Wallet Slip Support (6,303 → 261,010 ครั้ง, +41 เท่า ในปี 2568).md","x":220,"y":760,"width":180,"height":60},
+		{"id":"n_documents_easyslip_business_overview_2568_final_doc","type":"file","file":"รายงานสรุปภาพรวมธุรกิจประจำปี 2568 — EasySlip (Business Overview PDF, ต่อผู้สอบบัญชี).md","x":420,"y":760,"width":180,"height":60},
+		{"id":"g4","type":"group","label":"Commission & BOT Pricing","x":960,"y":600,"width":660,"height":400,"color":"5"},
+		{"id":"n_documents_api_pricing_packages_commission_cost_analysis","type":"file","file":"API Commission Cost Analysis (Thunder Corporate style — cost scenarios 0.11  0.077, เรท 2–5% ตาม margin).md","x":980,"y":680,"width":180,"height":60},
+		{"id":"n_documents_api_pricing_packages_api_sales_commission","type":"file","file":"EasySlip API Sales Commission (tiered 571215% ตาม GP%).md","x":1180,"y":680,"width":180,"height":60},
+		{"id":"n_documents_bot_verify_slip_packages_bot_pricing_11_packages","type":"file","file":"EasySlip BOT Pricing — 11 แพ็กเกจ × 4 รอบ (Start→Premium-4, ฿99–14,000 · 0.247→0.093สลิป).md","x":1380,"y":680,"width":180,"height":60},
+		{"id":"n_documents_bot_verify_slip_packages_bot_sales_commission","type":"file","file":"EasySlip BOT Sales Commission (flat 10% ทุกแพ็กทุกรอบ).md","x":980,"y":760,"width":180,"height":60},
+		{"id":"n_documents_bot_verify_slip_packages_no_long_round_discount","type":"file","file":"No Long-Round Discount (ราคา × N ทุกรอบ 3612 เดือน — ประหยัด ฿0.00).md","x":1180,"y":760,"width":180,"height":60},
+		{"id":"g5","type":"group","label":"KBank Cost & Margin","x":1920,"y":600,"width":660,"height":400,"color":"6"},
+		{"id":"n_documents_easyslip_business_overview_2568_final_api_volume_250m","type":"file","file":"API Call Volume ~250M ครั้งปี 2568 (+215.6% จาก 79M).md","x":1940,"y":680,"width":180,"height":60},
+		{"id":"n_documents_api_pricing_packages_margin_matrix","type":"file","file":"Gross Margin Matrix by Traffic Mix (7 mix × 10 แพ็ก).md","x":2140,"y":680,"width":180,"height":60},
+		{"id":"n_documents_api_pricing_packages_kbank_mou_cost","type":"file","file":"KBank MOU Cost (8 ม.ค. 2568) K-source tiered 0.04→0.025 · Other-source flat 0.11.md","x":2340,"y":680,"width":180,"height":60},
+		{"id":"n_documents_bot_verify_slip_packages_quick_cost_rule","type":"file","file":"Quick Cost Rule — ต้นทุน = สลิป × 0.11 (worst case Others 100%).md","x":1940,"y":760,"width":180,"height":60},
+		{"id":"n_documents_api_pricing_packages_sweet_spot_70_30","type":"file","file":"Sweet Spot Mix 7030 (KOther).md","x":2140,"y":760,"width":180,"height":60},
+		{"id":"g6","type":"group","label":"Easyslip Gateway Infra","x":0,"y":1080,"width":660,"height":400,"color":"1"},
+		{"id":"n_documents_easyslip_gateway_summary_stats_endpoint","type":"file","file":"stats JSON Endpoint (currentgaugeshistorylimiter, refresh 1s).md","x":20,"y":1160,"width":180,"height":60},
+		{"id":"n_documents_easyslip_gateway_summary_token_in_query_string","type":"file","file":"Critical Security Finding Auth Token in Query String.md","x":220,"y":1160,"width":180,"height":60},
+		{"id":"n_documents_easyslip_gateway_summary_easyslip_gateway","type":"file","file":"Easyslip Gateway (easy-kbank-lb — rate-limited proxyLB บน cluster jetder.com).md","x":420,"y":1160,"width":180,"height":60},
+		{"id":"n_documents_easyslip_gateway_summary_doc","type":"file","file":"Easyslip Gateway — Live Dashboard Summary (PDF, สำรวจ 1 พ.ค. 2026).md","x":20,"y":1240,"width":180,"height":60},
+		{"id":"n_documents_easyslip_gateway_summary_token_bucket_limiter","type":"file","file":"Token Bucket Rate Limiter (sustained 20 reqs, burst 50, window 5s).md","x":220,"y":1240,"width":180,"height":60},
+		{"id":"g7","type":"group","label":"API Pricing & MRR","x":960,"y":1080,"width":600,"height":400,"color":"2"},
+		{"id":"n_documents_api_pricing_packages_api_pricing_11_packages","type":"file","file":"EasySlip API Pricing — 11 แพ็กเกจ (Tester→Premium 3, ฿99–40,000 · 0.396→0.125สลิป).md","x":980,"y":1160,"width":180,"height":60},
+		{"id":"n_documents_easyslip_business_overview_2568_final_mrr_tier_structure","type":"file","file":"MRR Tier Structure — Enterprise tiers (Diamond, Premium 1–3) = ~฿1.69M = 68% ของ MRR ~฿2.5M.md","x":1180,"y":1160,"width":180,"height":60},
+		{"id":"n_documents_api_pricing_packages_margin_paradox","type":"file","file":"Margin Paradox — SME อุ้ม Enterprise.md","x":980,"y":1240,"width":180,"height":60},
+		{"id":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125","type":"file","file":"Partner Fee 0.125 บ.รายการ (incl VAT).md","x":1180,"y":1240,"width":180,"height":60},
+		{"id":"g8","type":"group","label":"Loss Risk & Lock Policy","x":1920,"y":1080,"width":600,"height":400,"color":"3"},
+		{"id":"n_documents_api_pricing_packages_risk_zone_diamond","type":"file","file":"API Risk Zone — Diamond+ @ Others 100% ขาดทุน 6–18%.md","x":1940,"y":1160,"width":180,"height":60},
+		{"id":"n_documents_bot_verify_slip_packages_premium_loss_risk","type":"file","file":"BOT Premium-2..4 Loss Risk @ Others 100% (สูงสุด −฿30,000 ที่ Premium-4 รอบ 12 เดือน).md","x":2140,"y":1160,"width":180,"height":60},
+		{"id":"n_documents_bot_verify_slip_packages_k_source_lock_policy","type":"file","file":"K-source ≥50% Lock Policy สำหรับ Premium-2+ รอบ 612 เดือน.md","x":1940,"y":1240,"width":180,"height":60}
+	],
+	"edges":[
+		{"id":"e_01_overview_doc_01_overview_boostsms","fromNode":"n_01_overview_doc","toNode":"n_01_overview_boostsms","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_doc_01_overview_concentration_risk","fromNode":"n_01_overview_doc","toNode":"n_01_overview_concentration_risk","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_doc_01_overview_easyslip","fromNode":"n_01_overview_doc","toNode":"n_01_overview_easyslip","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_doc_01_overview_easyslip_api","fromNode":"n_01_overview_doc","toNode":"n_01_overview_easyslip_api","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_doc_01_overview_easyslip_bot","fromNode":"n_01_overview_doc","toNode":"n_01_overview_easyslip_bot","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_doc_01_overview_kbank_slip_verification_api","fromNode":"n_01_overview_doc","toNode":"n_01_overview_kbank_slip_verification_api","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_doc_01_overview_thunder_cross_billing","fromNode":"n_01_overview_doc","toNode":"n_01_overview_thunder_cross_billing","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_doc_01_overview_thunder_group","fromNode":"n_01_overview_doc","toNode":"n_01_overview_thunder_group","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_doc_02_api_pricing_packages_doc","fromNode":"n_01_overview_doc","toNode":"n_02_api_pricing_packages_doc","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_doc_03_contracts_revenue_doc","fromNode":"n_01_overview_doc","toNode":"n_03_contracts_revenue_doc","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_doc_home_easyslip_brand_index","fromNode":"n_01_overview_doc","toNode":"n_home_easyslip_brand_index","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_doc_revenue_2569_01_to_05_revenue_report_doc","fromNode":"n_01_overview_doc","toNode":"n_revenue_2569_01_to_05_revenue_report_doc","label":"cites [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_02_api_pricing_packages_doc_documents_api_pricing_packages_doc","fromNode":"n_02_api_pricing_packages_doc","toNode":"n_documents_api_pricing_packages_doc","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_02_api_pricing_packages_doc_documents_bot_verify_slip_packages_doc","fromNode":"n_02_api_pricing_packages_doc","toNode":"n_documents_bot_verify_slip_packages_doc","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_02_api_pricing_packages_doc_documents_easyslip_business_overview_2568_final_doc","fromNode":"n_02_api_pricing_packages_doc","toNode":"n_documents_easyslip_business_overview_2568_final_doc","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_02_api_pricing_packages_doc_documents_easyslip_gateway_summary_doc","fromNode":"n_02_api_pricing_packages_doc","toNode":"n_documents_easyslip_gateway_summary_doc","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_02_api_pricing_packages_doc_home_easyslip_brand_index","fromNode":"n_02_api_pricing_packages_doc","toNode":"n_home_easyslip_brand_index","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_03_contracts_revenue_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","fromNode":"n_03_contracts_revenue_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_03_contracts_revenue_doc_contracts_index_doc","fromNode":"n_03_contracts_revenue_doc","toNode":"n_contracts_index_doc","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_03_contracts_revenue_doc_revenue_2569_01_to_05_revenue_report_doc","fromNode":"n_03_contracts_revenue_doc","toNode":"n_revenue_2569_01_to_05_revenue_report_doc","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_03_contracts_revenue_doc_revenue_easyslip_api_top_up_6_doc","fromNode":"n_03_contracts_revenue_doc","toNode":"n_revenue_easyslip_api_top_up_6_doc","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_03_contracts_revenue_doc_home_easyslip_brand_index","fromNode":"n_03_contracts_revenue_doc","toNode":"n_home_easyslip_brand_index","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_01_overview_easyslip","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_01_overview_easyslip","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_01_overview_easyslip_api","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_01_overview_easyslip_api","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_free_quota_1000","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_free_quota_1000","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_sla_uptime_99_9","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_sla_uptime_99_9","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_use_first_pay_later","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_use_first_pay_later","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_api_sccn_x_easyslip_pdf","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_api_sccn_x_easyslip_pdf","label":"cites [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_index_sccn","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_index_sccn","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc_contracts_index_doc","fromNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_doc","toNode":"n_contracts_index_doc","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_contracts_index_doc_contracts_api_sccn_x_easyslip_pdf","fromNode":"n_contracts_index_doc","toNode":"n_contracts_api_sccn_x_easyslip_pdf","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_contracts_index_doc_home_easyslip_brand_index","fromNode":"n_contracts_index_doc","toNode":"n_home_easyslip_brand_index","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_documents_api_pricing_packages_doc_documents_bot_verify_slip_packages_doc","fromNode":"n_documents_api_pricing_packages_doc","toNode":"n_documents_bot_verify_slip_packages_doc","label":"cites [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_documents_api_pricing_packages_doc_documents_easyslip_business_overview_2568_final_doc","fromNode":"n_documents_api_pricing_packages_doc","toNode":"n_documents_easyslip_business_overview_2568_final_doc","label":"cites [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_api_pricing_packages_doc_home_easyslip_brand_index","fromNode":"n_documents_api_pricing_packages_doc","toNode":"n_home_easyslip_brand_index","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_bot_verify_slip_packages_doc_home_easyslip_brand_index","fromNode":"n_documents_bot_verify_slip_packages_doc","toNode":"n_home_easyslip_brand_index","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_doc_home_easyslip_brand_index","fromNode":"n_revenue_2569_01_to_05_revenue_report_doc","toNode":"n_home_easyslip_brand_index","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_doc_01_overview_boostsms","fromNode":"n_revenue_2569_01_to_05_revenue_report_doc","toNode":"n_01_overview_boostsms","label":"references [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_doc_01_overview_concentration_risk","fromNode":"n_revenue_2569_01_to_05_revenue_report_doc","toNode":"n_01_overview_concentration_risk","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_doc_01_overview_easyslip_api","fromNode":"n_revenue_2569_01_to_05_revenue_report_doc","toNode":"n_01_overview_easyslip_api","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_doc_01_overview_easyslip_bot","fromNode":"n_revenue_2569_01_to_05_revenue_report_doc","toNode":"n_01_overview_easyslip_bot","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_doc_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill","fromNode":"n_revenue_2569_01_to_05_revenue_report_doc","toNode":"n_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_doc_revenue_2569_01_to_05_revenue_report_group_target_125m","fromNode":"n_revenue_2569_01_to_05_revenue_report_doc","toNode":"n_revenue_2569_01_to_05_revenue_report_group_target_125m","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_doc_revenue_2569_01_to_05_revenue_report_may_spike","fromNode":"n_revenue_2569_01_to_05_revenue_report_doc","toNode":"n_revenue_2569_01_to_05_revenue_report_may_spike","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_doc_revenue_2569_01_to_05_revenue_report_reconciliation_variance","fromNode":"n_revenue_2569_01_to_05_revenue_report_doc","toNode":"n_revenue_2569_01_to_05_revenue_report_reconciliation_variance","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_home_easyslip_brand_index","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_home_easyslip_brand_index","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_01_overview_easyslip_api","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_01_overview_easyslip_api","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_churn_60d","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_revenue_easyslip_api_top_up_6_churn_60d","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_crm_dashboards","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_revenue_easyslip_api_top_up_6_crm_dashboards","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_forecast_2569","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_revenue_easyslip_api_top_up_6_forecast_2569","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_gini_concentration","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_revenue_easyslip_api_top_up_6_gini_concentration","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_growth_quality","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_revenue_easyslip_api_top_up_6_growth_quality","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_lapsed_vs_onetime","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_revenue_easyslip_api_top_up_6_lapsed_vs_onetime","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_rfm_segmentation","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_revenue_easyslip_api_top_up_6_rfm_segmentation","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_revenue_easyslip_api_top_up_6_doc_revenue_easyslip_api_top_up_6_whale_account_1","fromNode":"n_revenue_easyslip_api_top_up_6_doc","toNode":"n_revenue_easyslip_api_top_up_6_whale_account_1","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_home_easyslip_brand_index_documents_easyslip_business_overview_2568_final_doc","fromNode":"n_home_easyslip_brand_index","toNode":"n_documents_easyslip_business_overview_2568_final_doc","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_home_easyslip_brand_index_documents_easyslip_gateway_summary_doc","fromNode":"n_home_easyslip_brand_index","toNode":"n_documents_easyslip_gateway_summary_doc","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_easyslip_business_overview_2568_final_doc_01_overview_easyslip_api","fromNode":"n_documents_easyslip_business_overview_2568_final_doc","toNode":"n_01_overview_easyslip_api","label":"references [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_documents_easyslip_business_overview_2568_final_doc_01_overview_easyslip_bot","fromNode":"n_documents_easyslip_business_overview_2568_final_doc","toNode":"n_01_overview_easyslip_bot","label":"references [INFERRED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_documents_easyslip_business_overview_2568_final_doc_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang","fromNode":"n_documents_easyslip_business_overview_2568_final_doc","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang","label":"references [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_documents_easyslip_business_overview_2568_final_doc_documents_easyslip_business_overview_2568_final_api_volume_250m","fromNode":"n_documents_easyslip_business_overview_2568_final_doc","toNode":"n_documents_easyslip_business_overview_2568_final_api_volume_250m","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_documents_easyslip_business_overview_2568_final_doc_documents_easyslip_business_overview_2568_final_mrr_tier_structure","fromNode":"n_documents_easyslip_business_overview_2568_final_doc","toNode":"n_documents_easyslip_business_overview_2568_final_mrr_tier_structure","label":"references [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_easyslip_business_overview_2568_final_doc_documents_easyslip_business_overview_2568_final_revenue_growth_2568","fromNode":"n_documents_easyslip_business_overview_2568_final_doc","toNode":"n_documents_easyslip_business_overview_2568_final_revenue_growth_2568","label":"references [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_documents_easyslip_business_overview_2568_final_doc_documents_easyslip_business_overview_2568_final_truemoney_wallet_support","fromNode":"n_documents_easyslip_business_overview_2568_final_doc","toNode":"n_documents_easyslip_business_overview_2568_final_truemoney_wallet_support","label":"references [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_documents_easyslip_gateway_summary_doc_documents_easyslip_gateway_summary_easyslip_gateway","fromNode":"n_documents_easyslip_gateway_summary_doc","toNode":"n_documents_easyslip_gateway_summary_easyslip_gateway","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_documents_easyslip_gateway_summary_doc_documents_easyslip_gateway_summary_stats_endpoint","fromNode":"n_documents_easyslip_gateway_summary_doc","toNode":"n_documents_easyslip_gateway_summary_stats_endpoint","label":"references [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_documents_easyslip_gateway_summary_doc_documents_easyslip_gateway_summary_token_bucket_limiter","fromNode":"n_documents_easyslip_gateway_summary_doc","toNode":"n_documents_easyslip_gateway_summary_token_bucket_limiter","label":"references [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_documents_easyslip_gateway_summary_doc_documents_easyslip_gateway_summary_token_in_query_string","fromNode":"n_documents_easyslip_gateway_summary_doc","toNode":"n_documents_easyslip_gateway_summary_token_in_query_string","label":"references [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_01_overview_easyslip_01_overview_boostsms","fromNode":"n_01_overview_easyslip","toNode":"n_01_overview_boostsms","label":"conceptually_related_to [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_01_overview_easyslip_01_overview_easycrm","fromNode":"n_01_overview_easyslip","toNode":"n_01_overview_easycrm","label":"conceptually_related_to [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_01_overview_easyslip_01_overview_thunder_group","fromNode":"n_01_overview_easyslip","toNode":"n_01_overview_thunder_group","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_easyslip_01_overview_easyslip_api","fromNode":"n_01_overview_easyslip","toNode":"n_01_overview_easyslip_api","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_easyslip_01_overview_easyslip_bot","fromNode":"n_01_overview_easyslip","toNode":"n_01_overview_easyslip_bot","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_easyslip_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang","fromNode":"n_01_overview_easyslip","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_watcharin_kaewmuang","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_easyslip_documents_easyslip_business_overview_2568_final_revenue_growth_2568","fromNode":"n_01_overview_easyslip","toNode":"n_documents_easyslip_business_overview_2568_final_revenue_growth_2568","label":"conceptually_related_to [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_01_overview_easyslip_api_01_overview_concentration_risk","fromNode":"n_01_overview_easyslip_api","toNode":"n_01_overview_concentration_risk","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_easyslip_api_01_overview_kbank_slip_verification_api","fromNode":"n_01_overview_easyslip_api","toNode":"n_01_overview_kbank_slip_verification_api","label":"shares_data_with [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_easyslip_api_documents_api_pricing_packages_api_pricing_11_packages","fromNode":"n_01_overview_easyslip_api","toNode":"n_documents_api_pricing_packages_api_pricing_11_packages","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_easyslip_api_documents_easyslip_business_overview_2568_final_truemoney_wallet_support","fromNode":"n_01_overview_easyslip_api","toNode":"n_documents_easyslip_business_overview_2568_final_truemoney_wallet_support","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_easyslip_api_documents_easyslip_gateway_summary_easyslip_gateway","fromNode":"n_01_overview_easyslip_api","toNode":"n_documents_easyslip_gateway_summary_easyslip_gateway","label":"conceptually_related_to [INFERRED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_easyslip_api_revenue_2569_01_to_05_revenue_report_may_spike","fromNode":"n_01_overview_easyslip_api","toNode":"n_revenue_2569_01_to_05_revenue_report_may_spike","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_easyslip_bot_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch","fromNode":"n_01_overview_easyslip_bot","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_master_sub_branch","label":"semantically_similar_to [INFERRED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_easyslip_bot_documents_bot_verify_slip_packages_bot_pricing_11_packages","fromNode":"n_01_overview_easyslip_bot","toNode":"n_documents_bot_verify_slip_packages_bot_pricing_11_packages","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_boostsms_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill","fromNode":"n_01_overview_boostsms","toNode":"n_revenue_2569_01_to_05_revenue_report_boostsms_reprice_or_kill","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_thunder_group_01_overview_thunder_solution","fromNode":"n_01_overview_thunder_group","toNode":"n_01_overview_thunder_solution","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_thunder_group_revenue_2569_01_to_05_revenue_report_group_target_125m","fromNode":"n_01_overview_thunder_group","toNode":"n_revenue_2569_01_to_05_revenue_report_group_target_125m","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_thunder_solution_01_overview_thunder_cross_billing","fromNode":"n_01_overview_thunder_solution","toNode":"n_01_overview_thunder_cross_billing","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_kbank_slip_verification_api_01_overview_thunder_cross_billing","fromNode":"n_01_overview_kbank_slip_verification_api","toNode":"n_01_overview_thunder_cross_billing","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_kbank_slip_verification_api_documents_api_pricing_packages_kbank_mou_cost","fromNode":"n_01_overview_kbank_slip_verification_api","toNode":"n_documents_api_pricing_packages_kbank_mou_cost","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_kbank_slip_verification_api_documents_easyslip_gateway_summary_easyslip_gateway","fromNode":"n_01_overview_kbank_slip_verification_api","toNode":"n_documents_easyslip_gateway_summary_easyslip_gateway","label":"shares_data_with [INFERRED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_thunder_cross_billing_documents_api_pricing_packages_margin_matrix","fromNode":"n_01_overview_thunder_cross_billing","toNode":"n_documents_api_pricing_packages_margin_matrix","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_01_overview_thunder_cross_billing_documents_easyslip_gateway_summary_easyslip_gateway","fromNode":"n_01_overview_thunder_cross_billing","toNode":"n_documents_easyslip_gateway_summary_easyslip_gateway","label":"conceptually_related_to [AMBIGUOUS]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_concentration_risk_revenue_easyslip_api_top_up_6_whale_account_1","fromNode":"n_01_overview_concentration_risk","toNode":"n_revenue_easyslip_api_top_up_6_whale_account_1","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_01_overview_concentration_risk_revenue_easyslip_api_top_up_6_gini_concentration","fromNode":"n_01_overview_concentration_risk","toNode":"n_revenue_easyslip_api_top_up_6_gini_concentration","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_api_pricing_packages_api_pricing_11_packages_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125","fromNode":"n_documents_api_pricing_packages_api_pricing_11_packages","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_fee_0_125","label":"semantically_similar_to [INFERRED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_api_pricing_packages_api_pricing_11_packages_documents_api_pricing_packages_api_sales_commission","fromNode":"n_documents_api_pricing_packages_api_pricing_11_packages","toNode":"n_documents_api_pricing_packages_api_sales_commission","label":"conceptually_related_to [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_documents_api_pricing_packages_api_pricing_11_packages_documents_api_pricing_packages_margin_matrix","fromNode":"n_documents_api_pricing_packages_api_pricing_11_packages","toNode":"n_documents_api_pricing_packages_margin_matrix","label":"shares_data_with [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_documents_api_pricing_packages_api_pricing_11_packages_documents_easyslip_business_overview_2568_final_mrr_tier_structure","fromNode":"n_documents_api_pricing_packages_api_pricing_11_packages","toNode":"n_documents_easyslip_business_overview_2568_final_mrr_tier_structure","label":"conceptually_related_to [INFERRED]","fromSide":"right","toSide":"left"},
+		{"id":"e_documents_api_pricing_packages_kbank_mou_cost_documents_api_pricing_packages_margin_matrix","fromNode":"n_documents_api_pricing_packages_kbank_mou_cost","toNode":"n_documents_api_pricing_packages_margin_matrix","label":"shares_data_with [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_documents_api_pricing_packages_kbank_mou_cost_documents_bot_verify_slip_packages_quick_cost_rule","fromNode":"n_documents_api_pricing_packages_kbank_mou_cost","toNode":"n_documents_bot_verify_slip_packages_quick_cost_rule","label":"shares_data_with [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_documents_api_pricing_packages_kbank_mou_cost_documents_easyslip_business_overview_2568_final_api_volume_250m","fromNode":"n_documents_api_pricing_packages_kbank_mou_cost","toNode":"n_documents_easyslip_business_overview_2568_final_api_volume_250m","label":"conceptually_related_to [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_documents_api_pricing_packages_margin_matrix_documents_api_pricing_packages_risk_zone_diamond","fromNode":"n_documents_api_pricing_packages_margin_matrix","toNode":"n_documents_api_pricing_packages_risk_zone_diamond","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_api_pricing_packages_margin_matrix_documents_api_pricing_packages_sweet_spot_70_30","fromNode":"n_documents_api_pricing_packages_margin_matrix","toNode":"n_documents_api_pricing_packages_sweet_spot_70_30","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_api_pricing_packages_risk_zone_diamond_documents_bot_verify_slip_packages_premium_loss_risk","fromNode":"n_documents_api_pricing_packages_risk_zone_diamond","toNode":"n_documents_bot_verify_slip_packages_premium_loss_risk","label":"semantically_similar_to [INFERRED]","fromSide":"right","toSide":"left"},
+		{"id":"e_documents_api_pricing_packages_margin_paradox_documents_easyslip_business_overview_2568_final_mrr_tier_structure","fromNode":"n_documents_api_pricing_packages_margin_paradox","toNode":"n_documents_easyslip_business_overview_2568_final_mrr_tier_structure","label":"cites [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_documents_api_pricing_packages_api_sales_commission_documents_api_pricing_packages_commission_cost_analysis","fromNode":"n_documents_api_pricing_packages_api_sales_commission","toNode":"n_documents_api_pricing_packages_commission_cost_analysis","label":"conceptually_related_to [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_documents_api_pricing_packages_api_sales_commission_documents_bot_verify_slip_packages_bot_sales_commission","fromNode":"n_documents_api_pricing_packages_api_sales_commission","toNode":"n_documents_bot_verify_slip_packages_bot_sales_commission","label":"semantically_similar_to [INFERRED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_bot_verify_slip_packages_bot_pricing_11_packages_documents_bot_verify_slip_packages_bot_sales_commission","fromNode":"n_documents_bot_verify_slip_packages_bot_pricing_11_packages","toNode":"n_documents_bot_verify_slip_packages_bot_sales_commission","label":"conceptually_related_to [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_documents_bot_verify_slip_packages_bot_pricing_11_packages_documents_bot_verify_slip_packages_no_long_round_discount","fromNode":"n_documents_bot_verify_slip_packages_bot_pricing_11_packages","toNode":"n_documents_bot_verify_slip_packages_no_long_round_discount","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_bot_verify_slip_packages_bot_pricing_11_packages_documents_bot_verify_slip_packages_premium_loss_risk","fromNode":"n_documents_bot_verify_slip_packages_bot_pricing_11_packages","toNode":"n_documents_bot_verify_slip_packages_premium_loss_risk","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_bot_verify_slip_packages_bot_pricing_11_packages_documents_bot_verify_slip_packages_quick_cost_rule","fromNode":"n_documents_bot_verify_slip_packages_bot_pricing_11_packages","toNode":"n_documents_bot_verify_slip_packages_quick_cost_rule","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_documents_bot_verify_slip_packages_premium_loss_risk_documents_bot_verify_slip_packages_k_source_lock_policy","fromNode":"n_documents_bot_verify_slip_packages_premium_loss_risk","toNode":"n_documents_bot_verify_slip_packages_k_source_lock_policy","label":"rationale_for [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_contracts_index_sccn_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay","fromNode":"n_contracts_index_sccn","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_jittawat_jitsamruay","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_contracts_index_sccn_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros","fromNode":"n_contracts_index_sccn","toNode":"n_contracts_2569_03_31_sccn_x_easyslip_slip_verification_api_super_ros","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_may_spike_revenue_easyslip_api_top_up_6_growth_quality","fromNode":"n_revenue_2569_01_to_05_revenue_report_may_spike","toNode":"n_revenue_easyslip_api_top_up_6_growth_quality","label":"semantically_similar_to [INFERRED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_2569_01_to_05_revenue_report_group_target_125m_revenue_easyslip_api_top_up_6_forecast_2569","fromNode":"n_revenue_2569_01_to_05_revenue_report_group_target_125m","toNode":"n_revenue_easyslip_api_top_up_6_forecast_2569","label":"conceptually_related_to [INFERRED]","fromSide":"left","toSide":"right"},
+		{"id":"e_revenue_easyslip_api_top_up_6_churn_60d_revenue_easyslip_api_top_up_6_lapsed_vs_onetime","fromNode":"n_revenue_easyslip_api_top_up_6_churn_60d","toNode":"n_revenue_easyslip_api_top_up_6_lapsed_vs_onetime","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_easyslip_api_top_up_6_churn_60d_revenue_easyslip_api_top_up_6_rfm_segmentation","fromNode":"n_revenue_easyslip_api_top_up_6_churn_60d","toNode":"n_revenue_easyslip_api_top_up_6_rfm_segmentation","label":"rationale_for [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_revenue_easyslip_api_top_up_6_gini_concentration_revenue_easyslip_api_top_up_6_whale_account_1","fromNode":"n_revenue_easyslip_api_top_up_6_gini_concentration","toNode":"n_revenue_easyslip_api_top_up_6_whale_account_1","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"},
+		{"id":"e_revenue_easyslip_api_top_up_6_whale_account_1_revenue_easyslip_api_top_up_6_forecast_2569","fromNode":"n_revenue_easyslip_api_top_up_6_whale_account_1","toNode":"n_revenue_easyslip_api_top_up_6_forecast_2569","label":"conceptually_related_to [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_revenue_easyslip_api_top_up_6_whale_account_1_revenue_easyslip_api_top_up_6_growth_quality","fromNode":"n_revenue_easyslip_api_top_up_6_whale_account_1","toNode":"n_revenue_easyslip_api_top_up_6_growth_quality","label":"conceptually_related_to [EXTRACTED]","fromSide":"top","toSide":"bottom"},
+		{"id":"e_documents_easyslip_gateway_summary_easyslip_gateway_documents_easyslip_gateway_summary_stats_endpoint","fromNode":"n_documents_easyslip_gateway_summary_easyslip_gateway","toNode":"n_documents_easyslip_gateway_summary_stats_endpoint","label":"conceptually_related_to [EXTRACTED]","fromSide":"left","toSide":"right"},
+		{"id":"e_documents_easyslip_gateway_summary_easyslip_gateway_documents_easyslip_gateway_summary_token_bucket_limiter","fromNode":"n_documents_easyslip_gateway_summary_easyslip_gateway","toNode":"n_documents_easyslip_gateway_summary_token_bucket_limiter","label":"conceptually_related_to [EXTRACTED]","fromSide":"bottom","toSide":"top"},
+		{"id":"e_documents_easyslip_gateway_summary_stats_endpoint_documents_easyslip_gateway_summary_token_in_query_string","fromNode":"n_documents_easyslip_gateway_summary_stats_endpoint","toNode":"n_documents_easyslip_gateway_summary_token_in_query_string","label":"conceptually_related_to [EXTRACTED]","fromSide":"right","toSide":"left"}
+	]
 }

@@ -18,7 +18,7 @@
       "query": "path:\"_KnowledgeGraphs/BoostSMS\"",
       "color": {
         "a": 1,
-        "rgb": 3699198
+        "rgb": 16766208
       }
     },
     {
@@ -32,7 +32,7 @@
       "query": "path:\"_KnowledgeGraphs/Thunder\"",
       "color": {
         "a": 1,
-        "rgb": 16755763
+        "rgb": 3764734
       }
     },
     {
@@ -67,6 +67,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.3314585994211769,
-  "close": true
+  "scale": 0.16255572064632645,
+  "close": false
 }
