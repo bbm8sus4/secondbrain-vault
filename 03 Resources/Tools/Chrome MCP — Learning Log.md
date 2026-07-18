@@ -43,3 +43,7 @@
     - parse ต้องเทียบ str(res).lower()=='true' ไม่ใช่ === true
 - `2026-07-19 02:14` ⚠️ **gotcha** — gitignore ไม่รองรับ inline comment ท้ายบรรทัด
     - 'out/  # x' ไม่ ignore out/ → PII leak. comment ต้องบรรทัดแยก
+- `2026-07-19 02:45` ✅ **win** — แก้ session ใหม่เชื่อม Chrome MCP ไม่ติด
+    - SessionStart hook (4 harness) heal พอร์ต + บอก Claude ใช้ ~/bin/chrome ห้ามบอก disconnected + launchd keepalive 120s (heal เฉพาะ Chrome เปิด). ต้นตอ: warp/ghostty/cmux ไม่มี SessionStart hook + http MCP ไม่ retry ตอน startup fail
+- `2026-07-19 02:45` ⚠️ **gotcha** — อย่าบอก user ว่า Chrome MCP เชื่อมไม่ได้ — ใช้ ~/bin/chrome แทนเสมอ
+    - CLI ต่อตรง HTTP 12306 + heal เอง ทำงานได้แม้ mcp tools ไม่ load. ผู้ใช้โกรธเรื่องนี้ 2026-07-19
