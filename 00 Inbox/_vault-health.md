@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-17 09:00:06 · ไฟล์ .md ทั้งหมด 460
+> สแกนอัตโนมัติ · 2026-07-18 09:00:02 · ไฟล์ .md ทั้งหมด 1190
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,28 +8,23 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 7 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 16 |
+| 🔗 ลิงก์เสีย (dead links) | 2 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 15 |
 | 📄 ไฟล์ว่าง/สตับ | 0 |
 | 🔄 memory source ↔ mirror | 105 ↔ 105 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 8 ชม.ที่แล้ว |
+| ⏱️ sync ล่าสุด (vault commit) | 7 ชม.ที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
 | 📋 frontmatter ขาด (backlog) | 185 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
-| ❓ คิวรอ verify | 10 |
-| 📰 Friday weekly recap ล่าสุด | 2026-W29 (19 ชม.ที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (16 วันที่แล้ว) |
+| ❓ คิวรอ verify | 11 |
+| 📰 Friday weekly recap ล่าสุด | 2026-W29 (1 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (17 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
-- `01 Projects/AI-101 for บ.ขอนแก่นอิเล็คทริค/01-Forms-Setup.md` → `[[clasp Apps Script + Web App workaround]]` (ไม่พบ)
-- `01 Projects/KuanGolf/Brand Strategy Brain.md` → `[[KuanGolf — Thunder Solution's golf scoring app]]` (ไม่พบ)
-- `03 Resources/AI Workshops/Claude Code — Model × Effort อธิบายแบบเปรียบเทียบ.md` → `[[Claude Code — Multi-Agent Workflow Guide]]` (ไม่พบ)
 - `30 Claude Memory/Claude Code — Multi-Agent Guide.md` → `[[feedback-no-cmux]]` (ไม่พบ)
-- `Thunder Solution/02-Products-Services.md` → `[[API Gen QR — 2025-10 planning notes]]` (ไม่พบ)
-- `Thunder Solution/หน้าหลัก.md` → `[[API Gen QR — 2025-10 planning notes]]` (ไม่พบ)
-- `log.md` → `[[Thai doc generation]]` (ไม่พบ)
+- `_KnowledgeGraphs/หน้าหลัก.md` → `[[reference_graphify]]` (ไม่พบ)
 
 ## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
 
@@ -38,7 +33,6 @@
 - `01 Projects/Thunder FB SlipVerify/เอกสารต้นฉบับ/FLOW-howto-succeed.md`
 - `01 Projects/Thunder FB SlipVerify/เอกสารต้นฉบับ/PLAN-phaseA-messenger-mvp.md`
 - `01 Projects/Thunder FB SlipVerify/เอกสารต้นฉบับ/RESEARCH-facebook-slip-verify.md`
-- `03 Resources/AI Workshops/Claude Code Multi-Agent Workflow Guide.md`
 - `03 Resources/AI Workshops/Course Intake Kit (Master)/0-README-วิธีใช้.md`
 - `03 Resources/AI Workshops/Course Intake Kit (Master)/1-แบบสอบถามผู้ว่าจ้าง (Needs Analysis).md`
 - `03 Resources/AI Workshops/Course Intake Kit (Master)/2-แบบสำรวจผู้เรียน (Pre-training).md`
@@ -61,6 +55,7 @@
 - `EasySlip/01-Overview.md:39` — (memory snapshot 8 พ.ค. ระบุ "60% ของ group revenue" — ตัวเลขต่างกันตามวิธีวัด/ช่วงเวลา ⚠️ ต้อง verify ถ้าจะใช
 - `Thunder Solution/02-Products-Services.md:53` — ⚠️ ต้อง verify — โน้ตนี้เก่าตั้งแต่ ต.ค. 2568 สถานะปัจจุบัน (เก็บเงินหรือยัง / deploy แล้วหรือยัง) ไม่มีในแหล่
 - `Thunder Solution/03-Revenue-Commission.md:74` — 4. ⚠️ ต้อง verify — ขอราคาใหม่ effective ย้อนหลังถึง ธ.ค. 2568 เพื่อทวง ~884K (สถานะการทวงล่าสุดไม่มีในแหล่งข้
+- `Thunder Solution/Documents/API Gen QR — 2025-10 planning notes.md:16` — ⚠️ ต้อง verify — สถานะปัจจุบัน (เก็บเงินหรือยัง / deploy แล้วหรือยัง)
 - `index.md:40` — [[01 Projects/HUG COMPANY/README|HUG COMPANY]] — ERP project · Thunder Solution → ขอนแก่น · SRS v0.0.2 (2025-0
 
 ## 📋 หน้า wiki ที่ frontmatter ยังไม่ครบ schema (ขาด type/last_verified)
