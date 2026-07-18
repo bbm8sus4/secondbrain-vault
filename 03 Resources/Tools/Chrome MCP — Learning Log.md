@@ -31,3 +31,15 @@
     - แก้ injection ด้วย metachar guard (skip recipient ที่มี ;$`|&><) แทน quote — ไม่ชน template
 - `2026-07-19 01:40` ⚠️ **gotcha** — JS ที่ return ข้อมูลใหญ่ต้องส่ง maxOutputBytes เสมอ (ไม่ใช่แค่ observe)
     - master_dashboard js() ฝัง innerText ทั้งหน้า → ถ้าโตเกิน 10KB truncate → false fail. ใส่ maxOutputBytes 500000
+- `2026-07-19 02:14` ✅ **win** — chrome act = NL action + observe→cache→replay self-heal (claude -p)
+    - รอบ1 claude เลือก+cache, รอบ2 replay ~1s ไม่เรียก LLM. cache: state/act_cache.json keyed host+intent
+- `2026-07-19 02:14` ✅ **win** — chrome extract-ai = LLM extraction หน้ารก (claude -p)
+    - page text → claude → validated JSON ตาม schema
+- `2026-07-19 02:14` ✅ **win** — smoke_test.py engine จริงของ recipe B1
+    - open/click-text/fill/wait(js-poll bg tab)/assert + screenshot-on-fail(base64→OUT) + Telegram
+- `2026-07-19 02:14` ✅ **win** — chrome-mcp-toolkit เป็น git repo แล้ว
+    - ~/chrome-mcp-jobs/.git, bin/* symlink→~/bin, out/state/PII gitignored, test.sh 24 checks
+- `2026-07-19 02:14` ⚠️ **gotcha** — chrome js คืน boolean เป็น string 'true' (CDP stringify)
+    - parse ต้องเทียบ str(res).lower()=='true' ไม่ใช่ === true
+- `2026-07-19 02:14` ⚠️ **gotcha** — gitignore ไม่รองรับ inline comment ท้ายบรรทัด
+    - 'out/  # x' ไม่ ignore out/ → PII leak. comment ต้องบรรทัดแยก
