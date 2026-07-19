@@ -1,6 +1,6 @@
 # 🩺 Vault Health
 
-> สแกนอัตโนมัติ · 2026-07-18 09:00:02 · ไฟล์ .md ทั้งหมด 1190
+> สแกนอัตโนมัติ · 2026-07-19 09:00:01 · ไฟล์ .md ทั้งหมด 1207
 
 **สถานะรวม: 🟡 มีจุดต้องดู**
 
@@ -8,23 +8,31 @@
 
 | รายการ | ผล |
 |---|---|
-| 🔗 ลิงก์เสีย (dead links) | 2 |
-| 🏝️ โน้ตโดดเดี่ยว (orphans) | 15 |
-| 📄 ไฟล์ว่าง/สตับ | 0 |
-| 🔄 memory source ↔ mirror | 105 ↔ 105 — ตรงกัน ✅ |
-| ⏱️ sync ล่าสุด (vault commit) | 7 ชม.ที่แล้ว |
+| 🔗 ลิงก์เสีย (dead links) | 6 |
+| 🏝️ โน้ตโดดเดี่ยว (orphans) | 21 |
+| 📄 ไฟล์ว่าง/สตับ | 1 |
+| 🔄 memory source ↔ mirror | 109 ↔ 109 — ตรงกัน ✅ |
+| ⏱️ sync ล่าสุด (vault commit) | 5 ชม.ที่แล้ว |
 | ⬆️ commit ยังไม่ push | 0 ✅ |
 | ⚙️ launchd jobs | ครบ 5 ✅ |
-| 📋 frontmatter ขาด (backlog) | 185 |
+| 📋 frontmatter ขาด (backlog) | 197 |
 | 🕰️ หน้าเก่าเกิน 90 วัน | 0 |
 | ❓ คิวรอ verify | 11 |
-| 📰 Friday weekly recap ล่าสุด | 2026-W29 (1 วันที่แล้ว) |
-| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (17 วันที่แล้ว) |
+| 📰 Friday weekly recap ล่าสุด | 2026-W29 (2 วันที่แล้ว) |
+| 📰 Friday monthly recap ล่าสุด | 2026-06 มิถุนายน (18 วันที่แล้ว) |
 
 ## 🔗 ลิงก์เสีย — ชี้ไปโน้ตที่ไม่มีอยู่
 
+- `03 Resources/Tools/Chrome MCP — Learning Log.md` → `[[reference_chrome_mcp_cli]]` (ไม่พบ)
+- `03 Resources/Tools/Chrome MCP — curl fallback + ขับ claude.ai (วิธีแก้ tools ไม่โหลด).md` → `[[reference_chrome_mcp_gdocs]]` (ไม่พบ)
+- `03 Resources/Tools/Chrome MCP — คลัง Use Case (3-agent research 2026-07-19).md` → `[[reference_chrome_mcp_cli]]` (ไม่พบ)
+- `30 Claude Memory/Chrome MCP learnings (usage-memory).md` → `[[chrome-usecases]]` (ไม่พบ)
 - `30 Claude Memory/Claude Code — Multi-Agent Guide.md` → `[[feedback-no-cmux]]` (ไม่พบ)
 - `_KnowledgeGraphs/หน้าหลัก.md` → `[[reference_graphify]]` (ไม่พบ)
+
+## 📄 ไฟล์ว่าง/สตับ — ลบหรือเติมเนื้อหา
+
+- `01 · EasySlip Overview.md`
 
 ## 🏝️ โน้ตโดดเดี่ยว — ไม่มีลิงก์เข้า/ออก (หาเจอยาก)
 
@@ -41,6 +49,12 @@
 - `03 Resources/AI Workshops/Course Intake Kit (Master)/LOG - สร้างฟอร์ม MASTER + บทเรียน (2026-07-15).md`
 - `03 Resources/AI Workshops/Git Mastery Guide — 10,000 Level.md`
 - `03 Resources/Clippings/(196) เจาะ 3 งาน ที่ Claude Cowork ช่วยคุณ automate ได้จริงมากที่สุด step by step.md`
+- `03 Resources/Tools/Chrome MCP — CLI + cookbook (capability upgrade 2026-07-18).md`
+- `03 Resources/Tools/Chrome MCP — Learning Log.md`
+- `03 Resources/Tools/Chrome MCP — capability roadmap (4-agent research 2026-07-18).md`
+- `03 Resources/Tools/Chrome MCP — curl fallback + ขับ claude.ai (วิธีแก้ tools ไม่โหลด).md`
+- `03 Resources/Tools/Chrome MCP — doctor autonomy stack + rollback (2026-07-18).md`
+- `03 Resources/Tools/Chrome MCP — คลัง Use Case (3-agent research 2026-07-19).md`
 - `EasyCRM/Meeting-Agenda-EasyCRM-2026-07.md`
 - `Friday/Weekly Recaps/2026-W29.md`
 
@@ -85,5 +99,5 @@
 - `01 Projects/Office Seating Plan/2026-07-05 Session — สั่งงาน + วิธีทำงาน.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/2026-07-06 QA รอบผู้ใช้จริง + แก้ตาม feedback.md` — ขาด type, last_verified
 - `01 Projects/Office Seating Plan/DEPLOY.md` — ขาด last_verified
-- …และอีก 160 ไฟล์
+- …และอีก 172 ไฟล์
 
